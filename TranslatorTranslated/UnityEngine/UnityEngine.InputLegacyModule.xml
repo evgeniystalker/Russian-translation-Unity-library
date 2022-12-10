@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.InputLegacyModule</name>
+    </assembly>
+    <member name="T:UnityEngine.AccelerationEvent">
+      <summary>
+        <para>Структура, описывающая состояние ускорения устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AccelerationEvent.acceleration">
+      <summary>
+        <para>Значение ускорения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AccelerationEvent.deltaTime">
+      <summary>
+        <para>Время, прошедшее с момента последнего измерения акселерометра.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AndroidInput">
+      <summary>
+        <para>AndroidInput поддерживает сенсорный ввод за пределами экрана, например сенсорную панель.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AndroidInput.secondaryTouchEnabled">
+      <summary>
+        <para>Свойство, указывающее, обеспечивает ли система вторичный сенсорный ввод.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AndroidInput.secondaryTouchHeight">
+      <summary>
+        <para>Свойство, указывающее высоту дополнительной сенсорной панели.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AndroidInput.secondaryTouchWidth">
+      <summary>
+        <para>Свойство, указывающее ширину дополнительной сенсорной панели.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AndroidInput.touchCountSecondary">
+      <summary>
+        <para>Количество вторичных касаний. Гарантированно не меняется по всему кадру. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AndroidInput.GetSecondaryTouch(System.Int32)">
+      <summary>
+        <para>Возвращает объект, представляющий состояние определенного касания на дополнительной сенсорной панели (не выделяет временные переменные).</para>
+      </summary>
+      <param name="index">
+      </param>
+    </member>
+    <member name="T:UnityEngine.Compass">
+      <summary>
+        <para>Интерфейс с функциями компаса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.enabled">
+      <summary>
+        <para>Используется для включения или отключения компаса. Обратите внимание: если вы хотите, чтобы свойство Input.compass.trueHeading содержало допустимое значение, вы также должны включить обновление местоположения, вызвав Input.location.Start().</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.headingAccuracy">
+      <summary>
+        <para>Точность чтения курса в градусах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.magneticHeading">
+      <summary>
+        <para>Направление в градусах относительно магнитного Северного полюса. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.rawVector">
+      <summary>
+        <para>Необработанные геомагнитные данные, измеренные в микротеслах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.timestamp">
+      <summary>
+        <para>Отметка времени (в секундах с 1970 года), когда заголовок последний раз обновлялся. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Compass.trueHeading">
+      <summary>
+        <para>Направление в градусах относительно географического Северного полюса. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.DeviceOrientation">
+      <summary>
+        <para>Описывает физическую ориентацию устройства, определенную ОС.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.FaceDown">
+      <summary>
+        <para>Устройство держите параллельно земле экраном вниз.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.FaceUp">
+      <summary>
+        <para>Устройство держите параллельно земле экраном вверх.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.LandscapeLeft">
+      <summary>
+        <para>Устройство находится в ландшафтном режиме, устройство удерживается вертикально, а кнопка «Домой» находится справа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.LandscapeRight">
+      <summary>
+        <para>Устройство находится в ландшафтном режиме, устройство удерживается вертикально, а кнопка «Домой» находится слева.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.Portrait">
+      <summary>
+        <para>Устройство находится в портретном режиме, устройство удерживается вертикально, а кнопка «Домой» находится внизу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.PortraitUpsideDown">
+      <summary>
+        <para>Устройство находится в портретном режиме, но перевернуто вверх ногами, при этом устройство удерживается вертикально, а кнопка «Домой» находится вверху.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DeviceOrientation.Unknown">
+      <summary>
+        <para>Невозможно определить ориентацию устройства.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Gyroscope">
+      <summary>
+        <para>Интерфейс с гироскопом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.attitude">
+      <summary>
+        <para>Возвращает положение (т. е. ориентацию в пространстве) устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.enabled">
+      <summary>
+        <para>Устанавливает или возвращает включенный статус этого гироскопа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.gravity">
+      <summary>
+        <para>Возвращает вектор ускорения свободного падения, выраженный в системе отсчета устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.rotationRate">
+      <summary>
+        <para>Возвращает скорость вращения, измеренную гироскопом устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.rotationRateUnbiased">
+      <summary>
+        <para>Возвращает объективную скорость вращения, измеренную гироскопом устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.updateInterval">
+      <summary>
+        <para>Устанавливает или возвращает интервал гироскопа в секундах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Gyroscope.userAcceleration">
+      <summary>
+        <para>Возвращает ускорение, которое пользователь дает устройству.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.IMECompositionMode">
+      <summary>
+        <para>Управляет вводом IME.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.IMECompositionMode.Auto">
+      <summary>
+        <para>Включить ввод IME, только когда выбрано текстовое поле (по умолчанию).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.IMECompositionMode.Off">
+      <summary>
+        <para>Отключить ввод IME.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.IMECompositionMode.On">
+      <summary>
+        <para>Включить ввод IME.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Input">
+      <summary>
+        <para>Интерфейс в системе ввода.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.acceleration">
+      <summary>
+        <para>Последнее измеренное линейное ускорение устройства в трехмерном пространстве. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.accelerationEventCount">
+      <summary>
+        <para>Количество измерений ускорения, выполненных в течение последнего кадра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.accelerationEvents">
+      <summary>
+        <para>Возвращает список измерений ускорения, произошедших в течение последнего кадра. (Только чтение) (Выделяет временные переменные).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.anyKey">
+      <summary>
+        <para>Нажата ли в данный момент какая-либо клавиша или кнопка мыши? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.anyKeyDown">
+      <summary>
+        <para>Возвращает true для первого кадра, в котором пользователь нажимает любую клавишу или кнопку мыши. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.backButtonLeavesApp">
+      <summary>
+        <para>Должна ли кнопка «Назад» закрыть приложение?
+
+Можно использовать только на Android, Windows Phone или планшетах Windows.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.compass">
+      <summary>
+        <para>Свойство для доступа к компасу (только для портативных устройств). (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.compensateSensors">
+      <summary>
+        <para>Это свойство определяет, должны ли датчики ввода компенсироваться ориентацией экрана.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.compositionCursorPos">
+      <summary>
+        <para>Текущая позиция ввода текста, используемая IME для открытия окон.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.compositionString">
+      <summary>
+        <para>Текущая строка композиции IME, вводимая пользователем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.deviceOrientation">
+      <summary>
+        <para>Физическая ориентация устройства, как сообщает ОС. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.eatKeyPressOnTextFieldFocus">
+      <summary>
+        <para>Свойство, указывающее, потребляются ли нажатия клавиш текстовым вводом, если он имеет фокус (по умолчанию true).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.gyro">
+      <summary>
+        <para>Возвращает гироскоп по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.imeCompositionMode">
+      <summary>
+        <para>Управляет включением и отключением композиции ввода IME.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.imeIsSelected">
+      <summary>
+        <para>Выбран ли у пользователя источник ввода с клавиатуры IME?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.inputString">
+      <summary>
+        <para>Возвращает ввод с клавиатуры, введенный в этот кадр. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.location">
+      <summary>
+        <para>Свойство для доступа к местоположению устройства (только для портативных устройств). (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.mousePosition">
+      <summary>
+        <para>Текущая позиция мыши в пиксельных координатах. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.mousePresent">
+      <summary>
+        <para>Указывает, обнаружено ли устройство мыши.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.mouseScrollDelta">
+      <summary>
+        <para>Текущая дельта прокрутки мыши. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.multiTouchEnabled">
+      <summary>
+        <para>Свойство, указывающее, обрабатывает ли система множественные касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.simulateMouseWithTouches">
+      <summary>
+        <para>Включает/отключает симуляцию мыши с касаниями. По умолчанию этот параметр включен.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.stylusTouchSupported">
+      <summary>
+        <para>Возвращает true, если Stylus Touch поддерживается устройством или платформой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.touchCount">
+      <summary>
+        <para>Количество касаний. Гарантированно не меняется по всему кадру. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.touches">
+      <summary>
+        <para>Возвращает список объектов, представляющих статус всех касаний в течение последнего кадра. (Только чтение) (Выделяет временные переменные).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.touchPressureSupported">
+      <summary>
+        <para>Логическое значение, которое позволяет пользователям проверять, поддерживается ли сенсорное давление.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Input.touchSupported">
+      <summary>
+        <para>Возвращает информацию о том, поддерживает ли устройство, на котором запущено приложение, сенсорный ввод.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Input.GetAccelerationEvent(System.Int32)">
+      <summary>
+        <para>Возвращает конкретное измерение ускорения, которое произошло в течение последнего кадра. (Не выделяет временные переменные).</para>
+      </summary>
+      <param name="index">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetAxis(System.String)">
+      <summary>
+        <para>Возвращает значение виртуальной оси, определенной по оси axisName.</para>
+      </summary>
+      <param name="axisName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetAxisRaw(System.String)">
+      <summary>
+        <para>Возвращает значение виртуальной оси, определенной по оси axisName, без применения сглаживающей фильтрации.</para>
+      </summary>
+      <param name="axisName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetButton(System.String)">
+      <summary>
+        <para>Возвращает true, пока нажата виртуальная кнопка, идентифицированная buttonName.</para>
+      </summary>
+      <param name="buttonName">Название кнопки, например Jump.</param>
+      <returns>
+        <para>Истинно, когда ось была нажата и не отпущена.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Input.GetButtonDown(System.String)">
+      <summary>
+        <para>Возвращает true во время кадра, когда пользователь нажимал виртуальную кнопку, указанную в buttonName.</para>
+      </summary>
+      <param name="buttonName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetButtonUp(System.String)">
+      <summary>
+        <para>Возвращает значение true для первого кадра, когда пользователь отпускает виртуальную кнопку, указанную в buttonName.</para>
+      </summary>
+      <param name="buttonName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetJoystickNames">
+      <summary>
+        <para>Извлекает список имен устройств ввода, соответствующих индексу оси, настроенной в диспетчере ввода.</para>
+      </summary>
+      <returns>
+        <para>Возвращает массив имен джойстиков и геймпадов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Input.GetKey(System.String)">
+      <summary>
+        <para>Возвращает true, пока пользователь удерживает нажатой клавишу, указанную по имени.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetKey(UnityEngine.KeyCode)">
+      <summary>
+        <para>Возвращает значение true, пока пользователь удерживает нажатой клавишу, указанную параметром перечисления KeyCode ключа.</para>
+      </summary>
+      <param name="key">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetKeyDown(System.String)">
+      <summary>
+        <para>Возвращает true в течение кадра, когда пользователь начинает нажимать клавишу, указанную именем.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode)">
+      <summary>
+        <para>Возвращает true во время кадра, когда пользователь начинает нажимать клавишу, указанную в параметре перечисления key KeyCode.</para>
+      </summary>
+      <param name="key">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetKeyUp(System.String)">
+      <summary>
+        <para>Возвращает true в течение кадра, когда пользователь отпускает клавишу, идентифицированную по имени.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetKeyUp(UnityEngine.KeyCode)">
+      <summary>
+        <para>Возвращает true в течение кадра, когда пользователь отпускает клавишу, указанную параметром перечисления KeyCode ключа.</para>
+      </summary>
+      <param name="key">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetMouseButton(System.Int32)">
+      <summary>
+        <para>Возвращает, удерживается ли данная кнопка мыши нажатой.</para>
+      </summary>
+      <param name="button">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetMouseButtonDown(System.Int32)">
+      <summary>
+        <para>Возвращает true в течение кадра, в течение которого пользователь нажимал данную кнопку мыши.</para>
+      </summary>
+      <param name="button">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetMouseButtonUp(System.Int32)">
+      <summary>
+        <para>Возвращает true, когда пользователь отпускает данную кнопку мыши.</para>
+      </summary>
+      <param name="button">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Input.GetTouch(System.Int32)">
+      <summary>
+        <para>Вызовите Input.GetTouch, чтобы получить структуру Touch.</para>
+      </summary>
+      <param name="index">Сенсорный ввод на экране устройства.</param>
+      <returns>
+        <para>Нажмите детали в структуре.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Input.IsJoystickPreconfigured(System.String)">
+      <summary>
+        <para>Определите, была ли конкретная модель джойстика предварительно настроена в Unity. (только для Linux).</para>
+      </summary>
+      <param name="joystickName">Имя джойстика для проверки (возвращается функцией Input.GetJoystickNames).</param>
+      <returns>
+        <para>True, если раскладка джойстика была предварительно настроена; false в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Input.ResetInputAxes">
+      <summary>
+        <para>Сбрасывает все входные данные. После ResetInputAxes все оси возвращаются в 0, и все кнопки возвращаются в 0 на один кадр.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.LocationInfo">
+      <summary>
+        <para>Структура, описывающая местоположение устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.altitude">
+      <summary>
+        <para>Высота географического местоположения устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.horizontalAccuracy">
+      <summary>
+        <para>Горизонтальная точность определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.latitude">
+      <summary>
+        <para>Географическая широта местоположения устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.longitude">
+      <summary>
+        <para>Географическая долгота местоположения устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.timestamp">
+      <summary>
+        <para>Временная метка (в секундах с 1970 года), когда местоположение в последний раз обновлялось.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationInfo.verticalAccuracy">
+      <summary>
+        <para>Вертикальная точность определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.LocationService">
+      <summary>
+        <para>Предоставляет методы, позволяющие приложению получить доступ к местоположению устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationService.isEnabledByUser">
+      <summary>
+        <para>Указывает, разрешает ли устройство доступ к приложению для доступа к службе определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationService.lastData">
+      <summary>
+        <para>Последнее географическое местоположение, зарегистрированное устройством.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocationService.status">
+      <summary>
+        <para>Возвращает статус службы определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.LocationService.Start">
+      <summary>
+        <para>Запускает обновления службы определения местоположения.</para>
+      </summary>
+      <param name="desiredAccuracyInMeters">
+Точность услуги, которую вы хотите использовать, в метрах. Это определяет точность координат последнего местоположения устройства. Более высокие значения, такие как 500, не требуют, чтобы устройство использовало чип GPS и
+таким образом экономить заряд батареи. Более низкие значения, такие как 5-10, обеспечивают наилучшую точность, но требуют чипа GPS и, следовательно, потребляют больше энергии аккумулятора. Значение по умолчанию — 10 метров.
+</param>
+      <param name="updateDistanceInMeters">
+Минимальное расстояние в метрах, на которое устройство должно переместиться вбок, прежде чем Unity обновит Input.location. Более высокие значения, такие как 500, производят меньше обновлений и требуют меньше ресурсов для обработки. По умолчанию 10 метров.
+</param>
+    </member>
+    <member name="M:UnityEngine.LocationService.Start(System.Single)">
+      <summary>
+        <para>Запускает обновления службы определения местоположения.</para>
+      </summary>
+      <param name="desiredAccuracyInMeters">
+Точность услуги, которую вы хотите использовать, в метрах. Это определяет точность координат последнего местоположения устройства. Более высокие значения, такие как 500, не требуют, чтобы устройство использовало чип GPS и
+таким образом экономить заряд батареи. Более низкие значения, такие как 5-10, обеспечивают наилучшую точность, но требуют чипа GPS и, следовательно, потребляют больше энергии аккумулятора. Значение по умолчанию — 10 метров.
+</param>
+      <param name="updateDistanceInMeters">
+Минимальное расстояние в метрах, на которое устройство должно переместиться вбок, прежде чем Unity обновит Input.location. Более высокие значения, такие как 500, производят меньше обновлений и требуют меньше ресурсов для обработки. По умолчанию 10 метров.
+</param>
+    </member>
+    <member name="M:UnityEngine.LocationService.Start(System.Single,System.Single)">
+      <summary>
+        <para>Запускает обновления службы определения местоположения.</para>
+      </summary>
+      <param name="desiredAccuracyInMeters">
+Точность услуги, которую вы хотите использовать, в метрах. Это определяет точность координат последнего местоположения устройства. Более высокие значения, такие как 500, не требуют, чтобы устройство использовало чип GPS и
+таким образом экономить заряд батареи. Более низкие значения, такие как 5-10, обеспечивают наилучшую точность, но требуют чипа GPS и, следовательно, потребляют больше энергии аккумулятора. Значение по умолчанию — 10 метров.
+</param>
+      <param name="updateDistanceInMeters">
+Минимальное расстояние в метрах, на которое устройство должно переместиться вбок, прежде чем Unity обновит Input.location. Более высокие значения, такие как 500, производят меньше обновлений и требуют меньше ресурсов для обработки. По умолчанию 10 метров.
+</param>
+    </member>
+    <member name="M:UnityEngine.LocationService.Stop">
+      <summary>
+        <para>Останавливает обновления службы определения местоположения. Это полезно для экономии заряда аккумулятора, когда приложению не требуется служба определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.LocationServiceStatus">
+      <summary>
+        <para>Описывает статус службы определения местоположения для устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.LocationServiceStatus.Failed">
+      <summary>
+        <para>Не удалось инициализировать службу определения местоположения. Пользователь запретил доступ к службе определения местоположения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.LocationServiceStatus.Initializing">
+      <summary>
+        <para>Служба определения местоположения инициализируется.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.LocationServiceStatus.Running">
+      <summary>
+        <para>Служба определения местоположения запущена, и приложение может запрашивать местоположения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.LocationServiceStatus.Stopped">
+      <summary>
+        <para>Служба определения местоположения не запущена.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Touch">
+      <summary>
+        <para>Структура, описывающая состояние касания экрана пальцем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.altitudeAngle">
+      <summary>
+        <para>Значение 0 радиан указывает на то, что игла параллельна поверхности, pi/2 указывает на то, что она перпендикулярна.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.azimuthAngle">
+      <summary>
+        <para>Значение 0 радиан указывает, что перо направлено вдоль оси X устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.deltaPosition">
+      <summary>
+        <para>Дельта положения с момента последнего изменения координат пикселя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.deltaTime">
+      <summary>
+        <para>Время, прошедшее с момента последнего записанного изменения значений Touch.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.fingerId">
+      <summary>
+        <para>Уникальный индекс для касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.maximumPossiblePressure">
+      <summary>
+        <para>Максимально возможное значение давления для платформы. Если Input.touchPressureSupported возвращает false, значение этого свойства всегда будет равно 1.0f.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.phase">
+      <summary>
+        <para>Описывает фазу касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.position">
+      <summary>
+        <para>Положение касания в координатах пикселя на экране.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.pressure">
+      <summary>
+        <para>Текущая величина давления, применяемого к прикосновению. 1.0f считается давлением среднего касания. Если Input.touchPressureSupported возвращает false, значение этого свойства всегда будет равно 1.0f.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.radius">
+      <summary>
+        <para>Расчетное значение радиуса касания. Добавьте radiusVariance, чтобы получить максимальный размер касания, вычтите его, чтобы получить минимальный размер касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.radiusVariance">
+      <summary>
+        <para>Это значение определяет точность радиуса касания. Добавьте это значение к радиусу, чтобы получить максимальный размер касания, вычтите его, чтобы получить минимальный размер касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.rawPosition">
+      <summary>
+        <para>Первая позиция сенсорного контакта в координатах пикселя экранного пространства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.tapCount">
+      <summary>
+        <para>Количество нажатий.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.type">
+      <summary>
+        <para>Значение, указывающее, было ли касание прямым, косвенным (или удаленным) или типом стилуса.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TouchPhase">
+      <summary>
+        <para>Описывает фазу касания пальцем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchPhase.Began">
+      <summary>
+        <para>Палец коснулся экрана.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchPhase.Canceled">
+      <summary>
+        <para>Система отменила отслеживание касания.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchPhase.Ended">
+      <summary>
+        <para>Палец оторвался от экрана. Это последняя фаза касания.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchPhase.Moved">
+      <summary>
+        <para>Палец двигался по экрану.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchPhase.Stationary">
+      <summary>
+        <para>Палец касается экрана, но не двигается.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TouchType">
+      <summary>
+        <para>Описывает, является ли прикосновение прямым, непрямым (или удаленным) или стилусом.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Direct">
+      <summary>
+        <para>Прямое прикосновение к устройству.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Indirect">
+      <summary>
+        <para>Косвенное или удаленное касание устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Stylus">
+      <summary>
+        <para>Прикосновение стилуса к устройству.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.InputLegacyModule">
+      <summary>
+        <para>Модуль InputLegacy реализует класс Input, используемый для чтения ввода игрока.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

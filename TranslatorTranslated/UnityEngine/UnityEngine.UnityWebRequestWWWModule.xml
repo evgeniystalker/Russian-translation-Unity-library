@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestWWWModule</name>
+    </assembly>
+    <member name="A:UnityEngine.UnityWebRequestWWWModule">
+      <summary>
+        <para>Модуль UnityWebRequestWWW реализует устаревший WWW, позволяющий вам взаимодействовать со службами http.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WWW">
+      <summary>
+        <para>Простой доступ к веб-страницам.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.assetBundle">
+      <summary>
+        <para>Потоковая передача AssetBundle, который может содержать любые ресурсы из папки проекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.audioClip">
+      <summary>
+        <para>Возвращает аудиоклип, сгенерированный из загруженных данных (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.bytes">
+      <summary>
+        <para>Возвращает содержимое выбранной веб-страницы в виде массива байтов (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.bytesDownloaded">
+      <summary>
+        <para>Количество байтов, загруженных этим WWW-запросом (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.error">
+      <summary>
+        <para>Возвращает сообщение об ошибке, если во время загрузки произошла ошибка (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.isDone">
+      <summary>
+        <para>Загрузка уже завершена? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.movie">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.oggVorbis">
+      <summary>
+        <para>Загрузите файл Ogg Vorbis в аудиоклип.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.progress">
+      <summary>
+        <para>Как далеко продвинулась загрузка (только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.responseHeaders">
+      <summary>
+        <para>Словарь заголовков, возвращаемых запросом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.text">
+      <summary>
+        <para>Возвращает содержимое выбранной веб-страницы в виде строки (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.texture">
+      <summary>
+        <para>Возвращает Texture2D, сгенерированный из загруженных данных (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.textureNonReadable">
+      <summary>
+        <para>Возвращает нечитаемый объект Texture2D, сгенерированный из загруженных данных (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.threadPriority">
+      <summary>
+        <para>Устарело, не действует.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.uploadProgress">
+      <summary>
+        <para>Как далеко продвинулась загрузка (только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWW.url">
+      <summary>
+        <para>URL-адрес этого WWW-запроса (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WWW.#ctor(System.String)">
+      <summary>
+        <para>Создает WWW-запрос с заданным URL-адресом.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки. Должен быть экранирован '%'.</param>
+      <returns>
+        <para>Новый объект WWW. Когда он будет загружен, результаты могут быть извлечены из возвращенного объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.#ctor(System.String,UnityEngine.WWWForm)">
+      <summary>
+        <para>Создает WWW-запрос с заданным URL-адресом.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки. Должен быть экранирован '%'.</param>
+      <param name="form">Экземпляр WWWForm, содержащий данные формы для публикации.</param>
+      <returns>
+        <para>Новый объект WWW. Когда он будет загружен, результаты могут быть извлечены из возвращенного объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.#ctor(System.String,System.Byte[])">
+      <summary>
+        <para>Создает WWW-запрос с заданным URL-адресом.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки. Должен быть экранирован '%'.</param>
+      <param name="postData">Массив байтов данных для отправки по URL-адресу.</param>
+      <returns>
+        <para>Новый объект WWW. Когда он будет загружен, результаты могут быть извлечены из возвращенного объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.#ctor(System.String,System.Byte[],System.Collections.Hashtable)">
+      <summary>
+        <para>Создает WWW-запрос с заданным URL-адресом.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки. Должен быть экранирован '%'.</param>
+      <param name="postData">Массив байтов данных для отправки по URL-адресу.</param>
+      <param name="headers">Хэш-таблица пользовательских заголовков для отправки с запросом.</param>
+      <returns>
+        <para>Новый объект WWW. Когда он будет загружен, результаты могут быть извлечены из возвращенного объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.#ctor(System.String,System.Byte[],System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;)">
+      <summary>
+        <para>Создает WWW-запрос с заданным URL-адресом.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки. Должен быть экранирован '%'.</param>
+      <param name="postData">Массив байтов данных для отправки по URL-адресу.</param>
+      <param name="headers">Словарь, содержащий ключи и значения заголовков для передачи на сервер.</param>
+      <returns>
+        <para>Новый объект WWW. Когда он будет загружен, результаты могут быть извлечены из возвращенного объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.Dispose">
+      <summary>
+        <para>Удаляет существующий объект WWW.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WWW.EscapeURL(System.String)">
+      <summary>
+        <para>Экранирует символы в строке, чтобы обеспечить их совместимость с URL-адресами.</para>
+      </summary>
+      <param name="s">Строка с экранированными символами.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.WWW.EscapeURL(System.String,System.Text.Encoding)">
+      <summary>
+        <para>Экранирует символы в строке, чтобы обеспечить их совместимость с URL-адресами.</para>
+      </summary>
+      <param name="s">Строка с экранированными символами.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClip">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="stream">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClip(System.Boolean)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="stream">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClip(System.Boolean,System.Boolean)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="stream">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClip(System.Boolean,System.Boolean,UnityEngine.AudioType)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="stream">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClipCompressed">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClipCompressed(System.Boolean)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetAudioClipCompressed(System.Boolean,UnityEngine.AudioType)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="threeD">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.GetMovieTexture">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WWW.LoadFromCacheOrDownload(System.String,System.Int32)">
+      <summary>
+        <para>Загружает AssetBundle с указанным номером версии из кэша. Если AssetBundle в данный момент не кэширован, он будет автоматически загружен и сохранен в кэше для будущего извлечения из локального хранилища.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки AssetBundle, если он отсутствует в кеше. Должен быть экранирован '%'.</param>
+      <param name="version">Версия AssetBundle. Файл будет загружен из кеша диска только в том случае, если он ранее был загружен с тем же параметром версии. Увеличивая номер версии, запрошенный вашим приложением, вы можете заставить Caching загрузить новую копию AssetBundle с URL-адреса.</param>
+      <param name="hash">Hash128, который используется как версия AssetBundle.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.
+
+Аналогично параметру cachedAssetBundle для UnityWebRequestAssetBundle.GetAssetBundle.&lt;/param&gt;</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает. Вы можете использовать это, чтобы избежать повреждения данных из-за плохих загрузок или вмешательства пользователей в кэшированные файлы на диске. Если CRC не совпадает, Unity попытается повторно загрузить данные, и если CRC на сервере не совпадает, произойдет сбой с ошибкой. Посмотрите на возвращенную строку ошибки, чтобы увидеть правильное значение CRC для использования в AssetBundle.</param>
+      <returns>
+        <para>Экземпляр WWW, который можно использовать для доступа к данным после завершения операции загрузки/выгрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.LoadFromCacheOrDownload(System.String,System.Int32,System.UInt32)">
+      <summary>
+        <para>Загружает AssetBundle с указанным номером версии из кэша. Если AssetBundle в данный момент не кэширован, он будет автоматически загружен и сохранен в кэше для будущего извлечения из локального хранилища.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки AssetBundle, если он отсутствует в кеше. Должен быть экранирован '%'.</param>
+      <param name="version">Версия AssetBundle. Файл будет загружен из кеша диска только в том случае, если он ранее был загружен с тем же параметром версии. Увеличивая номер версии, запрошенный вашим приложением, вы можете заставить Caching загрузить новую копию AssetBundle с URL-адреса.</param>
+      <param name="hash">Hash128, который используется как версия AssetBundle.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.
+
+Аналогично параметру cachedAssetBundle для UnityWebRequestAssetBundle.GetAssetBundle.&lt;/param&gt;</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает. Вы можете использовать это, чтобы избежать повреждения данных из-за плохих загрузок или вмешательства пользователей в кэшированные файлы на диске. Если CRC не совпадает, Unity попытается повторно загрузить данные, и если CRC на сервере не совпадает, произойдет сбой с ошибкой. Посмотрите на возвращенную строку ошибки, чтобы увидеть правильное значение CRC для использования в AssetBundle.</param>
+      <returns>
+        <para>Экземпляр WWW, который можно использовать для доступа к данным после завершения операции загрузки/выгрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.LoadFromCacheOrDownload(System.String,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Загружает AssetBundle с указанным номером версии из кэша. Если AssetBundle в данный момент не кэширован, он будет автоматически загружен и сохранен в кэше для будущего извлечения из локального хранилища.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки AssetBundle, если он отсутствует в кеше. Должен быть экранирован '%'.</param>
+      <param name="version">Версия AssetBundle. Файл будет загружен из кеша диска только в том случае, если он ранее был загружен с тем же параметром версии. Увеличивая номер версии, запрошенный вашим приложением, вы можете заставить Caching загрузить новую копию AssetBundle с URL-адреса.</param>
+      <param name="hash">Hash128, который используется как версия AssetBundle.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.
+
+Аналогично параметру cachedAssetBundle для UnityWebRequestAssetBundle.GetAssetBundle.&lt;/param&gt;</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает. Вы можете использовать это, чтобы избежать повреждения данных из-за плохих загрузок или вмешательства пользователей в кэшированные файлы на диске. Если CRC не совпадает, Unity попытается повторно загрузить данные, и если CRC на сервере не совпадает, произойдет сбой с ошибкой. Посмотрите на возвращенную строку ошибки, чтобы увидеть правильное значение CRC для использования в AssetBundle.</param>
+      <returns>
+        <para>Экземпляр WWW, который можно использовать для доступа к данным после завершения операции загрузки/выгрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.LoadFromCacheOrDownload(System.String,UnityEngine.CachedAssetBundle,System.UInt32)">
+      <summary>
+        <para>Загружает AssetBundle с указанным номером версии из кэша. Если AssetBundle в данный момент не кэширован, он будет автоматически загружен и сохранен в кэше для будущего извлечения из локального хранилища.</para>
+      </summary>
+      <param name="url">URL-адрес для загрузки AssetBundle, если он отсутствует в кеше. Должен быть экранирован '%'.</param>
+      <param name="version">Версия AssetBundle. Файл будет загружен из кеша диска только в том случае, если он ранее был загружен с тем же параметром версии. Увеличивая номер версии, запрошенный вашим приложением, вы можете заставить Caching загрузить новую копию AssetBundle с URL-адреса.</param>
+      <param name="hash">Hash128, который используется как версия AssetBundle.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.
+
+Аналогично параметру cachedAssetBundle для UnityWebRequestAssetBundle.GetAssetBundle.&lt;/param&gt;</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает. Вы можете использовать это, чтобы избежать повреждения данных из-за плохих загрузок или вмешательства пользователей в кэшированные файлы на диске. Если CRC не совпадает, Unity попытается повторно загрузить данные, и если CRC на сервере не совпадает, произойдет сбой с ошибкой. Посмотрите на возвращенную строку ошибки, чтобы увидеть правильное значение CRC для использования в AssetBundle.</param>
+      <returns>
+        <para>Экземпляр WWW, который можно использовать для доступа к данным после завершения операции загрузки/выгрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WWW.LoadImageIntoTexture(UnityEngine.Texture2D)">
+      <summary>
+        <para>Заменяет содержимое существующего объекта Texture2D изображением из загруженных данных.</para>
+      </summary>
+      <param name="tex">Существующий объект текстуры, который будет перезаписан данными изображения.</param>
+      <param name="texture">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWW.UnEscapeURL(System.String)">
+      <summary>
+        <para>Преобразует удобные для URL escape-последовательности обратно в обычный текст.</para>
+      </summary>
+      <param name="s">Строка, содержащая экранированные символы.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.WWW.UnEscapeURL(System.String,System.Text.Encoding)">
+      <summary>
+        <para>Преобразует удобные для URL escape-последовательности обратно в обычный текст.</para>
+      </summary>
+      <param name="s">Строка, содержащая экранированные символы.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+  </members>
+</doc>

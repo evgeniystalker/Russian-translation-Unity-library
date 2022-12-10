@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.VehiclesModule</name>
+    </assembly>
+    <member name="A:UnityEngine.VehiclesModule">
+      <summary>
+        <para>Модуль Vehicles реализует симуляцию физики транспортных средств с помощью компонента WheelCollider.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WheelCollider">
+      <summary>
+        <para>Специальный коллайдер для колес транспортных средств.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.brakeTorque">
+      <summary>
+        <para>Тормозной момент выражен в ньютон-метрах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.center">
+      <summary>
+        <para>Центр колеса, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.forceAppPointDistance">
+      <summary>
+        <para>Точка приложения усилий подвески и шины, измеренная от основания покоящегося колеса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.forwardFriction">
+      <summary>
+        <para>Свойства трения шины в направлении, куда указывает колесо.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.isGrounded">
+      <summary>
+        <para>Указывает, сталкивается ли колесо с чем-либо в данный момент (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.mass">
+      <summary>
+        <para>Масса колеса, выраженная в килограммах. Должно быть больше нуля. Типичные значения находятся в диапазоне (20,80).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.motorTorque">
+      <summary>
+        <para>Крутящий момент двигателя на оси колеса, выраженный в ньютон-метрах. Положительный или отрицательный в зависимости от направления.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.radius">
+      <summary>
+        <para>Радиус колеса, измеренный в локальном пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.rpm">
+      <summary>
+        <para>Текущая скорость вращения оси колеса, в оборотах в минуту (только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.sidewaysFriction">
+      <summary>
+        <para>Свойства трения шин в боковом направлении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.sprungMass">
+      <summary>
+        <para>Масса, поддерживаемая этим WheelCollider.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.steerAngle">
+      <summary>
+        <para>Угол поворота в градусах, всегда вокруг локальной оси Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.suspensionDistance">
+      <summary>
+        <para>Максимальное удлинение подвески колес, измеренное в локальном пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.suspensionExpansionLimited">
+      <summary>
+        <para>Ограничивает скорость расширения подвески колесного коллайдера. Если вы установите это свойство для Rigidbody с несколькими коллайдерами, такими как транспортное средство, то оно повлияет на все остальные коллайдеры в Rigidbody.</para>
+      </summary>
+      <param name="active">Включает/выключает свойство</param>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.suspensionSpring">
+      <summary>
+        <para>Параметры подвески колеса. Подвеска пытается достичь целевого положения, применяя линейную силу и демпфирующую силу.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelCollider.wheelDampingRate">
+      <summary>
+        <para>Скорость демпфирования колеса. Должно быть больше нуля.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WheelCollider.ConfigureVehicleSubsteps(System.Single,System.Int32,System.Int32)">
+      <summary>
+        <para>Настройте параметры подшагов транспортного средства.</para>
+      </summary>
+      <param name="speedThreshold">Порог скорости пошагового алгоритма.</param>
+      <param name="stepsBelowThreshold">Количество подшагов симуляции, когда скорость транспортного средства ниже speedThreshold.</param>
+      <param name="stepsAboveThreshold">Количество подшагов симуляции, когда скорость транспортного средства выше speedThreshold.</param>
+    </member>
+    <member name="M:UnityEngine.WheelCollider.GetGroundHit(UnityEngine.WheelHit&amp;)">
+      <summary>
+        <para>Получает данные о столкновении колеса с землей.</para>
+      </summary>
+      <param name="hit">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WheelCollider.GetWorldPose(UnityEngine.Vector3&amp;,UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Получает положение колеса в мировом пространстве с учетом контакта с землей, пределов подвески, угла поворота и угла поворота (углы в градусах).</para>
+      </summary>
+      <param name="pos">Положение колеса в мировом пространстве.</param>
+      <param name="quat">Вращение колеса в мировом пространстве.</param>
+    </member>
+    <member name="M:UnityEngine.WheelCollider.ResetSprungMasses">
+      <summary>
+        <para>Сбросить подрессоренные массы автомобиля.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WheelHit">
+      <summary>
+        <para>Контактная информация колеса, предоставленная WheelCollider.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.collider">
+      <summary>
+        <para>Другой коллайдер, в который попадает колесо.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.force">
+      <summary>
+        <para>Величина силы, прикладываемой к контакту.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.forwardDir">
+      <summary>
+        <para>Направление, в котором указывает колесо.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.forwardSlip">
+      <summary>
+        <para>Проскальзывание шины в направлении качения. Скольжение при ускорении отрицательное, а при торможении положительное.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.normal">
+      <summary>
+        <para>Норма в точке контакта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.point">
+      <summary>
+        <para>Точка контакта колеса с землей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.sidewaysDir">
+      <summary>
+        <para>Боковое направление колеса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelHit.sidewaysSlip">
+      <summary>
+        <para>Шина проскальзывает в боковом направлении.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

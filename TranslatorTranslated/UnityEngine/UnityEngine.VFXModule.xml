@@ -1,0 +1,1886 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.VFXModule</name>
+    </assembly>
+    <member name="T:UnityEngine.VFX.VFXCameraBufferTypes">
+      <summary>
+        <para>Это перечисление описывает типы буферов камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraBufferTypes.Color">
+      <summary>
+        <para>Цветовой буфер камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraBufferTypes.Depth">
+      <summary>
+        <para>Буфер глубины камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraBufferTypes.None">
+      <summary>
+        <para>Нет буфера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraBufferTypes.Normal">
+      <summary>
+        <para>Обычный буфер камеры.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXCameraXRSettings">
+      <summary>
+        <para>Представляет параметры, определяющие, как график визуальных эффектов должен обрабатывать камеру XR.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraXRSettings.viewCount">
+      <summary>
+        <para>Количество просмотров для рендеринга за проход. В Unity есть разные методы рендеринга камеры в XR. Для многопроходного рендеринга viewTotal равен 2, а viewCount будет равен 1. Для других методов рендеринга XR и viewTotal, и viewCount равны 2.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraXRSettings.viewOffset">
+      <summary>
+        <para>Указывает, с чего начать визуализацию представлений в этом проходе. В настоящее время Visual Effect Graph использует это для многопроходного XR-рендеринга. В этом случае значение первого прохода равно 0, а значение второго прохода равно 1. Для других методов рендеринга XR это значение равно 0.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXCameraXRSettings.viewTotal">
+      <summary>
+        <para>Общее количество просмотров камеры. Для обычной камеры это 1. Для камеры в XR это 2.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXEventAttribute">
+      <summary>
+        <para>Этот класс обрабатывает свойства, которые вы передаете системе с помощью VFX.VisualEffect.SendEvent.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.CopyValuesFrom(UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Копирует значения из VFXEventAttribute в тот, из которого вы вызываете эту функцию.</para>
+      </summary>
+      <param name="eventAttibute">Атрибут исходного события.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.#ctor(UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Конструктор копирования для класса VFXEventAttribute.</para>
+      </summary>
+      <param name="original">Исходный атрибут VFXEventAttribute для копирования.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetBool(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного логического свойства из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для логического значения, которое вы укажете. Возвращает false, если VFX.VFXEventAttribute.HasBool возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetBool(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного логического свойства из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для логического значения, которое вы укажете. Возвращает false, если VFX.VFXEventAttribute.HasBool возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetFloat(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства с плавающей запятой из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для числа с плавающей запятой, которое вы укажете. Возвращает 0.0f, если VFX.VFXEventAttribute.HasFloat возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetFloat(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства с плавающей запятой из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для числа с плавающей запятой, которое вы укажете. Возвращает 0.0f, если VFX.VFXEventAttribute.HasFloat возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetInt(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного целочисленного свойства из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение целого числа, которое вы укажете. Возвращает 0, если VFX.VFXEventAttribute.HasInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetInt(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного целочисленного свойства из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение целого числа, которое вы укажете. Возвращает 0, если VFX.VFXEventAttribute.HasInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetMatrix4x4(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Matrix4x4 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Matrix4x4, которое вы укажете. Возвращает Matrix4x4.identity, если VFX.VFXEventAttribute.HasMatrix4x4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetMatrix4x4(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Matrix4x4 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Matrix4x4, которое вы укажете. Возвращает Matrix4x4.identity, если VFX.VFXEventAttribute.HasMatrix4x4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetUint(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного целочисленного свойства без знака из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для указанного вами целого числа. Возвращает 0, если VFX.VFXEventAttribute.HasUint возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetUint(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного целочисленного свойства без знака из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для указанного вами целого числа. Возвращает 0, если VFX.VFXEventAttribute.HasUint возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector2(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector2 из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector2, которое вы укажете. Возвращает Vector2.zero, если VFX.VFXEventAttribute.HasVector2 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector2(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector2 из VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector2, которое вы укажете. Возвращает Vector2.zero, если VFX.VFXEventAttribute.HasVector2 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector3(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector3 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector3, которое вы укажете. Возвращает Vector3.zero, если VFX.VFXEventAttribute.HasVector3 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector3(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector3 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector3, которое вы укажете. Возвращает Vector3.zero, если VFX.VFXEventAttribute.HasVector3 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector4(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector4 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector4, которое вы укажете. Возвращает Vector4.zero, если VFX.VFXEventAttribute.HasVector4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.GetVector4(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы получить значение именованного свойства Vector4 из атрибута VFXEventAttribute.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector4, которое вы укажете. Возвращает Vector4.zero, если VFX.VFXEventAttribute.HasVector4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasBool(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute логическое значение с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasBool(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute логическое значение с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasFloat(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute число с плавающей запятой с переданным вами именем.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasFloat(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute число с плавающей запятой с переданным вами именем.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasInt(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute целое число с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasInt(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute целое число с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasMatrix4x4(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasMatrix4x4(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasUint(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute целое число без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasUint(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute целое число без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector2(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector2(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector3(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector3(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector4(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.HasVector4(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы проверить, хранит ли VFXEventAttribute объект Vector4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetBool(System.Int32,System.Boolean)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение bool с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="b">Новое логическое значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetBool(System.String,System.Boolean)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение bool с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="b">Новое логическое значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetFloat(System.Int32,System.Single)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение с плавающей запятой с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="f">Новое значение с плавающей запятой.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetFloat(System.String,System.Single)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение с плавающей запятой с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="f">Новое значение с плавающей запятой.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetInt(System.Int32,System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение целого числа с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetInt(System.String,System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение целого числа с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetMatrix4x4(System.Int32,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Matrix4x4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetMatrix4x4(System.String,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Matrix4x4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetUint(System.Int32,System.UInt32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение целого числа без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение без знака.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetUint(System.String,System.UInt32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение целого числа без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение без знака.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector2(System.Int32,UnityEngine.Vector2)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector2.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector2(System.String,UnityEngine.Vector2)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector2.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector3(System.Int32,UnityEngine.Vector3)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector3.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector3(System.String,UnityEngine.Vector3)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector3.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector4(System.Int32,UnityEngine.Vector4)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXEventAttribute.SetVector4(System.String,UnityEngine.Vector4)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить значение Vector4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector4.</param>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXExposedProperty">
+      <summary>
+        <para>Эта структура описывает открытое свойство объекта VisualEffectAsset.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXExposedProperty.name">
+      <summary>
+        <para>Имя открытого свойства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXExposedProperty.type">
+      <summary>
+        <para>Тип предоставляемого свойства.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXExpressionValues">
+      <summary>
+        <para>Этот класс является оболочкой для набора значений выражений.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetAnimationCurve(System.Int32)">
+      <summary>
+        <para>Возвращает кривую анимации, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetAnimationCurve(System.String)">
+      <summary>
+        <para>Возвращает кривую анимации, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetBool(System.Int32)">
+      <summary>
+        <para>Возвращает логическое значение, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetBool(System.String)">
+      <summary>
+        <para>Возвращает логическое значение, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetFloat(System.Int32)">
+      <summary>
+        <para>Возвращает число с плавающей запятой, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetFloat(System.String)">
+      <summary>
+        <para>Возвращает число с плавающей запятой, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetGradient(System.Int32)">
+      <summary>
+        <para>Возвращает градиент, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetGradient(System.String)">
+      <summary>
+        <para>Возвращает градиент, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetInt(System.Int32)">
+      <summary>
+        <para>Возвращает целое число, соответствующее связанному именованному выражению. ЕСЛИ эта запись недоступна или ее тип не соответствует, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetInt(System.String)">
+      <summary>
+        <para>Возвращает целое число, соответствующее связанному именованному выражению. ЕСЛИ эта запись недоступна или ее тип не соответствует, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetMatrix4x4(System.Int32)">
+      <summary>
+        <para>Возвращает Matrix4, соответствующий связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetMatrix4x4(System.String)">
+      <summary>
+        <para>Возвращает Matrix4, соответствующий связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetMesh(System.Int32)">
+      <summary>
+        <para>Возвращает сетку, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetMesh(System.String)">
+      <summary>
+        <para>Возвращает сетку, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetTexture(System.Int32)">
+      <summary>
+        <para>Возвращает текстуру, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetTexture(System.String)">
+      <summary>
+        <para>Возвращает текстуру, соответствующую связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetUInt(System.Int32)">
+      <summary>
+        <para>Возвращает целое число без знака, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetUInt(System.String)">
+      <summary>
+        <para>Возвращает целое число без знака, соответствующее связанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector2(System.Int32)">
+      <summary>
+        <para>Возвращает Vector2, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector2(System.String)">
+      <summary>
+        <para>Возвращает Vector2, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector3(System.Int32)">
+      <summary>
+        <para>Возвращает Vector3, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector3(System.String)">
+      <summary>
+        <para>Возвращает Vector3, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector4(System.Int32)">
+      <summary>
+        <para>Возвращает Vector4, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXExpressionValues.GetVector4(System.String)">
+      <summary>
+        <para>Возвращает Vector4, соответствующий привязанному именованному выражению. Если эта запись недоступна или ее тип не совпадает, создается исключение.</para>
+      </summary>
+      <param name="nameID">Идентификатор имени свойства, полученного Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXManager">
+      <summary>
+        <para>Используйте этот класс, чтобы установить ряд свойств, управляющих поведением VisualEffect в вашем проекте Unity.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXManager.fixedTimeStep">
+      <summary>
+        <para>Фиксированный интервал обновления частоты кадров. Частота тиков указана в секундах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXManager.maxDeltaTime">
+      <summary>
+        <para>Максимально допустимая дельта-время для интервала обновления. Это ограничение влияет на fixedDeltaTime и deltaTime. Частота тиков указана в секундах.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.IsCameraBufferNeeded(UnityEngine.Camera)">
+      <summary>
+        <para>Запросы, которые буферизуют VFX Manager для данной камеры.</para>
+      </summary>
+      <param name="cam">Камера, для которой запрашиваются необходимые буферы.</param>
+      <returns>
+        <para>Список всех необходимых флагов буфера.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.PrepareCamera(UnityEngine.Camera)">
+      <summary>
+        <para>Используйте этот метод для подготовки команд VFX для каждой камеры для этого кадра.</para>
+      </summary>
+      <param name="cam">Камера для подготовки к обработке VFX-команд.</param>
+      <param name="camXRSettings">Настройки XR, используемые графиком визуальных эффектов для подготовки камеры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.PrepareCamera(UnityEngine.Camera,UnityEngine.VFX.VFXCameraXRSettings)">
+      <summary>
+        <para>Используйте этот метод для подготовки команд VFX для каждой камеры для этого кадра.</para>
+      </summary>
+      <param name="cam">Камера для подготовки к обработке VFX-команд.</param>
+      <param name="camXRSettings">Настройки XR, используемые графиком визуальных эффектов для подготовки камеры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.ProcessCamera(UnityEngine.Camera)">
+      <summary>
+        <para>Используйте этот метод для подготовки и обработки команд VFX для каждой камеры для этого кадра.</para>
+      </summary>
+      <param name="cam">Камера для подготовки к обработке VFX-команд.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.ProcessCameraCommand(UnityEngine.Camera,UnityEngine.Rendering.CommandBuffer)">
+      <summary>
+        <para>Используйте этот метод для обработки команд VFX для каждой камеры для текущего кадра.</para>
+      </summary>
+      <param name="cam">Камера для обработки VFX-команд.</param>
+      <param name="cmd">CommandBuffer для отправки команд (может быть нулевым).</param>
+      <param name="camXRSettings">Параметры XR, используемые графом визуальных эффектов для обработки команд камеры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.ProcessCameraCommand(UnityEngine.Camera,UnityEngine.Rendering.CommandBuffer,UnityEngine.VFX.VFXCameraXRSettings)">
+      <summary>
+        <para>Используйте этот метод для обработки команд VFX для каждой камеры для текущего кадра.</para>
+      </summary>
+      <param name="cam">Камера для обработки VFX-команд.</param>
+      <param name="cmd">CommandBuffer для отправки команд (может быть нулевым).</param>
+      <param name="camXRSettings">Параметры XR, используемые графом визуальных эффектов для обработки команд камеры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXManager.SetCameraBuffer(UnityEngine.Camera,UnityEngine.VFX.VFXCameraBufferTypes,UnityEngine.Texture,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить буфер данного типа для этой камеры. Это позволяет VFX Manager использовать буфер.</para>
+      </summary>
+      <param name="cam">Камера, для которой устанавливается буфер.</param>
+      <param name="type">Тип устанавливаемого буфера.</param>
+      <param name="buffer">Буфер для установки.</param>
+      <param name="x">Смещение X окна просмотра в буфере.</param>
+      <param name="y">Смещение Y окна просмотра в буфере.</param>
+      <param name="width">Ширина окна просмотра в буфере.</param>
+      <param name="height">Высота области просмотра в буфере.</param>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXOutputEventArgs">
+      <summary>
+        <para>Эта структура содержит информацию о выходном событии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXOutputEventArgs.eventAttribute">
+      <summary>
+        <para>Сохраняет текущий атрибут события.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXOutputEventArgs.nameId">
+      <summary>
+        <para>Сохраняет nameId контекста исходного выходного события, инициировавшего это событие.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXParticleSystemInfo">
+      <summary>
+        <para>Эта структура предоставляет информационные данные о системе частиц.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXParticleSystemInfo.aliveCount">
+      <summary>
+        <para>Количество живых частиц в системе частиц, значение меньше [[VFXParticleSystemInfo._capacity].</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXParticleSystemInfo.bounds">
+      <summary>
+        <para>Граница рендеринга этой системы частиц.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXParticleSystemInfo.capacity">
+      <summary>
+        <para>Емкость (максимальная VFXParticleSystemInfo._aliveCount) системы частиц.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXParticleSystemInfo.sleeping">
+      <summary>
+        <para>Состояние сна системы частиц.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXSpawnerCallbacks">
+      <summary>
+        <para>Этот абстрактный класс предоставляет способ реализации пользовательского блока порождения в C#.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXSpawnerCallbacks.OnPlay(UnityEngine.VFX.VFXSpawnerState,UnityEngine.VFX.VFXExpressionValues,UnityEngine.VFX.VisualEffect)">
+      <summary>
+        <para>Unity вызывает этот метод, когда родительская система запуска запускает Play.</para>
+      </summary>
+      <param name="state">Состояние спавнера.</param>
+      <param name="vfxValues">Значения выражения (входные свойства для блока спавнера).</param>
+      <param name="vfxComponent">Визуальный эффект.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXSpawnerCallbacks.OnStop(UnityEngine.VFX.VFXSpawnerState,UnityEngine.VFX.VFXExpressionValues,UnityEngine.VFX.VisualEffect)">
+      <summary>
+        <para>Unity вызывает этот метод, когда родительская система запускает команду Stop.</para>
+      </summary>
+      <param name="state">Состояние спавнера.</param>
+      <param name="vfxValues">Значения выражения (входные свойства для блока спавнера).</param>
+      <param name="vfxComponent">Визуальный эффект.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VFXSpawnerCallbacks.OnUpdate(UnityEngine.VFX.VFXSpawnerState,UnityEngine.VFX.VFXExpressionValues,UnityEngine.VFX.VisualEffect)">
+      <summary>
+        <para>Unity вызывает этот метод, когда родительская система запускает Update.</para>
+      </summary>
+      <param name="state">Состояние спавнера.</param>
+      <param name="vfxValues">Значения выражения (входные свойства для блока спавнера).</param>
+      <param name="vfxComponent">Визуальный эффект.</param>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXSpawnerLoopState">
+      <summary>
+        <para>Это перечисление описывает состояние VFXSpawner.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXSpawnerLoopState.DelayingAfterLoop">
+      <summary>
+        <para>Если VFXSpawner находится в этом состоянии, то он ожидает завершения цикла.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXSpawnerLoopState.DelayingBeforeLoop">
+      <summary>
+        <para>Если VFXSpawner находится в этом состоянии, то он ожидает перед запуском цикла.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXSpawnerLoopState.Finished">
+      <summary>
+        <para>Если VFXSpawner находится в этом состоянии, значит, он завершил работу и в настоящий момент ожидает вызова Play. Это состояние по умолчанию и окончательное.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VFXSpawnerLoopState.Looping">
+      <summary>
+        <para>Если VFXSpawner находится в этом состоянии, то в данный момент он зациклен. В этом состоянии значение VFX.VFXSpawnerState._playing равно true.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VFXSpawnerState">
+      <summary>
+        <para>Состояние порождения системы порождения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.delayAfterLoop">
+      <summary>
+        <para>Текущее время задержки, которое ожидает VFXSpawner после завершения цикла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.delayBeforeLoop">
+      <summary>
+        <para>Текущее время задержки, которое ожидает VFXSpawner перед запуском цикла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.deltaTime">
+      <summary>
+        <para>Текущая разница времени.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.loopCount">
+      <summary>
+        <para>Текущий счетчик циклов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.loopDuration">
+      <summary>
+        <para>Продолжительность состояния зацикливания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.loopIndex">
+      <summary>
+        <para>Текущий индекс цикла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.loopState">
+      <summary>
+        <para>Текущее состояние VFXSpawnerState.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.newLoop">
+      <summary>
+        <para>Это логическое значение указывает, что новый цикл только что начался.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.playing">
+      <summary>
+        <para>Текущее состояние воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.spawnCount">
+      <summary>
+        <para>Текущее количество порождений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.totalTime">
+      <summary>
+        <para>Накопленная разница времени с момента последнего события Play.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VFXSpawnerState.vfxEventAttribute">
+      <summary>
+        <para>Получает изменяемый атрибут текущего события (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VisualEffect">
+      <summary>
+        <para>Класс визуальных эффектов, который ссылается на экземпляр VFX.VisualEffectAsset в сцене.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.aliveParticleCount">
+      <summary>
+        <para>Возвращает сумму всех живых частиц в пределах визуального эффекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.culled">
+      <summary>
+        <para>Используйте это свойство, чтобы определить, виден ли этот визуальный эффект ни с какой камеры. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.initialEventID">
+      <summary>
+        <para>Идентификатор имени события по умолчанию. Чтобы получить это значение, используйте Shader.PropertyID после пробуждения VisualEffect или после вызова VFX.VisualEffect.Reinit.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.initialEventName">
+      <summary>
+        <para>Имя события по умолчанию. Unity вызывает это событие при пробуждении VisualEffect или при вызове VisualEffect.Reinit.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VisualEffect.outputEventReceived">
+      <summary>
+        <para>О выходных событиях сообщается через этот обратный вызов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.pause">
+      <summary>
+        <para>Используйте это свойство, чтобы установить состояние паузы визуального эффекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.playRate">
+      <summary>
+        <para>Множитель, который Unity применяет к дельта-времени при обновлении VisualEffect. Значение по умолчанию — 1,0f.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.resetSeedOnPlay">
+      <summary>
+        <para>Это свойство определяет, генерирует ли визуальный эффект новое начальное значение для генератора случайных чисел при каждом вызове функции VFX.VisualEffect.Play.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.startSeed">
+      <summary>
+        <para>Исходное начальное число, используемое для внутреннего генератора случайных чисел.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.VFX.VisualEffect.visualEffectAsset">
+      <summary>
+        <para>Объект VisualEffectAsset, который использует VisualEffect.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.AdvanceOneFrame">
+      <summary>
+        <para>Если VFX.VisualEffect._pause имеет значение true, этот метод обрабатывает следующее обновление визуального эффекта ровно для одного кадра с текущей разницей во времени.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.CreateVFXEventAttribute">
+      <summary>
+        <para>Используйте этот метод для создания нового атрибута VFXEventAttribute.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.#ctor">
+      <summary>
+        <para>Конструктор визуальных эффектов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetAnimationCurve(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Animation Curve.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение кривой анимации, которое вы укажете. Возвращает пустую кривую анимации, если VFX.VisualEffect.HasAnimationCurve возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetAnimationCurve(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Animation Curve.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение кривой анимации, которое вы укажете. Возвращает пустую кривую анимации, если VFX.VisualEffect.HasAnimationCurve возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetBool(System.Int32)">
+      <summary>
+        <para>Получает значение именованного логического свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для логического значения, которое вы укажете. Возвращает false, если VFX.VisualEffect.HasBool возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetBool(System.String)">
+      <summary>
+        <para>Получает значение именованного логического свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для логического значения, которое вы укажете. Возвращает false, если VFX.VisualEffect.HasBool возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetFloat(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства с плавающей запятой.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для числа с плавающей запятой, которое вы укажете. Возвращает 0.0f, если VFX.VisualEffect.HasFloat возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetFloat(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства с плавающей запятой.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для числа с плавающей запятой, которое вы укажете. Возвращает 0.0f, если VFX.VisualEffect.HasFloat возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetGradient(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Gradient.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение градиента, которое вы укажете. Возвращает пустой градиент, если VFX.VisualEffect.HasGradient возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetGradient(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Gradient.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение градиента, которое вы укажете. Возвращает пустой градиент, если VFX.VisualEffect.HasGradient возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetInt(System.Int32)">
+      <summary>
+        <para>Получить именованное открытое целое число.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение целого числа, которое вы укажете. Возвращает 0, если VFX.VisualEffect.HasInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetInt(System.String)">
+      <summary>
+        <para>Получить именованное открытое целое число.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение целого числа, которое вы укажете. Возвращает 0, если VFX.VisualEffect.HasInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetMatrix4x4(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Matrix4x4.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Matrix4x4, которое вы укажете. Возвращает Matrix4x4.identity, если VFX.VisualEffect.HasMatrix4x4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetMatrix4x4(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Matrix4x4.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Matrix4x4, которое вы укажете. Возвращает Matrix4x4.identity, если VFX.VisualEffect.HasMatrix4x4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetMesh(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Mesh.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Mesh, которое вы укажете. Возвращает null, если VFX.VisualEffect.HasMesh возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetMesh(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Mesh.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Mesh, которое вы укажете. Возвращает null, если VFX.VisualEffect.HasMesh возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetOutputEventNames(System.Collections.Generic.List`1&lt;System.String&gt;)">
+      <summary>
+        <para>Получает имя каждой системы выходных событий.</para>
+      </summary>
+      <param name="names">Список, который эта функция заполняет именами систем выходных событий.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetParticleSystemInfo(System.String)">
+      <summary>
+        <para>Получает информацию о системе частиц.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя системы частиц.</param>
+      <returns>
+        <para>Экземпляр VFXSystemInfo.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetParticleSystemInfo(System.Int32)">
+      <summary>
+        <para>Получает информацию о системе частиц.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя системы частиц.</param>
+      <returns>
+        <para>Экземпляр VFXSystemInfo.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetParticleSystemNames(System.Collections.Generic.List`1&lt;System.String&gt;)">
+      <summary>
+        <para>Получает имя каждой системы частиц.</para>
+      </summary>
+      <param name="names">Список, который эта функция заполняет именами систем частиц.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSkinnedMeshRenderer(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Skinned Mesh Renderer.</para>
+      </summary>
+      <param name="name">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="nameID">Имя свойства.</param>
+      <returns>
+        <para>Значение для Skinned Mesh Renderer, которое вы укажете. Возвращает значение null, если VFX.VisualEffect.HasSkinnedMeshRenderer возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSkinnedMeshRenderer(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Skinned Mesh Renderer.</para>
+      </summary>
+      <param name="name">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="nameID">Имя свойства.</param>
+      <returns>
+        <para>Значение для Skinned Mesh Renderer, которое вы укажете. Возвращает значение null, если VFX.VisualEffect.HasSkinnedMeshRenderer возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSpawnSystemInfo(System.String)">
+      <summary>
+        <para>Получает состояние системы спавна.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="spawnState">Модифицированный экземпляр VFXSpawnerState.</param>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSpawnSystemInfo(System.Int32,UnityEngine.VFX.VFXSpawnerState)">
+      <summary>
+        <para>Получает состояние системы спавна.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="spawnState">Модифицированный экземпляр VFXSpawnerState.</param>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSpawnSystemNames(System.Collections.Generic.List`1&lt;System.String&gt;)">
+      <summary>
+        <para>Получает имя каждой системы возрождения.</para>
+      </summary>
+      <param name="names">Список, который эта функция заполняет именами систем порождения.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetSystemNames(System.Collections.Generic.List`1&lt;System.String&gt;)">
+      <summary>
+        <para>Получает имя каждой системы.</para>
+      </summary>
+      <param name="names">Список, который эта функция заполняет именами систем.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetTexture(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение текстуры, которое вы укажете. Возвращает значение null, если VFX.VisualEffect.HasTexture возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetTexture(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение текстуры, которое вы укажете. Возвращает значение null, если VFX.VisualEffect.HasTexture возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetTextureDimension(System.Int32)">
+      <summary>
+        <para>Получает ожидаемый размер текстуры для именованной открытой текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetTextureDimension(System.String)">
+      <summary>
+        <para>Получает ожидаемый размер текстуры для именованной открытой текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetUInt(System.Int32)">
+      <summary>
+        <para>Получает значение именованного целочисленного свойства без знака.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для целого числа без знака, которое вы укажете. Возвращает 0, если VFX.VisualEffect.HasUInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetUInt(System.String)">
+      <summary>
+        <para>Получает значение именованного целочисленного свойства без знака.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для целого числа без знака, которое вы укажете. Возвращает 0, если VFX.VisualEffect.HasUInt возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector2(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Vector2.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector2, которое вы укажете. Возвращает Vector2.zero, если VFX.VisualEffect.HasVector2 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector2(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Vector2.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector2, которое вы укажете. Возвращает Vector2.zero, если VFX.VisualEffect.HasVector2 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector3(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Vector3.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector3, которое вы укажете. Возвращает Vector3.zero, если VFX.VisualEffect.HasVector3 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector3(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Vector3.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector3, которое вы укажете. Возвращает Vector3.zero, если VFX.VisualEffect.HasVector3 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector4(System.Int32)">
+      <summary>
+        <para>Получает значение именованного свойства Vector4 или Color.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector4, которое вы укажете. Возвращает Vector4.zero, если VFX.VisualEffect.HasVector4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.GetVector4(System.String)">
+      <summary>
+        <para>Получает значение именованного свойства Vector4 или Color.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение для Vector4, которое вы укажете. Возвращает Vector4.zero, если VFX.VisualEffect.HasVector4 возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasAnimationCurve(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить кривую анимации с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasAnimationCurve(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить кривую анимации с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasAnySystemAwake">
+      <summary>
+        <para>Проверяет, не активна ли какая-либо система частиц в эффекте.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если хотя бы одна из систем частиц эффекта активна, в противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasBool(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить логическое значение с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasBool(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить логическое значение с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasFloat(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить число с плавающей запятой с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasFloat(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить число с плавающей запятой с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasGradient(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить градиент с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasGradient(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить градиент с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasGraphicsBuffer(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить GraphicsBuffer с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasGraphicsBuffer(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить GraphicsBuffer с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasInt(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить целое число с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasInt(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить целое число с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasMatrix4x4(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasMatrix4x4(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Matrix4x4 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasMesh(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить сетку с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasMesh(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить сетку с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasSkinnedMeshRenderer(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Skinned Mesh Renderer с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasSkinnedMeshRenderer(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Skinned Mesh Renderer с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasSystem(System.Int32)">
+      <summary>
+        <para>Используйте эту функцию, чтобы определить, есть ли у VisualEffect система, которую вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение true, если VisualEffect использует систему, которую вы передаете. В противном случае возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasSystem(System.String)">
+      <summary>
+        <para>Используйте эту функцию, чтобы определить, есть ли у VisualEffect система, которую вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор системы. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <returns>
+        <para>Значение true, если VisualEffect использует систему, которую вы передаете. В противном случае возвращает значение false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasTexture(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить текстуру с переданным именем.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasTexture(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить текстуру с переданным именем.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasUInt(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить целое число без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasUInt(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить целое число без знака с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector2(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector2(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector2 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector3(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector3(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector3 с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector4(System.Int32)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector4 или Color с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.HasVector4(System.String)">
+      <summary>
+        <para>Проверяет, может ли визуальный эффект переопределить Vector4 или Color с именем, которое вы передаете.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Play(UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Используйте этот метод для отправки события воспроизведения в каждую систему Spawn.</para>
+      </summary>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Play">
+      <summary>
+        <para>Используйте этот метод для отправки события воспроизведения в каждую систему Spawn.</para>
+      </summary>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Reinit">
+      <summary>
+        <para>Повторно инициализировать визуальный эффект.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.ResetOverride(System.Int32)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить для переопределенного состояния значение false. Это восстанавливает значение по умолчанию, указанное для ресурса визуальных эффектов.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.ResetOverride(System.String)">
+      <summary>
+        <para>Используйте этот метод, чтобы установить для переопределенного состояния значение false. Это восстанавливает значение по умолчанию, указанное для ресурса визуальных эффектов.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SendEvent(System.Int32)">
+      <summary>
+        <para>Используйте этот метод для отправки пользовательского именованного события.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="eventNameID">Идентификатор события. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SendEvent(System.String)">
+      <summary>
+        <para>Используйте этот метод для отправки пользовательского именованного события.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="eventNameID">Идентификатор события. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SendEvent(System.Int32,UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Используйте этот метод для отправки пользовательского именованного события.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="eventNameID">Идентификатор события. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SendEvent(System.String,UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Используйте этот метод для отправки пользовательского именованного события.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="eventNameID">Идентификатор события. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetAnimationCurve(System.Int32,UnityEngine.AnimationCurve)">
+      <summary>
+        <para>Задает значение именованного свойства кривой анимации.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="c">Новая кривая анимации.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetAnimationCurve(System.String,UnityEngine.AnimationCurve)">
+      <summary>
+        <para>Задает значение именованного свойства кривой анимации.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="c">Новая кривая анимации.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetBool(System.Int32,System.Boolean)">
+      <summary>
+        <para>Задает значение именованного логического свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="b">Новое логическое значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetBool(System.String,System.Boolean)">
+      <summary>
+        <para>Задает значение именованного логического свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="b">Новое логическое значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetFloat(System.Int32,System.Single)">
+      <summary>
+        <para>Задает значение именованного свойства с плавающей запятой.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="f">Новое значение с плавающей запятой.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetFloat(System.String,System.Single)">
+      <summary>
+        <para>Задает значение именованного свойства с плавающей запятой.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="f">Новое значение с плавающей запятой.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetGradient(System.Int32,UnityEngine.Gradient)">
+      <summary>
+        <para>Задает значение именованного свойства Gradient.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="g">Новое значение градиента.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetGradient(System.String,UnityEngine.Gradient)">
+      <summary>
+        <para>Задает значение именованного свойства Gradient.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="g">Новое значение градиента.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetGraphicsBuffer(System.Int32,UnityEngine.GraphicsBuffer)">
+      <summary>
+        <para>Задает значение именованного свойства GraphicsBuffer.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="g">Новое значение GraphicsBuffer.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetGraphicsBuffer(System.String,UnityEngine.GraphicsBuffer)">
+      <summary>
+        <para>Задает значение именованного свойства GraphicsBuffer.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="g">Новое значение GraphicsBuffer.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetInt(System.Int32,System.Int32)">
+      <summary>
+        <para>Задает значение именованного целочисленного свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetInt(System.String,System.Int32)">
+      <summary>
+        <para>Задает значение именованного целочисленного свойства.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetMatrix4x4(System.Int32,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Задает значение именованного свойства Matrix4x4.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Matrix4x4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetMatrix4x4(System.String,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Задает значение именованного свойства Matrix4x4.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Matrix4x4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetMesh(System.Int32,UnityEngine.Mesh)">
+      <summary>
+        <para>Задает значение именованного свойства Mesh.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="m">Новое значение сетки.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetMesh(System.String,UnityEngine.Mesh)">
+      <summary>
+        <para>Задает значение именованного свойства Mesh.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="m">Новое значение сетки.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetSkinnedMeshRenderer(System.String,UnityEngine.SkinnedMeshRenderer)">
+      <summary>
+        <para>Задает значение именованного свойства Skinned Mesh Renderer.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="m">Новое значение Skinned Mesh Renderer.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetSkinnedMeshRenderer(System.Int32,UnityEngine.SkinnedMeshRenderer)">
+      <summary>
+        <para>Задает значение именованного свойства Skinned Mesh Renderer.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="m">Новое значение Skinned Mesh Renderer.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetTexture(System.Int32,UnityEngine.Texture)">
+      <summary>
+        <para>Задает значение именованного свойства текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="t">Новое значение текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetTexture(System.String,UnityEngine.Texture)">
+      <summary>
+        <para>Задает значение именованного свойства текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="t">Новое значение текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetUInt(System.Int32,System.UInt32)">
+      <summary>
+        <para>Задает значение именованного целочисленного свойства без знака.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение без знака.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetUInt(System.String,System.UInt32)">
+      <summary>
+        <para>Задает значение именованного целочисленного свойства без знака.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="i">Новое целочисленное значение без знака.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector2(System.Int32,UnityEngine.Vector2)">
+      <summary>
+        <para>Задает значение именованного свойства Vector2.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector2.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector2(System.String,UnityEngine.Vector2)">
+      <summary>
+        <para>Задает значение именованного свойства Vector2.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector2.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector3(System.Int32,UnityEngine.Vector3)">
+      <summary>
+        <para>Задает значение именованного свойства Vector3.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector3.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector3(System.String,UnityEngine.Vector3)">
+      <summary>
+        <para>Задает значение именованного свойства Vector3.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector3.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector4(System.Int32,UnityEngine.Vector4)">
+      <summary>
+        <para>Задает значение именованного свойства Vector4 или Color.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.SetVector4(System.String,UnityEngine.Vector4)">
+      <summary>
+        <para>Задает значение именованного свойства Vector4 или Color.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+      <param name="v">Новое значение Vector4.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Simulate(System.Single,System.UInt32)">
+      <summary>
+        <para>Используйте этот метод для ускоренной перемотки визуального эффекта путем имитации всех систем для нескольких подсчетов шагов с использованием указанного дельта-времени.</para>
+      </summary>
+      <param name="stepDeltaTime">Дельта-время в секундах, применяемое к каждому шагу симуляции.</param>
+      <param name="stepCount">Количество шагов для продолжения.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Stop">
+      <summary>
+        <para>Используйте этот метод для отправки события остановки во все системы Spawn.</para>
+      </summary>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffect.Stop(UnityEngine.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Используйте этот метод для отправки события остановки во все системы Spawn.</para>
+      </summary>
+      <param name="eventAttribute">Может иметь значение null или атрибут VFXEventAttribute. Чтобы создать VFXEventAttribute, используйте VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="T:UnityEngine.VFX.VisualEffectAsset">
+      <summary>
+        <para>Этот класс содержит граф элементов, необходимых для описания визуального эффекта. К ним относятся: система визуальных эффектов, сгенерированные шейдеры и скомпилированные данные.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffectAsset.#ctor">
+      <summary>
+        <para>Конструктор визуальных эффектов Asset.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffectAsset.GetEvents(System.Collections.Generic.List`1&lt;System.String&gt;)">
+      <summary>
+        <para>Получает имя каждого события, подключенного к системе.</para>
+      </summary>
+      <param name="names">Список, который эта функция заполняет именами систем событий.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffectAsset.GetExposedProperties(System.Collections.Generic.List`1&lt;UnityEngine.VFX.VFXExposedProperty&gt;)">
+      <summary>
+        <para>Получает имя и тип каждого доступного свойства.</para>
+      </summary>
+      <param name="exposedProperties">Список, который эта функция заполняет открытыми свойствами.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffectAsset.GetTextureDimension(System.Int32)">
+      <summary>
+        <para>Получает TextureDimension именованной открытой текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="M:UnityEngine.VFX.VisualEffectAsset.GetTextureDimension(System.String)">
+      <summary>
+        <para>Получает TextureDimension именованной открытой текстуры.</para>
+      </summary>
+      <param name="nameID">Идентификатор свойства. Это тот же идентификатор, который возвращает Shader.PropertyToID.</param>
+      <param name="name">Имя свойства.</param>
+    </member>
+    <member name="F:UnityEngine.VFX.VisualEffectAsset.PlayEventID">
+      <summary>
+        <para>Идентификатор имени по умолчанию для игрового события.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VisualEffectAsset.PlayEventName">
+      <summary>
+        <para>Имя игрового события по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VisualEffectAsset.StopEventID">
+      <summary>
+        <para>Идентификатор имени по умолчанию для события остановки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VFX.VisualEffectAsset.StopEventName">
+      <summary>
+        <para>Имя события остановки по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VFX.VisualEffectObject">
+      <summary>
+        <para>Этот класс является базовым для VFX.VisualEffectAsset и VFX.VisualEffectSubgraph.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

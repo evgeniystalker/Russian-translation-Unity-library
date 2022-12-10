@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.DirectorModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Playables.PlayableDirector">
+      <summary>
+        <para>Создает экземпляр PlayableAsset и управляет воспроизведением объектов Playable.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.duration">
+      <summary>
+        <para>Продолжительность Playable в секундах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.extrapolationMode">
+      <summary>
+        <para>Управляет увеличением времени, когда оно выходит за пределы продолжительности воспроизводимого объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.initialTime">
+      <summary>
+        <para>Время, в которое Playable должен начаться при первом воспроизведении.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Playables.PlayableDirector.paused(System.Action`1&lt;UnityEngine.Playables.PlayableDirector&gt;)">
+      <summary>
+        <para>Событие, возникающее при приостановке компонента PlayableDirector.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.playableAsset">
+      <summary>
+        <para>PlayableAsset, который используется для создания экземпляра playable для воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.playableGraph">
+      <summary>
+        <para>PlayableGraph, созданный PlayableDirector.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Playables.PlayableDirector.played(System.Action`1&lt;UnityEngine.Playables.PlayableDirector&gt;)">
+      <summary>
+        <para>Событие, возникающее при начале воспроизведения компонента PlayableDirector.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.playOnAwake">
+      <summary>
+        <para>Начнет ли воспроизводимый актив воспроизводиться, как только компонент проснется.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.state">
+      <summary>
+        <para>Текущее состояние воспроизведения компонента. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Playables.PlayableDirector.stopped(System.Action`1&lt;UnityEngine.Playables.PlayableDirector&gt;)">
+      <summary>
+        <para>Событие, возникающее при остановке компонента PlayableDirector.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.time">
+      <summary>
+        <para>Текущее время компонента. Это значение увеличивается в соответствии с PlayableDirector.timeUpdateMode во время воспроизведения. Вы также можете изменить это значение вручную.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Playables.PlayableDirector.timeUpdateMode">
+      <summary>
+        <para>Управляет увеличением времени при воспроизведении.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.ClearGenericBinding(UnityEngine.Object)">
+      <summary>
+        <para>Очищает привязку объекта ссылки.</para>
+      </summary>
+      <param name="key">Исходный объект в PlayableBinding.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.ClearReferenceValue(UnityEngine.PropertyName)">
+      <summary>
+        <para>Очищает открытое значение ссылки.</para>
+      </summary>
+      <param name="id">Идентификатор ExposedReference.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.DeferredEvaluate">
+      <summary>
+        <para>Сообщает PlayableDirector оценить его PlayableGraph при следующем обновлении.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Evaluate">
+      <summary>
+        <para>Оценивает текущий воспроизводимый Playable в текущее время.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.GetGenericBinding(UnityEngine.Object)">
+      <summary>
+        <para>Возвращает привязку к объекту ссылки.</para>
+      </summary>
+      <param name="key">Объект, который действует как ключ.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.GetReferenceValue(UnityEngine.PropertyName,System.Boolean&amp;)">
+      <summary>
+        <para>Извлекает привязку ExposedReference.</para>
+      </summary>
+      <param name="id">Идентификатор ExposedReference.</param>
+      <param name="idValid">Была ли найдена ссылка.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Pause">
+      <summary>
+        <para>Приостанавливает воспроизведение текущего воспроизводимого объекта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Play(UnityEngine.Playables.PlayableAsset,UnityEngine.Playables.DirectorWrapMode)">
+      <summary>
+        <para>Создает Playable с помощью предоставленного PlayableAsset и запускает воспроизведение.</para>
+      </summary>
+      <param name="asset">Ресурс для создания экземпляра игрового объекта.</param>
+      <param name="mode">Что делать, когда время превышает продолжительность игрового процесса.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Play(UnityEngine.Playables.PlayableAsset)">
+      <summary>
+        <para>Создает Playable с помощью предоставленного PlayableAsset и запускает воспроизведение.</para>
+      </summary>
+      <param name="asset">Ресурс для создания экземпляра игрового объекта.</param>
+      <param name="mode">Что делать, когда время превышает продолжительность игрового процесса.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Play">
+      <summary>
+        <para>Создает Playable с помощью предоставленного PlayableAsset и запускает воспроизведение.</para>
+      </summary>
+      <param name="asset">Ресурс для создания экземпляра игрового объекта.</param>
+      <param name="mode">Что делать, когда время превышает продолжительность игрового процесса.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.RebindPlayableGraphOutputs">
+      <summary>
+        <para>Перепривязывает каждый PlayableOutput PlayableGraph.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.RebuildGraph">
+      <summary>
+        <para>Отбрасывает существующий PlayableGraph и создает новый экземпляр.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Resume">
+      <summary>
+        <para>Возобновить воспроизведение приостановленного игрового объекта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.SetGenericBinding(UnityEngine.Object,UnityEngine.Object)">
+      <summary>
+        <para>Задает привязку ссылочного объекта из PlayableBinding.</para>
+      </summary>
+      <param name="key">Исходный объект в PlayableBinding.</param>
+      <param name="value">Объект для привязки к ключу.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.SetReferenceValue(UnityEngine.PropertyName,UnityEngine.Object)">
+      <summary>
+        <para>Задает значение ExposedReference.</para>
+      </summary>
+      <param name="id">Идентификатор ExposedReference.</param>
+      <param name="value">Объект для привязки для установки значения ссылки.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableDirector.Stop">
+      <summary>
+        <para>Останавливает воспроизведение текущего Playable и уничтожает соответствующий граф.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.DirectorModule">
+      <summary>
+        <para>Модуль Director реализует класс PlayableDirector.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.TilemapModule</name>
+    </assembly>
+    <member name="T:UnityEngine.CustomGridBrushAttribute">
+      <summary>
+        <para>Атрибут, чтобы определить класс как кисть-сетку и сделать его доступным в окне палитры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CustomGridBrushAttribute.defaultBrush">
+      <summary>
+        <para>Если установлено значение true, кисть заменит встроенную кисть Unity в качестве кисти по умолчанию в окне палитры.
+
+Только один класс в любой момент времени должен устанавливать для defaultBrush значение true.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CustomGridBrushAttribute.defaultName">
+      <summary>
+        <para>Имя экземпляра этой кисти по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CustomGridBrushAttribute.hideAssetInstances">
+      <summary>
+        <para>Скрыть все экземпляры этой кисти в окне палитры мозаичных фрагментов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CustomGridBrushAttribute.hideDefaultInstance">
+      <summary>
+        <para>Скрыть экземпляр кисти по умолчанию в окне палитры плиток.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CustomGridBrushAttribute.#ctor">
+      <summary>
+        <para>Атрибут, чтобы определить класс как кисть-сетку и сделать его доступным в окне палитры.</para>
+      </summary>
+      <param name="defaultBrush">Если установлено значение true, кисть заменит встроенную кисть Unity в качестве кисти по умолчанию в окне палитры.</param>
+      <param name="defaultName">Имя экземпляра этой кисти по умолчанию.</param>
+      <param name="hideAssetInstanes">Скрыть все экземпляры этой кисти в окне палитры мозаичных фрагментов.</param>
+      <param name="hideDefaultInstance">Скрыть экземпляр кисти по умолчанию в окне палитры плиток.</param>
+      <param name="hideAssetInstances">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CustomGridBrushAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.String)">
+      <summary>
+        <para>Атрибут, чтобы определить класс как кисть-сетку и сделать его доступным в окне палитры.</para>
+      </summary>
+      <param name="defaultBrush">Если установлено значение true, кисть заменит встроенную кисть Unity в качестве кисти по умолчанию в окне палитры.</param>
+      <param name="defaultName">Имя экземпляра этой кисти по умолчанию.</param>
+      <param name="hideAssetInstanes">Скрыть все экземпляры этой кисти в окне палитры мозаичных фрагментов.</param>
+      <param name="hideDefaultInstance">Скрыть экземпляр кисти по умолчанию в окне палитры плиток.</param>
+      <param name="hideAssetInstances">
+      </param>
+    </member>
+    <member name="T:UnityEngine.GridBrushBase">
+      <summary>
+        <para>Базовый класс для создания данных в сетке с такими инструментами рисования сетки, как закрашивание, стирание, выделение, выделение и заливка.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.BoxErase(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt)">
+      <summary>
+        <para>Стирает данные в сетке в заданных пределах.</para>
+      </summary>
+      <param name="gridLayout">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции стирания. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Границы, из которых удаляются данные.</param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.BoxFill(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt)">
+      <summary>
+        <para>Коробка заполняет плитки и игровые объекты в заданных границах в пределах выбранных слоев.</para>
+      </summary>
+      <param name="gridLayout">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции заполнения коробки. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Границы для заполнения данных.</param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.ChangeZPosition(System.Int32)">
+      <summary>
+        <para>Изменяет положение Z GridBrushBase.</para>
+      </summary>
+      <param name="change">Измените положение Z GridBrushBase на это значение.</param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Erase(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Стирает данные в сетке в заданных пределах.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции стирания. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Координаты ячейки, из которой нужно стереть данные.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Flip(UnityEngine.GridBrushBase/FlipAxis,UnityEngine.GridLayout/CellLayout)">
+      <summary>
+        <para>Переворачивает кисть сетки в заданной оси FlipAxis.</para>
+      </summary>
+      <param name="flip">Ось для переключения.</param>
+      <param name="layout">CellLayout для листания.</param>
+    </member>
+    <member name="T:UnityEngine.GridBrushBase.FlipAxis">
+      <summary>
+        <para>Ось для отражения плиток в GridBrushBase.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.FlipAxis.X">
+      <summary>
+        <para>Отразите кисть по оси X.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.FlipAxis.Y">
+      <summary>
+        <para>Отразите кисть по оси Y.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.FloodFill(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Flood заполняет данными сетку с заданными начальными координатами ячейки.</para>
+      </summary>
+      <param name="gridLayout">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цели операции заливки. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Начальная позиция заливки.</param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Move(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt,UnityEngine.BoundsInt)">
+      <summary>
+        <para>Перемещение вызывается, когда пользователь перемещает область, ранее выделенную с помощью рамки выделения.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции перемещения. По умолчанию текущий выбранный GameObject.</param>
+      <param name="from">Исходные границы перемещения.</param>
+      <param name="to">Целевые границы перемещения.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.MoveEnd(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt)">
+      <summary>
+        <para>MoveEnd вызывается, когда пользователь завершил перемещение области, ранее выделенной с помощью рамки выделения.</para>
+      </summary>
+      <param name="position">Слои, затронутые операцией перемещения.</param>
+      <param name="brushTarget">Цель операции перемещения. По умолчанию текущий выбранный GameObject.</param>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.MoveStart(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt)">
+      <summary>
+        <para>MoveEnd вызывается, когда пользователь начинает перемещать область, ранее выделенную с помощью рамки выделения.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции перемещения. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Позиция начала операции перемещения.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Paint(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Красит данные в сетку в пределах заданных границ.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции покраски. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Координаты ячейки для рисования данных.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Pick(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Выбирает данные из сетки по заданным координатам ячеек.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цель операции покраски. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Координаты ячеек, из которых нужно рисовать данные.</param>
+      <param name="pivot">Шарнир кисти.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.ResetZPosition">
+      <summary>
+        <para>Сбрасывает изменения положения Z GridBrushBase.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Rotate(UnityEngine.GridBrushBase/RotationDirection,UnityEngine.GridLayout/CellLayout)">
+      <summary>
+        <para>Поворачивает все плитки на сетке с заданным направлением вращения.</para>
+      </summary>
+      <param name="direction">Направление вращения.</param>
+      <param name="layout">CellLayout для вращения.</param>
+    </member>
+    <member name="T:UnityEngine.GridBrushBase.RotationDirection">
+      <summary>
+        <para>Поверните плитки в GridBrushBase в этом направлении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.RotationDirection.Clockwise">
+      <summary>
+        <para>Поворачивает плитки по часовой стрелке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.RotationDirection.CounterClockwise">
+      <summary>
+        <para>Поворачивает плитки против часовой стрелки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GridBrushBase.Select(UnityEngine.GridLayout,UnityEngine.GameObject,UnityEngine.BoundsInt)">
+      <summary>
+        <para>Выберите область сетки.</para>
+      </summary>
+      <param name="grid">Сетка, используемая для макета.</param>
+      <param name="brushTarget">Цели покрасочных работ. По умолчанию текущий выбранный GameObject.</param>
+      <param name="position">Область для выбора.</param>
+      <param name="gridLayout">
+      </param>
+    </member>
+    <member name="T:UnityEngine.GridBrushBase.Tool">
+      <summary>
+        <para>Режим инструмента для GridBrushBase.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Box">
+      <summary>
+        <para>Заполнение поля.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Erase">
+      <summary>
+        <para>Стереть.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.FloodFill">
+      <summary>
+        <para>Заливка.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Move">
+      <summary>
+        <para>Переместить.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Paint">
+      <summary>
+        <para>Краска.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Pick">
+      <summary>
+        <para>Выберите.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridBrushBase.Tool.Select">
+      <summary>
+        <para>Выберите.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.ITilemap">
+      <summary>
+        <para>Класс передается плиткам при запросе информации из плиток.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.ITilemap.cellBounds">
+      <summary>
+        <para>Возвращает границы Tilemap в размере ячейки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.ITilemap.localBounds">
+      <summary>
+        <para>Возвращает границы Tilemap в размере локального пространства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.ITilemap.origin">
+      <summary>
+        <para>Происхождение Tilemap в позиции ячейки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.ITilemap.size">
+      <summary>
+        <para>Размер Tilemap в ячейках.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetColor(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает цвет Tile по координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Цвет плитки по координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetComponent">
+      <summary>
+        <para>Возвращает компонент типа T, если он прикреплен к GameObject тайловой карты, и null, если нет.</para>
+      </summary>
+      <returns>
+        <para>Извлекаемый компонент типа T.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetSprite(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает спрайт, используемый в плитке, по координатам XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Спрайт в координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает Tile по заданным координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Плитка размещена в ячейке.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает Tile типа T по заданным координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Плитка типа T помещается в ячейку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetTileFlags(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает флаги плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>TileFlags из плитки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.GetTransformMatrix(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает матрицу преобразования Tile по координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Матрица преобразования.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.ITilemap.RefreshTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Обновляет плитку по заданным координатам XYZ ячейки в :Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tile">
+      <summary>
+        <para>Класс для тайла по умолчанию в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tile.color">
+      <summary>
+        <para>Цвет плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tile.flags">
+      <summary>
+        <para>TileFlags плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tile.gameObject">
+      <summary>
+        <para>GameObject тайла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tile.sprite">
+      <summary>
+        <para>Спрайт для рендеринга в плитке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tile.transform">
+      <summary>
+        <para>Matrix4x4|Преобразование матрицы тайла.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tile.ColliderType">
+      <summary>
+        <para>Перечисление для определения формы коллайдера, созданной для этого тайла с помощью TilemapCollider2D.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tile.ColliderType.Grid">
+      <summary>
+        <para>Контур границы компоновки сетки используется TilemapCollider2D в качестве формы коллайдера для TilemapCollider2D.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tile.ColliderType.None">
+      <summary>
+        <para>TilemapCollider2D не создает формы коллайдера для плитки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tile.ColliderType.Sprite">
+      <summary>
+        <para>Контур спрайта используется TilemapCollider2D в качестве формы коллайдера для TilemapCollider2D.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tile.GetTileData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileData&amp;)">
+      <summary>
+        <para>Извлекает данные рендеринга плитки для плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tilemap">Tilemap, на котором присутствует тайл.</param>
+      <param name="tileData">Данные для рендеринга тайла. Это заполнено Tile, Tile.color и Tile.transform.</param>
+      <returns>
+        <para>Был ли звонок успешным. Это возвращает true для Tile.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TileAnimationData">
+      <summary>
+        <para>Структура для необходимых данных для анимации плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileAnimationData.animatedSprites">
+      <summary>
+        <para>Массив элементов, упорядоченных по появлению в анимации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileAnimationData.animationSpeed">
+      <summary>
+        <para>Скорость анимации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileAnimationData.animationStartTime">
+      <summary>
+        <para>Время начала анимации. Анимация начнется с этого смещения времени.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TileBase">
+      <summary>
+        <para>Базовый класс для тайла в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.TileBase.GetTileAnimationData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileAnimationData&amp;)">
+      <summary>
+        <para>Извлекает любые данные анимации плитки из плитки со сценарием.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tilemap">Tilemap, на котором присутствует тайл.</param>
+      <param name="tileAnimationData">Данные для запуска анимации на плитке.</param>
+      <returns>
+        <para>Был ли вызов успешным.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.TileBase.GetTileData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileData&amp;)">
+      <summary>
+        <para>Извлекает любые данные рендеринга плитки из плитки со сценарием.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tilemap">Tilemap, на котором присутствует тайл.</param>
+      <param name="tileData">Данные для рендеринга плитки.</param>
+      <returns>
+        <para>Был ли вызов успешным.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.TileBase.RefreshTile(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap)">
+      <summary>
+        <para>Этот метод вызывается при обновлении плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tilemap">Tilemap, на котором присутствует тайл.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.TileBase.StartUp(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.GameObject)">
+      <summary>
+        <para>StartUp вызывается в первом кадре работающей сцены.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tilemap">Tilemap, на котором присутствует тайл.</param>
+      <param name="go">GameObject, созданный для плитки.</param>
+      <returns>
+        <para>Был ли вызов успешным.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TileChangeData">
+      <summary>
+        <para>Представляет информацию о положении и плитке, которую необходимо изменить в карте листов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.color">
+      <summary>
+        <para>Цвет для плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.position">
+      <summary>
+        <para>Позиция для изменения свойств плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.tile">
+      <summary>
+        <para>Плитка для установки на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.transform">
+      <summary>
+        <para>Матрица преобразования для установки плитки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TileData">
+      <summary>
+        <para>Структура для необходимых данных для рендеринга плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileData.color">
+      <summary>
+        <para>Цвет плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileData.flags">
+      <summary>
+        <para>TileFlags плитки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileData.gameObject">
+      <summary>
+        <para>GameObject тайла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileData.sprite">
+      <summary>
+        <para>Спрайт для рендеринга в плитке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileData.transform">
+      <summary>
+        <para>Matrix4x4|Преобразование матрицы тайла.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TileFlags">
+      <summary>
+        <para>Флаги, управляющие поведением TileBase.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.InstantiateGameObjectRuntimeOnly">
+      <summary>
+        <para>TileBase не создает связанный с ним объект GameObject в режиме редактирования и создает его только в режиме воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.KeepGameObjectRuntimeOnly">
+      <summary>
+        <para>Сохраняет связанный с TileBase GameObject в режиме воспроизведения при замене другим TileBase или стирании</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.LockAll">
+      <summary>
+        <para>Все флаги блокировки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.LockColor">
+      <summary>
+        <para>TileBase блокирует любой цвет, заданный кистями или пользователем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.LockTransform">
+      <summary>
+        <para>TileBase блокирует любую матрицу преобразования, заданную кистями или пользователем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TileFlags.None">
+      <summary>
+        <para>TileFlags не установлены.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tilemap">
+      <summary>
+        <para>Tilemap хранит спрайты в макете, отмеченном компонентом Grid.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.animationFrameRate">
+      <summary>
+        <para>Частота кадров для всех анимаций Tile в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.cellBounds">
+      <summary>
+        <para>Возвращает границы Tilemap в размере ячейки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.color">
+      <summary>
+        <para>Цвет слоя Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.editorPreviewOrigin">
+      <summary>
+        <para>Происхождение Tilemap в позиции ячейки, включая плитки предварительного просмотра редактора.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.editorPreviewSize">
+      <summary>
+        <para>Размер Tilemap в ячейках, включая тайлы предварительного просмотра редактора.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.layoutGrid">
+      <summary>
+        <para>Получает сетку, связанную с этой картой листов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.layoutGrid">
+      <summary>
+        <para>Получает сетку, связанную с этой картой листов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.localBounds">
+      <summary>
+        <para>Возвращает границы Tilemap в размере локального пространства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.orientation">
+      <summary>
+        <para>Ориентация плиток на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.orientationMatrix">
+      <summary>
+        <para>Матрица ориентации тайлов на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.origin">
+      <summary>
+        <para>Происхождение Tilemap в позиции ячейки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.size">
+      <summary>
+        <para>Размер Tilemap в ячейках.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.tileAnchor">
+      <summary>
+        <para>Получает точку привязки плиток в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Tilemaps.Tilemap.tilemapTileChanged(System.Action`2&lt;UnityEngine.Tilemaps.Tilemap,UnityEngine.Tilemaps.Tilemap/SyncTile[]&gt;)">
+      <summary>
+        <para>Обратный вызов, когда тайлы на Tilemap изменились.</para>
+      </summary>
+      <param name="value">Обратный вызов, установленный пользователем для уведомления об изменении тайлов на Tilemap.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.AddTileFlags(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileFlags)">
+      <summary>
+        <para>Добавляет TileFlags на Tile в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="flags">TileFlags для добавления (с побитовым или) к флагам, предоставленным Tile.TileBase.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.BoxFill(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileBase,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Заполняет ли поле заданным тайлом на Tilemap. Начинается с заданных координат и заполняет пределы от начала до конца (включительно).</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tile">Плитка для размещения.</param>
+      <param name="startX">Минимальный предел координаты X для заполнения.</param>
+      <param name="startY">Минимальный предел координаты Y для заполнения.</param>
+      <param name="endX">Максимальный предел координаты X для заполнения.</param>
+      <param name="endY">Максимальный предел координаты Y для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.ClearAllEditorPreviewTiles">
+      <summary>
+        <para>Очищает все плитки предварительного просмотра редактора, размещенные в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.ClearAllTiles">
+      <summary>
+        <para>Очищает все плитки, размещенные на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.CompressBounds">
+      <summary>
+        <para>Сжимает исходную точку и размер Tilemap до границ, в которых существуют плитки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.ContainsTile(UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Возвращает true, если Tilemap содержит данный тайл. Возвращает false, если нет.</para>
+      </summary>
+      <param name="tileAsset">Плитка для проверки.</param>
+      <returns>
+        <para>Содержит ли Tilemap тайл.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.DeleteCells(UnityEngine.Vector3Int,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Удаляет ячейки из границ Tilemap.</para>
+      </summary>
+      <param name="position">Целевая позиция для удаления.</param>
+      <param name="deleteCells">Количество столбцов, строк и слоев ячеек для удаления.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.DeleteCells(UnityEngine.Vector3Int,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Удаляет ячейки из границ Tilemap.</para>
+      </summary>
+      <param name="position">Целевая позиция для удаления.</param>
+      <param name="numColumns">Количество удаляемых столбцов.</param>
+      <param name="numRows">Количество строк для удаления.</param>
+      <param name="numLayers">Количество слоев ячеек для удаления.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.EditorPreviewBoxFill(UnityEngine.Vector3Int,UnityEngine.Object,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Предварительный просмотр окна в редакторе заполняется данным тайлом на Tilemap. Начинается с заданных координат и заполняет пределы от начала до конца (включительно).</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tile">Плитка для размещения.</param>
+      <param name="startX">Начальный предел координат X для заполнения.</param>
+      <param name="startY">Начальный предел координаты Y для заполнения.</param>
+      <param name="endX">Конечный предел координаты X для заполнения.</param>
+      <param name="endY">Конечный предел координаты Y для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.EditorPreviewFloodFill(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Предварительный просмотр заливки в редакторе с заданной плиткой для размещения. на Tilemap, начиная с заданных координат.</para>
+      </summary>
+      <param name="position">Начальная позиция заливки на Tilemap.</param>
+      <param name="tile">TileBase для размещения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.FloodFill(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Заполняет ли флуд заданной плиткой для размещения. на Tilemap, начиная с заданных координат.</para>
+      </summary>
+      <param name="position">Начальная позиция заливки на Tilemap.</param>
+      <param name="tile">Плитка для размещения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationFrame(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Извлекает текущий кадр анимации для плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Возвращает текущий кадр анимации. Возвращает -1, если для плитки в данной позиции нет анимации.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationFrameCount(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает количество кадров анимации для Tile в заданной позиции.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Возвращает количество кадров анимации. Возвращает 0, если для плитки в данной позиции нет анимации.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationTime(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает текущее время анимации для плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Возвращает время анимации в секундах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetCellCenterLocal(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получить координату логического центра ячейки Grid в локальном пространстве.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Центр ячейки преобразован в локальные пространственные координаты.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetCellCenterWorld(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получить координату логического центра ячейки Grid в мировом пространстве.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Центр ячейки преобразован в координаты мирового пространства.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetColliderType(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает тип коллайдера Tile по координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Тип коллайдера тайла по координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetColor(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает цвет плитки по координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Цвет плитки по координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewColor(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает цвет плитки предварительного просмотра редактора с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Цвет плитки предварительного просмотра редактора по координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewSprite(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает спрайт, используемый в плитке предварительного просмотра редактора, с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <returns>
+        <para>Спрайт в координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает плитку предварительного просмотра редактора с заданными координатами XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <returns>
+        <para>Плитка предварительного просмотра редактора размещена в ячейке.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает плитку предварительного просмотра редактора с заданными координатами XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <returns>
+        <para>Плитка предварительного просмотра редактора размещена в ячейке.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewTileFlags(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает TileFlags плитки предварительного просмотра редактора в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>TileFlags из Tile предварительного просмотра редактора.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetEditorPreviewTransformMatrix(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает матрицу преобразования плитки предварительного просмотра редактора с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <returns>
+        <para>Матрица преобразования.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetInstantiatedObject(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает экземпляр GameObject, созданный Tile, с учетом XYZ-координат ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>GameObject, созданный плиткой в ​​позиции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetObjectToInstantiate(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает GameObject, экземпляр которого будет создан плиткой с заданными координатами XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на Tilemap.</param>
+      <returns>
+        <para>Возвращает GameObject для создания экземпляра Tile в позиции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetSprite(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает спрайт, используемый в плитке, по координатам XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Спрайт в координате XYZ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает Tile по заданным координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Tilemaps.TileBase помещается в ячейку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает Tile типа T по заданным координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Tilemaps.TileBase|Тайл типа T, помещенный в ячейку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTileFlags(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает TileFlags плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>TileFlags из плитки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesBlock(UnityEngine.BoundsInt)">
+      <summary>
+        <para>Извлекает массив плиток с заданными границами.</para>
+      </summary>
+      <param name="bounds">Границы для извлечения.</param>
+      <returns>
+        <para>Массив тайлов в заданных границах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesBlockNonAlloc(UnityEngine.BoundsInt,UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Извлекает массив плиток с заданными границами.</para>
+      </summary>
+      <param name="bounds">Границы для извлечения.</param>
+      <param name="tiles">Массив плиток, содержащий плитки в заданных границах.</param>
+      <returns>
+        <para>Возвращает количество полученных плиток, включая пустые записи.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesRangeCount(UnityEngine.Vector3Int,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Извлекает количество плиток в заданном диапазоне, включая ячейки как в начальной, так и в конечной позициях. Этот метод начинается с заданной начальной позиции и выполняет итерацию по всем доступным позициям Z, затем выполняет итерацию по позициям X и Y, пока не достигнет конечной позиции.</para>
+      </summary>
+      <param name="startPosition">Начальная позиция диапазона, из которого извлекаются тайлы.</param>
+      <param name="endPosition">Конечная позиция диапазона, из которого извлекаются плитки.</param>
+      <returns>
+        <para>Возвращает количество плиток в заданном диапазоне.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesRangeNonAlloc(UnityEngine.Vector3Int,UnityEngine.Vector3Int,UnityEngine.Vector3Int[],UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Извлекает массив плиток в заданном диапазоне, включая ячейки как в начальной, так и в конечной позициях. Этот метод начинается с заданной начальной позиции и выполняет итерацию по всем доступным позициям Z, затем выполняет итерацию по позициям X и Y, пока не достигнет конечной позиции.</para>
+      </summary>
+      <param name="startPosition">Начальная позиция диапазона, из которого извлекаются тайлы.</param>
+      <param name="endPosition">Конечная позиция диапазона, из которого извлекаются плитки.</param>
+      <param name="positions">Позиции тайлов в заданном диапазоне.</param>
+      <param name="tiles">Плитки в заданном диапазоне.</param>
+      <returns>
+        <para>Возвращает количество полученных позиций и тайлов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTransformMatrix(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получает матрицу преобразования Tile по координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <returns>
+        <para>Матрица преобразования.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetUsedSpritesCount">
+      <summary>
+        <para>Получает общее количество различных спрайтов, используемых в Tilemap.</para>
+      </summary>
+      <returns>
+        <para>Общее количество различных спрайтов, используемых в Tilemap.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetUsedSpritesNonAlloc(UnityEngine.Sprite[])">
+      <summary>
+        <para>Заполняет заданный массив общим количеством различных спрайтов, используемых в Tilemap, и возвращает количество заполненных спрайтов.</para>
+      </summary>
+      <param name="usedSprites">Заполняемый массив.</param>
+      <returns>
+        <para>Количество заполненных спрайтов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetUsedTilesCount">
+      <summary>
+        <para>Получает общее количество различных плиток, используемых в Tilemap.</para>
+      </summary>
+      <returns>
+        <para>Общее количество различных плиток, используемых в Tilemap.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetUsedTilesNonAlloc(UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Заполняет заданный массив общим количеством различных плиток, используемых в Tilemap, и возвращает количество заполненных плиток.</para>
+      </summary>
+      <param name="usedTiles">Заполняемый массив.</param>
+      <returns>
+        <para>Количество заполненных тайлов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.HasEditorPreviewTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Возвращает, есть ли плитка предварительного просмотра редактора в этой позиции.</para>
+      </summary>
+      <param name="position">Позиция для проверки.</param>
+      <returns>
+        <para>Возвращает true, если в этой позиции есть плитка предварительного просмотра редактора. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.HasTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Возвращает, есть ли плитка в этой позиции.</para>
+      </summary>
+      <param name="position">Позиция для проверки.</param>
+      <returns>
+        <para>Возвращает true, если в позиции есть плитка. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.InsertCells(UnityEngine.Vector3Int,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Вставляет ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Целевая позиция для вставки.</param>
+      <param name="insertCells">Количество столбцов, строк или слоев ячеек для вставки.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.InsertCells(UnityEngine.Vector3Int,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Вставляет ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Целевая позиция для вставки.</param>
+      <param name="numColumns">Количество столбцов для вставки.</param>
+      <param name="numRows">Количество вставляемых строк.</param>
+      <param name="numLayers">Количество слоев ячеек для вставки.</param>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tilemap.Orientation">
+      <summary>
+        <para>Определяет ориентацию тайлов на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.Custom">
+      <summary>
+        <para>Используйте пользовательскую ориентацию для всех плиток на карте плиток.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.XY">
+      <summary>
+        <para>Ориентирует тайлы в плоскости XY.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.XZ">
+      <summary>
+        <para>Ориентирует тайлы в плоскости XZ.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.YX">
+      <summary>
+        <para>Ориентирует тайлы в плоскости YX.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.YZ">
+      <summary>
+        <para>Ориентирует тайлы в плоскости YZ.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.ZX">
+      <summary>
+        <para>Ориентирует тайлы в плоскости ZX.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.Tilemap.Orientation.ZY">
+      <summary>
+        <para>Ориентирует тайлы в плоскости ZY.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.RefreshAllTiles">
+      <summary>
+        <para>Обновляет все плитки в Tilemap. Tilemap извлечет данные рендеринга, данные анимации и другие данные для всех плиток и обновит все соответствующие компоненты.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.RefreshTile(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Обновляет тайл по заданным координатам XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.RemoveTileFlags(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileFlags)">
+      <summary>
+        <para>Удаляет TileFlags на Tile в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="flags">TileFlags для удаления из плитки.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.ResizeBounds">
+      <summary>
+        <para>Изменяет размеры плиток в Tilemap до границ, определяемых исходной точкой и размером.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetAnimationFrame(UnityEngine.Vector3Int,System.Int32)">
+      <summary>
+        <para>Устанавливает текущий кадр анимации для плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <param name="frame">Кадр анимации для установки.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetAnimationTime(UnityEngine.Vector3Int,System.Single)">
+      <summary>
+        <para>Устанавливает время анимации для плитки в заданной позиции.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <param name="time">Время выполнения анимации в секундах.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetColliderType(UnityEngine.Vector3Int,UnityEngine.Tilemaps.Tile/ColliderType)">
+      <summary>
+        <para>Задает тип коллайдера плитки с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="colliderType">Тип коллайдера для установки плитки в координате XYZ.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetColor(UnityEngine.Vector3Int,UnityEngine.Color)">
+      <summary>
+        <para>Задает цвет тайла с учетом координат XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="color">Цвет для установки плитки в координате XYZ.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetEditorPreviewColor(UnityEngine.Vector3Int,UnityEngine.Color)">
+      <summary>
+        <para>Задает цвет плитки предварительного просмотра редактора с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <param name="color">Цвет для установки плитки предварительного просмотра редактора в координате XYZ.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetEditorPreviewTile(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Устанавливает плитку предварительного просмотра редактора с учетом координат XYZ ячейки в карте плиток.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <param name="tile">Предварительный просмотр редактора Tile для размещения ячейки.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetEditorPreviewTransformMatrix(UnityEngine.Vector3Int,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Задает матрицу преобразования плитки предварительного просмотра редактора с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки предварительного просмотра редактора на карте плиток.</param>
+      <param name="transform">Матрица преобразования.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTile(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Устанавливает тайл в заданных координатах XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="tile">Плитка, которую нужно поместить в ячейку.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTile(UnityEngine.Tilemaps.TileChangeData,System.Boolean)">
+      <summary>
+        <para>Устанавливает Tile с дополнительными свойствами в заданных координатах XYZ ячейки в Tilemap.</para>
+      </summary>
+      <param name="tileChangeData">Плитка с дополнительными свойствами для размещения в ячейке.</param>
+      <param name="ignoreLockFlags">Следует ли игнорировать флаги блокировки, установленные в TileFlags плитки, при применении изменений цвета и преобразования из TileChangeData.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTileFlags(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileFlags)">
+      <summary>
+        <para>Устанавливает TileFlags на Tile в заданной позиции.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="flags">TileFlags для добавления на плитку.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTiles(UnityEngine.Vector3Int[],UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Задает массив плиток с заданными координатами XYZ соответствующих ячеек в карте плиток.</para>
+      </summary>
+      <param name="positionArray">Массив позиций тайлов на Tilemap.</param>
+      <param name="tileArray">Массив тайлов для размещения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTiles(UnityEngine.Tilemaps.TileChangeData[],System.Boolean)">
+      <summary>
+        <para>Устанавливает массив тайлов с дополнительными свойствами в заданных координатах XYZ соответствующих ячеек в Tilemap. Цвет и преобразование TileChangeData будут иметь приоритет над значениями из Tile.</para>
+      </summary>
+      <param name="tileChangeDataArray">Массив плиток с дополнительными свойствами для размещения.</param>
+      <param name="ignoreLockFlags">Следует ли игнорировать флаги блокировки, установленные в TileFlags плитки, при применении изменений цвета и преобразования из TileChangeData.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTilesBlock(UnityEngine.BoundsInt,UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Заполняет границы массивом тайлов.</para>
+      </summary>
+      <param name="position">Границы для заполнения.</param>
+      <param name="tileArray">Массив тайлов для размещения.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTransformMatrix(UnityEngine.Vector3Int,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Задает матрицу преобразования плитки с учетом координат XYZ ячейки в карте плитки.</para>
+      </summary>
+      <param name="position">Положение плитки на карте плиток.</param>
+      <param name="transform">Матрица преобразования.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SwapTile(UnityEngine.Tilemaps.TileBase,UnityEngine.Tilemaps.TileBase)">
+      <summary>
+        <para>Заменяет все существующие плитки changeTile на newTile и обновляет все замененные плитки.</para>
+      </summary>
+      <param name="changeTile">Плитка для замены.</param>
+      <param name="newTile">Плитка для переключения.</param>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tilemap.SyncTile">
+      <summary>
+        <para>Структура для хранения изменений в Tile, когда он был изменен на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.position">
+      <summary>
+        <para>Позиция плитки на Tilemap, которая изменилась.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.tile">
+      <summary>
+        <para>Плитка в заданной позиции на Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.tileData">
+      <summary>
+        <para>Свойства плитки в данной позиции на карте плиток.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TilemapCollider2D">
+      <summary>
+        <para>Коллайдер для 2D-физики, представляющей формы, определенные соответствующей Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapCollider2D.extrusionFactor">
+      <summary>
+        <para>Количество коллайдеров формирует каждый тайл, который выдавливается для облегчения компоновки с соседними тайлами. Это устраняет мелкие промежутки между тайлами при использовании CompositeCollider2D. Это рассчитывается в единицах Unity в пределах мирового пространства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapCollider2D.hasTilemapChanges">
+      <summary>
+        <para>Возвращает true, если есть изменения Tilemap, которые требуют обработки для обновлений Collider. В противном случае возвращает false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapCollider2D.maximumTileChangeCount">
+      <summary>
+        <para>Максимальное количество изменений плитки, накопленное перед выполнением полной перестройки коллайдера вместо добавочной перестройки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.TilemapCollider2D.ProcessTilemapChanges">
+      <summary>
+        <para>Немедленно обрабатывает изменения Tilemap для обновлений Collider, если таковые имеются.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TilemapRenderer">
+      <summary>
+        <para>Визуализатор карты тайлов используется для рендеринга карты тайлов, отмеченной компонентом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.chunkCullingBounds">
+      <summary>
+        <para>Границы, используемые для отбраковки фрагментов Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.chunkSize">
+      <summary>
+        <para>Размер в количестве плиток каждого фрагмента, созданного TilemapRenderer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.detectChunkCullingBounds">
+      <summary>
+        <para>Возвращает значение, указывающее, определяет ли TilemapRenderer автоматически границы для расширения отбраковки фрагментов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.maskInteraction">
+      <summary>
+        <para>Указывает, как Tilemap взаимодействует с масками.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.maxChunkCount">
+      <summary>
+        <para>Максимальное количество чанков, кэшируемых TilemapRenderer в памяти.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.maxFrameAge">
+      <summary>
+        <para>Максимальное количество кадров, в течение которых TilemapRenderer хранит неиспользуемые фрагменты в памяти.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.mode">
+      <summary>
+        <para>Режим, в котором TileMapRenderer выполняет пакетную обработку для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TilemapRenderer.sortOrder">
+      <summary>
+        <para>Активный порядок сортировки для TilemapRenderer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TilemapRenderer.DetectChunkCullingBounds">
+      <summary>
+        <para>Возвращает значение, указывающее, определяет ли TilemapRenderer автоматически границы для расширения отбраковки фрагментов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.DetectChunkCullingBounds.Auto">
+      <summary>
+        <para>TilemapRenderer автоматически определяет границы расширения, проверяя спрайты, используемые в Tilemap.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.DetectChunkCullingBounds.Manual">
+      <summary>
+        <para>Пользователь добавляет значения, используемые для расширения границ отбраковки фрагментов Tilemap.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TilemapRenderer.Mode">
+      <summary>
+        <para>Определяет, как TilemapRenderer должен пакетировать для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.Mode.Chunk">
+      <summary>
+        <para>Группирует каждый спрайт из Tilemap в сгруппированные фрагменты для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.Mode.Individual">
+      <summary>
+        <para>Отправляет каждый спрайт из Tilemap для индивидуального рендеринга.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.TilemapRenderer.SortOrder">
+      <summary>
+        <para>Порядок сортировки всех плиток, визуализируемых TilemapRenderer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.SortOrder.BottomLeft">
+      <summary>
+        <para>Сортирует плитки для рендеринга, начиная с плитки с наименьшими позициями ячеек X и Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.SortOrder.BottomRight">
+      <summary>
+        <para>Сортирует плитки для рендеринга, начиная с плитки с наибольшим X и наименьшим положением ячеек Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.SortOrder.TopLeft">
+      <summary>
+        <para>Сортирует плитки для рендеринга, начиная с плитки с наименьшим X и наибольшим положением ячеек Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Tilemaps.TilemapRenderer.SortOrder.TopRight">
+      <summary>
+        <para>Сортирует плитки для рендеринга, начиная с плитки с наибольшим X и наименьшим положением ячеек Y.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.TilemapModule">
+      <summary>
+        <para>Модуль Tilemap реализует класс Tilemap.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

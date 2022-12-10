@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.SpriteShapeModule</name>
+    </assembly>
+    <member name="T:UnityEngine.U2D.AngleRangeInfo">
+      <summary>
+        <para>Описывает информацию о ребре и способах его тесселяции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.AngleRangeInfo.end">
+      <summary>
+        <para>Максимальный угол, который следует учитывать в этом диапазоне.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.AngleRangeInfo.order">
+      <summary>
+        <para>Порядок рендеринга ребер, принадлежащих этому диапазону.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.AngleRangeInfo.sprites">
+      <summary>
+        <para>Список спрайтов, связанных с этим диапазоном.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.AngleRangeInfo.start">
+      <summary>
+        <para>Минимальный угол, который следует учитывать в этом диапазоне.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.U2D.ShapeControlPoint">
+      <summary>
+        <para>Данные, описывающие важные точки фигуры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.ShapeControlPoint.leftTangent">
+      <summary>
+        <para>Положение левой касательной в локальном пространстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.ShapeControlPoint.mode">
+      <summary>
+        <para>Различные режимы касательных ручек. Они могут быть непрерывными или прерывистыми.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.ShapeControlPoint.position">
+      <summary>
+        <para>Положение этой точки в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.ShapeControlPoint.rightTangent">
+      <summary>
+        <para>Положение правой точки касания в локальном пространстве.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.U2D.SpriteShapeMetaData">
+      <summary>
+        <para>Дополнительные данные о контрольной точке фигуры. Это полезно во время тесселяции фигуры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeMetaData.bevelCutoff">
+      <summary>
+        <para>Порог угла, который определяет, должен ли он быть мозаичным как кривая или угол.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeMetaData.bevelSize">
+      <summary>
+        <para>Радиус кривой для тесселяции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeMetaData.corner">
+      <summary>
+        <para>True указывает, что эта точка должна быть мозаичной как угол или как непрерывная линия в противном случае.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeMetaData.height">
+      <summary>
+        <para>Высота мозаичного ребра.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeMetaData.spriteIndex">
+      <summary>
+        <para>Спрайт, который будет использоваться для определенного края.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.U2D.SpriteShapeParameters">
+      <summary>
+        <para>Входные параметры для тесселятора SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.adaptiveUV">
+      <summary>
+        <para>Если этот параметр включен, тесселятор адаптирует размер четырехугольников в зависимости от высоты края.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.angleThreshold">
+      <summary>
+        <para>Порог угла, указывающий, является ли он углом или нет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.bevelCutoff">
+      <summary>
+        <para>Порог угла, который определяет, должен ли он быть мозаичным как кривая или угол.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.bevelSize">
+      <summary>
+        <para>Радиус кривой для тесселяции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.borderPivot">
+      <summary>
+        <para>Локальное смещение спрайта при тесселяции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.carpet">
+      <summary>
+        <para>Если true, фигура будет тесселяции как закрытая форма.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.fillScale">
+      <summary>
+        <para>Масштаб, используемый для расчета UV текстуры заливки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.fillTexture">
+      <summary>
+        <para>Текстура, которая будет использоваться для заливки SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.smartSprite">
+      <summary>
+        <para>Если этот параметр включен, тесселятор рассмотрит возможность создания углов на основе различных входных параметров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.splineDetail">
+      <summary>
+        <para>Качество тесселяции входного сплайна, определяющее сложность сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.spriteBorders">
+      <summary>
+        <para>Границы, которые будут использоваться для расчета UV краев на основе информации о границах, найденной в Sprites.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.stretchUV">
+      <summary>
+        <para>Растяните UV-развертку для текстуры Заливки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.U2D.SpriteShapeParameters.transform">
+      <summary>
+        <para>Преобразование мирового пространства GameObject, используемое для вычисления UV текстуры Fill.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.U2D.SpriteShapeRenderer">
+      <summary>
+        <para>Визуализирует SpriteShapes, определенные с помощью SpriteShapeUtility.GenerateSpriteShape API.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeRenderer.color">
+      <summary>
+        <para>Отрисовка цвета для SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeRenderer.maskInteraction">
+      <summary>
+        <para>Указывает, как SpriteShape взаимодействует с масками.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.GetBounds">
+      <summary>
+        <para>Получить данные Bounds как NativeArray. Количество массивов этого NativeArray всегда будет равно 1.</para>
+      </summary>
+      <returns>
+        <para>NativeArray границ SpriteShapeRenderer. Размер всегда будет 1.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.GetChannels(System.Int32,Unity.Collections.NativeArray`1&lt;System.UInt16&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector2&gt;&amp;)">
+      <summary>
+        <para>Получить/установить массив данных сетки SpriteShapeRenderer.</para>
+      </summary>
+      <param name="dataSize">Размер, который будет зарезервирован для NativeArray.</param>
+      <param name="indices">NativeArray индексов.</param>
+      <param name="vertices">NativeSlice вершин.</param>
+      <param name="texcoords">NativeSlice координат текстуры для канала 0.</param>
+      <param name="tangents">NativeSlice касательных.</param>
+      <param name="normals">NativeSlice нормалей.</param>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.GetChannels(System.Int32,Unity.Collections.NativeArray`1&lt;System.UInt16&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector2&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector4&gt;&amp;)">
+      <summary>
+        <para>Получить/установить массив данных сетки SpriteShapeRenderer.</para>
+      </summary>
+      <param name="dataSize">Размер, который будет зарезервирован для NativeArray.</param>
+      <param name="indices">NativeArray индексов.</param>
+      <param name="vertices">NativeSlice вершин.</param>
+      <param name="texcoords">NativeSlice координат текстуры для канала 0.</param>
+      <param name="tangents">NativeSlice касательных.</param>
+      <param name="normals">NativeSlice нормалей.</param>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.GetChannels(System.Int32,Unity.Collections.NativeArray`1&lt;System.UInt16&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector2&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector4&gt;&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;&amp;)">
+      <summary>
+        <para>Получить/установить массив данных сетки SpriteShapeRenderer.</para>
+      </summary>
+      <param name="dataSize">Размер, который будет зарезервирован для NativeArray.</param>
+      <param name="indices">NativeArray индексов.</param>
+      <param name="vertices">NativeSlice вершин.</param>
+      <param name="texcoords">NativeSlice координат текстуры для канала 0.</param>
+      <param name="tangents">NativeSlice касательных.</param>
+      <param name="normals">NativeSlice нормалей.</param>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.GetSegments(System.Int32)">
+      <summary>
+        <para>Получить/установить массив сегментов SpriteShapeRenderer.</para>
+      </summary>
+      <param name="dataSize">Размер, который необходимо зарезервировать для массива сегментов.</param>
+      <returns>
+        <para>Размер, который будет зарезервирован для NativeArray.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.Prepare(Unity.Jobs.JobHandle,UnityEngine.U2D.SpriteShapeParameters,UnityEngine.Sprite[])">
+      <summary>
+        <para>Подготовьте и сгенерируйте геометрию SpriteShape, которая будет передана в генератор SpriteShape для рендеринга.</para>
+      </summary>
+      <param name="handle">JobHandle для задания генератора SpriteShape на основе C#.</param>
+      <param name="shapeParams">Входные параметры генерации Sprite Shape.</param>
+      <param name="sprites">Введите список спрайтов.</param>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeRenderer.SetLocalAABB(UnityEngine.Bounds)">
+      <summary>
+        <para>Предоставляет методы для установки ограничивающего объема геометрии Sprite Shape.</para>
+      </summary>
+      <param name="bounds">Ограничивающий объем геометрии.</param>
+    </member>
+    <member name="T:UnityEngine.U2D.SpriteShapeSegment">
+      <summary>
+        <para>SpriteShapeSegment содержит информацию о вложенных сетках, сгенерированных заданием C# генератора SpriteShape, которое позже передается в SpriteShapeRenderer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeSegment.geomIndex">
+      <summary>
+        <para>Индекс геометрии списка вложенных сеток, сгенерированных SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeSegment.indexCount">
+      <summary>
+        <para>Количество индексов подсетки SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeSegment.spriteIndex">
+      <summary>
+        <para>Индекс спрайта, который используется для создания сегмента/угла для этого SpriteShapeSegment.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.U2D.SpriteShapeSegment.vertexCount">
+      <summary>
+        <para>Количество вершин подсетки SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.U2D.SpriteShapeUtility">
+      <summary>
+        <para>Статический класс, который помогает создавать мозаику сетки SpriteShape.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeUtility.Generate(UnityEngine.Mesh,UnityEngine.U2D.SpriteShapeParameters,UnityEngine.U2D.ShapeControlPoint[],UnityEngine.U2D.SpriteShapeMetaData[],UnityEngine.U2D.AngleRangeInfo[],UnityEngine.Sprite[],UnityEngine.Sprite[])">
+      <summary>
+        <para>Создайте сетку на основе входных параметров.</para>
+      </summary>
+      <param name="mesh">Выходная сетка.</param>
+      <param name="shapeParams">Входные параметры для тесселятора SpriteShape.</param>
+      <param name="points">Список контрольных точек, описывающих фигуру.</param>
+      <param name="metaData">Дополнительные данные о контрольной точке фигуры. Это полезно во время тесселяции фигуры.</param>
+      <param name="sprites">Список спрайтов, которые можно использовать для ребер.</param>
+      <param name="corners">Список спрайтов, которые можно использовать для углов.</param>
+      <param name="angleRange">Параметр, определяющий способ тесселяции каждого края.</param>
+    </member>
+    <member name="M:UnityEngine.U2D.SpriteShapeUtility.GenerateSpriteShape(UnityEngine.U2D.SpriteShapeRenderer,UnityEngine.U2D.SpriteShapeParameters,UnityEngine.U2D.ShapeControlPoint[],UnityEngine.U2D.SpriteShapeMetaData[],UnityEngine.U2D.AngleRangeInfo[],UnityEngine.Sprite[],UnityEngine.Sprite[])">
+      <summary>
+        <para>Создайте сетку на основе входных параметров.</para>
+      </summary>
+      <param name="renderer">SpriteShapeRenderer, на который передается сгенерированная геометрия.</param>
+      <param name="shapeParams">Входные параметры для тесселятора SpriteShape.</param>
+      <param name="points">Список контрольных точек, описывающих фигуру.</param>
+      <param name="metaData">Дополнительные данные о контрольной точке фигуры. Это полезно во время тесселяции фигуры.</param>
+      <param name="sprites">Список спрайтов, которые можно использовать для ребер.</param>
+      <param name="corners">Список спрайтов, которые можно использовать для углов.</param>
+      <param name="angleRange">Параметр, определяющий способ тесселяции каждого края.</param>
+    </member>
+  </members>
+</doc>

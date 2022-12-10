@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.TextRenderingModule</name>
+    </assembly>
+    <member name="T:UnityEngine.CharacterInfo">
+      <summary>
+        <para>Спецификация того, как отображать символ из текстуры шрифта. См. Font.characterInfo.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.advance">
+      <summary>
+        <para>Горизонтальное расстояние, округленное до ближайшего целого числа, от начала этого символа до начала следующего символа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.bearing">
+      <summary>
+        <para>Расстояние по горизонтали от начала координат этого глифа до начала изображения глифа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.flipped">
+      <summary>
+        <para>Символ перевернут?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.glyphHeight">
+      <summary>
+        <para>Высота изображения глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.glyphWidth">
+      <summary>
+        <para>Ширина изображения глифа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.index">
+      <summary>
+        <para>Юникодное значение символа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.maxX">
+      <summary>
+        <para>Максимальное расширение изображения глифа по оси x.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.maxY">
+      <summary>
+        <para>Максимальное расширение изображения глифа по оси Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.minX">
+      <summary>
+        <para>Минимальное расширение изображения глифа по оси x.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.minY">
+      <summary>
+        <para>Минимальное расширение изображения глифа по оси Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.size">
+      <summary>
+        <para>Размер символа или 0, если это размер шрифта по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.style">
+      <summary>
+        <para>Стиль персонажа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.uv">
+      <summary>
+        <para>UV-координаты персонажа в текстуре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.uvBottomLeft">
+      <summary>
+        <para>Координата uv, соответствующая нижнему левому углу изображения глифа в текстуре шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.uvBottomRight">
+      <summary>
+        <para>Координата uv, соответствующая правому нижнему углу изображения глифа в текстуре шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.uvTopLeft">
+      <summary>
+        <para>Координата uv, соответствующая верхнему левому углу изображения глифа в текстуре шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterInfo.uvTopRight">
+      <summary>
+        <para>Координата uv, соответствующая правому верхнему углу изображения глифа в текстуре шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.vert">
+      <summary>
+        <para>Экранные координаты персонажа в сгенерированных текстовых сетках.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CharacterInfo.width">
+      <summary>
+        <para>Как далеко продвинуться между началом этого символа и следующим.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Font">
+      <summary>
+        <para>Интерфейс скрипта для.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.ascent">
+      <summary>
+        <para>Подъем шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.characterInfo">
+      <summary>
+        <para>Доступ к массиву всех символов, содержащихся в текстуре шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.dynamic">
+      <summary>
+        <para>Является ли шрифт динамическим шрифтом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.fontSize">
+      <summary>
+        <para>Размер шрифта по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.lineHeight">
+      <summary>
+        <para>Высота строки шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Font.material">
+      <summary>
+        <para>Материал, используемый для отображения шрифта.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Font.textureRebuilt(System.Action`1&lt;UnityEngine.Font&gt;)">
+      <summary>
+        <para>Установите функцию, которая будет вызываться при перестроении текстуры динамического шрифта.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Font.CreateDynamicFontFromOSFont(System.String,System.Int32)">
+      <summary>
+        <para>Создает объект Font, который позволяет отображать шрифт, установленный на компьютере пользователя.</para>
+      </summary>
+      <param name="fontname">Имя шрифта ОС, используемого для этого объекта шрифта.</param>
+      <param name="size">Размер символов по умолчанию для сгенерированного шрифта.</param>
+      <param name="fontnames">Am массив имен шрифтов ОС для использования в этом объекте шрифта. При рендеринге символов с помощью этого объекта шрифта будет использоваться первый установленный на машине шрифт, содержащий запрошенный символ.</param>
+      <returns>
+        <para>Генерировать объект Font.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Font.CreateDynamicFontFromOSFont(System.String[],System.Int32)">
+      <summary>
+        <para>Создает объект Font, который позволяет отображать шрифт, установленный на компьютере пользователя.</para>
+      </summary>
+      <param name="fontname">Имя шрифта ОС, используемого для этого объекта шрифта.</param>
+      <param name="size">Размер символов по умолчанию для сгенерированного шрифта.</param>
+      <param name="fontnames">Am массив имен шрифтов ОС для использования в этом объекте шрифта. При рендеринге символов с помощью этого объекта шрифта будет использоваться первый установленный на машине шрифт, содержащий запрошенный символ.</param>
+      <returns>
+        <para>Генерировать объект Font.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Font.#ctor">
+      <summary>
+        <para>Создайте новый шрифт.</para>
+      </summary>
+      <param name="name">Имя созданного объекта Font.</param>
+    </member>
+    <member name="M:UnityEngine.Font.#ctor(System.String)">
+      <summary>
+        <para>Создайте новый шрифт.</para>
+      </summary>
+      <param name="name">Имя созданного объекта Font.</param>
+    </member>
+    <member name="M:UnityEngine.Font.GetCharacterInfo(System.Char,UnityEngine.CharacterInfo&amp;)">
+      <summary>
+        <para>Получить информацию о рендеринге для определенного символа.</para>
+      </summary>
+      <param name="ch">Персонаж, для которого вам нужна информация о рендеринге.</param>
+      <param name="info">Возвращает структуру CharacterInfo с информацией об отображении персонажа (если она доступна).</param>
+      <param name="size">Размер символа (значение по умолчанию, равное нулю, будет использовать размер шрифта по умолчанию).</param>
+      <param name="style">Стиль персонажа.</param>
+    </member>
+    <member name="M:UnityEngine.Font.GetCharacterInfo(System.Char,UnityEngine.CharacterInfo&amp;,System.Int32)">
+      <summary>
+        <para>Получить информацию о рендеринге для определенного символа.</para>
+      </summary>
+      <param name="ch">Персонаж, для которого вам нужна информация о рендеринге.</param>
+      <param name="info">Возвращает структуру CharacterInfo с информацией об отображении персонажа (если она доступна).</param>
+      <param name="size">Размер символа (значение по умолчанию, равное нулю, будет использовать размер шрифта по умолчанию).</param>
+      <param name="style">Стиль персонажа.</param>
+    </member>
+    <member name="M:UnityEngine.Font.GetCharacterInfo(System.Char,UnityEngine.CharacterInfo&amp;,System.Int32,UnityEngine.FontStyle)">
+      <summary>
+        <para>Получить информацию о рендеринге для определенного символа.</para>
+      </summary>
+      <param name="ch">Персонаж, для которого вам нужна информация о рендеринге.</param>
+      <param name="info">Возвращает структуру CharacterInfo с информацией об отображении персонажа (если она доступна).</param>
+      <param name="size">Размер символа (значение по умолчанию, равное нулю, будет использовать размер шрифта по умолчанию).</param>
+      <param name="style">Стиль персонажа.</param>
+    </member>
+    <member name="M:UnityEngine.Font.GetMaxVertsForString(System.String)">
+      <summary>
+        <para>Возвращает максимальное количество вершин, которое генератор текста может вернуть для заданной строки.</para>
+      </summary>
+      <param name="str">Входная строка.</param>
+    </member>
+    <member name="M:UnityEngine.Font.GetOSInstalledFontNames">
+      <summary>
+        <para>Получить имена шрифтов, установленных на машине.</para>
+      </summary>
+      <returns>
+        <para>Массив имен всех шрифтов, установленных на машине.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Font.GetPathsToOSFonts">
+      <summary>
+        <para>Получает пути к файлам шрифтов, установленных в операционной системе.</para>
+      </summary>
+      <returns>
+        <para>Массив путей к файлам всех шрифтов, установленных на машине.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Font.HasCharacter(System.Char)">
+      <summary>
+        <para>В этом шрифте есть определенный символ?</para>
+      </summary>
+      <param name="c">Символ для проверки.</param>
+      <returns>
+        <para>Независимо от того, содержит ли шрифт указанный символ.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Font.RequestCharactersInTexture(System.String,System.Int32,UnityEngine.FontStyle)">
+      <summary>
+        <para>Запросить добавление символов в текстуру шрифта (только для динамических шрифтов).</para>
+      </summary>
+      <param name="characters">Символы, которые должны быть в текстуре шрифта.</param>
+      <param name="size">Размер запрошенных символов (значение по умолчанию, равное нулю, будет использовать размер шрифта по умолчанию).</param>
+      <param name="style">Стиль запрошенных символов.</param>
+    </member>
+    <member name="T:UnityEngine.FontStyle">
+      <summary>
+        <para>Стиль шрифта, применяемый к текстам GUI, текстовым сеткам или стилям GUIStyles.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FontStyle.Bold">
+      <summary>
+        <para>К вашим текстам применен жирный шрифт.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FontStyle.BoldAndItalic">
+      <summary>
+        <para>К вашим текстам применены стили полужирный и курсив.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FontStyle.Italic">
+      <summary>
+        <para>Курсив применен к вашим текстам.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FontStyle.Normal">
+      <summary>
+        <para>Специальный стиль не применяется.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HorizontalWrapMode">
+      <summary>
+        <para>Режимы переноса текста, достигающего горизонтальной границы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HorizontalWrapMode.Overflow">
+      <summary>
+        <para>Текст может выходить за горизонтальную границу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HorizontalWrapMode.Wrap">
+      <summary>
+        <para>Текст будет переноситься по словам при достижении горизонтальной границы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextAlignment">
+      <summary>
+        <para>Как должен быть выровнен многострочный текст.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAlignment.Center">
+      <summary>
+        <para>Текстовые строки располагаются по центру.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAlignment.Left">
+      <summary>
+        <para>Строки текста выравниваются по левому краю.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAlignment.Right">
+      <summary>
+        <para>Строки текста выравниваются по правому краю.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextAnchor">
+      <summary>
+        <para>Где размещается якорь текста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.LowerCenter">
+      <summary>
+        <para>Текст привязывается к нижней стороне, центрируется по горизонтали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.LowerLeft">
+      <summary>
+        <para>Текст закреплен в левом нижнем углу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.LowerRight">
+      <summary>
+        <para>Текст закреплен в правом нижнем углу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.MiddleCenter">
+      <summary>
+        <para>Текст выравнивается по центру как по горизонтали, так и по вертикали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.MiddleLeft">
+      <summary>
+        <para>Текст привязывается слева по центру по вертикали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.MiddleRight">
+      <summary>
+        <para>Текст привязывается справа по центру по вертикали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.UpperCenter">
+      <summary>
+        <para>Текст привязывается вверху, центрируется по горизонтали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.UpperLeft">
+      <summary>
+        <para>Текст закреплен в левом верхнем углу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextAnchor.UpperRight">
+      <summary>
+        <para>Текст закреплен в правом верхнем углу.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextGenerationSettings">
+      <summary>
+        <para>Структура, в которой хранятся настройки TextGeneration.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.alignByGeometry">
+      <summary>
+        <para>Используйте экстенты геометрии глифа для горизонтального выравнивания, а не метрики глифа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.color">
+      <summary>
+        <para>Базовый цвет для генерации текста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.font">
+      <summary>
+        <para>Шрифт для генерации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.fontSize">
+      <summary>
+        <para>Размер шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.fontStyle">
+      <summary>
+        <para>Стиль шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.generateOutOfBounds">
+      <summary>
+        <para>Продолжайте генерировать символы, даже если текст выходит за границы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.generationExtents">
+      <summary>
+        <para>Экстенты, в которые генератор попытается вписать текст.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.horizontalOverflow">
+      <summary>
+        <para>Что происходит с текстом, когда он достигает границ генерации по горизонтали.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.lineSpacing">
+      <summary>
+        <para>Множитель межстрочного интервала.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.pivot">
+      <summary>
+        <para>Сгенерированные вершины смещены по оси.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.resizeTextForBestFit">
+      <summary>
+        <para>Следует ли изменить размер текста, чтобы он соответствовал настроенным границам?</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.resizeTextMaxSize">
+      <summary>
+        <para>Максимальный размер текста с измененным размером.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.resizeTextMinSize">
+      <summary>
+        <para>Минимальный размер текста с измененным размером.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.richText">
+      <summary>
+        <para>Разрешить форматированную текстовую разметку при генерации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.scaleFactor">
+      <summary>
+        <para>Масштабный коэффициент для текста. Это полезно, если текст находится на холсте и холст масштабируется.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.textAnchor">
+      <summary>
+        <para>Как привязывается сгенерированный текст.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.updateBounds">
+      <summary>
+        <para>Должен ли генератор текста обновлять границы сгенерированного текста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextGenerationSettings.verticalOverflow">
+      <summary>
+        <para>Что происходит с текстом, когда он достигает нижней границы генерации.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextGenerator">
+      <summary>
+        <para>Класс, который можно использовать для генерации текста для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.characterCount">
+      <summary>
+        <para>Количество сгенерированных символов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.characterCountVisible">
+      <summary>
+        <para>Количество сгенерированных символов, включенных в видимые строки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.characters">
+      <summary>
+        <para>Массив сгенерированных символов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.fontSizeUsedForBestFit">
+      <summary>
+        <para>Размер шрифта, который был найден при использовании режима наилучшего соответствия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.lineCount">
+      <summary>
+        <para>Количество сгенерированных текстовых строк.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.lines">
+      <summary>
+        <para>Информация о каждой сгенерированной текстовой строке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.rectExtents">
+      <summary>
+        <para>Экстенты сгенерированного текста в прямоугольном формате.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.vertexCount">
+      <summary>
+        <para>Количество сгенерированных вершин.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextGenerator.verts">
+      <summary>
+        <para>Массив сгенерированных вершин.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.#ctor">
+      <summary>
+        <para>Создайте генератор текста.</para>
+      </summary>
+      <param name="initialCapacity">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.#ctor(System.Int32)">
+      <summary>
+        <para>Создайте генератор текста.</para>
+      </summary>
+      <param name="initialCapacity">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetCharacters(System.Collections.Generic.List`1&lt;UnityEngine.UICharInfo&gt;)">
+      <summary>
+        <para>Заполнить данный список UICharInfo.</para>
+      </summary>
+      <param name="characters">Список для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetCharactersArray">
+      <summary>
+        <para>Возвращает текущий UICharInfo.</para>
+      </summary>
+      <returns>
+        <para>Информация о символе.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetLines(System.Collections.Generic.List`1&lt;UnityEngine.UILineInfo&gt;)">
+      <summary>
+        <para>Заполните данный список UILineInfo.</para>
+      </summary>
+      <param name="lines">Список для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetLinesArray">
+      <summary>
+        <para>Возвращает текущий UILineInfo.</para>
+      </summary>
+      <returns>
+        <para>Информация о линии.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetPreferredHeight(System.String,UnityEngine.TextGenerationSettings)">
+      <summary>
+        <para>Учитывая строку и настройки, возвращает предпочтительную высоту контейнера, в котором будет храниться этот текст.</para>
+      </summary>
+      <param name="str">Текст генерации.</param>
+      <param name="settings">Настройки генерации.</param>
+      <returns>
+        <para>Предпочтительная высота.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetPreferredWidth(System.String,UnityEngine.TextGenerationSettings)">
+      <summary>
+        <para>Учитывая строку и настройки, возвращает предпочтительную ширину контейнера, в котором будет храниться этот текст.</para>
+      </summary>
+      <param name="str">Текст генерации.</param>
+      <param name="settings">Настройки генерации.</param>
+      <returns>
+        <para>Предпочтительная ширина.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetVertices(System.Collections.Generic.List`1&lt;UnityEngine.UIVertex&gt;)">
+      <summary>
+        <para>Заполните данный список сгенерированными вершинами.</para>
+      </summary>
+      <param name="vertices">Список для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.GetVerticesArray">
+      <summary>
+        <para>Возвращает текущий массив UIVertex.</para>
+      </summary>
+      <returns>
+        <para>Вершины.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.Invalidate">
+      <summary>
+        <para>Пометить генератор текста как недействительный. Это вызовет генерацию полного текста при следующем вызове Populate.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.Populate(System.String,UnityEngine.TextGenerationSettings)">
+      <summary>
+        <para>Будет генерировать вершины и другие данные для данной строки с заданными настройками.</para>
+      </summary>
+      <param name="str">Строка для генерации.</param>
+      <param name="settings">Настройки.</param>
+    </member>
+    <member name="M:UnityEngine.TextGenerator.PopulateWithErrors(System.String,UnityEngine.TextGenerationSettings,UnityEngine.GameObject)">
+      <summary>
+        <para>Будет генерировать вершины и другие данные для данной строки с заданными настройками.</para>
+      </summary>
+      <param name="str">Строка для генерации.</param>
+      <param name="settings">Настройки генерации.</param>
+      <param name="context">Объект, используемый в качестве контекста сообщения журнала ошибок, если это необходимо.</param>
+      <returns>
+        <para>True, если генерация прошла успешно, иначе false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.TextMesh">
+      <summary>
+        <para>Интерфейс скрипта для.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.alignment">
+      <summary>
+        <para>Способ выравнивания строк текста (по левому краю, по правому краю, по центру).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.anchor">
+      <summary>
+        <para>Какая точка текста совпадает с позицией Transform.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.characterSize">
+      <summary>
+        <para>Размер каждого символа (это масштабирует весь текст).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.color">
+      <summary>
+        <para>Цвет, используемый для отображения текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.font">
+      <summary>
+        <para>Используемый шрифт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.fontSize">
+      <summary>
+        <para>Используемый размер шрифта (для динамических шрифтов).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.fontStyle">
+      <summary>
+        <para>Используемый стиль шрифта (для динамических шрифтов).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.lineSpacing">
+      <summary>
+        <para>Сколько места будет между строками текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.offsetZ">
+      <summary>
+        <para>Как далеко текст должен быть смещен от transform.position.z при рисовании.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.richText">
+      <summary>
+        <para>Включить теги в стиле HTML для разметки форматирования текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.tabSize">
+      <summary>
+        <para>Сколько места будет вставлено для символа табуляции '\t'. Это кратное смещение символа «пробел».</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextMesh.text">
+      <summary>
+        <para>Отображаемый текст.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.UICharInfo">
+      <summary>
+        <para>Класс, указывающий некоторую информацию об отображаемом символе.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UICharInfo.charWidth">
+      <summary>
+        <para>Ширина символа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UICharInfo.cursorPos">
+      <summary>
+        <para>Положение символьного курсора в локальном (сгенерированном текстом) пространстве.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.UILineInfo">
+      <summary>
+        <para>Информация о сгенерированной строке текста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UILineInfo.height">
+      <summary>
+        <para>Высота строки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UILineInfo.leading">
+      <summary>
+        <para>Расстояние в пикселях между этой строкой и следующей строкой.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UILineInfo.startCharIdx">
+      <summary>
+        <para>Индекс первого символа в строке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UILineInfo.topY">
+      <summary>
+        <para>Верхняя позиция Y линии в пикселях. Это используется для текстовых аннотаций, таких как курсор и поле выбора в поле ввода.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.UIVertex">
+      <summary>
+        <para>Класс вершин, используемый Canvas для управления вершинами.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.color">
+      <summary>
+        <para>Цвет вершины.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.normal">
+      <summary>
+        <para>Нормально.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.position">
+      <summary>
+        <para>Положение вершины.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.simpleVert">
+      <summary>
+        <para>Простой UIVertex с разумными настройками для использования в системе пользовательского интерфейса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.tangent">
+      <summary>
+        <para>Тангенс.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.uv0">
+      <summary>
+        <para>Первый набор текстурных координат меша. Используется элементами пользовательского интерфейса по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.uv1">
+      <summary>
+        <para>Второй набор текстурных координат меша, если он есть.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.uv2">
+      <summary>
+        <para>Третий набор текстурных координат меша, если он есть.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.UIVertex.uv3">
+      <summary>
+        <para>Четвертый набор текстурных координат меша, если он есть.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.TextRenderingModule">
+      <summary>
+        <para>Модуль TextRendering обеспечивает доступ к системе рендеринга текста Unity.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.VerticalWrapMode">
+      <summary>
+        <para>Режимы переноса текста, достигающего вертикальной границы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VerticalWrapMode.Overflow">
+      <summary>
+        <para>Текст также продолжает генерироваться при достижении вертикальной границы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.VerticalWrapMode.Truncate">
+      <summary>
+        <para>Текст будет обрезан при достижении вертикальной границы.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

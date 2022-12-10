@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.SceneTemplateModule</name>
+    </assembly>
+    <member name="T:UnityEditor.SceneTemplate.DependencyInfo">
+      <summary>
+        <para>Дескриптор, в котором хранится один из активов-зависимостей шаблона сцены и указывается, следует ли клонировать или ссылаться на него при создании экземпляра шаблона.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.DependencyInfo.dependency">
+      <summary>
+        <para>Актив-зависимость шаблона Scene.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.DependencyInfo.instantiationMode">
+      <summary>
+        <para>Действие, выполняемое с зависимостью при создании экземпляра шаблона.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.DependencyInfo.#ctor">
+      <summary>
+        <para>Конструктор для DependencyInfo.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.InstantiationResult">
+      <summary>
+        <para>Класс, содержащий данные, созданные при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.SceneTemplate.InstantiationResult.scene">
+      <summary>
+        <para>Сцена, которая создается и загружается при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.SceneTemplate.InstantiationResult.sceneAsset">
+      <summary>
+        <para>Объект SceneAsset, который создается при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.SceneTemplate.ISceneTemplatePipeline">
+      <summary>
+        <para>Используйте этот интерфейс для упаковки пользовательской последовательности кода при создании экземпляра шаблона сцены. ISceneTemplatePipeline создается один раз при создании экземпляра шаблона и несколько раз уведомляется во время последовательности создания экземпляров.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.ISceneTemplatePipeline.AfterTemplateInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset,UnityEngine.SceneManagement.Scene,System.Boolean,System.String)">
+      <summary>
+        <para>Событие, вызываемое после создания экземпляра шаблона сцены, пока новая сцена все еще загружена.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Ресурс шаблона сцены для создания экземпляра.</param>
+      <param name="scene">Недавно созданная сцена.</param>
+      <param name="isAdditive">Если установлено значение true, новая сцена создается в аддитивном режиме.</param>
+      <param name="sceneName">Путь к только что созданной сцене. Если созданный вами шаблон не имеет клонируемых зависимостей, это может быть пустым.</param>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.ISceneTemplatePipeline.BeforeTemplateInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset,System.Boolean,System.String)">
+      <summary>
+        <para>Событие, вызываемое перед созданием экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Актив шаблона сцены для создания экземпляра.</param>
+      <param name="isAdditive">Если установлено значение true, новая сцена создается в аддитивном режиме.</param>
+      <param name="sceneName">Путь к только что созданной сцене. Если экземпляр шаблона, который вы создали, не имеет клонируемых зависимостей, это может быть пустым.</param>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.ISceneTemplatePipeline.IsValidTemplateForInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset)">
+      <summary>
+        <para>Событие, вызываемое перед отображением диалогового окна «Новая сцена», позволяет определить, доступен ли этот шаблон в диалоговом окне.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Ресурс шаблона сцены, доступный в диалоговом окне «Новая сцена».</param>
+      <returns>
+        <para>Истинно, если можно создать экземпляр шаблона сцены. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.SceneTemplateAsset">
+      <summary>
+        <para>Актив, в котором хранится все необходимое для создания новой сцены из шаблонной сцены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.addToDefaults">
+      <summary>
+        <para>Используйте это поле, чтобы добавить этот шаблон в список шаблонов по умолчанию в диалоговом окне Новая сцена.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.dependencies">
+      <summary>
+        <para>Перечисляет зависимости сцены и указывает, следует ли клонировать или ссылаться на каждую из них.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.description">
+      <summary>
+        <para>Описание шаблона сцены. Это описание может быть длинным. В редакторе Unity он отображается на нескольких строках.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.SceneTemplate.SceneTemplateAsset.isValid">
+      <summary>
+        <para>Указывает, допустим ли шаблон сцены. Недопустимые шаблоны не отображаются в диалоговом окне «Новая сцена».</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.preview">
+      <summary>
+        <para>Изображение или значок предварительного просмотра шаблона сцены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.templateName">
+      <summary>
+        <para>Определенное пользователем имя для актива шаблона сцены. По умолчанию это имя файла шаблона.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.templatePipeline">
+      <summary>
+        <para>Сценарий, производный от ISceneTemplatePipeline. Это позволяет выполнять пользовательский код при создании экземпляра шаблона.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.SceneTemplateAsset.templateScene">
+      <summary>
+        <para>Сцена, которая копируется при создании экземпляра шаблона сцены.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.SceneTemplatePipelineAdapter">
+      <summary>
+        <para>Адаптер, реализующий все функции ISceneTemplatePipeline для упрощения использования. Используйте его, чтобы частично переопределить ISceneTemplatePipeline.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplatePipelineAdapter.AfterTemplateInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset,UnityEngine.SceneManagement.Scene,System.Boolean,System.String)">
+      <summary>
+        <para>Событие, вызываемое после создания экземпляра шаблона сцены, пока новая сцена все еще загружена.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Актив шаблона сцены для создания экземпляра.</param>
+      <param name="scene">Недавно созданная сцена.</param>
+      <param name="isAdditive">Если установлено значение true, новая сцена создается в аддитивном режиме.</param>
+      <param name="sceneName">Путь к только что созданной сцене. Если созданный вами шаблон не имеет клонируемых зависимостей, это может быть пустым.</param>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplatePipelineAdapter.BeforeTemplateInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset,System.Boolean,System.String)">
+      <summary>
+        <para>Событие, вызываемое перед созданием экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Актив шаблона сцены для создания экземпляра.</param>
+      <param name="isAdditive">Если установлено значение true, новая сцена создается в аддитивном режиме.</param>
+      <param name="sceneName">Путь к только что созданной сцене. Если созданный вами шаблон не имеет клонируемых зависимостей, это может быть пустым.</param>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplatePipelineAdapter.IsValidTemplateForInstantiation(UnityEditor.SceneTemplate.SceneTemplateAsset)">
+      <summary>
+        <para>Событие, вызываемое перед отображением диалогового окна «Новая сцена», позволяет определить, доступен ли этот шаблон в диалоговом окне.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Ресурс шаблона сцены, доступный в диалоговом окне «Новая сцена».</param>
+      <returns>
+        <para>Истинно, если можно создать экземпляр шаблона сцены. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.SceneTemplateService">
+      <summary>
+        <para>Вспомогательный класс, управляющий созданием экземпляра SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.SceneTemplate.SceneTemplateService.newSceneTemplateInstantiated(UnityEditor.SceneTemplate.SceneTemplateService/NewTemplateInstantiated)">
+      <summary>
+        <para>События, запускаемые после создания экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="value">Пользовательский обработчик, который вызывается после создания экземпляра шаблона сцены.</param>
+    </member>
+    <member name="?:UnityEditor.SceneTemplate.SceneTemplateService.newSceneTemplateInstantiating(UnityEditor.SceneTemplate.SceneTemplateService/NewTemplateInstantiating)">
+      <summary>
+        <para>События, запускаемые перед созданием экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="value">Пользовательский обработчик, который вызывается перед созданием экземпляра шаблона сцены.</param>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplateService.CreateSceneTemplate(System.String)">
+      <summary>
+        <para>Создает новый шаблон сцены по указанному пути. Шаблон не привязан к сцене.</para>
+      </summary>
+      <param name="sceneTemplatePath">Путь к новому ресурсу шаблона сцены.</param>
+      <returns>
+        <para>Возвращает новый экземпляр актива шаблона сцены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplateService.CreateTemplateFromScene(UnityEditor.SceneAsset,System.String)">
+      <summary>
+        <para>Создает новый шаблон сцены, привязанный к определенной сцене. Все зависимости шаблона Сцены извлекаются и устанавливаются для ссылок.</para>
+      </summary>
+      <param name="sourceSceneAsset">Ресурс сцены, который служит шаблоном.</param>
+      <param name="sceneTemplatePath">Путь к новому ресурсу шаблона сцены.</param>
+      <returns>
+        <para>Новый экземпляр актива шаблона сцены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.SceneTemplate.SceneTemplateService.Instantiate(UnityEditor.SceneTemplate.SceneTemplateAsset,System.Boolean,System.String)">
+      <summary>
+        <para>Создает новую сцену из шаблона.</para>
+      </summary>
+      <param name="sceneTemplate">Актив шаблона сцены, который содержит информацию, необходимую для создания экземпляра сцены.</param>
+      <param name="loadAdditively">Указывает, создается ли новая сцена дополнительно к текущей загруженной сцене.</param>
+      <param name="newSceneOutputPath">Путь к новой сцене, созданной из шаблона. Это устанавливается только в том случае, если у SceneTemplateAsset есть клонируемые зависимости, потому что в этом случае новую сцену необходимо сохранить на диске.</param>
+      <returns>
+        <para>Новая сцена и ее аналог SceneTemplateAsset.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.SceneTemplateService.NewTemplateInstantiated">
+      <summary>
+        <para>Событие, вызываемое после создания экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Созданный шаблон сцены.</param>
+      <param name="scene">Сцена шаблона, экземпляр которой был создан.</param>
+      <param name="sceneAsset">Новый актив сцены, созданный путем создания экземпляра шаблона сцены.</param>
+      <param name="additiveLoad">Указывает, был ли шаблон создан в аддитивном режиме.</param>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.SceneTemplateService.NewTemplateInstantiating">
+      <summary>
+        <para>Событие, вызываемое перед созданием экземпляра шаблона сцены.</para>
+      </summary>
+      <param name="sceneTemplateAsset">Шаблон сцены для создания экземпляра.</param>
+      <param name="newSceneOutputPath">Выходной путь для новой сцены. Может быть пустым, если сцена создается в памяти.</param>
+      <param name="additiveLoad">Указывает, следует ли создавать экземпляр шаблона сцены в аддитивном режиме.</param>
+    </member>
+    <member name="T:UnityEditor.SceneTemplate.TemplateInstantiationMode">
+      <summary>
+        <para>Перечисление параметров для обработки актива зависимости от сцены при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.TemplateInstantiationMode.Clone">
+      <summary>
+        <para>Указывает, что зависимость Assets клонируется при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SceneTemplate.TemplateInstantiationMode.Reference">
+      <summary>
+        <para>Указывает, что зависимость Assets сохраняется в качестве ссылки при создании экземпляра объекта SceneTemplateAsset.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestAssetBundleModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.DownloadHandlerAssetBundle">
+      <summary>
+        <para>Подкласс DownloadHandler, предназначенный для загрузки AssetBundles.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAssetBundle.assetBundle">
+      <summary>
+        <para>Возвращает загруженный AssetBundle или null. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAssetBundle.autoLoadAssetBundle">
+      <summary>
+        <para>Если true, AssetBundle будет загружен как часть процесса UnityWebRequest. Если задано значение false, AssetBundle будет загружаться по требованию при доступе к свойству DownloadHandlerAssetBundle.assetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAssetBundle.isDownloadComplete">
+      <summary>
+        <para>Возвращает true, если часть операции загрузки данных завершена.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,System.UInt32)">
+      <summary>
+        <para>Стандартный конструктор для некэшируемых пакетов ресурсов.</para>
+      </summary>
+      <param name="url">Номинальный (до перенаправления) URL-адрес, по которому находится набор ресурсов.</param>
+      <param name="crc">Контрольная сумма для сравнения с загруженными данными для проверки целостности или ноль, чтобы пропустить проверку целостности.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Простой версионный конструктор. Кэширует загруженные пакеты ресурсов.</para>
+      </summary>
+      <param name="url">Номинальный (до перенаправления) URL-адрес, по которому находится набор ресурсов.</param>
+      <param name="crc">Контрольная сумма для сравнения с загруженными данными для проверки целостности или ноль, чтобы пропустить проверку целостности.</param>
+      <param name="version">Текущий номер версии комплекта ресурсов по адресу url. Увеличение для повторной загрузки.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Версионный конструктор. Кэширует загруженные пакеты ресурсов.</para>
+      </summary>
+      <param name="url">Номинальный (до перенаправления) URL-адрес, по которому находится набор ресурсов.</param>
+      <param name="crc">Контрольная сумма для сравнения с загруженными данными для проверки целостности или ноль, чтобы пропустить проверку целостности.</param>
+      <param name="hash">Хэш-объект, определяющий версию комплекта ресурсов.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,System.String,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Версионный конструктор. Кэширует загруженные наборы ресурсов в настраиваемый путь кеширования.</para>
+      </summary>
+      <param name="url">Номинальный (до перенаправления) URL-адрес, по которому находится набор ресурсов.</param>
+      <param name="hash">Хэш-объект, определяющий версию комплекта ресурсов.</param>
+      <param name="crc">Контрольная сумма для сравнения с загруженными данными для проверки целостности или ноль, чтобы пропустить проверку целостности.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <param name="name">Имя AssetBundle, которое используется в качестве настраиваемого пути к кэшу.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,UnityEngine.CachedAssetBundle,System.UInt32)">
+      <summary>
+        <para>Версионный конструктор. Кэширует загруженные наборы ресурсов в настраиваемый путь кеширования.</para>
+      </summary>
+      <param name="url">Номинальный (до перенаправления) URL-адрес, по которому находится набор ресурсов.</param>
+      <param name="hash">Хэш-объект, определяющий версию комплекта ресурсов.</param>
+      <param name="crc">Контрольная сумма для сравнения с загруженными данными для проверки целостности или ноль, чтобы пропустить проверку целостности.</param>
+      <param name="cachedBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <param name="name">Имя AssetBundle, которое используется в качестве настраиваемого пути к кэшу.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>Возвращает загруженный AssetBundle или null.</para>
+      </summary>
+      <param name="www">Готовый объект UnityWebRequest с прикрепленным DownloadHandlerAssetBundle.</param>
+      <returns>
+        <para>То же, что DownloadHandlerAssetBundle.assetBundle</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.GetData">
+      <summary>
+        <para>Не реализованы. Выдает &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
+      </summary>
+      <returns>
+        <para>Не реализовано.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.GetText">
+      <summary>
+        <para>Не реализованы. Выдает &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
+      </summary>
+      <returns>
+        <para>Не реализовано.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequestAssetBundle">
+      <summary>
+        <para>Помощники для загрузки пакетов ресурсов с помощью UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.Uri)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.String,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.Uri,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.String,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.Uri,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.String,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.Uri,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.String,UnityEngine.CachedAssetBundle,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(System.Uri,UnityEngine.CachedAssetBundle,System.UInt32)">
+      <summary>
+        <para>Создает UnityWebRequest, оптимизированный для загрузки пакета ресурсов Unity через HTTP GET.</para>
+      </summary>
+      <param name="uri">URI пакета ресурсов для загрузки.</param>
+      <param name="crc">Если он не равен нулю, это число будет сравниваться с контрольной суммой загруженных данных набора ресурсов. Если CRC не совпадают, будет зарегистрирована ошибка, и пакет активов не будет загружен. Если установлено значение ноль, проверка CRC будет пропущена.</param>
+      <param name="version">Целочисленный номер версии, который будет сравниваться с кешированной версией загружаемого пакета ресурсов. Увеличьте это число, чтобы заставить Unity повторно загрузить кешированный пакет ресурсов.
+
+Аналогично параметру версии для WWW.LoadFromCacheOrDownload.</param>
+      <param name="hash">Хэш версии. Если этот хэш не совпадает с хэшем кэшированной версии этого пакета ресурсов, пакет ресурсов будет загружен повторно.</param>
+      <param name="cachedAssetBundle">Структура, используемая для загрузки данной версии AssetBundle в настраиваемый путь кэша.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный на загрузку пакета ресурсов Unity.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.UnityWebRequestAssetBundleModule">
+      <summary>
+        <para>Модуль UnityWebRequestAssetBundle предоставляет класс DownloadHandlerAssetBundle для использования UnityWebRequest для загрузки Asset Bundles.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

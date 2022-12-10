@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestTextureModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.DownloadHandlerTexture">
+      <summary>
+        <para>Подкласс DownloadHandler, специализирующийся на загрузке изображений для использования в качестве объектов текстуры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerTexture.texture">
+      <summary>
+        <para>Возвращает загруженную текстуру или ноль. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.#ctor">
+      <summary>
+        <para>Конструктор по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.#ctor(System.Boolean)">
+      <summary>
+        <para>Конструктор позволяет установить свойство TextureImporter.isReadable.</para>
+      </summary>
+      <param name="readable">Значение для TextureImporter.isReadable.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>Возвращает загруженную текстуру или null.</para>
+      </summary>
+      <param name="www">Готовый объект UnityWebRequest с прикрепленным DownloadHandlerTexture.</param>
+      <returns>
+        <para>То же, что DownloadHandlerTexture.texture</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequestTexture">
+      <summary>
+        <para>Помощники для загрузки файлов изображений в текстуры с помощью UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.String)">
+      <summary>
+        <para>Создайте UnityWebRequest, предназначенный для загрузки изображения через HTTP GET, и создайте текстуру на основе полученных данных.</para>
+      </summary>
+      <param name="uri">URI загружаемого изображения.</param>
+      <param name="nonReadable">Если true, необработанные данные текстуры не будут доступны скрипту. Это может сохранить память. По умолчанию: ложь.</param>
+      <returns>
+        <para>Правильно настроенный UnityWebRequest для загрузки изображения и преобразования его в текстуру.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.String,System.Boolean)">
+      <summary>
+        <para>Создайте UnityWebRequest, предназначенный для загрузки изображения через HTTP GET, и создайте текстуру на основе полученных данных.</para>
+      </summary>
+      <param name="uri">URI загружаемого изображения.</param>
+      <param name="nonReadable">Если true, необработанные данные текстуры не будут доступны скрипту. Это может сохранить память. По умолчанию: ложь.</param>
+      <returns>
+        <para>Правильно настроенный UnityWebRequest для загрузки изображения и преобразования его в текстуру.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.UnityWebRequestTextureModule">
+      <summary>
+        <para>Модуль UnityWebRequestTexture предоставляет класс DownloadHandlerTexture для использования UnityWebRequest для загрузки текстур.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

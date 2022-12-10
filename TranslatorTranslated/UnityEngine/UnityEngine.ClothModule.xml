@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ClothModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Cloth">
+      <summary>
+        <para>Класс Cloth предоставляет интерфейс для физического моделирования одежды.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.bendingStiffness">
+      <summary>
+        <para>Жесткость ткани при изгибе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.capsuleColliders">
+      <summary>
+        <para>Массив CapsuleColliders, с которыми должен сталкиваться этот экземпляр Cloth.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.clothSolverFrequency">
+      <summary>
+        <para>Количество итераций решателя ткани в секунду.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.coefficients">
+      <summary>
+        <para>Коэффициенты скиннинга ткани, используемые для настройки того, как ткань взаимодействует с сеткой со скиннингом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.collisionMassScale">
+      <summary>
+        <para>Насколько увеличить массу сталкивающихся частиц.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.damping">
+      <summary>
+        <para>Движение влажной тканью.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.enableContinuousCollision">
+      <summary>
+        <para>Включите непрерывное столкновение, чтобы улучшить стабильность столкновений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.enabled">
+      <summary>
+        <para>Эта ткань включена?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.externalAcceleration">
+      <summary>
+        <para>К ткани приложено постоянное внешнее ускорение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.friction">
+      <summary>
+        <para>Трение ткани при столкновении с персонажем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.normals">
+      <summary>
+        <para>Текущие нормали объекта ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.randomAcceleration">
+      <summary>
+        <para>Случайное внешнее ускорение, приложенное к ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.selfCollisionDistance">
+      <summary>
+        <para>Минимальное расстояние, на котором две частицы ткани отталкиваются друг от друга (по умолчанию: 0,0).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.selfCollisionStiffness">
+      <summary>
+        <para>Жесткость самостолкновения определяет, насколько сильным должен быть разделяющий импульс для сталкивающихся частиц.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.sleepThreshold">
+      <summary>
+        <para>Порог сна ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.sphereColliders">
+      <summary>
+        <para>Массив ClothSphereColliderPairs, с которым должен столкнуться этот экземпляр Cloth.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.stiffnessFrequency">
+      <summary>
+        <para>Устанавливает параметр частоты жесткости.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.stretchingStiffness">
+      <summary>
+        <para>Жесткость ткани при растяжении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.useGravity">
+      <summary>
+        <para>Должна ли гравитация влиять на симуляцию ткани?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.useTethers">
+      <summary>
+        <para>Используйте привязные анкеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.useVirtualParticles">
+      <summary>
+        <para>Добавьте одну виртуальную частицу на треугольник, чтобы повысить устойчивость к столкновениям.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.vertices">
+      <summary>
+        <para>Текущие позиции вершин объекта ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.worldAccelerationScale">
+      <summary>
+        <para>Насколько ускорение персонажа в мировом пространстве повлияет на вершины ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Cloth.worldVelocityScale">
+      <summary>
+        <para>Насколько перемещение персонажа в мировом пространстве повлияет на вершины ткани.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Cloth.ClearTransformMotion">
+      <summary>
+        <para>Удалите ожидающие изменения преобразования, чтобы они не влияли на симуляцию ткани.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Cloth.GetSelfAndInterCollisionIndices(System.Collections.Generic.List`1&lt;System.UInt32&gt;)">
+      <summary>
+        <para>Получить список частиц, которые будут использоваться для само- и интер-столкновений.</para>
+      </summary>
+      <param name="indices">Список для заполнения индексами частиц ткани, которые используются для собственного и/или взаимного столкновения.</param>
+    </member>
+    <member name="M:UnityEngine.Cloth.GetVirtualParticleIndices(System.Collections.Generic.List`1&lt;System.UInt32&gt;)">
+      <summary>
+        <para>Получить список индексов, которые будут использоваться при создании виртуальных частиц.</para>
+      </summary>
+      <param name="indices">Список для заполнения индексами виртуальных частиц.</param>
+      <param name="indicesOutList">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Cloth.GetVirtualParticleWeights(System.Collections.Generic.List`1&lt;UnityEngine.Vector3&gt;)">
+      <summary>
+        <para>Получите веса, которые будут использоваться при создании виртуальных частиц для ткани.</para>
+      </summary>
+      <param name="weights">Список для заполнения виртуальными весами частиц.</param>
+      <param name="weightsOutList">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Cloth.SetEnabledFading(System.Boolean,System.Single)">
+      <summary>
+        <para>Включение или выключение имитации ткани.</para>
+      </summary>
+      <param name="enabled">Затухание включено или нет.</param>
+      <param name="interpolationTime">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Cloth.SetSelfAndInterCollisionIndices(System.Collections.Generic.List`1&lt;System.UInt32&gt;)">
+      <summary>
+        <para>Это позволяет вам установить индексы ткани, используемые для собственного и внутреннего столкновения.</para>
+      </summary>
+      <param name="indices">Список индексов частиц ткани, используемых для собственного и/или внутреннего столкновения ткани.</param>
+    </member>
+    <member name="M:UnityEngine.Cloth.SetVirtualParticleIndices(System.Collections.Generic.List`1&lt;System.UInt32&gt;)">
+      <summary>
+        <para>Установите индексы для использования при создании виртуальных частиц.</para>
+      </summary>
+      <param name="indices">Список индексов частиц ткани для использования при создании виртуальных частиц.</param>
+      <param name="indicesIn">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Cloth.SetVirtualParticleWeights(System.Collections.Generic.List`1&lt;UnityEngine.Vector3&gt;)">
+      <summary>
+        <para>Устанавливает веса, которые будут использоваться при создании виртуальных частиц для ткани.</para>
+      </summary>
+      <param name="weights">Список весов, которые будут использоваться при настройке виртуальных частиц для ткани.</param>
+    </member>
+    <member name="T:UnityEngine.ClothSkinningCoefficient">
+      <summary>
+        <para>Структура ClothSkinningCoefficient используется для настройки того, как компоненту Cloth разрешено перемещаться относительно SkinnedMeshRenderer, к которому он присоединен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClothSkinningCoefficient.collisionSphereDistance">
+      <summary>
+        <para>Определение сферы, вершина не может войти. Это позволяет сталкиваться с анимированной тканью.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClothSkinningCoefficient.maxDistance">
+      <summary>
+        <para>Расстояние, на которое вершине разрешено перемещаться от положения вершины скелетного меша.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ClothSphereColliderPair">
+      <summary>
+        <para>Пара SphereColliders, используемая для определения форм объектов Cloth, с которыми они сталкиваются.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ClothSphereColliderPair.first">
+      <summary>
+        <para>Первый SphereCollider пары ClothSphereColliderPair.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ClothSphereColliderPair.second">
+      <summary>
+        <para>Второй SphereCollider пары ClothSphereColliderPair.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ClothSphereColliderPair.#ctor(UnityEngine.SphereCollider)">
+      <summary>
+        <para>Создает ClothSphereColliderPair. Если задан только один SphereCollider, ClothSphereColliderPair определит простую сферу. Если заданы два SphereColliders, ClothSphereColliderPair определяет коническую форму капсулы, состоящую из двух сфер и конуса, соединяющего их.</para>
+      </summary>
+      <param name="a">Первый SphereCollider пары ClothSphereColliderPair.</param>
+      <param name="b">Второй SphereCollider пары ClothSphereColliderPair.</param>
+    </member>
+    <member name="M:UnityEngine.ClothSphereColliderPair.#ctor(UnityEngine.SphereCollider,UnityEngine.SphereCollider)">
+      <summary>
+        <para>Создает ClothSphereColliderPair. Если задан только один SphereCollider, ClothSphereColliderPair определит простую сферу. Если заданы два SphereColliders, ClothSphereColliderPair определяет коническую форму капсулы, состоящую из двух сфер и конуса, соединяющего их.</para>
+      </summary>
+      <param name="a">Первый SphereCollider пары ClothSphereColliderPair.</param>
+      <param name="b">Второй SphereCollider пары ClothSphereColliderPair.</param>
+    </member>
+    <member name="A:UnityEngine.ClothModule">
+      <summary>
+        <para>Модуль Cloth реализует симуляцию физики ткани с помощью компонента Cloth.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

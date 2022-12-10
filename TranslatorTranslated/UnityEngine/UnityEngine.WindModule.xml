@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.WindModule</name>
+    </assembly>
+    <member name="A:UnityEngine.WindModule">
+      <summary>
+        <para>Модуль Wind реализует компонент WindZone, который может влиять на рендеринг ландшафта и симуляцию частиц.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WindZone">
+      <summary>
+        <para>Зоны ветра добавляют реализма создаваемым вами деревьям, заставляя их махать ветвями и листьями, как будто их дует ветер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.mode">
+      <summary>
+        <para>Определяет тип используемой зоны ветра (сферическая или направленная).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.radius">
+      <summary>
+        <para>Радиус зоны сферического ветра (активен только в том случае, если для WindZoneMode установлено значение Spherical).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.windMain">
+      <summary>
+        <para>Основная сила ветра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.windPulseFrequency">
+      <summary>
+        <para>Определяет частоту изменения ветра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.windPulseMagnitude">
+      <summary>
+        <para>Определяет, насколько ветер меняется со временем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WindZone.windTurbulence">
+      <summary>
+        <para>Сила турбулентного ветра.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WindZone.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WindZoneMode">
+      <summary>
+        <para>Режимы, которые может иметь ветровая зона: сферический или направленный.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WindZoneMode.Directional">
+      <summary>
+        <para>Зона ветра влияет на всю сцену в одном направлении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WindZoneMode.Spherical">
+      <summary>
+        <para>Зона ветра действует только внутри радиуса и имеет спад от центра к краю.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AccessibilityModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Accessibility.VisionUtility">
+      <summary>
+        <para>Класс, содержащий методы, обеспечивающие доступность для пользователей с различными возможностями зрения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.VisionUtility.GetColorBlindSafePalette(UnityEngine.Color[],System.Single,System.Single)">
+      <summary>
+        <para>Получает палитру цветов, которые должны быть различимы для нормального зрения, дейтеранопии, протанопии и тританопии.</para>
+      </summary>
+      <param name="palette">Массив цветов для заполнения палитры.</param>
+      <param name="minimumLuminance">Минимально допустимая воспринимаемая яркость от 0 до 1. Для темного фона рекомендуется значение 0,2 или выше.</param>
+      <param name="maximumLuminance">Максимально допустимая воспринимаемая яркость от 0 до 1. Для светлого фона рекомендуется значение 0,8 или меньше.</param>
+      <returns>
+        <para>Количество однозначных цветов в палитре.</para>
+      </returns>
+    </member>
+  </members>
+</doc>

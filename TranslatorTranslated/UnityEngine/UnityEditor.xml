@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor</name>
+    </assembly>
+    <member name="A:UnityEditor">
+      <summary>
+        <para>Сборка UnityEditor реализует специфичные для редактора API в Unity. На него нельзя ссылаться из исполняющего кода, скомпилированного в плееры.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

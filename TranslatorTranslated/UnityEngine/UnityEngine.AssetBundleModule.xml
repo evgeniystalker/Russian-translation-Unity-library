@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AssetBundleModule</name>
+    </assembly>
+    <member name="T:UnityEngine.AssetBundle">
+      <summary>
+        <para>AssetBundles позволяют передавать дополнительные ресурсы через класс UnityWebRequest и создавать их экземпляры во время выполнения. AssetBundles создаются с помощью BuildPipeline.BuildAssetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundle.isStreamedSceneAssetBundle">
+      <summary>
+        <para>Возвращает true, если AssetBundle представляет собой потоковую сцену AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundle.memoryBudgetKB">
+      <summary>
+        <para>Управляет размером общего кеша загрузки AssetBundle. Значение по умолчанию — 1 МБ. </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.Contains(System.String)">
+      <summary>
+        <para>Проверьте, содержит ли AssetBundle определенный объект.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.CreateFromFile(System.String)">
+      <summary>
+        <para>Загружает комплект ресурсов с диска.</para>
+      </summary>
+      <param name="path">Путь к файлу на диске
+
+См. также: UnityWebRequestAssetBundle.GetAssetBundle, DownloadHandlerAssetBundle.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.CreateFromMemory(System.Byte[])">
+      <summary>
+        <para>Асинхронно создать AssetBundle из области памяти.</para>
+      </summary>
+      <param name="binary">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.CreateFromMemoryImmediate(System.Byte[])">
+      <summary>
+        <para>Синхронно создать AssetBundle из области памяти.</para>
+      </summary>
+      <param name="binary">Массив байтов с данными AssetBundle.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.GetAllAssetNames">
+      <summary>
+        <para>Вернуть все имена активов в AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.GetAllLoadedAssetBundles">
+      <summary>
+        <para>Используется, когда вам нужно получить список всех загруженных в данный момент наборов активов.</para>
+      </summary>
+      <returns>
+        <para>Возвращает IEnumerable&lt;AssetBundle&gt; всех загруженных в данный момент пакетов активов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.GetAllScenePaths">
+      <summary>
+        <para>Вернуть все пути ресурсов сцены (пути к ресурсам *.unity) в AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssets(System.Type)">
+      <summary>
+        <para>Загружает все ресурсы, содержащиеся в наборе ресурсов, которые наследуют от type.</para>
+      </summary>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssets">
+      <summary>
+        <para>Загружает все ресурсы, содержащиеся в наборе ресурсов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssets">
+      <summary>
+        <para>Загружает все ресурсы, содержащиеся в наборе ресурсов, которые наследуют от типа T.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssetsAsync">
+      <summary>
+        <para>Асинхронно загружает все ресурсы, содержащиеся в наборе ресурсов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssetsAsync">
+      <summary>
+        <para>Асинхронно загружает все ресурсы, содержащиеся в наборе ресурсов, наследуемом от T.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAllAssetsAsync(System.Type)">
+      <summary>
+        <para>Асинхронно загружает все ресурсы, содержащиеся в наборе ресурсов, которые наследуют от type.</para>
+      </summary>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAsset(System.String)">
+      <summary>
+        <para>Загружает ресурс с именем из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAsset(System.String,System.Type)">
+      <summary>
+        <para>Загружает ресурс с именем заданного типа из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAsset(System.String)">
+      <summary>
+        <para>Загружает ресурс с именем типа T из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetAsync(System.String)">
+      <summary>
+        <para>Асинхронно загружает ресурс с именем из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetAsync(System.String)">
+      <summary>
+        <para>Асинхронно загружает ресурс с именем данного T из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetAsync(System.String,System.Type)">
+      <summary>
+        <para>Асинхронно загружает ресурс с именем заданного типа из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssets(System.String)">
+      <summary>
+        <para>Загружает актив и подактивы с именем из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssets(System.String,System.Type)">
+      <summary>
+        <para>Загружает актив и подактивы с именем заданного типа из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssets(System.String)">
+      <summary>
+        <para>Загружает актив и подактивы с именем типа T из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssetsAsync(System.String)">
+      <summary>
+        <para>Асинхронно загружает актив с подактивами с именем из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssetsAsync(System.String)">
+      <summary>
+        <para>Асинхронно загружает актив с подактивами с именем типа T из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadAssetWithSubAssetsAsync(System.String,System.Type)">
+      <summary>
+        <para>Асинхронно загружает актив с подактивами с именем заданного типа из пакета.</para>
+      </summary>
+      <param name="name">
+      </param>
+      <param name="type">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromFile(System.String,System.UInt32,System.UInt64)">
+      <summary>
+        <para>Синхронно загружает AssetBundle из файла на диске.</para>
+      </summary>
+      <param name="path">Путь к файлу на диске.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает.</param>
+      <param name="offset">Необязательное смещение в байтах. Это значение указывает, откуда начинать чтение AssetBundle.</param>
+      <returns>
+        <para>Загруженный объект AssetBundle или null в случае сбоя.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromFile">
+      <summary>
+        <para>Синхронно загружает AssetBundle из файла на диске.</para>
+      </summary>
+      <param name="path">Путь к файлу на диске.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает.</param>
+      <param name="offset">Необязательное смещение в байтах. Это значение указывает, откуда начинать чтение AssetBundle.</param>
+      <returns>
+        <para>Загруженный объект AssetBundle или null в случае сбоя.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromFileAsync(System.String,System.UInt32,System.UInt64)">
+      <summary>
+        <para>Асинхронно загружает AssetBundle из файла на диске.</para>
+      </summary>
+      <param name="path">Путь к файлу на диске.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает.</param>
+      <param name="offset">Необязательное смещение в байтах. Это значение указывает, откуда начинать чтение AssetBundle.</param>
+      <returns>
+        <para>Асинхронный запрос на создание AssetBundle. Используйте свойство AssetBundleCreateRequest.assetBundle, чтобы получить AssetBundle после его загрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromMemory(System.Byte[],System.UInt32)">
+      <summary>
+        <para>Синхронно создать AssetBundle из области памяти.</para>
+      </summary>
+      <param name="binary">Массив байтов с данными AssetBundle.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает.</param>
+      <returns>
+        <para>Загруженный объект AssetBundle или null в случае сбоя.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromMemoryAsync(System.Byte[],System.UInt32)">
+      <summary>
+        <para>Асинхронно создать AssetBundle из области памяти.</para>
+      </summary>
+      <param name="binary">Массив байтов с данными AssetBundle.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого. Если это не ноль, то перед загрузкой содержимое будет сравниваться с контрольной суммой и выдавать ошибку, если оно не совпадает.</param>
+      <returns>
+        <para>Асинхронный запрос на создание AssetBundle. Используйте свойство AssetBundleCreateRequest.assetBundle, чтобы получить AssetBundle после его загрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromStream(System.IO.Stream,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Синхронно загружает AssetBundle из управляемого потока.</para>
+      </summary>
+      <param name="stream">Управляемый объект Stream. Unity вызывает Read(), Seek() и свойство Length этого объекта для загрузки данных AssetBundle.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого.</param>
+      <param name="managedReadBufferSize">Вы можете использовать это, чтобы переопределить размер буфера чтения, который Unity использует при загрузке данных. Размер по умолчанию – 32 КБ.</param>
+      <returns>
+        <para>Загруженный объект AssetBundle или null, если объект не загружается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.LoadFromStreamAsync(System.IO.Stream,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Асинхронно загружает AssetBundle из управляемого потока.</para>
+      </summary>
+      <param name="stream">Управляемый объект Stream. Unity вызывает Read(), Seek() и свойство Length этого объекта для загрузки данных AssetBundle.</param>
+      <param name="crc">Необязательная контрольная сумма CRC-32 несжатого содержимого.</param>
+      <param name="managedReadBufferSize">Вы можете использовать это, чтобы переопределить размер буфера чтения, который Unity использует при загрузке данных. Размер по умолчанию – 32 КБ.</param>
+      <returns>
+        <para>Асинхронный запрос на создание AssetBundle. Используйте свойство AssetBundleCreateRequest.assetBundle, чтобы получить AssetBundle после его загрузки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.RecompressAssetBundleAsync(System.String,System.String,UnityEngine.BuildCompression,System.UInt32,UnityEngine.ThreadPriority)">
+      <summary>
+        <para>Асинхронно повторно сжать загруженный/сохраненный AssetBundle из одного BuildCompression в другой.</para>
+      </summary>
+      <param name="inputPath">Путь к AssetBundle для повторного сжатия.</param>
+      <param name="outputPath">Путь к повторно сжатому AssetBundle, который необходимо сгенерировать. Может совпадать с inputPath.</param>
+      <param name="method">Метод сжатия, уровень и размер блока для использования во время повторного сжатия. Поддерживаются только некоторые типы BuildCompression (см. примечание).</param>
+      <param name="expectedCRC">CRC AssetBundle для проверки. Проверка этого требует дополнительного чтения файла и вычислений. Передайте 0, чтобы пропустить эту проверку. Unity не вычисляет CRC, если исходный и целевой BuildCompression совпадают, поэтому проверка CRC не выполняется (см. примечание).</param>
+      <param name="priority">Приоритет, с которым должна выполняться операция повторного сжатия. Это устанавливает приоритет потока во время операции и не влияет на порядок, в котором выполняются операции. Операции повторного сжатия выполняются в фоновом рабочем потоке.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.Unload(System.Boolean)">
+      <summary>
+        <para>Выгружает AssetBundle, освобождая его данные.</para>
+      </summary>
+      <param name="unloadAllLoadedObjects">Определяет, будут ли также выгружены текущие экземпляры объектов, загруженных из AssetBundle.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.UnloadAllAssetBundles(System.Boolean)">
+      <summary>
+        <para>Выгружает все загруженные в данный момент AssetBundles.</para>
+      </summary>
+      <param name="unloadAllObjects">Определяет, будут ли также выгружены текущие экземпляры объектов, загруженных из AssetBundles.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.UnloadAsync(System.Boolean)">
+      <summary>
+        <para>Выгружает активы из пакета.</para>
+      </summary>
+      <param name="unloadAllLoadedObjects">
+      </param>
+      <returns>
+        <para>Асинхронный запрос на выгрузку для AssetBundle.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AssetBundleCreateRequest">
+      <summary>
+        <para>Асинхронный запрос на создание AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleCreateRequest.assetBundle">
+      <summary>
+        <para>Загружается объект актива (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AssetBundleLoadResult">
+      <summary>
+        <para>Результат операции загрузки или повторного сжатия пакета активов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.AlreadyLoaded">
+      <summary>
+        <para>Пакет ресурсов уже загружен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.Cancelled">
+      <summary>
+        <para>Операция отменена.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.FailedCache">
+      <summary>
+        <para>Пакет активов не был успешно кэширован.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.FailedDecompression">
+      <summary>
+        <para>Не удалось распаковать пакет активов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.FailedDeleteRecompressionTarget">
+      <summary>
+        <para>Целевой путь, указанный для операции повторного сжатия, не может быть удален для подкачки с повторно сжатым файлом пакета.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.FailedRead">
+      <summary>
+        <para>Не удалось прочитать файл Asset Bundle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.FailedWrite">
+      <summary>
+        <para>Ошибка записи в файловую систему.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.NoSerializedData">
+      <summary>
+        <para>Asset Bundle не содержит сериализованных данных. Он может быть пустым или поврежденным.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.NotCompatible">
+      <summary>
+        <para>AssetBundle несовместим с этой версией Unity.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.NotMatchingCrc">
+      <summary>
+        <para>Распакованные данные актива не соответствовали предварительно вычисленной CRC. Это может означать, что пакет AssetBundle скачался неправильно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.NotValidAssetBundle">
+      <summary>
+        <para>Похоже, это недействительный набор активов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.RecompressionTargetExistsButNotArchive">
+      <summary>
+        <para>Целевой путь, указанный для операции повторного сжатия, существует, но не является контейнером архива.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.RecompressionTargetIsLoaded">
+      <summary>
+        <para>Целевой путь, указанный для операции повторного сжатия, — это загруженный в данный момент архив.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AssetBundleLoadResult.Success">
+      <summary>
+        <para>Операция завершена успешно.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AssetBundleManifest">
+      <summary>
+        <para>Манифест для всех AssetBundles в сборке.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AssetBundleManifest.GetAllAssetBundles">
+      <summary>
+        <para>Получите все AssetBundles в манифесте.</para>
+      </summary>
+      <returns>
+        <para>Массив имен пакетов ресурсов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundleManifest.GetAllAssetBundlesWithVariant">
+      <summary>
+        <para>Получите все AssetBundles с вариантом в манифесте.</para>
+      </summary>
+      <returns>
+        <para>Массив имен пакетов ресурсов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundleManifest.GetAllDependencies(System.String)">
+      <summary>
+        <para>Получить все зависимые AssetBundle для данного AssetBundle.</para>
+      </summary>
+      <param name="assetBundleName">Имя набора ресурсов.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundleManifest.GetAssetBundleHash(System.String)">
+      <summary>
+        <para>Получить хеш для данного AssetBundle.</para>
+      </summary>
+      <param name="assetBundleName">Имя набора ресурсов.</param>
+      <returns>
+        <para>128-битный хэш для набора ресурсов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AssetBundleManifest.GetDirectDependencies(System.String)">
+      <summary>
+        <para>Получите напрямую зависимые AssetBundle для данного AssetBundle.</para>
+      </summary>
+      <param name="assetBundleName">Имя набора ресурсов.</param>
+      <returns>
+        <para>Массив имен пакетов ресурсов, от которых зависит этот набор ресурсов.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AssetBundleRecompressOperation">
+      <summary>
+        <para>Асинхронное повторное сжатие AssetBundle с одного метода и уровня сжатия на другой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRecompressOperation.humanReadableResult">
+      <summary>
+        <para>Строка, описывающая результат операции повторного сжатия (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRecompressOperation.inputPath">
+      <summary>
+        <para>Путь повторно сжимаемого AssetBundle (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRecompressOperation.outputPath">
+      <summary>
+        <para>Путь к результирующему повторно сжатому AssetBundle (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRecompressOperation.result">
+      <summary>
+        <para>Результат операции повторного сжатия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRecompressOperation.success">
+      <summary>
+        <para>Истина, если операция повторного сжатия завершена и прошла успешно, в противном случае — ложь (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AssetBundleRequest">
+      <summary>
+        <para>Запрос асинхронной загрузки из AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRequest.allAssets">
+      <summary>
+        <para>Объекты активов с загружаемыми вспомогательными активами. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AssetBundleRequest.asset">
+      <summary>
+        <para>Загружается объект актива (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.BuildCompression">
+      <summary>
+        <para>Содержит информацию о методах сжатия, уровнях сжатия и размерах блоков, поддерживаемых сжатием Asset Bundle во время сборки и повторным сжатием во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.BuildCompression.LZ4">
+      <summary>
+        <para>LZ4HC Сжатие на основе фрагментов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.BuildCompression.LZ4Runtime">
+      <summary>
+        <para>LZ4 Compression для повторного сжатия во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.BuildCompression.LZMA">
+      <summary>
+        <para>Сжатие LZMA.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.BuildCompression.Uncompressed">
+      <summary>
+        <para>Пакет несжатых активов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.BuildCompression.UncompressedRuntime">
+      <summary>
+        <para>Пакет несжатых активов.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.CompressionLevel">
+      <summary>
+        <para>Уровни сжатия относятся к тому, сколько времени должно быть потрачено на сжатие ресурсов в набор ресурсов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CompressionLevel.None">
+      <summary>
+        <para>Без сжатия.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.CompressionType">
+      <summary>
+        <para>Метод сжатия для пакетов активов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CompressionType.Lz4">
+      <summary>
+        <para>Сжатие LZ4 приводит к увеличению размера сжатых файлов по сравнению с LZMA, но не требует распаковки всего пакета перед использованием.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CompressionType.Lz4HC">
+      <summary>
+        <para>LZ4HC — это вариант LZ4 с высокой степенью сжатия. Сжатие LZ4HC приводит к увеличению размера сжатых файлов по сравнению с LZMA, но не требует распаковки всего пакета перед использованием.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CompressionType.Lzma">
+      <summary>
+        <para>Сжатие LZMA приводит к уменьшению размера сжатых пакетов активов, но перед использованием их необходимо полностью распаковать.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CompressionType.None">
+      <summary>
+        <para>Несжатые наборы Assets больше, чем сжатые, но после загрузки к ним быстрее всего получить доступ.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.AssetBundleModule">
+      <summary>
+        <para>Модуль AssetBundle реализует класс AssetBundle и связанные API для загрузки данных из AssetBundle.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

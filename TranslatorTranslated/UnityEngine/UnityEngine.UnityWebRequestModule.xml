@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.CertificateHandler">
+      <summary>
+        <para>Отвечает за отклонение или принятие сертификатов, полученных по запросам https.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.CertificateHandler.Dispose">
+      <summary>
+        <para>Сигнализирует, что этот [CertificateHandler] больше не используется и должен очистить все используемые им ресурсы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.CertificateHandler.ValidateCertificate(System.Byte[])">
+      <summary>
+        <para>Обратный вызов, вызываемый для каждого листового сертификата, отправленного удаленным сервером.</para>
+      </summary>
+      <param name="certificateData">Данные сертификата в формате PEM или DER. Если данные сертификата содержат несколько сертификатов, первый из них является конечным сертификатом.</param>
+      <returns>
+        <para>true, если сертификат должен быть принят, false, если нет.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandler">
+      <summary>
+        <para>Управление и обработка данных тела ответа HTTP, полученных с удаленного сервера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandler.data">
+      <summary>
+        <para>Возвращает необработанные байты, загруженные с удаленного сервера, или null. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandler.error">
+      <summary>
+        <para>Сообщение об ошибке, описывающее сбой, произошедший внутри обработчика загрузки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandler.isDone">
+      <summary>
+        <para>Возвращает true, если этот DownloadHandler был проинформирован своим родительским UnityWebRequest о том, что все данные были получены, и этот DownloadHandler завершил всю необходимую обработку после загрузки. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandler.nativeData">
+      <summary>
+        <para>Обеспечивает прямой доступ к загруженным данным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandler.text">
+      <summary>
+        <para>Свойство удобства. Возвращает байты из данных, интерпретируемых как строка UTF8. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.CompleteContent">
+      <summary>
+        <para>Обратный вызов, вызываемый после получения всех данных с удаленного сервера.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.Dispose">
+      <summary>
+        <para>Сигнализирует, что этот DownloadHandler больше не используется и должен очистить все используемые им ресурсы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.GetData">
+      <summary>
+        <para>Обратный вызов, вызываемый при доступе к свойству данных.</para>
+      </summary>
+      <returns>
+        <para>Массив байтов, возвращаемый как значение свойства данных.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.GetNativeData">
+      <summary>
+        <para>Предоставляет свободный доступ к загруженным данным в виде массива NativeArray.</para>
+      </summary>
+      <returns>
+        <para>NativeArray, обеспечивающий доступ к загруженным данным.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.GetProgress">
+      <summary>
+        <para>Обратный вызов, вызываемый при доступе к UnityWebRequest.downloadProgress.</para>
+      </summary>
+      <returns>
+        <para>Возвращаемое значение для UnityWebRequest.downloadProgress.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.GetText">
+      <summary>
+        <para>Обратный вызов, вызываемый при доступе к текстовому свойству.</para>
+      </summary>
+      <returns>
+        <para>Строка, возвращаемая как возвращаемое значение свойства text.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.ReceiveContentLength(System.Int32)">
+      <summary>
+        <para>Получен обратный вызов, вызванный с заголовком Content-Length.</para>
+      </summary>
+      <param name="contentLength">Значение полученного заголовка Content-Length.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.ReceiveContentLengthHeader(System.UInt64)">
+      <summary>
+        <para>Получен обратный вызов, вызванный с заголовком Content-Length.</para>
+      </summary>
+      <param name="contentLength">Значение полученного заголовка Content-Length.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandler.ReceiveData(System.Byte[],System.Int32)">
+      <summary>
+        <para>Обратный вызов, вызываемый при получении данных с удаленного сервера.</para>
+      </summary>
+      <param name="data">Буфер, содержащий необработанные данные, полученные от удаленного сервера.</param>
+      <param name="dataLength">Количество байтов в данных, которые являются новыми.</param>
+      <returns>
+        <para>True, если загрузка должна быть продолжена, false, чтобы прервать ее.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandlerBuffer">
+      <summary>
+        <para>Реализация DownloadHandler общего назначения, которая сохраняет полученные данные в собственном байтовом буфере.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerBuffer.#ctor">
+      <summary>
+        <para>Конструктор по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerBuffer.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>Возвращает копию буфера собственной памяти, интерпретируемого как строка UTF8.</para>
+      </summary>
+      <param name="www">Готовый объект UnityWebRequest с прикрепленным DownloadHandlerBuffer.</param>
+      <returns>
+        <para>То же, что DownloadHandlerBuffer.text</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandlerFile">
+      <summary>
+        <para>Обработчик загрузки для сохранения загруженных данных в файл.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerFile.removeFileOnAbort">
+      <summary>
+        <para>Должен ли созданный файл быть удален, если загрузка прервана (вручную или из-за ошибки). По умолчанию: ложь.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerFile.#ctor(System.String)">
+      <summary>
+        <para>Создает новый экземпляр и файл на диске, куда будут записаны загруженные данные.</para>
+      </summary>
+      <param name="path">Путь к файлу для записи.</param>
+      <param name="append">При значении true данные добавляются в указанный файл, а не перезаписываются.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerFile.#ctor(System.String,System.Boolean)">
+      <summary>
+        <para>Создает новый экземпляр и файл на диске, куда будут записаны загруженные данные.</para>
+      </summary>
+      <param name="path">Путь к файлу для записи.</param>
+      <param name="append">При значении true данные добавляются в указанный файл, а не перезаписываются.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandlerScript">
+      <summary>
+        <para>Абстрактный базовый класс для созданных пользователем реализаций DownloadHandler, управляемых сценариями.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerScript.#ctor">
+      <summary>
+        <para>Создайте DownloadHandlerScript, который выделяет новые буферы при передаче данных в обратные вызовы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerScript.#ctor(System.Byte[])">
+      <summary>
+        <para>Создайте DownloadHandlerScript, который повторно использует предварительно выделенный буфер для передачи данных в обратные вызовы.</para>
+      </summary>
+      <param name="preallocatedBuffer">Байтовый буфер, в который будут скопированы данные для использования DownloadHandler.ReceiveData.</param>
+    </member>
+    <member name="?:UnityEngine.Networking.IMultipartFormSection">
+      <summary>
+        <para>Интерфейс для составления данных в составные формы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.IMultipartFormSection.contentType">
+      <summary>
+        <para>Возвращает значение для использования в заголовке Content-Type для этого раздела формы.</para>
+      </summary>
+      <returns>
+        <para>Значение для использования в заголовке Content-Type или null.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.IMultipartFormSection.fileName">
+      <summary>
+        <para>Возвращает строку, обозначающую желаемое имя файла этого раздела на целевом сервере.</para>
+      </summary>
+      <returns>
+        <para>Желаемое имя файла этого раздела или null, если это не раздел файла.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.IMultipartFormSection.sectionData">
+      <summary>
+        <para>Возвращает необработанные двоичные данные, содержащиеся в этом разделе. Не должен возвращать null или массив нулевой длины.</para>
+      </summary>
+      <returns>
+        <para>Необработанные двоичные данные, содержащиеся в этом разделе. Не должно быть нулевым или пустым.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.IMultipartFormSection.sectionName">
+      <summary>
+        <para>Возвращает имя этого раздела, если он есть.</para>
+      </summary>
+      <returns>
+        <para>Имя раздела или null.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.MultipartFormDataSection">
+      <summary>
+        <para>Вспомогательный объект для разделов формы, содержащих общие нефайловые данные.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormDataSection.contentType">
+      <summary>
+        <para>Возвращает значение для использования в заголовке Content-Type этого раздела.</para>
+      </summary>
+      <returns>
+        <para>Заголовок Content-Type для этого раздела или null.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormDataSection.fileName">
+      <summary>
+        <para>Возвращает строку, обозначающую желаемое имя файла этого раздела на целевом сервере.</para>
+      </summary>
+      <returns>
+        <para>Желаемое имя файла этого раздела или null, если это не раздел файла.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormDataSection.sectionData">
+      <summary>
+        <para>Возвращает необработанные двоичные данные, содержащиеся в этом разделе. Не возвращает null или массив нулевой длины.</para>
+      </summary>
+      <returns>
+        <para>Необработанные двоичные данные, содержащиеся в этом разделе. Не будет нулевым или пустым.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormDataSection.sectionName">
+      <summary>
+        <para>Возвращает имя этого раздела, если он есть.</para>
+      </summary>
+      <returns>
+        <para>Имя раздела или null.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.Byte[])">
+      <summary>
+        <para>Раздел необработанных данных, безымянный и без заголовка Content-Type.</para>
+      </summary>
+      <param name="data">Полезные данные этого раздела.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String,System.Byte[])">
+      <summary>
+        <para>Раздел необработанных данных с именем раздела, без заголовка Content-Type.</para>
+      </summary>
+      <param name="name">Название раздела.</param>
+      <param name="data">Полезные данные этого раздела.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String,System.Byte[],System.String)">
+      <summary>
+        <para>Раздел необработанных данных с именем раздела и заголовком Content-Type.</para>
+      </summary>
+      <param name="name">Название раздела.</param>
+      <param name="data">Полезные данные этого раздела.</param>
+      <param name="contentType">Значение заголовка Content-Type этого раздела.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String,System.String,System.Text.Encoding,System.String)">
+      <summary>
+        <para>Именованный раздел необработанных данных, полезная нагрузка которого получена из строки с заголовком Content-Type.</para>
+      </summary>
+      <param name="name">Название раздела.</param>
+      <param name="data">Строковые полезные данные для этого раздела.</param>
+      <param name="contentType">Значение заголовка Content-Type этого раздела.</param>
+      <param name="encoding">Кодировка для маршалинга данных в необработанные байты или из них.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String,System.String,System.String)">
+      <summary>
+        <para>Именованный раздел необработанных данных, полезная нагрузка которого получена из строки UTF8 с заголовком Content-Type.</para>
+      </summary>
+      <param name="name">Название раздела.</param>
+      <param name="data">Строковые полезные данные для этого раздела.</param>
+      <param name="contentType">С.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String,System.String)">
+      <summary>
+        <para>Раздел необработанных данных имен, полезная нагрузка которого получена из строки UTF8 с Content-Type по умолчанию.</para>
+      </summary>
+      <param name="name">Название раздела.</param>
+      <param name="data">Строковые полезные данные для этого раздела.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormDataSection.#ctor(System.String)">
+      <summary>
+        <para>Анонимный раздел необработанных данных, полезная нагрузка которого получена из строки UTF8 с Content-Type по умолчанию.</para>
+      </summary>
+      <param name="data">Строковые полезные данные для этого раздела.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.MultipartFormFileSection">
+      <summary>
+        <para>Вспомогательный объект для добавления загрузки файлов в составные формы через API [IMultipartFormSection].</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormFileSection.contentType">
+      <summary>
+        <para>Возвращает значение заголовка Content-Type раздела.</para>
+      </summary>
+      <returns>
+        <para>Заголовок Content-Type для этого раздела или null.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormFileSection.fileName">
+      <summary>
+        <para>Возвращает строку, обозначающую желаемое имя файла этого раздела на целевом сервере.</para>
+      </summary>
+      <returns>
+        <para>Желаемое имя файла этого раздела или null, если это не раздел файла.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormFileSection.sectionData">
+      <summary>
+        <para>Возвращает необработанные двоичные данные, содержащиеся в этом разделе. Не возвращает null или массив нулевой длины.</para>
+      </summary>
+      <returns>
+        <para>Необработанные двоичные данные, содержащиеся в этом разделе. Не будет нулевым или пустым.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.MultipartFormFileSection.sectionName">
+      <summary>
+        <para>Возвращает имя этого раздела, если он есть.</para>
+      </summary>
+      <returns>
+        <para>Имя раздела или null.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.String,System.Byte[],System.String,System.String)">
+      <summary>
+        <para>Содержит именованный раздел файла, основанный на необработанных байтах данных, с пользовательским Content-Type и именем файла.</para>
+      </summary>
+      <param name="name">Название раздела этой формы.</param>
+      <param name="data">Необработанное содержимое загружаемого файла.</param>
+      <param name="fileName">Имя файла, загруженного этим разделом формы.</param>
+      <param name="contentType">Значение заголовка Content-Type этого раздела.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.Byte[])">
+      <summary>
+        <para>Содержит анонимный раздел файла, основанный на необработанных байтах данных, присваивает Content-Type по умолчанию и имя файла.</para>
+      </summary>
+      <param name="data">Необработанное содержимое загружаемого файла.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.String,System.Byte[])">
+      <summary>
+        <para>Содержит анонимный раздел файла, основанный на необработанных байтах данных с определенным именем файла. Назначает Content-Type по умолчанию.</para>
+      </summary>
+      <param name="data">Необработанное содержимое загружаемого файла.</param>
+      <param name="fileName">Имя файла, загруженного этим разделом формы.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.String,System.String,System.Text.Encoding,System.String)">
+      <summary>
+        <para>Содержит именованный раздел файла с данными, полученными из данных, маршалированных с помощью dataEncoding. Присваивает определенное имя файла из fileName и Content-Type по умолчанию.</para>
+      </summary>
+      <param name="name">Название раздела этой формы.</param>
+      <param name="data">Содержимое загружаемого файла.</param>
+      <param name="dataEncoding">Кодировка строки.</param>
+      <param name="fileName">Имя файла, загруженного этим разделом формы.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.String,System.Text.Encoding,System.String)">
+      <summary>
+        <para>Раздел анонимного файла с данными, полученными из данных, маршалированных с помощью dataEncoding. Присваивает определенное имя файла из fileName и Content-Type по умолчанию.</para>
+      </summary>
+      <param name="data">Содержимое загружаемого файла.</param>
+      <param name="dataEncoding">Кодировка строки.</param>
+      <param name="fileName">Имя файла, загруженного этим разделом формы.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.MultipartFormFileSection.#ctor(System.String,System.String)">
+      <summary>
+        <para>Раздел анонимного файла с данными, полученными из строковых данных UTF8. Присваивает определенное имя файла из fileName и Content-Type по умолчанию.</para>
+      </summary>
+      <param name="data">Содержимое загружаемого файла.</param>
+      <param name="fileName">Имя файла, загруженного этим разделом формы.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequest">
+      <summary>
+        <para>Предоставляет методы для связи с веб-серверами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.certificateHandler">
+      <summary>
+        <para>Содержит ссылку на объект CertificateHandler, который управляет проверкой сертификата для этого UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.chunkedTransfer">
+      <summary>
+        <para>**Устарело.**. HTTP2 и многие серверы HTTP1.1 не поддерживают это; мы рекомендуем оставить значение false (по умолчанию).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.disposeCertificateHandlerOnDispose">
+      <summary>
+        <para>Если значение равно true, любой CertificateHandler, присоединенный к этому UnityWebRequest, будет автоматически вызывать CertificateHandler.Dispose при вызове UnityWebRequest.Dispose.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.disposeDownloadHandlerOnDispose">
+      <summary>
+        <para>Если значение равно true, любой DownloadHandler, присоединенный к этому UnityWebRequest, будет автоматически вызывать DownloadHandler.Dispose при вызове UnityWebRequest.Dispose.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.disposeUploadHandlerOnDispose">
+      <summary>
+        <para>Если значение равно true, любой UploadHandler, присоединенный к этому UnityWebRequest, будет автоматически вызывать UploadHandler.Dispose при вызове UnityWebRequest.Dispose.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.downloadedBytes">
+      <summary>
+        <para>Возвращает количество байтов данных тела, которые система загрузила с удаленного сервера. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.downloadHandler">
+      <summary>
+        <para>Содержит ссылку на объект DownloadHandler, который управляет данными тела, полученными с удаленного сервера этим UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.downloadProgress">
+      <summary>
+        <para>Возвращает значение с плавающей запятой от 0,0 до 1,0, указывающее ход загрузки данных тела с сервера. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.error">
+      <summary>
+        <para>Удобочитаемая строка, описывающая любые системные ошибки, обнаруженные этим объектом UnityWebRequest при обработке HTTP-запросов или ответов. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.isDone">
+      <summary>
+        <para>Возвращает true после завершения связи UnityWebRequest с удаленным сервером. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.isHttpError">
+      <summary>
+        <para>Возвращает true после того, как этот UnityWebRequest получает код ответа HTTP, указывающий на ошибку. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.isModifiable">
+      <summary>
+        <para>Возвращает true, если свойства конфигурации UnityWebRequest могут быть изменены. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.isNetworkError">
+      <summary>
+        <para>Возвращает true после того, как этот UnityWebRequest обнаруживает системную ошибку. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbCREATE">
+      <summary>
+        <para>Строка "CREATE", обычно используемая в качестве глагола для HTTP-запроса CREATE.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbDELETE">
+      <summary>
+        <para>Строка "DELETE", обычно используемая в качестве глагола для HTTP-запроса DELETE.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbGET">
+      <summary>
+        <para>Строка "GET", обычно используемая в качестве глагола для HTTP-запроса GET.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbHEAD">
+      <summary>
+        <para>Строка "HEAD", обычно используемая в качестве глагола для HTTP-запроса HEAD.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbPOST">
+      <summary>
+        <para>Строка «POST», обычно используемая в качестве глагола для HTTP-запроса POST.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.kHttpVerbPUT">
+      <summary>
+        <para>Строка "PUT", обычно используемая в качестве глагола для HTTP-запроса PUT.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.method">
+      <summary>
+        <para>Определяет команду HTTP, используемую этим UnityWebRequest, например GET или POST.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.redirectLimit">
+      <summary>
+        <para>Указывает количество перенаправлений, которым будет следовать этот UnityWebRequest, прежде чем остановится из-за системной ошибки «Redirect Limit Exceeded».</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.responseCode">
+      <summary>
+        <para>Числовой код ответа HTTP, возвращаемый сервером, например 200, 404 или 500. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.result">
+      <summary>
+        <para>Результат этого UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.timeout">
+      <summary>
+        <para>Устанавливает UnityWebRequest для попытки прерывания по истечении времени ожидания в секундах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.uploadedBytes">
+      <summary>
+        <para>Возвращает количество байтов данных тела, которые система загрузила на удаленный сервер. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.uploadHandler">
+      <summary>
+        <para>Содержит ссылку на объект UploadHandler, который управляет загрузкой данных тела на удаленный сервер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.uploadProgress">
+      <summary>
+        <para>Возвращает значение с плавающей запятой от 0,0 до 1,0, указывающее ход загрузки данных тела на сервер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.uri">
+      <summary>
+        <para>Определяет целевой URI для связи с UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.url">
+      <summary>
+        <para>Определяет целевой URL-адрес для связи с UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequest.useHttpContinue">
+      <summary>
+        <para>Определяет, будет ли этот UnityWebRequest включать Expect: 100-Continue в свои заголовки исходящих запросов. (По умолчанию: правда).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Abort">
+      <summary>
+        <para>Если он выполняется, останавливает UnityWebRequest как можно скорее.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.ClearCookieCache">
+      <summary>
+        <para>Удаляет сохраненные файлы cookie из кэша.</para>
+      </summary>
+      <param name="domain">Необязательный URL-адрес, определяющий, какие файлы cookie удаляются. Из кэша будут удалены только те файлы cookie, которые относятся к этому URL-адресу.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.ClearCookieCache">
+      <summary>
+        <para>Удаляет сохраненные файлы cookie из кэша.</para>
+      </summary>
+      <param name="domain">Необязательный URL-адрес, определяющий, какие файлы cookie удаляются. Из кэша будут удалены только те файлы cookie, которые относятся к этому URL-адресу.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.String)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.Uri)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.String,System.String)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.Uri,System.String)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.String,System.String,UnityEngine.Networking.DownloadHandler,UnityEngine.Networking.UploadHandler)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor(System.Uri,System.String,UnityEngine.Networking.DownloadHandler,UnityEngine.Networking.UploadHandler)">
+      <summary>
+        <para>Создает UnityWebRequest с параметрами по умолчанию и без прикрепленных DownloadHandler или UploadHandler. Метод по умолчанию — GET.</para>
+      </summary>
+      <param name="url">Целевой URL-адрес, с которым будет взаимодействовать этот UnityWebRequest. Также доступно через свойство url.</param>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="method">Методы HTTP GET, POST и т. д. </param>
+      <param name="downloadHandler">Ответы с сервера.</param>
+      <param name="uploadHandler">Загрузить данные на сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Delete(System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, настроенный для HTTP DELETE.</para>
+      </summary>
+      <param name="uri">URI, на который должен быть отправлен запрос DELETE.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный для отправки HTTP-запроса DELETE.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Dispose">
+      <summary>
+        <para>Сигнализирует о том, что этот UnityWebRequest больше не используется и должен очистить все используемые им ресурсы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.EscapeURL(System.String)">
+      <summary>
+        <para>Экранирует символы в строке, чтобы обеспечить их совместимость с URL-адресами.</para>
+      </summary>
+      <param name="s">Строка с экранированными символами.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.EscapeURL(System.String,System.Text.Encoding)">
+      <summary>
+        <para>Экранирует символы в строке, чтобы обеспечить их совместимость с URL-адресами.</para>
+      </summary>
+      <param name="s">Строка с экранированными символами.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GenerateBoundary">
+      <summary>
+        <para>Создайте случайный 40-байтовый массив для использования в качестве границы составной формы.</para>
+      </summary>
+      <returns>
+        <para>40 случайных байтов, гарантированно содержащих только печатные значения ASCII.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Get(System.String)">
+      <summary>
+        <para>Создайте UnityWebRequest для HTTP GET.</para>
+      </summary>
+      <param name="uri">URI ресурса для получения через HTTP GET.</param>
+      <returns>
+        <para>Объект, извлекающий данные из uri.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Get(System.Uri)">
+      <summary>
+        <para>Создайте UnityWebRequest для HTTP GET.</para>
+      </summary>
+      <param name="uri">URI ресурса для получения через HTTP GET.</param>
+      <returns>
+        <para>Объект, извлекающий данные из uri.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,System.UInt32)">
+      <summary>
+        <para>Устарело. Заменено на UnityWebRequestAssetBundle.GetAssetBundle.</para>
+      </summary>
+      <param name="uri">
+      </param>
+      <param name="crc">
+      </param>
+      <param name="version">
+      </param>
+      <param name="hash">
+      </param>
+      <param name="cachedAssetBundle">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Устарело. Заменено на UnityWebRequestAssetBundle.GetAssetBundle.</para>
+      </summary>
+      <param name="uri">
+      </param>
+      <param name="crc">
+      </param>
+      <param name="version">
+      </param>
+      <param name="hash">
+      </param>
+      <param name="cachedAssetBundle">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,UnityEngine.Hash128,System.UInt32)">
+      <summary>
+        <para>Устарело. Заменено на UnityWebRequestAssetBundle.GetAssetBundle.</para>
+      </summary>
+      <param name="uri">
+      </param>
+      <param name="crc">
+      </param>
+      <param name="version">
+      </param>
+      <param name="hash">
+      </param>
+      <param name="cachedAssetBundle">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,UnityEngine.CachedAssetBundle,System.UInt32)">
+      <summary>
+        <para>Устарело. Заменено на UnityWebRequestAssetBundle.GetAssetBundle.</para>
+      </summary>
+      <param name="uri">
+      </param>
+      <param name="crc">
+      </param>
+      <param name="version">
+      </param>
+      <param name="hash">
+      </param>
+      <param name="cachedAssetBundle">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetAudioClip(System.String,UnityEngine.AudioType)">
+      <summary>
+        <para>УСТАРЕВШИЙ. Используйте UnityWebRequestMultimedia.GetAudioClip().</para>
+      </summary>
+      <param name="uri">
+      </param>
+      <param name="audioType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetRequestHeader(System.String)">
+      <summary>
+        <para>Извлекает значение пользовательского заголовка запроса.</para>
+      </summary>
+      <param name="name">Имя пользовательского заголовка запроса. Без учета регистра.</param>
+      <returns>
+        <para>Значение пользовательского заголовка запроса. Если пользовательский заголовок с совпадающим именем не задан, возвращает пустую строку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetResponseHeader(System.String)">
+      <summary>
+        <para>Извлекает значение заголовка ответа из последнего полученного ответа HTTP.</para>
+      </summary>
+      <param name="name">Имя заголовка HTTP, который необходимо получить. Без учета регистра.</param>
+      <returns>
+        <para>Значение заголовка HTTP из последнего ответа HTTP. Если заголовок с совпадающим именем не был получен или ответы не были получены, возвращает значение null.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetResponseHeaders">
+      <summary>
+        <para>Извлекает словарь, содержащий все заголовки ответа, полученные этим UnityWebRequest в последнем ответе HTTP.</para>
+      </summary>
+      <returns>
+        <para>Словарь, содержащий все заголовки ответа, полученные в последнем ответе HTTP. Если ответы не получены, возвращает null.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetTexture(System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, предназначенный для загрузки изображения через HTTP GET и создания текстуры на основе полученных данных.</para>
+      </summary>
+      <param name="uri">URI загружаемого изображения.</param>
+      <param name="nonReadable">Если true, необработанные данные текстуры не будут доступны скрипту. Это может сохранить память. По умолчанию: ложь.</param>
+      <returns>
+        <para>Правильно настроенный UnityWebRequest для загрузки изображения и преобразования его в текстуру.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.GetTexture(System.String,System.Boolean)">
+      <summary>
+        <para>Создает UnityWebRequest, предназначенный для загрузки изображения через HTTP GET и создания текстуры на основе полученных данных.</para>
+      </summary>
+      <param name="uri">URI загружаемого изображения.</param>
+      <param name="nonReadable">Если true, необработанные данные текстуры не будут доступны скрипту. Это может сохранить память. По умолчанию: ложь.</param>
+      <returns>
+        <para>Правильно настроенный UnityWebRequest для загрузки изображения и преобразования его в текстуру.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Head(System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, настроенный для отправки HTTP-запроса HEAD.</para>
+      </summary>
+      <param name="uri">URI, на который следует отправить запрос HTTP HEAD.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный для передачи HTTP-запроса HEAD.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Post(System.String,System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, настроенный для отправки данных формы на сервер через HTTP POST.</para>
+      </summary>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="postData">Данные тела формы. Будет URLEncoded перед передачей.</param>
+      <returns>
+        <para>UnityWebRequest настроен на отправку данных формы в uri через POST.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Post(System.String,UnityEngine.WWWForm)">
+      <summary>
+        <para>Создайте UnityWebRequest, настроенный для отправки данных формы на сервер через HTTP POST.</para>
+      </summary>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="formData">Поля формы или файлы, инкапсулированные в объект WWWForm, для форматирования и передачи на удаленный сервер.</param>
+      <returns>
+        <para>UnityWebRequest настроен на отправку данных формы в uri через POST.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Post(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Networking.IMultipartFormSection&gt;)">
+      <summary>
+        <para>Создайте UnityWebRequest, настроенный для отправки данных формы на сервер через HTTP POST.</para>
+      </summary>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="multipartFormSections">Список полей формы или файлов для форматирования и передачи на удаленный сервер.</param>
+      <param name="boundary">Уникальная граничная строка, которая будет использоваться при разделении полей формы в составной форме. Если он не указан, для вас будет создана граница.</param>
+      <returns>
+        <para>UnityWebRequest настроен на отправку данных формы в uri через POST.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Post(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Networking.IMultipartFormSection&gt;,System.Byte[])">
+      <summary>
+        <para>Создайте UnityWebRequest, настроенный для отправки данных формы на сервер через HTTP POST.</para>
+      </summary>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="multipartFormSections">Список полей формы или файлов для форматирования и передачи на удаленный сервер.</param>
+      <param name="boundary">Уникальная граничная строка, которая будет использоваться при разделении полей формы в составной форме. Если он не указан, для вас будет создана граница.</param>
+      <returns>
+        <para>UnityWebRequest настроен на отправку данных формы в uri через POST.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Post(System.String,System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;)">
+      <summary>
+        <para>Создайте UnityWebRequest, настроенный для отправки данных формы на сервер через HTTP POST.</para>
+      </summary>
+      <param name="uri">Целевой URI, на который будут передаваться данные формы.</param>
+      <param name="formFields">Строки, указывающие ключи и значения полей формы. Будет автоматически отформатирован в тело формы с кодировкой URL.</param>
+      <returns>
+        <para>UnityWebRequest настроен на отправку данных формы в uri через POST.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Put(System.String,System.Byte[])">
+      <summary>
+        <para>Создает UnityWebRequest, настроенный для загрузки необработанных данных на удаленный сервер через HTTP PUT.</para>
+      </summary>
+      <param name="uri">URI, на который будут отправлены данные.</param>
+      <param name="bodyData">Данные для передачи на удаленный сервер.
+
+Если это строка, она будет преобразована в необработанные байты через &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.text.encoding.utf8"&gt;System.Text.Encoding.UTF8&lt;a&gt;.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный для передачи bodyData в uri через HTTP PUT.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Put(System.String,System.String)">
+      <summary>
+        <para>Создает UnityWebRequest, настроенный для загрузки необработанных данных на удаленный сервер через HTTP PUT.</para>
+      </summary>
+      <param name="uri">URI, на который будут отправлены данные.</param>
+      <param name="bodyData">Данные для передачи на удаленный сервер.
+
+Если это строка, она будет преобразована в необработанные байты через &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.text.encoding.utf8"&gt;System.Text.Encoding.UTF8&lt;a&gt;.</param>
+      <returns>
+        <para>UnityWebRequest, настроенный для передачи bodyData в uri через HTTP PUT.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequest.Result">
+      <summary>
+        <para>Определяет коды, описывающие возможные результаты UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.Result.ConnectionError">
+      <summary>
+        <para>Не удалось связаться с сервером. Например, запрос не может подключиться или не может установить безопасный канал.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.Result.DataProcessingError">
+      <summary>
+        <para>Ошибка обработки данных. Запросу удалось связаться с сервером, но возникла ошибка при обработке полученных данных. Например, данные были повреждены или имеют неверный формат.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.Result.InProgress">
+      <summary>
+        <para>Запрос еще не завершен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.Result.ProtocolError">
+      <summary>
+        <para>Сервер вернул ответ об ошибке. Запросу удалось связаться с сервером, но получена ошибка, определенная протоколом соединения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.UnityWebRequest.Result.Success">
+      <summary>
+        <para>Запрос выполнен успешно.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.Send">
+      <summary>
+        <para>Начать связь с удаленным сервером.</para>
+      </summary>
+      <returns>
+        <para>AsyncOperation, указывающая состояние выполнения/завершения UnityWebRequest. Дайте этому объекту дождаться завершения UnityWebRequest.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.SendWebRequest">
+      <summary>
+        <para>Начать связь с удаленным сервером.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.SerializeFormSections(System.Collections.Generic.List`1&lt;UnityEngine.Networking.IMultipartFormSection&gt;,System.Byte[])">
+      <summary>
+        <para>Преобразует список объектов IMultipartFormSection в массив байтов, содержащий необработанные данные составной формы.</para>
+      </summary>
+      <param name="multipartFormSections">Список объектов IMultipartFormSection.</param>
+      <param name="boundary">Уникальная граничная строка для разделения разделов формы.</param>
+      <returns>
+        <para>Байтовый массив необработанных данных составной формы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.SerializeSimpleForm(System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;)">
+      <summary>
+        <para>Сериализация словаря строк в массив байтов, содержащий символы UTF8 в кодировке URL.</para>
+      </summary>
+      <param name="formFields">Словарь, содержащий ключи формы и значения для сериализации.</param>
+      <returns>
+        <para>Массив байтов, содержащий сериализованную форму. Ключи и значения формы были закодированы в URL-адресе.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.SetRequestHeader(System.String,System.String)">
+      <summary>
+        <para>Задайте для заголовка HTTP-запроса пользовательское значение.</para>
+      </summary>
+      <param name="name">Ключ заголовка, который необходимо установить. С учетом регистра.</param>
+      <param name="value">Предполагаемое значение заголовка.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.UnEscapeURL(System.String)">
+      <summary>
+        <para>Преобразует удобные для URL escape-последовательности обратно в обычный текст.</para>
+      </summary>
+      <param name="s">Строка, содержащая экранированные символы.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.UnEscapeURL(System.String,System.Text.Encoding)">
+      <summary>
+        <para>Преобразует удобные для URL escape-последовательности обратно в обычный текст.</para>
+      </summary>
+      <param name="s">Строка, содержащая экранированные символы.</param>
+      <param name="e">Используемая кодировка текста.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequestAsyncOperation">
+      <summary>
+        <para>Объект асинхронной операции, возвращенный из UnityWebRequest.SendWebRequest().
+
+Вы можете уступить, пока оно не продолжится, зарегистрировать обработчик события с помощью AsyncOperation.completed или вручную проверить, выполнено ли оно (AsyncOperation.isDone) или выполняется (AsyncOperation.progress).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UnityWebRequestAsyncOperation.webRequest">
+      <summary>
+        <para>Возвращает связанный UnityWebRequest, создавший операцию.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.UploadHandler">
+      <summary>
+        <para>Вспомогательный объект для UnityWebRequests. Управляет буферизацией и передачей данных тела во время HTTP-запросов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UploadHandler.contentType">
+      <summary>
+        <para>Определяет заголовок Content-Type по умолчанию, который будет передаваться с исходящим HTTP-запросом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UploadHandler.data">
+      <summary>
+        <para>Необработанные данные, которые будут переданы на удаленный сервер в виде данных тела. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.UploadHandler.progress">
+      <summary>
+        <para>Возвращает долю данных, загруженных на удаленный сервер, по сравнению с общим объемом данных для загрузки. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UploadHandler.Dispose">
+      <summary>
+        <para>Сигнализирует, что этот UploadHandler больше не используется и должен очистить все ресурсы, которые он использует.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.UploadHandlerFile">
+      <summary>
+        <para>Специализированный UploadHandler, который считывает данные из заданного файла и отправляет необработанные байты на сервер в качестве тела запроса.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UploadHandlerFile.#ctor(System.String)">
+      <summary>
+        <para>Создайте новый обработчик загрузки для отправки данных из данного файла на сервер.</para>
+      </summary>
+      <param name="filePath">Файл, содержащий данные для отправки.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.UploadHandlerRaw">
+      <summary>
+        <para>Подкласс общего назначения UploadHandler, использующий буфер памяти собственного кода.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UploadHandlerRaw.#ctor(System.Byte[])">
+      <summary>
+        <para>Генеральный конструктор. Содержимое входного аргумента копируется в собственный буфер.</para>
+      </summary>
+      <param name="data">Необработанные данные для передачи на удаленный сервер.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UploadHandlerRaw.#ctor(Unity.Collections.NativeArray`1&lt;System.Byte&gt;,System.Boolean)">
+      <summary>
+        <para>Создает обработчик загрузки с помощью NativeArray.</para>
+      </summary>
+      <param name="data">Необработанные данные для передачи на удаленный сервер.</param>
+      <param name="transferOwnership">Если задано значение true, обработчик загрузки становится владельцем переданного массива NativeArray. Это означает, что обработчик загрузки удалит NativeArray, когда будет удален сам обработчик загрузки. При значении false NativeArray принадлежит вызывающему объекту, и вы должны убедиться, что он остается действительным до завершения загрузки.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UploadHandlerRaw.#ctor(Unity.Collections.NativeArray`1/ReadOnly&lt;System.Byte&gt;)">
+      <summary>
+        <para>Создает обработчик загрузки, используя NativeArray, доступный только для чтения. Переданный массив принадлежит вызывающей стороне, и вы должны убедиться, что он остается действительным до завершения загрузки.</para>
+      </summary>
+      <param name="data">Необработанные данные для передачи на удаленный сервер.</param>
+    </member>
+    <member name="A:UnityEngine.UnityWebRequestModule">
+      <summary>
+        <para>Модуль UnityWebRequest позволяет вам взаимодействовать со службами http.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WWWForm">
+      <summary>
+        <para>Вспомогательный класс для создания данных формы для публикации на веб-серверах с использованием классов UnityWebRequest или WWW.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWWForm.data">
+      <summary>
+        <para>(Только чтение) Необработанные данные для передачи в качестве тела запроса POST при отправке формы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WWWForm.headers">
+      <summary>
+        <para>(Только чтение) Возвращает правильные заголовки запроса для публикации формы с использованием класса WWW.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddBinaryData(System.String,System.Byte[])">
+      <summary>
+        <para>Добавьте двоичные данные в форму.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="contents">
+      </param>
+      <param name="fileName">
+      </param>
+      <param name="mimeType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddBinaryData(System.String,System.Byte[],System.String)">
+      <summary>
+        <para>Добавьте двоичные данные в форму.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="contents">
+      </param>
+      <param name="fileName">
+      </param>
+      <param name="mimeType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddBinaryData(System.String,System.Byte[],System.String,System.String)">
+      <summary>
+        <para>Добавьте двоичные данные в форму.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="contents">
+      </param>
+      <param name="fileName">
+      </param>
+      <param name="mimeType">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddField(System.String,System.String)">
+      <summary>
+        <para>Добавьте в форму простое поле.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="value">
+      </param>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddField(System.String,System.String,System.Text.Encoding)">
+      <summary>
+        <para>Добавьте в форму простое поле.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="value">
+      </param>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.AddField(System.String,System.Int32)">
+      <summary>
+        <para>Добавляет в форму простое поле.</para>
+      </summary>
+      <param name="fieldName">
+      </param>
+      <param name="i">
+      </param>
+    </member>
+    <member name="M:UnityEngine.WWWForm.#ctor">
+      <summary>
+        <para>Создает пустой объект WWWForm.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,2144 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AudioModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Audio.AudioClipPlayable">
+      <summary>
+        <para>Реализация IPlayable, управляющая AudioClip.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioClipPlayable.Create(UnityEngine.Playables.PlayableGraph,UnityEngine.AudioClip,System.Boolean)">
+      <summary>
+        <para>Создает AudioClipPlayable в PlayableGraph.</para>
+      </summary>
+      <param name="graph">PlayableGraph, который будет содержать новый AnimationLayerMixerPlayable.</param>
+      <param name="clip">AudioClip, который будет добавлен в PlayableGraph.</param>
+      <param name="looping">True, если клип должен зацикливаться, иначе false.</param>
+      <returns>
+        <para>AudioClipPlayable, связанный с PlayableGraph.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioMixer">
+      <summary>
+        <para>Ресурс AudioMixer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Audio.AudioMixer.outputAudioMixerGroup">
+      <summary>
+        <para>Цель маршрутизации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Audio.AudioMixer.updateMode">
+      <summary>
+        <para>Как время должно прогрессировать для этого AudioMixer. Используется во время переходов между снимками.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.ClearFloat(System.String)">
+      <summary>
+        <para>Сбрасывает открытый параметр до его начального значения.</para>
+      </summary>
+      <param name="name">Открытый параметр.</param>
+      <returns>
+        <para>Возвращает false, если параметр не найден или не может быть установлен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.FindMatchingGroups(System.String)">
+      <summary>
+        <para>Подключенные группы в микшере образуют путь от главной группы микшера к листьям. Этот путь имеет формат «Мастер-группа-потомок мастер-группыВнук мастер-группы», поэтому для поиска внучатой ​​группы в этом примере допустимой строкой поиска будет, например, «рандчи», которая вернет ровно одну группу, в то время как «дочерняя группа» или «уп /" вернет 2 разные группы.</para>
+      </summary>
+      <param name="subPath">Подстрока путей для сопоставления.</param>
+      <returns>
+        <para>Группы в микшере, пути которых совпадают с указанным путем поиска.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.FindSnapshot(System.String)">
+      <summary>
+        <para>Имя должно точно совпадать.</para>
+      </summary>
+      <param name="name">Имя возвращаемого объекта моментального снимка.</param>
+      <returns>
+        <para>Моментальный снимок, идентифицированный по имени.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.GetFloat(System.String,System.Single&amp;)">
+      <summary>
+        <para>Возвращает значение указанного открытого параметра. Если параметр не существует, функция возвращает false. До вызова SetFloat и после вызова ClearFloat для этого параметра возвращаемое значение будет значением текущего снимка или перехода к снимку.</para>
+      </summary>
+      <param name="name">Имя отображаемого параметра.</param>
+      <param name="value">Возвращаемое значение открытого параметра.</param>
+      <returns>
+        <para>Возвращает false, если указанный открытый параметр не существует.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.SetFloat(System.String,System.Single)">
+      <summary>
+        <para>Задает значение указанного открытого параметра. Когда параметр отображается, он не управляется снимками микшера и поэтому может быть изменен только с помощью этой функции.</para>
+      </summary>
+      <param name="name">Имя отображаемого параметра.</param>
+      <param name="value">Новое значение выставленного параметра.</param>
+      <returns>
+        <para>Возвращает false, если открытый параметр не найден или снимки в данный момент редактируются.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixer.TransitionToSnapshots(UnityEngine.Audio.AudioMixerSnapshot[],System.Single[],System.Single)">
+      <summary>
+        <para>Переходы к взвешенной смеси указанных моментальных снимков. Это можно использовать для игр, в которых игровое состояние определяется как континуум между состояниями, или для интерполяции снимков из триангулированного местоположения на карте.</para>
+      </summary>
+      <param name="snapshots">Набор снимков для микширования.</param>
+      <param name="weights">Смешанные веса для указанных моментальных снимков.</param>
+      <param name="timeToReach">Относительное время, по истечении которого смесь должна быть достигнута из любого текущего состояния.</param>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioMixerGroup">
+      <summary>
+        <para>Объект, представляющий группу в микшере.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioMixerPlayable">
+      <summary>
+        <para>Реализация IPlayable, управляющая аудиомикшером.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioMixerSnapshot">
+      <summary>
+        <para>Объект, представляющий снимок в микшере.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioMixerSnapshot.TransitionTo(System.Single)">
+      <summary>
+        <para>Выполняет интерполированный переход к этому снимку в течение указанного интервала времени.</para>
+      </summary>
+      <param name="timeToReach">Относительное время, по истечении которого этот моментальный снимок должен быть доступен из любого текущего состояния.</param>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioMixerUpdateMode">
+      <summary>
+        <para>Режим, в котором AudioMixer должен обновлять свое время.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Audio.AudioMixerUpdateMode.Normal">
+      <summary>
+        <para>Обновите AudioMixer, указав масштабированное игровое время.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Audio.AudioMixerUpdateMode.UnscaledTime">
+      <summary>
+        <para>Обновите AudioMixer с помощью немасштабированного реального времени.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioPlayableBinding">
+      <summary>
+        <para>PlayableBinding, который содержит информацию, представляющую AudioPlayableOutput.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioPlayableBinding.Create(System.String,UnityEngine.Object)">
+      <summary>
+        <para>Создает PlayableBinding, содержащий информацию, представляющую AudioPlayableOutput.</para>
+      </summary>
+      <param name="key">Ссылка на UnityEngine.Object, который действует как ключ для этой привязки.</param>
+      <param name="name">Имя AudioPlayableOutput.</param>
+      <returns>
+        <para>Возвращает PlayableBinding, который содержит информацию, используемую для создания AudioPlayableOutput.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Audio.AudioPlayableOutput">
+      <summary>
+        <para>Реализация IPlayableOutput, которая будет использоваться для воспроизведения звука.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioPlayableOutput.Create(UnityEngine.Playables.PlayableGraph,System.String,UnityEngine.AudioSource)">
+      <summary>
+        <para>Создает AudioPlayableOutput в PlayableGraph.</para>
+      </summary>
+      <param name="graph">PlayableGraph, который будет содержать AnimationPlayableOutput.</param>
+      <param name="name">Имя вывода.</param>
+      <param name="target">AudioSource, который будет воспроизводить источник AudioPlayableOutput Playable.</param>
+      <returns>
+        <para>Новый AudioPlayableOutput, прикрепленный к PlayableGraph.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioPlayableOutput.GetEvaluateOnSeek">
+      <summary>
+        <para>Получает состояние воспроизведения вывода при поиске.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если вывод воспроизводится при поиске. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Audio.AudioPlayableOutput.Null">
+      <summary>
+        <para>Возвращает недопустимый AudioPlayableOutput.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Audio.AudioPlayableOutput.SetEvaluateOnSeek(System.Boolean)">
+      <summary>
+        <para>Определяет, должен ли вывод воспроизводиться при поиске.</para>
+      </summary>
+      <param name="value">Установите значение true, чтобы воспроизводить выходные данные при поиске. Установите значение false, чтобы отключить очистку звука на этом выходе. Значение по умолчанию — true.</param>
+    </member>
+    <member name="T:UnityEngine.AudioChorusFilter">
+      <summary>
+        <para>Фильтр Audio Chorus берет аудиоклип и обрабатывает его, создавая эффект хоруса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.delay">
+      <summary>
+        <para>Задержка хора в мс. от 0,1 до 100,0. По умолчанию = 40,0 мс.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.depth">
+      <summary>
+        <para>Глубина модуляции хоруса. от 0,0 до 1,0. По умолчанию = 0,03.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.dryMix">
+      <summary>
+        <para>Громкость исходного сигнала для передачи на выход. от 0,0 до 1,0. По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.feedback">
+      <summary>
+        <para>Хоровая обратная связь. Контролирует, какая часть обработанного сигнала возвращается в буфер хоруса. от 0,0 до 1,0. По умолчанию = 0.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.rate">
+      <summary>
+        <para>Частота модуляции хоруса в Гц. от 0,0 до 20,0. По умолчанию = 0,8 Гц.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.wetMix1">
+      <summary>
+        <para>Громкость 1-го припева. от 0,0 до 1,0. По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.wetMix2">
+      <summary>
+        <para>Громкость 2-го припева. Это касание на 90 градусов не совпадает по фазе с первым касанием. от 0,0 до 1,0. По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioChorusFilter.wetMix3">
+      <summary>
+        <para>Громкость 3-го припева. Это отвод на 90 градусов не совпадает по фазе со вторым отводом. от 0,0 до 1,0. По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioClip">
+      <summary>
+        <para>Контейнер для аудиоданных.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.ambisonic">
+      <summary>
+        <para>Возвращает true, если этот аудиоклип является ambisonic (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.channels">
+      <summary>
+        <para>Количество каналов в аудиоклипе. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.frequency">
+      <summary>
+        <para>Частота выборки клипа в герцах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.isReadyToPlay">
+      <summary>
+        <para>Возвращает true, если AudioClip готов к воспроизведению (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.length">
+      <summary>
+        <para>Длина аудиоклипа в секундах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.loadInBackground">
+      <summary>
+        <para>В соответствии с флагом «Загрузка в фоновом режиме» в инспекторе, когда этот флаг установлен, загрузка будет происходить с задержкой, не блокируя основной поток.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.loadState">
+      <summary>
+        <para>Возвращает текущее состояние загрузки аудиоданных, связанных с AudioClip.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.loadType">
+      <summary>
+        <para>Тип загрузки клипа (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.preloadAudioData">
+      <summary>
+        <para>Предварительно загружает аудиоданные клипа при загрузке актива клипа. Когда этот флаг выключен, сценарии должны вызывать AudioClip.LoadAudioData() для загрузки данных перед воспроизведением клипа. Такие свойства, как длина, каналы и формат, доступны до загрузки аудиоданных.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioClip.samples">
+      <summary>
+        <para>Длина аудиоклипа в сэмплах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,UnityEngine.AudioClip/PCMReaderCallback)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,UnityEngine.AudioClip/PCMReaderCallback,UnityEngine.AudioClip/PCMSetPositionCallback)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,UnityEngine.AudioClip/PCMReaderCallback)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,UnityEngine.AudioClip/PCMReaderCallback,UnityEngine.AudioClip/PCMSetPositionCallback)">
+      <summary>
+        <para>Создает пользовательский AudioClip с именем и заданной длиной в семплах, каналах и частоте.</para>
+      </summary>
+      <param name="name">Название клипа.</param>
+      <param name="lengthSamples">Количество выборочных кадров.</param>
+      <param name="channels">Количество каналов на кадр.</param>
+      <param name="frequency">Частота выборки клипа.</param>
+      <param name="_3D">Аудиоклип воспроизводится в формате 3D.</param>
+      <param name="stream">Истинно, если клип передается в потоковом режиме, то есть если обратный вызов pcmreader генерирует данные на лету.</param>
+      <param name="pcmreadercallback">Этот обратный вызов вызывается для создания блока выборочных данных. Непотоковые клипы вызывают это только один раз во время создания, в то время как потоковые клипы вызывают это постоянно.</param>
+      <param name="pcmsetpositioncallback">Этот обратный вызов вызывается всякий раз, когда клип зацикливается или изменяет позицию воспроизведения.</param>
+      <returns>
+        <para>Ссылка на созданный AudioClip.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioClip.GetData(System.Single[],System.Int32)">
+      <summary>
+        <para>Заполняет массив образцами данных из клипа.</para>
+      </summary>
+      <param name="data">
+      </param>
+      <param name="offsetSamples">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AudioClip.LoadAudioData">
+      <summary>
+        <para>Загружает аудиоданные клипа. Для клипов с установленным параметром «Предварительная загрузка аудиоданных» аудиоданные будут загружаться автоматически.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если загрузка прошла успешно.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AudioClip.PCMReaderCallback">
+      <summary>
+        <para>Делегат вызывается каждый раз, когда AudioClip считывает данные.</para>
+      </summary>
+      <param name="data">Массив значений с плавающей запятой, содержащих данные, считанные из клипа.</param>
+    </member>
+    <member name="T:UnityEngine.AudioClip.PCMSetPositionCallback">
+      <summary>
+        <para>Делегат вызывается каждый раз, когда AudioClip меняет позицию чтения.</para>
+      </summary>
+      <param name="position">Новая позиция в аудиоклипе.</param>
+    </member>
+    <member name="M:UnityEngine.AudioClip.SetData(System.Single[],System.Int32)">
+      <summary>
+        <para>Установите образцы данных в клипе.</para>
+      </summary>
+      <param name="data">
+      </param>
+      <param name="offsetSamples">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AudioClip.UnloadAudioData">
+      <summary>
+        <para>Выгружает аудиоданные, связанные с клипом. Это работает только для аудиоклипов, основанных на реальных ресурсах звуковых файлов.</para>
+      </summary>
+      <returns>
+        <para>Возвращает false, если выгрузка не удалась.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AudioClipLoadType">
+      <summary>
+        <para>Определяет способ загрузки аудиоклипа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioClipLoadType.CompressedInMemory">
+      <summary>
+        <para>Аудиоданные клипа будут храниться в памяти в сжатом виде.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioClipLoadType.DecompressOnLoad">
+      <summary>
+        <para>Аудиоданные распаковываются при загрузке аудиоклипа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioClipLoadType.Streaming">
+      <summary>
+        <para>Потоковые аудиоданные с диска.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioCompressionFormat">
+      <summary>
+        <para>Перечисление, содержащее различные типы сжатия.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.AAC">
+      <summary>
+        <para>Сжатие аудио AAC.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.ADPCM">
+      <summary>
+        <para>Адаптивная дифференциальная импульсно-кодовая модуляция.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.ATRAC9">
+      <summary>
+        <para>Собственный аппаратный формат Sony.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.GCADPCM">
+      <summary>
+        <para>Формат сжатия звука Nintendo ADPCM.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.HEVAG">
+      <summary>
+        <para>Собственный аппаратный кодек Sony.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.MP3">
+      <summary>
+        <para>Аудиоуровень MPEG III.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.PCM">
+      <summary>
+        <para>Несжатая импульсно-кодовая модуляция.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.VAG">
+      <summary>
+        <para>Собственный аппаратный формат Sony.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.Vorbis">
+      <summary>
+        <para>Формат сжатия Vorbis.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioCompressionFormat.XMA">
+      <summary>
+        <para>Собственный аппаратный формат Xbox One.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioConfiguration">
+      <summary>
+        <para>Указывает текущие свойства или желаемые свойства, которые необходимо установить для аудиосистемы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioConfiguration.dspBufferSize">
+      <summary>
+        <para>Длина буфера DSP в сэмплах, определяющая задержку звука устройством вывода звука.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioConfiguration.numRealVoices">
+      <summary>
+        <para>Текущее максимальное количество одновременно слышимых звуков в игре.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioConfiguration.numVirtualVoices">
+      <summary>
+        <para>Максимальное количество управляемых звуков в игре. Звуки, превышающие этот лимит, просто перестанут воспроизводиться.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioConfiguration.sampleRate">
+      <summary>
+        <para>Текущая частота дискретизации используемого устройства вывода звука.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioConfiguration.speakerMode">
+      <summary>
+        <para>Текущий режим динамика, используемый устройством вывода звука.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioDataLoadState">
+      <summary>
+        <para>Значение, описывающее текущее состояние загрузки аудиоданных, связанных с AudioClip.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioDataLoadState.Failed">
+      <summary>
+        <para>Значение, возвращаемое AudioClip.loadState для AudioClip, которому не удалось загрузить свои аудиоданные.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioDataLoadState.Loaded">
+      <summary>
+        <para>Значение, возвращаемое AudioClip.loadState для AudioClip, успешно загрузившего аудиоданные.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioDataLoadState.Loading">
+      <summary>
+        <para>Значение, возвращаемое AudioClip.loadState для AudioClip, который в данный момент загружает аудиоданные.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioDataLoadState.Unloaded">
+      <summary>
+        <para>Значение, возвращаемое AudioClip.loadState для AudioClip, в который не загружены аудиоданные и загрузка которого еще не инициирована.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioDistortionFilter">
+      <summary>
+        <para>Фильтр аудиоискажения искажает звук от AudioSource или звуки, достигающие AudioListener.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioDistortionFilter.distortionLevel">
+      <summary>
+        <para>Значение искажения. от 0,0 до 1,0. По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioEchoFilter">
+      <summary>
+        <para>Audio Echo Filter повторяет звук после заданной задержки, ослабляя повторения на основе коэффициента затухания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioEchoFilter.decayRatio">
+      <summary>
+        <para>Затухание эха за задержку. От 0 до 1. 1,0 = нет затухания, 0,0 = полное затухание (т. е. простая задержка в 1 строку). По умолчанию = 0,5.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioEchoFilter.delay">
+      <summary>
+        <para>Задержка эха в мс. От 10 до 5000. По умолчанию = 500.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioEchoFilter.dryMix">
+      <summary>
+        <para>Громкость исходного сигнала для передачи на выход. от 0,0 до 1,0. По умолчанию = 1.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioEchoFilter.wetMix">
+      <summary>
+        <para>Громкость эхо-сигнала для передачи на выход. от 0,0 до 1,0. По умолчанию = 1.0.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioHighPassFilter">
+      <summary>
+        <para>Фильтр высоких частот аудио пропускает высокие частоты источника звука и отсекает сигналы с частотами ниже частоты среза.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioHighPassFilter.cutoffFrequency">
+      <summary>
+        <para>Частота среза верхних частот в Гц. от 10,0 до 22000,0. По умолчанию = 5000.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioHighPassFilter.highpassResonanceQ">
+      <summary>
+        <para>Определяет степень подавления собственного резонанса фильтра.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioListener">
+      <summary>
+        <para>Представление слушателя в трехмерном пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioListener.pause">
+      <summary>
+        <para>Состояние паузы аудиосистемы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioListener.velocityUpdateMode">
+      <summary>
+        <para>Это позволяет указать, следует ли обновлять прослушиватель аудио в фиксированном или динамическом обновлении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioListener.volume">
+      <summary>
+        <para>Управляет громкостью игрового звука (от 0,0 до 1,0).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioListener.GetOutputData(System.Single[],System.Int32)">
+      <summary>
+        <para>Предоставляет блок выходных данных слушателя (мастера).</para>
+      </summary>
+      <param name="samples">Массив для заполнения аудиосэмплами. Его длина должна быть степенью числа 2.</param>
+      <param name="channel">Канал для выборки.</param>
+    </member>
+    <member name="M:UnityEngine.AudioListener.GetOutputData(System.Int32,System.Int32)">
+      <summary>
+        <para>Устаревшая версия. Возвращает блок выходных данных слушателя (мастера).</para>
+      </summary>
+      <param name="numSamples">
+      </param>
+      <param name="channel">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AudioListener.GetSpectrumData(System.Single[],System.Int32,UnityEngine.FFTWindow)">
+      <summary>
+        <para>Предоставляет блок данных спектра слушателя (мастера).</para>
+      </summary>
+      <param name="samples">Массив для заполнения аудиосэмплами. Его длина должна быть степенью числа 2.</param>
+      <param name="channel">Канал для выборки.</param>
+      <param name="window">Тип FFTWindow для использования при выборке.</param>
+    </member>
+    <member name="M:UnityEngine.AudioListener.GetSpectrumData(System.Int32,System.Int32,UnityEngine.FFTWindow)">
+      <summary>
+        <para>Устаревшая версия. Возвращает блок данных спектра слушателя (мастера).</para>
+      </summary>
+      <param name="numSamples">Количество значений (длина массива образцов). Должно быть степенью числа 2. Мин. = 64. Макс. = 8192.</param>
+      <param name="channel">Канал для выборки.</param>
+      <param name="window">Тип FFTWindow для использования при выборке.</param>
+    </member>
+    <member name="T:UnityEngine.AudioLowPassFilter">
+      <summary>
+        <para>Фильтр низких частот аудио пропускает низкие частоты AudioSource или все звуки, достигающие AudioListener, удаляя при этом частоты выше частоты среза.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioLowPassFilter.customCutoffCurve">
+      <summary>
+        <para>Возвращает или задает текущую пользовательскую кривую среза частоты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioLowPassFilter.cutoffFrequency">
+      <summary>
+        <para>Частота среза нижних частот в Гц. от 10,0 до 22000,0. По умолчанию = 5000.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioLowPassFilter.lowpassResonanceQ">
+      <summary>
+        <para>Определяет степень подавления собственного резонанса фильтра.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioRenderer">
+      <summary>
+        <para>Разрешить запись основного вывода игры или определенных групп в AudioMixer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioRenderer.GetSampleCountForCaptureFrame">
+      <summary>
+        <para>Возвращает количество сэмплов, доступных с момента последнего вызова AudioRenderer.Render. Это зависит от скорости захвата кадров.</para>
+      </summary>
+      <returns>
+        <para>Количество сэмплов, доступных с момента последнего записанного кадра.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioRenderer.Render(Unity.Collections.NativeArray`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Выполняет запись основного выхода, а также любых дополнительных групп микшера, которые были зарегистрированы через AudioRenderer.AddMixerGroupSink.</para>
+      </summary>
+      <param name="buffer">Буфер для записи демонстрационных данных.</param>
+      <returns>
+        <para>Истинно, если запись прошла успешно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioRenderer.Start">
+      <summary>
+        <para>Входит в режим записи звука. После этого Unity будет выводить тишину, пока не будет вызван AudioRenderer.Stop.</para>
+      </summary>
+      <returns>
+        <para>Истинно, если двигатель был переведен в режим записи вывода. False, если запись уже ведется.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioRenderer.Stop">
+      <summary>
+        <para>Выход из режима записи звука. После этого аудиовыход снова будет слышен.</para>
+      </summary>
+      <returns>
+        <para>Истинно, если во время вызова этой функции движок выполнял запись.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AudioReverbFilter">
+      <summary>
+        <para>Фильтр звуковой реверберации берет аудиоклип и искажает его, создавая собственный эффект реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.decayHFRatio">
+      <summary>
+        <para>Decay HF Ratio: соотношение времени затухания высоких и низких частот. Диапазон от 0,1 до 2,0. По умолчанию 0,5.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.decayTime">
+      <summary>
+        <para>Время затухания реверберации на низких частотах в секундах. Диапазон от 0,1 до 20,0. По умолчанию 1.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.density">
+      <summary>
+        <para>Плотность реверберации (модальная плотность) в процентах. Диапазон значений от 0,0 до 100,0. По умолчанию 100.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.diffusion">
+      <summary>
+        <para>Диффузия реверберации (плотность эха) в процентах. Диапазон значений от 0,0 до 100,0. По умолчанию 100.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.dryLevel">
+      <summary>
+        <para>Уровень микса сухого сигнала на выходе в миллибелах (мБ). Диапазоны от -10000,0 до 0,0. По умолчанию 0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.hfReference">
+      <summary>
+        <para>Эталонная высокая частота в герцах (Гц). Диапазоны от 1000,0 до 20000,0. По умолчанию 5000.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.lfReference">
+      <summary>
+        <para>Опорная низкочастотная в герцах (Гц). Диапазоны от 20,0 до 1000,0. По умолчанию 250,0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.reflectionsDelay">
+      <summary>
+        <para>Уровень поздней реверберации относительно эффекта помещения в миллибелах (мБ). Диапазоны от -10000,0 до 2000,0. По умолчанию 0.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.reflectionsLevel">
+      <summary>
+        <para>Уровень ранних отражений относительно эффекта помещения в миллибелах (мБ). Диапазоны от -10000,0 до 1000,0. Значение по умолчанию: -10000.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.reverbDelay">
+      <summary>
+        <para>Время задержки поздней реверберации относительно первого отражения в секундах. Диапазон от 0,0 до 0,1. По умолчанию 0,04.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.reverbLevel">
+      <summary>
+        <para>Уровень поздней реверберации относительно эффекта помещения в миллибелах (мБ). Диапазоны от -10000,0 до 2000,0. По умолчанию 0.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.reverbPreset">
+      <summary>
+        <para>Установка/получение свойств предустановки реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.room">
+      <summary>
+        <para>Уровень эффекта помещения на низких частотах в миллибелах (мБ). Диапазоны от -10000,0 до 0,0. По умолчанию 0.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.roomHF">
+      <summary>
+        <para>Уровень высоких частот с эффектом комнаты. низкочастотный уровень в миллибелах (мБ). Диапазоны от -10000,0 до 0,0. По умолчанию 0.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbFilter.roomLF">
+      <summary>
+        <para>Низкочастотный уровень эффекта помещения в миллибелах (мБ). Диапазоны от -10000,0 до 0,0. По умолчанию 0.0.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioReverbPreset">
+      <summary>
+        <para>Предустановки реверберации, используемые классом Reverb Zone и фильтром звуковой реверберации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Alley">
+      <summary>
+        <para>Предустановка переулка.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Arena">
+      <summary>
+        <para>Предустановка арены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Auditorium">
+      <summary>
+        <para>Предустановка аудитории.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Bathroom">
+      <summary>
+        <para>Предустановка для ванной.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.CarpetedHallway">
+      <summary>
+        <para>Ковровое покрытие для прихожей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Cave">
+      <summary>
+        <para>Предустановка пещеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.City">
+      <summary>
+        <para>Предустановка города.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Concerthall">
+      <summary>
+        <para>Предустановка концертного зала.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Dizzy">
+      <summary>
+        <para>Головокружительная предустановка.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Drugged">
+      <summary>
+        <para>Предустановка с наркотиками.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Forest">
+      <summary>
+        <para>Предустановка леса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Generic">
+      <summary>
+        <para>Общий пресет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Hallway">
+      <summary>
+        <para>Предустановка коридора.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Hangar">
+      <summary>
+        <para>Предустановка ангара.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Livingroom">
+      <summary>
+        <para>Предустановка для гостиной.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Mountains">
+      <summary>
+        <para>Предустановка гор.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Off">
+      <summary>
+        <para>Предустановка реверберации не выбрана.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.PaddedCell">
+      <summary>
+        <para>Предустановка заполненной ячейки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.ParkingLot">
+      <summary>
+        <para>Предустановка парковки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Plain">
+      <summary>
+        <para>Обычная предустановка.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Psychotic">
+      <summary>
+        <para>Психотическая предустановка.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Quarry">
+      <summary>
+        <para>Предустановка карьера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Room">
+      <summary>
+        <para>Предустановка комнаты.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.SewerPipe">
+      <summary>
+        <para>Предустановка канализационной трубы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.StoneCorridor">
+      <summary>
+        <para>Предустановка каменного коридора.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Stoneroom">
+      <summary>
+        <para>Предустановка Stoneroom.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.Underwater">
+      <summary>
+        <para>Подводный пресс.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioReverbPreset.User">
+      <summary>
+        <para>Пользовательская предустановка.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioReverbZone">
+      <summary>
+        <para>Зоны реверберации используются, когда вы хотите создать окружающие эффекты на основе местоположения в сцене.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.decayHFRatio">
+      <summary>
+        <para>Соотношение времени затухания высоких и средних частот.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.decayTime">
+      <summary>
+        <para>Время затухания реверберации на средних частотах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.density">
+      <summary>
+        <para>Значение, управляющее модальной плотностью при затухании поздней реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.diffusion">
+      <summary>
+        <para>Значение, управляющее плотностью эха при затухании поздней реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.maxDistance">
+      <summary>
+        <para>Расстояние от центральной точки, на котором реверберация не будет иметь никакого эффекта. По умолчанию = 15.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.minDistance">
+      <summary>
+        <para>Расстояние от центральной точки, на котором реверберация будет иметь полный эффект. По умолчанию = 10.0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.reflections">
+      <summary>
+        <para>Уровень ранних отражений относительно эффекта помещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.reflectionsDelay">
+      <summary>
+        <para>Начальное время задержки отражения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.reverb">
+      <summary>
+        <para>Уровень поздней реверберации относительно эффекта помещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.reverbDelay">
+      <summary>
+        <para>Время задержки поздней реверберации относительно начального отражения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.reverbPreset">
+      <summary>
+        <para>Установка/получение свойств предустановки реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.room">
+      <summary>
+        <para>Уровень эффекта помещения (на средних частотах).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.roomHF">
+      <summary>
+        <para>Относительный уровень эффекта помещения на высоких частотах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.roomLF">
+      <summary>
+        <para>Относительный уровень эффекта помещения на низких частотах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.roomRolloffFactor">
+      <summary>
+        <para>Аналогично rolloffscale в глобальных настройках, но для эффекта размера комнаты реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.HFReference">
+      <summary>
+        <para>Эталонная высокая частота (Гц).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioReverbZone.LFReference">
+      <summary>
+        <para>Эталонная низкая частота (Гц).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioRolloffMode">
+      <summary>
+        <para>Режимы спада, которые может иметь 3D-звук в источнике звука.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioRolloffMode.Custom">
+      <summary>
+        <para>Используйте это, если вы хотите использовать настраиваемый спад.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioRolloffMode.Linear">
+      <summary>
+        <para>Используйте этот режим, если хотите снизить громкость звука на расстоянии.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioRolloffMode.Logarithmic">
+      <summary>
+        <para>Используйте этот режим, если вам нужен реальный спад.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioSettings">
+      <summary>
+        <para>Управляет глобальными настройками звука из скрипта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.driverCapabilities">
+      <summary>
+        <para>Возвращает возможность режима динамика текущего аудиодрайвера. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.dspTime">
+      <summary>
+        <para>Возвращает текущее время аудиосистемы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.outputSampleRate">
+      <summary>
+        <para>Получить текущую выходную скорость микшера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.speakerMode">
+      <summary>
+        <para>Получает текущий режим динамика. По умолчанию используется 2-канальное стерео.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioSettings.AudioConfigurationChangeHandler">
+      <summary>
+        <para>Делегат вызывается всякий раз, когда глобальные настройки звука изменяются с помощью AudioSettings.Reset или изменения внешнего устройства, такого как панель управления ОС, изменяющая частоту дискретизации, или из-за изменения устройства вывода по умолчанию, например, при подключении монитора HDMI или USB-гарнитура.</para>
+      </summary>
+      <param name="deviceWasChanged">Истинно, если изменение было вызвано сменой устройства.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.GetConfiguration">
+      <summary>
+        <para>Возвращает текущую конфигурацию аудиоустройства и системы. Затем значения в структуре могут быть изменены и повторно применены с помощью AudioSettings.Reset.</para>
+      </summary>
+      <returns>
+        <para>Применяемая новая конфигурация.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.GetDSPBufferSize(System.Int32&amp;,System.Int32&amp;)">
+      <summary>
+        <para>Получить размер буфера микшера в семплах.</para>
+      </summary>
+      <param name="bufferLength">Длина каждого буфера в кольцевом буфере.</param>
+      <param name="numBuffers">Количество буферов.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.GetSpatializerPluginName">
+      <summary>
+        <para>Возвращает имя пространственного преобразователя, выбранного на работающей в данный момент платформе.</para>
+      </summary>
+      <returns>
+        <para>Имя подключаемого модуля пространственного модуля.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.GetSpatializerPluginNames">
+      <summary>
+        <para>Возвращает массив с именами всех доступных подключаемых модулей пространственного модуля.</para>
+      </summary>
+      <returns>
+        <para>Массив имен пространственных преобразователей.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AudioSettings.Mobile">
+      <summary>
+        <para>Этот класс инкапсулирует свойства и методы для обработки потока вывода звука в iOS/Android.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.Mobile.audioOutputStarted">
+      <summary>
+        <para>Возвращает true, если поток аудиовыхода работает.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.Mobile.muteState">
+      <summary>
+        <para>Возвращает true, если текущий объем носителя на устройстве равен 0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSettings.Mobile.stopAudioOutputOnMute">
+      <summary>
+        <para>Установите для этого свойства значение true, чтобы поток вывода звука автоматически останавливался, когда громкость мультимедиа устройства установлена ​​на 0, и запускалась снова, когда громкость не равна 0.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.AudioSettings.Mobile.OnMuteStateChanged(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Делегат вызывается всякий раз, когда изменяется состояние отключения звука устройства.</para>
+      </summary>
+      <param name="value">True, если текущий объем носителя на устройстве равен 0, в противном случае — false.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.Mobile.StartAudioOutput">
+      <summary>
+        <para>Запускает поток вывода звука на Android/iOS.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.Mobile.StopAudioOutput">
+      <summary>
+        <para>Останавливает аудиопоток на Android/iOS.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.AudioSettings.OnAudioConfigurationChanged(UnityEngine.AudioSettings/AudioConfigurationChangeHandler)">
+      <summary>
+        <para>Делегат вызывается всякий раз, когда глобальные настройки звука изменяются с помощью AudioSettings.Reset или внешнего фактора, такого как панель управления ОС, изменяющая частоту дискретизации, или из-за изменения выходного устройства по умолчанию, например, при подключении монитора HDMI или USB-гарнитура.</para>
+      </summary>
+      <param name="value">Истинно, если изменение было вызвано сменой устройства.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.Reset(UnityEngine.AudioConfiguration)">
+      <summary>
+        <para>Выполняет изменение конфигурации устройства. В ответ на это вызывается делегат AudioSettings.OnAudioConfigurationChanged с аргументом deviceWasChanged=false. Нельзя гарантировать, что можно использовать точные указанные параметры, но делается попытка использовать наиболее близкое совпадение, поддерживаемое системой.</para>
+      </summary>
+      <param name="config">Новая используемая конфигурация.</param>
+      <returns>
+        <para>Истинно, если все настройки могут быть успешно применены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSettings.SetSpatializerPluginName(System.String)">
+      <summary>
+        <para>Устанавливает подключаемый модуль пространственного модуля для всех групп платформ. Если передана нулевая или пустая строка, существующий подключаемый модуль пространственного модуля будет очищен.</para>
+      </summary>
+      <param name="pluginName">Имя подключаемого модуля пространственного модуля.</param>
+    </member>
+    <member name="T:UnityEngine.AudioSource">
+      <summary>
+        <para>Представление источников звука в 3D.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.bypassEffects">
+      <summary>
+        <para>Эффекты обхода (применяются из компонентов фильтра или глобальных фильтров прослушивателя).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.bypassListenerEffects">
+      <summary>
+        <para>Когда установлены глобальные эффекты на AudioListener, они не будут применяться к аудиосигналу, генерируемому AudioSource. Не применяется, если AudioSource воспроизводится в группе микшера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.bypassReverbZones">
+      <summary>
+        <para>Когда установлено, сигнал от AudioSource не направляется в глобальную реверберацию, связанную с зонами реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.clip">
+      <summary>
+        <para>Аудиоклип по умолчанию для воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.dopplerLevel">
+      <summary>
+        <para>Устанавливает доплеровскую шкалу для этого AudioSource.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.gamepadSpeakerOutputType">
+      <summary>
+        <para>Получает или задает тип вывода звука геймпада для данного источника звука.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.ignoreListenerPause">
+      <summary>
+        <para>Разрешает воспроизведение AudioSource, даже если для параметра AudioListener.pause установлено значение true. Это полезно для звуков элементов меню или фоновой музыки в меню паузы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.ignoreListenerVolume">
+      <summary>
+        <para>Это приводит к тому, что источник звука не учитывает громкость прослушивателя звука.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.isPlaying">
+      <summary>
+        <para>Воспроизводится ли клип прямо сейчас (только для чтения)?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.isVirtual">
+      <summary>
+        <para>Истинно, если все звуки, воспроизводимые AudioSource (основной звук, запускаемый Play() или playOnAwake, а также одиночные звуки), отбраковываются аудиосистемой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.loop">
+      <summary>
+        <para>Аудиоклип зацикливается?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.maxDistance">
+      <summary>
+        <para>(Логарифмический спад) MaxDistance — это расстояние, на котором звук перестает затухать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.minDistance">
+      <summary>
+        <para>В пределах минимального расстояния громкость AudioSource перестанет увеличиваться.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.mute">
+      <summary>
+        <para>Включает / отключает звук AudioSource. Отключение звука устанавливает громкость на 0, включение звука восстанавливает исходную громкость.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.outputAudioMixerGroup">
+      <summary>
+        <para>Целевая группа, в которую AudioSource должен направить свой сигнал.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.pan">
+      <summary>
+        <para>Пан устарел. Вместо этого используйте panStereo.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.panLevel">
+      <summary>
+        <para>PanLevel устарел. Вместо этого используйте пространственное наложение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.panStereo">
+      <summary>
+        <para>Панорамирует воспроизводимый звук в стереофоническом режиме (влево или вправо). Это относится только к звукам моно или стерео.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.pitch">
+      <summary>
+        <para>Высота звука источника звука.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.playOnAwake">
+      <summary>
+        <para>Если установлено значение true, источник звука автоматически начнет воспроизводиться при пробуждении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.priority">
+      <summary>
+        <para>Устанавливает приоритет AudioSource.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.reverbZoneMix">
+      <summary>
+        <para>Величина, на которую сигнал от AudioSource будет микширован с глобальной реверберацией, связанной с зонами реверберации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.rolloffMode">
+      <summary>
+        <para>Устанавливает/получает, как AudioSource затухает на расстоянии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.spatialBlend">
+      <summary>
+        <para>Устанавливает, насколько этот AudioSource зависит от расчетов трехмерной пространственной обработки (затухание, доплеровский сдвиг и т. д.). 0.0 делает звук полностью 2D, 1.0 — полностью 3D.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.spatialize">
+      <summary>
+        <para>Включает или отключает пространственное представление.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.spatializePostEffects">
+      <summary>
+        <para>Определяет, вставляется ли пространственный эффект до или после фильтров эффектов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.spread">
+      <summary>
+        <para>Устанавливает угол распространения (в градусах) трехмерного стереофонического или многоканального звука в пространстве динамика.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.time">
+      <summary>
+        <para>Позиция воспроизведения в секундах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.timeSamples">
+      <summary>
+        <para>Позиция воспроизведения в сэмплах PCM.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.velocityUpdateMode">
+      <summary>
+        <para>Следует ли обновлять источник звука при фиксированном или динамическом обновлении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AudioSource.volume">
+      <summary>
+        <para>Громкость источника звука (от 0,0 до 1,0).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioSource.DisableGamepadOutput">
+      <summary>
+        <para>Отключает вывод звука на геймпад для этого источника звука.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true в случае успеха.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GamepadSpeakerSupportsOutputType(UnityEngine.GamepadSpeakerOutputType)">
+      <summary>
+        <para>Проверьте, поддерживает ли платформа тип вывода звука на геймпадах.</para>
+      </summary>
+      <param name="outputType">Желаемый тип вывода.</param>
+      <returns>
+        <para>Возвращает true, если геймпад поддерживает указанный тип вывода звука.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetAmbisonicDecoderFloat(System.Int32,System.Single&amp;)">
+      <summary>
+        <para>Считывает определяемый пользователем параметр пользовательского эффекта декодера ambisonic, прикрепленного к AudioSource.</para>
+      </summary>
+      <param name="index">Отсчитываемый от нуля индекс определяемого пользователем параметра для чтения.</param>
+      <param name="value">Возвращаемое значение определяемого пользователем параметра, который считывается.</param>
+      <returns>
+        <para>Истинно, если параметр может быть прочитан.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetCustomCurve(UnityEngine.AudioSourceCurveType)">
+      <summary>
+        <para>Получить текущую пользовательскую кривую для заданного AudioSourceCurveType.</para>
+      </summary>
+      <param name="type">Получаемый тип кривой.</param>
+      <returns>
+        <para>Пользовательская AnimationCurve, соответствующая заданному типу кривой.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetOutputData(System.Single[],System.Int32)">
+      <summary>
+        <para>Предоставляет блок выходных данных воспроизводимого источника.</para>
+      </summary>
+      <param name="samples">Массив для заполнения аудиосэмплами. Его длина должна быть степенью числа 2.</param>
+      <param name="channel">Канал для выборки.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetOutputData(System.Int32,System.Int32)">
+      <summary>
+        <para>Устаревшая версия. Возвращает блок выходных данных воспроизводимого источника.</para>
+      </summary>
+      <param name="numSamples">
+      </param>
+      <param name="channel">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetSpatializerFloat(System.Int32,System.Single&amp;)">
+      <summary>
+        <para>Считывает определяемый пользователем параметр пользовательского эффекта пространственного разделения, прикрепленного к AudioSource.</para>
+      </summary>
+      <param name="index">Отсчитываемый от нуля индекс определяемого пользователем параметра для чтения.</param>
+      <param name="value">Возвращаемое значение определяемого пользователем параметра, который считывается.</param>
+      <returns>
+        <para>Истинно, если параметр может быть прочитан.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetSpectrumData(System.Single[],System.Int32,UnityEngine.FFTWindow)">
+      <summary>
+        <para>Предоставляет блок данных спектра воспроизводимого в данный момент аудиоисточника.</para>
+      </summary>
+      <param name="samples">Массив для заполнения аудиосэмплами. Его длина должна быть степенью числа 2.</param>
+      <param name="channel">Канал для выборки.</param>
+      <param name="window">Тип FFTWindow для использования при выборке.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.GetSpectrumData(System.Int32,System.Int32,UnityEngine.FFTWindow)">
+      <summary>
+        <para>Устаревшая версия. Возвращает блок данных спектра воспроизводимого источника.</para>
+      </summary>
+      <param name="numSamples">Количество выборок для извлечения. Должно быть степенью числа 2.</param>
+      <param name="channel">Канал для выборки.</param>
+      <param name="window">Тип FFTWindow для использования при выборке.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.Pause">
+      <summary>
+        <para>Приостанавливает воспроизведение клипа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioSource.Play()">
+      <summary>
+        <para>Воспроизведение клипа.</para>
+      </summary>
+      <param name="delay">Устарело. Задержка в количестве сэмплов при частоте дискретизации 44 100 Гц (это означает, что Play(44 100) задержит воспроизведение ровно на 1 секунду).</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.Play(System.UInt64)">
+      <summary>
+        <para>Воспроизведение клипа.</para>
+      </summary>
+      <param name="delay">Устарело. Задержка в количестве сэмплов при частоте дискретизации 44 100 Гц (это означает, что Play(44 100) задержит воспроизведение ровно на 1 секунду).</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayClipAtPoint(UnityEngine.AudioClip,UnityEngine.Vector3)">
+      <summary>
+        <para>Воспроизводит аудиоклип в заданной позиции в мировом пространстве.</para>
+      </summary>
+      <param name="clip">Аудиоданные для воспроизведения.</param>
+      <param name="position">Позиция в мировом пространстве, из которой исходит звук.</param>
+      <param name="volume">Громкость воспроизведения.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayClipAtPoint(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single)">
+      <summary>
+        <para>Воспроизводит аудиоклип в заданной позиции в мировом пространстве.</para>
+      </summary>
+      <param name="clip">Аудиоданные для воспроизведения.</param>
+      <param name="position">Позиция в мировом пространстве, из которой исходит звук.</param>
+      <param name="volume">Громкость воспроизведения.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayDelayed(System.Single)">
+      <summary>
+        <para>Воспроизведение клипа с задержкой, указанной в секундах. Пользователям рекомендуется использовать эту функцию вместо старой функции Play(delay), которая принимала в качестве аргумента задержку, указанную в сэмплах, относительно эталонной частоты 44,1 кГц.</para>
+      </summary>
+      <param name="delay">Время задержки указывается в секундах.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayOneShot(UnityEngine.AudioClip)">
+      <summary>
+        <para>Воспроизводит аудиоклип и масштабирует громкость AudioSource с помощью volumeScale.</para>
+      </summary>
+      <param name="clip">Воспроизводимый клип.</param>
+      <param name="volumeScale">Шкала громкости (0-1).</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayOneShot(UnityEngine.AudioClip,System.Single)">
+      <summary>
+        <para>Воспроизводит аудиоклип и масштабирует громкость AudioSource с помощью volumeScale.</para>
+      </summary>
+      <param name="clip">Воспроизводимый клип.</param>
+      <param name="volumeScale">Шкала громкости (0-1).</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayOnGamepad(System.Int32)">
+      <summary>
+        <para>Включить воспроизведение источника звука через специальный геймпад.</para>
+      </summary>
+      <param name="slot">Номер слота геймпада (0-3).</param>
+      <returns>
+        <para>Возвращает TRUE, если включение вывода звука через этот пользовательский контроллер прошло успешно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.PlayScheduled(System.Double)">
+      <summary>
+        <para>Воспроизведение клипа в определенное время на абсолютной временной шкале, из которой считывается AudioSettings.dspTime.</para>
+      </summary>
+      <param name="time">Время в секундах на абсолютной временной шкале, на которую указывает AudioSettings.dspTime, когда звук должен начать воспроизводиться.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.SetAmbisonicDecoderFloat(System.Int32,System.Single)">
+      <summary>
+        <para>Задает определяемый пользователем параметр пользовательского эффекта декодера ambisonic, прикрепленного к AudioSource.</para>
+      </summary>
+      <param name="index">Отсчитываемый от нуля индекс устанавливаемого пользователем параметра.</param>
+      <param name="value">Новое значение определяемого пользователем параметра.</param>
+      <returns>
+        <para>Истинно, если параметр может быть установлен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.SetCustomCurve(UnityEngine.AudioSourceCurveType,UnityEngine.AnimationCurve)">
+      <summary>
+        <para>Установите пользовательскую кривую для данного AudioSourceCurveType.</para>
+      </summary>
+      <param name="type">Тип кривой, который необходимо установить.</param>
+      <param name="curve">Кривая, которую следует применить к данному типу кривой.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.SetScheduledEndTime(System.Double)">
+      <summary>
+        <para>Изменяет время окончания воспроизведения уже запланированного звука. Обратите внимание, что в зависимости от времени не все запросы на изменение расписания могут быть выполнены.</para>
+      </summary>
+      <param name="time">Время в секундах.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.SetScheduledStartTime(System.Double)">
+      <summary>
+        <para>Изменяет время начала воспроизведения уже запланированного звука.</para>
+      </summary>
+      <param name="time">Время в секундах.</param>
+    </member>
+    <member name="M:UnityEngine.AudioSource.SetSpatializerFloat(System.Int32,System.Single)">
+      <summary>
+        <para>Устанавливает определяемый пользователем параметр пользовательского эффекта пространственного разделения, прикрепленного к AudioSource.</para>
+      </summary>
+      <param name="index">Отсчитываемый от нуля индекс устанавливаемого пользователем параметра.</param>
+      <param name="value">Новое значение определяемого пользователем параметра.</param>
+      <returns>
+        <para>Истинно, если параметр может быть установлен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AudioSource.Stop">
+      <summary>
+        <para>Останавливает воспроизведение клипа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AudioSource.UnPause">
+      <summary>
+        <para>Разблокировать приостановленное воспроизведение этого AudioSource.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioSourceCurveType">
+      <summary>
+        <para>Это определяет тип кривой различных пользовательских кривых, которые можно запрашивать и устанавливать в AudioSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSourceCurveType.CustomRolloff">
+      <summary>
+        <para>Пользовательский спад громкости.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSourceCurveType.ReverbZoneMix">
+      <summary>
+        <para>Микс зоны реверберации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSourceCurveType.SpatialBlend">
+      <summary>
+        <para>Пространственная смесь.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSourceCurveType.Spread">
+      <summary>
+        <para>Трехмерный разворот.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioSpeakerMode">
+      <summary>
+        <para>Это типы динамиков, определенные для использования с AudioSettings.speakerMode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Mode5point1">
+      <summary>
+        <para>Количество каналов установлено на 6. Настройка динамиков 5.1. Сюда входят передний левый, передний правый, центральный, задний левый, задний правый и сабвуфер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Mode7point1">
+      <summary>
+        <para>Количество каналов установлено на 8. Настройка динамиков 7.1. Сюда входят передний левый, передний правый, центральный, задний левый, задний правый, боковой левый, боковой правый и сабвуфер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Mono">
+      <summary>
+        <para>Количество каналов установлено на 1. Динамики монофонические.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Prologic">
+      <summary>
+        <para>Количество каналов установлено на 2. Стереовыход, но данные кодируются таким образом, что декодер Prologic/Prologic2 разделяет их на акустическую систему 5.1.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Quad">
+      <summary>
+        <para>Количество каналов установлено на 4. Настройка 4 динамиков. Сюда входят передний левый, передний правый, задний левый, задний правый.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Raw">
+      <summary>
+        <para>Количество каналов не изменяется.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Stereo">
+      <summary>
+        <para>Количество каналов установлено на 2. Динамики стерео. Это редактор по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioSpeakerMode.Surround">
+      <summary>
+        <para>Количество каналов установлено на 5. Настройка 5 динамиков. Сюда входят передний левый, передний правый, центральный, задний левый, задний правый.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AudioVelocityUpdateMode">
+      <summary>
+        <para>Описывает, когда обновляется AudioSource или AudioListener.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioVelocityUpdateMode.Auto">
+      <summary>
+        <para>Обновляет источник или прослушиватель в цикле MonoBehaviour.FixedUpdate, если он присоединен к Rigidbody, в противном случае динамический MonoBehaviour.Update.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioVelocityUpdateMode.Dynamic">
+      <summary>
+        <para>Обновляет источник или прослушиватель в динамическом цикле MonoBehaviour.Update.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AudioVelocityUpdateMode.Fixed">
+      <summary>
+        <para>Обновляет источник или прослушиватель в цикле MonoBehaviour.FixedUpdate.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.Audio.AudioSampleProvider">
+      <summary>
+        <para>Предоставляет доступ к образцам аудио, созданным объектами Unity, такими как VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.availableSampleFrameCount">
+      <summary>
+        <para>Количество образцов кадров, доступных для использования с Experimental.Audio.AudioSampleProvider.ConsumeSampleFrames.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.channelCount">
+      <summary>
+        <para>Количество аудиоканалов на образец кадра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.consumeSampleFramesNativeFunction">
+      <summary>
+        <para>Указатель на встроенную функцию, обеспечивающую доступ к кадрам аудиосемплов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.enableSampleFramesAvailableEvents">
+      <summary>
+        <para>Включает события Experimental.Audio.AudioSampleProvider.sampleFramesAvailable.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.enableSilencePadding">
+      <summary>
+        <para>Если установлено значение true, буферы, создаваемые ConsumeSampleFrames, будут дополняться при тишине, если их меньше, чем запрошено. В противном случае дополнительные кадры выборки в буфере останутся без изменений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.freeSampleFrameCount">
+      <summary>
+        <para>Количество фреймов сэмплов, которые еще могут быть записаны производителем семплов до переполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.freeSampleFrameCountLowThreshold">
+      <summary>
+        <para>Затем количество бесплатных образцов падает ниже этого порога, генерируется событие Experimental.Audio.AudioSampleProvider.sampleFramesAvailable и связанный с ним собственный код.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.id">
+      <summary>
+        <para>Уникальный идентификатор для этого экземпляра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.maxSampleFrameCount">
+      <summary>
+        <para>Максимальное количество выборочных кадров, которое может быть накоплено во внутреннем буфере до того, как возникнет событие переполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.owner">
+      <summary>
+        <para>Объект, откуда пришел этот провайдер.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Experimental.Audio.AudioSampleProvider.sampleFramesAvailable(UnityEngine.Experimental.Audio.AudioSampleProvider/SampleFramesHandler)">
+      <summary>
+        <para>Вызывается, когда количество доступных выборочных кадров превышает пороговое значение, заданное параметром Experimental.Audio.AudioSampleProvider.freeSampleFrameCountLowThreshold.</para>
+      </summary>
+      <param name="value">Количество доступных образцов кадров.</param>
+    </member>
+    <member name="?:UnityEngine.Experimental.Audio.AudioSampleProvider.sampleFramesOverflow(UnityEngine.Experimental.Audio.AudioSampleProvider/SampleFramesHandler)">
+      <summary>
+        <para>Вызывается, когда количество доступных выборочных кадров превышает максимальное значение, которое помещается во внутренний буфер.</para>
+      </summary>
+      <param name="value">Количество выборочных кадров, которые были удалены из-за переполнения.</param>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.sampleRate">
+      <summary>
+        <para>Ожидаемая скорость воспроизведения образцов кадров, созданных этим классом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.trackIndex">
+      <summary>
+        <para>Индекс дорожки в объекте, создавшем этот провайдер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Audio.AudioSampleProvider.valid">
+      <summary>
+        <para>Истинно, если объект действителен.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.ClearSampleFramesAvailableNativeHandler">
+      <summary>
+        <para>Очистите набор собственных обработчиков с помощью Experimental.Audio.AudioSampleProvider.SetSampleFramesAvailableNativeHandler.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.ClearSampleFramesOverflowNativeHandler">
+      <summary>
+        <para>Очистите набор собственных обработчиков с помощью Experimental.Audio.AudioSampleProvider.SetSampleFramesOverflowNativeHandler.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.ConsumeSampleFrames(Unity.Collections.NativeArray`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Использование выборочных кадров из внутреннего буфера.</para>
+      </summary>
+      <param name="sampleFrames">Буфер, в который будут перенесены использованные сэмплы.</param>
+      <returns>
+        <para>Сколько выборочных кадров было записано в переданный буфер.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Experimental.Audio.AudioSampleProvider.ConsumeSampleFramesNativeFunction">
+      <summary>
+        <para>Тип, представляющий собственный указатель функции для использования выборочных кадров.</para>
+      </summary>
+      <param name="providerId">Идентификатор провайдера. См. Experimental.Audio.AudioSampleProvider.id.</param>
+      <param name="interleavedSampleFrames">Указатель на буфер выборочных кадров для заполнения. Фактический тип C — float*.</param>
+      <param name="sampleFrameCount">Количество выборочных кадров, которые можно записать в interleavedSampleFrames.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.Dispose">
+      <summary>
+        <para>Высвободить внутренние ресурсы. Унаследовано от IDisposable.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.Audio.AudioSampleProvider.SampleFramesEventNativeFunction">
+      <summary>
+        <para>Тип, представляющий собственный указатель функции для обработки событий кадра примера.</para>
+      </summary>
+      <param name="userData">Пользовательские данные, указанные при установке обработчика. Фактический тип C — void*.</param>
+      <param name="providerId">Идентификатор провайдера. См. Experimental.Audio.AudioSampleProvider.id.</param>
+      <param name="sampleFrameCount">Количество доступных или переполненных выборочных кадров, в зависимости от типа события.</param>
+    </member>
+    <member name="T:UnityEngine.Experimental.Audio.AudioSampleProvider.SampleFramesHandler">
+      <summary>
+        <para>Делегаты для типовых событий кадра.</para>
+      </summary>
+      <param name="provider">Поставщик, создающий событие.</param>
+      <param name="sampleFrameCount">Сколько выборочных кадров доступно или было удалено в зависимости от события.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.SetSampleFramesAvailableNativeHandler(UnityEngine.Experimental.Audio.AudioSampleProvider/SampleFramesEventNativeFunction,System.IntPtr)">
+      <summary>
+        <para>Установите собственный обработчик событий для событий, генерируемых, когда количество доступных выборочных кадров превышает пороговое значение.</para>
+      </summary>
+      <param name="handler">Указатель на функцию, которая будет вызываться при возникновении события.</param>
+      <param name="userData">Пользовательские данные, которые будут переданы обработчику при вызове. Фактический тип C — void*.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.Audio.AudioSampleProvider.SetSampleFramesOverflowNativeHandler(UnityEngine.Experimental.Audio.AudioSampleProvider/SampleFramesEventNativeFunction,System.IntPtr)">
+      <summary>
+        <para>Установите собственный обработчик событий для событий, возникающих при переполнении внутреннего буфера кадра выборки.</para>
+      </summary>
+      <param name="handler">Указатель на функцию, которая будет вызываться при возникновении события.</param>
+      <param name="userData">Пользовательские данные, которые будут переданы обработчику при вызове. Фактический тип C — void*.</param>
+    </member>
+    <member name="T:UnityEngine.FFTWindow">
+      <summary>
+        <para>Типы окон спектрального анализа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.Blackman">
+      <summary>
+        <para>W[n] = 0,42 - (0,5 * COS(nN)) + (0,08 * COS(2,0 * nN)).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.BlackmanHarris">
+      <summary>
+        <para>W[n] = 0,35875 - (0,48829 * COS(1,0 * nN)) + (0,14128 * COS(2,0 * nN)) - (0,01168 * COS(3,0 * n/N)).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.Hamming">
+      <summary>
+        <para>W[n] = 0,54 - (0,46 * COS(n/N) ).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.Hanning">
+      <summary>
+        <para>W[n] = 0,5 * (1,0 - COS(n/N) ).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.Rectangular">
+      <summary>
+        <para>W[n] = 1,0.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.FFTWindow.Triangle">
+      <summary>
+        <para>W[n] = TRI(2n/N).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GamepadSpeakerOutputType">
+      <summary>
+        <para>Типы аудиовыхода геймпада.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GamepadSpeakerOutputType.SecondaryVibration">
+      <summary>
+        <para>Аудиовыход осуществляется через виброустройство дополнительного геймпада, если оно поддерживается.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GamepadSpeakerOutputType.Speaker">
+      <summary>
+        <para>Аудиовыход осуществляется через звуковой динамик геймпада, если геймпад поддерживает воспроизведение звука.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GamepadSpeakerOutputType.Vibration">
+      <summary>
+        <para>Звук выводится через устройство вибрации геймпада, если геймпад поддерживает воспроизведение звука в виде вибрации.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Microphone">
+      <summary>
+        <para>Используйте этот класс для записи аудиоклипа с помощью подключенного микрофона.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Microphone.devices">
+      <summary>
+        <para>Список доступных микрофонных устройств, идентифицированных по имени.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Microphone.End(System.String)">
+      <summary>
+        <para>Останавливает запись.</para>
+      </summary>
+      <param name="deviceName">Имя устройства.</param>
+    </member>
+    <member name="M:UnityEngine.Microphone.GetDeviceCaps(System.String,System.Int32&amp;,System.Int32&amp;)">
+      <summary>
+        <para>Получите частотные возможности устройства.</para>
+      </summary>
+      <param name="deviceName">Имя устройства.</param>
+      <param name="minFreq">Возвращает минимальную частоту дискретизации устройства.</param>
+      <param name="maxFreq">Возвращает максимальную частоту дискретизации устройства.</param>
+    </member>
+    <member name="M:UnityEngine.Microphone.GetPosition(System.String)">
+      <summary>
+        <para>Получить позицию в семплах записи.</para>
+      </summary>
+      <param name="deviceName">Имя устройства.</param>
+    </member>
+    <member name="M:UnityEngine.Microphone.IsRecording(System.String)">
+      <summary>
+        <para>Запрос, если устройство в настоящее время записывает.</para>
+      </summary>
+      <param name="deviceName">Имя устройства.</param>
+    </member>
+    <member name="M:UnityEngine.Microphone.Start(System.String,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+        <para>Начать запись с устройства.</para>
+      </summary>
+      <param name="deviceName">Имя устройства.</param>
+      <param name="loop">Указывает, должна ли запись продолжаться при достижении lengthSec, а также циклически повторяться и записывать с начала аудиоклипа.</param>
+      <param name="lengthSec">Длина аудиоклипа, созданного записью.</param>
+      <param name="frequency">Частота дискретизации аудиоклипа, создаваемого записью.</param>
+      <returns>
+        <para>Функция возвращает null, если запись не начинается.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.MovieTexture">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MovieTexture.audioClip">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MovieTexture.duration">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MovieTexture.isPlaying">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MovieTexture.isReadyToPlay">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MovieTexture.loop">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.MovieTexture.Pause">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.MovieTexture.Play">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.MovieTexture.Stop">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.AudioModule">
+      <summary>
+        <para>Модуль Audio реализует аудиосистему Unity.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WebCamDevice">
+      <summary>
+        <para>Структура, описывающая устройство веб-камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.availableResolutions">
+      <summary>
+        <para>Возможные разрешения WebCamTexture для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.depthCameraName">
+      <summary>
+        <para>Строковый идентификатор, используемый для создания WebCamTexture на основе данных о глубине.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.isAutoFocusPointSupported">
+      <summary>
+        <para>Возвращает true, если камера поддерживает автоматическую фокусировку на точках интереса, и false в противном случае.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.isFrontFacing">
+      <summary>
+        <para>True, если камера направлена ​​в ту же сторону, что и экран, иначе false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.kind">
+      <summary>
+        <para>Свойство типа WebCamKind, обозначающее тип устройства веб-камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamDevice.name">
+      <summary>
+        <para>Человекочитаемое имя устройства. Различается в разных системах.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WebCamKind">
+      <summary>
+        <para>Перечисление, представляющее различные типы устройств веб-камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WebCamKind.ColorAndDepth">
+      <summary>
+        <para>Камера, которая поддерживает синхронизированные данные о цвете и глубине (в настоящее время это только двойные задние камеры и камеры с истинной глубиной на последних устройствах iOS).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WebCamKind.Telephoto">
+      <summary>
+        <para>Устройство с телеобъективом. Эти устройства имеют большее фокусное расстояние, чем широкоугольная камера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WebCamKind.UltraWideAngle">
+      <summary>
+        <para>Сверхширокоугольная камера. Эти устройства имеют более короткое фокусное расстояние, чем широкоугольная камера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.WebCamKind.WideAngle">
+      <summary>
+        <para>Широкоугольная камера (по умолчанию).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WebCamTexture">
+      <summary>
+        <para>Текстуры веб-камеры — это текстуры, на которые визуализируется входное видео в реальном времени.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.autoFocusPoint">
+      <summary>
+        <para>Это свойство позволяет вам установить/получить точку автофокуса камеры. Это работает только на устройствах Android и iOS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.deviceName">
+      <summary>
+        <para>Установите это, чтобы указать имя используемого устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.devices">
+      <summary>
+        <para>Возвращает список доступных устройств.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.didUpdateThisFrame">
+      <summary>
+        <para>Видеобуфер обновил этот кадр?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.isDepth">
+      <summary>
+        <para>Это свойство имеет значение true, если текстура основана на данных глубины.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.isPlaying">
+      <summary>
+        <para>Возвращает, если камера в данный момент воспроизводит.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.requestedFPS">
+      <summary>
+        <para>Установите требуемую частоту кадров устройства камеры (в кадрах в секунду).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.requestedHeight">
+      <summary>
+        <para>Установите требуемую высоту устройства камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.requestedWidth">
+      <summary>
+        <para>Установите требуемую ширину устройства камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.videoRotationAngle">
+      <summary>
+        <para>Возвращает угол по часовой стрелке (в градусах), который можно использовать для поворота многоугольника, чтобы содержимое камеры отображалось в правильной ориентации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WebCamTexture.videoVerticallyMirrored">
+      <summary>
+        <para>Возвращает значение, если изображение текстуры перевернуто по вертикали.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor(System.String)">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor(System.String,System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.#ctor(System.String,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте текстуру веб-камеры.</para>
+      </summary>
+      <param name="deviceName">Имя используемого устройства видеовхода.</param>
+      <param name="requestedWidth">Требуемая ширина текстуры.</param>
+      <param name="requestedHeight">Требуемая высота текстуры.</param>
+      <param name="requestedFPS">Требуемая частота кадров текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.GetPixel(System.Int32,System.Int32)">
+      <summary>
+        <para>Возвращает цвет пикселя с координатами (x, y).</para>
+      </summary>
+      <param name="x">Координата X пикселя, который необходимо получить.</param>
+      <param name="y">Координата Y получаемого пикселя.</param>
+      <returns>
+        <para>Цвет пикселя в запрошенной координате.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.GetPixels">
+      <summary>
+        <para>Извлекает копию данных цвета пикселя. Цвета представлены структурами Color.</para>
+      </summary>
+      <returns>
+        <para>Массив, содержащий копию запрошенных цветов пикселей, представленных структурами Color.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.GetPixels(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Получите блок цветов пикселей.</para>
+      </summary>
+      <param name="x">Координата X начала блока.</param>
+      <param name="y">Координата Y начала блока.</param>
+      <param name="blockWidth">Ширина блока.</param>
+      <param name="blockHeight">Высота блока.</param>
+      <returns>
+        <para>Копия запрошенного блока пикселей.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.GetPixels32()">
+      <summary>
+        <para>Извлекает копию данных цвета пикселя. Цвета представлены структурами Color32.</para>
+      </summary>
+      <param name="colors">Необязательный массив для получения данных о пикселях.</param>
+      <returns>
+        <para>Массив, содержащий копию запрошенных цветов пикселей, представленных структурами Color32.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.GetPixels32(UnityEngine.Color32[])">
+      <summary>
+        <para>Извлекает копию данных цвета пикселя. Цвета представлены структурами Color32.</para>
+      </summary>
+      <param name="colors">Необязательный массив для получения данных о пикселях.</param>
+      <returns>
+        <para>Массив, содержащий копию запрошенных цветов пикселей, представленных структурами Color32.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.Pause">
+      <summary>
+        <para>Приостанавливает камеру.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.Play">
+      <summary>
+        <para>Запускает камеру.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.WebCamTexture.Stop">
+      <summary>
+        <para>Останавливает камеру.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

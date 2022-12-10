@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ScreenCaptureModule</name>
+    </assembly>
+    <member name="T:UnityEngine.ScreenCapture">
+      <summary>
+        <para>Предоставляет методы для создания скриншотов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ScreenCapture.CaptureScreenshot(System.String,System.Int32)">
+      <summary>
+        <para>Делает снимок экрана и сохраняет его в виде файла .png по указанному пути.</para>
+      </summary>
+      <param name="filename">Путь для сохранения файла скриншота.</param>
+      <param name="superSize">Коэффициент увеличения разрешения.</param>
+      <param name="stereoCaptureMode">Текстура глаза для захвата при включенном стереорендеринге.</param>
+    </member>
+    <member name="M:UnityEngine.ScreenCapture.CaptureScreenshot(System.String,UnityEngine.ScreenCapture/StereoScreenCaptureMode)">
+      <summary>
+        <para>Делает снимок экрана и сохраняет его в виде файла .png по указанному пути.</para>
+      </summary>
+      <param name="filename">Путь для сохранения файла скриншота.</param>
+      <param name="superSize">Коэффициент увеличения разрешения.</param>
+      <param name="stereoCaptureMode">Текстура глаза для захвата при включенном стереорендеринге.</param>
+    </member>
+    <member name="M:UnityEngine.ScreenCapture.CaptureScreenshotAsTexture(System.Int32)">
+      <summary>
+        <para>Захватывает скриншот вида игры в объект Texture2D.</para>
+      </summary>
+      <param name="superSize">Коэффициент увеличения разрешения.</param>
+      <param name="stereoCaptureMode">Указывает текстуру глаза для захвата при включенном стереорендеринге.</param>
+    </member>
+    <member name="M:UnityEngine.ScreenCapture.CaptureScreenshotAsTexture(UnityEngine.ScreenCapture/StereoScreenCaptureMode)">
+      <summary>
+        <para>Захватывает скриншот вида игры в объект Texture2D.</para>
+      </summary>
+      <param name="superSize">Коэффициент увеличения разрешения.</param>
+      <param name="stereoCaptureMode">Указывает текстуру глаза для захвата при включенном стереорендеринге.</param>
+    </member>
+    <member name="M:UnityEngine.ScreenCapture.CaptureScreenshotIntoRenderTexture(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Захватывает скриншот вида игры в объект RenderTexture.</para>
+      </summary>
+      <param name="renderTexture">RenderTexture, которая будет заполнена содержимым экрана.</param>
+    </member>
+    <member name="T:UnityEngine.ScreenCapture.StereoScreenCaptureMode">
+      <summary>
+        <para>Перечисление, указывающее текстуру глаза для захвата при использовании ScreenCapture.CaptureScreenshot и при включенном стереорендеринге.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenCapture.StereoScreenCaptureMode.BothEyes">
+      <summary>
+        <para>И левый, и правый глаз захватываются и объединяются в одно изображение.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenCapture.StereoScreenCaptureMode.LeftEye">
+      <summary>
+        <para>Левый глаз захвачен. Это настройка по умолчанию для метода CaptureScreenshot.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenCapture.StereoScreenCaptureMode.RightEye">
+      <summary>
+        <para>Правый глаз захвачен.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.ScreenCaptureModule">
+      <summary>
+        <para>Модуль ScreenCapture предоставляет возможность делать снимки экрана с помощью класса ScreenCapture.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

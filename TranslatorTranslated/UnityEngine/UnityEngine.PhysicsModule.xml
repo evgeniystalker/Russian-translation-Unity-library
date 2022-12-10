@@ -1,0 +1,3877 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.PhysicsModule</name>
+    </assembly>
+    <member name="T:UnityEngine.ArticulationBody">
+      <summary>
+        <para>Тело, являющееся частью артикуляции Physics.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.anchorPosition">
+      <summary>
+        <para>Положение якоря относительно этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.anchorRotation">
+      <summary>
+        <para>Вращение якоря относительно этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.angularDamping">
+      <summary>
+        <para>Коэффициент демпфирования, влияющий на то, как это тело сопротивляется вращению.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.angularVelocity">
+      <summary>
+        <para>Угловая скорость тела определена в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.centerOfMass">
+      <summary>
+        <para>Центр масс тела определен в локальном пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.collisionDetectionMode">
+      <summary>
+        <para>Режим обнаружения столкновений ArticulationBody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.dofCount">
+      <summary>
+        <para>Количество степеней свободы тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.immovable">
+      <summary>
+        <para>Позволяет указать, что это тело неподвижно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.index">
+      <summary>
+        <para>Индекс тела в иерархии тел сочленения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.inertiaTensor">
+      <summary>
+        <para>Тензор инерции этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.inertiaTensorRotation">
+      <summary>
+        <para>Вращение тензора инерции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.isRoot">
+      <summary>
+        <para>Указывает, является ли это тело корневым телом артикуляции (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointAcceleration">
+      <summary>
+        <para>Совместное ускорение в приведенных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointForce">
+      <summary>
+        <para>Совместная сила в приведенных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointFriction">
+      <summary>
+        <para>Позволяет указать величину трения, возникающего в результате перемещения родительского тела относительно этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointPosition">
+      <summary>
+        <para>Положение сустава в приведенных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointType">
+      <summary>
+        <para>Тип соединения, соединяющего это тело с его родительским телом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.jointVelocity">
+      <summary>
+        <para>Совместная скорость в приведенных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.linearDamping">
+      <summary>
+        <para>Фактор демпфирования, который влияет на то, как это тело сопротивляется линейному движению.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.linearLockX">
+      <summary>
+        <para>Тип блокировки по оси X перемещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.linearLockY">
+      <summary>
+        <para>Тип блокировки по оси Y перемещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.linearLockZ">
+      <summary>
+        <para>Тип блокировки по оси Z перемещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.mass">
+      <summary>
+        <para>Масса этого тела сочленения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.matchAnchors">
+      <summary>
+        <para>Должен ли родительский якорь вычисляться автоматически или нет.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.maxAngularVelocity">
+      <summary>
+        <para>Максимальная угловая скорость тела сочленения, измеряемая в радианах в секунду.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.maxDepenetrationVelocity">
+      <summary>
+        <para>Максимальная скорость тела сочленения при выходе из состояния проникновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.maxJointVelocity">
+      <summary>
+        <para>Максимальная скорость соединения тела артикуляции в приведенных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.maxLinearVelocity">
+      <summary>
+        <para>Максимальная линейная скорость тела сочленения, измеряемая в метрах в секунду.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.parentAnchorPosition">
+      <summary>
+        <para>Положение привязки относительно родителя этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.parentAnchorRotation">
+      <summary>
+        <para>Вращение привязки относительно родителя этого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.sleepThreshold">
+      <summary>
+        <para>Нормированный по массе энергетический порог, ниже которого объекты начинают засыпать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.solverIterations">
+      <summary>
+        <para>SolrIterations определяет, насколько точно разрешаются суставы тела артикуляции и контакты столкновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.solverVelocityIterations">
+      <summary>
+        <para>РешательVelocityIterations влияет на то, насколько точно разрешаются суставы тела артикуляции и контакты столкновения во время отскока.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.swingYLock">
+      <summary>
+        <para>Величина угла конического поворота относительно оси Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.swingZLock">
+      <summary>
+        <para>Величина угла конического поворота относительно оси Z.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.twistLock">
+      <summary>
+        <para>Тип блокировки поворотного движения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.useGravity">
+      <summary>
+        <para>Определяет, влияет ли гравитация на это тело артикуляции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.velocity">
+      <summary>
+        <para>Линейная скорость тела, заданная в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.worldCenterOfMass">
+      <summary>
+        <para>Центр масс тела, определенный в мировом пространстве (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.xDrive">
+      <summary>
+        <para>Свойства проехать вдоль или вокруг X.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.yDrive">
+      <summary>
+        <para>Свойства проехать вдоль или вокруг Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.zDrive">
+      <summary>
+        <para>Свойства движения вдоль или вокруг Z.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddForce(UnityEngine.Vector3)">
+      <summary>
+        <para>Применяет силу к ArticulationBody.</para>
+      </summary>
+      <param name="force">Применяемый вектор силы.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddForce(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет силу к ArticulationBody.</para>
+      </summary>
+      <param name="force">Применяемый вектор силы.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddForceAtPosition(UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Применяет силу в определенном положении, что приводит к приложению крутящего момента и силы к объекту.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="position">Позиция в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddForceAtPosition(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет силу в определенном положении, что приводит к приложению крутящего момента и силы к объекту.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="position">Позиция в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddRelativeForce(UnityEngine.Vector3)">
+      <summary>
+        <para>Применяет силу к артикуляционному телу относительно его локальной системы координат.</para>
+      </summary>
+      <param name="force">Вектор силы в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddRelativeForce(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет силу к артикуляционному телу относительно его локальной системы координат.</para>
+      </summary>
+      <param name="force">Вектор силы в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddRelativeTorque(UnityEngine.Vector3)">
+      <summary>
+        <para>Применяет крутящий момент к телу сочленения относительно его локальной системы координат.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в локальных координатах.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddRelativeTorque(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет крутящий момент к телу сочленения относительно его локальной системы координат.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в локальных координатах.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddTorque(UnityEngine.Vector3)">
+      <summary>
+        <para>Добавьте крутящий момент к корпусу сочленения.</para>
+      </summary>
+      <param name="torque">Прикладываемый крутящий момент.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.AddTorque(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавьте крутящий момент к корпусу сочленения.</para>
+      </summary>
+      <param name="torque">Прикладываемый крутящий момент.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetClosestPoint(UnityEngine.Vector3)">
+      <summary>
+        <para>Возвращает ближайшую к заданной точку на теле артикуляции.</para>
+      </summary>
+      <param name="point">Достопримечательность.</param>
+      <returns>
+        <para>Ближайшая к данному телу точка на поверхностях всех коллайдеров, присоединенных к данному телу артикуляции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetDenseJacobian(UnityEngine.ArticulationJacobian&amp;)">
+      <summary>
+        <para>Вычисляет и записывает плотную матрицу Якоби иерархии тела артикуляции в предоставленную структуру.</para>
+      </summary>
+      <param name="jacobian">Предоставленная структура для обратного чтения и хранения значений матрицы Якоби. </param>
+      <returns>
+        <para>Количество элементов в матрице Якоби.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetDofStartIndices(System.Collections.Generic.List`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>Вычисляет и считывает начальные индексы сокращенных данных координат в буфере сокращенных данных координат для каждого тела артикуляции в иерархии.</para>
+      </summary>
+      <param name="dofStartIndices">Предоставляется список целых чисел для чтения и сохранения данных. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetDriveTargets(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает цели привода соединения тела сочленения всей иерархии в предоставленный список поплавков.</para>
+      </summary>
+      <param name="targets">Предоставляется список поплавков для считывания и хранения данных о целях совместного привода. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetDriveTargetVelocities(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает целевые скорости привода шарнирного сочленения всей иерархии в предоставленный список поплавков .</para>
+      </summary>
+      <param name="targetVelocities">Предоставляется список поплавков для считывания и сохранения данных о целевых скоростях шарнирного привода. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetJointAccelerations(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает ускорения суставов тела артикуляции всей иерархии в предоставленный список чисел с плавающей запятой .</para>
+      </summary>
+      <param name="accelerations">Предоставляется список поплавков для считывания и хранения данных об ускорениях суставов. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetJointForces(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает объединенные силы тела сочленения всей иерархии в предоставленный список поплавков .</para>
+      </summary>
+      <param name="forces">Предоставляется список поплавков для считывания и хранения данных о совместных силах. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetJointPositions(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает положения суставов тела артикуляции всей иерархии в предоставленный список плавающих элементов .</para>
+      </summary>
+      <param name="positions">Предоставляется список поплавков для считывания и хранения данных о позициях суставов. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetJointVelocities(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Считывает скорости суставов тела артикуляции всей иерархии в предоставленный список поплавков .</para>
+      </summary>
+      <param name="velocities">Предоставляется список поплавков для считывания и сохранения данных о скоростях суставов. </param>
+      <returns>
+        <para>Общее количество степеней свободы для всей иерархии тел сочленения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetPointVelocity(UnityEngine.Vector3)">
+      <summary>
+        <para>Получает скорость тела артикуляции в указанной точке worldPoint в глобальном пространстве.</para>
+      </summary>
+      <param name="worldPoint">
+      </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.GetRelativePointVelocity(UnityEngine.Vector3)">
+      <summary>
+        <para>Скорость относительно тела сочленения в точке relativePoint.</para>
+      </summary>
+      <param name="relativePoint">
+      </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.IsSleeping">
+      <summary>
+        <para>Указывает, находится ли тело артикуляции в спящем режиме.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.ResetCenterOfMass">
+      <summary>
+        <para>Сбрасывает центр масс тела шарнира.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.ResetInertiaTensor">
+      <summary>
+        <para>Сбрасывает значение тензора инерции и вращения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetDriveTargets(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает целевые приводы суставов тела артикуляции для всей иерархии тел.</para>
+      </summary>
+      <param name="targets">Предоставляется список поплавков, используемых для установки целей совместного привода. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetDriveTargetVelocities(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает целевые скорости привода сочленения тела для всей иерархии тел.</para>
+      </summary>
+      <param name="targetVelocities">Поставляемый список поплавков, используемых для установки целевых скоростей шарнирного привода. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetJointAccelerations(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает ускорения суставов тела артикуляции для всей иерархии тел.</para>
+      </summary>
+      <param name="accelerations">Поставляемый список поплавков, используемых для установки совместных ускорений. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetJointForces(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает объединенные усилия тел сочленения для всей иерархии тел.</para>
+      </summary>
+      <param name="forces">Поставляется список поплавков, используемых для установки совместных сил. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetJointPositions(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает положения суставов тела артикуляции для всей иерархии тел.</para>
+      </summary>
+      <param name="positions">Поставляемый список поплавков, используемых для установки совместных позиций. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SetJointVelocities(System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Назначает скорости суставов тела артикуляции для всей иерархии тел.</para>
+      </summary>
+      <param name="velocities">Поставляемый список поплавков, используемых для установки совместных скоростей. </param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.Sleep">
+      <summary>
+        <para>Заставляет артикуляционное тело спать.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.SnapAnchorToClosestContact">
+      <summary>
+        <para>Привязать якорь к ближайшему контакту между соединенными телами.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.TeleportRoot(UnityEngine.Vector3,UnityEngine.Quaternion)">
+      <summary>
+        <para>Телепортировать корень артикуляции в новую позу.</para>
+      </summary>
+      <param name="position">Новое положение тела корневого сочленения.</param>
+      <param name="rotation">Новая ориентация тела корневого сочленения.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationBody.WakeUp">
+      <summary>
+        <para>Заставляет артикуляционное тело проснуться.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ArticulationDofLock">
+      <summary>
+        <para>Тип блокировки, применяемый к определенной степени свободы тела сочленения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDofLock.FreeMotion">
+      <summary>
+        <para>Относительное движение двух соединенных тел сочленения ничем не ограничено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDofLock.LimitedMotion">
+      <summary>
+        <para>Относительное движение двух соединенных тел сочленения ограничено определенным диапазоном.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDofLock.LockedMotion">
+      <summary>
+        <para>Относительное движение двух соединенных тел сочленения не допускается.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ArticulationDrive">
+      <summary>
+        <para>Привод прикладывает усилия и крутящие моменты к соединенным телам.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.damping">
+      <summary>
+        <para>Демпфирование пружины, прикрепленной к этому приводу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.forceLimit">
+      <summary>
+        <para>Максимальная сила, которую этот привод может приложить к телу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.lowerLimit">
+      <summary>
+        <para>Нижний предел движения для определенной степени свободы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.stiffness">
+      <summary>
+        <para>Жесткость пружины, связанной с этим приводом.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.target">
+      <summary>
+        <para>Целевое значение, которого накопитель попытается достичь.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.targetVelocity">
+      <summary>
+        <para>Скорость тела, которой этот двигатель попытается достичь.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationDrive.upperLimit">
+      <summary>
+        <para>Верхний предел движения для определенной степени свободы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ArticulationJacobian">
+      <summary>
+        <para>Плотная матрица Якоби с плавающей запятой иерархии тел сочленения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationJacobian.columns">
+      <summary>
+        <para>Количество столбцов матрицы равно общему количеству всех суставных степеней свободы (DOF) плюс 6, если ArticulationBody.immovable имеет значение false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationJacobian.elements">
+      <summary>
+        <para>Список поплавков, представляющих матрицу Якоби.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationJacobian.rows">
+      <summary>
+        <para>Количество строк матрицы равно количеству тел сочленения в иерархии, умноженному на 6: 3 строки линейно-позиционных степеней свободы и 3 строки углово-вращательных степеней свободы для каждого тела.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationJacobian.#ctor">
+      <summary>
+        <para>Инициализирует матрицу Якоби nRows X nCols нулями.</para>
+      </summary>
+      <param name="rows">Количество строк матрицы.</param>
+      <param name="cols">Количество столбцов матрицы.</param>
+    </member>
+    <member name="P:UnityEngine.ArticulationJacobian.this">
+      <summary>
+        <para>Получает элемент [row, col] матрицы.</para>
+      </summary>
+      <param name="row">Строка матрицы.</param>
+      <param name="col">Столбец матрицы.</param>
+    </member>
+    <member name="T:UnityEngine.ArticulationJointType">
+      <summary>
+        <para>Тип сустава, который ограничивает движение двух соединенных тел сочленения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationJointType.FixedJoint">
+      <summary>
+        <para>Неподвижное соединение не допускает относительного перемещения соединенных тел.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationJointType.PrismaticJoint">
+      <summary>
+        <para>Призматический шарнир допускает относительное перемещение тел соединения только вдоль одной заданной оси.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationJointType.RevoluteJoint">
+      <summary>
+        <para>Вращательное соединение обеспечивает вращательное движение вокруг оси X родительского анкера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationJointType.SphericalJoint">
+      <summary>
+        <para>Сферическое соединение допускает только относительное вращение двух соединенных тел.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ArticulationReducedSpace">
+      <summary>
+        <para>Координаты в уменьшенном пространстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ArticulationReducedSpace.dofCount">
+      <summary>
+        <para>Количество степеней свободы тела.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ArticulationReducedSpace.#ctor(System.Single)">
+      <summary>
+        <para>Сохраняет координаты в уменьшенном пространстве.</para>
+      </summary>
+      <param name="a">Координата первой степени свободы.</param>
+      <param name="b">Координата второй степени свободы.</param>
+      <param name="c">Координата третьей степени свободы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationReducedSpace.#ctor(System.Single,System.Single)">
+      <summary>
+        <para>Сохраняет координаты в уменьшенном пространстве.</para>
+      </summary>
+      <param name="a">Координата первой степени свободы.</param>
+      <param name="b">Координата второй степени свободы.</param>
+      <param name="c">Координата третьей степени свободы.</param>
+    </member>
+    <member name="M:UnityEngine.ArticulationReducedSpace.#ctor(System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Сохраняет координаты в уменьшенном пространстве.</para>
+      </summary>
+      <param name="a">Координата первой степени свободы.</param>
+      <param name="b">Координата второй степени свободы.</param>
+      <param name="c">Координата третьей степени свободы.</param>
+    </member>
+    <member name="P:UnityEngine.ArticulationReducedSpace.this">
+      <summary>
+        <para>Получает координату вдоль или около определенной степени свободы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.BoxcastCommand">
+      <summary>
+        <para>Используйте эту структуру, чтобы настроить асинхронное выполнение команды box cast во время задания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.center">
+      <summary>
+        <para>Центр поля.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.direction">
+      <summary>
+        <para>Направление, в котором перемещать поле.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.distance">
+      <summary>
+        <para>Максимальное расстояние развертки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.halfExtents">
+      <summary>
+        <para>Половина размера окна в каждом измерении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.layerMask">
+      <summary>
+        <para>Маска слоя, которая используется для выборочного игнорирования коллайдеров при создании блока.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.orientation">
+      <summary>
+        <para>Вращение коробки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxcastCommand.physicsScene">
+      <summary>
+        <para>Физическая сцена, в которой запускается эта команда.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.BoxcastCommand.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает BoxcastCommand.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="direction">Направление, в котором перемещать поле.</param>
+      <param name="distance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании блока.</param>
+    </member>
+    <member name="M:UnityEngine.BoxcastCommand.#ctor(UnityEngine.PhysicsScene,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает BoxcastCommand.</para>
+      </summary>
+      <param name="physicsScene">Физическая сцена для запуска команды.</param>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="direction">Направление, в котором перемещать поле.</param>
+      <param name="distance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании блока.</param>
+    </member>
+    <member name="M:UnityEngine.BoxcastCommand.ScheduleBatch(Unity.Collections.NativeArray`1&lt;UnityEngine.BoxcastCommand&gt;,Unity.Collections.NativeArray`1&lt;UnityEngine.RaycastHit&gt;,System.Int32,Unity.Jobs.JobHandle)">
+      <summary>
+        <para>Планирует выполнение пакета boxcasts в задании.</para>
+      </summary>
+      <param name="commands">NativeArray BoxcastCommand для выполнения.</param>
+      <param name="results">NativeArray RaycastHit, в котором хранятся результаты команд.</param>
+      <param name="minCommandsPerJob">Минимальное количество заданий, которое должно выполняться в одном задании.</param>
+      <param name="dependsOn">JobHandle задания, которое должно быть завершено перед выполнением приведения типов.</param>
+      <returns>
+        <para>Возвращает JobHandle задания, которое будет выполнять приведение типов.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.BoxCollider">
+      <summary>
+        <para>Примитивный коллайдер коробчатой ​​формы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxCollider.center">
+      <summary>
+        <para>Центр прямоугольника, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.BoxCollider.size">
+      <summary>
+        <para>Размер блока, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.CapsulecastCommand">
+      <summary>
+        <para>Используйте эту структуру для настройки команды приведения капсулы, которая выполняется асинхронно во время задания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.direction">
+      <summary>
+        <para>Направление броска капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.distance">
+      <summary>
+        <para>Максимальное расстояние, на которое бросок капсулы проверяет наличие столкновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.layerMask">
+      <summary>
+        <para>Маска слоя, которая выборочно игнорирует коллайдеры при использовании капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.physicsScene">
+      <summary>
+        <para>Физическая сцена, в которой запускается эта команда.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.point1">
+      <summary>
+        <para>Центр сферы в начале капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.point2">
+      <summary>
+        <para>Центр сферы на конце капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsulecastCommand.radius">
+      <summary>
+        <para>Радиус капсулы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CapsulecastCommand.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает CapsulecastCommand.</para>
+      </summary>
+      <param name="p1">Центр сферы в начале капсулы.</param>
+      <param name="p2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление броска капсулы.</param>
+      <param name="distance">Максимальная длина развертки.</param>
+      <param name="layerMask">Маска слоя, которая выборочно игнорирует коллайдеры при использовании капсулы.</param>
+    </member>
+    <member name="M:UnityEngine.CapsulecastCommand.#ctor(UnityEngine.PhysicsScene,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает CapsulecastCommand.</para>
+      </summary>
+      <param name="physicsScene">Физическая сцена для запуска команды.</param>
+      <param name="p1">Центр сферы в начале капсулы.</param>
+      <param name="p2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление броска капсулы.</param>
+      <param name="distance">Максимальная длина развертки.</param>
+      <param name="layerMask">Маска слоя, которая выборочно игнорирует коллайдеры при использовании капсулы.</param>
+    </member>
+    <member name="M:UnityEngine.CapsulecastCommand.ScheduleBatch(Unity.Collections.NativeArray`1&lt;UnityEngine.CapsulecastCommand&gt;,Unity.Collections.NativeArray`1&lt;UnityEngine.RaycastHit&gt;,System.Int32,Unity.Jobs.JobHandle)">
+      <summary>
+        <para>Планирует пакет отливок капсул, которые выполняются в задании.</para>
+      </summary>
+      <param name="commands">NaviveArray CapsulecastCommands для выполнения.</param>
+      <param name="results">NavtiveArray RaycastHit, в котором хранятся результаты команд.</param>
+      <param name="minCommandsPerJob">Минимальное количество заданий, которое должно выполняться в одном задании.</param>
+      <param name="dependsOn">jobHandle задания, которое должно быть завершено перед выполнением приведения капсулы.</param>
+      <returns>
+        <para>Возвращает JobHandle задания, которое будет выполнять приведение типов капсул.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.CapsuleCollider">
+      <summary>
+        <para>Примитивный коллайдер в форме капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsuleCollider.center">
+      <summary>
+        <para>Центр капсулы, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsuleCollider.direction">
+      <summary>
+        <para>Направление капсулы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsuleCollider.height">
+      <summary>
+        <para>Высота капсулы, измеренная в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CapsuleCollider.radius">
+      <summary>
+        <para>Радиус сферы, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.CharacterController">
+      <summary>
+        <para>CharacterController позволяет вам легко выполнять движение, ограниченное столкновениями, без необходимости иметь дело с твердым телом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.center">
+      <summary>
+        <para>Центр капсулы персонажа относительно позиции трансформации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.collisionFlags">
+      <summary>
+        <para>Какая часть капсулы столкнулась с окружающей средой во время последнего вызова CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.detectCollisions">
+      <summary>
+        <para>Определяет, конфликтуют ли другие твердые тела или контроллеры персонажей с этим контроллером персонажей (по умолчанию это всегда включено).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.enableOverlapRecovery">
+      <summary>
+        <para>Включает или отключает восстановление перекрытия.
+Включает или отключает восстановление перекрытия. Используется для отделения контроллеров персонажей от статических объектов при обнаружении перекрытия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.height">
+      <summary>
+        <para>Высота капсулы персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.isGrounded">
+      <summary>
+        <para>Касался ли CharacterController земли во время последнего хода?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.minMoveDistance">
+      <summary>
+        <para>Получает или задает минимальное расстояние перемещения контроллера персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.radius">
+      <summary>
+        <para>Радиус капсулы персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.skinWidth">
+      <summary>
+        <para>Ширина скина столкновения персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.slopeLimit">
+      <summary>
+        <para>Ограничение наклона контроллера персонажа в градусах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.stepOffset">
+      <summary>
+        <para>Смещение шага контроллера персонажа в метрах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterController.velocity">
+      <summary>
+        <para>Текущая относительная скорость Персонажа (см. примечания).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CharacterController.Move(UnityEngine.Vector3)">
+      <summary>
+        <para>Обеспечивает движение GameObject с присоединенным компонентом CharacterController.</para>
+      </summary>
+      <param name="motion">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CharacterController.SimpleMove(UnityEngine.Vector3)">
+      <summary>
+        <para>Перемещает персонажа со скоростью.</para>
+      </summary>
+      <param name="speed">
+      </param>
+    </member>
+    <member name="T:UnityEngine.CharacterJoint">
+      <summary>
+        <para>Соединения персонажей в основном используются для эффектов Ragdoll.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.enableProjection">
+      <summary>
+        <para>Возвращает нарушенные ограничения в соответствие даже в случае сбоя решателя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.highTwistLimit">
+      <summary>
+        <para>Верхний предел вокруг основной оси соединения символов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.lowTwistLimit">
+      <summary>
+        <para>Нижний предел вокруг основной оси соединения символов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.projectionAngle">
+      <summary>
+        <para>Установите порог углового допуска (в градусах) для проекции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.projectionDistance">
+      <summary>
+        <para>Установите порог линейного допуска для проекции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.swing1Limit">
+      <summary>
+        <para>Угловой предел поворота (в градусах) вокруг основной оси сустава персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.swing2Limit">
+      <summary>
+        <para>Угловой предел поворота (в градусах) вокруг основной оси сустава персонажа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.swingAxis">
+      <summary>
+        <para>Вторичная ось, вокруг которой может вращаться сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.swingLimitSpring">
+      <summary>
+        <para>Конфигурация пружины, прикрепленной к пределам поворота шарнира.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CharacterJoint.twistLimitSpring">
+      <summary>
+        <para>Конфигурация пружины, прикрепленной к пределам скручивания сустава.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Collider">
+      <summary>
+        <para>Базовый класс всех коллайдеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.attachedArticulationBody">
+      <summary>
+        <para>Тело артикуляции, к которому прикреплен коллайдер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.attachedRigidbody">
+      <summary>
+        <para>Жесткое тело, к которому прикреплен коллайдер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.bounds">
+      <summary>
+        <para>Объем коллайдера, ограничивающий мировое пространство (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.contactOffset">
+      <summary>
+        <para>Значение смещения контакта этого коллайдера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.enabled">
+      <summary>
+        <para>Включенные коллайдеры будут сталкиваться с другими коллайдерами, отключенные коллайдеры — нет.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.hasModifiableContacts">
+      <summary>
+        <para>Укажите, можно ли изменить контакты этого коллайдера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.isTrigger">
+      <summary>
+        <para>Является ли коллайдер триггером?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.material">
+      <summary>
+        <para>Материал, используемый коллайдером.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collider.sharedMaterial">
+      <summary>
+        <para>Общий физический материал этого коллайдера.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Collider.ClosestPoint(UnityEngine.Vector3)">
+      <summary>
+        <para>Возвращает точку на коллайдере, ближайшую к заданному местоположению.</para>
+      </summary>
+      <param name="position">Место, к которому вы хотите найти ближайшую точку.</param>
+      <returns>
+        <para>Точка на коллайдере, ближайшая к указанному местоположению.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Collider.ClosestPointOnBounds(UnityEngine.Vector3)">
+      <summary>
+        <para>Ближайшая точка к ограничивающей рамке прикрепленного коллайдера.</para>
+      </summary>
+      <param name="position">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Collider.Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&amp;,System.Single)">
+      <summary>
+        <para>Создает луч, который игнорирует все коллайдеры, кроме этого.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча.</param>
+      <param name="hitInfo">Если возвращается значение true, hitInfo будет содержать больше информации о месте удара по коллайдеру.</param>
+      <param name="maxDistance">Максимальная длина луча.</param>
+      <returns>
+        <para>Истина, когда луч пересекает коллайдер, иначе ложь.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Collision">
+      <summary>
+        <para>Описывает коллизию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.articulationBody">
+      <summary>
+        <para>ArticulationBody коллайдера, с которым сталкивается ваш GameObject (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.body">
+      <summary>
+        <para>Rigidbody или ArticulationBody коллайдера, с которым сталкивается ваш Компонент (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.collider">
+      <summary>
+        <para>Коллайдер, в который мы попали (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.contactCount">
+      <summary>
+        <para>Получает количество контактов для этой коллизии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.contacts">
+      <summary>
+        <para>Точки контакта, сгенерированные физическим движком. Вам следует избегать использования этого, поскольку он создает мусор в памяти. Вместо этого используйте GetContact или GetContacts.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.gameObject">
+      <summary>
+        <para>GameObject, коллайдер которого вы сталкиваетесь. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.impulse">
+      <summary>
+        <para>Общий импульс, приложенный к этой паре контактов для устранения коллизии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.relativeVelocity">
+      <summary>
+        <para>Относительная линейная скорость двух сталкивающихся объектов (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.rigidbody">
+      <summary>
+        <para>Жесткое тело, с которым мы столкнулись (только для чтения). Это значение равно null, если объект, в который мы попали, является коллайдером без прикрепленного жесткого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.transform">
+      <summary>
+        <para>Преобразование объекта, с которым мы столкнулись (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Collision.GetContact(System.Int32)">
+      <summary>
+        <para>Получает точку контакта по указанному индексу.</para>
+      </summary>
+      <param name="index">Индекс контакта для извлечения.</param>
+      <returns>
+        <para>Контакт по указанному индексу.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Collision.GetContacts(UnityEngine.ContactPoint[])">
+      <summary>
+        <para>Извлекает все точки контакта для этого столкновения.</para>
+      </summary>
+      <param name="contacts">Массив ContactPoint, используемый для получения результатов.</param>
+      <returns>
+        <para>Возвращает количество контактов, помещенных в массив контактов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Collision.GetContacts(System.Collections.Generic.List`1&lt;UnityEngine.ContactPoint&gt;)">
+      <summary>
+        <para>Извлекает все точки контакта для этого столкновения.</para>
+      </summary>
+      <param name="contacts">Список ContactPoint, который использовался для получения результатов.</param>
+      <returns>
+        <para>Возвращает количество контактов, помещенных в список контактов.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.CollisionDetectionMode">
+      <summary>
+        <para>Константы режима обнаружения столкновений, используемые для Rigidbody.collisionDetectionMode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionDetectionMode.Continuous">
+      <summary>
+        <para>Постоянное обнаружение столкновений включено для столкновений со статической геометрией сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionDetectionMode.ContinuousDynamic">
+      <summary>
+        <para>Постоянное обнаружение столкновений включено для столкновений со статической и динамической геометрией.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionDetectionMode.ContinuousSpeculative">
+      <summary>
+        <para>Спекулятивное непрерывное обнаружение столкновений включено для статических и динамических геометрий</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionDetectionMode.Discrete">
+      <summary>
+        <para>Непрерывное обнаружение столкновений отключено для этого Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.CollisionFlags">
+      <summary>
+        <para>CollisionFlags — это битовая маска, возвращаемая CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionFlags.Above">
+      <summary>
+        <para>CollisionFlags — это битовая маска, возвращаемая CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionFlags.Below">
+      <summary>
+        <para>CollisionFlags — это битовая маска, возвращаемая CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionFlags.None">
+      <summary>
+        <para>CollisionFlags — это битовая маска, возвращаемая CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.CollisionFlags.Sides">
+      <summary>
+        <para>CollisionFlags — это битовая маска, возвращаемая CharacterController.Move.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ConfigurableJoint">
+      <summary>
+        <para>Конфигурируемое соединение — это чрезвычайно гибкое соединение, дающее вам полный контроль над вращением и линейным движением.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularXDrive">
+      <summary>
+        <para>Определение того, как будет вести себя вращение сустава вокруг своей локальной оси X. Используется только в том случае, если режим вращательного привода установлен на Swing &amp; Twist.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularXLimitSpring">
+      <summary>
+        <para>Конфигурация пружины, прикрепленной к угловому X пределу сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularXMotion">
+      <summary>
+        <para>Разрешить вращение вокруг оси X быть свободным, полностью заблокированным или ограниченным в соответствии с Low и High Angular XLimit.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularYLimit">
+      <summary>
+        <para>Граница, определяющая ограничение поворота на основе отклонения от исходного поворота.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularYMotion">
+      <summary>
+        <para>Разрешить вращение вокруг оси Y быть свободным, полностью заблокированным или ограниченным в соответствии с Angular YLimit.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularYZDrive">
+      <summary>
+        <para>Определение того, как будет вести себя вращение сустава вокруг его локальных осей Y и Z. Используется только в том случае, если режим вращательного привода установлен на Swing &amp; Twist.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularYZLimitSpring">
+      <summary>
+        <para>Конфигурация пружины, прикрепленной к угловым Y и угловым Z пределам сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularZLimit">
+      <summary>
+        <para>Граница, определяющая ограничение поворота на основе отклонения от исходного поворота.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.angularZMotion">
+      <summary>
+        <para>Разрешить вращение вокруг оси Z быть свободным, полностью заблокированным или ограниченным в соответствии с Angular ZLimit.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.configuredInWorldSpace">
+      <summary>
+        <para>Если этот параметр включен, все целевые значения будут рассчитываться в мировом пространстве, а не в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.highAngularXLimit">
+      <summary>
+        <para>Граница, определяющая верхнее ограничение поворота на основе отклонения от исходного поворота.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.linearLimit">
+      <summary>
+        <para>Граница, определяющая ограничение движения на основе расстояния от исходной точки сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.linearLimitSpring">
+      <summary>
+        <para>Конфигурация пружины прикреплена к линейному пределу сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.lowAngularXLimit">
+      <summary>
+        <para>Граница, определяющая нижнее ограничение поворота на основе отклонения от исходного поворота.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.projectionAngle">
+      <summary>
+        <para>Установите порог углового допуска (в градусах) для проекции.
+
+Если сустав отклоняется больше, чем на этот угол вокруг своих заблокированных угловых степеней свободы,
+решатель будет перемещать тела, чтобы закрыть угол.
+
+Установка очень маленького допуска может привести к дрожанию симуляции или другим артефактам.
+
+Иногда проецирование невозможно (например, когда соединения образуют цикл).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.projectionDistance">
+      <summary>
+        <para>Установите порог линейного допуска для проекции.
+
+Если сустав разнесен на большее расстояние, чем это расстояние, вдоль его заблокированных степеней свободы, решатель
+будет перемещать тела, чтобы сократить расстояние.
+
+Установка очень маленького допуска может привести к дрожанию симуляции или другим артефактам.
+
+Иногда проецирование невозможно (например, когда соединения образуют цикл).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.projectionMode">
+      <summary>
+        <para>Возвращает нарушенные ограничения в соответствие даже в случае сбоя решателя. Проекция не является физическим процессом и не сохраняет импульс и не учитывает геометрию столкновения. Его лучше избегать, если это целесообразно, но он может быть полезен для улучшения качества моделирования, когда совместное разделение приводит к неприемлемым артефактам.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.rotationDriveMode">
+      <summary>
+        <para>Управляйте вращением объекта с помощью X &amp; YZ или Slerp Drive самостоятельно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.secondaryAxis">
+      <summary>
+        <para>Вторичная ось сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.slerpDrive">
+      <summary>
+        <para>Определение того, как будет вести себя вращение сустава вокруг всех локальных осей. Используется только в том случае, если режим вращательного привода установлен на «Только Slerp».</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.swapBodies">
+      <summary>
+        <para>Включите это свойство, чтобы изменить порядок, в котором физический движок обрабатывает твердые тела, задействованные в соединении. Это приводит к различному движению суставов, но не влияет на твердые тела и анкеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.targetAngularVelocity">
+      <summary>
+        <para>Это Вектор3. Он определяет желаемую угловую скорость, с которой должен вращаться сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.targetPosition">
+      <summary>
+        <para>Желаемое положение, в которое должен переместиться сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.targetRotation">
+      <summary>
+        <para>Это кватернион. Он определяет желаемое вращение, в которое должен вращаться сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.targetVelocity">
+      <summary>
+        <para>Желаемая скорость, с которой должен двигаться сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.xDrive">
+      <summary>
+        <para>Определение того, как будет вести себя движение сустава вдоль его локальной оси X.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.xMotion">
+      <summary>
+        <para>Разрешить движение по оси X быть свободным, полностью заблокированным или ограниченным в соответствии с линейным пределом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.yDrive">
+      <summary>
+        <para>Определение того, как будет вести себя движение сустава вдоль его локальной оси Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.yMotion">
+      <summary>
+        <para>Разрешить движение по оси Y быть свободным, полностью заблокированным или ограниченным в соответствии с линейным пределом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.zDrive">
+      <summary>
+        <para>Определение того, как будет вести себя движение сустава вдоль его локальной оси Z.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConfigurableJoint.zMotion">
+      <summary>
+        <para>Разрешить движение по оси Z быть свободным, полностью заблокированным или ограниченным в соответствии с линейным пределом.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ConfigurableJointMotion">
+      <summary>
+        <para>Ограничивает движение ConfigurableJoint по 6 осям.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ConfigurableJointMotion.Free">
+      <summary>
+        <para>Движение по оси будет совершенно свободным и ничем не стесненным.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ConfigurableJointMotion.Limited">
+      <summary>
+        <para>Движение по оси будет ограничено соответствующим лимитом.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ConfigurableJointMotion.Locked">
+      <summary>
+        <para>Движение вдоль оси будет заблокировано.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ConstantForce">
+      <summary>
+        <para>Сила прикладывается постоянно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConstantForce.force">
+      <summary>
+        <para>Сила, прикладываемая к твердому телу в каждом кадре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConstantForce.relativeForce">
+      <summary>
+        <para>Сила — относительно системы координат твердых тел — применяется в каждом кадре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConstantForce.relativeTorque">
+      <summary>
+        <para>Крутящий момент относительно системы координат твердых тел применяется в каждом кадре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ConstantForce.torque">
+      <summary>
+        <para>Крутящий момент, применяемый к твердому телу в каждом кадре.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ContactPoint">
+      <summary>
+        <para>Описывает точку контакта, в которой происходит столкновение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ContactPoint.normal">
+      <summary>
+        <para>Нормаль точки контакта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ContactPoint.otherCollider">
+      <summary>
+        <para>Другой коллайдер соприкасается с точкой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ContactPoint.point">
+      <summary>
+        <para>Точка контакта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ContactPoint.separation">
+      <summary>
+        <para>Расстояние между коллайдерами в точке контакта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ContactPoint.thisCollider">
+      <summary>
+        <para>Первый коллайдер в контакте с точкой.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ControllerColliderHit">
+      <summary>
+        <para>ControllerColliderHit используется CharacterController.OnControllerColliderHit для предоставления подробной информации о столкновении и о том, как с ним справиться.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.collider">
+      <summary>
+        <para>Коллайдер, в который попал контроллер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.controller">
+      <summary>
+        <para>Контроллер, столкнувшийся с коллайдером.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.gameObject">
+      <summary>
+        <para>Игровой объект, в который попал контроллер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.moveDirection">
+      <summary>
+        <para>Направление, в котором двигался CharacterController, когда произошло столкновение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.moveLength">
+      <summary>
+        <para>Как далеко пролетел персонаж, пока не столкнулся с коллайдером.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.normal">
+      <summary>
+        <para>Нормаль поверхности, с которой мы столкнулись в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.point">
+      <summary>
+        <para>Точка падения в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.rigidbody">
+      <summary>
+        <para>Твердое тело, в которое попал контроллер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ControllerColliderHit.transform">
+      <summary>
+        <para>Преобразование, с которым столкнулся контроллер.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.FixedJoint">
+      <summary>
+        <para>Неподвижный шарнир объединяет 2 жестких тела, заставляя их склеиваться в связанном положении.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ForceMode">
+      <summary>
+        <para>Используйте ForceMode, чтобы указать, как применять силу с помощью Rigidbody.AddForce или ArticulationBody.AddForce.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ForceMode.Acceleration">
+      <summary>
+        <para>Добавьте твердому телу непрерывное ускорение, игнорируя его массу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ForceMode.Force">
+      <summary>
+        <para>Добавьте к твердому телу постоянную силу, используя его массу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ForceMode.Impulse">
+      <summary>
+        <para>Добавьте мгновенный импульс силы к твердому телу, используя его массу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ForceMode.VelocityChange">
+      <summary>
+        <para>Добавьте мгновенное изменение скорости к твердому телу, игнорируя его массу.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HingeJoint">
+      <summary>
+        <para>Шарнирное соединение объединяет два твердых тела, ограничивая их движение, как если бы они были соединены шарниром.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.angle">
+      <summary>
+        <para>Текущий угол в градусах сустава относительно его исходного положения. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.limits">
+      <summary>
+        <para>Предел углового поворота (в градусах) шарнирного соединения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.motor">
+      <summary>
+        <para>Двигатель приложит усилие до максимального значения для достижения целевой скорости в градусах в секунду.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.spring">
+      <summary>
+        <para>Пружина пытается достичь заданного угла, добавляя усилия пружины и демпфирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.useLimits">
+      <summary>
+        <para>Включает ограничения сустава. Отключено по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.useMotor">
+      <summary>
+        <para>Включает двигатель сустава. Отключено по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.useSpring">
+      <summary>
+        <para>Включает пружину сустава. Отключено по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HingeJoint.velocity">
+      <summary>
+        <para>Угловая скорость сустава в градусах в секунду. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Joint">
+      <summary>
+        <para>Соединение — это базовый класс для всех соединений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.anchor">
+      <summary>
+        <para>Положение привязки, вокруг которого ограничено движение суставов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.autoConfigureConnectedAnchor">
+      <summary>
+        <para>Должен ли connectAnchor рассчитываться автоматически?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.axis">
+      <summary>
+        <para>Направление оси, вокруг которой ограничено тело.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.breakForce">
+      <summary>
+        <para>Сила, которую нужно приложить, чтобы этот сустав сломался.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.breakTorque">
+      <summary>
+        <para>Крутящий момент, который необходимо приложить для разрыва этого соединения. Чтобы иметь возможность сломаться, соединение должно быть _заблокировано_ или _ограничено_ по оси вращения, к которой прикладывается крутящий момент. Это означает, что некоторые соединения не могут быть разрушены, например, неограниченное конфигурируемое соединение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.connectedAnchor">
+      <summary>
+        <para>Положение якоря относительно подключенного Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.connectedArticulationBody">
+      <summary>
+        <para>Ссылка на тело артикуляции, с которым соединяется этот сустав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.connectedBody">
+      <summary>
+        <para>Ссылка на другое твердое тело, с которым соединяется это соединение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.connectedMassScale">
+      <summary>
+        <para>Масштаб, применяемый к обратной массе и тензору инерции связанного тела до решения ограничений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.currentForce">
+      <summary>
+        <para>Сила, приложенная решателем для удовлетворения всех ограничений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.currentTorque">
+      <summary>
+        <para>Крутящий момент, применяемый решателем для удовлетворения всех ограничений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.enableCollision">
+      <summary>
+        <para>Включить столкновение между телами, соединенными соединением.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.enablePreprocessing">
+      <summary>
+        <para>Включить предварительную обработку для этого соединения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Joint.massScale">
+      <summary>
+        <para>Масштаб, применяемый к обратной массе и тензору инерции тела перед решением ограничений.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointDrive">
+      <summary>
+        <para>Как будет вести себя движение сустава вдоль его локальной оси X.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointDrive.maximumForce">
+      <summary>
+        <para>Величина силы, прикладываемая для толкания объекта в заданном направлении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointDrive.mode">
+      <summary>
+        <para>Должен ли привод пытаться достичь положения, скорости, и того, и другого или ничего.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointDrive.positionDamper">
+      <summary>
+        <para>Сила сопротивления позиционной пружине. Используется, только если режим включает позицию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointDrive.positionSpring">
+      <summary>
+        <para>Сила натяжения резинки в заданном направлении. Используется, только если режим включает позицию.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointDriveMode">
+      <summary>
+        <para>ConfigurableJoint пытается достичь целевых значений положения/скорости на основе этого флага.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointDriveMode.None">
+      <summary>
+        <para>Не прилагайте никаких усилий, чтобы достичь цели.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointDriveMode.Position">
+      <summary>
+        <para>Попробуйте достичь указанной целевой позиции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointDriveMode.PositionAndVelocity">
+      <summary>
+        <para>Попытайтесь достичь указанной целевой позиции и скорости.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointDriveMode.Velocity">
+      <summary>
+        <para>Попытайтесь достичь указанной целевой скорости.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointLimits">
+      <summary>
+        <para>JointLimits используется HingeJoint для ограничения угла соединения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointLimits.bounceMinVelocity">
+      <summary>
+        <para>Минимальная скорость удара, при которой соединение будет отскакивать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointLimits.bounciness">
+      <summary>
+        <para>Определяет размер отскока, когда соединение достигает своего предела. Также называется реституцией.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointLimits.contactDistance">
+      <summary>
+        <para>Расстояние внутри предельного значения, при котором предел будет считаться активным решателем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointLimits.max">
+      <summary>
+        <para>Верхний угловой предел (в градусах) сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointLimits.min">
+      <summary>
+        <para>Нижний угловой предел (в градусах) сустава.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointMotor">
+      <summary>
+        <para>JointMotor используется для моторизации сустава.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointMotor.force">
+      <summary>
+        <para>Двигатель приложит усилие.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointMotor.freeSpin">
+      <summary>
+        <para>Если включена функция FreeSpin, двигатель будет только ускоряться, но никогда не замедляться.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.JointMotor.targetVelocity">
+      <summary>
+        <para>Двигатель приложит усилие до достижения targetVelocity.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointProjectionMode">
+      <summary>
+        <para>Определяет, как возвращать физические соединения в их ограниченное положение, когда они слишком сильно смещаются.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointProjectionMode.None">
+      <summary>
+        <para>Не привязывайтесь вообще.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointProjectionMode.PositionAndRotation">
+      <summary>
+        <para>Привязать положение и поворот.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointProjectionMode.PositionOnly">
+      <summary>
+        <para>Только положение привязки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.JointSpring">
+      <summary>
+        <para>Используется JointSpring для добавления силы пружины к HingeJoint и PhysicMaterial.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointSpring.damper">
+      <summary>
+        <para>Сила демпфера используется для демпфирования пружины.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointSpring.spring">
+      <summary>
+        <para>Силы пружины, используемые для достижения целевого положения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.JointSpring.targetPosition">
+      <summary>
+        <para>Целевое положение, которого пытается достичь сустав.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.MeshCollider">
+      <summary>
+        <para>Коллайдер сетки позволяет вам работать между сетками и примитивами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.convex">
+      <summary>
+        <para>Используйте выпуклый коллайдер из сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.cookingOptions">
+      <summary>
+        <para>Параметры, используемые для включения или отключения определенных функций при приготовлении сеток.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.inflateMesh">
+      <summary>
+        <para>Разрешить физическому движку увеличивать объем входной сетки при попытке создать правильную выпуклую сетку.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.sharedMesh">
+      <summary>
+        <para>Объект сетки, используемый для обнаружения столкновений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.skinWidth">
+      <summary>
+        <para>Используется, если установлено значение inflateMesh, чтобы определить допустимую степень надувания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshCollider.smoothSphereCollisions">
+      <summary>
+        <para>Использует интерполированные нормали для столкновений сфер вместо плоских полигональных нормалей.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.MeshColliderCookingOptions">
+      <summary>
+        <para>Варианты приготовления, доступные в MeshCollider.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.CookForFasterSimulation">
+      <summary>
+        <para>Переключение между приготовлением для более быстрого моделирования или более быстрого приготовления.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.EnableMeshCleaning">
+      <summary>
+        <para>Переключить очистку сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.InflateConvexMesh">
+      <summary>
+        <para>Разрешить физическому движку увеличивать объем входной сетки при попытке создать правильную выпуклую сетку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.None">
+      <summary>
+        <para>Дополнительные этапы приготовления не выполняются.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.UseFastMidphase">
+      <summary>
+        <para>Определяет, использовать ли быструю промежуточную структуру, не требующую R-деревьев.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.MeshColliderCookingOptions.WeldColocatedVertices">
+      <summary>
+        <para>Переключить удаление одинаковых вершин.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ModifiableContactPair">
+      <summary>
+        <para>Легкий прокси-сервер, который позволяет напрямую обращаться к контактным буферам.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.bodyInstanceID">
+      <summary>
+        <para>Идентификатор экземпляра первого тела в этой паре контактов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.colliderInstanceID">
+      <summary>
+        <para>Идентификатор экземпляра первого коллайдера в этой паре контактов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.contactCount">
+      <summary>
+        <para>Количество точек контакта, сгенерированных для этой пары контактов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.massProperties">
+      <summary>
+        <para>Массовые свойства этой контактной пары, такие как отношение масс.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.otherBodyInstanceID">
+      <summary>
+        <para>Идентификатор экземпляра второго тела в этой паре контактов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ModifiableContactPair.otherColliderInstanceID">
+      <summary>
+        <para>Идентификатор экземпляра второго коллайдера в этой паре контактов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableContactPair.otherPosition">
+      <summary>
+        <para>Положение второго коллайдера в этой контактной паре в мировом пространстве с точки зрения решателя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableContactPair.otherRotation">
+      <summary>
+        <para>Вращение второго коллайдера в этой контактной паре в мировом пространстве с точки зрения решателя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableContactPair.position">
+      <summary>
+        <para>Положение первого коллайдера в этой контактной паре в мировом пространстве с точки зрения решателя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableContactPair.rotation">
+      <summary>
+        <para>Вращение в мировом пространстве первого коллайдера в этой контактной паре с точки зрения решателя.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetBounciness(System.Int32)">
+      <summary>
+        <para>Получите значение восстановления для указанной точки контакта в этой паре контактов.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Значение отказоустойчивости для указанной точки контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetDynamicFriction(System.Int32)">
+      <summary>
+        <para>Получить значение динамического трения для указанной точки контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Коэффициент динамического трения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetFaceIndex(System.Int32)">
+      <summary>
+        <para>Получите индекс лица, которому принадлежит конкретная контактная точка в этой контактной паре. Используйте это с Mesh.triangles.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Индекс лица, которому принадлежит эта точка контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetMaxImpulse(System.Int32)">
+      <summary>
+        <para>Получите максимальный импульс, который решатель может применить к конкретной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Максимальный импульс, который можно применить.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetNormal(System.Int32)">
+      <summary>
+        <para>Получить нормаль в конкретной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Нормально в точке контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetPoint(System.Int32)">
+      <summary>
+        <para>Получить расположение конкретной контактной точки в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Расположение точки контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetSeparation(System.Int32)">
+      <summary>
+        <para>Получить значение разделения в конкретной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Разделение в точке контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetStaticFriction(System.Int32)">
+      <summary>
+        <para>Получить коэффициент статического трения в конкретной точке контактной пары.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Статический коэффициент трения в точке контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.GetTargetVelocity(System.Int32)">
+      <summary>
+        <para>Получите целевую скорость, которую решатель должен стремиться достичь в определенной точке контакта в этой паре контактов.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <returns>
+        <para>Скорость цели в точке контакта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.IgnoreContact(System.Int32)">
+      <summary>
+        <para>Игнорировать указанную точку контакта в этой паре контактов.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetBounciness(System.Int32,System.Single)">
+      <summary>
+        <para>Установите значение восстановления для указанной точки контакта в этой паре контактов.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="bounciness">Значение отказоустойчивости для указанной точки контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetDynamicFriction(System.Int32,System.Single)">
+      <summary>
+        <para>Установите значение динамического трения для указанной точки контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="dynamicFriction">Коэффициент динамического трения.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetMaxImpulse(System.Int32,System.Single)">
+      <summary>
+        <para>Установите максимальный импульс, который решатель может применить к определенной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="value">Максимальный импульс, который можно применить.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetNormal(System.Int32,UnityEngine.Vector3)">
+      <summary>
+        <para>Установите нормаль в конкретной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="normal">Нормально в точке контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetPoint(System.Int32,UnityEngine.Vector3)">
+      <summary>
+        <para>Установите местоположение конкретной контактной точки в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="v">Расположение точки контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetSeparation(System.Int32,System.Single)">
+      <summary>
+        <para>Установите значение разделения в конкретной точке контакта в этой контактной паре.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="separation">Разделение в точке контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetStaticFriction(System.Int32,System.Single)">
+      <summary>
+        <para>Установите коэффициент статического трения в конкретной точке контактной пары.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="staticFriction">Статический коэффициент трения в точке контакта.</param>
+    </member>
+    <member name="M:UnityEngine.ModifiableContactPair.SetTargetVelocity(System.Int32,UnityEngine.Vector3)">
+      <summary>
+        <para>Установите целевую скорость, которую решатель должен стремиться достичь в определенной точке контакта в этой паре контактов.</para>
+      </summary>
+      <param name="i">Индекс точки контакта.</param>
+      <param name="velocity">Скорость цели в точке контакта.</param>
+    </member>
+    <member name="T:UnityEngine.ModifiableMassProperties">
+      <summary>
+        <para>Изменяемые свойства контактной пары, связанные с массой.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableMassProperties.inverseInertiaScale">
+      <summary>
+        <para>Масштабирование обратной инерции, которое решатель должен применить к первому телу этой контактной пары.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableMassProperties.inverseMassScale">
+      <summary>
+        <para>Масштабирование обратной массы, которое решатель должен применить к первому телу этой контактной пары.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableMassProperties.otherInverseInertiaScale">
+      <summary>
+        <para>Масштабирование обратной инерции, которое решатель должен применить ко второму телу этой контактной пары.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ModifiableMassProperties.otherInverseMassScale">
+      <summary>
+        <para>Масштабирование обратной массы, которое решатель должен применить ко второму телу этой контактной пары.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.PhysicMaterial">
+      <summary>
+        <para>Материал по физике описывает, как обрабатывать сталкивающиеся объекты (трение, подпрыгивание).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.bounceCombine">
+      <summary>
+        <para>Определяет, как комбинируется упругость.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.bounciness">
+      <summary>
+        <para>Насколько упругая поверхность? Значение 0 не будет отскакивать. Значение 1 отскочит без потери энергии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.dynamicFriction">
+      <summary>
+        <para>Трение, используемое при уже движении. Обычно это значение находится в диапазоне от 0 до 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.dynamicFriction2">
+      <summary>
+        <para>Если включено анизотропное трение, dynamicFriction2 будет применяться вдоль FrictionDirection2.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.frictionCombine">
+      <summary>
+        <para>Определяет, как комбинируется трение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.frictionDirection2">
+      <summary>
+        <para>Направление анизотропии. Анизотропное трение включается, если вектор не равен нулю.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.staticFriction">
+      <summary>
+        <para>Коэффициент трения, используемый, когда объект лежит на поверхности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PhysicMaterial.staticFriction2">
+      <summary>
+        <para>Если включено анизотропное трение, staticFriction2 будет применяться вдоль FrictionDirection2.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.PhysicMaterial.#ctor">
+      <summary>
+        <para>Создает новый материал.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.PhysicMaterial.#ctor(System.String)">
+      <summary>
+        <para>Создает новый материал с именем name.</para>
+      </summary>
+      <param name="name">
+      </param>
+    </member>
+    <member name="T:UnityEngine.PhysicMaterialCombine">
+      <summary>
+        <para>Описывает, как комбинируются физические материалы сталкивающихся объектов.
+
+Сила трения, а также остаточный импульс отскока применяются симметрично к обоим соприкасающимся коллайдерам, поэтому каждая пара перекрывающихся коллайдеров должна иметь один набор настроек трения и упругости. Однако на любые коллайдеры можно установить произвольные физические материалы. Именно по этой причине существует механизм, который позволяет комбинировать два разных набора свойств, соответствующих каждому из контактирующих коллайдеров, в один набор для использования в решателе.
+
+Указав «Среднее», «Максимум», «Минимум» или «Умножение» в качестве режима объединения физического материала, вы напрямую задаете функцию, которая используется для объединения настроек, соответствующих двум перекрывающимся коллайдерам, в один набор настроек, которые можно использовать для применения эффекта материала.
+
+Обратите внимание, что существует особый случай, когда два перекрывающихся коллайдера имеют физические материалы с разными режимами комбинирования. В данном конкретном случае используется функция, имеющая наивысший приоритет. Порядок приоритета следующий: Среднее &lt; Минимум &lt; Умножение &lt; Максимум. Например, если для одного материала установлено значение Среднее, а для другого установлено значение Максимум, то будет использоваться функция объединения Максимум, поскольку она имеет более высокий приоритет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.PhysicMaterialCombine.Average">
+      <summary>
+        <para>Усредняет трение/отскок двух сталкивающихся материалов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.PhysicMaterialCombine.Maximum">
+      <summary>
+        <para>Использует большее трение/отскок двух сталкивающихся материалов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.PhysicMaterialCombine.Minimum">
+      <summary>
+        <para>Использует меньшее трение/отскок двух сталкивающихся материалов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.PhysicMaterialCombine.Multiply">
+      <summary>
+        <para>Умножает трение/отскок двух сталкивающихся материалов.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Physics">
+      <summary>
+        <para>Глобальные физические свойства и вспомогательные методы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.autoSimulation">
+      <summary>
+        <para>Устанавливает, должна ли физика моделироваться автоматически или нет.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.autoSyncTransforms">
+      <summary>
+        <para>Следует ли автоматически синхронизировать изменения преобразования с физической системой при каждом изменении компонента преобразования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.bounceThreshold">
+      <summary>
+        <para>Два сталкивающихся объекта с относительной скоростью ниже этой не будут отскакивать (по умолчанию 2). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.clothGravity">
+      <summary>
+        <para>Настройка гравитации ткани.
+Установите гравитацию для всех компонентов ткани.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultContactOffset">
+      <summary>
+        <para>Смещение контакта по умолчанию вновь созданных коллайдеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultMaxAngularSpeed">
+      <summary>
+        <para>Максимальная угловая скорость динамического Rigidbody по умолчанию в радианах (по умолчанию 50).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultMaxDepenetrationVelocity">
+      <summary>
+        <para>Максимальная скорость по умолчанию, необходимая для перемещения коллайдера Rigidbody из зоны проникновения поверхности другого коллайдера. Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultPhysicsScene">
+      <summary>
+        <para>PhysicsScene создается автоматически при запуске Unity.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultSolverIterations">
+      <summary>
+        <para>defaultSolverIterations определяет, насколько точно разрешаются соединения Rigidbody и контакты столкновений. (по умолчанию 6). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.defaultSolverVelocityIterations">
+      <summary>
+        <para>Значение defaultSolverVelocityIterations влияет на то, насколько точно разрешаются соединения Rigidbody и контакты столкновений. (по умолчанию 1). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.gravity">
+      <summary>
+        <para>Гравитация применяется ко всем твердым телам в сцене.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.improvedPatchFriction">
+      <summary>
+        <para>Включает улучшенный режим трения на участках, гарантирующий, что статическое и динамическое трение не превысит аналитических результатов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.interCollisionDistance">
+      <summary>
+        <para>Устанавливает минимальное разделяющее расстояние для взаимного столкновения тканей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.interCollisionStiffness">
+      <summary>
+        <para>Устанавливает жесткость ткани при столкновении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.maxAngularVelocity">
+      <summary>
+        <para>Максимальная угловая скорость по умолчанию, разрешенная для любых твердых тел (по умолчанию 7). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.minPenetrationForPenalty">
+      <summary>
+        <para>Минимальное значение проникновения контакта для применения штрафной силы (по умолчанию 0,05). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.queriesHitBackfaces">
+      <summary>
+        <para>Должны ли физические запросы сталкиваться с обратными треугольниками.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.queriesHitTriggers">
+      <summary>
+        <para>Указывает, будут ли запросы (рейкасты, сферикасты, тесты перекрытия и т. д.) вызывать триггеры по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.reuseCollisionCallbacks">
+      <summary>
+        <para>Определяет, должен ли сборщик мусора повторно использовать только один экземпляр типа Collision для всех обратных вызовов столкновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.sleepAngularVelocity">
+      <summary>
+        <para>Угловая скорость по умолчанию, ниже которой объекты начинают спать (по умолчанию 0,14). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.sleepThreshold">
+      <summary>
+        <para>Нормированный по массе энергетический порог, ниже которого объекты начинают засыпать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Physics.sleepVelocity">
+      <summary>
+        <para>Линейная скорость по умолчанию, ниже которой объекты начинают засыпать (по умолчанию 0,15). Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Physics.AllLayers">
+      <summary>
+        <para>Константа маски слоя для выбора всех слоев.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Physics.BakeMesh(System.Int32,System.Boolean)">
+      <summary>
+        <para>Подготавливает сетку к использованию с MeshCollider.</para>
+      </summary>
+      <param name="meshID">Идентификатор экземпляра Mesh, из которого необходимо испечь данные о столкновениях.</param>
+      <param name="convex">Флаг, указывающий, следует ли запекать выпуклую геометрию или нет.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.BoxCast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает коробку по лучу и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истинно, если были найдены какие-либо пересечения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.BoxCast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает коробку по лучу и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истинно, если были найдены какие-либо пересечения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.BoxCastAll(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Аналогично Physics.BoxCast, но возвращает все совпадения.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">
+      </param>
+      <returns>
+        <para>Все коллайдеры, в которые попали.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.BoxCastNonAlloc(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit[],UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Бросайте поле в указанном направлении и сохраняйте попадания в предоставленный буфер.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="results">Буфер для хранения результатов.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">
+      </param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.CapsuleCast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает капсулу на все коллайдеры в сцене и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда капсула пересекает любой коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.CapsuleCast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.CapsuleCastAll(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>То же, что Physics.CapsuleCast, но эта функция будет возвращать все попадания, которые пересекает развертка капсулы.</para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">
+      </param>
+      <returns>
+        <para>Массив всех коллайдеров, столкнувшихся за развертку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.CapsuleCastNonAlloc(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает капсулу на все коллайдеры в Сцене и возвращает в буфер подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="results">Буфер для хранения попаданий.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.CheckBox(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Проверить, пересекается ли данное поле с другими коллайдерами или нет.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истинно, если поле перекрывается какими-либо коллайдерами.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.CheckCapsule(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Проверяет, не перекрывают ли какие-либо коллайдеры объем в форме капсулы в мировом пространстве.</para>
+      </summary>
+      <param name="start">Центр сферы в начале капсулы.</param>
+      <param name="end">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Physics.CheckSphere(UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Возвращает true, если есть какие-либо коллайдеры, перекрывающие сферу, определенную положением и радиусом в мировых координатах.</para>
+      </summary>
+      <param name="position">Центр сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.ClosestPoint(UnityEngine.Vector3,UnityEngine.Collider,UnityEngine.Vector3,UnityEngine.Quaternion)">
+      <summary>
+        <para>Возвращает точку на заданном коллайдере, ближайшую к указанному местоположению.</para>
+      </summary>
+      <param name="point">Место, к которому вы хотите найти ближайшую точку.</param>
+      <param name="collider">Коллайдер, на котором вы найдете ближайшую точку.</param>
+      <param name="position">Положение коллайдера.</param>
+      <param name="rotation">Вращение коллайдера.</param>
+      <returns>
+        <para>Точка на коллайдере, ближайшая к указанному местоположению.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.ComputePenetration(UnityEngine.Collider,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Collider,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3&amp;,System.Single&amp;)">
+      <summary>
+        <para>Вычислите минимальное перемещение, необходимое для разделения заданных коллайдеров в указанных позах.</para>
+      </summary>
+      <param name="colliderA">Первый коллайдер.</param>
+      <param name="positionA">Положение первого коллайдера.</param>
+      <param name="rotationA">Вращение первого коллайдера.</param>
+      <param name="colliderB">Второй коллайдер.</param>
+      <param name="positionB">Положение второго коллайдера.</param>
+      <param name="rotationB">Вращение второго коллайдера.</param>
+      <param name="direction">Направление, по которому перемещение, необходимое для разделения коллайдеров, минимально.</param>
+      <param name="distance">Расстояние вдоль направления, необходимое для разделения коллайдеров.</param>
+      <returns>
+        <para>Верно, если коллайдеры перекрываются в заданных позах.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEngine.Physics.ContactModifyEvent(System.Action`2&lt;UnityEngine.PhysicsScene,Unity.Collections.NativeArray`1&lt;UnityEngine.ModifiableContactPair&gt;&gt;)">
+      <summary>
+        <para>Подпишитесь на это событие, чтобы иметь возможность настроить реакцию на коллизии для пар контактов.</para>
+      </summary>
+      <param name="value">Делегат для вызова.</param>
+    </member>
+    <member name="?:UnityEngine.Physics.ContactModifyEventCCD(System.Action`2&lt;UnityEngine.PhysicsScene,Unity.Collections.NativeArray`1&lt;UnityEngine.ModifiableContactPair&gt;&gt;)">
+      <summary>
+        <para>Подпишитесь на это событие, чтобы иметь возможность настроить реакцию на коллизии пар контактов, сгенерированных CCD.</para>
+      </summary>
+      <param name="value">Делегат для вызова.</param>
+    </member>
+    <member name="F:UnityEngine.Physics.DefaultRaycastLayers">
+      <summary>
+        <para>Константа маски слоя для выбора слоев raycast по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Physics.GetIgnoreCollision(UnityEngine.Collider,UnityEngine.Collider)">
+      <summary>
+        <para>Проверяет, будет ли система обнаружения столкновений игнорировать все триггеры столкновений между collider1 и collider2/ или нет.</para>
+      </summary>
+      <param name="collider1">Первый коллайдер для сравнения с collider2.</param>
+      <param name="collider2">Второй коллайдер для сравнения с collider1.</param>
+      <returns>
+        <para>Будет ли система обнаружения столкновений игнорировать все триггеры столкновений между collider1 и collider2/ или нет.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.GetIgnoreLayerCollision(System.Int32,System.Int32)">
+      <summary>
+        <para>Игнорируются ли коллизии между Layer1 и Layer2?</para>
+      </summary>
+      <param name="layer1">
+      </param>
+      <param name="layer2">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Physics.IgnoreCollision(UnityEngine.Collider,UnityEngine.Collider,System.Boolean)">
+      <summary>
+        <para>Заставляет систему обнаружения столкновений игнорировать все столкновения между collider1 и collider2.</para>
+      </summary>
+      <param name="collider1">Любой коллайдер.</param>
+      <param name="collider2">Другой коллайдер, с которым вы хотите, чтобы collider1 запускал или прекращал игнорировать столкновения.</param>
+      <param name="ignore">Следует ли игнорировать столкновения между двумя коллайдерами.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.IgnoreLayerCollision(System.Int32,System.Int32,System.Boolean)">
+      <summary>
+        <para>Заставляет систему обнаружения столкновений игнорировать все столкновения между любым коллайдером в слое 1 и любым коллайдером в слое 2.
+
+Обратите внимание, что IgnoreLayerCollision сбрасывает состояние триггера затронутых коллайдеров, поэтому вы можете получать сообщения OnTriggerExit и OnTriggerEnter в ответ на этот вызов.</para>
+      </summary>
+      <param name="layer1">
+      </param>
+      <param name="layer2">
+      </param>
+      <param name="ignore">
+      </param>
+    </member>
+    <member name="F:UnityEngine.Physics.IgnoreRaycastLayer">
+      <summary>
+        <para>Константа маски слоя для выбора игнорирования слоя raycast.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Physics.Linecast(UnityEngine.Vector3,UnityEngine.Vector3,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Возвращает true, если есть какой-либо коллайдер, пересекающий линию между началом и концом.</para>
+      </summary>
+      <param name="start">Начальная точка.</param>
+      <param name="end">Конечная точка.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.Linecast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Возвращает true, если есть какой-либо коллайдер, пересекающий линию между началом и концом.</para>
+      </summary>
+      <param name="start">Начальная точка.</param>
+      <param name="end">Конечная точка.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapBox(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Quaternion,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Найдите все коллайдеры, соприкасающиеся или находящиеся внутри заданной коробки.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера поля в каждом измерении.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Коллайдеры, которые пересекаются с данным полем.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapBoxNonAlloc(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Collider[],UnityEngine.Quaternion,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Найдите все коллайдеры, соприкасающиеся с данным полем или находящиеся внутри него, и сохраните их в буфере.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера поля в каждом измерении.</param>
+      <param name="results">Буфер для хранения результатов.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="mask">
+      </param>
+      <returns>
+        <para>Количество коллайдеров, сохраненных в результатах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapCapsule(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Сравните данную капсулу с физическим миром и верните все перекрывающиеся коллайдеры.</para>
+      </summary>
+      <param name="point0">Центр сферы в начале капсулы.</param>
+      <param name="point1">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Коллайдеры касаются капсулы или находятся внутри нее.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapCapsuleNonAlloc(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Collider[],System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Сравните данную капсулу с физическим миром и верните все перекрывающиеся коллайдеры в предоставленный пользователем буфер.</para>
+      </summary>
+      <param name="point0">Центр сферы в начале капсулы.</param>
+      <param name="point1">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество записей, записанных в буфер.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapSphere(UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Вычисляет и сохраняет коллайдеры, соприкасающиеся со сферой или находящиеся внутри нее.</para>
+      </summary>
+      <param name="position">Центр сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="layerMask">A определяет, какие слои коллайдеров включать в запрос.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает массив со всеми коллайдерами, касающимися или находящимися внутри сферы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.OverlapSphereNonAlloc(UnityEngine.Vector3,System.Single,UnityEngine.Collider[],System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Вычисляет и сохраняет коллайдеры, соприкасающиеся со сферой или находящиеся внутри нее, в указанный буфер.</para>
+      </summary>
+      <param name="position">Центр сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="layerMask">A определяет, какие слои коллайдеров включать в запрос.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает количество коллайдеров, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает луч из начала точки в направлении направления длины maxDistance на все коллайдеры в сцене.</para>
+      </summary>
+      <param name="origin">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает true, если луч пересекается с коллайдером, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Направляет луч на все коллайдеры в сцене и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="origin">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где был поражен ближайший коллайдер. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает true, когда луч пересекает любой коллайдер, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Ray,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>То же, что и выше, но с использованием ray.origin и ray.direction вместо origin и direction.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает true, когда луч пересекает любой коллайдер, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>То же, что и выше, но с использованием ray.origin и ray.direction вместо origin и direction.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где был поражен ближайший коллайдер. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Возвращает true, когда луч пересекает любой коллайдер, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.RaycastAll(UnityEngine.Ray,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Пропускает луч через Сцену и возвращает все попадания. Обратите внимание, что порядок результатов не определен.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на которое может попасть rayhit от начала луча.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Массив объектов RaycastHit. Обратите внимание, что порядок результатов не определен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.RaycastAll(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>См. также: Raycast.</para>
+      </summary>
+      <param name="origin">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на которое может попасть rayhit от начала луча.</param>
+      <param name="layermask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Physics.RaycastNonAlloc(UnityEngine.Ray,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Направьте луч через сцену и сохраните попадания в буфер.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча.</param>
+      <param name="results">Буфер для хранения попаданий.</param>
+      <param name="maxDistance">Максимальное расстояние, на которое может попасть rayhit от начала луча.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.RaycastNonAlloc(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Направьте луч через сцену и сохраните попадания в буфер.</para>
+      </summary>
+      <param name="origin">Начальная точка и направление луча.</param>
+      <param name="results">Буфер для хранения попаданий.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на которое может попасть rayhit от начала луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.RebuildBroadphaseRegions(UnityEngine.Bounds,System.Int32)">
+      <summary>
+        <para>Перестройте широкофазные области интересов, а также установите границы мира.</para>
+      </summary>
+      <param name="worldBounds">Границы физического мира.</param>
+      <param name="subdivisions">Сколько ячеек создать по осям X и Z.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.Simulate(System.Single)">
+      <summary>
+        <para>Имитация физики в сцене.</para>
+      </summary>
+      <param name="step">Настало время продвинуть физику.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCast(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает сферу вдоль луча и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="origin">Центр сферы в начале развертки.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="direction">Направление, в котором перемещать сферу.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда развертка сферы пересекает какой-либо коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCast(UnityEngine.Ray,System.Single,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает сферу вдоль луча и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча, на который направлена ​​развертка сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда развертка сферы пересекает какой-либо коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCast(UnityEngine.Ray,System.Single,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча, на который направлена ​​развертка сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCastAll(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>То же, что Physics.SphereCast, но эта функция будет возвращать все попадания, которые пересекает развертка сферы.</para>
+      </summary>
+      <param name="origin">Центр сферы в начале развертки.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="direction">Направление, в котором перемещать сферу.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании сферы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Массив всех коллайдеров, столкнувшихся за развертку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCastAll(UnityEngine.Ray,System.Single,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>То же, что Physics.SphereCast, но эта функция будет возвращать все попадания, которые пересекает развертка сферы.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча, на который направлена ​​развертка сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании сферы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCastNonAlloc(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Бросьте сферу вдоль направления и сохраните результаты в буфере.</para>
+      </summary>
+      <param name="origin">Центр сферы в начале развертки.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="direction">Направление, в котором перемещать сферу.</param>
+      <param name="results">Буфер для сохранения попаданий.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании сферы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.SphereCastNonAlloc(UnityEngine.Ray,System.Single,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Бросьте сферу вдоль направления и сохраните результаты в буфере.</para>
+      </summary>
+      <param name="ray">Начальная точка и направление луча, на который направлена ​​развертка сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании сферы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Physics.SyncTransforms">
+      <summary>
+        <para>Примените изменения Transform к физическому движку.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.PhysicsScene">
+      <summary>
+        <para>Представляет один экземпляр физической 3D-сцены.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.BoxCast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает коробку по лучу и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истинно, если были найдены какие-либо пересечения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.BoxCast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit[],UnityEngine.Quaternion,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает коробку по лучу и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера окна в каждом измерении.</param>
+      <param name="direction">Направление, в котором бросать ящик.</param>
+      <param name="results">Буфер для хранения результатов.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.CapsuleCast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает капсулу на все коллайдеры в этой физической сцене и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда капсула пересекает любой коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.CapsuleCast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает капсулу на все коллайдеры в этой физической сцене и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="point1">Центр сферы в начале капсулы.</param>
+      <param name="point2">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="direction">Направление, в котором следует перемещать капсулу.</param>
+      <param name="results">Буфер для хранения результатов.</param>
+      <param name="maxDistance">Максимальная длина развертки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.IsEmpty">
+      <summary>
+        <para>Получает, является ли сцена физики пустой или нет.</para>
+      </summary>
+      <returns>
+        <para>Сцена физики пуста?</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.IsValid">
+      <summary>
+        <para>Получает, допустима ли сцена физики.</para>
+      </summary>
+      <returns>
+        <para>Допустима ли физическая сцена?</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.OverlapBox(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Collider[],UnityEngine.Quaternion,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Найдите все коллайдеры, соприкасающиеся с данным полем или находящиеся внутри него, и сохраните их в буфере.</para>
+      </summary>
+      <param name="center">Центр поля.</param>
+      <param name="halfExtents">Половина размера поля в каждом измерении.</param>
+      <param name="results">Буфер для хранения результатов.</param>
+      <param name="orientation">Вращение коробки.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество коллайдеров, сохраненных в результатах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.OverlapCapsule(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Collider[],System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Сравните данную капсулу с физическим миром и верните все перекрывающиеся коллайдеры в предоставленный пользователем буфер.</para>
+      </summary>
+      <param name="point0">Центр сферы в начале капсулы.</param>
+      <param name="point1">Центр сферы на конце капсулы.</param>
+      <param name="radius">Радиус капсулы.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество записей, записанных в буфер.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.OverlapSphere(UnityEngine.Vector3,System.Single,UnityEngine.Collider[],System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Вычисляет и сохраняет коллайдеры, соприкасающиеся со сферой или находящиеся внутри нее, в указанный буфер.</para>
+      </summary>
+      <param name="position">Центр сферы.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Количество коллайдеров, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает луч из начала точки в направлении направления длины maxDistance на все коллайдеры в сцене.</para>
+      </summary>
+      <param name="origin">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, если луч пересекается с коллайдером, иначе ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает луч из начала точки в направлении направления длины maxDistance на все коллайдеры в сцене.</para>
+      </summary>
+      <param name="origin">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальное расстояние, на котором луч должен проверять столкновения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, если луч пересекается с коллайдером, иначе ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает луч из начала точки в направлении направления длины maxDistance на все коллайдеры в сцене.</para>
+      </summary>
+      <param name="origin">Начальная точка и направление луча.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="raycastHits">Буфер для хранения попаданий.</param>
+      <param name="maxDistance">Максимальное расстояние, на которое может попасть rayhit от начала луча.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="queryTriggerInteraction">Количество попаданий, сохраненных в буфере результатов.</param>
+      <returns>
+        <para>Истина, если луч пересекается с коллайдером, иначе ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.Simulate(System.Single)">
+      <summary>
+        <para>Имитировать физику, связанную с этой PhysicsScene.</para>
+      </summary>
+      <param name="step">Настало время продвинуть физику.</param>
+      <returns>
+        <para>Была ли запущена симуляция или нет. Запуск симуляции во время обратных вызовов физики всегда завершается ошибкой.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.SphereCast(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Отбрасывает сферу вдоль луча и возвращает подробную информацию о том, что было поражено.</para>
+      </summary>
+      <param name="origin">Центр сферы в начале развертки.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="direction">Направление, в котором перемещать сферу.</param>
+      <param name="hitInfo">Если возвращается true, hitInfo будет содержать больше информации о том, где произошел удар по коллайдеру. (См. также: RaycastHit).</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда развертка сферы пересекает какой-либо коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.PhysicsScene.SphereCast(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Бросьте сферу вдоль направления и сохраните результаты в буфере.</para>
+      </summary>
+      <param name="origin">Центр сферы в начале развертки.</param>
+      <param name="radius">Радиус сферы.</param>
+      <param name="direction">Направление, в котором перемещать сферу.</param>
+      <param name="results">Буфер для сохранения результатов.</param>
+      <param name="maxDistance">Максимальная длина приведения.</param>
+      <param name="layerMask">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <param name="queryTriggerInteraction">Используется для выборочного игнорирования коллайдеров при использовании капсулы.</param>
+      <returns>
+        <para>Количество попаданий, сохраненных в буфере результатов.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.PhysicsSceneExtensions">
+      <summary>
+        <para>Расширения сцены для доступа к базовой физической сцене.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.PhysicsSceneExtensions.GetPhysicsScene(UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Метод расширения, возвращающий 3D-физическую сцену из сцены.</para>
+      </summary>
+      <param name="scene">Сцена, из которой возвращается сцена 3D-физики.</param>
+      <returns>
+        <para>Сцена 3D-физики, используемая сценой.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.QueryTriggerInteraction">
+      <summary>
+        <para>Переопределяет глобальный Physics.queriesHitTriggers.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.QueryTriggerInteraction.Collide">
+      <summary>
+        <para>Запросы всегда сообщают о совпадениях триггеров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.QueryTriggerInteraction.Ignore">
+      <summary>
+        <para>Запросы никогда не сообщают о совпадениях триггеров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.QueryTriggerInteraction.UseGlobal">
+      <summary>
+        <para>Запросы используют глобальную настройку Physics.queriesHitTriggers.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RaycastCommand">
+      <summary>
+        <para>Структура, используемая для настройки асинхронного выполнения команды raycast во время задания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.direction">
+      <summary>
+        <para>Направление луча.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.distance">
+      <summary>
+        <para>Максимальное расстояние, на котором луч должен проверять наличие коллизий.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.from">
+      <summary>
+        <para>Начальная точка луча в мировых координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.layerMask">
+      <summary>
+        <para>Маска слоя, используемая для выборочного игнорирования коллайдеров при создании луча.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.maxHits">
+      <summary>
+        <para>Максимальное количество коллайдеров, на которое может попасть луч.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastCommand.physicsScene">
+      <summary>
+        <para>Физическая сцена, в которой запускается эта команда.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RaycastCommand.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте RaycastCommand.</para>
+      </summary>
+      <param name="from">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="distance">Максимальное расстояние, на котором луч должен проверять наличие коллизий.</param>
+      <param name="layerMask">Маска слоя, используемая для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="maxHits">Максимальное количество коллайдеров, на которое может попасть луч.</param>
+    </member>
+    <member name="M:UnityEngine.RaycastCommand.#ctor(UnityEngine.PhysicsScene,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,System.Int32)">
+      <summary>
+        <para>Создайте RaycastCommand.</para>
+      </summary>
+      <param name="physicsScene">Физическая сцена для запуска запроса raycast.</param>
+      <param name="from">Начальная точка луча в мировых координатах.</param>
+      <param name="direction">Направление луча.</param>
+      <param name="distance">Максимальное расстояние, на котором луч должен проверять наличие коллизий.</param>
+      <param name="layerMask">Маска слоя, используемая для выборочного игнорирования коллайдеров при создании луча.</param>
+      <param name="maxHits">Максимальное количество коллайдеров, на которое может попасть луч.</param>
+    </member>
+    <member name="M:UnityEngine.RaycastCommand.ScheduleBatch(Unity.Collections.NativeArray`1&lt;UnityEngine.RaycastCommand&gt;,Unity.Collections.NativeArray`1&lt;UnityEngine.RaycastHit&gt;,System.Int32,Unity.Jobs.JobHandle)">
+      <summary>
+        <para>Запланируйте пакет рейкастов, которые выполняются в задании.</para>
+      </summary>
+      <param name="commands">NativeArray RaycastCommands для выполнения.</param>
+      <param name="results">NativeArray RaycastHits, в котором хранятся результаты выполнения команд.</param>
+      <param name="minCommandsPerJob">Минимальное количество заданий, которое должно выполняться в одном задании.</param>
+      <param name="dependsOn">JobHandle задания, которое должно быть завершено до начала raycast.</param>
+      <returns>
+        <para>JobHandle задания, которое будет выполнять raycasts.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.RaycastHit">
+      <summary>
+        <para>Структура, используемая для получения информации из raycast.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.articulationBody">
+      <summary>
+        <para>ArticulationBody коллайдера, в который попали. Если коллайдер не присоединен к телу артикуляции, то он равен нулю.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.barycentricCoordinate">
+      <summary>
+        <para>Барицентрическая координата треугольника, в который мы попали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.collider">
+      <summary>
+        <para>Коллайдер, в который попали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.colliderInstanceID">
+      <summary>
+        <para>Идентификатор экземпляра коллайдера, в который попали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.distance">
+      <summary>
+        <para>Расстояние от источника луча до точки падения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.lightmapCoord">
+      <summary>
+        <para>Координата UV-карты освещения в точке удара.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.normal">
+      <summary>
+        <para>Нормаль поверхности, на которую попал луч.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.point">
+      <summary>
+        <para>Точка падения в мировом пространстве, где луч попадает в коллайдер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.rigidbody">
+      <summary>
+        <para>Жесткое тело коллайдера, в которое попали. Если коллайдер не прикреплен к твердому телу, то он равен нулю.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.textureCoord">
+      <summary>
+        <para>Координата uv-текстуры в месте столкновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.textureCoord2">
+      <summary>
+        <para>Координата вторичной УФ-текстуры в точке удара.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.transform">
+      <summary>
+        <para>Преобразование твердого тела или коллайдера, в которое попали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RaycastHit.triangleIndex">
+      <summary>
+        <para>Индекс треугольника, в который попали.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rigidbody">
+      <summary>
+        <para>Управление положением объекта с помощью физического моделирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.angularDrag">
+      <summary>
+        <para>Угловое сопротивление объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.angularVelocity">
+      <summary>
+        <para>Вектор угловой скорости твердого тела, измеренный в радианах в секунду.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.centerOfMass">
+      <summary>
+        <para>Центр масс относительно начала преобразования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.collisionDetectionMode">
+      <summary>
+        <para>Режим обнаружения столкновений Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.constraints">
+      <summary>
+        <para>Определяет, какие степени свободы разрешены для моделирования этого Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.detectCollisions">
+      <summary>
+        <para>Следует ли включить обнаружение столкновений? (По умолчанию всегда включено).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.drag">
+      <summary>
+        <para>Перетаскивание объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.freezeRotation">
+      <summary>
+        <para>Определяет, будет ли физика изменять вращение объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.inertiaTensor">
+      <summary>
+        <para>Тензор инерции этого тела, определенный как диагональная матрица в системе отсчета, расположенной в центре масс этого тела и вращаемой Rigidbody.inertiaTensorRotation.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.inertiaTensorRotation">
+      <summary>
+        <para>Вращение тензора инерции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.interpolation">
+      <summary>
+        <para>Интерполяция позволяет сгладить эффект запуска физики при фиксированной частоте кадров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.isKinematic">
+      <summary>
+        <para>Определяет, влияет ли физика на твердое тело.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.mass">
+      <summary>
+        <para>Масса твердого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.maxAngularVelocity">
+      <summary>
+        <para>Максимальная угловая скорость твердого тела, измеряемая в радианах в секунду. (по умолчанию 7) диапазон {0, бесконечность}.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.maxDepenetrationVelocity">
+      <summary>
+        <para>Максимальная скорость твердого тела при выходе из состояния проникновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.position">
+      <summary>
+        <para>Положение твердого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.rotation">
+      <summary>
+        <para>Вращение Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.sleepAngularVelocity">
+      <summary>
+        <para>Угловая скорость, ниже которой объекты начинают засыпать. (По умолчанию 0,14) диапазон {0, бесконечность}.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.sleepThreshold">
+      <summary>
+        <para>Нормированный по массе энергетический порог, ниже которого объекты начинают засыпать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.sleepVelocity">
+      <summary>
+        <para>Линейная скорость, ниже которой объекты начинают засыпать. (По умолчанию 0,14) диапазон {0, бесконечность}.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.solverIterations">
+      <summary>
+        <para>SolrIterations определяет, насколько точно разрешаются соединения Rigidbody и контакты столкновения. Переопределяет Physics.defaultSolverIterations. Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.solverVelocityIterations">
+      <summary>
+        <para>РешательVelocityIterations влияет на то, насколько точно разрешаются соединения Rigidbody и контакты столкновения. Переопределяет Physics.defaultSolverVelocityIterations. Должен быть положительным.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.useConeFriction">
+      <summary>
+        <para>Принудительное трение конуса, которое будет использоваться для этого твердого тела.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.useGravity">
+      <summary>
+        <para>Определяет, влияет ли гравитация на это твердое тело.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.velocity">
+      <summary>
+        <para>Вектор скорости твердого тела. Он представляет собой скорость изменения положения Rigidbody.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rigidbody.worldCenterOfMass">
+      <summary>
+        <para>Центр масс твердого тела в мировом пространстве (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddExplosionForce(System.Single,UnityEngine.Vector3,System.Single)">
+      <summary>
+        <para>Применяет силу к твердому телу, имитирующую эффекты взрыва.</para>
+      </summary>
+      <param name="explosionForce">Сила взрыва (которая может изменяться в зависимости от расстояния).</param>
+      <param name="explosionPosition">Центр сферы, в которой действует взрыв.</param>
+      <param name="explosionRadius">Радиус сферы, в пределах которой действует взрыв.</param>
+      <param name="upwardsModifier">Корректировка видимого положения взрыва, чтобы казалось, что он поднимает объекты.</param>
+      <param name="mode">Метод, используемый для применения силы к своим целям.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddExplosionForce(System.Single,UnityEngine.Vector3,System.Single,System.Single)">
+      <summary>
+        <para>Применяет силу к твердому телу, имитирующую эффекты взрыва.</para>
+      </summary>
+      <param name="explosionForce">Сила взрыва (которая может изменяться в зависимости от расстояния).</param>
+      <param name="explosionPosition">Центр сферы, в которой действует взрыв.</param>
+      <param name="explosionRadius">Радиус сферы, в пределах которой действует взрыв.</param>
+      <param name="upwardsModifier">Корректировка видимого положения взрыва, чтобы казалось, что он поднимает объекты.</param>
+      <param name="mode">Метод, используемый для применения силы к своим целям.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddExplosionForce(System.Single,UnityEngine.Vector3,System.Single,System.Single,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет силу к твердому телу, имитирующую эффекты взрыва.</para>
+      </summary>
+      <param name="explosionForce">Сила взрыва (которая может изменяться в зависимости от расстояния).</param>
+      <param name="explosionPosition">Центр сферы, в которой действует взрыв.</param>
+      <param name="explosionRadius">Радиус сферы, в пределах которой действует взрыв.</param>
+      <param name="upwardsModifier">Корректировка видимого положения взрыва, чтобы казалось, что он поднимает объекты.</param>
+      <param name="mode">Метод, используемый для применения силы к своим целям.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForce(UnityEngine.Vector3)">
+      <summary>
+        <para>Добавляет силу Rigidbody.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForce(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет силу Rigidbody.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForce(System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Добавляет силу Rigidbody.</para>
+      </summary>
+      <param name="x">Размер силы по мировой оси x.</param>
+      <param name="y">Размер силы по мировой оси Y.</param>
+      <param name="z">Размер силы по мировой оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForce(System.Single,System.Single,System.Single,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет силу Rigidbody.</para>
+      </summary>
+      <param name="x">Размер силы по мировой оси x.</param>
+      <param name="y">Размер силы по мировой оси Y.</param>
+      <param name="z">Размер силы по мировой оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForceAtPosition(UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Применяет силу в заданном положении. В результате это приложит к объекту крутящий момент и усилие.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="position">Положение в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddForceAtPosition(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Применяет силу в заданном положении. В результате это приложит к объекту крутящий момент и усилие.</para>
+      </summary>
+      <param name="force">Вектор силы в мировых координатах.</param>
+      <param name="position">Положение в мировых координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeForce(UnityEngine.Vector3)">
+      <summary>
+        <para>Добавляет силу к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="force">Вектор силы в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeForce(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет силу к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="force">Вектор силы в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeForce(System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Добавляет силу к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="x">Размер силы по локальной оси x.</param>
+      <param name="y">Размер силы по локальной оси Y.</param>
+      <param name="z">Величина силы по локальной оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeForce(System.Single,System.Single,System.Single,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет силу к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="x">Размер силы по локальной оси x.</param>
+      <param name="y">Размер силы по локальной оси Y.</param>
+      <param name="z">Величина силы по локальной оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeTorque(UnityEngine.Vector3)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeTorque(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в локальных координатах.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeTorque(System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="x">Размер крутящего момента по локальной оси x.</param>
+      <param name="y">Размер крутящего момента по локальной оси Y.</param>
+      <param name="z">Размер крутящего момента по локальной оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddRelativeTorque(System.Single,System.Single,System.Single,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу относительно его системы координат.</para>
+      </summary>
+      <param name="x">Размер крутящего момента по локальной оси x.</param>
+      <param name="y">Размер крутящего момента по локальной оси Y.</param>
+      <param name="z">Размер крутящего момента по локальной оси Z.</param>
+      <param name="mode">Тип применяемой силы.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddTorque(UnityEngine.Vector3)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в мировых координатах.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddTorque(UnityEngine.Vector3,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу.</para>
+      </summary>
+      <param name="torque">Вектор крутящего момента в мировых координатах.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddTorque(System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу.</para>
+      </summary>
+      <param name="x">Размер крутящего момента по мировой оси x.</param>
+      <param name="y">Размер крутящего момента по мировой оси Y.</param>
+      <param name="z">Размер крутящего момента по мировой оси Z.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.AddTorque(System.Single,System.Single,System.Single,UnityEngine.ForceMode)">
+      <summary>
+        <para>Добавляет крутящий момент к твердому телу.</para>
+      </summary>
+      <param name="x">Размер крутящего момента по мировой оси x.</param>
+      <param name="y">Размер крутящего момента по мировой оси Y.</param>
+      <param name="z">Размер крутящего момента по мировой оси Z.</param>
+      <param name="mode">Тип применяемого крутящего момента.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.ClosestPointOnBounds(UnityEngine.Vector3)">
+      <summary>
+        <para>Ближайшая точка к ограничивающей рамке прикрепленных коллайдеров.</para>
+      </summary>
+      <param name="position">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.GetPointVelocity(UnityEngine.Vector3)">
+      <summary>
+        <para>Скорость твердого тела в точке worldPoint в глобальном пространстве.</para>
+      </summary>
+      <param name="worldPoint">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.GetRelativePointVelocity(UnityEngine.Vector3)">
+      <summary>
+        <para>Скорость относительно твердого тела в точке relativePoint.</para>
+      </summary>
+      <param name="relativePoint">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.IsSleeping">
+      <summary>
+        <para>Твердое тело спит?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.MovePosition(UnityEngine.Vector3)">
+      <summary>
+        <para>Перемещает кинематическое твердое тело в положение.</para>
+      </summary>
+      <param name="position">Предоставляет новую позицию для объекта Rigidbody.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.MoveRotation(UnityEngine.Quaternion)">
+      <summary>
+        <para>Вращает твердое тело во вращение.</para>
+      </summary>
+      <param name="rot">Новое вращение Rigidbody.</param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.ResetCenterOfMass">
+      <summary>
+        <para>Сбросить центр масс твердого тела.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.ResetInertiaTensor">
+      <summary>
+        <para>Сбросить значение тензора инерции и вращения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.SetDensity(System.Single)">
+      <summary>
+        <para>Устанавливает массу на основе подключенных коллайдеров, предполагая постоянную плотность.</para>
+      </summary>
+      <param name="density">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.Sleep">
+      <summary>
+        <para>Заставляет твердое тело спать хотя бы на один кадр.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.SweepTest(UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Проверяет, столкнется ли твердое тело с чем-либо, если оно перемещалось по сцене.</para>
+      </summary>
+      <param name="direction">Направление, в котором перемещается твердое тело.</param>
+      <param name="hitInfo">Если возвращается значение true, hitInfo будет содержать больше информации о месте удара по коллайдеру (см. также: RaycastHit).</param>
+      <param name="maxDistance">Длина развертки.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Истина, когда развертка твердого тела пересекает какой-либо коллайдер, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.SweepTestAll(UnityEngine.Vector3,System.Single,UnityEngine.QueryTriggerInteraction)">
+      <summary>
+        <para>Аналогично Rigidbody.SweepTest, но возвращает все совпадения.</para>
+      </summary>
+      <param name="direction">Направление, в котором перемещается твердое тело.</param>
+      <param name="maxDistance">Длина развертки.</param>
+      <param name="queryTriggerInteraction">Указывает, должен ли этот запрос вызывать триггеры.</param>
+      <returns>
+        <para>Массив всех коллайдеров, столкнувшихся за развертку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Rigidbody.WakeUp">
+      <summary>
+        <para>Заставляет твердое тело проснуться.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RigidbodyConstraints">
+      <summary>
+        <para>Используйте эти флаги для ограничения движения твердых тел.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezeAll">
+      <summary>
+        <para>Заморозить вращение и движение по всем осям.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezePosition">
+      <summary>
+        <para>Заморозить движение по всем осям.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezePositionX">
+      <summary>
+        <para>Заморозить движение по оси X.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezePositionY">
+      <summary>
+        <para>Заморозить движение по оси Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezePositionZ">
+      <summary>
+        <para>Заморозить движение по оси Z.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezeRotation">
+      <summary>
+        <para>Заморозить вращение по всем осям.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezeRotationX">
+      <summary>
+        <para>Заморозить вращение по оси X.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezeRotationY">
+      <summary>
+        <para>Заморозить вращение по оси Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.FreezeRotationZ">
+      <summary>
+        <para>Заморозить вращение по оси Z.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyConstraints.None">
+      <summary>
+        <para>Нет ограничений.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RigidbodyInterpolation">
+      <summary>
+        <para>Режим интерполяции твердого тела.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyInterpolation.Extrapolate">
+      <summary>
+        <para>Экстраполяция будет предсказывать положение твердого тела на основе текущей скорости.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyInterpolation.Interpolate">
+      <summary>
+        <para>Интерполяция всегда будет немного отставать, но может быть более плавной, чем экстраполяция.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RigidbodyInterpolation.None">
+      <summary>
+        <para>Без интерполяции.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RotationDriveMode">
+      <summary>
+        <para>Управляйте вращением ConfigurableJoint с помощью X &amp; YZ или Slerp Drive.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RotationDriveMode.Slerp">
+      <summary>
+        <para>Используйте диск Slerp.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RotationDriveMode.XYAndZ">
+      <summary>
+        <para>Используйте привод XY и Z.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SoftJointLimit">
+      <summary>
+        <para>Ограничения, определенные CharacterJoint.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimit.bounciness">
+      <summary>
+        <para>Когда сустав достигает предела, его можно заставить отскочить от него.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimit.contactDistance">
+      <summary>
+        <para>Определяет, как далеко вперед в пространстве решатель может «видеть» общий предел.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimit.damper">
+      <summary>
+        <para>Если пружина больше нуля, ограничение мягкое.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimit.limit">
+      <summary>
+        <para>Предельное положение/угол соединения (в градусах).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimit.spring">
+      <summary>
+        <para>Если больше нуля, ограничение мягкое. Пружина оттянет соединение назад.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SoftJointLimitSpring">
+      <summary>
+        <para>Конфигурация пружины, прикрепленной к границам сустава: линейная и угловая. Используется CharacterJoint и ConfigurableJoint.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimitSpring.damper">
+      <summary>
+        <para>Демпфирование предела пружины. Действует, когда жесткость предела спринта не равна нулю.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SoftJointLimitSpring.spring">
+      <summary>
+        <para>Ограничение жесткости пружины. Когда жесткость равна нулю, предел жесткий, в противном случае — мягкий.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpherecastCommand">
+      <summary>
+        <para>Используйте эту структуру для настройки команды приведения сферы, которая выполняется асинхронно во время задания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.direction">
+      <summary>
+        <para>Направление броска сферы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.distance">
+      <summary>
+        <para>Максимальное расстояние, на котором сфера должна проверять столкновения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.layerMask">
+      <summary>
+        <para>Маска слоя, которая выборочно игнорирует коллайдеры при создании сферы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.origin">
+      <summary>
+        <para>Начальная точка сферы в мировых координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.physicsScene">
+      <summary>
+        <para>Физическая сцена, в которой запускается эта команда.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpherecastCommand.radius">
+      <summary>
+        <para>Радиус забрасываемой сферы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SpherecastCommand.#ctor(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает SpherecastCommand.</para>
+      </summary>
+      <param name="origin">Начальная точка приведения сферы.</param>
+      <param name="radius">Радиус забрасываемой сферы.</param>
+      <param name="direction">Направление броска сферы.</param>
+      <param name="distance">Максимальное расстояние, на котором приведение должно проверять наличие столкновений.</param>
+      <param name="layerMask">Маска слоя, которая выборочно игнорирует коллайдеры при создании сферы.</param>
+    </member>
+    <member name="M:UnityEngine.SpherecastCommand.#ctor(UnityEngine.PhysicsScene,UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,System.Int32)">
+      <summary>
+        <para>Создает SpherecastCommand.</para>
+      </summary>
+      <param name="physicsScene">Физическая сцена для запуска команды.</param>
+      <param name="origin">Начальная точка приведения сферы.</param>
+      <param name="radius">Радиус забрасываемой сферы.</param>
+      <param name="direction">Направление броска сферы.</param>
+      <param name="distance">Максимальное расстояние, на котором приведение должно проверять наличие столкновений.</param>
+      <param name="layerMask">Маска слоя, которая выборочно игнорирует коллайдеры при создании сферы.</param>
+    </member>
+    <member name="M:UnityEngine.SpherecastCommand.ScheduleBatch(Unity.Collections.NativeArray`1&lt;UnityEngine.SpherecastCommand&gt;,Unity.Collections.NativeArray`1&lt;UnityEngine.RaycastHit&gt;,System.Int32,Unity.Jobs.JobHandle)">
+      <summary>
+        <para>Планирует выполнение пакета сфер в задании.</para>
+      </summary>
+      <param name="commands">NaviveArray SpherecastCommands для выполнения.</param>
+      <param name="results">NavtiveArray RaycastHit, в котором хранятся результаты команд.</param>
+      <param name="minCommandsPerJob">Минимальное количество заданий, которое должно выполняться в одном задании.</param>
+      <param name="dependsOn">jobHandle задания, которое должно быть завершено перед выполнением приведения сферы.</param>
+      <returns>
+        <para>Возвращает JobHandle задания, которое будет выполнять приведение сфер.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.SphereCollider">
+      <summary>
+        <para>Примитивный коллайдер в форме сферы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SphereCollider.center">
+      <summary>
+        <para>Центр сферы в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SphereCollider.radius">
+      <summary>
+        <para>Радиус сферы, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpringJoint">
+      <summary>
+        <para>Пружинное соединение связывает вместе 2 твердых тела, сила пружины будет автоматически приложена, чтобы удерживать объект на заданном расстоянии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpringJoint.damper">
+      <summary>
+        <para>Сила демпфера, используемая для демпфирования силы пружины.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpringJoint.maxDistance">
+      <summary>
+        <para>Максимальное расстояние между телами относительно их начального расстояния.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpringJoint.minDistance">
+      <summary>
+        <para>Минимальное расстояние между телами относительно их начального расстояния.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpringJoint.spring">
+      <summary>
+        <para>Сила пружины, используемая для удержания двух объектов вместе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpringJoint.tolerance">
+      <summary>
+        <para>Максимально допустимая ошибка между текущей длиной пружины и длиной, определяемой параметрами minDistance и maxDistance.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.PhysicsModule">
+      <summary>
+        <para>Модуль Physics реализует 3D-физику в Unity.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.WheelFrictionCurve">
+      <summary>
+        <para>WheelFrictionCurve используется WheelCollider для описания фрикционных свойств шины колеса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelFrictionCurve.asymptoteSlip">
+      <summary>
+        <para>Смещение точки асимптоты (по умолчанию 2).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelFrictionCurve.asymptoteValue">
+      <summary>
+        <para>Сила при проскальзывании асимптоты (по умолчанию 10000).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelFrictionCurve.extremumSlip">
+      <summary>
+        <para>Проскальзывание точки экстремума (по умолчанию 1).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelFrictionCurve.extremumValue">
+      <summary>
+        <para>Сила при экстремальном скольжении (по умолчанию 20000).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.WheelFrictionCurve.stiffness">
+      <summary>
+        <para>Множитель для значений extremumValue и asymptoteValue (по умолчанию 1).</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UIModule</name>
+    </assembly>
+    <member name="T:UnityEngine.AdditionalCanvasShaderChannels">
+      <summary>
+        <para>Маска перечисления возможных свойств канала шейдера, которые также могут быть включены при создании сетки Canvas.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.None">
+      <summary>
+        <para>Никаких дополнительных параметров шейдера не требуется.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.Normal">
+      <summary>
+        <para>Включите нормали к вершинам сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.Tangent">
+      <summary>
+        <para>Включите касательную к вершинам сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.TexCoord1">
+      <summary>
+        <para>Включите UV1 в вершины сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.TexCoord2">
+      <summary>
+        <para>Включите UV2 в вершины сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AdditionalCanvasShaderChannels.TexCoord3">
+      <summary>
+        <para>Включите UV3 в вершины сетки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Canvas">
+      <summary>
+        <para>Элемент, который можно использовать для рендеринга экрана.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.additionalShaderChannels">
+      <summary>
+        <para>Получите или задайте маску дополнительных каналов шейдера, которые будут использоваться при создании сетки Canvas.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.cachedSortingLayerValue">
+      <summary>
+        <para>Кэшированное расчетное значение на основе SortingLayerID.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.isRootCanvas">
+      <summary>
+        <para>Это корневой холст?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.normalizedSortingGridSize">
+      <summary>
+        <para>Нормализованный размер сетки, на который холст разделит визуализируемую область.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.overridePixelPerfect">
+      <summary>
+        <para>Позволяет вложенным холстам переопределять настройки pixelPerfect, унаследованные от родительских холстов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.overrideSorting">
+      <summary>
+        <para>Переопределить сортировку холста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.pixelPerfect">
+      <summary>
+        <para>Принудительное выравнивание элементов на холсте по пикселям. Применяется только с renderMode is Screen Space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.pixelRect">
+      <summary>
+        <para>Получите прямоугольник рендеринга для Canvas.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.planeDistance">
+      <summary>
+        <para>На каком расстоянии от камеры создается Canvas.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Canvas.preWillRenderCanvases(UnityEngine.Canvas/WillRenderCanvases)">
+      <summary>
+        <para>Событие, которое вызывается непосредственно перед отрисовкой Canvas.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Canvas.referencePixelsPerUnit">
+      <summary>
+        <para>Количество пикселей на единицу, которое считается значением по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.renderingDisplaySize">
+      <summary>
+        <para>Возвращает размер отображения холста на основе выбранного режима рендеринга и целевого отображения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.renderMode">
+      <summary>
+        <para>Находится ли Canvas в режиме World или Overlay?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.renderOrder">
+      <summary>
+        <para>Порядок рендеринга, в котором холст передается в сцену. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.rootCanvas">
+      <summary>
+        <para>Возвращает Canvas, ближайший к корню, проверяя каждого родителя и возвращая последний найденный холст. Если другой холст не найден, холст вернется сам.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.scaleFactor">
+      <summary>
+        <para>Используется для масштабирования всего холста, при этом подгоняя его под размер экрана. Применяется только с renderMode is Screen Space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.sortingGridNormalizedSize">
+      <summary>
+        <para>Нормализованный размер сетки, на который холст разделит визуализируемую область.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.sortingLayerID">
+      <summary>
+        <para>Уникальный идентификатор слоя сортировки Canvas.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.sortingLayerName">
+      <summary>
+        <para>Имя слоя сортировки холста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.sortingOrder">
+      <summary>
+        <para>Порядок холста в слое сортировки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.targetDisplay">
+      <summary>
+        <para>Для режима наложения индекс отображения, на котором будет отображаться холст пользовательского интерфейса.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Canvas.willRenderCanvases(UnityEngine.Canvas/WillRenderCanvases)">
+      <summary>
+        <para>Событие, которое вызывается непосредственно перед отрисовкой Canvas.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Canvas.worldCamera">
+      <summary>
+        <para>Камера, используемая для изменения размера холста в пространстве экрана — камера. Также используется в качестве камеры, через которую будут отправляться события для мирового пространства [[Canvas].</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Canvas.ForceUpdateCanvases">
+      <summary>
+        <para>Принудительное обновление содержимого всех холстов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Canvas.GetDefaultCanvasMaterial">
+      <summary>
+        <para>Возвращает материал по умолчанию, который можно использовать для рендеринга обычных элементов на холсте.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Canvas.GetDefaultCanvasTextMaterial">
+      <summary>
+        <para>Возвращает материал по умолчанию, который можно использовать для рендеринга текстовых элементов на холсте.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Canvas.GetETC1SupportedCanvasMaterial">
+      <summary>
+        <para>Получает или создает материал ETC1.</para>
+      </summary>
+      <returns>
+        <para>Сгенерированный материал ETC1 из холста.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.CanvasGroup">
+      <summary>
+        <para>Размещаемый элемент Canvas, который можно использовать для изменения дочерних состояний Alpha, Raycasting, Enabled.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasGroup.alpha">
+      <summary>
+        <para>Установите альфа группы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasGroup.blocksRaycasts">
+      <summary>
+        <para>Блокирует ли эта группа raycasting (разрешает коллизии).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasGroup.ignoreParentGroups">
+      <summary>
+        <para>Должна ли группа игнорировать родительские группы?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasGroup.interactable">
+      <summary>
+        <para>Доступна ли группа для взаимодействия (активированы ли элементы под группой).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasGroup.IsRaycastLocationValid(UnityEngine.Vector2,UnityEngine.Camera)">
+      <summary>
+        <para>Возвращает true, если группа разрешает raycasts.</para>
+      </summary>
+      <param name="sp">
+      </param>
+      <param name="eventCamera">
+      </param>
+    </member>
+    <member name="T:UnityEngine.CanvasRenderer">
+      <summary>
+        <para>Компонент, который будет отображаться на экране после завершения обычного рендеринга при подключении к Canvas. Предназначен для приложения с графическим интерфейсом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.absoluteDepth">
+      <summary>
+        <para>Глубина средства визуализации относительно корневого холста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.clippingSoftness">
+      <summary>
+        <para>Мягкость отсечения, применяемая к средству визуализации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.cull">
+      <summary>
+        <para>Указывает, игнорируется ли геометрия, испускаемая этим модулем визуализации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.cullTransparentMesh">
+      <summary>
+        <para>Указывает, можно ли игнорировать геометрию, испускаемую этим средством визуализации, когда альфа-цвет вершины близок к нулю для каждой вершины сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.hasMoved">
+      <summary>
+        <para>Истинно, если произошло какое-либо изменение, которое сделало бы недействительными позиции сгенерированной геометрии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.hasPopInstruction">
+      <summary>
+        <para>Включить всплывающий вызов отрисовки «стека рендеринга».</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.hasRectClipping">
+      <summary>
+        <para>Истинно, если в этом средстве визуализации включена обрезка прямоугольников.
+См. также: CanvasRenderer.EnableRectClipping, CanvasRenderer.DisableRectClipping.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.isMask">
+      <summary>
+        <para>Является ли UIRenderer компонентом маски.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.materialCount">
+      <summary>
+        <para>Количество материалов, которые может использовать этот модуль визуализации.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.CanvasRenderer.onRequestRebuild(UnityEngine.CanvasRenderer/OnRequestRebuild)">
+      <summary>
+        <para>(Только для редактора) Событие, которое запускается каждый раз, когда данные в CanvasRenderer становятся недействительными и требуют перестроения.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.popMaterialCount">
+      <summary>
+        <para>Количество материалов, используемых этим визуализатором. Используется внутри для маскировки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CanvasRenderer.relativeDepth">
+      <summary>
+        <para>Глубина средства визуализации относительно родительского холста.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.AddUIVertexStream">
+      <summary>
+        <para>Возьмите поток вершин и разделите его на соответствующие массивы (позиции, цвета, uv0s, uv1s, нормали и касательные).</para>
+      </summary>
+      <param name="verts">Список UIVertex для разделения.</param>
+      <param name="positions">Список назначения для позиций вершин.</param>
+      <param name="colors">Список назначения для цветов verts.</param>
+      <param name="uv0S">Список назначения для verts uv0s.</param>
+      <param name="uv1S">Список назначения для вершин uv1s.</param>
+      <param name="normals">Список назначения для нормалей вершин.</param>
+      <param name="tangents">Список назначения для касательных вершин.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.Clear">
+      <summary>
+        <para>Удалить все кешированные вершины.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.CreateUIVertexStream">
+      <summary>
+        <para>Преобразование набора компонентов вершин в поток UIVertex.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.DisableRectClipping">
+      <summary>
+        <para>Отключает обрезку прямоугольников для данного CanvasRenderer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.EnableRectClipping(UnityEngine.Rect)">
+      <summary>
+        <para>Включает прямоугольное отсечение на CanvasRendered. Геометрия за пределами указанного прямоугольника будет обрезана (не отрисована).</para>
+      </summary>
+      <param name="rect">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetAlpha">
+      <summary>
+        <para>Получить текущий альфа-канал средства визуализации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetColor">
+      <summary>
+        <para>Получить текущий цвет средства визуализации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetInheritedAlpha">
+      <summary>
+        <para>Получите окончательный унаследованный альфа-канал, рассчитанный путем включения всех родительских альфа-каналов из включенных родительских CanvasGroups.</para>
+      </summary>
+      <returns>
+        <para>Расчетная унаследованная альфа-канал.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetMaterial(System.Int32)">
+      <summary>
+        <para>Получает текущий Материал, назначенный CanvasRenderer.</para>
+      </summary>
+      <param name="index">Индекс материала для извлечения (0, если этот параметр опущен).</param>
+      <returns>
+        <para>Результат.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetMaterial">
+      <summary>
+        <para>Получает текущий Материал, назначенный CanvasRenderer.</para>
+      </summary>
+      <param name="index">Индекс материала для извлечения (0, если этот параметр опущен).</param>
+      <returns>
+        <para>Результат.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetPopMaterial(System.Int32)">
+      <summary>
+        <para>Получает текущий Материал, назначенный CanvasRenderer. Используется внутри для маскировки.</para>
+      </summary>
+      <param name="index">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetAlpha(System.Single)">
+      <summary>
+        <para>Установите альфа рендерера. Будет умножено на альфа-канал UIVertex и альфа-канал Canvas.</para>
+      </summary>
+      <param name="alpha">Альфа.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetAlphaTexture(UnityEngine.Texture)">
+      <summary>
+        <para>Альфа-текстура, которая будет передана шейдеру в свойстве _AlphaTex.</para>
+      </summary>
+      <param name="texture">Текстура для передачи.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetColor(UnityEngine.Color)">
+      <summary>
+        <para>Установите цвет рендерера. Будет умножено на цвет UIVertex и цвет холста.</para>
+      </summary>
+      <param name="color">Рендерер умножает цвет.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetMaterial(UnityEngine.Material,System.Int32)">
+      <summary>
+        <para>Установите материал для средства визуализации холста. Если указана текстура, то она будет использоваться как «MainTex» вместо «MainTex» материала.
+См. также: CanvasRenderer.SetMaterialCount, CanvasRenderer.SetTexture.</para>
+      </summary>
+      <param name="material">Материал для рендеринга.</param>
+      <param name="texture">Переопределение текстуры материала.</param>
+      <param name="index">Индекс материала.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetMaterial(UnityEngine.Material,UnityEngine.Texture)">
+      <summary>
+        <para>Установите материал для средства визуализации холста. Если указана текстура, то она будет использоваться как «MainTex» вместо «MainTex» материала.
+См. также: CanvasRenderer.SetMaterialCount, CanvasRenderer.SetTexture.</para>
+      </summary>
+      <param name="material">Материал для рендеринга.</param>
+      <param name="texture">Переопределение текстуры материала.</param>
+      <param name="index">Индекс материала.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetMesh(UnityEngine.Mesh)">
+      <summary>
+        <para>Устанавливает сетку, используемую этим визуализатором. Обратите внимание, что сетка должна быть разрешена для чтения/записи.</para>
+      </summary>
+      <param name="mesh">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetPopMaterial(UnityEngine.Material,System.Int32)">
+      <summary>
+        <para>Установите материал для средства визуализации холста. Используется внутри для маскировки.</para>
+      </summary>
+      <param name="material">
+      </param>
+      <param name="index">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetTexture(UnityEngine.Texture)">
+      <summary>
+        <para>Задает текстуру, используемую материалом этого средства визуализации.</para>
+      </summary>
+      <param name="texture">
+      </param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetVertices(System.Collections.Generic.List`1&lt;UnityEngine.UIVertex&gt;)">
+      <summary>
+        <para>Установите вершины для UIRenderer.</para>
+      </summary>
+      <param name="vertices">Массив вершин для установки.</param>
+      <param name="size">Количество вершин для установки.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SetVertices(UnityEngine.UIVertex[],System.Int32)">
+      <summary>
+        <para>Установите вершины для UIRenderer.</para>
+      </summary>
+      <param name="vertices">Массив вершин для установки.</param>
+      <param name="size">Количество вершин для установки.</param>
+    </member>
+    <member name="M:UnityEngine.CanvasRenderer.SplitUIVertexStreams">
+      <summary>
+        <para>Получив список UIVertex, разделите поток на типы компонентов.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.ICanvasRaycastFilter">
+      <summary>
+        <para>Этот элемент может фильтровать рейкасты. Если элемент верхнего уровня поражен, он может дополнительно «проверить», является ли местоположение допустимым.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ICanvasRaycastFilter.IsRaycastLocationValid(UnityEngine.Vector2,UnityEngine.Camera)">
+      <summary>
+        <para>При наличии точки и камеры raycast действителен.</para>
+      </summary>
+      <param name="sp">Положение экрана.</param>
+      <param name="eventCamera">Камера Raycast.</param>
+      <returns>
+        <para>Действительно.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.RectTransformUtility">
+      <summary>
+        <para>Вспомогательный класс, содержащий вспомогательные методы для работы с RectTransform.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.FlipLayoutAxes(UnityEngine.RectTransform,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Переворачивает горизонтальную и вертикальную оси размера и выравнивания RectTransform, а также, возможно, его дочерние элементы.</para>
+      </summary>
+      <param name="rect">RectTransform для отражения.</param>
+      <param name="keepPositioning">Переворачивает вокруг оси, если это правда. Переворачивает родительский прямоугольник, если false.</param>
+      <param name="recursive">Перевернуть и детей?</param>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.FlipLayoutOnAxis(UnityEngine.RectTransform,System.Int32,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Переворачивает выравнивание RectTransform вдоль горизонтальной или вертикальной оси, а также, при необходимости, его дочерних элементов.</para>
+      </summary>
+      <param name="rect">RectTransform для отражения.</param>
+      <param name="keepPositioning">Переворачивает вокруг оси, если это правда. Переворачивает родительский прямоугольник, если false.</param>
+      <param name="recursive">Перевернуть и детей?</param>
+      <param name="axis">Ось, по которой нужно перевернуться. 0 — горизонтальный, 1 — вертикальный.</param>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.PixelAdjustPoint(UnityEngine.Vector2,UnityEngine.Transform,UnityEngine.Canvas)">
+      <summary>
+        <para>Преобразование заданной точки в пространстве экрана в правильную точку в пикселях.</para>
+      </summary>
+      <param name="point">
+      </param>
+      <param name="elementTransform">
+      </param>
+      <param name="canvas">
+      </param>
+      <returns>
+        <para>Точка с поправкой на пиксели.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.PixelAdjustRect(UnityEngine.RectTransform,UnityEngine.Canvas)">
+      <summary>
+        <para>Учитывая прямоугольное преобразование, возвращайте угловые точки в координатах с точностью до пикселя.</para>
+      </summary>
+      <param name="rectTransform">
+      </param>
+      <param name="canvas">
+      </param>
+      <returns>
+        <para>Прямоугольник с поправкой на пиксель.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(UnityEngine.RectTransform,UnityEngine.Vector2,UnityEngine.Camera)">
+      <summary>
+        <para>Содержит ли RectTransform точку экрана, видимую с данной камеры?</para>
+      </summary>
+      <param name="rect">RectTransform для тестирования.</param>
+      <param name="screenPoint">Экранная точка для проверки.</param>
+      <param name="cam">Камера, с которой выполняется тест. (Необязательно)</param>
+      <returns>
+        <para>Истинно, если точка находится внутри прямоугольника.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(UnityEngine.RectTransform,UnityEngine.Vector2,UnityEngine.Camera,UnityEngine.Vector2&amp;)">
+      <summary>
+        <para>Преобразование точки экранного пространства в положение в локальном пространстве объекта RectTransform, которое находится на плоскости его прямоугольника.</para>
+      </summary>
+      <param name="rect">RectTransform для поиска точки внутри.</param>
+      <param name="cam">Камера, связанная с позицией в пространстве экрана.</param>
+      <param name="screenPoint">Позиция на экране.</param>
+      <param name="localPoint">Точка в локальном пространстве прямоугольного преобразования.</param>
+      <returns>
+        <para>Возвращает значение true, если плоскость RectTransform была затронута, независимо от того, находится ли точка внутри прямоугольника.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RectTransformUtility.ScreenPointToWorldPointInRectangle(UnityEngine.RectTransform,UnityEngine.Vector2,UnityEngine.Camera,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Преобразование точки экранного пространства в положение в мировом пространстве, которое находится на плоскости данного RectTransform.</para>
+      </summary>
+      <param name="rect">RectTransform для поиска точки внутри.</param>
+      <param name="cam">Камера, связанная с позицией в пространстве экрана.</param>
+      <param name="screenPoint">Позиция на экране.</param>
+      <param name="worldPoint">Точка в мировом пространстве.</param>
+      <returns>
+        <para>Возвращает значение true, если плоскость RectTransform была затронута, независимо от того, находится ли точка внутри прямоугольника.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.RenderMode">
+      <summary>
+        <para>RenderMode для холста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderMode.ScreenSpaceCamera">
+      <summary>
+        <para>Рендеринг с использованием камеры, настроенной на холсте.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderMode.ScreenSpaceOverlay">
+      <summary>
+        <para>Рендеринг в конце сцены с использованием 2D-холста.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderMode.WorldSpace">
+      <summary>
+        <para>Рендеринг с использованием любой камеры в сцене, которая может визуализировать слой.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.UIModule">
+      <summary>
+        <para>Модуль пользовательского интерфейса реализует основные компоненты, необходимые для системы пользовательского интерфейса Unity.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

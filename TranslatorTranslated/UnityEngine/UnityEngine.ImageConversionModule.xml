@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ImageConversionModule</name>
+    </assembly>
+    <member name="T:UnityEngine.ImageConversion">
+      <summary>
+        <para>Этот класс предоставляет служебные программы и методы расширения для преобразования данных изображения из форматов PNG, EXR, TGA и JPEG или в них.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ImageConversion.EnableLegacyPngGammaRuntimeLoadBehavior">
+      <summary>
+        <para>Включает устаревшее поведение при импорте во время выполнения PNG.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeArrayToEXR(System.Array,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32,UnityEngine.Texture2D/EXRFlags)">
+      <summary>
+        <para>Кодирует этот массив в формат EXR.</para>
+      </summary>
+      <param name="array">Массив байтов для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+      <param name="flags">Флаги, используемые для управления сжатием и выходным форматом.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeArrayToJPG(System.Array,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32,System.Int32)">
+      <summary>
+        <para>Кодирует этот массив в формат JPG.</para>
+      </summary>
+      <param name="array">Массив байтов для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+      <param name="quality">Качество JPG для кодирования, 1..100 (по умолчанию 75).</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeArrayToPNG(System.Array,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Кодирует этот массив в формат PNG.</para>
+      </summary>
+      <param name="array">Массив байтов для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeArrayToTGA(System.Array,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Кодирует этот массив в формат TGA.</para>
+      </summary>
+      <param name="array">Массив байтов для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeNativeArrayToEXR(Unity.Collections.NativeArray`1&lt;T&gt;,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32,UnityEngine.Texture2D/EXRFlags)">
+      <summary>
+        <para>Кодирует этот исходный массив в формат EXR.</para>
+      </summary>
+      <param name="input">Собственный массив для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+      <param name="flags">Флаги, используемые для управления сжатием и выходным форматом.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeNativeArrayToJPG(Unity.Collections.NativeArray`1&lt;T&gt;,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32,System.Int32)">
+      <summary>
+        <para>Кодирует этот исходный массив в формат JPG.</para>
+      </summary>
+      <param name="input">Собственный массив для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+      <param name="quality">Качество JPG для кодирования, 1..100 (по умолчанию 75).</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeNativeArrayToPNG(Unity.Collections.NativeArray`1&lt;T&gt;,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Кодирует этот исходный массив в формат PNG.</para>
+      </summary>
+      <param name="input">Собственный массив для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeNativeArrayToTGA(Unity.Collections.NativeArray`1&lt;T&gt;,UnityEngine.Experimental.Rendering.GraphicsFormat,System.UInt32,System.UInt32,System.UInt32)">
+      <summary>
+        <para>Кодирует этот исходный массив в формат TGA.</para>
+      </summary>
+      <param name="input">Собственный массив для преобразования.</param>
+      <param name="format">Пиксельный формат данных изображения.</param>
+      <param name="width">Ширина данных изображения в пикселях.</param>
+      <param name="height">Высота данных изображения в пикселях.</param>
+      <param name="rowBytes">Длина одной строки в байтах.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeToEXR(UnityEngine.Texture2D,UnityEngine.Texture2D/EXRFlags)">
+      <summary>
+        <para>Кодирует эту текстуру в формат EXR.</para>
+      </summary>
+      <param name="tex">Текстура для преобразования.</param>
+      <param name="flags">Флаги, используемые для управления сжатием и выходным форматом.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeToJPG(UnityEngine.Texture2D,System.Int32)">
+      <summary>
+        <para>Кодирует эту текстуру в формат JPG.</para>
+      </summary>
+      <param name="tex">Текстовая текстура для преобразования.</param>
+      <param name="quality">Качество JPG для кодирования, 1..100 (по умолчанию 75).</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeToJPG(UnityEngine.Texture2D)">
+      <summary>
+        <para>Кодирует эту текстуру в формат JPG.</para>
+      </summary>
+      <param name="tex">Текстовая текстура для преобразования.</param>
+      <param name="quality">Качество JPG для кодирования, 1..100 (по умолчанию 75).</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeToPNG(UnityEngine.Texture2D)">
+      <summary>
+        <para>Кодирует эту текстуру в формат PNG.</para>
+      </summary>
+      <param name="tex">Текстура для преобразования.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.EncodeToTGA(UnityEngine.Texture2D)">
+      <summary>
+        <para>Кодирует указанную текстуру в формате TGA.</para>
+      </summary>
+      <param name="tex">Текстура для кодирования.</param>
+    </member>
+    <member name="M:UnityEngine.ImageConversion.LoadImage(UnityEngine.Texture2D,System.Byte[],System.Boolean)">
+      <summary>
+        <para>Загружает массив байтов изображения PNG/JPG (или поддерживаемого формата) в текстуру.</para>
+      </summary>
+      <param name="tex">Текстура для загрузки изображения.</param>
+      <param name="data">Массив байтов, содержащий данные изображения для загрузки.</param>
+      <param name="markNonReadable">Установите значение false по умолчанию, передайте значение true, чтобы пометить текстуру как нечитаемую.</param>
+      <returns>
+        <para>Возвращает true, если данные могут быть загружены, иначе false.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.ImageConversionModule">
+      <summary>
+        <para>Модуль ImageConversion реализует класс ImageConversion, который предоставляет вспомогательные методы для преобразования изображений из и в форматы PNG, JPEG или EXR.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

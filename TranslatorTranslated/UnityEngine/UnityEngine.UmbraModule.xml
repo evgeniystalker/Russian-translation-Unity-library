@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UmbraModule</name>
+    </assembly>
+    <member name="A:UnityEngine.UmbraModule">
+      <summary>
+        <para>Модуль Umbra реализует систему отбраковки окклюзии Unity.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

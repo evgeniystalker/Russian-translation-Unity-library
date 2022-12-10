@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.DeviceSimulatorModule</name>
+    </assembly>
+    <member name="T:UnityEditor.DeviceSimulation.DeviceSimulator">
+      <summary>
+        <para>Класс для взаимодействия с окном Device Simulator из скрипта.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.DeviceSimulation.DeviceSimulator.touchScreenInput(System.Action`1&lt;UnityEditor.DeviceSimulation.TouchEvent&gt;)">
+      <summary>
+        <para>Событие вызывается при щелчке экрана имитируемого устройства.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="T:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin">
+      <summary>
+        <para>Расширьте этот класс, чтобы создать подключаемый модуль Device Simulator.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin.deviceSimulator">
+      <summary>
+        <para>Симулятор устройства, в котором создан этот подключаемый модуль.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin.title">
+      <summary>
+        <para>Название пользовательского интерфейса подключаемого модуля.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin.OnCreate">
+      <summary>
+        <para>Вызывается, когда Unity создает окно симулятора устройства.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin.OnCreateUI">
+      <summary>
+        <para>VisualElement, возвращаемый этим методом, внедряется в окно симулятора устройства. Если метод возвращает значение null, пользовательский интерфейс подключаемого модуля не встроен.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.DeviceSimulation.DeviceSimulatorPlugin.OnDestroy">
+      <summary>
+        <para>Вызывается при уничтожении окна Device Simulator.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.DeviceSimulation.TouchEvent">
+      <summary>
+        <para>Представление события одиночного касания, поступающего от симулятора устройства. Подпишитесь на DeviceSimulator.touchScreenInput, чтобы получать эти события.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.DeviceSimulation.TouchEvent.phase">
+      <summary>
+        <para>Фаза события касания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.DeviceSimulation.TouchEvent.position">
+      <summary>
+        <para>Положение сенсорного экрана на экране. Нулевая точка находится в нижнем левом углу экрана в пиксельных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.DeviceSimulation.TouchEvent.touchId">
+      <summary>
+        <para>Уникальный идентификатор касания. Unity повторно использует идентификаторы после завершения касания.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.DeviceSimulation.TouchPhase">
+      <summary>
+        <para>Указывает, на каком этапе своего жизненного цикла находится данное касание.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.DeviceSimulation.TouchPhase.Began">
+      <summary>
+        <para>Прикосновение началось. Эту фазу будет иметь только первое событие касания в любом заданном касании.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.DeviceSimulation.TouchPhase.Canceled">
+      <summary>
+        <para>Прикосновение завершилось не через взаимодействие с пользователем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.DeviceSimulation.TouchPhase.Ended">
+      <summary>
+        <para>Прикосновение закончилось. Только последнее касание в данном касании будет иметь эту фазу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.DeviceSimulation.TouchPhase.Moved">
+      <summary>
+        <para>Касание изменило позицию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.DeviceSimulation.TouchPhase.Stationary">
+      <summary>
+        <para>Касание не сдвинулось.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.SpriteMaskModule</name>
+    </assembly>
+    <member name="T:UnityEngine.SpriteMask">
+      <summary>
+        <para>Компонент для маскирования спрайтов и частиц.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.alphaCutoff">
+      <summary>
+        <para>Минимальное значение альфа-канала, используемое маской для выбора области влияния, определенной на спрайте маски.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.backSortingLayerID">
+      <summary>
+        <para>Уникальный идентификатор слоя сортировки, определяющий конец пользовательского диапазона.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.backSortingOrder">
+      <summary>
+        <para>Порядок внутри слоя обратной сортировки, определяющий конец пользовательского диапазона.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.frontSortingLayerID">
+      <summary>
+        <para>Уникальный идентификатор слоя сортировки, определяющего начало пользовательского диапазона.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.frontSortingOrder">
+      <summary>
+        <para>Порядок в переднем слое сортировки, определяющем начало пользовательского диапазона.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.isCustomRangeActive">
+      <summary>
+        <para>Маскируйте спрайты спереди назад, сортируя только значения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.sprite">
+      <summary>
+        <para>Спрайт, используемый для определения маски.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteMask.spriteSortPoint">
+      <summary>
+        <para>Определяет положение спрайта, используемого для сортировки SpriteMask.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

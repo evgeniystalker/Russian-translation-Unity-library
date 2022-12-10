@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.TextCoreFontEngineModule</name>
+    </assembly>
+    <member name="T:UnityEngine.TextCore.FaceInfo">
+      <summary>
+        <para>Структура, содержащая информацию о данной гарнитуре и для определенного кегля.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.ascentLine">
+      <summary>
+        <para>Линия подъема обычно располагается в верхней части самого высокого глифа шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.baseline">
+      <summary>
+        <para>Базовая линия — это воображаемая линия, на которой кажутся все глифы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.capLine">
+      <summary>
+        <para>Строка Cap обычно располагается над заглавными буквами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.descentLine">
+      <summary>
+        <para>Линия спуска обычно располагается в нижней части глифа с самым нижним выносным элементом шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.familyName">
+      <summary>
+        <para>Название гарнитуры шрифта, также известное как фамилия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.lineHeight">
+      <summary>
+        <para>Высота строки представляет собой расстояние между последовательными строками текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.meanLine">
+      <summary>
+        <para>Средняя строка обычно располагается над строчными буквами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.pointSize">
+      <summary>
+        <para>Размер в пунктах, используемый для выборки шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.scale">
+      <summary>
+        <para>Относительный масштаб шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.strikethroughOffset">
+      <summary>
+        <para>Позиция зачеркнутого.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.strikethroughThickness">
+      <summary>
+        <para>Толщина зачеркивания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.styleName">
+      <summary>
+        <para>Имя стиля шрифта, которое определяет как визуальный стиль, так и насыщенность шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.subscriptOffset">
+      <summary>
+        <para>Позиция символов с использованием нижнего индекса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.subscriptSize">
+      <summary>
+        <para>Относительный размер/масштаб символов нижнего индекса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.superscriptOffset">
+      <summary>
+        <para>Позиция символов с использованием надстрочного индекса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.superscriptSize">
+      <summary>
+        <para>Относительный размер/масштаб надстрочных символов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.tabWidth">
+      <summary>
+        <para>Ширина символа табуляции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.underlineOffset">
+      <summary>
+        <para>Позиция подчеркивания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.FaceInfo.underlineThickness">
+      <summary>
+        <para>Толщина подчеркивания.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.FaceInfo.Compare(UnityEngine.TextCore.FaceInfo)">
+      <summary>
+        <para>Сравнивает информацию в этой структуре FaceInfo с информацией в заданной структуре FaceInfo, чтобы определить, имеют ли они одинаковые значения.</para>
+      </summary>
+      <param name="other">Структура FaceInfo для сравнения этой структуры FaceInfo.</param>
+      <returns>
+        <para>Возвращает true, если структуры FaceInfo имеют одинаковые значения. Ложь, если нет.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.TextCore.Glyph">
+      <summary>
+        <para>Глиф — это визуальное представление текстового элемента или символа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.Glyph.atlasIndex">
+      <summary>
+        <para>Индекс текстуры атласа, содержащей этот глиф.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.Glyph.glyphRect">
+      <summary>
+        <para>Прямоугольник, определяющий положение глифа в текстуре атласа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.Glyph.index">
+      <summary>
+        <para>Индекс глифа в исходном файле шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.Glyph.metrics">
+      <summary>
+        <para>Метрики, определяющие размер, положение и интервал глифа при выполнении макета текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.Glyph.scale">
+      <summary>
+        <para>Относительный масштаб глифа. Значение по умолчанию — 1,0.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.Glyph.Compare(UnityEngine.TextCore.Glyph)">
+      <summary>
+        <para>Сравнивает два глифа, чтобы определить, имеют ли они одинаковые значения.</para>
+      </summary>
+      <param name="other">Глиф для сравнения.</param>
+      <returns>
+        <para>Возвращает true, если глифы имеют одинаковые значения. Ложь, если нет.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.Glyph.#ctor">
+      <summary>
+        <para>Конструктор нового глифа.</para>
+      </summary>
+      <param name="glyph">Глиф, используемый в качестве ссылки для нового глифа.</param>
+      <param name="index">Индекс глифа в файле шрифта.</param>
+      <param name="metrics">Метрики глифа.</param>
+      <param name="glyphRect">GlyphRect, определяющий положение глифа в текстуре атласа.</param>
+      <param name="scale">Относительный масштаб глифа.</param>
+      <param name="atlasIndex">Индекс текстуры атласа, содержащей глиф.</param>
+    </member>
+    <member name="M:UnityEngine.TextCore.Glyph.#ctor(UnityEngine.TextCore.Glyph)">
+      <summary>
+        <para>Конструктор нового глифа.</para>
+      </summary>
+      <param name="glyph">Глиф, используемый в качестве ссылки для нового глифа.</param>
+      <param name="index">Индекс глифа в файле шрифта.</param>
+      <param name="metrics">Метрики глифа.</param>
+      <param name="glyphRect">GlyphRect, определяющий положение глифа в текстуре атласа.</param>
+      <param name="scale">Относительный масштаб глифа.</param>
+      <param name="atlasIndex">Индекс текстуры атласа, содержащей глиф.</param>
+    </member>
+    <member name="M:UnityEngine.TextCore.Glyph.#ctor(System.UInt32,UnityEngine.TextCore.GlyphMetrics,UnityEngine.TextCore.GlyphRect)">
+      <summary>
+        <para>Конструктор нового глифа.</para>
+      </summary>
+      <param name="glyph">Глиф, используемый в качестве ссылки для нового глифа.</param>
+      <param name="index">Индекс глифа в файле шрифта.</param>
+      <param name="metrics">Метрики глифа.</param>
+      <param name="glyphRect">GlyphRect, определяющий положение глифа в текстуре атласа.</param>
+      <param name="scale">Относительный масштаб глифа.</param>
+      <param name="atlasIndex">Индекс текстуры атласа, содержащей глиф.</param>
+    </member>
+    <member name="M:UnityEngine.TextCore.Glyph.#ctor(System.UInt32,UnityEngine.TextCore.GlyphMetrics,UnityEngine.TextCore.GlyphRect,System.Single,System.Int32)">
+      <summary>
+        <para>Конструктор нового глифа.</para>
+      </summary>
+      <param name="glyph">Глиф, используемый в качестве ссылки для нового глифа.</param>
+      <param name="index">Индекс глифа в файле шрифта.</param>
+      <param name="metrics">Метрики глифа.</param>
+      <param name="glyphRect">GlyphRect, определяющий положение глифа в текстуре атласа.</param>
+      <param name="scale">Относительный масштаб глифа.</param>
+      <param name="atlasIndex">Индекс текстуры атласа, содержащей глиф.</param>
+    </member>
+    <member name="T:UnityEngine.TextCore.GlyphMetrics">
+      <summary>
+        <para>Набор значений, определяющих размер, положение и интервал глифа при выполнении макета текста.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphMetrics.height">
+      <summary>
+        <para>Высота глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphMetrics.horizontalAdvance">
+      <summary>
+        <para>Горизонтальное расстояние для увеличения (слева направо) или уменьшения (справа налево) положения рисунка относительно исходной точки текстового элемента.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphMetrics.horizontalBearingX">
+      <summary>
+        <para>Горизонтальное расстояние от текущей позиции рисования (исходной точки) относительно левого края ограничивающей рамки элемента (bbox).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphMetrics.horizontalBearingY">
+      <summary>
+        <para>Расстояние по вертикали от текущей базовой линии относительно верхнего края ограничивающей рамки элемента (bbox).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphMetrics.width">
+      <summary>
+        <para>Ширина глифа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.GlyphMetrics.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Создает новую структуру GlyphMetrics.</para>
+      </summary>
+      <param name="width">Ширина глифа.</param>
+      <param name="height">Высота глифа.</param>
+      <param name="bearingX">Горизонтальный подшипникX.</param>
+      <param name="bearingY">Горизонтальный подшипник Y.</param>
+      <param name="advance">Горизонтальное продвижение.</param>
+    </member>
+    <member name="T:UnityEngine.TextCore.GlyphRect">
+      <summary>
+        <para>Прямоугольник, определяющий положение глифа в текстуре атласа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphRect.height">
+      <summary>
+        <para>Высота глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphRect.width">
+      <summary>
+        <para>Ширина глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphRect.x">
+      <summary>
+        <para>Позиция x глифа в текстуре шрифтового атласа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphRect.y">
+      <summary>
+        <para>Положение y глифа в текстуре шрифтового атласа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.GlyphRect.zero">
+      <summary>
+        <para>GlyphRect со всеми значениями, установленными на ноль. Сокращение для написания GlyphRect(0, 0, 0, 0).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.GlyphRect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Конструктор для нового GlyphRect.</para>
+      </summary>
+      <param name="x">Позиция x глифа в текстуре атласа.</param>
+      <param name="y">Y-позиция глифа в текстуре атласа.</param>
+      <param name="width">Ширина глифа.</param>
+      <param name="height">Высота глифа.</param>
+      <param name="rect">Rect, используемый для создания нового GlyphRect.</param>
+    </member>
+    <member name="M:UnityEngine.TextCore.GlyphRect.#ctor(UnityEngine.Rect)">
+      <summary>
+        <para>Конструктор для нового GlyphRect.</para>
+      </summary>
+      <param name="x">Позиция x глифа в текстуре атласа.</param>
+      <param name="y">Y-позиция глифа в текстуре атласа.</param>
+      <param name="width">Ширина глифа.</param>
+      <param name="height">Высота глифа.</param>
+      <param name="rect">Rect, используемый для создания нового GlyphRect.</param>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.FontEngine">
+      <summary>
+        <para>FontEngine используется для доступа к данным из исходных файлов шрифтов. Сюда входит информация об отдельных символах, глифах и соответствующих метриках, обычно используемых в процессе анализа текста, компоновки и рендеринга.
+
+Поддерживаются файлы шрифтов TrueType (.ttf, .ttc) и OpenType (.otf).
+
+FontEngine также используется для растрового визуального представления символов, известных как глифы, в заданной текстуре атласа шрифтов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.DestroyFontEngine">
+      <summary>
+        <para>Уничтожить и выгрузить ресурсы, используемые Font Engine.</para>
+      </summary>
+      <returns>
+        <para>Нулевое значение (0), если Font Engine и использованные ресурсы были успешно освобождены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetFaceInfo">
+      <summary>
+        <para>Получите FaceInfo для текущего загруженного шрифта и размера.</para>
+      </summary>
+      <returns>
+        <para>Возвращает FaceInfo текущей загруженной гарнитуры.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetFontFaces">
+      <summary>
+        <para>Получает начертания и стили шрифта для загруженного в данный момент шрифта.</para>
+      </summary>
+      <returns>
+        <para>Массив, содержащий имена шрифтов и стилей.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetSystemFontNames">
+      <summary>
+        <para>Получает имена семейств и стилей системных шрифтов.</para>
+      </summary>
+      <returns>
+        <para>Массив строк, содержащий имена семейств и стилей системных шрифтов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.InitializeFontEngine">
+      <summary>
+        <para>Инициализируйте Font Engine и необходимые ресурсы.</para>
+      </summary>
+      <returns>
+        <para>Нулевое значение (0), если инициализация Font Engine прошла успешно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(UnityEngine.Font)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(UnityEngine.Font,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(UnityEngine.Font,System.Int32,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.Int32,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.Byte[])">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.Byte[],System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.Byte[],System.Int32,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.String)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.String,System.Int32)">
+      <summary>
+        <para>Загрузите исходный файл шрифта.</para>
+      </summary>
+      <param name="filePath">Путь исходного файла шрифта относительно проекта.</param>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <param name="sourceFontFile">Массив байтов, содержащий исходный файл шрифта.</param>
+      <param name="font">Шрифт для загрузки данных. Шрифт Unity должен быть установлен в динамический режим с выбранным параметром Include Font Data.</param>
+      <param name="faceIndex">Индекс начертания начертания шрифта для загрузки. Если файл шрифта представляет собой коллекцию TrueType (.TTC), это указывает индекс начертания шрифта для загрузки. Если файл шрифта представляет собой файл шрифта TrueType (.TTF) или OpenType Font (.OTF), индекс шрифта всегда равен нулю (0).</param>
+      <param name="familyName">Семейство загружаемого шрифта.</param>
+      <param name="styleName">Имя стиля начертания шрифта для загрузки.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно загружено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.SetFaceSize(System.Int32)">
+      <summary>
+        <para>Установите размер текущего загруженного шрифта.</para>
+      </summary>
+      <param name="pointSize">Размер в пунктах, используемый для масштабирования шрифта.</param>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно масштабировано до заданного кегля.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.TryGetGlyphIndex(System.UInt32,System.UInt32&amp;)">
+      <summary>
+        <para>Попробуйте получить индекс глифа для символа с заданным значением Unicode.</para>
+      </summary>
+      <param name="unicode">Значение Unicode символа, для которого нужно искать индекс глифа.</param>
+      <param name="glyphIndex">Индекс глифа для данного символа Unicode или глифа .notdef (индекс 0), если глиф недоступен для данного значения Unicode.</param>
+      <returns>
+        <para>Возвращает true, если данный юникод имеет индекс глифа.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.TryGetGlyphWithIndexValue(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.Glyph&amp;)">
+      <summary>
+        <para>Попробуйте загрузить глиф для заданного значения индекса и, если доступно, заполните глиф.</para>
+      </summary>
+      <param name="glyphIndex">Индекс глифа, который должен быть загружен.</param>
+      <param name="flags">Флаг загрузки глифа, который следует использовать для загрузки глифа.</param>
+      <param name="glyph">Глиф, использующий указанный индекс, или глиф .notdef (индекс 0), если по этому индексу глиф не найден.</param>
+      <returns>
+        <para>Возвращает true, если по данному индексу существует глиф. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.TryGetGlyphWithUnicodeValue(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphLoadFlags,UnityEngine.TextCore.Glyph&amp;)">
+      <summary>
+        <para>Попробуйте загрузить глиф для данного значения Юникода. Если доступно, заполняет глиф и возвращает значение true. В противном случае возвращает false и заполняет глиф данными .notdef/отсутствующего глифа.</para>
+      </summary>
+      <param name="flags">Флаг загрузки глифа, который следует использовать для загрузки глифа.</param>
+      <param name="glyph">Глиф, использующий указанный индекс, или глиф .notdef (индекс 0), если по этому индексу глиф не найден.</param>
+      <param name="unicode">Значение Unicode символа, глиф которого необходимо загрузить.</param>
+      <returns>
+        <para>Возвращает true, если для данного значения Unicode существует глиф. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.UnloadAllFontFaces">
+      <summary>
+        <para>Выгружает все загруженные на данный момент шрифты и удаляет их из кэша.</para>
+      </summary>
+      <returns>
+        <para>Нулевое значение (0), если начертания шрифта были успешно выгружены и удалены из кэша.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.UnloadFontFace">
+      <summary>
+        <para>Выгружает текущий шрифт и удаляет его из кеша.</para>
+      </summary>
+      <returns>
+        <para>Нулевое значение (0), если начертание шрифта было успешно выгружено и удалено из кэша.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.FontEngineError">
+      <summary>
+        <para>Код ошибки, возвращаемый различными функциями FontEngine.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Atlas_Generation_Cancelled">
+      <summary>
+        <para>Код ошибки возвращается при отмене процесса упаковки или рендеринга глифов FontEngine.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Character_Code">
+      <summary>
+        <para>Код ошибки, возвращаемый функцией LoadGlyph при ссылке на недопустимое значение символа Unicode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Face">
+      <summary>
+        <para>Код ошибки, указывающий на недопустимое начертание шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_File">
+      <summary>
+        <para>Код ошибки, указывающий на недопустимый файл шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_File_Format">
+      <summary>
+        <para>Код ошибки, возвращаемый функцией LoadFontFace, если исходный файл шрифта имеет неизвестный или недопустимый формат.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_File_Path">
+      <summary>
+        <para>Код ошибки, возвращаемый функцией LoadFontFace, когда путь к исходному файлу шрифта оказывается недопустимым.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_File_Structure">
+      <summary>
+        <para>Код ошибки, возвращаемый функцией LoadFontFace, когда исходный файл шрифта оказывается недопустимым или имеет неправильный формат.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Glyph_Index">
+      <summary>
+        <para>Код ошибки, возвращаемый функцией LoadGlyph при ссылке на недопустимое или выходящее за пределы диапазона значение индекса глифа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Library">
+      <summary>
+        <para>Код ошибки, указывающий на сбой при инициализации библиотеки механизма шрифтов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Library_or_Face">
+      <summary>
+        <para>Код ошибки, указывающий на сбой при инициализации библиотеки механизма шрифтов и/или успешной загрузке начертания шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Pixel_Size">
+      <summary>
+        <para>Код ошибки, возвращаемый функциями LoadGlyph или SetFaceSize с использованием недопустимого значения pointSize.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Invalid_Table">
+      <summary>
+        <para>Код ошибки, указывающий на невозможность загрузки одной из таблиц файла шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.FontEngineError.Success">
+      <summary>
+        <para>Код ошибки возвращается при успешном выполнении функции.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord">
+      <summary>
+        <para>Значения корректировки положения глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord.glyphIndex">
+      <summary>
+        <para>Индекс глифа в исходном файле шрифта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord.glyphValueRecord">
+      <summary>
+        <para>GlyphValueRecord содержит настройки положения глифа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord.#ctor(System.UInt32,UnityEngine.TextCore.LowLevel.GlyphValueRecord)">
+      <summary>
+        <para>Конструктор для новой записи корректировки глифа.</para>
+      </summary>
+      <param name="glyphIndex">Индекс глифа в исходном файле шрифта.</param>
+      <param name="glyphValueRecord">GlyphValueRecord содержит настройки положения глифа.</param>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphLoadFlags">
+      <summary>
+        <para>Различные параметры (флаги), используемые FontEngine при загрузке глифов из начертания шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_BITMAP_METRICS_ONLY">
+      <summary>
+        <para>Загружать метрики глифов без выделения и загрузки данных растрового изображения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_COMPUTE_METRICS">
+      <summary>
+        <para>Загружайте метрики глифов без использования таблицы «hdmx». Этот флаг в основном используется для проверки данных шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_DEFAULT">
+      <summary>
+        <para>Загрузить метрики глифов и растровое представление, если они доступны для текущего размера шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_FORCE_AUTOHINT">
+      <summary>
+        <para>Загружайте глифы, используя автоматический хинтер вместо собственного хинтера шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_MONOCHROME">
+      <summary>
+        <para>Загружайте метрики глифов и визуализируйте контур, используя 1-битный монохромный цвет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_AUTOHINT">
+      <summary>
+        <para>Загружайте глифы, используя собственный хинтер шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_BITMAP">
+      <summary>
+        <para>Загружать глифы и игнорировать встроенные растровые штрихи.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_HINTING">
+      <summary>
+        <para>Загружать глифы без хинтов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_SCALE">
+      <summary>
+        <para>Загружайте глифы в единицах шрифта по умолчанию без масштабирования. Этот флаг подразумевает LOAD_NO_HINTING и LOAD_NO_BITMAP и сбрасывает LOAD_RENDER.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphLoadFlags.LOAD_RENDER">
+      <summary>
+        <para>Загружайте показатели глифа и визуализируйте контур, используя 8-битное или сглаженное изображение глифа.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphPackingMode">
+      <summary>
+        <para>Режимы, доступные при упаковке глифов в текстуру атласа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphPackingMode.BestAreaFit">
+      <summary>
+        <para>Поместите глиф в наименьшее доступное свободное пространство, в которое он может поместиться.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphPackingMode.BestLongSideFit">
+      <summary>
+        <para>Поместите глиф на более длинную сторону свободного места, чтобы минимизировать длину более длинной оставшейся стороны.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphPackingMode.BestShortSideFit">
+      <summary>
+        <para>Поместите глиф напротив короткой стороны свободного места, чтобы минимизировать длину более короткой оставшейся стороны.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphPackingMode.BottomLeftRule">
+      <summary>
+        <para>Поместите глиф в доступное свободное место в стиле тетриса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphPackingMode.ContactPointRule">
+      <summary>
+        <para>Поместите глиф в доступное свободное пространство, стараясь максимально увеличить точку контакта между ним и другими глифами.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord">
+      <summary>
+        <para>Значения корректировки положения пары глифов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord.firstAdjustmentRecord">
+      <summary>
+        <para>Значения корректировки положения для первого глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord.secondAdjustmentRecord">
+      <summary>
+        <para>Значения корректировки положения для второго глифа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord.#ctor(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord,UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)">
+      <summary>
+        <para>Конструктор для новой записи корректировки пары глифов.</para>
+      </summary>
+      <param name="firstAdjustmentRecord">Значения корректировки положения для первого глифа.</param>
+      <param name="secondAdjustmentRecord">Значения корректировки положения для второго глифа.</param>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphRenderMode">
+      <summary>
+        <para>Режимы рендеринга, используемые Font Engine для рендеринга глифов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.RASTER">
+      <summary>
+        <para>Визуализирует растровое представление глифа из бинарного (1-битного монохромного) изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.RASTER_HINTED">
+      <summary>
+        <para>Визуализирует растровое представление глифа из бинарного (1-битного монохромного) изображения контура глифа с подсказками.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDF">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из двоичного (1-битного монохромного) изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDF16">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из двоичного (1-битного монохромного) изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDF32">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из двоичного (1-битного монохромного) изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDF8">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из двоичного (1-битного монохромного) изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDFAA">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из 8-битного или сглаженного изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDFAA_HINTED">
+      <summary>
+        <para>Визуализирует представление глифа в поле расстояния со знаком (SDF) из 8-битного или сглаженного изображения контура глифа с подсказкой.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SMOOTH">
+      <summary>
+        <para>Визуализирует растровое представление глифа из 8-битного или сглаженного изображения контура глифа без подсказок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextCore.LowLevel.GlyphRenderMode.SMOOTH_HINTED">
+      <summary>
+        <para>Визуализирует растровое представление глифа из 8-битного или сглаженного изображения контура глифа с подсказкой.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextCore.LowLevel.GlyphValueRecord">
+      <summary>
+        <para>Значения, используемые для настройки положения глифа или набора глифов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphValueRecord.xAdvance">
+      <summary>
+        <para>Регулировка положения, влияющая на горизонтальное продвижение глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphValueRecord.xPlacement">
+      <summary>
+        <para>Регулировка положения, влияющая на горизонтальный угол X глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphValueRecord.yAdvance">
+      <summary>
+        <para>Регулировка положения, влияющая на вертикальное продвижение глифа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TextCore.LowLevel.GlyphValueRecord.yPlacement">
+      <summary>
+        <para>Регулировка положения, влияющая на горизонтальный угол Y глифа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.GlyphValueRecord.#ctor(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Конструктор для новой записи значения глифа.</para>
+      </summary>
+      <param name="xPlacement">Регулировка положения, влияющая на горизонтальный угол X глифа.</param>
+      <param name="yPlacement">Регулировка положения, влияющая на горизонтальный угол Y глифа.</param>
+      <param name="xAdvance">Регулировка положения, влияющая на горизонтальное продвижение глифа.</param>
+      <param name="yAdvance">Регулировка положения, влияющая на вертикальное продвижение глифа.</param>
+    </member>
+  </members>
+</doc>

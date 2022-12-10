@@ -1,0 +1,1790 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UNETModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.ChannelQOS">
+      <summary>
+        <para>Определяет параметры каналов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ChannelQOS.BelongsToSharedOrderChannel">
+      <summary>
+        <para>Возвращает true, если канал принадлежит к общей группе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ChannelQOS.#ctor(UnityEngine.Networking.QosType)">
+      <summary>
+        <para>UnderlyingModel.MemDoc.MemDocModel.</para>
+      </summary>
+      <param name="value">Запрашиваемый тип качества обслуживания (по умолчанию Unreliable).</param>
+      <param name="channel">Конструктор копирования.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.ChannelQOS.#ctor">
+      <summary>
+        <para>UnderlyingModel.MemDoc.MemDocModel.</para>
+      </summary>
+      <param name="value">Запрашиваемый тип качества обслуживания (по умолчанию Unreliable).</param>
+      <param name="channel">Конструктор копирования.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.ChannelQOS.#ctor(UnityEngine.Networking.ChannelQOS)">
+      <summary>
+        <para>UnderlyingModel.MemDoc.MemDocModel.</para>
+      </summary>
+      <param name="value">Запрашиваемый тип качества обслуживания (по умолчанию Unreliable).</param>
+      <param name="channel">Конструктор копирования.</param>
+    </member>
+    <member name="P:UnityEngine.Networking.ChannelQOS.QOS">
+      <summary>
+        <para>Качество обслуживания канала.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.ConnectionAcksType">
+      <summary>
+        <para>Определяет размер буфера, в котором хранятся надежные сообщения, прежде чем они будут подтверждены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ConnectionAcksType.Acks128">
+      <summary>
+        <para>Буфер подтверждения может содержать 128 сообщений.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ConnectionAcksType.Acks32">
+      <summary>
+        <para>Буфер подтверждения может содержать 32 сообщения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ConnectionAcksType.Acks64">
+      <summary>
+        <para>Буфер подтверждения может содержать 64 сообщения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ConnectionAcksType.Acks96">
+      <summary>
+        <para>Буфер подтверждения может содержать 96 сообщений.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.ConnectionConfig">
+      <summary>
+        <para>Этот класс определяет параметры соединения между двумя одноранговыми узлами, это определение включает в себя различные тайм-ауты и размеры, а также конфигурацию канала.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.AckDelay">
+      <summary>
+        <para>Определяет продолжительность в миллисекундах, в течение которой получатель ожидает, прежде чем отправить подтверждение обратно, не дожидаясь каких-либо полезных данных. Значение по умолчанию = 33.
+
+Сетевые клиенты, которые отправляют данные на сервер, могут делать это, используя множество различных режимов качества обслуживания (QOS), некоторые из которых (надежные режимы) ожидают, что сервер отправит обратно подтверждение получения отправленных данных.
+
+Серверы должны периодически подтверждать пакеты данных, полученные по каналам с надежными режимами QOS, отправляя пакеты, содержащие данные подтверждения (также известные как «подтверждения») обратно клиенту. Если бы сервер отправлял подтверждение сразу же после получения каждого пакета от клиента, возникали бы значительные накладные расходы (подтверждение представляет собой 32- или 64-битное целое число, что очень мало по сравнению со всем размером пакета, который также содержит IP-адрес и UDP-заголовок). AckDelay позволяет серверу некоторое время накапливать список полученных надежных пакетов данных для подтверждения и снижает нагрузку на трафик за счет объединения множества подтверждений в один пакет.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.AcksType">
+      <summary>
+        <para>Определяет размер буфера, используемого для хранения надежных сообщений, ожидающих подтверждения. Он может быть установлен на Acks32, Acks64, Acks96 или Acks128. В зависимости от этого параметра буфер может содержать 32, 64, 96 или 128 сообщений. Значение по умолчанию = Ack32.
+
+Сообщения, отправленные по надежным каналам качества обслуживания, сохраняются в специальном буфере, пока они ожидают подтверждения от партнера. Этот буфер может иметь длину 32, 64, 96 или 128 позиций. Рекомендуется начинать с этого значения, установленного на Ack32, которое определяет размер буфера до 32 сообщений. Если вы часто получаете ошибки NoResources при отправке надежных сообщений, измените это значение на следующий возможный размер.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.AddChannel(UnityEngine.Networking.QosType)">
+      <summary>
+        <para>Добавляет новый канал в конфигурацию и возвращает уникальный идентификатор этого канала.
+
+Каналы — это логические разделители трафика между узлами. Каждый раз, когда вы отправляете данные пиру, вы должны использовать два идентификатора: идентификатор соединения и идентификатор канала. Каналы представляют собой не только логически отдельный трафик, но и могут быть настроены для каждого из них с различным качеством обслуживания (QOS). В приведенном ниже примере создается конфигурация, содержащая два канала с типами Unreliable и Reliable QOS. Затем эта конфигурация используется для отправки данных.</para>
+      </summary>
+      <param name="value">Добавить новый канал в конфигурацию.</param>
+      <returns>
+        <para>Идентификатор канала, пользователь может использовать этот идентификатор для отправки сообщения через этот канал.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.AllCostTimeout">
+      <summary>
+        <para>Определяет время ожидания в миллисекундах, по истечении которого сообщения, отправленные по каналу AllCost, будут отправлены повторно, не дожидаясь подтверждения. Значение по умолчанию = 20 мс.
+
+AllCost Delivery Quality of Service (QOS) — это особый QOS для доставки критически важной для игры информации, например, когда игра начинается или когда выстреливают пули.
+
+Из-за отбрасывания пакетов иногда надежные сообщения не могут быть доставлены, и их необходимо отправить повторно. Надежные сообщения будут повторно отправлены по истечении времени RTT+Delta (RTT — время прохождения туда и обратно), где RTT — динамическое значение, которое может достигать нескольких сотен миллисекунд. Для канала доставки AllCost этот тайм-аут может быть задан пользователем, чтобы принудительно отправить критически важную игровую информацию повторно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.BandwidthPeakFactor">
+      <summary>
+        <para>Определяет при внутреннем умножении на InitialBandwidth максимальную пропускную способность, которую можно использовать в условиях пакетной передачи.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.ChannelCount">
+      <summary>
+        <para>(Только чтение) Количество каналов в текущей конфигурации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.Channels">
+      <summary>
+        <para>Список каналов, принадлежащих текущей конфигурации.
+
+Примечание. Любой ConnectionConfig, передаваемый в качестве параметра функции в многопользовательской игре Unity, копируется глубоко (то есть создается совершенно новая копия без ссылок на оригинал).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.ConnectTimeout">
+      <summary>
+        <para>Тайм-аут в мс, в течение которого библиотека будет ждать, прежде чем отправить другой запрос на соединение.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.#ctor">
+      <summary>
+        <para>Создаст конфигурацию подключения по умолчанию или скопирует ее из другой.</para>
+      </summary>
+      <param name="config">Конфигурация соединения.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.#ctor(UnityEngine.Networking.ConnectionConfig)">
+      <summary>
+        <para>Создаст конфигурацию подключения по умолчанию или скопирует ее из другой.</para>
+      </summary>
+      <param name="config">Конфигурация соединения.</param>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.DisconnectTimeout">
+      <summary>
+        <para>Определяет время ожидания в миллисекундах, по истечении которого соединение считается разорванным. Значение по умолчанию = 2000.
+
+Unity Multiplayer определяет условия, при которых соединение считается отключенным. Отключение может произойти по следующим причинам:
+
+(1) Был получен запрос на отключение.
+
+(2) Соединение вообще не получало никакого трафика в течение времени, превышающего DisconnectTimeout (Обратите внимание, что живые соединения получают обычные пакеты проверки активности, поэтому в этом случае «нет трафика» означает не только отсутствие пользовательского трафика, но и отсутствие какой-либо поддержки активности). -живой трафик, а также).
+
+(3) Управление потоком определяет, что время между отправкой пакетов больше, чем DisconnectTimeout. Пакеты проверки активности регулярно доставляются от пиров и содержат статистическую информацию. Эта информация включает в себя значения потерь пакетов из-за условий переполнения сети и одноранговых узлов. Параметры NetworkDropThreshold и OverflowDropThreshold определяют пороговые значения для управления потоком, которые могут снизить частоту пакетов. Когда время до отправки следующего пакета превышает DisconnectTimeout, соединение будет считаться разорванным и будет получено событие разъединения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.FragmentSize">
+      <summary>
+        <para>Определяет размер фрагмента для фрагментированных сообщений (для QOS: ReliableFragmented и UnreliableFragmented). Значение по умолчанию = 500.
+
+В режимах фрагментированного качества обслуживания исходное сообщение разбивается на фрагменты (до 64) размером до FragmentSize байт каждый. Размер фрагмента зависит от частоты и размера отправляемых надежных сообщений. Каждое надежное сообщение потенциально может быть отправлено повторно, поэтому вам необходимо выбрать размер фрагмента меньше, чем оставшееся свободное место в UDP-пакете после добавления в пакет повторно переданных надежных сообщений. Например, если размер Networking.ConnectionConfig.PacketSize равен 1440 байт, а средний размер надежного сообщения составляет 200 байт, целесообразно установить для этого параметра значение 900–1000 байт.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.GetChannel(System.Byte)">
+      <summary>
+        <para>Вернуть набор QoS для данного канала или создать исключение вне диапазона.</para>
+      </summary>
+      <param name="idx">Индекс в массиве.</param>
+      <returns>
+        <para>QoS канала.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.GetSharedOrderChannels(System.Byte)">
+      <summary>
+        <para>Возвращает IList&lt;byte&gt; идентификаторов каналов, принадлежащих группе.</para>
+      </summary>
+      <param name="idx">Идентификатор группы.</param>
+      <returns>
+        <para>Список идентификаторов каналов, принадлежащих группе.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.InitialBandwidth">
+      <summary>
+        <para>Получает или задает пропускную способность в байтах в секунду, которую может использовать многопользовательская игра Unity. Трафик сверх этого лимита запрещен. Unity Multiplayer может внутренне уменьшить используемую полосу пропускания из-за управления потоком. Значение по умолчанию — 1,5 МБ/с (1 536 000 байт в секунду). Значение по умолчанию намеренно большое, чтобы весь трафик проходил без задержки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.MakeChannelsSharedOrder(System.Collections.Generic.List`1&lt;System.Byte&gt;)">
+      <summary>
+        <para>Позволяет объединить несколько каналов в одну группу, чтобы эти каналы имели общий порядок приема.</para>
+      </summary>
+      <param name="channelIndices">Список индексов каналов, которые должны быть сгруппированы вместе. Список может включать как надежные, так и ненадежные каналы.</param>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.MaxCombinedReliableMessageCount">
+      <summary>
+        <para>Определяет максимальное количество небольших надежных сообщений, которые могут быть включены в одно комбинированное сообщение. Значение по умолчанию = 10.
+
+Поскольку каждое сообщение, отправляемое на сервер, содержит информацию об IP-адресе и заголовок UDP, дублирование этой информации для каждого отправляемого сообщения может быть неэффективным в случае частой отправки большого количества небольших сообщений. Множество небольших надежных сообщений можно объединить в одно более длинное надежное сообщение, что сэкономит место в буфере ожидания. Unity Multiplayer автоматически объединяет до MaxCombinedReliableMessageCount небольших сообщений в одно сообщение. Чтобы считаться небольшим сообщением, полезные данные сообщения не должны превышать MaxCombinedReliableMessageSize.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.MaxCombinedReliableMessageSize">
+      <summary>
+        <para>Определяет максимальный размер надежного сообщения в байтах, которое считается достаточно маленьким для включения в комбинированное сообщение. Значение по умолчанию = 100.
+
+Поскольку каждое сообщение, отправляемое на сервер, содержит информацию об IP-адресе и заголовок UDP, дублирование этой информации для каждого отправляемого сообщения может быть неэффективным в случае частой отправки большого количества небольших сообщений. Множество небольших надежных сообщений можно объединить в одно более длинное надежное сообщение, что сэкономит место в буфере ожидания. Unity Multiplayer автоматически объединяет до MaxCombinedReliableMessageCount небольших сообщений в одно сообщение. Чтобы считаться небольшим сообщением, полезные данные сообщения не должны превышать MaxCombinedReliableMessageSize.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.MaxConnectionAttempt">
+      <summary>
+        <para>Определяет максимальное количество попыток многопользовательской игры Unity отправить запрос на подключение без получения ответа, прежде чем он сообщит, что не может установить подключение. Значение по умолчанию = 10.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.MaxSentMessageQueueSize">
+      <summary>
+        <para>Определяет максимальное количество сообщений, которые могут храниться в очереди на отправку. Значение по умолчанию = 128.
+
+Этот буфер служит для сглаживания всплесков трафика и уменьшения дрожания сети. Если очередь заполнена, при любых вызовах Send() возникает ошибка NoResources. Установка этого значения выше 300 может привести к значительной задержке доставки сообщений и может сделать игру непригодной для игры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.MinUpdateTimeout">
+      <summary>
+        <para>Определяет минимальное время в миллисекундах между отправкой пакетов. Эта продолжительность может быть автоматически увеличена, если этого требует управление потоком. Значение по умолчанию = 10.
+
+Когда вызывается Send(), Unity Multiplayer не отправляет сообщение немедленно. Вместо этого каждые миллисекунды SendTimeout проверяется каждое соединение, чтобы узнать, есть ли у него что-то для отправки. Хотя можно установить начальное и минимальное время ожидания отправки, оно может быть увеличено из-за состояния сети или переполнения буфера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.NetworkDropThreshold">
+      <summary>
+        <para>Определяет процент (от 0 до 100) пакетов, которые необходимо отбросить из-за сетевых условий, прежде чем время ожидания SendUpdate будет автоматически увеличено (и скорость отправки автоматически уменьшится). Значение по умолчанию = 5.
+
+Чтобы избежать переполнения приемника, Unity Multiplayer поддерживает управление потоком. Каждый пакет ping, отправляемый между подключенными одноранговыми узлами, содержит два значения:
+
+(1) Пакеты потеряны из-за сетевых условий.
+
+(2) Пакеты потеряны из-за того, что у получателя нет свободного места во входящих буферах.
+
+Как и OverflowDropThreshold, оба значения указываются в процентах. Используйте NetworkDropThreshold и OverflowDropThreshold, чтобы установить пороговые значения для этих значений. Если значение, указанное в пакете ping, превышает соответствующий порог, многопользовательская игра Unity увеличивает время ожидания отправки пакетов до максимального значения DisconnectTimeout.
+
+Примечание. В беспроводных сетях обычно наблюдается потеря пакетов 5 % или более. Для беспроводных сетей рекомендуется использовать значение NetworkDropThreshold, равное 40–50%.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.OverflowDropThreshold">
+      <summary>
+        <para>Определяет процент (от 0 до 100) пакетов, которые необходимо отбросить из-за нехватки места во внутренних буферах, прежде чем время ожидания SendUpdate будет автоматически увеличено (и скорость отправки автоматически уменьшится). Значение по умолчанию = 5.
+
+Чтобы избежать переполнения приемника, Unity Multiplayer поддерживает управление потоком. Каждый пакет ping, отправляемый между подключенными одноранговыми узлами, содержит два значения:
+
+(1) Пакеты потеряны из-за сетевых условий.
+
+(2) Пакеты потеряны из-за того, что у получателя нет свободного места во входящих буферах.
+
+Как и NetworkDropThreshold, оба значения выводятся в процентах. Используйте NetworkDropThreshold и OverflowDropThreshold, чтобы установить пороговые значения для этих значений. Если значение, указанное в пакете ping, превышает соответствующий порог, многопользовательская игра Unity увеличивает время ожидания отправки пакетов до максимального значения DisconnectTimeout.
+
+Примечание. В беспроводных сетях обычно наблюдается потеря пакетов 5 % или более. Для беспроводных сетей рекомендуется использовать значение NetworkDropThreshold, равное 40–50%.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.PacketSize">
+      <summary>
+        <para>Определяет максимальный размер пакета (в байтах) (включая полезную нагрузку и весь заголовок). Пакет может содержать несколько сообщений внутри. Значение по умолчанию = 1500.
+
+Обратите внимание, что это значение по умолчанию подходит только для локального тестирования. Обычно вы должны изменить это значение; рекомендуемое значение для ПК или мобильных устройств — 1470. Для игровых консолей это значение, вероятно, должно быть меньше ~1100. Неправильное определение размера может привести к отбрасыванию пакетов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.PingTimeout">
+      <summary>
+        <para>Определяет продолжительность в миллисекундах между пакетами проверки активности, также известной как эхо-запросы. Значение по умолчанию = 500.
+
+Частота пинга должна быть достаточно большой для накопления хорошей статистики и достаточно короткой для сравнения с DisconnectTimeout. Хорошей рекомендацией является наличие более 3 эхо-запросов за время ожидания отключения и более 5 сообщений за эхо-запрос. Например, при DisconnectTimeout, равном 2000 мс, хорошо работает PingTimeout, равный 500 мс.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.ResendTimeout">
+      <summary>
+        <para>Определяет максимальное время ожидания в миллисекундах перед повторной отправкой сообщения «не подтверждено». Значение по умолчанию = 1200.
+
+Не имеет большого смысла ждать подтверждения вечно. Этот параметр устанавливает верхний предел времени, по истечении которого надежные сообщения пересылаются повторно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.SendDelay">
+      <summary>
+        <para>Получает или задает задержку в миллисекундах после вызова Send() перед отправкой пакетов. В течение этого времени новые сообщения могут объединяться в пакеты, поставленные в очередь. Значение по умолчанию: 10 мс.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.SharedOrderChannelCount">
+      <summary>
+        <para>(Только чтение) Количество групп общих заказов в текущей конфигурации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.SSLCAFilePath">
+      <summary>
+        <para>Определяет путь к файлу, содержащему сертификат центра сертификации (CA) для WebSocket через соединение SSL.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.SSLCertFilePath">
+      <summary>
+        <para>Определяет путь к файлу сертификата SSL для WebSocket через соединение SSL.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.SSLPrivateKeyFilePath">
+      <summary>
+        <para>Определяет путь к файлу, содержащему закрытый ключ для WebSocket, через соединение SSL.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.UdpSocketReceiveBufferMaxSize">
+      <summary>
+        <para>Определяет размер в байтах приемного буфера для сокетов UDP. Полезно установить этот параметр равным максимальному размеру фрагментированного сообщения. Значение по умолчанию зависит от ОС (обычно 8 КБ).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.UsePlatformSpecificProtocols">
+      <summary>
+        <para>При запуске сервера используйте протоколы, которые используют оптимизацию для конкретной платформы, где это уместно, а не межплатформенные протоколы. (Только для консолей Playstation/Xbox).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionConfig.Validate(UnityEngine.Networking.ConnectionConfig)">
+      <summary>
+        <para>Проверьте параметры конфигурации подключения. Вызовет исключения, если параметры неверны.</para>
+      </summary>
+      <param name="config">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Networking.ConnectionConfig.WebSocketReceiveBufferMaxSize">
+      <summary>
+        <para>Только веб-сокет. Определяет размер буфера в байтах для полученных кадров на узле WebSocket. Если это значение равно 0 (по умолчанию), используется буфер размером 4 килобайта. Любое другое значение приводит к буферу этого размера в байтах.
+
+Фрагменты сообщений WebSocket называются «фреймами». Хост WebSocket имеет буфер для хранения входящих кадров сообщений. Поэтому этот буфер должен быть установлен на максимально допустимый размер кадра. Если входящий кадр превышает размер буфера, об ошибке не сообщается. Однако буфер вызовет обратный вызов пользователя, чтобы освободить место для переполнения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.ConnectionSimulatorConfig">
+      <summary>
+        <para>Создать конфигурацию для сетевого симулятора; Вы можете использовать этот класс только в редакторе и сборке разработчика.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionSimulatorConfig.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Single)">
+      <summary>
+        <para>Создаст объект, описывающий параметры моделирования сети.</para>
+      </summary>
+      <param name="outMinDelay">Минимальная задержка моделирования для исходящего трафика в мс.</param>
+      <param name="outAvgDelay">Средняя задержка моделирования для исходящего трафика в мс.</param>
+      <param name="inMinDelay">Минимальная задержка моделирования для входящего трафика в мс.</param>
+      <param name="inAvgDelay">Средняя задержка моделирования для входящего трафика в мс.</param>
+      <param name="packetLossPercentage">Вероятность потери пакета 0 &lt;= p &lt;= 1.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.ConnectionSimulatorConfig.Dispose">
+      <summary>
+        <para>Деструктор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.GlobalConfig">
+      <summary>
+        <para>Определяет глобальные параметры для сетевой библиотеки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ConnectionReadyForSend">
+      <summary>
+        <para>Определяет делегат обратного вызова, который вы можете использовать для получения уведомления, когда соединение готово для отправки данных.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.GlobalConfig.#ctor">
+      <summary>
+        <para>Создайте новый глобальный объект конфигурации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MaxHosts">
+      <summary>
+        <para>Определяет, сколько хостов вы можете использовать. Значение по умолчанию = 16. Максимальное значение = 128.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MaxNetSimulatorTimeout">
+      <summary>
+        <para>Устарело. Определяет максимальную задержку для симулятора сети. См. также: MaxTimerTimeout.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MaxPacketSize">
+      <summary>
+        <para>Определяет максимально возможный размер пакета в байтах для всех сетевых подключений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MaxTimerTimeout">
+      <summary>
+        <para>Определяет максимальное время ожидания в миллисекундах для любой конфигурации. Значение по умолчанию — 12 секунд (12000 мс).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MinNetSimulatorTimeout">
+      <summary>
+        <para>Устарело. Определяет минимальное время ожидания для сетевого симулятора. Вы не можете установить задержку меньше этого значения. См. также: MinTimerTimeout.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.MinTimerTimeout">
+      <summary>
+        <para>Определяет минимальное время ожидания в миллисекундах, распознаваемое системой. Значение по умолчанию — 1 мс.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.NetworkEventAvailable">
+      <summary>
+        <para>Определяет делегат обратного вызова, который можно использовать для получения уведомления, когда на узле (определяемом hostID) происходит сетевое событие. Обратный вызов вызывается для всех типов событий, кроме Networking.NetworkEventType.Nothing.
+
+См. также: Networking.NetworkEventType</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ReactorMaximumReceivedMessages">
+      <summary>
+        <para>Это свойство определяет начальный размер очереди, в которой хранятся сообщения, полученные многопользовательской игрой Unity, до их обработки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ReactorMaximumSentMessages">
+      <summary>
+        <para>Определяет начальный размер очереди отправки. Сообщения помещаются в эту очередь, готовые к отправке пакетами по назначению.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ReactorModel">
+      <summary>
+        <para>Определяет модель реактора для сетевой библиотеки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ThreadAwakeTimeout">
+      <summary>
+        <para>Определяет (1) для выбранного реактора, минимальный период времени, в течение которого система будет проверять наличие сообщений для отправки (2) для реактора фиксированной скорости, минимальный интервал времени, в течение которого система будет проверять отправку и получение сообщений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.GlobalConfig.ThreadPoolSize">
+      <summary>
+        <para>Определяет, сколько рабочих потоков доступно для обработки входящих и исходящих сообщений.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.HostTopology">
+      <summary>
+        <para>Класс определяет топологию сети для хоста (сокет, открытый функцией Networking.NetworkTransport.AddHost). Эта топология определяет: (1) сколько соединений с конфигурацией по умолчанию будет поддерживаться и (2) какие будут специальные соединения (соединения с конфигурацией, отличной от стандартной).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.HostTopology.AddSpecialConnectionConfig(UnityEngine.Networking.ConnectionConfig)">
+      <summary>
+        <para>Добавьте специальное подключение к топологии (например, если вам нужно сохранить подключение к автономному серверу чата, вам нужно будет использовать эту функцию). Возвращенный идентификатор следует использовать как один из параметров (с ip и портом) для установления соединения с этим сервером.</para>
+      </summary>
+      <param name="config">Конфигурация соединения для специального соединения.</param>
+      <returns>
+        <para>Идентификатор этого соединения. Этот идентификатор следует использовать при вызове Networking.NetworkTransport.Connect.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.HostTopology.#ctor(UnityEngine.Networking.ConnectionConfig,System.Int32)">
+      <summary>
+        <para>Создать топологию.</para>
+      </summary>
+      <param name="defaultConfig">Конфигурация по умолчанию.</param>
+      <param name="maxDefaultConnections">Максимальное количество подключений по умолчанию.</param>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.DefaultConfig">
+      <summary>
+        <para>Определяет конфигурацию для соединений по умолчанию в топологии.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.HostTopology.GetSpecialConnectionConfig(System.Int32)">
+      <summary>
+        <para>Вернуть ссылку на специальную конфигурацию соединения. Параметры этого конфига можно изменить.</para>
+      </summary>
+      <param name="i">Идентификатор конфигурации.</param>
+      <returns>
+        <para>Конфигурация соединения.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.MaxDefaultConnections">
+      <summary>
+        <para>Определяет, сколько соединений с конфигурацией по умолчанию разрешено.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.ReceivedMessagePoolSize">
+      <summary>
+        <para>Определяет максимальное количество сообщений, которое каждый хост может хранить в своем пуле полученных сообщений. Размер по умолчанию — 128.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.SentMessagePoolSize">
+      <summary>
+        <para>Определяет максимальное количество сообщений, которое каждый хост может хранить в своем пуле сообщений, ожидающих отправки. Размер по умолчанию — 128.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.SpecialConnectionConfigs">
+      <summary>
+        <para>Список специальных конфигураций подключения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.HostTopology.SpecialConnectionConfigsCount">
+      <summary>
+        <para>Возвращает количество специальных соединений, добавленных в топологию.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.MatchInfo">
+      <summary>
+        <para>Подробная информация о совпадении UNET MatchMaker.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.accessToken">
+      <summary>
+        <para>Бинарный токен доступа, который этот клиент использует для аутентификации своего сеанса для будущих команд.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.address">
+      <summary>
+        <para>IP-адрес хоста матча,.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.domain">
+      <summary>
+        <para>Числовой домен для совпадения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.networkId">
+      <summary>
+        <para>Уникальный идентификатор этого совпадения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.nodeId">
+      <summary>
+        <para>NodeID для этого клиента-участника в совпадении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.port">
+      <summary>
+        <para>Порт хоста матча.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfo.usingRelay">
+      <summary>
+        <para>Этот флаг указывает, использует ли сопоставление сервер ретрансляции.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.MatchInfoSnapshot">
+      <summary>
+        <para>Класс, описывающий информацию о совпадении в виде моментального снимка на момент обработки запроса в MatchMaker.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.averageEloScore">
+      <summary>
+        <para>Средний балл Эло за матч.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.currentSize">
+      <summary>
+        <para>Текущее количество игроков в матче.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.directConnectInfos">
+      <summary>
+        <para>Набор классов сведений о прямом соединении, описывающих информацию о прямом соединении, предоставляемую MatchMaker.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.hostNodeId">
+      <summary>
+        <para>NodeID хоста для этого совпадения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.isPrivate">
+      <summary>
+        <para>Описывает, является ли матч закрытым. Частные совпадения не отображаются в результатах ListMatch.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.matchAttributes">
+      <summary>
+        <para>Коллекция атрибутов совпадения для этого совпадения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.maxSize">
+      <summary>
+        <para>Максимальное количество игроков, до которого может дойти этот матч.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.name">
+      <summary>
+        <para>Текстовое название для этого совпадения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.networkId">
+      <summary>
+        <para>Идентификатор сети для этого совпадения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot">
+      <summary>
+        <para>Класс, описывающий один элемент совпадения и информацию о прямом соединении, предоставленную другими клиентами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot.hostPriority">
+      <summary>
+        <para>Приоритет хоста для этой информации о прямом подключении. Приоритет хоста описывает порядок, в котором этот член совпадения встречается в списке клиентов, присоединенных к совпадению.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot.nodeId">
+      <summary>
+        <para>NodeID участника сопоставления, к которому относится эта информация.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot.privateAddress">
+      <summary>
+        <para>Адрес частной сети, указанный для информации о прямом подключении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot.publicAddress">
+      <summary>
+        <para>Общедоступный сетевой адрес, предоставленный для этой информации о прямом подключении.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.NetworkMatch">
+      <summary>
+        <para>Компонент для связи со службой подбора игроков Unity Multiplayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Match.NetworkMatch.baseUri">
+      <summary>
+        <para>Базовый URI MatchMaker, с которым будет взаимодействовать этот NetworkMatch.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate">
+      <summary>
+        <para>Делегат, который может обрабатывать ответы MatchMaker, которые возвращают базовые типы ответов (обычно указывают только успех или неудачу и расширенную информацию, если произошла ошибка).</para>
+      </summary>
+      <param name="success">Указывает, успешно ли выполнен запрос.</param>
+      <param name="extendedInfo">Текстовое описание ошибки, если успех неверен.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.CreateMatch(System.String,System.UInt32,System.Boolean,System.String,System.String,System.String,System.Int32,System.Int32,UnityEngine.Networking.Match.NetworkMatch/DataResponseDelegate`1&lt;UnityEngine.Networking.Match.MatchInfo&gt;)">
+      <summary>
+        <para>Используйте эту функцию для создания нового совпадения. Клиент, вызвавший эту функцию, становится хостом матча.</para>
+      </summary>
+      <param name="matchName">Текстовая строка, описывающая имя для этого совпадения.</param>
+      <param name="matchSize">При создании матча сваха будет использовать либо это значение, либо максимальный размер, который вы настроили онлайн на https:multiplayer.unity3d.com, в зависимости от того, что меньше. Таким образом, вы можете указать разные размеры матчей для конкретной игры, но при этом сохранить общее ограничение размера в онлайн-панели управления.</param>
+      <param name="matchAdvertise">Логическое значение, указывающее, должно ли это соответствие быть доступно в результатах NetworkMatch.ListMatches.</param>
+      <param name="matchPassword">Текстовая строка, указывающая, защищено ли это совпадение паролем. Если это так, все клиенты, пытающиеся присоединиться к этому совпадению, должны указать правильный пароль совпадения.</param>
+      <param name="publicClientAddress">Необязательный общедоступный адрес клиента. Это значение хранится в свахе и передается клиентам, перечисляющим совпадения. Он предназначен для использования в качестве сетевого адреса для подключения к этому клиенту напрямую через Интернет. Это значение будет присутствовать только в том случае, если общедоступный адрес известен и прямое соединение поддерживается свачмейкером.</param>
+      <param name="privateClientAddress">Необязательный адрес частного клиента. Это значение хранится в свахе и передается клиентам, перечисляющим совпадения. Он предназначен для использования в качестве сетевого адреса для подключения к этому клиенту непосредственно в локальной сети. Это значение будет присутствовать только в том случае, если прямое соединение поддерживается свачмейкером. Это может быть пустая строка, и она не повлияет на возможность взаимодействия с мастером поиска или использования сервера ретрансляции.</param>
+      <param name="eloScoreForMatch">Оценка Elo для клиента, принимающего создаваемый матч. Если этот номер установлен на всех клиентах для указания относительного уровня навыков, этот номер используется для возврата совпадений, упорядоченных по тем, которые наиболее подходят для игры с учетом уровня навыков игрока в списке. Это может быть 0 на всех клиентах, что отключит любые вычисления Elo в MatchMaker.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов, который будет вызван после завершения этой функции. Это будет вызываться независимо от того, успешно или неудачно выполняется функция.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.Match.NetworkMatch.DataResponseDelegate_1">
+      <summary>
+        <para>Делегат ответа, содержащий базовую информацию и элемент данных. Это используется в подмножестве обратных вызовов MatchMaker, которые требуют передачи данных вместе с информацией об успехе/неуспехе самого вызова.</para>
+      </summary>
+      <param name="success">Указывает, успешно ли выполнен запрос.</param>
+      <param name="extendedInfo">Если успех равен false, это будет содержать текстовую строку с указанием причины.</param>
+      <param name="responseData">Переданный универсальный объект, содержащий данные, необходимые для обратного вызова. Обычно это данные, возвращенные из вызова серверной части службы.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.DestroyMatch(UnityEngine.Networking.Types.NetworkID,System.Int32,UnityEngine.Networking.Match.NetworkMatch/BasicResponseDelegate)">
+      <summary>
+        <para>Эта функция используется для того, чтобы сообщить MatchMaker о необходимости уничтожить текущий матч, независимо от того, кто подключен.</para>
+      </summary>
+      <param name="netId">Идентификатор сети для завершения матча.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов, который будет вызван после завершения запроса.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.DropConnection(UnityEngine.Networking.Types.NetworkID,UnityEngine.Networking.Types.NodeID,System.Int32,UnityEngine.Networking.Match.NetworkMatch/BasicResponseDelegate)">
+      <summary>
+        <para>Функция, позволяющая исключить отдельного клиента из матча.</para>
+      </summary>
+      <param name="netId">NetworkID совпадения, к которому принадлежит отбрасываемый клиент.</param>
+      <param name="dropNodeId">NodeID клиента, который будет помещен в указанное совпадение.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов для вызова после завершения запроса.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.JoinMatch(UnityEngine.Networking.Types.NetworkID,System.String,System.String,System.String,System.Int32,System.Int32,UnityEngine.Networking.Match.NetworkMatch/DataResponseDelegate`1&lt;UnityEngine.Networking.Match.MatchInfo&gt;)">
+      <summary>
+        <para>Функция, используемая для сообщения MatchMaker, что текущий клиент хочет присоединиться к определенному матчу.</para>
+      </summary>
+      <param name="netId">NetworkID совпадения для присоединения. Это можно найти, вызвав NetworkMatch.ListMatches и выбрав результат из возвращенного списка совпадений.</param>
+      <param name="matchPassword">Пароль матча. Оставьте пустым, если пароль для совпадения отсутствует, и укажите пароль в виде текстовой строки, если совпадение было настроено на один из запросов NetworkMatch.CreateMatch.</param>
+      <param name="publicClientAddress">Необязательный общедоступный адрес клиента. Это значение будет храниться в свахе и передаваться другим клиентам, перечисляющим совпадения. Вы должны отправить это значение, если хотите, чтобы ваши игроки могли напрямую подключаться друг к другу через Интернет. В качестве альтернативы вы можете передать пустую строку, и это не повлияет на возможность взаимодействия с мастером поиска или использования сервера ретрансляции.</param>
+      <param name="privateClientAddress">Необязательный адрес частного клиента. Это значение будет храниться в свахе и передаваться другим клиентам, перечисляющим совпадения. Вы должны отправить это значение, если хотите, чтобы ваши игроки могли напрямую подключаться друг к другу через локальную сеть. В качестве альтернативы вы можете передать пустую строку, и это не повлияет на возможность взаимодействия с мастером поиска или использования сервера ретрансляции.</param>
+      <param name="eloScoreForClient">Оценка Elo для клиента, присоединившегося к создаваемому матчу. Если этот номер установлен на всех клиентах для указания относительного уровня навыков, этот номер используется для возврата совпадений, упорядоченных по тем, которые наиболее подходят для игры с учетом уровня навыков игрока в списке. Это может быть 0 на всех клиентах, что отключит любые вычисления Elo в MatchMaker.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов, который будет вызван после завершения этого вызова.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.ListMatches(System.Int32,System.Int32,System.String,System.Boolean,System.Int32,System.Int32,UnityEngine.Networking.Match.NetworkMatch/DataResponseDelegate`1&lt;System.Collections.Generic.List`1&lt;UnityEngine.Networking.Match.MatchInfoSnapshot&gt;&gt;)">
+      <summary>
+        <para>Функция для отображения текущих совпадений в MatchMaker.</para>
+      </summary>
+      <param name="startPageNumber">Текущая страница для отображения в возвращаемых результатах.</param>
+      <param name="resultPageSize">Размер запрашиваемой страницы. Это определяет максимальное количество совпадений, содержащихся в списке совпадений, переданном в обратный вызов.</param>
+      <param name="matchNameFilter">Фильтр имени текстовой строки. Это частичный поиск с подстановочными знаками по именам совпадений, которые в настоящее время активны, и его можно рассматривать как сопоставление, эквивалентное *&lt;matchNameFilter&gt;*, где любой результат, содержащий всю указанную здесь строку, будет в наборе результатов.</param>
+      <param name="filterOutPrivateMatchesFromResults">Логическое значение, указывающее, должен ли ответ содержать частные совпадения (имеются в виду совпадения, защищенные паролем).</param>
+      <param name="eloScoreTarget">Целевое значение Эло для группировки результатов списка совпадений. Если используется, это должно быть установлено на уровень Elo клиента, перечисляющего совпадения, чтобы результаты более точно соответствовали уровню навыков этого игрока. Если он не используется, его можно установить равным 0 вместе со всеми другими ссылками Elo в таких функциях, как NetworkMatch.CreateMatch или NetworkMatch.JoinMatch.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов, вызываемый при завершении этого вызова в MatchMaker.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.SetMatchAttributes(UnityEngine.Networking.Types.NetworkID,System.Boolean,System.Int32,UnityEngine.Networking.Match.NetworkMatch/BasicResponseDelegate)">
+      <summary>
+        <para>Эта функция позволяет вызывающей стороне изменять атрибуты во время текущего совпадения.</para>
+      </summary>
+      <param name="networkId">Идентификатор сети совпадения, для которого устанавливаются атрибуты.</param>
+      <param name="isListed">Логическое значение, указывающее, должно ли совпадение быть перечислено в результатах NetworkMatch.ListMatches после завершения этого вызова.</param>
+      <param name="requestDomain">Домен запроса для этого запроса. Только запросы в одном домене могут взаимодействовать друг с другом. Например, если NetworkMatch.CreateMatch создается с доменом 1, то это совпадение будет найдено только в списках ListMatch, которые также указывают домен 1. Используйте это значение для разделения разных (возможно, несовместимых) версий клиентов.</param>
+      <param name="callback">Обратный вызов, вызываемый после завершения вызова, указывает, был ли он успешным или нет.</param>
+      <returns>
+        <para>Эта функция является асинхронной и завершится в какой-то момент в будущем, когда сопрограмма завершит взаимодействие с серверной частью службы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.Match.NetworkMatch.SetProgramAppID(UnityEngine.Networking.Types.AppID)">
+      <summary>
+        <para>Этот метод устарел. Вместо этого войдите в систему через панель сервисов редактора и настройте проект в разделе многопользовательской игры Unity. Это автоматически заполнит необходимую информацию с облачного сайта.</para>
+      </summary>
+      <param name="programAppID">Устарело, см. описание.</param>
+    </member>
+    <member name="T:UnityEngine.Networking.NetworkError">
+      <summary>
+        <para>Возможные ошибки Networking.NetworkTransport.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.BadMessage">
+      <summary>
+        <para>Не сообщение данных.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.CRCMismatch">
+      <summary>
+        <para>Networking.ConnectionConfig не соответствует другой конечной точке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.DNSFailure">
+      <summary>
+        <para>Адрес, указанный для подключения, недействителен или не может быть разрешен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.MessageToLong">
+      <summary>
+        <para>Сообщение слишком длинное и не помещается в буфер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.NoResources">
+      <summary>
+        <para>Недостаточно ресурсов для обработки этого запроса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.Ok">
+      <summary>
+        <para>Операция завершена успешно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.Timeout">
+      <summary>
+        <para>Время ожидания соединения истекло.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.UsageError">
+      <summary>
+        <para>Эта ошибка возникает, если какая-либо функция вызывается с неверными значениями параметров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.VersionMismatch">
+      <summary>
+        <para>Версии протоколов несовместимы. Проверьте версии вашей библиотеки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.WrongChannel">
+      <summary>
+        <para>Указанный канал не существует.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.WrongConnection">
+      <summary>
+        <para>Указанный идентификатор соединения не существует.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.WrongHost">
+      <summary>
+        <para>Указанный хост недоступен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkError.WrongOperation">
+      <summary>
+        <para>Операция не поддерживается.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.NetworkEventType">
+      <summary>
+        <para>Событие, возвращаемое при вызове функций Networking.NetworkTransport.Receive и Networking.NetworkTransport.ReceiveFromHost.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkEventType.BroadcastEvent">
+      <summary>
+        <para>Получено событие обнаружения широковещательной рассылки.
+Чтобы получить информацию о соединении отправителя и возможное дополнительное сообщение от него, вызовите функции Networking.NetworkTransport.GetBroadcastConnectionInfo() и Networking.NetworkTransport.GetBroadcastConnectionMessage().</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkEventType.ConnectEvent">
+      <summary>
+        <para>Получено событие подключения. Указывает, что новое соединение установлено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkEventType.DataEvent">
+      <summary>
+        <para>Получено событие данных. Указывает, что данные были получены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkEventType.DisconnectEvent">
+      <summary>
+        <para>Получено событие отключения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.NetworkEventType.Nothing">
+      <summary>
+        <para>Новое событие не получено.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.NetworkTransport">
+      <summary>
+        <para>API транспортного уровня.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.AddHost(UnityEngine.Networking.HostTopology,System.Int32,System.String)">
+      <summary>
+        <para>Создает узел на основе Networking.HostTopology.</para>
+      </summary>
+      <param name="topology">Networking.HostTopology, связанная с узлом.</param>
+      <param name="port">Порт для привязки (если выбрано значение 0, ОС выберет порт случайным образом).</param>
+      <param name="ip">IP-адрес для привязки.</param>
+      <returns>
+        <para>Возвращает идентификатор созданного хоста.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.AddHostWithSimulator(UnityEngine.Networking.HostTopology,System.Int32,System.Int32,System.Int32,System.String)">
+      <summary>
+        <para>Создайте хост и настройте его для имитации задержки Интернета (работает только в редакторе и сборке для разработки).</para>
+      </summary>
+      <param name="topology">Networking.HostTopology, связанная с узлом.</param>
+      <param name="minTimeout">Минимальная смоделированная задержка в миллисекундах.</param>
+      <param name="maxTimeout">Максимальная смоделированная задержка в миллисекундах.</param>
+      <param name="port">Порт для привязки (если выбрано значение 0, ОС выберет порт случайным образом).</param>
+      <param name="ip">IP-адрес для привязки.</param>
+      <returns>
+        <para>Возвращает только что созданный идентификатор хоста.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.AddWebsocketHost(UnityEngine.Networking.HostTopology,System.Int32)">
+      <summary>
+        <para>Создан узел веб-сокета.</para>
+      </summary>
+      <param name="port">Порт для привязки.</param>
+      <param name="topology">Networking.HostTopology, связанная с узлом.</param>
+      <param name="ip">IP-адрес для привязки.</param>
+      <returns>
+        <para>Идентификатор хоста веб-сокета.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.AddWebsocketHost(UnityEngine.Networking.HostTopology,System.Int32,System.String)">
+      <summary>
+        <para>Создан узел веб-сокета.</para>
+      </summary>
+      <param name="port">Порт для привязки.</param>
+      <param name="topology">Networking.HostTopology, связанная с узлом.</param>
+      <param name="ip">IP-адрес для привязки.</param>
+      <returns>
+        <para>Идентификатор хоста веб-сокета.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Connect(System.Int32,System.String,System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Пытается установить соединение с другим узлом.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="address">IPv4-адрес другого узла.</param>
+      <param name="port">Порт другого узла.</param>
+      <param name="exceptionConnectionId">Установите 0 в случае подключения по умолчанию.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="exeptionConnectionId">
+      </param>
+      <returns>
+        <para>Уникальный идентификатор соединения в случае успеха (иначе ноль).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ConnectAsNetworkHost(System.Int32,System.String,System.Int32,UnityEngine.Networking.Types.NetworkID,UnityEngine.Networking.Types.SourceID,UnityEngine.Networking.Types.NodeID,System.Byte&amp;)">
+      <summary>
+        <para>Создайте выделенное соединение с сервером ретрансляции.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="address">IPv4-адрес реле.</param>
+      <param name="port">Порт реле.</param>
+      <param name="network">GUID для соответствия реле, полученный путем вызова Networking.Match.NetworkMatch.CreateMatch и использования Networking.Match.MatchInfo.networkId.</param>
+      <param name="source">GUID источника можно получить, вызвав Utility.GetSourceID.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="node">Идентификатор слота для этого пользователя, полученный путем вызова Networking.Match.NetworkMatch.CreateMatch и использования Networking.Match.MatchInfo.nodeId.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ConnectEndPoint(System.Int32,System.Net.EndPoint,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Попробуйте установить соединение с другим одноранговым узлом, где этот одноранговый узел указан с помощью C# System.EndPoint.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="xboxOneEndPoint">Допустимая System.EndPoint.</param>
+      <param name="exceptionConnectionId">Установите 0 в случае подключения по умолчанию.</param>
+      <param name="endPoint">
+      </param>
+      <returns>
+        <para>Уникальный идентификатор соединения в случае успеха (иначе ноль).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ConnectToNetworkPeer(System.Int32,System.String,System.Int32,System.Int32,System.Int32,UnityEngine.Networking.Types.NetworkID,UnityEngine.Networking.Types.SourceID,UnityEngine.Networking.Types.NodeID,System.Int32,System.Single,System.Byte&amp;)">
+      <summary>
+        <para>Создайте соединение с другим узлом в группе Relay.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="address">IP-адрес однорангового узла, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.address.</param>
+      <param name="port">Порт однорангового узла, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.port.</param>
+      <param name="exceptionConnectionId">Установите 0 в случае подключения по умолчанию.</param>
+      <param name="relaySlotId">ID удаленного партнера в ретрансляции.</param>
+      <param name="network">GUID для соответствия реле, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.networkId.</param>
+      <param name="source">GUID источника можно получить, вызвав Utility.GetSourceID.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="node">Идентификатор слота, зарезервированный для пользователя, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.nodeId.</param>
+      <param name="bucketSizeFactor">Разрешенная пиковая пропускная способность (пиковая пропускная способность = фактор*байты в секунду, рекомендуемое значение 2,0) Если данные не отправлялись в течение длительного времени, разрешено отправлять больше данных, с коэффициентом 2 разрешено отправлять 2*байты в секунду байт в секунду</param>
+      <param name="bytesPerSec">Средняя пропускная способность (на этом уровне пропускная способность будет ограничена).</param>
+      <returns>
+        <para>Уникальный идентификатор соединения в случае успеха (иначе ноль).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ConnectToNetworkPeer(System.Int32,System.String,System.Int32,System.Int32,System.Int32,UnityEngine.Networking.Types.NetworkID,UnityEngine.Networking.Types.SourceID,UnityEngine.Networking.Types.NodeID,System.Byte&amp;)">
+      <summary>
+        <para>Создайте соединение с другим узлом в группе Relay.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="address">IP-адрес однорангового узла, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.address.</param>
+      <param name="port">Порт однорангового узла, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.port.</param>
+      <param name="exceptionConnectionId">Установите 0 в случае подключения по умолчанию.</param>
+      <param name="relaySlotId">ID удаленного партнера в ретрансляции.</param>
+      <param name="network">GUID для соответствия реле, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.networkId.</param>
+      <param name="source">GUID источника можно получить, вызвав Utility.GetSourceID.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="node">Идентификатор слота, зарезервированный для пользователя, полученный путем вызова Networking.Match.NetworkMatch.JoinMatch и использования Networking.Match.MatchInfo.nodeId.</param>
+      <param name="bucketSizeFactor">Разрешенная пиковая пропускная способность (пиковая пропускная способность = фактор*байты в секунду, рекомендуемое значение 2,0) Если данные не отправлялись в течение длительного времени, разрешено отправлять больше данных, с коэффициентом 2 разрешено отправлять 2*байты в секунду байт в секунду</param>
+      <param name="bytesPerSec">Средняя пропускная способность (на этом уровне пропускная способность будет ограничена).</param>
+      <returns>
+        <para>Уникальный идентификатор соединения в случае успеха (иначе ноль).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ConnectWithSimulator(System.Int32,System.String,System.Int32,System.Int32,System.Byte&amp;,UnityEngine.Networking.ConnectionSimulatorConfig)">
+      <summary>
+        <para>Подключение с симулированной задержкой.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="address">IPv4-адрес другого узла.</param>
+      <param name="port">Порт другого узла.</param>
+      <param name="exeptionConnectionId">Установите 0 в случае подключения по умолчанию.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="conf">Networking.ConnectionSimulatorConfig, определенный для этого подключения.</param>
+      <returns>
+        <para>Уникальный идентификатор соединения в случае успеха (иначе ноль).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Disconnect(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Отправьте сигнал отключения подключенному узлу и закройте соединение. Опрос Networking.NetworkTransport.Receive(), чтобы получить уведомление о закрытии соединения. Этот сигнал отправляется только один раз (доставка с максимальной эффективностью). Если этот пакет по какой-то причине отброшен, партнер закрывает соединение по тайм-ауту.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения, которое вы хотите закрыть.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.DisconnectNetworkHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Это отключит хост и расформирует группу.
+DisconnectNetworkHost может быть вызван только владельцем группы на сервере ретрансляции.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.DoesEndPointUsePlatformProtocols(System.Net.EndPoint)">
+      <summary>
+        <para>Проверьте, использует ли транспорт протокол для конкретной платформы.</para>
+      </summary>
+      <param name="endPoint">Экземпляр EndPoint для проверки.</param>
+      <returns>
+        <para>Истинно, если данная конечная точка использует протокол платформы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.FinishSendMulticast(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Завершает отправку сообщения группе соединений. Для одного хоста разрешено только одно многоадресное сообщение за раз.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением (получается при вызове Networking.NetworkTransport.AddHost).</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetAckBufferCount(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает размер надежного буфера.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Размер буфера подтверждения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetAssetId(UnityEngine.GameObject)">
+      <summary>
+        <para>Система создания многопользовательской игры Unity использует идентификаторы активов, чтобы определить, какие удаленные объекты следует создавать. Эта функция позволяет вам получить assetsId для префаба, связанного с объектом.</para>
+      </summary>
+      <param name="go">Целевой GameObject, для которого нужно получить идентификатор объекта.</param>
+      <returns>
+        <para>Идентификатор объекта Prefab игрового объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetBroadcastConnectionInfo(System.Int32,System.String&amp;,System.Int32&amp;,System.Byte&amp;)">
+      <summary>
+        <para>После того, как Networking.NetworkTransport.Receive() вернет Networking.NetworkEventType.BroadcastEvent, эта функция вернет информацию о подключении отправителя широковещательной рассылки. Затем эту информацию можно использовать для подключения к широковещательному отправителю.</para>
+      </summary>
+      <param name="hostId">ID широковещательного приемника.</param>
+      <param name="address">IPv4-адрес широковещательного отправителя.</param>
+      <param name="port">Порт широковещательного отправителя.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetBroadcastConnectionMessage(System.Int32,System.Byte[],System.Int32,System.Int32&amp;,System.Byte&amp;)">
+      <summary>
+        <para>После того, как Networking.NetworkTransport.Receive() возвращает Networking.NetworkEventType.BroadcastEvent, эта функция возвращает дополнительное сообщение от широковещательного отправителя.</para>
+      </summary>
+      <param name="hostId">ID широковещательного приемника.</param>
+      <param name="buffer">Буфер сообщений, предоставленный вызывающей стороной.</param>
+      <param name="bufferSize">Размер буфера.</param>
+      <param name="receivedSize">Полученный размер (если полученный размер &gt; bufferSize, будет установлена ​​соответствующая ошибка).</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetConnectionInfo(System.Int32,System.Int32,System.String&amp;,System.Int32&amp;,UnityEngine.Networking.Types.NetworkID&amp;,UnityEngine.Networking.Types.NodeID&amp;,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает параметры подключения для указанного connectionId. Эти параметры могут быть отправлены другим пользователям для установления прямого соединения с этим узлом. Если этот одноранговый узел подключен к хосту через Relay, устанавливаются параметры, связанные с Relay.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="address">IP-адрес.</param>
+      <param name="port">Порт.</param>
+      <param name="network">Руководство по ретрансляции сети.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="dstNode">Идентификатор слота назначения.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetCurrentIncomingMessageAmount">
+      <summary>
+        <para>Возвращает количество непрочитанных сообщений в очереди на чтение.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetCurrentOutgoingMessageAmount">
+      <summary>
+        <para>Возвращает общее количество сообщений, все еще находящихся в очереди на запись.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetCurrentRTT(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает время прохождения туда и обратно для данного connectionId.</para>
+      </summary>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <returns>
+        <para>Текущее время приема-передачи в мс.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetEncryptionSafeMaxPacketSize(System.Int16)">
+      <summary>
+        <para>Получает безопасный максимальный размер полезной нагрузки в незашифрованном виде для заданного максимального размера пакета.</para>
+      </summary>
+      <param name="maxPacketSize">Максимальный размер пакета, разрешенный сетью, в байтах.</param>
+      <returns>
+        <para>Максимальное количество байтов, которые вы можете безопасно отправить по сети, чтобы они соответствовали заданному максимальному размеру пакета после шифрования.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetHostPort(System.Int32)">
+      <summary>
+        <para>Возвращает номер порта, назначенный хосту.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста.</param>
+      <returns>
+        <para>Номер порта UDP или -1, если произошла ошибка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetIncomingMessageQueueSize(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество полученных сообщений, ожидающих обработки в очереди.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этой очередью.</param>
+      <param name="error">Код ошибки. Приведите это значение к Networking.NetworkError для получения дополнительной информации.</param>
+      <returns>
+        <para>Количество сообщений в очереди.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetIncomingPacketCount(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество пакетов, полученных с начала для соединения.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Абсолютное количество пакетов, полученных с момента установления соединения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetIncomingPacketCountForAllHosts">
+      <summary>
+        <para>Возвращает количество пакетов, полученных с начала. (из вызова Networking.NetworkTransport.Init).</para>
+      </summary>
+      <returns>
+        <para>Количество пакетов, полученных с начала для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetIncomingPacketDropCountForAllHosts">
+      <summary>
+        <para>Сколько пакетов было отброшено из-за нехватки места во входящей очереди (абсолютное значение, отсчитывается от начала).</para>
+      </summary>
+      <returns>
+        <para>Сброс счетчика пакетов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetIncomingPacketLossCount(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество входящих пакетов, потерянных из-за передачи (отброшенных сетью).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Абсолютное количество пакетов, потерянных с момента установления соединения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetMaxAllowedBandwidth(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Получает разрешенную в настоящее время пропускную способность сети в байтах в секунду. Возвращаемое значение может варьироваться, поскольку полоса пропускания может регулироваться управлением потоком. Если пропускная способность ограничена до нуля, соединение разрывается.ted.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Текущая разрешенная пропускная способность в байтах в секунду.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetNetIOTimeuS">
+      <summary>
+        <para>Функция возвращает время, затраченное на сетевые операции ввода-вывода, в микросекундах.</para>
+      </summary>
+      <returns>
+        <para>Время в микросекундах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetNetworkLostPacketNum(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает общее количество потерянных пакетов.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetNetworkTimestamp">
+      <summary>
+        <para>Получите временную метку сети. Может использоваться в ваших сообщениях для исследования сетевых задержек вместе с Networking.GetRemoteDelayTimeMS.</para>
+      </summary>
+      <returns>
+        <para>Отметка времени.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingFullBytesCount">
+      <summary>
+        <para>Возвращает количество необработанных данных (в байтах), отправленных с самого начала для всех хостов (из вызова Networking.NetworkTransport.Init).</para>
+      </summary>
+      <returns>
+        <para>Общие данные (полезная нагрузка пользователя, данные протокола, заголовки ip и udp) (в байтах), отправленные с самого начала для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingFullBytesCountForConnection(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество необработанных данных (в байтах), отправленных с самого начала для соединения (из вызова Networking.NetworkTransport.Connect для активного соединения или из получения запроса на соединение для пассивного соединения).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общие данные (полезная нагрузка пользователя, данные протокола, заголовки ip и udp) (в байтах), отправленные с самого начала для подключения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingFullBytesCountForHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество необработанных данных (в байтах), отправленных хосту с самого начала (из вызова Networking.NetworkTransport.AddHost).</para>
+      </summary>
+      <param name="hostId">ID хоста.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общие данные (полезная нагрузка пользователя, данные протокола, заголовки ip и udp) (в байтах), отправленные хосту с самого начала.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingMessageCount">
+      <summary>
+        <para>Возвращает количество сообщений, отправленных с самого начала (из вызова Networking.NetworkTransport.Init).</para>
+      </summary>
+      <returns>
+        <para>Количество сообщений, отправленных с начала (из вызова Networking.NetworkTransport.Init) для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingMessageCountForConnection(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество пакетов, отправленных с начала для соединения (из вызова Networking.NetworkTransport.Connect для активного соединения или из получения запроса на соединение для пассивного соединения).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Сообщений считается отправка от начала до соединения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingMessageCountForHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество сообщений, отправленных хосту с самого начала (из вызова Networking.NetworkTransport.AddHost).</para>
+      </summary>
+      <param name="hostId">ID хоста.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Количество сообщений считается отправленным с начала для хоста.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingMessageQueueSize(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество сообщений, ожидающих отправки в очереди исходящих сообщений.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этой очередью.</param>
+      <param name="error">Код ошибки. Приведите это значение к Networking.NetworkError для получения дополнительной информации.</param>
+      <returns>
+        <para>Количество сообщений, ожидающих отправки в очереди исходящих сообщений.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingPacketCount">
+      <summary>
+        <para>Возвращает количество пакетов, отправленных с самого начала (из вызова Networking.NetworkTransport.Init) для всех хостов.</para>
+      </summary>
+      <returns>
+        <para>Количество пакетов, отправленных с начала сетевой библиотеки (с вызова Networking.NetworkTransport.Init) для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingPacketCountForConnection(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество пакетов, отправленных для подключения с момента его запуска (от вызова Networking.NetworkTransport.Connect для активного подключения или от получения запроса на подключение для пассивного подключения).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Счетчик пакетов, отправленных на соединение с его начала.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingPacketCountForHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество пакетов, отправленных хосту с момента его запуска (из вызова Networking.NetworkTransport.AddHost).</para>
+      </summary>
+      <param name="hostId">ID хоста.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Количество пакетов, отправленных со старта хоста.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingPacketNetworkLossPercent(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает значение в процентах от количества отправленных пакетов, которые были отброшены сетью и не получены узлом.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Количество пакетов, отброшенных сетью за последний период ожидания проверки связи, выраженное целым числом в процентах от 0 до 100.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingPacketOverflowLossPercent(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает значение в процентах от количества отправленных пакетов, которые были отброшены узлом.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Количество пакетов, отброшенных узлом за последний период ожидания проверки связи, выраженное целым числом в процентах от 0 до 100.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingSystemBytesCount">
+      <summary>
+        <para>Возвращает количество полезной нагрузки пользователя и системных заголовков протокола (в байтах), отправленных с самого начала (из вызова Networking.NetworkTransport.Init).</para>
+      </summary>
+      <returns>
+        <para>Общая полезная нагрузка и системные заголовки протокола (в байтах), отправленные с самого начала для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingSystemBytesCountForConnection(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество полезных данных и системных заголовков протокола (в байтах), отправленных с самого начала для соединения (из вызова Networking.NetworkTransport.Connect для активного соединения или из получения запроса на соединение для пассивного соединения).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общая полезная нагрузка пользователя и системные заголовки протокола (в байтах), отправленные с самого начала для подключения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingSystemBytesCountForHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество полезных данных и системных заголовков протокола (в байтах), отправленных хосту с самого начала (из вызова Networking.NetworkTransport.AddHost).</para>
+      </summary>
+      <param name="hostId">ID хоста.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общая полезная нагрузка пользователя и системные заголовки протокола (в байтах), отправленные хосту с самого начала.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingUserBytesCount">
+      <summary>
+        <para>Возвращает количество байтов полезной нагрузки (пользователя), отправленных с самого начала (из вызова Networking.NetworkTransport.Init).</para>
+      </summary>
+      <returns>
+        <para>Общая полезная нагрузка (в байтах), отправленная с самого начала для всех хостов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingUserBytesCountForConnection(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает, сколько байт полезной нагрузки (пользователя) было отправлено с самого начала для соединения (из вызова Networking.NetworkTransport.Connect для активного соединения или из получения запроса на соединение для пассивного соединения).</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общая полезная нагрузка (в байтах), отправленная с начала для подключения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetOutgoingUserBytesCountForHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает количество байтов полезной нагрузки (пользователя), отправленных хосту с самого начала (из вызова Networking.NetworkTransport.AddHost).</para>
+      </summary>
+      <param name="hostId">ID хоста.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Общая полезная нагрузка (в байтах), отправленная хосту с самого начала.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetPacketReceivedRate(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает текущую скорость приема в байтах в секунду.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetPacketSentRate(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает текущую скорость отправки в байтах в секунду.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetRemoteDelayTimeMS(System.Int32,System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Возвращает задержку для полученной метки времени.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="remoteTime">Временная метка доставлена ​​от партнера.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.GetRemotePacketReceivedRate(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Устарело. Вместо этого используйте Networking.NetworkTransport.GetNetworkLostPacketNum().</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Init">
+      <summary>
+        <para>Инициализирует NetworkTransport. Должен вызываться перед выполнением любых других операций над NetworkTransport.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.IsBroadcastDiscoveryRunning">
+      <summary>
+        <para>Проверьте, запущен ли широковещательный отправитель обнаружения.</para>
+      </summary>
+      <returns>
+        <para>Правда, если он запущен. False, если он не запущен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.IsEncryptionActive">
+      <summary>
+        <para>Возвращает информацию о том, успешно ли сетевой транспортный уровень загрузил подключаемый модуль шифрования и использует ли его.</para>
+      </summary>
+      <returns>
+        <para>True, если подключаемый модуль шифрования был загружен и используется, в противном случае — false.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEngine.Networking.NetworkTransport.IsStarted">
+      <summary>
+        <para>Устарело.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.LoadEncryptionLibrary(System.String)">
+      <summary>
+        <para>Указывает транспортному уровню загрузить предоставленный подключаемый модуль шифрования.</para>
+      </summary>
+      <param name="libraryName">Путь к собственному подключаемому модулю шифрования для загрузки относительно исполняемого файла.</param>
+      <returns>
+        <para>Значение true, если предоставленный собственный подключаемый модуль шифрования был успешно загружен и используется транспортным уровнем. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.NotifyWhenConnectionReadyForSend(System.Int32,System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Этот метод позволяет вам указать, что обратные вызовы уведомлений должны вызываться, когда сеть Unity может отправлять больше сообщений, чем определено вnotificationLevel.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="notificationLevel">Определяет, сколько свободных слотов во входящей очереди должно быть доступно до запуска обратного вызова [GlobalConfig.ConnectionReadyForSend].</param>
+      <param name="error">Код ошибки.</param>
+      <returns>
+        <para>Результат, если ложная ошибка покажет код ошибки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.QueueMessageForSending(System.Int32,System.Int32,System.Int32,System.Byte[],System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Функция находится в очереди, но не отправляет сообщения.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <param name="channelId">Идентификатор канала для отправки.</param>
+      <param name="buffer">Буфер, содержащий данные для отправки.</param>
+      <param name="size">Размер буфера.</param>
+      <returns>
+        <para>Истина в случае успеха.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Receive(System.Int32&amp;,System.Int32&amp;,System.Int32&amp;,System.Byte[],System.Int32,System.Int32&amp;,System.Byte&amp;)">
+      <summary>
+        <para>Вызывается для опроса базовой системы на наличие событий.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с событием.</param>
+      <param name="connectionId">Идентификатор подключения, получившего событие.</param>
+      <param name="channelId">Идентификатор канала, связанный с событием.</param>
+      <param name="buffer">Буфер, в котором будут храниться полученные данные.</param>
+      <param name="bufferSize">Размер предоставленного буфера.</param>
+      <param name="receivedSize">Фактический размер получаемых данных.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Тип возвращаемого события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ReceiveFromHost(System.Int32,System.Int32&amp;,System.Int32&amp;,System.Byte[],System.Int32,System.Int32&amp;,System.Byte&amp;)">
+      <summary>
+        <para>Аналогичен Networking.NetworkTransport.Receive, но будет опрашиваться только для предоставленного hostId.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста для проверки событий.</param>
+      <param name="connectionId">Идентификатор соединения, получившего событие.</param>
+      <param name="channelId">Идентификатор канала, связанный с событием.</param>
+      <param name="buffer">Буфер, в котором будут храниться полученные данные.</param>
+      <param name="bufferSize">Размер предоставленного буфера.</param>
+      <param name="receivedSize">Фактический размер получаемых данных.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Тип возвращаемого события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.ReceiveRelayEventFromHost(System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Опрашивает узел на наличие следующих событий: Networking.NetworkEventType.ConnectEvent и Networking.NetworkEventType.DisconnectEvent.
+Может вызываться только владельцем группы ретрансляции.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста для проверки событий.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Тип возвращаемого события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.RemoveHost(System.Int32)">
+      <summary>
+        <para>Закрывает открытый сокет и закрывает все соединения, принадлежащие этому сокету.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста для удаления.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Send(System.Int32,System.Int32,System.Int32,System.Byte[],System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Отправить данные партнеру.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="channelId">Идентификатор канала для отправки.</param>
+      <param name="buffer">Буфер, содержащий данные для отправки.</param>
+      <param name="size">Размер буфера.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.SendMulticast(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Добавьте соединение для многоадресной отправки.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.SendQueuedMessages(System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Отправляет сообщения, ранее поставленные в очередь функцией NetworkTransport.QueueMessageForSending.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="connectionId">Идентификатор соединения.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Истинно, если hostId и connectioId допустимы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.SetBroadcastCredentials(System.Int32,System.Int32,System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Задает учетные данные, необходимые для получения широковещательных сообщений. Если какие-либо учетные данные полученного широковещательного сообщения не совпадают, широковещательное сообщение обнаружения отбрасывается.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этой трансляцией.</param>
+      <param name="key">Ключевая часть учетных данных, связанных с этой трансляцией.</param>
+      <param name="version">Часть версии учетных данных, связанных с этой трансляцией.</param>
+      <param name="subversion">Подрывная часть учетных данных, связанных с этой трансляцией.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.SetMulticastLock(System.Boolean)">
+      <summary>
+        <para>Включить или отключить многоадресную блокировку.</para>
+      </summary>
+      <param name="enabled">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.SetPacketStat(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Используется для информирования профилировщика о статистике сетевых пакетов.</para>
+      </summary>
+      <param name="packetStatId">Идентификатор сообщения, о котором сообщается.</param>
+      <param name="numMsgs">Количество сообщений, о которых сообщается.</param>
+      <param name="numBytes">Количество байтов, используемых сообщениями, о которых сообщается.</param>
+      <param name="direction">Является ли пакет исходящим (-1) или входящим (0).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.Shutdown">
+      <summary>
+        <para>Выключите NetworkTransport.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.StartBroadcastDiscovery(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Начинает рассылку широковещательного сообщения во все локальные подсети.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, о котором следует сообщать через широковещательную рассылку (приемники широковещательной рассылки будут подключаться к этому хосту).</param>
+      <param name="broadcastPort">Порт, используемый для широковещательного сообщения.</param>
+      <param name="key">Ключевая часть учетных данных, связанных с этой трансляцией.</param>
+      <param name="version">Часть версии учетных данных, связанных с этой трансляцией.</param>
+      <param name="subversion">Подрывная часть учетных данных, связанных с этой трансляцией.</param>
+      <param name="buffer">Бесплатное сообщение. Это сообщение будет доставлено получателю вместе с широковещательным событием.</param>
+      <param name="size">Размер сообщения.</param>
+      <param name="timeout">Указывает, как часто должно отправляться широковещательное сообщение в миллисекундах.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+      <returns>
+        <para>Возвращает true, если был отправлен запрос на широковещательную рассылку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.StartSendMulticast(System.Int32,System.Int32,System.Byte[],System.Int32,System.Byte&amp;)">
+      <summary>
+        <para>Начать многоадресную рассылку.</para>
+      </summary>
+      <param name="hostId">Идентификатор хоста, связанный с этим подключением.</param>
+      <param name="channelId">Идентификатор канала.</param>
+      <param name="buffer">Буфер, содержащий данные для отправки.</param>
+      <param name="size">Размер буфера.</param>
+      <param name="error">Ошибка (можно привести к Networking.NetworkError для получения дополнительной информации).</param>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.StopBroadcastDiscovery">
+      <summary>
+        <para>Прекратить отправку сообщения об обнаружении широковещательной рассылки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.NetworkTransport.UnloadEncryptionLibrary">
+      <summary>
+        <para>Выгружает текущий загруженный подключаемый модуль шифрования, если он загружен.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.QosType">
+      <summary>
+        <para>Перечень всех поддерживаемых режимов канала качества обслуживания.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.AllCostDelivery">
+      <summary>
+        <para>Надежное сообщение, которое будет повторно отправляться с высокой частотой, пока оно не будет подтверждено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.Reliable">
+      <summary>
+        <para>Гарантируется, что каждое сообщение будет доставлено, но не гарантируется, что оно будет в порядке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.ReliableFragmented">
+      <summary>
+        <para>Каждое сообщение гарантированно будет доставлено, а также допускается фрагментация сообщений до 32 фрагментов в сообщении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.ReliableFragmentedSequenced">
+      <summary>
+        <para>Каждое сообщение гарантированно доставляется по порядку, что также позволяет использовать фрагментированные сообщения, содержащие до 32 фрагментов в сообщении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.ReliableSequenced">
+      <summary>
+        <para>Каждое сообщение гарантированно будет доставлено и упорядочено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.ReliableStateUpdate">
+      <summary>
+        <para>Надежное сообщение. Примечание. Отправляется только последнее сообщение в буфере отправки. Будет доставлено только самое последнее сообщение из буфера приема.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.StateUpdate">
+      <summary>
+        <para>Ненадежное сообщение. Отправляется только последнее сообщение в буфере отправки. Будет доставлено только самое последнее сообщение из буфера приема.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.Unreliable">
+      <summary>
+        <para>Нет гарантии доставки или заказа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.UnreliableFragmented">
+      <summary>
+        <para>Нет гарантии доставки или заказа, но разрешены фрагментированные сообщения до 32 фрагментов в сообщении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.UnreliableFragmentedSequenced">
+      <summary>
+        <para>Существует гарантия заказа, нет гарантии доставки, но разрешены фрагментированные сообщения до 32 фрагментов в сообщении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.QosType.UnreliableSequenced">
+      <summary>
+        <para>Гарантии доставки нет, и все неупорядоченные сообщения будут удалены. Пример: IP-телефония.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.ReactorModel">
+      <summary>
+        <para>Определите, как unet будет обрабатывать операции сетевого ввода-вывода.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ReactorModel.FixRateReactor">
+      <summary>
+        <para>Сетевой поток будет спать до истечения времени ожидания потока, после чего он попытается получить количество сообщений, не превышающее maxpoolsize, а затем попытается выполнить операцию отправки для соединения, которое готово к отправке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.ReactorModel.SelectReactor">
+      <summary>
+        <para>Сетевой поток будет спать до истечения времени ожидания потока или до получения события в сокете. Пробуждённый поток попытается прочитать из сокета пакеты до maxpoolsize и попытается обновить соединения, готовые к отправке (с фиксацией скорости ожидания ожидания).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.AppID">
+      <summary>
+        <para>AppID идентифицирует приложение на серверах Unity Cloud или UNET.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.AppID.Invalid">
+      <summary>
+        <para>Недопустимый идентификатор приложения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.HostPriority">
+      <summary>
+        <para>Enum, представляющий приоритет клиента в совпадении, начиная с 0 и увеличиваясь.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.HostPriority.Invalid">
+      <summary>
+        <para>Недопустимый случай для HostPriority. Недопустимый приоритет хоста не является допустимым хостом.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.NetworkAccessLevel">
+      <summary>
+        <para>Описывает уровни доступа, предоставленные этому клиенту.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkAccessLevel.Admin">
+      <summary>
+        <para>Уровень доступа администратора, обычно описывающий разрешение на выполнение действий по изменению игры в отношении любого лица в конкретном матче.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkAccessLevel.Invalid">
+      <summary>
+        <para>Недопустимый уровень доступа, означающий, что уровень доступа не был предоставлен/не указан.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkAccessLevel.Owner">
+      <summary>
+        <para>Уровень доступа Владелец, как правило, предоставляющий доступ для операционного ключа к одноранговому хост-серверу, выполняющему свою работу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkAccessLevel.User">
+      <summary>
+        <para>Уровень доступа пользователя. Это означает, что вы можете выполнять операции, которые влияют только на вас самих, например отключить себя от матча.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.NetworkAccessToken">
+      <summary>
+        <para>Маркер доступа, используемый для аутентификации сеанса клиента с целью разрешения или запрета операций сопоставления, запрошенных этим клиентом.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkAccessToken.array">
+      <summary>
+        <para>Двоичное поле для фактического токена.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.Types.NetworkAccessToken.GetByteString">
+      <summary>
+        <para>Метод доступа для получения закодированной строки из данных m_array.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.Types.NetworkAccessToken.IsValid">
+      <summary>
+        <para>Проверяет, является ли токен допустимым набором данных по отношению к значениям по умолчанию (возвращает true, если значения не являются значениями по умолчанию, не проверяет, является ли токен допустимым текущим токеном по отношению к структуре аутентификации сервера).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.NetworkID">
+      <summary>
+        <para>Идентификатор сети, используемый для поиска партнеров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NetworkID.Invalid">
+      <summary>
+        <para>Неверный идентификатор сети.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.NodeID">
+      <summary>
+        <para>NodeID — это идентификатор, используемый в сопоставлениях реле для отслеживания узлов в сети.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.NodeID.Invalid">
+      <summary>
+        <para>Недопустимый регистр NodeID.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Types.SourceID">
+      <summary>
+        <para>Идентифицирует конкретный экземпляр игры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.Types.SourceID.Invalid">
+      <summary>
+        <para>Неверный идентификатор источника.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.Utility">
+      <summary>
+        <para>Сетевая утилита.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.Utility.useRandomSourceID">
+      <summary>
+        <para>Это свойство устарело, и его не нужно задавать или ссылаться на него.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.Utility.GetAccessTokenForNetwork(UnityEngine.Networking.Types.NetworkID)">
+      <summary>
+        <para>Вспомогательная функция для получения маркера доступа этого клиента для конкретной сети, если он был установлен.</para>
+      </summary>
+      <param name="netId">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.Utility.GetAppID">
+      <summary>
+        <para>Вспомогательная функция для получения идентификатора программы для взаимодействия с облаком UNET.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.Utility.GetSourceID">
+      <summary>
+        <para>Вспомогательная функция для получения SourceID клиента для уникальной идентификации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.Utility.SetAccessTokenForNetwork(UnityEngine.Networking.Types.NetworkID,UnityEngine.Networking.Types.NetworkAccessToken)">
+      <summary>
+        <para>Вспомогательная функция, которая принимает токен доступа к сети после его получения с сервера.</para>
+      </summary>
+      <param name="netId">
+      </param>
+      <param name="accessToken">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.Utility.SetAppID(UnityEngine.Networking.Types.AppID)">
+      <summary>
+        <para>Устарело; Установка AppID больше не требуется. Пожалуйста, авторизуйтесь через редактор и настройте там проект.</para>
+      </summary>
+      <param name="newAppID">
+      </param>
+    </member>
+  </members>
+</doc>

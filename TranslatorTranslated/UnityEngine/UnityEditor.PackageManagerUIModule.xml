@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.PackageManagerUIModule</name>
+    </assembly>
+    <member name="?:UnityEditor.PackageManager.UI.IPackageManagerExtension">
+      <summary>
+        <para>Интерфейс для расширения пользовательского интерфейса диспетчера пакетов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.IPackageManagerExtension.CreateExtensionUI">
+      <summary>
+        <para>Создает визуальный элемент пользовательского интерфейса расширения.</para>
+      </summary>
+      <returns>
+        <para>Визуальный элемент, представляющий пользовательский интерфейс, или null, если его нет.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.IPackageManagerExtension.OnPackageAddedOrUpdated(UnityEditor.PackageManager.PackageInfo)">
+      <summary>
+        <para>Вызывается пользовательским интерфейсом диспетчера пакетов при добавлении или обновлении пакета.</para>
+      </summary>
+      <param name="packageInfo">Информация о пакете.</param>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.IPackageManagerExtension.OnPackageRemoved(UnityEditor.PackageManager.PackageInfo)">
+      <summary>
+        <para>Вызывается пользовательским интерфейсом диспетчера пакетов при удалении пакета.</para>
+      </summary>
+      <param name="packageInfo">Информация о пакете.</param>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.IPackageManagerExtension.OnPackageSelectionChange(UnityEditor.PackageManager.PackageInfo)">
+      <summary>
+        <para>Вызывается пользовательским интерфейсом диспетчера пакетов при изменении выбора пакета.</para>
+      </summary>
+      <param name="packageInfo">Информация о вновь выбранном пакете (может быть нулевой).</param>
+    </member>
+    <member name="T:UnityEditor.PackageManager.UI.PackageManagerExtensions">
+      <summary>
+        <para>Расширения пользовательского интерфейса диспетчера пакетов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.PackageManagerExtensions.RegisterExtension(UnityEditor.PackageManager.UI.IPackageManagerExtension)">
+      <summary>
+        <para>Регистрирует новое расширение пользовательского интерфейса диспетчера пакетов.</para>
+      </summary>
+      <param name="extension">Расширение пользовательского интерфейса диспетчера пакетов.</param>
+    </member>
+    <member name="T:UnityEditor.PackageManager.UI.Sample">
+      <summary>
+        <para>Структура образца пакета.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.description">
+      <summary>
+        <para>Описание образца пакета.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.displayName">
+      <summary>
+        <para>Отображаемое имя примера пакета.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.importPath">
+      <summary>
+        <para>Полный путь, куда будет импортирован образец, в папке активов проекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.interactiveImport">
+      <summary>
+        <para>Указывает, показывать ли окно импорта при импорте образца, который является пакетом ресурсов (файл .unitypackage).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.isImported">
+      <summary>
+        <para>Указывает, был ли уже импортирован семпл.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PackageManager.UI.Sample.resolvedPath">
+      <summary>
+        <para>Полный путь к местоположению образца на диске внутри пакета, содержащего образец.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.Sample.FindByPackage(System.String,System.String)">
+      <summary>
+        <para>Находит список образцов в пакете на основе определенной версии.</para>
+      </summary>
+      <param name="packageName">Имя пакета.</param>
+      <param name="packageVersion">Версия пакета.</param>
+      <returns>
+        <para>Возвращает список найденных образцов. Возвращает пустой список, если образцы не найдены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.PackageManager.UI.Sample.Import(UnityEditor.PackageManager.UI.Sample/ImportOptions)">
+      <summary>
+        <para>Импортирует образец пакета в папку «Активы».</para>
+      </summary>
+      <param name="options">Пользовательские параметры импорта. Дополнительные сведения см. в разделе ImportOptions. Обратите внимание, что ImportOptions являются атрибутами флага, поэтому вы можете установить несколько параметров импорта с помощью оператора `|`.</param>
+      <returns>
+        <para>Возвращает true, если импорт прошел успешно. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.PackageManager.UI.Sample.ImportOptions">
+      <summary>
+        <para>Примеры параметров импорта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.PackageManager.UI.Sample.ImportOptions.HideImportWindow">
+      <summary>
+        <para>Скрыть окно импорта при импорте образца, который является пакетом ресурсов (файл .unitypackage).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.PackageManager.UI.Sample.ImportOptions.None">
+      <summary>
+        <para>Нет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.PackageManager.UI.Sample.ImportOptions.OverridePreviousImports">
+      <summary>
+        <para>Переопределить предыдущий импорт образца.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,3648 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.UIElementsModule</name>
+    </assembly>
+    <member name="T:UnityEditor.UIElements.BaseCompositeField`3">
+      <summary>
+        <para>
+Это базовый класс для составных полей.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.fieldGroupUssClassName">
+      <summary>
+        <para>
+Имя класса USS групп полей в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.fieldUssClassName">
+      <summary>
+        <para>
+Имя класса USS полей в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.firstFieldVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS первого поля в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.multilineVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда поля отображаются на нескольких строках.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.spacerUssClassName">
+      <summary>
+        <para>
+Название класса USS прокладок в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.twoLinesVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа при отображении полей в две строки.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BaseCompositeField_3.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.BaseFieldMouseDragger">
+      <summary>
+        <para>
+Предоставляет базовый класс для перетаскивателей полевой мыши.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BaseFieldMouseDragger.SetDragZone(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>
+Задает зону перетаскивания для управляемого поля.
+</para>
+      </summary>
+      <param name="dragElement">Цель операции перетаскивания.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.BaseFieldMouseDragger.SetDragZone(UnityEngine.UIElements.VisualElement,UnityEngine.Rect)">
+      <summary>
+        <para>
+Задает зону перетаскивания для управляемого поля.
+</para>
+      </summary>
+      <param name="dragElement">Цель операции перетаскивания.</param>
+      <param name="hotZone">Прямоугольник, содержащий зону перетаскивания.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BaseMaskField`1">
+      <summary>
+        <para>
+Базовый класс, реализующий общую функциональность для редактирования значений битовой маски.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.BaseMaskField_1.choices">
+      <summary>
+        <para>
+Список вариантов для отображения во всплывающем меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.BaseMaskField_1.choicesMasks">
+      <summary>
+        <para>
+Список списков масок для каждого конкретного выбора для отображения во всплывающем меню.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.BasePopupField`2">
+      <summary>
+        <para>
+Это базовый класс для всех элементов поля всплывающего окна.
+TValue и TChoice могут быть разными, см. MaskField,
+или то же самое, см. PopupField
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BasePopupField_2.arrowUssClassName">
+      <summary>
+        <para>
+Имя класса USS стрелочных индикаторов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.BasePopupField_2.choices">
+      <summary>
+        <para>
+Список вариантов для отображения во всплывающем меню.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BasePopupField_2.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BasePopupField_2.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.BasePopupField_2.text">
+      <summary>
+        <para>
+Это текст, отображаемый пользователю для текущего выбора всплывающего окна.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.BasePopupField_2.textElement">
+      <summary>
+        <para>
+Это отображаемый текст.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BasePopupField_2.textUssClassName">
+      <summary>
+        <para>
+Имя класса USS текстовых элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BasePopupField_2.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BasePopupField_2.SetValueWithoutNotify(TValueType)">
+      <summary>
+        <para>
+Разрешить изменение значения без запуска какого-либо события изменения.
+</para>
+      </summary>
+      <param name="newValue">Новое значение.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BindingExtensions">
+      <summary>
+        <para>
+Предоставляет методы расширения VisualElement, реализующие привязку данных между полями INotivyValueChanged и объектами SerializedObject.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BindingExtensions.prefabOverrideUssClassName">
+      <summary>
+        <para>
+Класс USS добавлен к элементу в режиме переопределения сборных элементов.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.Bind(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedObject)">
+      <summary>
+        <para>
+Привязывает SerializedObject к полям в иерархии элементов.
+</para>
+      </summary>
+      <param name="element">Корневой элемент VisualElement, содержащий поля IBindable.</param>
+      <param name="obj">Объект данных.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.BindProperty(UnityEngine.UIElements.IBindable,UnityEditor.SerializedObject)">
+      <summary>
+        <para>
+Привязывает свойство к полю и синхронизирует их значения. Этот метод находит свойство, используя путь привязки поля.
+</para>
+      </summary>
+      <param name="field">Поле VisualElement редактирования свойства.</param>
+      <param name="obj">Корневой SerializedObject, содержащий привязываемое свойство.</param>
+      <returns>
+        <para>Сериализованный объект, которому принадлежит связанное свойство.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.BindProperty(UnityEngine.UIElements.IBindable,UnityEditor.SerializedProperty)">
+      <summary>
+        <para>
+Привязывает свойство к полю и синхронизирует их значения.
+</para>
+      </summary>
+      <param name="field">Поле VisualElement редактирования свойства.</param>
+      <param name="property">SerializedProperty для привязки.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.TrackPropertyValue(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedProperty,System.Action`1&lt;UnityEditor.SerializedProperty&gt;)">
+      <summary>
+        <para>
+Проверяет значения свойств на наличие изменений через равные промежутки времени. Выполняет обратный вызов при изменении значения свойства.
+Если обратный вызов не указан, целевому элементу отправляется событие SerializedPropertyChangeEvent.
+</para>
+      </summary>
+      <param name="element">VisualElement, отслеживающий свойство.</param>
+      <param name="property">SerializedProperty для отслеживания.</param>
+      <param name="callback">Вызывается при изменении отслеживаемого значения SerializedProperty.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.TrackSerializedObjectValue(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedObject,System.Action`1&lt;UnityEditor.SerializedObject&gt;)">
+      <summary>
+        <para>
+Проверяет объект на наличие изменений через равные промежутки времени. Выполняет обратный вызов при изменении значения объекта.
+Если обратный вызов не указан, целевому элементу отправляется событие SerializedObjectChangeEvent.
+</para>
+      </summary>
+      <param name="element">VisualElement, отслеживающий объект.</param>
+      <param name="property">SerializedObject для отслеживания.</param>
+      <param name="callback">Вызывается при изменении одного из значений отслеживаемого объекта SerializedObject.</param>
+      <param name="obj">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.Unbind(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>
+Отключает все свойства, привязанные к полям в иерархии элемента.
+</para>
+      </summary>
+      <param name="element">Корневой элемент VisualElement, содержащий поля IBindable.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsField">
+      <summary>
+        <para>
+Поле редактора границ.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsField.centerFieldUssClassName">
+      <summary>
+        <para>
+Имя класса USS центральных полей в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsField.extentsFieldUssClassName">
+      <summary>
+        <para>
+Имя класса USS полей экстентов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр BoundsField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр BoundsField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр BoundsField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для BoundsField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства BoundsField, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsIntField">
+      <summary>
+        <para>
+Поле редактора BoundsInt.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsIntField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsIntField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsIntField.positionUssClassName">
+      <summary>
+        <para>
+Имя класса USS полей позиции в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsIntField.sizeUssClassName">
+      <summary>
+        <para>
+Имя класса USS полей размера в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.BoundsIntField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsIntField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр BoundsIntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsIntField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр BoundsIntField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsIntField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр BoundsIntField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.BoundsIntField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для BoundsIntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.BoundsIntField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits для BoundsIntField.
+</para>
+      </summary>
+      <param name="ve">&lt;see cref="VisualElement" /&gt; для инициализации.</param>
+      <param name="bag">Сумка атрибутов.</param>
+      <param name="cc">CreationContext, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ColorField">
+      <summary>
+        <para>
+Делает поле для выбора цвета.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ColorField.hdr">
+      <summary>
+        <para>
+Если true, цвет обрабатывается как значение HDR. При значении false цвет обрабатывается как стандартное значение LDR.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ColorField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ColorField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ColorField.showAlpha">
+      <summary>
+        <para>
+Если true, пользователь может установить значение альфа-канала для цвета. Если false, скрывает альфа-компонент.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ColorField.showEyeDropper">
+      <summary>
+        <para>
+Если это правда, палитра цветов покажет элемент управления пипеткой. Если false, палитра цветов не будет отображать пипетку.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ColorField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ColorField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр ColorField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ColorField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр ColorField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ColorField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ColorField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ColorField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для ColorField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ColorField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства ColorField, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.CurveField">
+      <summary>
+        <para>
+Создает поле для редактирования AnimationCurve.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.borderUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов границы в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.contentUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов содержимого в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.CurveField.ranges">
+      <summary>
+        <para>
+Необязательный прямоугольник, внутри которого ограничивается кривая. Если ширина или высота диапазона &lt; 0, то CurveField вычисляет автоматический диапазон, охватывающий всю кривую.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.CurveField.renderMode">
+      <summary>
+        <para>
+RenderMode CurveField. По умолчанию используется RenderMode.Default.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.CurveField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр CurveField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.CurveField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр CurveField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.CurveField.RenderMode">
+      <summary>
+        <para>
+Режим рендеринга CurveFields
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.RenderMode.Default">
+      <summary>
+        <para>
+Визуализирует кривую в режиме по умолчанию. На данный момент Текстура.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.RenderMode.Mesh">
+      <summary>
+        <para>
+Визуализирует кривую со сглаженной сеткой.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.CurveField.RenderMode.Texture">
+      <summary>
+        <para>
+Визуализирует кривую с помощью сгенерированной текстуры, как в системе графического интерфейса Immediate Mode (IMGUI) Unity.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.CurveField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр CurveField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.CurveField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для CurveField.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.DeltaSpeed">
+      <summary>
+        <para>
+Скорость изменения значения для данной дельты устройства ввода.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DeltaSpeed.Fast">
+      <summary>
+        <para>
+Значение изменяется в четыре раза быстрее обычной скорости.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DeltaSpeed.Normal">
+      <summary>
+        <para>
+Значение изменяется с нормальной скоростью.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DeltaSpeed.Slow">
+      <summary>
+        <para>
+Значение изменяется с четвертью своей нормальной скорости.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.DoubleField">
+      <summary>
+        <para>
+Создает текстовое поле для ввода двойных значений.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DoubleField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DoubleField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.DoubleField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,System.Double)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.StringToValue(System.String)">
+      <summary>
+        <para>
+Преобразует строку в двойную.
+</para>
+      </summary>
+      <param name="str">Строка для преобразования.</param>
+      <returns>
+        <para>Двойник, проанализированный из строки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.DoubleField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр DoubleField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.DoubleField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для DoubleField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.DoubleField.ValueToString(System.Double)">
+      <summary>
+        <para>
+Преобразует данное значение типа double в строку.
+</para>
+      </summary>
+      <param name="v">Двойное число, которое нужно преобразовать в строку.</param>
+      <returns>
+        <para>Двойник как строка.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumField">
+      <summary>
+        <para>
+Создает раскрывающийся список для переключения между значениями перечисления.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumField.arrowUssClassName">
+      <summary>
+        <para>
+Имя класса USS стрелочных индикаторов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.EnumField.text">
+      <summary>
+        <para>
+Возвращает текстовое значение текущего выбранного перечисления.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumField.textUssClassName">
+      <summary>
+        <para>
+Имя класса USS текстовых элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.#ctor">
+      <summary>
+        <para>
+Создайте EnumField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.#ctor(System.Enum)">
+      <summary>
+        <para>
+Создайте EnumField.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Также используется для определения типа Enum.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.#ctor(System.String,System.Enum)">
+      <summary>
+        <para>
+Создайте EnumField.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Также используется для определения типа Enum.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.Init(System.Enum)">
+      <summary>
+        <para>
+Инициализирует EnumField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Типизированное значение перечисления.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.Init(System.Enum,System.Boolean)">
+      <summary>
+        <para>
+Инициализирует EnumField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Типизированное значение перечисления.</param>
+      <param name="includeObsoleteValues">Установите значение true, чтобы отображать устаревшие значения в качестве вариантов выбора.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр EnumField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для EnumField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства EnumField, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumFlagsField">
+      <summary>
+        <para>
+Создает раскрывающийся список для переключения между значениями флагов перечисления, помеченными атрибутом Flags.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumFlagsField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS для входных элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumFlagsField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS для меток этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.EnumFlagsField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS для элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor(System.Enum)">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Это также определяет тип Enum.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor(System.Enum,System.Boolean)">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Это также определяет тип Enum.</param>
+      <param name="includeObsoleteValues">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor(System.String,System.Enum)">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Это также определяет тип Enum.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor(System.String,System.Enum,System.Boolean)">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение. Это также определяет тип Enum.</param>
+      <param name="label">
+      </param>
+      <param name="includeObsoleteValues">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.#ctor(System.String)">
+      <summary>
+        <para>
+Создает EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.EnumFlagsField.Init(System.Enum,System.Boolean)">
+      <summary>
+        <para>
+Инициализирует EnumFlagsField со значением по умолчанию и инициализирует его базовый тип.
+</para>
+      </summary>
+      <param name="defaultValue">Типизированное значение перечисления.</param>
+      <param name="includeObsoleteValues">Установите значение true, чтобы отображать устаревшие значения в качестве вариантов выбора.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumFlagsField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр EnumFlagsField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.EnumFlagsField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для EnumFlagsField.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.FieldMouseDragger`1">
+      <summary>
+        <para>
+Обеспечивает перетаскивание визуального элемента для изменения поля значения.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.FieldMouseDragger_1.dragging">
+      <summary>
+        <para>
+Тащит.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.FieldMouseDragger_1.startValue">
+      <summary>
+        <para>
+Начальное значение перед перетаскиванием.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.FieldMouseDragger_1.#ctor(UnityEditor.UIElements.IValueField`1&lt;T&gt;)">
+      <summary>
+        <para>
+Конструктор FieldMouseDragger.
+</para>
+      </summary>
+      <param name="drivenField">Поле.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.FloatField">
+      <summary>
+        <para>
+Создает текстовое поле для ввода числа с плавающей запятой.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.FloatField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.FloatField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.FloatField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,System.Single)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.StringToValue(System.String)">
+      <summary>
+        <para>
+Преобразует строку в число с плавающей запятой.
+</para>
+      </summary>
+      <param name="str">Строка для преобразования.</param>
+      <returns>
+        <para>Число с плавающей запятой, полученное из строки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.FloatField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр FloatField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.FloatField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для FloatField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.FloatField.ValueToString(System.Single)">
+      <summary>
+        <para>
+Преобразует заданное число с плавающей запятой в строку.
+</para>
+      </summary>
+      <param name="v">Число с плавающей запятой, которое нужно преобразовать в строку.</param>
+      <returns>
+        <para>Поплавок как строка.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.GradientField">
+      <summary>
+        <para>
+Создает поле для редактирования Градиента.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.GradientField.borderUssClassName">
+      <summary>
+        <para>
+Имя класса USS для элементов границы в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.GradientField.colorSpace">
+      <summary>
+        <para>
+Цветовое пространство, используемое в настоящее время полем.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.GradientField.contentUssClassName">
+      <summary>
+        <para>
+Имя класса USS для содержимого визуального элемента градиента в элементе GradientField.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.GradientField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS для элементов ввода в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.GradientField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS для надписей в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.GradientField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS для элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.GradientField.value">
+      <summary>
+        <para>
+Градиент, который в настоящее время выставляется полем.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.GradientField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.GradientField.#ctor(System.String)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.GradientField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр GradientField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.GradientField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для GradientField.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field">
+      <summary>
+        <para>
+Создает поле для редактирования Hash128.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Hash128Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor(System.Int32)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Hash128Field.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов для поля.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Hash128Field.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+      <param name="maxLength">Максимальное количество символов для поля.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field.UxmlFactory">
+      <summary>
+        <para>
+Создает Hash128Field, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Hash128Field.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.InspectorElement">
+      <summary>
+        <para>
+Создайте инспектор VisualElement из SerializedObject.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.customInspectorUssClassName">
+      <summary>
+        <para>
+Имя класса USS пользовательских элементов инспектора в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.debugInternalVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются во внутреннем режиме отладки.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.debugVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в режиме отладки USS.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.iMGUIContainerUssClassName">
+      <summary>
+        <para>
+Имя класса USS контейнеров IMGUI в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.iMGUICustomVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в пользовательском режиме IMGUI.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.iMGUIDefaultVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в режиме IMGUI по умолчанию.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.iMGUIInspectorVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в режиме инспектора IMGUI.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.noInspectorFoundVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, если инспектор не найден.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.uIECustomVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в пользовательском режиме UIElements.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.uIEDefaultVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в режиме по умолчанию UIElements.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.uIEInspectorVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в режиме инспектора UIElements.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.InspectorElement.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.#ctor">
+      <summary>
+        <para>
+Конструктор InspectorElement.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.#ctor(UnityEngine.Object)">
+      <summary>
+        <para>
+Конструктор InspectorElement.
+</para>
+      </summary>
+      <param name="obj">Создайте SerializedObject из заданного объекта и автоматически привяжите его к нему.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.#ctor(UnityEditor.SerializedObject)">
+      <summary>
+        <para>
+Конструктор InspectorElement.
+</para>
+      </summary>
+      <param name="obj">Создайте SerializedObject из заданного объекта и автоматически привяжите его к нему.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.#ctor(UnityEditor.Editor)">
+      <summary>
+        <para>
+Конструктор InspectorElement.
+</para>
+      </summary>
+      <param name="editor">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.FillDefaultInspector(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedObject,UnityEditor.Editor)">
+      <summary>
+        <para>
+Добавляет поля свойств инспектора по умолчанию в контейнер VisualElement.
+</para>
+      </summary>
+      <param name="container">Родительский элемент VisualElement</param>
+      <param name="serializedObject">SerializedObject для проверки</param>
+      <param name="editor">Текущий редактор </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.InspectorElement.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр InspectorElement, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.InspectorElement.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для InspectorElement.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.UxmlTraits.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.IntegerField">
+      <summary>
+        <para>
+Создает текстовое поле для ввода целого числа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.IntegerField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.IntegerField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.IntegerField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,System.Int32)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.StringToValue(System.String)">
+      <summary>
+        <para>
+Преобразует строку в целое число.
+</para>
+      </summary>
+      <param name="str">Строка для преобразования.</param>
+      <returns>
+        <para>Целое число, извлеченное из строки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.IntegerField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр IntegerField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.IntegerField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для IntegerField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.IntegerField.ValueToString(System.Int32)">
+      <summary>
+        <para>
+Преобразует заданное целое число в строку.
+</para>
+      </summary>
+      <param name="v">Целое число, которое нужно преобразовать в строку.</param>
+      <returns>
+        <para>Целое число в виде строки.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEditor.UIElements.IToolbarMenuElement">
+      <summary>
+        <para>
+Интерфейс для элементов панели инструментов, которые отображают раскрывающиеся меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.IToolbarMenuElement.menu">
+      <summary>
+        <para>
+Выпадающее меню для элемента.
+</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.UIElements.IValueField_1">
+      <summary>
+        <para>
+Базовый интерфейс для полей текстовых значений UIElement.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.IValueField_1.value">
+      <summary>
+        <para>
+Значение поля.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.IValueField_1.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,T)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.IValueField_1.StartDragging">
+      <summary>
+        <para>
+Укажите, когда начинается перетаскивание мышью.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.IValueField_1.StopDragging">
+      <summary>
+        <para>
+Укажите, когда перетаскивание мышью заканчивается.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerField">
+      <summary>
+        <para>
+Редактор LayerField.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.LayerField.formatListItemCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.LayerField.formatSelectedValueCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр LayerField.
+</para>
+      </summary>
+      <param name="label">Текст, используемый в качестве метки для поля.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр LayerField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр LayerField.
+</para>
+      </summary>
+      <param name="defaultValue">Начальное значение слоя, которое должно использоваться в этом поле.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр LayerField.
+</para>
+      </summary>
+      <param name="label">Текст, используемый в качестве метки для поля.</param>
+      <param name="defaultValue">Начальное значение слоя, которое должно использоваться в этом поле.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр LayerField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для LayerField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализировать черты.
+</para>
+      </summary>
+      <param name="ve">VisualElement, который будет создан и заполнен.</param>
+      <param name="bag">Набор атрибутов, откуда берутся данные.</param>
+      <param name="cc">Контекст создания, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerMaskField">
+      <summary>
+        <para>
+Сделайте поле для слоя в виде маски.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.LayerMaskField.formatListItemCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.LayerMaskField.formatSelectedValueCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerMaskField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerMaskField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LayerMaskField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerMaskField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Конструктор поля.
+</para>
+      </summary>
+      <param name="defaultMask">Маска для первого выбора.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerMaskField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Конструктор поля.
+</para>
+      </summary>
+      <param name="label">Метка для префикса &lt;see cref="LayerMaskField" /&gt;.</param>
+      <param name="defaultMask">Маска для первого выбора.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerMaskField.#ctor">
+      <summary>
+        <para>
+Конструктор поля.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LayerMaskField.#ctor(System.String)">
+      <summary>
+        <para>
+Конструктор поля.
+</para>
+      </summary>
+      <param name="label">Метка для префикса &lt;see cref="LayerMaskField" /&gt;.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerMaskField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр LayerMaskField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.LayerMaskField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для LayerMaskField.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.LongField">
+      <summary>
+        <para>
+Создает текстовое поле для ввода длинных целых чисел.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LongField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LongField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.LongField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,System.Int64)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.#ctor(System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="maxLength">Максимальное количество символов, которое может содержать поле.</param>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.StringToValue(System.String)">
+      <summary>
+        <para>
+Преобразует строку в длинное целое число.
+</para>
+      </summary>
+      <param name="str">Строка для преобразования.</param>
+      <returns>
+        <para>Длинное целое число, извлеченное из строки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.LongField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр LongField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.LongField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для LongField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.LongField.ValueToString(System.Int64)">
+      <summary>
+        <para>
+Преобразует заданное длинное целое число в строку.
+</para>
+      </summary>
+      <param name="v">Длинное целое число, которое нужно преобразовать в строку.</param>
+      <returns>
+        <para>Длинное целое число в виде строки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.MaskField">
+      <summary>
+        <para>
+Сделайте поле для масок.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.MaskField.formatListItemCallback">
+      <summary>
+        <para>
+Обратный вызов, предоставляющий строковое представление, используемое для заполнения всплывающего меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.MaskField.formatSelectedValueCallback">
+      <summary>
+        <para>
+Обратный вызов, предоставляющий строковое представление, используемое для отображения выбранного значения.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.MaskField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.MaskField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.MaskField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.MaskField.#ctor(System.Collections.Generic.List`1&lt;System.String&gt;,System.Int32,System.Func`2&lt;System.String,System.String&gt;,System.Func`2&lt;System.String,System.String&gt;)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр MaskField.
+</para>
+      </summary>
+      <param name="choices">Список вариантов для заполнения поля.</param>
+      <param name="defaultValue">Начальное значение маски для этого поля.</param>
+      <param name="formatSelectedValueCallback">Обратный вызов для форматирования выбранного значения. Unity вызывает этот метод автоматически, когда в поле выбирается новое значение..</param>
+      <param name="formatListItemCallback">Начальное значение маски, которое должно использовать это поле. Unity вызывает этот метод автоматически при отображении вариантов для поля.</param>
+      <param name="defaultMask">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.MaskField.#ctor(System.String,System.Collections.Generic.List`1&lt;System.String&gt;,System.Int32,System.Func`2&lt;System.String,System.String&gt;,System.Func`2&lt;System.String,System.String&gt;)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр MaskField.
+</para>
+      </summary>
+      <param name="label">Текст, используемый в качестве метки для поля.</param>
+      <param name="choices">Список вариантов для заполнения поля.</param>
+      <param name="defaultValue">Начальное значение маски для этого поля.</param>
+      <param name="formatSelectedValueCallback">Обратный вызов для форматирования выбранного значения. Unity вызывает этот метод автоматически, когда в поле выбирается новое значение..</param>
+      <param name="formatListItemCallback">Начальное значение маски, которое должно использовать это поле. Unity вызывает этот метод автоматически при отображении вариантов для поля.</param>
+      <param name="defaultMask">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.MaskField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр MaskField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.MaskField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр MaskField.
+</para>
+      </summary>
+      <param name="label">Текст, используемый в качестве метки для поля.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.MaskField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр MaskField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.MaskField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для MaskField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.MaskField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits для MaskField.
+</para>
+      </summary>
+      <param name="ve">VisualElement, который будет заполнен.</param>
+      <param name="bag">Сумка, из которой берутся атрибуты.</param>
+      <param name="cc">Контекст создания, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ObjectField">
+      <summary>
+        <para>
+Создает поле для получения любого типа объекта.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ObjectField.allowSceneObjects">
+      <summary>
+        <para>
+Позволяет назначать объекты сцены на поле.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ObjectField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ObjectField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ObjectField.objectType">
+      <summary>
+        <para>
+Тип объектов, которые могут быть назначены.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ObjectField.objectUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов объекта в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ObjectField.selectorUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов селектора в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ObjectField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ObjectField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ObjectField.#ctor(System.String)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ObjectField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ObjectField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ObjectField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для ObjectField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ObjectField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства ObjectField, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.PopupField`1">
+      <summary>
+        <para>
+Общее всплывающее поле выбора.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PopupField_1.formatListItemCallback">
+      <summary>
+        <para>
+Обратный вызов, предоставляющий строковое представление, используемое для заполнения всплывающего меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PopupField_1.formatSelectedValueCallback">
+      <summary>
+        <para>
+Обратный вызов, предоставляющий строковое представление, используемое для отображения выбранного значения.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PopupField_1.index">
+      <summary>
+        <para>
+Текущий выбранный индекс во всплывающем меню.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PopupField_1.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PopupField_1.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PopupField_1.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PopupField_1.value">
+      <summary>
+        <para>
+Текущее выбранное значение во всплывающем меню.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor(System.String)">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor(System.Collections.Generic.List`1&lt;T&gt;,T,System.Func`2&lt;T,System.String&gt;,System.Func`2&lt;T,System.String&gt;)">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+      <param name="choices">
+      </param>
+      <param name="defaultValue">
+      </param>
+      <param name="formatSelectedValueCallback">
+      </param>
+      <param name="formatListItemCallback">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor(System.String,System.Collections.Generic.List`1&lt;T&gt;,T,System.Func`2&lt;T,System.String&gt;,System.Func`2&lt;T,System.String&gt;)">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+      <param name="choices">
+      </param>
+      <param name="defaultValue">
+      </param>
+      <param name="formatSelectedValueCallback">
+      </param>
+      <param name="formatListItemCallback">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor(System.Collections.Generic.List`1&lt;T&gt;,System.Int32,System.Func`2&lt;T,System.String&gt;,System.Func`2&lt;T,System.String&gt;)">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+      <param name="choices">
+      </param>
+      <param name="defaultIndex">
+      </param>
+      <param name="formatSelectedValueCallback">
+      </param>
+      <param name="formatListItemCallback">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PopupField_1.#ctor(System.String,System.Collections.Generic.List`1&lt;T&gt;,System.Int32,System.Func`2&lt;T,System.String&gt;,System.Func`2&lt;T,System.String&gt;)">
+      <summary>
+        <para>
+Создайте PopupField.
+</para>
+      </summary>
+      <param name="label">
+      </param>
+      <param name="choices">
+      </param>
+      <param name="defaultIndex">
+      </param>
+      <param name="formatSelectedValueCallback">
+      </param>
+      <param name="formatListItemCallback">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.PropertyField">
+      <summary>
+        <para>
+Оболочка SerializedProperty VisualElement, которая в Bind() будет генерировать правильные элементы поля с правильными bindingPaths.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PropertyField.binding">
+      <summary>
+        <para>
+Объект привязки, который будет обновлен.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PropertyField.bindingPath">
+      <summary>
+        <para>
+Путь целевого свойства для привязки.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PropertyField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.PropertyField.label">
+      <summary>
+        <para>
+При необходимости перезапишите метку поля генерируемого свойства. Если метка не указана, строка будет взята из SerializedProperty.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PropertyField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.PropertyField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.PropertyField.#ctor">
+      <summary>
+        <para>
+Конструктор поля свойств.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.PropertyField.#ctor(UnityEditor.SerializedProperty)">
+      <summary>
+        <para>
+Конструктор поля свойств.
+</para>
+      </summary>
+      <param name="property">Предоставление SerializedProperty в конструкции просто устанавливает свойство bindingPath. После этого вам все равно придется вызывать Bind() для PropertyField.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PropertyField.#ctor(UnityEditor.SerializedProperty,System.String)">
+      <summary>
+        <para>
+Конструктор поля свойств.
+</para>
+      </summary>
+      <param name="property">Предоставление SerializedProperty в конструкции просто устанавливает свойство bindingPath. После этого вам все равно придется вызывать Bind() для PropertyField.</param>
+      <param name="label">При необходимости перезапишите метку свойства.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.PropertyField.RegisterValueChangeCallback(UnityEngine.UIElements.EventCallback`1&lt;UnityEditor.UIElements.SerializedPropertyChangeEvent&gt;)">
+      <summary>
+        <para>
+Регистрирует этот обратный вызов для получения SerializedPropertyChangeEvent при изменении значения.
+</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.PropertyField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр PropertyField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.PropertyField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для PropertyField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.PropertyField.UxmlTraits.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectField">
+      <summary>
+        <para>
+Поле редактора прямоугольников.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр RectField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр RectField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр RectField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для RectField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства RectField, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectIntField">
+      <summary>
+        <para>
+Поле редактора RectInt.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectIntField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectIntField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.RectIntField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectIntField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр RectIntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectIntField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр RectIntField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectIntField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр RectIntField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.RectIntField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для RectIntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.RectIntField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits для RectIntField.
+</para>
+      </summary>
+      <param name="ve">&lt;see cref="VisualElement" /&gt; для инициализации.</param>
+      <param name="bag">Пакеты атрибутов, откуда берутся значения.</param>
+      <param name="cc">Контекст создания, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.SearchFieldBase`2">
+      <summary>
+        <para>
+Базовый класс для поля поиска.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.cancelButtonOffVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок отмены в элементах этого типа, когда они выключены.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.cancelButtonUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок отмены в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.popupVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они используют всплывающее меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.SearchFieldBase_2.searchButton">
+      <summary>
+        <para>
+Кнопка поиска.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.searchButtonUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок поиска в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.SearchFieldBase_2.textInputField">
+      <summary>
+        <para>
+Текстовое поле, используемое полем поиска для рисования и изменения строки поиска.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.textInputUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов ввода текста в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.textUssClassName">
+      <summary>
+        <para>
+Имя класса USS текстовых элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.SearchFieldBase_2.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.SearchFieldBase_2.value">
+      <summary>
+        <para>
+Объект, который в настоящее время выставляется полем.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SearchFieldBase_2.ClearTextField">
+      <summary>
+        <para>
+Метод, используемый при очистке текстового поля. Обычно вы должны очищать значение при переопределении метода.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SearchFieldBase_2.FieldIsEmpty(T)">
+      <summary>
+        <para>
+Сообщает, если поле пусто. Это значение зависит от типа Т.
+</para>
+      </summary>
+      <param name="fieldValue">Значение для проверки.</param>
+      <returns>
+        <para>Истинно, если параметр пуст. Это значение зависит от типа T.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.UIElements.SearchFieldBase_2.SetValueWithoutNotify(T)">
+      <summary>
+        <para>
+Задает значение для поля поиска панели инструментов без отправки события изменения.
+</para>
+      </summary>
+      <param name="newValue">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.SerializedObjectChangeEvent">
+      <summary>
+        <para>
+Событие, отправляемое при изменении любого значения в SerializedObject.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.SerializedObjectChangeEvent.changedObject">
+      <summary>
+        <para>
+Объект SerializedObject, значение которого изменилось.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedObjectChangeEvent.#ctor">
+      <summary>
+        <para>
+Конструктор. Вместо этого используйте GetPooled.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedObjectChangeEvent.GetPooled(UnityEditor.SerializedObject)">
+      <summary>
+        <para>
+Получает событие из пула событий и инициализирует его указанными значениями. Используйте эту функцию вместо
+создание новых событий. События, полученные с помощью этого метода, необходимо отправить обратно в пул.
+Вы можете использовать Dispose(), чтобы освободить их.
+</para>
+      </summary>
+      <param name="value">Измененный SerializedObject.</param>
+      <returns>
+        <para>Инициализированное событие.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedObjectChangeEvent.Init">
+      <summary>
+        <para>
+Устанавливает событие в исходное состояние.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.SerializedPropertyChangeEvent">
+      <summary>
+        <para>
+Событие, отправляемое при изменении значения в PropertyField.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.SerializedPropertyChangeEvent.changedProperty">
+      <summary>
+        <para>
+SerializedProperty, значение которого изменилось.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedPropertyChangeEvent.#ctor">
+      <summary>
+        <para>
+Конструктор. Вместо этого используйте GetPooled.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedPropertyChangeEvent.GetPooled(UnityEditor.SerializedProperty)">
+      <summary>
+        <para>
+Получает событие из пула событий и инициализирует его указанными значениями.
+Используйте эту функцию вместо создания новых событий. События, полученные с помощью этого метода, должны быть
+выпустили обратно в бассейн. Вы можете использовать Dispose(), чтобы освободить их.
+</para>
+      </summary>
+      <param name="value">Измененное свойство SerializedProperty.</param>
+      <returns>
+        <para>Инициализированное событие.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.UIElements.SerializedPropertyChangeEvent.Init">
+      <summary>
+        <para>
+Устанавливает событие в исходное состояние.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.TagField">
+      <summary>
+        <para>
+Редактор TagField.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TagField.formatListItemCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TagField.formatSelectedValueCallback">
+      <summary>
+        <para>
+Неподдерживаемый.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.TagField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.TagField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.TagField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TagField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр CurveField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TagField.#ctor(System.String,System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр CurveField.
+</para>
+      </summary>
+      <param name="label">Текст, используемый в качестве метки для поля.</param>
+      <param name="defaultValue">Начальное значение тега, которое должно использоваться в этом поле.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.TagField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр TagField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.TagField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для TagField.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.TextValueField`1">
+      <summary>
+        <para>
+Базовый класс для текстовых полей.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TextValueField_1.formatString">
+      <summary>
+        <para>
+Строка формата для значения.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TextValueField_1.value">
+      <summary>
+        <para>
+Это значение поля.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.AddLabelDragger">
+      <summary>
+        <para>
+Метод, используемый для добавления указателя мыши на метку для определенных числовых полей.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,TValueType)">
+      <summary>
+        <para>
+Измените значение, используя трехмерную дельту и скорость, обычно поступающую от устройства ввода.
+</para>
+      </summary>
+      <param name="delta">Вектор, используемый для вычисления изменения значения.</param>
+      <param name="speed">Множитель для изменения значения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.SetValueWithoutNotify(TValueType)">
+      <summary>
+        <para>
+Разрешить устанавливать значение без уведомления.
+</para>
+      </summary>
+      <param name="newValue">Новое значение для установки.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.StartDragging">
+      <summary>
+        <para>
+Указывает, что пользователь начал перетаскивание мышью для выделения текста.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.StopDragging">
+      <summary>
+        <para>
+Указывает, что пользователь остановил перетаскивание мышью для выделения текста.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.TextValueField`1.TextValueInput">
+      <summary>
+        <para>
+Это внутреннее представление ввода текста.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TextValueField_1.TextValueInput.allowedCharacters">
+      <summary>
+        <para>
+Метод для переопределения, чтобы указать допустимые символы в фактическом поле.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.TextValueField_1.TextValueInput.formatString">
+      <summary>
+        <para>
+Форматирует строку.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.TextValueInput.ApplyInputDeviceDelta(UnityEngine.Vector3,UnityEditor.UIElements.DeltaSpeed,TValueType)">
+      <summary>
+        <para>
+Вызывается, когда пользователь перетаскивает метку, чтобы обновить значение, содержащееся в поле.
+</para>
+      </summary>
+      <param name="delta">Дельта в движении.</param>
+      <param name="speed">Скорость перемещения.</param>
+      <param name="startValue">Начальное значение.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.TextValueInput.StartDragging">
+      <summary>
+        <para>
+Метод, вызываемый приложением, когда начинается перетаскивание метки поля для изменения его значения.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.TextValueInput.StopDragging">
+      <summary>
+        <para>
+Метод, вызываемый приложением, когда метка поля останавливается для перетаскивания, чтобы изменить его значение.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.TextValueInput.StringToValue(System.String)">
+      <summary>
+        <para>
+Преобразует строку в тип значения.
+</para>
+      </summary>
+      <param name="str">Строка для преобразования.</param>
+      <returns>
+        <para>Значение, извлеченное из строки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueField_1.TextValueInput.ValueToString(TValueType)">
+      <summary>
+        <para>
+Преобразуйте значение в строку для визуального представления.
+</para>
+      </summary>
+      <param name="value">Значение для преобразования.</param>
+      <returns>
+        <para>Строковое представление.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.UIElements.TextValueFieldTraits`2">
+      <summary>
+        <para>
+Задает UxmlTraits TextValueField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.TextValueFieldTraits_2.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits TextValueField.
+</para>
+      </summary>
+      <param name="ve">VisualElement для инициализации.</param>
+      <param name="bag">Набор пар "имя-значение" атрибута UXML, используемых для инициализации элементов VisualElement.</param>
+      <param name="cc">Контекст создания, связанный с этими признаками.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Toolbar">
+      <summary>
+        <para>
+Панель инструментов для окон инструментов.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Toolbar.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Toolbar.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Toolbar.UxmlFactory">
+      <summary>
+        <para>
+Создает панель инструментов, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarBreadcrumbs">
+      <summary>
+        <para>
+Создает элемент интерфейса навигации для панели инструментов, чтобы помочь пользователям перемещаться по иерархии. Например, панель навигации визуального сценария упрощает изучение сценариев, поскольку пользователи могут перейти на любой уровень сценария, щелкнув элемент цепочки.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarBreadcrumbs.firstItemClassName">
+      <summary>
+        <para>
+Класс таблицы стилей Unity (USS) для первого элемента или элемента на панели инструментов навигации.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarBreadcrumbs.itemClassName">
+      <summary>
+        <para>
+Класс таблицы стилей Unity (USS) для отдельных элементов на панели инструментов навигации.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarBreadcrumbs.ussClassName">
+      <summary>
+        <para>
+Класс таблицы стилей Unity (USS) для основного контейнера ToolbarBreadcrumbs.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarBreadcrumbs.#ctor">
+      <summary>
+        <para>
+Создает элемент интерфейса навигации для панели инструментов, чтобы помочь пользователям перемещаться по иерархии.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarBreadcrumbs.PopItem">
+      <summary>
+        <para>
+Удаляет последний элемент на панели инструментов навигации, которая является самым глубоким элементом в иерархии.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarBreadcrumbs.PushItem(System.String,System.Action)">
+      <summary>
+        <para>
+Добавляет элемент в конец навигационной цепочки, что делает этот элемент самым глубоким в иерархии.
+</para>
+      </summary>
+      <param name="label">Текст, отображаемый для элемента на панели навигации.</param>
+      <param name="clickedEvent">Действие, выполняемое, когда пользователь щелкает элемент на панели инструментов.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarBreadcrumbs.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarBreadcrumbs, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarButton">
+      <summary>
+        <para>
+Кнопка для панели инструментов.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarButton.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarButton.#ctor(System.Action)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="clickEvent">Действие, которое будет вызываться при нажатии кнопки.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarButton.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarButton.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarButton, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarButton.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для ToolbarButton.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarMenu">
+      <summary>
+        <para>
+Выпадающее меню для панели инструментов.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.arrowUssClassName">
+      <summary>
+        <para>
+Имя класса USS стрелочных индикаторов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarMenu.menu">
+      <summary>
+        <para>
+Меню.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.popupVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они отображаются в виде всплывающего меню.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.textUssClassName">
+      <summary>
+        <para>
+Имя класса USS текстовых элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarMenu.variant">
+      <summary>
+        <para>
+Стили отображения, которые можно использовать при создании меню.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarMenu.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarMenu.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarMenu, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarMenu.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для ToolbarMenu.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarMenu.Variant">
+      <summary>
+        <para>
+Стили отображения для меню.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.Variant.Default">
+      <summary>
+        <para>
+Отобразите меню, используя стиль по умолчанию.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarMenu.Variant.Popup">
+      <summary>
+        <para>
+Отображение меню в стиле всплывающего окна.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarMenuElementExtensions">
+      <summary>
+        <para>
+Класс расширения, обрабатывающий управление меню для элементов, реализованных с помощью интерфейса IToolbarMenuElement, но идентичных DropdownMenu.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarMenuElementExtensions.ShowMenu(UnityEditor.UIElements.IToolbarMenuElement)">
+      <summary>
+        <para>
+Отображение меню элемента.
+</para>
+      </summary>
+      <param name="tbe">Элемент, являющийся частью отображаемого меню.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarPopupSearchField">
+      <summary>
+        <para>
+Всплывающее поле поиска для панели инструментов. Поле поиска включает кнопку меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarPopupSearchField.menu">
+      <summary>
+        <para>
+Меню, используемое всплывающим элементом поля поиска.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarPopupSearchField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarPopupSearchField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarPopupSearchField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarSearchField">
+      <summary>
+        <para>
+Поле поиска для панели инструментов.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.cancelButtonOffVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок отмены в элементах этого типа, когда они выключены.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.cancelButtonUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок отмены в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.popupVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, когда они используют всплывающее меню.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarSearchField.searchButton">
+      <summary>
+        <para>
+Кнопка поиска.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.searchButtonUssClassName">
+      <summary>
+        <para>
+Имя класса USS кнопок поиска в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.textUssClassName">
+      <summary>
+        <para>
+Имя класса USS текстовых элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSearchField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarSearchField.value">
+      <summary>
+        <para>
+Объект, который в настоящее время выставляется полем.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarSearchField.ClearTextField">
+      <summary>
+        <para>
+Удаляет текст при очистке поля.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarSearchField.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarSearchField.FieldIsEmpty(System.String)">
+      <summary>
+        <para>
+Сообщает, является ли строка нулевой или пустой.
+</para>
+      </summary>
+      <param name="fieldValue">
+      </param>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarSearchField.SetValueWithoutNotify(System.String)">
+      <summary>
+        <para>
+Задает значение для поля поиска панели инструментов без отправки события изменения.
+</para>
+      </summary>
+      <param name="newValue">
+      </param>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarSearchField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarSearchField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarSpacer">
+      <summary>
+        <para>
+Разделитель панели инструментов статического размера.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSpacer.fixedSpacerVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа, если они имеют фиксированный размер.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.ToolbarSpacer.flex">
+      <summary>
+        <para>
+Верните true, если разделитель растягивается или сжимается, чтобы занять доступное пространство.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSpacer.flexibleSpacerVariantUssClassName">
+      <summary>
+        <para>
+Имя класса USS для элементов этого типа, если они имеют гибкий размер.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarSpacer.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarSpacer.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarSpacer.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarSpacer, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarToggle">
+      <summary>
+        <para>
+Переключатель для панели инструментов.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.ToolbarToggle.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.ToolbarToggle.#ctor">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarToggle.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр ToolbarToggle, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.ToolbarToggle.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для ToolbarToggle.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.UxmlNamespacePrefixAttribute">
+      <summary>
+        <para>
+Атрибут, который можно использовать в сборке для определения префикса пространства имен XML для пространства имен.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.ns">
+      <summary>
+        <para>
+Имя пространства имен.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.prefix">
+      <summary>
+        <para>
+Префикс пространства имен.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.#ctor(System.String,System.String)">
+      <summary>
+        <para>
+Конструктор.
+</para>
+      </summary>
+      <param name="ns">Пространство имен XML/C#, с которым будет связан префикс.</param>
+      <param name="prefix">Префикс для связи с пространством имен.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2Field">
+      <summary>
+        <para>
+Поле редактора Vector2.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2Field.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2Field.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2Field.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2Field.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector2Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2Field.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector2Field.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2Field.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр Vector2Field, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2Field.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Vector2Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2Field.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства Vector2Field, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2IntField">
+      <summary>
+        <para>
+Поле редактора Vector2Int.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2IntField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2IntField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector2IntField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2IntField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector2IntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2IntField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector2IntField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2IntField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр Vector2IntField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector2IntField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Vector2IntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector2IntField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits для Vector2IntField.
+</para>
+      </summary>
+      <param name="ve">&lt;see cref="VisualElement" /&gt; для инициализации.</param>
+      <param name="bag">Мешок с атрибутами, где их взять.</param>
+      <param name="cc">Контекст создания, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3Field">
+      <summary>
+        <para>
+Поле редактора Vector3.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3Field.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3Field.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3Field.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3Field.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector3Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3Field.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector3Field.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3Field.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр Vector3Field, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3Field.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Vetor3Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3Field.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства Vector3Field, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3IntField">
+      <summary>
+        <para>
+Поле редактора Vector3Int.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3IntField.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3IntField.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector3IntField.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3IntField.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector3IntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3IntField.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector3IntField.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3IntField.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр Vector3IntField, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector3IntField.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Vector3IntField.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector3IntField.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализирует UxmlTraits для Vector3IntField.
+</para>
+      </summary>
+      <param name="ve">VisualElement для инициализации.</param>
+      <param name="bag">Мешок с атрибутами, где их взять.</param>
+      <param name="cc">Создание контекста, не используется.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector4Field">
+      <summary>
+        <para>
+Поле редактора Vector4.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector4Field.inputUssClassName">
+      <summary>
+        <para>
+Имя класса USS входных элементов в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector4Field.labelUssClassName">
+      <summary>
+        <para>
+Имя класса USS меток в элементах этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Vector4Field.ussClassName">
+      <summary>
+        <para>
+Имя класса USS элементов этого типа.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector4Field.#ctor">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector4Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector4Field.#ctor(System.String)">
+      <summary>
+        <para>
+Инициализирует и возвращает экземпляр Vector4Field.
+</para>
+      </summary>
+      <param name="label">Текст для использования в качестве метки.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector4Field.UxmlFactory">
+      <summary>
+        <para>
+Создает экземпляр Vector4Field, используя данные, считанные из файла UXML.
+</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Vector4Field.UxmlTraits">
+      <summary>
+        <para>
+Определяет UxmlTraits для Vector4Field.
+</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Vector4Field.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>
+Инициализируйте свойства Vector4Field, используя значения из набора атрибутов.
+</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">
+      </param>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityAnalyticsModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Analytics.Analytics">
+      <summary>
+        <para>Unity Analytics предоставляет информацию о пользователях вашей игры, например DAU, MAU.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.configUrl">
+      <summary>
+        <para>Получите конечную точку конфигурации Analytics.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.dashboardUrl">
+      <summary>
+        <para>Получите конечную точку панели управления Analytics.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.deviceStatsEnabled">
+      <summary>
+        <para>Определяет, включена ли отправка статистики устройства во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.enabled">
+      <summary>
+        <para>Определяет, включена ли служба Analytics во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.eventUrl">
+      <summary>
+        <para>Получите конечную точку события Analytics.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.initializeOnStartup">
+      <summary>
+        <para>Сообщает, настроена ли Unity для инициализации Analytics при запуске.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.limitUserTracking">
+      <summary>
+        <para>Определяет, следует ли ограничивать отслеживание пользователей во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.playerOptedOut">
+      <summary>
+        <para>Сообщает, отказался ли игрок от сбора данных.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.CustomEvent(System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+      <summary>
+        <para>Пользовательские события (необязательно).</para>
+      </summary>
+      <param name="customEventName">Имя пользовательского события. Имя не может включать префикс «единство». - Это зарезервированное ключевое слово.</param>
+      <param name="eventData">Дополнительные параметры, отправленные в Unity Analytics во время запуска пользовательского события. Ключ словаря не может включать префикс «единство». - Это зарезервированное ключевое слово.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.CustomEvent(System.String)">
+      <summary>
+        <para>Пользовательские события (необязательно).</para>
+      </summary>
+      <param name="customEventName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.CustomEvent(System.String,UnityEngine.Vector3)">
+      <summary>
+        <para>Пользовательские события (необязательно).</para>
+      </summary>
+      <param name="customEventName">
+      </param>
+      <param name="position">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.EnableCustomEvent(System.String,System.Boolean)">
+      <summary>
+        <para>Используйте его, чтобы включить или отключить пользовательское событие.</para>
+      </summary>
+      <param name="customEventName">
+      </param>
+      <param name="enabled">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.EnableEvent(System.String,System.Boolean,System.Int32,System.String)">
+      <summary>
+        <para>Используйте его, чтобы включить или отключить событие.</para>
+      </summary>
+      <param name="eventName">
+      </param>
+      <param name="enabled">
+      </param>
+      <param name="ver">
+      </param>
+      <param name="prefix">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.FlushEvents">
+      <summary>
+        <para>Попытки немедленно сбросить все события аналитики в очереди в кэш сети и файловой системы, если это возможно (необязательно).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.IsCustomEventEnabled(System.String)">
+      <summary>
+        <para>Используйте его, чтобы проверить статус включения настраиваемого события.</para>
+      </summary>
+      <param name="customEventName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.IsEventEnabled(System.String,System.Int32,System.String)">
+      <summary>
+        <para>Используйте его, чтобы проверить статус включения события.</para>
+      </summary>
+      <param name="eventName">
+      </param>
+      <param name="ver">
+      </param>
+      <param name="prefix">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.RegisterEvent(System.String,System.Int32,System.Int32,System.String,System.String)">
+      <summary>
+        <para>Этот API используется для регистрации события Runtime Analytics. Примечание. Этот API предназначен только для внутреннего использования и, вероятно, изменится в будущем. Не используйте в пользовательском коде.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="maxEventPerHour">Часовой лимит для этого имени события.</param>
+      <param name="maxItems">Максимальное количество элементов в этом событии.</param>
+      <param name="vendorKey">Имя ключа поставщика.</param>
+      <param name="prefix">Необязательное значение префикса имени события.</param>
+      <param name="ver">Номер версии события.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.RegisterEvent(System.String,System.Int32,System.Int32,System.String,System.Int32,System.String)">
+      <summary>
+        <para>Этот API используется для регистрации события Runtime Analytics. Примечание. Этот API предназначен только для внутреннего использования и, вероятно, изменится в будущем. Не используйте в пользовательском коде.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="maxEventPerHour">Часовой лимит для этого имени события.</param>
+      <param name="maxItems">Максимальное количество элементов в этом событии.</param>
+      <param name="vendorKey">Имя ключа поставщика.</param>
+      <param name="prefix">Необязательное значение префикса имени события.</param>
+      <param name="ver">Номер версии события.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.ResumeInitialization">
+      <summary>
+        <para>Возобновить инициализацию Analytics.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SendEvent(System.String,System.Object,System.Int32,System.String)">
+      <summary>
+        <para>Этот API используется для отправки события Runtime Analytics. Примечание. Этот API предназначен только для внутреннего использования и, вероятно, изменится в будущем. Не используйте в пользовательском коде.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="ver">Номер версии события.</param>
+      <param name="prefix">Необязательное значение префикса имени события.</param>
+      <param name="parameters">Дополнительные данные о событии.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SetEventEndPoint(System.String,System.String,System.Int32,System.String)">
+      <summary>
+        <para>Используйте этот API для установки URL-адреса конечной точки события. Примечание. Этот API предназначен только для внутреннего использования и, вероятно, изменится в будущем. Не используйте в пользовательском коде.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="ver">Номер версии события.</param>
+      <param name="endPoint">URL-адрес конечной точки события.</param>
+      <param name="prefix">Необязательное значение префикса имени события.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SetEventPriority(System.String,UnityEngine.Analytics.AnalyticsEventPriority,System.Int32,System.String)">
+      <summary>
+        <para>Используйте этот API для установки приоритета события. Примечание. Этот API предназначен только для внутреннего использования и, вероятно, изменится в будущем. Не используйте в пользовательском коде.</para>
+      </summary>
+      <param name="eventName">Название события.</param>
+      <param name="ver">Номер версии события.</param>
+      <param name="prefix">Необязательное значение префикса имени события.</param>
+      <param name="eventPriority">Приоритет события.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SetUserBirthYear(System.Int32)">
+      <summary>
+        <para>Демографические данные пользователей (необязательно).</para>
+      </summary>
+      <param name="birthYear">Год рождения пользователя. Должен быть только 4-значный формат года.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SetUserGender(UnityEngine.Analytics.Gender)">
+      <summary>
+        <para>Демографические данные пользователей (необязательно).</para>
+      </summary>
+      <param name="gender">Пол пользователя может быть "Женский", "Мужской" или "Неизвестный".</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.SetUserId(System.String)">
+      <summary>
+        <para>Демографические данные пользователей (необязательно).</para>
+      </summary>
+      <param name="userId">Идентификатор пользователя.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.Transaction(System.String,System.Decimal,System.String)">
+      <summary>
+        <para>Отслеживание монетизации (необязательно).</para>
+      </summary>
+      <param name="productId">Идентификатор купленного товара.</param>
+      <param name="amount">Цена товара.</param>
+      <param name="currency">Аббревиатура валюты, используемой для транзакции. Например, «USD» (доллары США). См. http:en.wikipedia.orgwikiISO_4217 для получения стандартизированного списка сокращений денежных единиц.</param>
+      <param name="receiptPurchaseData">Данные квитанции (iOS) ID квитанции (android) для покупок в приложении для подтверждения покупок в Apple iTunes / Google Play. Используйте null при отсутствии квитанций.</param>
+      <param name="signature">Подпись квитанции Android. При использовании нативного Android используйте строку INAPP_DATA_SIGNATURE, содержащую подпись данных о покупке, которая была подписана закрытым ключом разработчика. Подпись данных использует схему RSASSA-PKCS1-v1_5. Передать значение null при отсутствии подписи.</param>
+      <param name="usingIAPService">Установите значение true при использовании UnityIAP.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.Transaction(System.String,System.Decimal,System.String,System.String,System.String)">
+      <summary>
+        <para>Отслеживание монетизации (необязательно).</para>
+      </summary>
+      <param name="productId">Идентификатор купленного товара.</param>
+      <param name="amount">Цена товара.</param>
+      <param name="currency">Аббревиатура валюты, используемой для транзакции. Например, «USD» (доллары США). См. http:en.wikipedia.orgwikiISO_4217 для получения стандартизированного списка сокращений денежных единиц.</param>
+      <param name="receiptPurchaseData">Данные квитанции (iOS) ID квитанции (android) для покупок в приложении для подтверждения покупок в Apple iTunes / Google Play. Используйте null при отсутствии квитанций.</param>
+      <param name="signature">Подпись квитанции Android. При использовании нативного Android используйте строку INAPP_DATA_SIGNATURE, содержащую подпись данных о покупке, которая была подписана закрытым ключом разработчика. Подпись данных использует схему RSASSA-PKCS1-v1_5. Передать значение null при отсутствии подписи.</param>
+      <param name="usingIAPService">Установите значение true при использовании UnityIAP.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.Transaction(System.String,System.Decimal,System.String,System.String,System.String,System.Boolean)">
+      <summary>
+        <para>Отслеживание монетизации (необязательно).</para>
+      </summary>
+      <param name="productId">Идентификатор купленного товара.</param>
+      <param name="amount">Цена товара.</param>
+      <param name="currency">Аббревиатура валюты, используемой для транзакции. Например, «USD» (доллары США). См. http:en.wikipedia.orgwikiISO_4217 для получения стандартизированного списка сокращений денежных единиц.</param>
+      <param name="receiptPurchaseData">Данные квитанции (iOS) ID квитанции (android) для покупок в приложении для подтверждения покупок в Apple iTunes / Google Play. Используйте null при отсутствии квитанций.</param>
+      <param name="signature">Подпись квитанции Android. При использовании нативного Android используйте строку INAPP_DATA_SIGNATURE, содержащую подпись данных о покупке, которая была подписана закрытым ключом разработчика. Подпись данных использует схему RSASSA-PKCS1-v1_5. Передать значение null при отсутствии подписи.</param>
+      <param name="usingIAPService">Установите значение true при использовании UnityIAP.</param>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsEventPriority">
+      <summary>
+        <para>Приоритет события Analytics.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.AllowInStopModeFlag">
+      <summary>
+        <para>Используйте этот флаг для отправки событий в состоянии остановки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.CacheImmediatelyFlag">
+      <summary>
+        <para>Любые текущие или предыдущие события в очереди памяти немедленно сохраняются в файловой системе.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.FlushQueueFlag">
+      <summary>
+        <para>Любые текущие или предыдущие события в очереди памяти немедленно сохраняются в файловой системе, а служба диспетчера делает события доступными для отправки на сервер. Он добавляет события в конец очереди отправки и делает их доступными для отправки на сервер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.HighestPriorityEvent">
+      <summary>
+        <para>Этот приоритет аналогичен Analytics.AnalyticsEventPriority.HighPriorityEvent, за исключением того, что этим событиям присваивается более высокий приоритет, чем другим событиям в очереди отправки. Он добавляет события в начало очереди отправки и делает их доступными для отправки на сервер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.HighestPriorityEvent_NoRetryNoCaching">
+      <summary>
+        <para>Этот приоритет аналогичен Analytics.AnalyticsEventPriority.HighestPriorityEvent, за исключением того, что эти события будут храниться в очереди памяти и не будут сохраняться в файловой системе. В случае невозможности отправить событие на сервер, он не будет пытаться отправить их повторно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.HighPriorityEvent">
+      <summary>
+        <para>Любые текущие или предыдущие события в очереди памяти немедленно сохраняются в файловой системе. Он добавляет события в конец очереди отправки и делает их доступными для отправки на сервер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.HighPriorityEvent_InStopMode">
+      <summary>
+        <para>Этот приоритет позволяет отправлять события в состоянии остановки и заставляет любые текущие или предыдущие события в очереди памяти немедленно сохраняться в файловой системе. Он добавляет события в конец очереди отправки и делает их доступными для отправки на сервер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.NoCachingFlag">
+      <summary>
+        <para>События будут храниться в очереди памяти и не будут сохраняться в файловой системе.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.NoRetryFlag">
+      <summary>
+        <para>В случае невозможности отправить событие на сервер, он не будет пытаться отправить их повторно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.NormalPriorityEvent">
+      <summary>
+        <para>Этот приоритет ставит события в очередь в памяти.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.NormalPriorityEvent_NoRetryNoCaching">
+      <summary>
+        <para>Этот приоритет аналогичен Analytics.AnalyticsEventPriority.NormalPriorityEvent, за исключением того, что эти события будут храниться в очереди памяти и не будут сохраняться в файловой системе. В случае невозможности отправить событие на сервер, он не будет пытаться отправить их повторно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.NormalPriorityEvent_WithCaching">
+      <summary>
+        <para>Этот приоритет ставит события в очередь в памяти и немедленно записывает их в файловую систему.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsEventPriority.SendImmediateFlag">
+      <summary>
+        <para>События с этим флагом имеют более высокий приоритет по сравнению с другими при отправке на сервер.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsResult">
+      <summary>
+        <para>Результат Analytics API.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.AnalyticsDisabled">
+      <summary>
+        <para>Результат Analytics API: Аналитика отключена.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.InvalidData">
+      <summary>
+        <para>Результат Analytics API: недопустимое значение аргумента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.NotInitialized">
+      <summary>
+        <para>Результат Analytics API: Analytics не инициализирован.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.Ok">
+      <summary>
+        <para>Результат Analytics API: успешно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.SizeLimitReached">
+      <summary>
+        <para>Результат Analytics API: ограничение размера аргумента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.TooManyItems">
+      <summary>
+        <para>Результат Analytics API: слишком много параметров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.TooManyRequests">
+      <summary>
+        <para>Результат Analytics API: слишком много запросов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsResult.UnsupportedPlatform">
+      <summary>
+        <para>Результат Analytics API: эта платформа не поддерживает Analytics.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsSessionInfo">
+      <summary>
+        <para>Предоставляет доступ к информации сеанса Analytics для текущего экземпляра игры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.customDeviceId">
+      <summary>
+        <para>Сообщает текущий идентификатор пользовательского устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.customUserId">
+      <summary>
+        <para>Сообщает текущий настраиваемый идентификатор пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.identityToken">
+      <summary>
+        <para>Маркер удостоверения текущего пользователя, возвращаемый сервером Analytics на основе AnalyticsSessionInfo.userId.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Analytics.AnalyticsSessionInfo.identityTokenChanged(UnityEngine.Analytics.AnalyticsSessionInfo/IdentityTokenChanged)">
+      <summary>
+        <para>Отправляется при обновлении AnalyticsSessionInfo.identityToken сервером.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionCount">
+      <summary>
+        <para>Количество воспроизведенных сеансов с момента установки приложения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionElapsedTime">
+      <summary>
+        <para>Время, прошедшее в миллисекундах с начала текущего игрового сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionFirstRun">
+      <summary>
+        <para>Сообщает, является ли текущий сеанс первым сеансом с момента установки игроком игры или приложения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionId">
+      <summary>
+        <para>Случайный уникальный идентификатор GUID, идентифицирующий текущую игру или сеанс приложения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionState">
+      <summary>
+        <para>Текущее состояние сеанса.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Analytics.AnalyticsSessionInfo.sessionStateChanged(UnityEngine.Analytics.AnalyticsSessionInfo/SessionStateChanged)">
+      <summary>
+        <para>Отправляется при изменении состояния сеанса Google Analytics.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.userId">
+      <summary>
+        <para>Случайный идентификатор GUID, однозначно идентифицирующий сеансы, воспроизводимые в одном и том же экземпляре вашей игры или приложения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsSessionInfo.IdentityTokenChanged">
+      <summary>
+        <para>Определяет подпись делегата для обработки событий AnalyticsSettings.IdentityTokenChanged.</para>
+      </summary>
+      <param name="token">
+      </param>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsSessionInfo.SessionStateChanged">
+      <summary>
+        <para>Отправляется при изменении состояния сеанса Google Analytics.</para>
+      </summary>
+      <param name="sessionState">Текущее состояние сеанса.</param>
+      <param name="sessionId">Идентификатор текущего сеанса.</param>
+      <param name="sessionElapsedTime">Длина текущего сеанса в миллисекундах.</param>
+      <param name="sessionChanged">Истинно, если идентификатор сеанса изменился; в противном случае ложь.</param>
+    </member>
+    <member name="T:UnityEngine.Analytics.AnalyticsSessionState">
+      <summary>
+        <para>Состояния отслеживания сеанса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsSessionState.kSessionPaused">
+      <summary>
+        <para>Отслеживание сеанса приостановлено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsSessionState.kSessionResumed">
+      <summary>
+        <para>Отслеживание сеансов возобновлено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsSessionState.kSessionStarted">
+      <summary>
+        <para>Отслеживание сеанса запущено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.AnalyticsSessionState.kSessionStopped">
+      <summary>
+        <para>Отслеживание сеанса остановлено.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Analytics.Gender">
+      <summary>
+        <para>Демографические данные пользователя: пол пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.Gender.Female">
+      <summary>
+        <para>Демографические данные пользователей: женский пол пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.Gender.Male">
+      <summary>
+        <para>Демографические данные пользователя: мужской пол пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Analytics.Gender.Unknown">
+      <summary>
+        <para>Демографические данные пользователя: неизвестен пол пользователя.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RemoteSettings">
+      <summary>
+        <para>Предоставляет доступ к вашим удаленным настройкам.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.RemoteSettings.BeforeFetchFromServer(System.Action)">
+      <summary>
+        <para>Отправляется до того, как объект RemoteSettings выполнит сетевой запрос последних настроек.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.RemoteSettings.Completed(System.Action`3&lt;System.Boolean,System.Boolean,System.Int32&gt;)">
+      <summary>
+        <para>Отправляется, когда сетевой запрос объекта RemoteSettings на получение файла удаленной конфигурации завершен.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.ForceUpdate">
+      <summary>
+        <para>Заставляет игру загружать самые новые настройки с сервера и обновлять их значения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetBool(System.String)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetBool(System.String,System.Boolean)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetCount">
+      <summary>
+        <para>Получает количество ключей в конфигурации удаленных настроек.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetDictionary(System.String)">
+      <summary>
+        <para>Получает словарь, соответствующий удаленному параметру, указанному ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <returns>
+        <para>Экземпляр Dictionary&lt;string, object&gt;, содержащий соответствующее удаленное значение или значения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetFloat(System.String)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetFloat(System.String,System.Single)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetInt(System.String)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetInt(System.String,System.Int32)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetKeys">
+      <summary>
+        <para>Получает массив, содержащий все ключи в конфигурации удаленных настроек.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetLong(System.String,System.Int64)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetObject(System.String)">
+      <summary>
+        <para>Получает объект, соответствующий удаленному параметру, указанному ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <returns>
+        <para>Экземпляр объекта с полями, которым присвоены соответствующие удаленные значения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetObject(System.Type,System.String)">
+      <summary>
+        <para>Получает объект, соответствующий удаленному параметру, указанному ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="type">Тип объекта, представленный в RemoteSettings.</param>
+      <returns>
+        <para>Экземпляр объекта с полями, которым присвоены соответствующие удаленные значения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetObject(System.String,System.Object)">
+      <summary>
+        <para>Получает объект, соответствующий удаленному параметру, указанному ключом, если он существует.</para>
+      </summary>
+      <param name="defaultValue">Объект, который должен быть для значений по умолчанию.</param>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <returns>
+        <para>Экземпляр объекта с полями, которым присвоены соответствующие удаленные значения.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetString(System.String)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.GetString(System.String,System.String)">
+      <summary>
+        <para>Получает значение, соответствующее удаленной настройке, определяемой ключом, если он существует.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <param name="defaultValue">Значение по умолчанию, используемое, если настройка, указанная ключевым параметром, не может быть найдена или недоступна.</param>
+      <returns>
+        <para>Текущее значение параметра, определяемое ключом, или значение по умолчанию.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.HasKey(System.String)">
+      <summary>
+        <para>Сообщает, существует ли указанный ключ в конфигурации удаленных настроек.</para>
+      </summary>
+      <param name="key">Ключ, идентифицирующий настройку.</param>
+      <returns>
+        <para>Истинно, если ключ существует.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEngine.RemoteSettings.Updated(UnityEngine.RemoteSettings/UpdatedEventHandler)">
+      <summary>
+        <para>Отправляется при получении и успешном анализе конфигурации удаленных параметров с сервера или из локального кэша.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="T:UnityEngine.RemoteSettings.UpdatedEventHandler">
+      <summary>
+        <para>Определяет подпись делегата для обработки событий RemoteSettings.Updated.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RemoteSettings.WasLastUpdatedFromServer">
+      <summary>
+        <para>Сообщает, были ли параметры, доступные из объекта RemoteSettings, получены от службы аналитики во время текущего сеанса.</para>
+      </summary>
+      <returns>
+        <para>Истинно, если файл удаленных настроек был получен от службы аналитики в текущем сеансе. False, если файл удаленных настроек был получен во время предыдущего сеанса и кэширован.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.UnityAnalyticsModule">
+      <summary>
+        <para>Модуль UnityAnalytics реализует API, необходимые для использования Unity Analytics.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

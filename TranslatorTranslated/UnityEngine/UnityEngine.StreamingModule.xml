@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.StreamingModule</name>
+    </assembly>
+    <member name="T:UnityEngine.StreamingController">
+      <summary>
+        <para>StreamingController управляет настройками потоковой передачи для отдельной камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.StreamingController.streamingMipmapBias">
+      <summary>
+        <para>Смещение применяется к уровню MIP-карты, выбранному системой потоковой передачи текстур для любых текстур, видимых с этой камеры. Это смещение может принимать как положительное, так и отрицательное значение.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.StreamingController.CancelPreloading">
+      <summary>
+        <para>Прервать предварительную загрузку.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.StreamingController.IsPreloading">
+      <summary>
+        <para>Используется, чтобы узнать, выполняет ли StreamingController предварительную загрузку MIP-карт текстур.</para>
+      </summary>
+      <returns>
+        <para>Истинно, если в состоянии предварительной загрузки, в противном случае - Ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.StreamingController.SetPreloading(System.Single,System.Boolean,UnityEngine.Camera)">
+      <summary>
+        <para>Инициировать предварительную загрузку потоковых данных для этой камеры.</para>
+      </summary>
+      <param name="timeoutSeconds">Необязательный тайм-аут перед остановкой предварительной загрузки. Установите значение 0.0f, если тайм-аут не требуется.</param>
+      <param name="activateCameraOnTimeout">Установите значение True, чтобы активировать подключенный компонент камеры по истечении времени ожидания.</param>
+      <param name="disableCameraCuttingFrom">Камера для деактивации по тайм-ауту (если Camera.activateCameraOnTime имеет значение True). Этот параметр может иметь значение null.</param>
+    </member>
+  </members>
+</doc>

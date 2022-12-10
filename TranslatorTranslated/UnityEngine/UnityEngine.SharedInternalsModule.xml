@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.SharedInternalsModule</name>
+    </assembly>
+    <member name="A:UnityEngine.SharedInternalsModule">
+      <summary>
+        <para>SharedInternals — это модуль, используемый внутри для обеспечения низкоуровневой функциональности, необходимой другим модулям.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

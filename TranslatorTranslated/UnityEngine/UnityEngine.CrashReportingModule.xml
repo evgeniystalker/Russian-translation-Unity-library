@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.CrashReportingModule</name>
+    </assembly>
+    <member name="T:UnityEngine.CrashReportHandler.CrashReportHandler">
+      <summary>
+        <para>Engine API для службы отчетов о сбоях.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CrashReportHandler.CrashReportHandler.enableCaptureExceptions">
+      <summary>
+        <para>Это логическое поле заставит CrashReportHandler захватывать исключения, если установлено значение true. По умолчанию для включения исключений захвата установлено значение true.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.CrashReportHandler.CrashReportHandler.logBufferSize">
+      <summary>
+        <para>Служба отчетов о производительности будет хранить в буфере последние сообщения журнала X (Debug.Log и т. д.) для отправки вместе с отчетами о сбоях. Значение по умолчанию — 10 сообщений журнала, максимальное значение — 50. Установите для этого параметра значение 0, чтобы отключить сбор журналов вместе с отчетами о сбоях.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.CrashReportHandler.CrashReportHandler.GetUserMetadata(System.String)">
+      <summary>
+        <para>Получите настраиваемое поле метаданных отчета о сбоях, которое было задано.</para>
+      </summary>
+      <param name="key">
+      </param>
+      <returns>
+        <para>Значение, ранее установленное для ключа, или null, если значение не найдено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.CrashReportHandler.CrashReportHandler.SetUserMetadata(System.String,System.String)">
+      <summary>
+        <para>Задайте пользовательскую пару "ключ-значение" метаданных для включения в отчеты о сбоях.</para>
+      </summary>
+      <param name="key">
+      </param>
+      <param name="value">
+      </param>
+    </member>
+  </members>
+</doc>

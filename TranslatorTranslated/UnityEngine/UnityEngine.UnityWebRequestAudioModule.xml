@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestAudioModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.DownloadHandlerAudioClip">
+      <summary>
+        <para>Подкласс DownloadHandler, специализирующийся на загрузке аудиоданных для использования в качестве объектов AudioClip.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAudioClip.audioClip">
+      <summary>
+        <para>Возвращает загруженный AudioClip или null. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAudioClip.compressed">
+      <summary>
+        <para>Создайте AudioClip, сжатый в памяти.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAudioClip.streamAudio">
+      <summary>
+        <para>Создать потоковый аудиоклип.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAudioClip.#ctor(System.String,UnityEngine.AudioType)">
+      <summary>
+        <para>Конструктор указывает, какие аудиоданные будут загружены.</para>
+      </summary>
+      <param name="url">Номинальный URL-адрес (до перенаправления), по которому находится аудиоклип.</param>
+      <param name="audioType">Значение для установки типа AudioClip.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerAudioClip.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>Возвращает загруженный аудиоклип или null.</para>
+      </summary>
+      <param name="www">Готовый объект UnityWebRequest с прикрепленным DownloadHandlerAudioClip.</param>
+      <returns>
+        <para>То же, что DownloadHandlerAudioClip.audioClip</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandlerMovieTexture">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerMovieTexture.movieTexture">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerMovieTexture.#ctor">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerMovieTexture.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+      <param name="uwr">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerMovieTexture.GetData">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+      <returns>
+        <para>Необработанные загруженные байты.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequestMultimedia">
+      <summary>
+        <para>Помощники для загрузки мультимедийных файлов с помощью UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestMultimedia.GetAudioClip(System.String,UnityEngine.AudioType)">
+      <summary>
+        <para>Создайте UnityWebRequest для загрузки аудиоклипа через HTTP GET и создайте AudioClip на основе полученных данных.</para>
+      </summary>
+      <param name="uri">URI аудиоклипа для загрузки.</param>
+      <param name="audioType">Тип кодирования звука для загруженного аудиоклипа. См. АудиоТип.</param>
+      <returns>
+        <para>Правильно настроенный UnityWebRequest для загрузки аудиоклипа и преобразования его в аудиоклип.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestMultimedia.GetMovieTexture(System.String)">
+      <summary>
+        <para>MovieTexture был удален. Вместо этого используйте VideoPlayer.</para>
+      </summary>
+      <param name="uri">
+      </param>
+    </member>
+    <member name="A:UnityEngine.UnityWebRequestAudioModule">
+      <summary>
+        <para>Модуль UnityWebRequestAudio предоставляет класс DownloadHandlerAudioClip для использования UnityWebRequest для загрузки аудиоклипов.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

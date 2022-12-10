@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.NVIDIAModule</name>
+    </assembly>
+    <member name="T:UnityEngine.NVIDIA.DLSSCommandExecutionData">
+      <summary>
+        <para>Представляет состояние DLSSContext. Если вы вызываете Device.ExecuteDLSS, Unity отправляет значения этой структуры в среду выполнения. После этого вы можете изменять значения в этой структуре без каких-либо побочных эффектов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.invertXAxis">
+      <summary>
+        <para>Указывает, инвертирована ли ось X. Установите 0 или 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.invertYAxis">
+      <summary>
+        <para>Указывает, инвертирована ли ось Y. Установите 0 или 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.jitterOffsetX">
+      <summary>
+        <para>Смещение дрожания камеры по оси X в координатах устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.jitterOffsetY">
+      <summary>
+        <para>Смещение дрожания камеры по оси Y в координатах устройства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.mvScaleX">
+      <summary>
+        <para>Если вы установили флаг NVIDIA.DLSSFeatureFlags.MVLowRes, это значение указывает масштаб (меньший) входной текстуры буфера вектора движения, используемой по оси x.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.mvScaleY">
+      <summary>
+        <para>Если вы установили флаг NVIDIA.DLSSFeatureFlags.MVLowRes, это значение указывает масштаб (меньше) входной текстуры буфера вектора движения, используемой по оси Y.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.preExposure">
+      <summary>
+        <para>Указывает множитель предварительной экспозиции для входной цветовой текстуры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.reset">
+      <summary>
+        <para>Указывает, следует ли аннулировать буферы истории.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.sharpness">
+      <summary>
+        <para>Указывает, насколько резкой должна выглядеть рамка, в виде значения от 0 до 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.subrectHeight">
+      <summary>
+        <para>Высота подпрямоугольника используемых входных буферов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.subrectOffsetX">
+      <summary>
+        <para>Используемое смещение входных буферов по оси X подпрямоугольника.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.subrectOffsetY">
+      <summary>
+        <para>Используемое смещение входных буферов по оси Y подпрямоугольника.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandExecutionData.subrectWidth">
+      <summary>
+        <para>Ширина подпрямоугольника используемых входных буферов.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSCommandInitializationData">
+      <summary>
+        <para>Представлять состояние инициализации DLSSContext. Вы можете использовать и устанавливать это только при вызове GraphicsDevice.CreateFeature.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.featureFlags">
+      <summary>
+        <para>Битовая маска, содержащая флаги функций, которые будут использоваться для DLSS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.inputRTHeight">
+      <summary>
+        <para>Размер входной высоты текстуры входных буферов в текселях.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.inputRTWidth">
+      <summary>
+        <para>Размер входной ширины текстуры входных буферов в текселях.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.outputRTHeight">
+      <summary>
+        <para>Размер высоты выходного буфера в текселях для масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.outputRTWidth">
+      <summary>
+        <para>Размер ширины выходного буфера в текселях для масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSCommandInitializationData.quality">
+      <summary>
+        <para>Свойство качества для DLSS.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.DLSSCommandInitializationData.GetFlag(UnityEngine.NVIDIA.DLSSFeatureFlags)">
+      <summary>
+        <para>Вспомогательная функция. Получает значение, если функция DLSS установлена ​​или отключена. См. также: NVIDIA.DLSSFeatureFlags.</para>
+      </summary>
+      <param name="flag">Флаг функции, из которого нужно получить состояние.</param>
+      <returns>
+        <para>Указывает, установлено ли состояние функции или нет.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.DLSSCommandInitializationData.SetFlag(UnityEngine.NVIDIA.DLSSFeatureFlags,System.Boolean)">
+      <summary>
+        <para>Вспомогательная функция. Управляет флагами функций, используемыми DLSS. См. также: NVIDIA.DLSSFeatureFlags.</para>
+      </summary>
+      <param name="flag">Флаг функции, который нужно установить или снять.</param>
+      <param name="value">Указывает, следует ли установить или снять флаг.</param>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSContext">
+      <summary>
+        <para>Представляет состояние DLSS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSContext.executeData">
+      <summary>
+        <para>Изменяемое состояние текущего объекта DLSS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSContext.initData">
+      <summary>
+        <para>Неизменяемые данные инициализации, необходимые для DLSSContext.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSDebugFeatureInfos">
+      <summary>
+        <para>Представляет отладочную информацию для определенного DLSSContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSDebugFeatureInfos.execData">
+      <summary>
+        <para>Последние данные выполнения, которые DLSSContext во время выполнения. См. также: GraphicsDevice.ExecuteDLSS</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSDebugFeatureInfos.featureSlot">
+      <summary>
+        <para>Внутренний идентификатор функционального слота. Вы можете использовать этот слот функции в качестве уникального идентификатора для объектов DLSSCommand. Используйте это только в целях отладки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSDebugFeatureInfos.initData">
+      <summary>
+        <para>Данные инициализации, используемые DLSSContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSDebugFeatureInfos.validFeature">
+      <summary>
+        <para>Отладочная информация, указывающая, было ли последнее выполнение функции действительным или нет.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSFeatureFlags">
+      <summary>
+        <para>Параметры, представляющие подфункции DLSS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.DepthInverted">
+      <summary>
+        <para>Указывает, следует ли инвертировать буфер глубины.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.DoSharpening">
+      <summary>
+        <para>Указывает, использовать ли функцию повышения резкости или нет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.IsHDR">
+      <summary>
+        <para>Указывает, использует ли входной буфер расширенный динамический диапазон. Если установлено, входной буфер представляет собой необработанную яркость, если не установлено, входной буфер представляет собой нормализованный цвет.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.MVJittered">
+      <summary>
+        <para>Указывает, дрожит ли входной буфер векторов движения или нет. Если установлено, необходимо указать NVIDIA.DLSSCommandExecutionData.jitterOffsetX и NVIDIA.DLSSCommandExecutionData.jitterOffsetY.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.MVLowRes">
+      <summary>
+        <para>Указывает, имеет ли входной буфер вектора движения более низкое разрешение, чем выходной. Если установлено, необходимо указать NVIDIA.DLSSCommandExecutionData.mvScaleX и NVIDIA.DLSSCommandExecutionData.mvScaleY.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSFeatureFlags.None">
+      <summary>
+        <para>Отключает все подфункции.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSQuality">
+      <summary>
+        <para>Параметры режимов производительности DLSS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSQuality.Balanced">
+      <summary>
+        <para>Сочетает производительность с качеством.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSQuality.MaximumPerformance">
+      <summary>
+        <para>Быстрая работа, низкое качество.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSQuality.MaximumQuality">
+      <summary>
+        <para>Высокое качество, меньшая производительность.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.DLSSQuality.UltraPerformance">
+      <summary>
+        <para>Самая быстрая производительность, самое низкое качество.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.DLSSTextureTable">
+      <summary>
+        <para>Набор слотов текстур, доступных для DLSSContext. SA GraphicsDevice.ExecuteDLSS</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.biasColorMask">
+      <summary>
+        <para>Маска того же размера, что и colorInput, предпочтительно формата R8_UNORM, которая информирует DLSS о возможных движущихся пикселях. При обнаружении сильных ореолов установите для пикселей эту маску, чтобы устранить проблему. Эта текстура не является обязательной.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.colorInput">
+      <summary>
+        <para>Входной цветовой буфер для повышения дискретизации для DLSSContext. Эта текстура является обязательной, и вы должны установить для нее ненулевое значение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.colorOutput">
+      <summary>
+        <para>Выходной цветовой буфер для записи результата повышающей дискретизации для DLSSContext. Он должен быть достаточно большим, чтобы поместиться в выходной прямоугольник, указанный в команде. Эта текстура является обязательной, и вы должны установить для нее ненулевое значение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.depth">
+      <summary>
+        <para>Входной буфер глубины. Он должен быть того же размера, что и входной цветовой буфер. Эта текстура является обязательной, и вы должны установить для нее ненулевое значение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.exposureTexture">
+      <summary>
+        <para>Текстура 1x1 со значениями предварительной экспозиции. Если вы не используете предварительную экспозицию, не устанавливайте эту текстуру. Эта текстура не является обязательной.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.motionVectors">
+      <summary>
+        <para>Векторы движения, запрошенные DLSSContext. В зависимости от параметра NVIDIA.DLSSFeatureFlags, указанного в DLSSContext.initData, этот буфер может иметь меньший масштаб или полное выходное разрешение. Эта текстура является обязательной, и вы должны установить для нее ненулевое значение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.DLSSTextureTable.transparencyMask">
+      <summary>
+        <para>Битовая маска прозрачности. Он должен быть того же размера, что и исходная текстура. Эта текстура помогает DLSSContext с проблемами ореолов. Эта текстура не является обязательной.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.GraphicsDevice">
+      <summary>
+        <para>Обеспечивает основную точку входа для модуля NVIDIA. Используйте это для взаимодействия с определенными функциями видеокарты NVIDIA.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.GraphicsDevice.device">
+      <summary>
+        <para>Получает устройство, созданное GraphicsDevice.CreateGraphicsDevice. Если устройство не было создано, это свойство имеет значение null.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.GraphicsDevice.version">
+      <summary>
+        <para>Получает версию, соответствующую подключаемому модулю хоста Unity, который управляет официальной библиотекой NVIDIA.NVUnityPlugin.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateDebugView">
+      <summary>
+        <para>Создает объект, содержащий отладочную информацию об устройстве.</para>
+      </summary>
+      <returns>
+        <para>Возвращает объект типа NVIDIA.GraphicsDeviceDebugView. Этот объект содержит снимок отладочной информации устройства..</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateFeature(UnityEngine.Rendering.CommandBuffer,UnityEngine.NVIDIA.DLSSCommandInitializationData&amp;)">
+      <summary>
+        <para>Создает определенную функцию NVIDIA.</para>
+      </summary>
+      <param name="cmd">Буфер команд рендеринга для записи команд. Этот вызов не выполняет буфер команд, вы должны сами выполнить буфер команд в любое время после этого вызова.</param>
+      <param name="initSettings">Начальная структура настроек для конкретной функции.</param>
+      <returns>
+        <para>Возвращает объект контекста Deep Learning Super Sampling (DLSS).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateGraphicsDevice">
+      <summary>
+        <para>Создает основной объект API. Вызовите этот метод в своем приложении только один раз.</para>
+      </summary>
+      <param name="projectID">ProjectID проекта Unity. Этот идентификатор используется только при первом вызове этой функции.</param>
+      <param name="appDir">Указывает каталог, в котором находится NVIDIA DLLS. Когда они не используются, система находит библиотеки DLL рядом с исполняемым файлом редактора.</param>
+      <returns>
+        <para>Объект Device API для доступа к функциям NVIDIA. Если вы снова вызовете эту функцию, она вернет то же устройство, независимо от того, передадите ли вы другой идентификатор проекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateGraphicsDevice(System.String)">
+      <summary>
+        <para>Создает основной объект API. Вызовите этот метод в своем приложении только один раз.</para>
+      </summary>
+      <param name="projectID">ProjectID проекта Unity. Этот идентификатор используется только при первом вызове этой функции.</param>
+      <param name="appDir">Указывает каталог, в котором находится NVIDIA DLLS. Когда они не используются, система находит библиотеки DLL рядом с исполняемым файлом редактора.</param>
+      <returns>
+        <para>Объект Device API для доступа к функциям NVIDIA. Если вы снова вызовете эту функцию, она вернет то же устройство, независимо от того, передадите ли вы другой идентификатор проекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateGraphicsDevice(System.String,System.String)">
+      <summary>
+        <para>Создает основной объект API. Вызовите этот метод в своем приложении только один раз.</para>
+      </summary>
+      <param name="projectID">ProjectID проекта Unity. Этот идентификатор используется только при первом вызове этой функции.</param>
+      <param name="appDir">Указывает каталог, в котором находится NVIDIA DLLS. Когда они не используются, система находит библиотеки DLL рядом с исполняемым файлом редактора.</param>
+      <returns>
+        <para>Объект Device API для доступа к функциям NVIDIA. Если вы снова вызовете эту функцию, она вернет то же устройство, независимо от того, передадите ли вы другой идентификатор проекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.CreateGraphicsDevice(System.String,System.String)">
+      <summary>
+        <para>Создает основной объект API. Вызовите этот метод в своем приложении только один раз.</para>
+      </summary>
+      <param name="projectID">ProjectID проекта Unity. Этот идентификатор используется только при первом вызове этой функции.</param>
+      <param name="appDir">Указывает каталог, в котором находится NVIDIA DLLS. Когда они не используются, система находит библиотеки DLL рядом с исполняемым файлом редактора.</param>
+      <returns>
+        <para>Объект Device API для доступа к функциям NVIDIA. Если вы снова вызовете эту функцию, она вернет то же устройство, независимо от того, передадите ли вы другой идентификатор проекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.DeleteDebugView(UnityEngine.NVIDIA.GraphicsDeviceDebugView)">
+      <summary>
+        <para>Удаляет представление отладки, созданное с помощью GraphicsDevice.CreateDebugView.</para>
+      </summary>
+      <param name="debugView">Используемый объект представления отладки. Это объект, который возвращает GraphicsDevice.CreateDebugView.</param>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.DestroyFeature(UnityEngine.Rendering.CommandBuffer,UnityEngine.NVIDIA.DLSSContext)">
+      <summary>
+        <para>Уничтожает определенный элемент, созданный с помощью GraphicsDevice.CreateFeature.</para>
+      </summary>
+      <param name="cmd">Буфер команд рендеринга для записи команд. Этот вызов не выполняет буфер команд, вы должны сами выполнить буфер команд в любое время после этого вызова.</param>
+      <param name="dlssContext">Объект команды для уничтожения.</param>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.ExecuteDLSS(UnityEngine.Rendering.CommandBuffer,UnityEngine.NVIDIA.DLSSContext,UnityEngine.NVIDIA.DLSSTextureTable&amp;)">
+      <summary>
+        <para>Записывает выполнение DLSS в буфер команд рендеринга. Этот вызов не выполняет буфер команд, он только добавляет в него пользовательские команды.</para>
+      </summary>
+      <param name="cmd">Буфер команд рендеринга для записи команд. Этот вызов не выполняет буфер команд, вы должны сами выполнить буфер команд в любое время после этого вызова.</param>
+      <param name="dlssContext">Контекст исходного объекта для выполнения. Вы должны установить параметры для этой команды в объекте DLSSContext перед этим вызовом.</param>
+      <param name="textures">Таблица текстур, где указаны входы/выходы для выполнения DLSS.</param>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.GetOptimalSettings(System.UInt32,System.UInt32,UnityEngine.NVIDIA.DLSSQuality,UnityEngine.NVIDIA.OptimalDLSSSettingsData&amp;)">
+      <summary>
+        <para>Возвращает структуру, содержащую оптимальные настройки для определенного целевого разрешения и качества.</para>
+      </summary>
+      <param name="targetWidth">Целевая ширина в пикселях.</param>
+      <param name="targetHeight">Целевая высота в пикселях.</param>
+      <param name="quality">Текущая настройка качества.</param>
+      <param name="optimalSettings">Выходная структура, которая будет заполнена данными рекомендуемых оптимальных настроек.</param>
+      <returns>
+        <para>Истинно, если функция успешно заполнила оптимальные настройки. False, если это не удалось.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.IsFeatureAvailable(UnityEngine.NVIDIA.GraphicsDeviceFeature)">
+      <summary>
+        <para>Проверяет, поддерживает ли текущая видеокарта NVIDIA функцию, указанную вами с помощью перечисления GraphicsDeviceFeature.</para>
+      </summary>
+      <param name="featureID">Значение перечисления Feature, представляющее функцию, поддержку которой необходимо проверить.</param>
+      <returns>
+        <para>Возвращает true, если видеокарта поддерживает эту функцию. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.GraphicsDevice.UpdateDebugView(UnityEngine.NVIDIA.GraphicsDeviceDebugView)">
+      <summary>
+        <para>Обновляет снимок отладочной информации для переданного объекта представления.</para>
+      </summary>
+      <param name="debugView">Объект для обновления. Вы должны создать это с помощью GraphicsDevice.CreateDebugView, прежде чем вызывать эту функцию.</param>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.GraphicsDeviceDebugView">
+      <summary>
+        <para>Представляет моментальный снимок памяти текущих состояний функций. Память массивов/буферов в этой структуре привязана к времени существования представления отладки. См. также: GraphicsDevice.CreateDebugView, GraphicsDevice.UpdateDebugView и GraphicsDevice.DeleteDebugView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.GraphicsDeviceDebugView.deviceVersion">
+      <summary>
+        <para>Версия, соответствующая плагину хоста Unity NVUnityPlugin.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.GraphicsDeviceDebugView.dlssFeatureInfos">
+      <summary>
+        <para>Перечисление моментального снимка всех активных сведений о функциях dlss, которые в настоящее время активны во время выполнения. Метод GraphicsDevice.UpdateDebugView выполнит обновление этого моментального снимка.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.GraphicsDeviceDebugView.ngxVersion">
+      <summary>
+        <para>Идентификатор текущей версии официальной внутренней библиотеки NV NGX. Эта версия может измениться, если вы замените библиотеки DLL на DLSS.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.GraphicsDeviceFeature">
+      <summary>
+        <para>Перечисляет идентификаторы всех функций, поддерживаемых API NVIDIA.GraphicsDevice. На данный момент это включает только суперсэмплинг глубокого обучения (DLSS). Чтобы проверить, поддерживает ли устройство функцию, вызовите NVIDIA.GraphicsDevice.IsFeatureAvailable.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.NVIDIA.GraphicsDeviceFeature.DLSS">
+      <summary>
+        <para>Представляет функцию суперсэмплинга для глубокого обучения (DLSS).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.NVUnityPlugin">
+      <summary>
+        <para>Предоставляет методы для управления загрузкой и выгрузкой плагинов модулей NVIDIA.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.NVUnityPlugin.IsLoaded">
+      <summary>
+        <para>Проверяет, загружен ли собственный плагин NVUnityPlugin в собственном модуле NVIDIA.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если собственный плагин был загружен. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.NVIDIA.NVUnityPlugin.Load">
+      <summary>
+        <para>Пытается динамически загрузить плагин NVUnityPlugin.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если функция успешно загрузила плагин. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.NVIDIA.OptimalDLSSSettingsData">
+      <summary>
+        <para>Представляет параметры производительности, рекомендуемые DLSS в зависимости от видеокарты системы и размера входных и выходных цветовых буферов. См. также: GraphicsDevice.GetOptimalSettings</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.maxHeight">
+      <summary>
+        <para>Максимальная высота, рекомендуемая DLSS для динамического разрешения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.maxWidth">
+      <summary>
+        <para>Максимальная ширина, рекомендуемая DLSS для динамического разрешения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.minHeight">
+      <summary>
+        <para>Минимальная высота, рекомендуемая DLSS для динамического разрешения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.minWidth">
+      <summary>
+        <para>Минимальная ширина, рекомендуемая DLSS для динамического разрешения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.outRenderHeight">
+      <summary>
+        <para>Высота выходного разрешения рендеринга, которое рекомендует DLSS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.outRenderWidth">
+      <summary>
+        <para>Ширина выходного разрешения рендеринга, которое рекомендует DLSS.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.NVIDIA.OptimalDLSSSettingsData.sharpness">
+      <summary>
+        <para>Значение резкости, рекомендованное DLSS.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.NVIDIAModule">
+      <summary>
+        <para>Модуль, содержащий API, который вы можете использовать для взаимодействия с видеокартами NVIDIA.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

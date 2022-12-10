@@ -1,0 +1,1797 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AIModule</name>
+    </assembly>
+    <member name="T:UnityEngine.AI.NavMesh">
+      <summary>
+        <para>Класс Singleton для доступа к запеченной NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMesh.avoidancePredictionTime">
+      <summary>
+        <para>Описывает, насколько далеко в будущем агенты предсказывают коллизии, чтобы избежать их.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMesh.onPreUpdate">
+      <summary>
+        <para>Установите функцию, которая будет вызываться перед обновлением NavMesh во время выполнения обновления кадра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMesh.pathfindingIterationsPerFrame">
+      <summary>
+        <para>Максимальное количество узлов, обрабатываемых для каждого кадра в процессе асинхронного поиска пути.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.AddLink(UnityEngine.AI.NavMeshLinkData)">
+      <summary>
+        <para>Добавляет ссылку на NavMesh. Ссылка описывается структурой NavMeshLinkData.</para>
+      </summary>
+      <param name="link">Описание свойств ссылки.</param>
+      <returns>
+        <para>Представляет добавленную ссылку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.AddLink(UnityEngine.AI.NavMeshLinkData,UnityEngine.Vector3,UnityEngine.Quaternion)">
+      <summary>
+        <para>Добавляет ссылку на NavMesh. Ссылка описывается структурой NavMeshLinkData.</para>
+      </summary>
+      <param name="link">Описание свойств ссылки.</param>
+      <param name="position">Переведите ссылку на эту позицию.</param>
+      <param name="rotation">Поверните ссылку в эту ориентацию.</param>
+      <returns>
+        <para>Представляет добавленную ссылку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.AddNavMeshData(UnityEngine.AI.NavMeshData)">
+      <summary>
+        <para>Добавляет указанный NavMeshData в игру.</para>
+      </summary>
+      <param name="navMeshData">Содержит данные для навигационной сетки.</param>
+      <returns>
+        <para>Представление добавленной навигационной сетки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.AddNavMeshData(UnityEngine.AI.NavMeshData,UnityEngine.Vector3,UnityEngine.Quaternion)">
+      <summary>
+        <para>Добавляет указанный NavMeshData в игру.</para>
+      </summary>
+      <param name="navMeshData">Содержит данные для навигационной сетки.</param>
+      <param name="position">Переместите навигационную сетку в эту позицию.</param>
+      <param name="rotation">Поверните навигационную сетку в эту ориентацию.</param>
+      <returns>
+        <para>Представление добавленной навигационной сетки.</para>
+      </returns>
+    </member>
+    <member name="F:UnityEngine.AI.NavMesh.AllAreas">
+      <summary>
+        <para>Константа маски области, включающая все области NavMesh.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.CalculatePath(UnityEngine.Vector3,UnityEngine.Vector3,System.Int32,UnityEngine.AI.NavMeshPath)">
+      <summary>
+        <para>Вычислить путь между двумя точками и сохранить полученный путь.</para>
+      </summary>
+      <param name="sourcePosition">Начальная позиция запрошенного пути.</param>
+      <param name="targetPosition">Конечная позиция запрошенного пути.</param>
+      <param name="areaMask">Маска битового поля, указывающая, какие области NavMesh могут передаваться при расчете пути.</param>
+      <param name="path">Полученный путь.</param>
+      <returns>
+        <para>Истинно, если найден полный или частичный путь. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.CalculatePath(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.AI.NavMeshQueryFilter,UnityEngine.AI.NavMeshPath)">
+      <summary>
+        <para>Вычисляет путь между двумя позициями, сопоставленными с NavMesh, с учетом ограничений и затрат, определенных аргументом фильтра.</para>
+      </summary>
+      <param name="sourcePosition">Начальная позиция запрошенного пути.</param>
+      <param name="targetPosition">Конечная позиция запрошенного пути.</param>
+      <param name="filter">Фильтр, указывающий стоимость областей NavMesh, которые можно передать при расчете пути.</param>
+      <param name="path">Полученный путь.</param>
+      <returns>
+        <para>Истина, если найден полный или частичный путь, и ложь в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.CalculateTriangulation">
+      <summary>
+        <para>Вычисляет триангуляцию текущей навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.CreateSettings">
+      <summary>
+        <para>Создает и возвращает новую запись параметров построения NavMesh, доступных для построения NavMesh во время выполнения.</para>
+      </summary>
+      <returns>
+        <para>Созданные настройки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.FindClosestEdge(UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,System.Int32)">
+      <summary>
+        <para>Найдите ближайшее ребро NavMesh к точке на NavMesh.</para>
+      </summary>
+      <param name="sourcePosition">Источник запроса расстояния.</param>
+      <param name="hit">Содержит свойства полученного местоположения.</param>
+      <param name="areaMask">Маска битового поля, указывающая, какие области NavMesh можно передать при поиске ближайшего ребра.</param>
+      <returns>
+        <para>Истинно, если найдено ближайшее ребро.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.FindClosestEdge(UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,UnityEngine.AI.NavMeshQueryFilter)">
+      <summary>
+        <para>Найдите ближайшее ребро NavMesh от точки в NavMesh с учетом ограничений аргумента фильтра.</para>
+      </summary>
+      <param name="sourcePosition">Источник запроса расстояния.</param>
+      <param name="hit">Содержит свойства полученного местоположения.</param>
+      <param name="filter">Фильтр, указывающий, какие области NavMesh могут быть пропущены при поиске ближайшего ребра.</param>
+      <returns>
+        <para>Истинно, если найдено ближайшее ребро.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetAreaCost(System.Int32)">
+      <summary>
+        <para>Получает стоимость поиска пути по геометрии типа области.</para>
+      </summary>
+      <param name="areaIndex">Индекс области, которую необходимо получить.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetAreaFromName(System.String)">
+      <summary>
+        <para>Возвращает индекс области для именованного типа области NavMesh.</para>
+      </summary>
+      <param name="areaName">Имя области для поиска.</param>
+      <returns>
+        <para>Индекс, если указанные есть, или -1, если область не найдена.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetLayerCost(System.Int32)">
+      <summary>
+        <para>Получает стоимость обхода геометрии типа слоя на всех агентах.</para>
+      </summary>
+      <param name="layer">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetNavMeshLayerFromName(System.String)">
+      <summary>
+        <para>Возвращает индекс слоя для именованного слоя.</para>
+      </summary>
+      <param name="layerName">
+      </param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetSettingsByID(System.Int32)">
+      <summary>
+        <para>Возвращает существующую запись настроек сборки NavMesh.</para>
+      </summary>
+      <param name="agentTypeID">ID для поиска.</param>
+      <returns>
+        <para>Настройки найдены.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetSettingsByIndex(System.Int32)">
+      <summary>
+        <para>Возвращает существующую запись настроек сборки NavMesh по ее упорядоченному индексу.</para>
+      </summary>
+      <param name="index">Индекс для извлечения из.</param>
+      <returns>
+        <para>Найденные настройки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetSettingsCount">
+      <summary>
+        <para>Возвращает количество зарегистрированных настроек сборки NavMesh.</para>
+      </summary>
+      <returns>
+        <para>Количество зарегистрированных записей.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.GetSettingsNameFromID(System.Int32)">
+      <summary>
+        <para>Возвращает имя, связанное с настройками сборки NavMesh, соответствующее предоставленному идентификатору типа агента.</para>
+      </summary>
+      <param name="agentTypeID">ID для поиска.</param>
+      <returns>
+        <para>Имя, связанное с найденным идентификатором.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AI.NavMesh.OnNavMeshPreUpdate">
+      <summary>
+        <para>Делегат, который можно использовать для регистрации методов обратного вызова, которые будут вызываться перед обновлением системы NavMesh.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,System.Int32)">
+      <summary>
+        <para>Проведите линию между двумя точками в NavMesh.</para>
+      </summary>
+      <param name="sourcePosition">Происхождение луча.</param>
+      <param name="targetPosition">Конец луча.</param>
+      <param name="hit">Содержит свойства результирующего местоположения луча.</param>
+      <param name="areaMask">Маска битового поля, указывающая, какие области NavMesh можно передавать при трассировке луча.</param>
+      <returns>
+        <para>Истинно, если луч завершается до достижения целевой позиции. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,UnityEngine.AI.NavMeshQueryFilter)">
+      <summary>
+        <para>Трассирует линию между двумя позициями в NavMesh с учетом ограничений, определенных аргументом фильтра.</para>
+      </summary>
+      <param name="sourcePosition">Происхождение луча.</param>
+      <param name="targetPosition">Конец луча.</param>
+      <param name="hit">Содержит свойства результирующего местоположения луча.</param>
+      <param name="filter">Фильтр, указывающий, какие области NavMesh могут передаваться при трассировке луча.</param>
+      <returns>
+        <para>Истинно, если луч завершается до достижения целевой позиции. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.RemoveAllNavMeshData">
+      <summary>
+        <para>Удаляет все поверхности и ссылки NavMesh из игры.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.RemoveLink(UnityEngine.AI.NavMeshLinkInstance)">
+      <summary>
+        <para>Удаляет ссылку из NavMesh.</para>
+      </summary>
+      <param name="handle">Экземпляр ссылки для удаления.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.RemoveNavMeshData(UnityEngine.AI.NavMeshDataInstance)">
+      <summary>
+        <para>Удаляет указанный экземпляр NavMeshDataInstance из игры, делая его недоступным для агентов и запросов.</para>
+      </summary>
+      <param name="handle">Экземпляр NavMesh для удаления.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.RemoveSettings(System.Int32)">
+      <summary>
+        <para>Удаляет параметры сборки, соответствующие идентификатору типа агента.</para>
+      </summary>
+      <param name="agentTypeID">Идентификатор удаляемой записи.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.SamplePosition(UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,System.Single,System.Int32)">
+      <summary>
+        <para>Находит ближайшую точку на основе NavMesh в указанном диапазоне.</para>
+      </summary>
+      <param name="sourcePosition">Источник примера запроса.</param>
+      <param name="hit">Содержит свойства полученного местоположения. Значение hit.normal никогда не вычисляется. Всегда (0,0,0).</param>
+      <param name="maxDistance">Образец на этом расстоянии от sourcePosition.</param>
+      <param name="areaMask">Маска, указывающая области NavMesh, разрешенные при поиске ближайшей точки.</param>
+      <returns>
+        <para>Истина, если найдена ближайшая точка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.SamplePosition(UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;,System.Single,UnityEngine.AI.NavMeshQueryFilter)">
+      <summary>
+        <para>Выбирает позицию, ближайшую к sourcePosition в любой NavMesh, созданной для типа агента, указанного фильтром.</para>
+      </summary>
+      <param name="sourcePosition">Источник примера запроса.</param>
+      <param name="hit">Содержит свойства полученного местоположения. Значение hit.normal никогда не вычисляется. Всегда (0,0,0).</param>
+      <param name="maxDistance">Образец на этом расстоянии от sourcePosition.</param>
+      <param name="filter">Фильтр, указывающий, какие области NavMesh разрешены при поиске ближайшей точки.</param>
+      <returns>
+        <para>Истина, если найдена ближайшая точка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.SetAreaCost(System.Int32,System.Single)">
+      <summary>
+        <para>Задает стоимость поиска пути по геометрии типа области на всех агентах.</para>
+      </summary>
+      <param name="areaIndex">Индекс устанавливаемой области.</param>
+      <param name="cost">Новая стоимость.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMesh.SetLayerCost(System.Int32,System.Single)">
+      <summary>
+        <para>Задает стоимость обхода геометрии типа слоя на всех агентах.</para>
+      </summary>
+      <param name="layer">
+      </param>
+      <param name="cost">
+      </param>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshAgent">
+      <summary>
+        <para>Агент сетки навигации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.acceleration">
+      <summary>
+        <para>Максимальное ускорение агента при следовании по пути, выраженное в единицах/с^2.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.agentTypeID">
+      <summary>
+        <para>Идентификатор типа для агента.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.angularSpeed">
+      <summary>
+        <para>Максимальная скорость поворота в (град/с) при движении по траектории.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.areaMask">
+      <summary>
+        <para>Указывает, какие области NavMesh проходимы. Изменение areaMask сделает путь устаревшим (см. isPathStale).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.autoBraking">
+      <summary>
+        <para>Должен ли агент автоматически тормозить, чтобы избежать превышения точки назначения?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.autoRepath">
+      <summary>
+        <para>Должен ли агент пытаться получить новый путь, если существующий путь становится недействительным?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.autoTraverseOffMeshLink">
+      <summary>
+        <para>Должен ли агент автоматически перемещаться по OffMeshLinks?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.avoidancePriority">
+      <summary>
+        <para>Уровень приоритета предотвращения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.baseOffset">
+      <summary>
+        <para>Относительное вертикальное смещение принадлежащего GameObject.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.currentOffMeshLinkData">
+      <summary>
+        <para>Текущая OffMeshLinkData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.desiredVelocity">
+      <summary>
+        <para>Желаемая скорость агента, включая любой потенциальный вклад от уклонения. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.destination">
+      <summary>
+        <para>Получает или пытается установить пункт назначения агента в единицах измерения мирового пространства.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.hasPath">
+      <summary>
+        <para>Есть ли у агента в настоящее время путь? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.height">
+      <summary>
+        <para>Высота агента для прохождения под препятствиями и т.д.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.isOnNavMesh">
+      <summary>
+        <para>Агент в настоящее время привязан к навигационной сетке? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.isOnOffMeshLink">
+      <summary>
+        <para>Находится ли агент в настоящее время на OffMeshLink? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.isPathStale">
+      <summary>
+        <para>Текущий путь устарел. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.isStopped">
+      <summary>
+        <para>Это свойство содержит условие остановки или возобновления работы агента NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.navMeshOwner">
+      <summary>
+        <para>Возвращает объект-владелец NavMesh, на котором в данный момент размещен агент (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.nextOffMeshLinkData">
+      <summary>
+        <para>Следующий OffMeshLinkData на текущем пути.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.nextPosition">
+      <summary>
+        <para>Получает или задает позицию моделирования агента навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.obstacleAvoidanceType">
+      <summary>
+        <para>Уровень качества избегания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.path">
+      <summary>
+        <para>Свойство для получения и установки текущего пути.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.pathPending">
+      <summary>
+        <para>Путь находится в процессе вычисления, но еще не готов? (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.pathStatus">
+      <summary>
+        <para>Статус текущего пути (полный, частичный или неверный).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.radius">
+      <summary>
+        <para>Радиус уклонения от агента.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.remainingDistance">
+      <summary>
+        <para>Расстояние между позицией агента и пунктом назначения на текущем пути. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.speed">
+      <summary>
+        <para>Максимальная скорость движения при следовании по пути.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.steeringTarget">
+      <summary>
+        <para>Получить текущую цель управления по пути. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.stoppingDistance">
+      <summary>
+        <para>Остановитесь на этом расстоянии от целевой позиции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.updatePosition">
+      <summary>
+        <para>Получает или задает значение, указывающее, синхронизируется ли позиция преобразования с симулируемой позицией агента. Значение по умолчанию — true.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.updateRotation">
+      <summary>
+        <para>Должен ли агент обновлять ориентацию преобразования?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.updateUpAxis">
+      <summary>
+        <para>Позволяет указать, должен ли агент быть выровнен по верхней оси NavMesh или по ссылке, на которой он размещен.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.velocity">
+      <summary>
+        <para>Получите доступ к текущей скорости компонента NavMeshAgent или установите скорость для управления агентом вручную.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshAgent.walkableMask">
+      <summary>
+        <para>Указывает, какие слои NavMesh являются проходимыми (битовое поле). Изменение walkableMask сделает путь устаревшим (см. isPathStale).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.ActivateCurrentOffMeshLink(System.Boolean)">
+      <summary>
+        <para>Включает или отключает текущую ссылку вне сетки.</para>
+      </summary>
+      <param name="activated">Ссылка активирована?</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.CalculatePath(UnityEngine.Vector3,UnityEngine.AI.NavMeshPath)">
+      <summary>
+        <para>Вычислить путь к указанной точке и сохранить полученный путь.</para>
+      </summary>
+      <param name="targetPosition">Конечная позиция запрошенного пути.</param>
+      <param name="path">Полученный путь.</param>
+      <returns>
+        <para>Истинно, если путь найден.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.CompleteOffMeshLink">
+      <summary>
+        <para>Завершает движение по текущему OffMeshLink.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.FindClosestEdge(UnityEngine.AI.NavMeshHit&amp;)">
+      <summary>
+        <para>Найдите ближайшее ребро NavMesh.</para>
+      </summary>
+      <param name="hit">Содержит свойства полученного местоположения.</param>
+      <returns>
+        <para>Истинно, если найдено ближайшее ребро.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.GetAreaCost(System.Int32)">
+      <summary>
+        <para>Получает стоимость расчета пути при пересечении области определенного типа.</para>
+      </summary>
+      <param name="areaIndex">Индекс области.</param>
+      <returns>
+        <para>Текущая стоимость для указанного индекса площади.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.GetLayerCost(System.Int32)">
+      <summary>
+        <para>Получает стоимость пересечения земли определенного типа.</para>
+      </summary>
+      <param name="layer">Индекс слоя.</param>
+      <returns>
+        <para>Текущая стоимость указанного слоя.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.Move(UnityEngine.Vector3)">
+      <summary>
+        <para>Применить относительное перемещение к текущей позиции.</para>
+      </summary>
+      <param name="offset">Вектор относительного перемещения.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.Raycast(UnityEngine.Vector3,UnityEngine.AI.NavMeshHit&amp;)">
+      <summary>
+        <para>Проследите прямой путь к целевой позиции в NavMesh, не перемещая агента.</para>
+      </summary>
+      <param name="targetPosition">Желаемое конечное положение движения.</param>
+      <param name="hit">Свойства обнаруженного лучом препятствия (если есть).</param>
+      <returns>
+        <para>Истина, если между агентом и целевой позицией есть препятствие, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.ResetPath">
+      <summary>
+        <para>Очищает текущий путь.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.Resume">
+      <summary>
+        <para>Возобновляет движение по текущему пути после паузы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.SamplePathPosition(System.Int32,System.Single,UnityEngine.AI.NavMeshHit&amp;)">
+      <summary>
+        <para>Образец позиции на текущем пути.</para>
+      </summary>
+      <param name="areaMask">Маска битового поля, указывающая, какие области NavMesh можно передавать при трассировке пути.</param>
+      <param name="maxDistance">Прекратить сканирование пути на этом расстоянии.</param>
+      <param name="hit">Содержит свойства полученного местоположения.</param>
+      <returns>
+        <para>Истина, если завершается до достижения позиции на максимальном расстоянии, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.SetAreaCost(System.Int32,System.Single)">
+      <summary>
+        <para>Устанавливает стоимость обхода областей типа area.</para>
+      </summary>
+      <param name="areaIndex">Стоимость площади.</param>
+      <param name="areaCost">Новая стоимость для указанного индекса области.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.SetDestination(UnityEngine.Vector3)">
+      <summary>
+        <para>Задает или обновляет пункт назначения, запуская расчет нового пути.</para>
+      </summary>
+      <param name="target">Целевая точка для перехода.</param>
+      <returns>
+        <para>Истина, если пункт назначения был запрошен успешно, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.SetLayerCost(System.Int32,System.Single)">
+      <summary>
+        <para>Устанавливает стоимость обхода геометрии типа слоя.</para>
+      </summary>
+      <param name="layer">Индекс слоя.</param>
+      <param name="cost">Новая стоимость для указанного слоя.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.SetPath(UnityEngine.AI.NavMeshPath)">
+      <summary>
+        <para>Назначьте новый путь к этому агенту.</para>
+      </summary>
+      <param name="path">Новый путь.</param>
+      <returns>
+        <para>Истинно, если путь успешно назначен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.Stop">
+      <summary>
+        <para>Остановить движение этого агента по его текущему пути.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshAgent.Warp(UnityEngine.Vector3)">
+      <summary>
+        <para>Деформирует агента в указанную позицию.</para>
+      </summary>
+      <param name="newPosition">Новая позиция для перемещения агента.</param>
+      <returns>
+        <para>Истинно, если агент успешно преобразован, в противном случае — ложь.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildDebugFlags">
+      <summary>
+        <para>Битовая маска, используемая для работы с отладочными данными из процесса сборки NavMesh.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.All">
+      <summary>
+        <para>Учитываются все отладочные данные процесса сборки NavMesh.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.InputGeometry">
+      <summary>
+        <para>Треугольники всей геометрии, которые используются в качестве основы для расчета новой NavMesh.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.None">
+      <summary>
+        <para>Данные отладки из процесса сборки NavMesh не учитываются.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.PolygonMeshes">
+      <summary>
+        <para>Сетки выпуклых многоугольников, построенные внутри единых контуров смежных областей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.PolygonMeshesDetail">
+      <summary>
+        <para>Триангулированные сетки с деталями высоты, которые лучше соответствуют исходной геометрии.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.RawContours">
+      <summary>
+        <para>Контуры, которые точно повторяют края каждой области поверхности.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.Regions">
+      <summary>
+        <para>Сегментация проходимых поверхностей на более мелкие области, необходимая для создания простых многоугольников.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.SimplifiedContours">
+      <summary>
+        <para>Контуры, ограничивающие каждую из областей поверхности, описываются с помощью меньшего количества вершин и более прямых ребер по сравнению с RawContours.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildDebugFlags.Voxels">
+      <summary>
+        <para>Воксели, созданные путем растрирования исходной геометрии на проходимые и недоступные области.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildDebugSettings">
+      <summary>
+        <para>Укажите, какие временные данные, сгенерированные при построении NavMesh, должны оставаться в памяти после завершения процесса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildDebugSettings.flags">
+      <summary>
+        <para>Укажите, какие типы данных отладки следует собирать при построении NavMesh.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.AI.NavMeshBuilder">
+      <summary>
+        <para>Интерфейс построителя сетки навигации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuilder.BuildNavMeshData(UnityEngine.AI.NavMeshBuildSettings,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildSource&gt;,UnityEngine.Bounds,UnityEngine.Vector3,UnityEngine.Quaternion)">
+      <summary>
+        <para>Создает объект данных NavMesh из предоставленных источников ввода. (UnityEngine)</para>
+      </summary>
+      <param name="buildSettings">Настройки процесса запекания см. в разделе NavMeshBuildSettings.</param>
+      <param name="sources">Список входной геометрии, используемой для запекания, они описывают поверхности, по которым нужно ходить, или препятствия, которых следует избегать.</param>
+      <param name="localBounds">Ограничивающая рамка относительно положения и поворота, которая описывает объем, в котором должна быть построена NavMesh. Пустые границы рассматриваются как отсутствие границ, т. е. NavMesh покрывает все входные данные.</param>
+      <param name="position">Центр NavMeshData. Указывает источник плиток NavMesh (см. также: NavMeshBuildSettings.tileSize).</param>
+      <param name="rotation">Ориентация NavMeshData, вы можете использовать это для создания NavMesh с произвольным восходящим вектором – например, для вертикальных поверхностей, по которым можно ходить.</param>
+      <returns>
+        <para>Возвращает только что построенный NavMeshData или null, если NavMeshData был пуст или произошла ошибка.
+Вновь созданный NavMeshData или null, если NavMeshData был пуст или произошла ошибка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AI.NavMeshBuilder.Cancel">
+      <summary>
+        <para>Отменить построение навигационной сетки. (UnityEditor) См. также: NavMeshBuilder.BuildNavMeshAsync</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.AI.NavMeshBuilder.Cancel(UnityEngine.AI.NavMeshData)">
+      <summary>
+        <para>Отменяет асинхронное обновление указанных данных NavMesh. (UnityEngine) См. также: NavMeshBuilder.UpdateNavMeshDataAsync.</para>
+      </summary>
+      <param name="data">Данные, связанные с асинхронным обновлением.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuilder.CollectSources(UnityEngine.Bounds,System.Int32,UnityEngine.AI.NavMeshCollectGeometry,System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildMarkup&gt;,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildSource&gt;)">
+      <summary>
+        <para>Собирает средства визуализации или физические коллайдеры, а также ландшафты внутри объема. (UnityEngine)</para>
+      </summary>
+      <param name="includedWorldBounds">Запрошенные объекты должны перекрывать эти границы, чтобы быть включенными в результаты.</param>
+      <param name="includedLayerMask">Указывает, какие слои включены в запрос.</param>
+      <param name="geometry">Какой тип геометрии собирать — например, физические коллайдеры.</param>
+      <param name="defaultArea">Тип области, назначаемый результатам, если он не изменен NavMeshMarkup.</param>
+      <param name="markups">Список пометок, позволяющих лучше контролировать сбор объектов.</param>
+      <param name="results">Список, где хранятся результаты, список очищается в начале звонка.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuilder.CollectSources(UnityEngine.Transform,System.Int32,UnityEngine.AI.NavMeshCollectGeometry,System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildMarkup&gt;,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildSource&gt;)">
+      <summary>
+        <para>Собирает средства визуализации или физические коллайдеры, а также ландшафты в иерархии преобразования. (UnityEngine)</para>
+      </summary>
+      <param name="root">Если не нуль, рассматривать в запросе только root и его дочерние элементы; если null, включает все загруженное.</param>
+      <param name="includedLayerMask">Указывает, какие слои включены в запрос.</param>
+      <param name="geometry">Какой тип геометрии собирать — например, физические коллайдеры.</param>
+      <param name="defaultArea">Тип области, назначаемый результатам, если он не изменен NavMeshMarkup.</param>
+      <param name="markups">Список пометок, позволяющих лучше контролировать сбор объектов.</param>
+      <param name="results">Список, где хранятся результаты, список очищается в начале звонка.</param>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuilder.UpdateNavMeshData(UnityEngine.AI.NavMeshData,UnityEngine.AI.NavMeshBuildSettings,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildSource&gt;,UnityEngine.Bounds)">
+      <summary>
+        <para>Постепенно обновляет NavMeshData на основе источников. (UnityEngine)</para>
+      </summary>
+      <param name="data">NavMeshData для обновления.</param>
+      <param name="buildSettings">Параметры сборки, которые используются для обновления файла NavMeshData. Параметры сборки также хешируются вместе с данными, поэтому изменение параметров приведет к полной перестройке.</param>
+      <param name="sources">Список входной геометрии, используемой для запекания, они описывают поверхности, по которым нужно ходить, или препятствия, которых следует избегать.</param>
+      <param name="localBounds">Ограничивающая рамка относительно положения и поворота, которая описывает объем, в котором должна быть построена NavMesh.</param>
+      <returns>
+        <para>Возвращает true, если обновление прошло успешно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuilder.UpdateNavMeshDataAsync(UnityEngine.AI.NavMeshData,UnityEngine.AI.NavMeshBuildSettings,System.Collections.Generic.List`1&lt;UnityEngine.AI.NavMeshBuildSource&gt;,UnityEngine.Bounds)">
+      <summary>
+        <para>Асинхронно и постепенно обновляет NavMeshData на основе источников. (UnityEngine)</para>
+      </summary>
+      <param name="data">NavMeshData для обновления.</param>
+      <param name="buildSettings">Параметры сборки, которые используются для обновления файла NavMeshData. Параметры сборки также хешируются вместе с данными, поэтому изменение параметров может привести к полной перестройке.</param>
+      <param name="sources">Список входной геометрии, используемой для запекания, они описывают поверхности, по которым нужно ходить, или препятствия, которых следует избегать.</param>
+      <param name="localBounds">Ограничивающая рамка относительно положения и поворота, которая описывает объем, в котором должна быть построена NavMesh.</param>
+      <returns>
+        <para>Может использоваться для проверки хода обновления.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildMarkup">
+      <summary>
+        <para>Разметка сборки NavMesh позволяет вам контролировать, как обрабатываются определенные объекты в процессе сборки NavMesh, особенно при сборе исходников для сборки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildMarkup.area">
+      <summary>
+        <para>Тип области, используемый, когда включена область переопределения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildMarkup.ignoreFromBuild">
+      <summary>
+        <para>Используйте это, чтобы указать, следует ли игнорировать GameObject и его дочерние элементы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildMarkup.overrideArea">
+      <summary>
+        <para>Используйте это, чтобы указать, должен ли тип области GameObject и его дочерних элементов быть переопределен типом области, указанным в этой структуре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildMarkup.root">
+      <summary>
+        <para>Используйте это, чтобы указать, к какому GameObject (включая дочерние GameObject) должна быть применена разметка.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildSettings">
+      <summary>
+        <para>Структура NavMeshBuildSettings позволяет указать набор параметров, описывающих размеры и ограничения конкретного типа агента.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.agentClimb">
+      <summary>
+        <para>Максимальный размер шага по вертикали, который может сделать агент.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.agentHeight">
+      <summary>
+        <para>Высота агента для запекания в мировых единицах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.agentRadius">
+      <summary>
+        <para>Радиус агента для запекания в мировых единицах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.agentSlope">
+      <summary>
+        <para>Максимальный угол наклона, по которому можно пройти пешком (угол в градусах).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.agentTypeID">
+      <summary>
+        <para>Идентификатор типа агента, для которого будет запекаться NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.debug">
+      <summary>
+        <para>Варианты сбора отладочных данных в процессе сборки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.maxJobWorkers">
+      <summary>
+        <para>Максимальное количество рабочих потоков, которое процесс сборки может использовать при построении NavMesh с этими настройками.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.minRegionArea">
+      <summary>
+        <para>Приблизительная минимальная площадь отдельных регионов NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.overrideTileSize">
+      <summary>
+        <para>Позволяет переопределить размер плитки по умолчанию. См. также: tileSize.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.overrideVoxelSize">
+      <summary>
+        <para>Позволяет переопределить размер вокселя по умолчанию. См. также: voxelSize.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.tileSize">
+      <summary>
+        <para>Задает размер плитки в воксельных единицах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSettings.voxelSize">
+      <summary>
+        <para>Устанавливает размер вокселя в мировых единицах длины.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshBuildSettings.ValidationReport(UnityEngine.Bounds)">
+      <summary>
+        <para>Проверяет свойства NavMeshBuildSettings.</para>
+      </summary>
+      <param name="buildBounds">Описывает том, для которого создается NavMesh.</param>
+      <returns>
+        <para>Список нарушенных ограничений.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildSource">
+      <summary>
+        <para>Входными данными для построителя NavMesh является список источников сборки NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.area">
+      <summary>
+        <para>Описывает тип области поверхности NavMesh для этого объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.component">
+      <summary>
+        <para>Указывает на компонент-владелец — если он доступен, иначе null.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.shape">
+      <summary>
+        <para>Тип формы, которую описывает этот источник. См. также: NavMeshBuildSourceShape.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.size">
+      <summary>
+        <para>Описывает размеры фигуры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.sourceObject">
+      <summary>
+        <para>Описывает объект, на который ссылаются источники ввода Mesh и Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshBuildSource.transform">
+      <summary>
+        <para>Описывает матрицу локального преобразования в глобальную для источника сборки. То есть положение, ориентация и масштаб фигуры.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshBuildSourceShape">
+      <summary>
+        <para>Используется с NavMeshBuildSource для определения формы построения NavMesh.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Box">
+      <summary>
+        <para>Описывает примитив коробки для использования с NavMeshBuildSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Capsule">
+      <summary>
+        <para>Описывает примитив капсулы для использования с NavMeshBuildSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Mesh">
+      <summary>
+        <para>Описывает источник Mesh для использования с NavMeshBuildSource. Источники сетки должны располагаться в пределах 100 000 единиц от исходной точки и не должны превышать 100 000 единиц в любом измерении по оси.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.ModifierBox">
+      <summary>
+        <para>Описывает источник ModifierBox для использования с NavMeshBuildSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Sphere">
+      <summary>
+        <para>Описывает примитив сферы для использования с NavMeshBuildSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Terrain">
+      <summary>
+        <para>Описывает источник TerrainData для использования с NavMeshBuildSource.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshCollectGeometry">
+      <summary>
+        <para>Используется для указания типа собираемой геометрии. Используется с NavMeshBuilder.CollectSources.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshCollectGeometry.PhysicsColliders">
+      <summary>
+        <para>Соберите геометрию из трехмерного физического представления коллизий.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshCollectGeometry.RenderMeshes">
+      <summary>
+        <para>Соберите сетки из визуализируемой геометрии.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshData">
+      <summary>
+        <para>Содержит и представляет данные NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshData.position">
+      <summary>
+        <para>Получает или задает положение данных NavMesh в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshData.rotation">
+      <summary>
+        <para>Получает или задает ориентацию данных NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshData.sourceBounds">
+      <summary>
+        <para>Возвращает ограничивающий объем входной геометрии, используемой для построения этой NavMesh (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshData.#ctor">
+      <summary>
+        <para>Создает новый объект для представления NavMesh для типа агента по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshData.#ctor(System.Int32)">
+      <summary>
+        <para>Создает новый объект, представляющий NavMesh для указанного типа агента.</para>
+      </summary>
+      <param name="agentTypeID">Идентификатор типа агента, для которого создается NavMesh.</param>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshDataInstance">
+      <summary>
+        <para>Экземпляр возвращается при добавлении данных NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshDataInstance.owner">
+      <summary>
+        <para>Получить или установить объект-владелец.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshDataInstance.valid">
+      <summary>
+        <para>Истина, если данные NavMesh добавляются в навигационную систему, в противном случае — ложь (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshDataInstance.Remove">
+      <summary>
+        <para>Удаляет этот экземпляр из системы NavMesh.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshHit">
+      <summary>
+        <para>Информация о результатах запросов NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshHit.distance">
+      <summary>
+        <para>Расстояние до точки попадания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshHit.hit">
+      <summary>
+        <para>Флаг устанавливается при попадании.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshHit.mask">
+      <summary>
+        <para>Маска, определяющая область NavMesh в точке попадания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshHit.normal">
+      <summary>
+        <para>Нормально в момент попадания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshHit.position">
+      <summary>
+        <para>Позиция попадания.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshLinkData">
+      <summary>
+        <para>Используется для управления ссылками, соединяющими полигоны NavMesh во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.agentTypeID">
+      <summary>
+        <para>Указывает, для какого типа агента доступна эта ссылка.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.area">
+      <summary>
+        <para>Тип области ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.bidirectional">
+      <summary>
+        <para>Если true, ссылка может быть пройдена в обоих направлениях, в противном случае только от начальной до конечной позиции.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.costModifier">
+      <summary>
+        <para>Если положительный, переопределяет стоимость обхода ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.endPosition">
+      <summary>
+        <para>Конечная позиция ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.startPosition">
+      <summary>
+        <para>Начальная позиция ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkData.width">
+      <summary>
+        <para>Если положительный, ссылка будет выровнена по прямоугольнику вдоль линии от начала до конца.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshLinkInstance">
+      <summary>
+        <para>Экземпляр, представляющий ссылку, доступную для поиска пути.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkInstance.owner">
+      <summary>
+        <para>Получить или установить объект-владелец.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshLinkInstance.valid">
+      <summary>
+        <para>Истина, если ссылка NavMesh добавлена ​​в навигационную систему, в противном случае — ложь (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshLinkInstance.Remove">
+      <summary>
+        <para>Удаляет этот экземпляр из игры.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshObstacle">
+      <summary>
+        <para>Препятствие для агентов NavMeshAgent, которого следует избегать.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.carveOnlyStationary">
+      <summary>
+        <para>Следует ли вырезать это препятствие, когда оно постоянно движется?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.carving">
+      <summary>
+        <para>Если это препятствие делает вырез в навигационной сетке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.carvingMoveThreshold">
+      <summary>
+        <para>Пороговое расстояние для обновления движущегося вырезаемого отверстия (когда вырезание включено).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.carvingTimeToStationary">
+      <summary>
+        <para>Время ожидания, пока препятствие не будет считаться стационарным (когда включены carving и carveOnlyStationary).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.center">
+      <summary>
+        <para>Центр препятствия, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.height">
+      <summary>
+        <para>Высота цилиндрической формы препятствия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.radius">
+      <summary>
+        <para>Радиус формы капсулы препятствия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.shape">
+      <summary>
+        <para>Форма препятствия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.size">
+      <summary>
+        <para>Размер препятствия, измеренный в локальном пространстве объекта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshObstacle.velocity">
+      <summary>
+        <para>Скорость, с которой препятствие перемещается по NavMesh.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshObstacleShape">
+      <summary>
+        <para>Форма препятствия.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshObstacleShape.Box">
+      <summary>
+        <para>Препятствие в форме коробки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshObstacleShape.Capsule">
+      <summary>
+        <para>Препятствие в форме капсулы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshPath">
+      <summary>
+        <para>Путь, рассчитанный навигационной системой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshPath.corners">
+      <summary>
+        <para>Угловые точки пути. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshPath.status">
+      <summary>
+        <para>Статус пути. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshPath.ClearCorners">
+      <summary>
+        <para>Удалить все угловые точки пути.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshPath.#ctor">
+      <summary>
+        <para>Конструктор NavMeshPath.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshPath.GetCornersNonAlloc(UnityEngine.Vector3[])">
+      <summary>
+        <para>Вычислите углы пути.</para>
+      </summary>
+      <param name="results">Массив для хранения углов пути.</param>
+      <returns>
+        <para>Количество углов вдоль пути, включая начальную и конечную точки.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshPathStatus">
+      <summary>
+        <para>Статус пути.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshPathStatus.PathComplete">
+      <summary>
+        <para>Путь заканчивается в пункте назначения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshPathStatus.PathInvalid">
+      <summary>
+        <para>Путь недействителен.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshPathStatus.PathPartial">
+      <summary>
+        <para>Путь не может достичь пункта назначения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshQueryFilter">
+      <summary>
+        <para>Указывает, какой тип агента и области учитывать при поиске в NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshQueryFilter.agentTypeID">
+      <summary>
+        <para>Идентификатор типа агента, указывающий, какие сетки навигации следует учитывать для функций запроса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshQueryFilter.areaMask">
+      <summary>
+        <para>Битовая маска, представляющая типы проходимых областей.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshQueryFilter.GetAreaCost(System.Int32)">
+      <summary>
+        <para>Возвращает множитель стоимости площади для данного типа площади для этого фильтра.</para>
+      </summary>
+      <param name="areaIndex">Индекс для получения стоимости.</param>
+      <returns>
+        <para>Множитель стоимости для предоставленного индекса площади.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AI.NavMeshQueryFilter.SetAreaCost(System.Int32,System.Single)">
+      <summary>
+        <para>Устанавливает множитель стоимости поиска пути для этого фильтра для данного типа области.</para>
+      </summary>
+      <param name="areaIndex">Индекс области, для которой устанавливается стоимость.</param>
+      <param name="cost">Стоимость предоставленного индекса площади.</param>
+    </member>
+    <member name="T:UnityEngine.AI.NavMeshTriangulation">
+      <summary>
+        <para>Содержит данные, описывающие триангуляцию навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshTriangulation.areas">
+      <summary>
+        <para>Индексы области навигационной сетки для триангуляции навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshTriangulation.indices">
+      <summary>
+        <para>Индексы треугольников для триангуляции навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.NavMeshTriangulation.layers">
+      <summary>
+        <para>Значения NavMeshLayer для триангуляции навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.NavMeshTriangulation.vertices">
+      <summary>
+        <para>Вершины для триангуляции навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.ObstacleAvoidanceType">
+      <summary>
+        <para>Уровень обхода препятствий.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.ObstacleAvoidanceType.GoodQualityObstacleAvoidance">
+      <summary>
+        <para>Хорошее избегание. Высокое влияние на производительность.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.ObstacleAvoidanceType.HighQualityObstacleAvoidance">
+      <summary>
+        <para>Включите максимальную точность. Наибольшее влияние на производительность.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.ObstacleAvoidanceType.LowQualityObstacleAvoidance">
+      <summary>
+        <para>Включить простое избегание. Низкое влияние на производительность.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.ObstacleAvoidanceType.MedQualityObstacleAvoidance">
+      <summary>
+        <para>Среднее избегание. Среднее влияние на производительность.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.ObstacleAvoidanceType.NoObstacleAvoidance">
+      <summary>
+        <para>Отключить уклонение.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.OffMeshLink">
+      <summary>
+        <para>Ссылка, позволяющая перемещаться за пределы плоской навигационной сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.activated">
+      <summary>
+        <para>Ссылка активна.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.area">
+      <summary>
+        <para>Индекс области NavMesh для этого компонента OffMeshLink.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.autoUpdatePositions">
+      <summary>
+        <para>Автоматически обновлять конечные точки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.biDirectional">
+      <summary>
+        <para>Ссылка может проходить в обоих направлениях.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.costOverride">
+      <summary>
+        <para>Изменить стоимость поиска пути для ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.endTransform">
+      <summary>
+        <para>Преобразование, представляющее конечную позицию ссылки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.navMeshLayer">
+      <summary>
+        <para>NavMeshLayer для этого компонента OffMeshLink.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.occupied">
+      <summary>
+        <para>Ссылка занята. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLink.startTransform">
+      <summary>
+        <para>Преобразование, представляющее начальную позицию ссылки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AI.OffMeshLink.UpdatePositions">
+      <summary>
+        <para>Явно обновить конечные точки ссылки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.OffMeshLinkData">
+      <summary>
+        <para>Состояние OffMeshLink.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.activated">
+      <summary>
+        <para>Ссылка активна (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.endPos">
+      <summary>
+        <para>Ссылка на конечную мировую позицию (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.linkType">
+      <summary>
+        <para>Спецификатор типа ссылки (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.offMeshLink">
+      <summary>
+        <para>OffMeshLink, если тип ссылки представляет собой размещенную вручную Offmeshlink (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.startPos">
+      <summary>
+        <para>Ссылка на начальную мировую позицию (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AI.OffMeshLinkData.valid">
+      <summary>
+        <para>Ссылка действительна (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AI.OffMeshLinkType">
+      <summary>
+        <para>Спецификатор типа ссылки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.OffMeshLinkType.LinkTypeDropDown">
+      <summary>
+        <para>Вертикальное падение.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.OffMeshLinkType.LinkTypeJumpAcross">
+      <summary>
+        <para>Горизонтальный прыжок.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AI.OffMeshLinkType.LinkTypeManual">
+      <summary>
+        <para>Указанный вручную тип ссылки.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.NavMeshLocation">
+      <summary>
+        <para>Мировая позиция, которая гарантированно будет на поверхности NavMesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.AI.NavMeshLocation.polygon">
+      <summary>
+        <para>Уникальный идентификатор узла в NavMesh, которому сопоставлена ​​мировая позиция.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.AI.NavMeshLocation.position">
+      <summary>
+        <para>Мировая позиция, которая находится точно на поверхности NavMesh или вдоль ее связей.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.NavMeshPolyTypes">
+      <summary>
+        <para>Типы узлов в навигационных данных.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.NavMeshPolyTypes.Ground">
+      <summary>
+        <para>Тип узла в NavMesh, представляющий один полигон поверхности.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.NavMeshPolyTypes.OffMeshConnection">
+      <summary>
+        <para>Тип узла в NavMesh, представляющий двухточечное соединение между двумя позициями на поверхности NavMesh.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.NavMeshQuery">
+      <summary>
+        <para>Объект, используемый для выполнения операций навигации в NavMeshWorld.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.BeginFindPath(UnityEngine.Experimental.AI.NavMeshLocation,UnityEngine.Experimental.AI.NavMeshLocation,System.Int32,Unity.Collections.NativeArray`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Инициирует операцию поиска пути между двумя местоположениями в NavMesh.</para>
+      </summary>
+      <param name="costs">Массив пользовательских значений стоимости для всех 32 возможных типов площадей. Каждое значение должно быть не менее 1.0f. Этот параметр является необязательным и по умолчанию соответствует стоимости площади, настроенной в настройках проекта. См. также: NavMesh.GetAreaCost.</param>
+      <param name="areaMask">Битовая маска со значениями 1, установленными в индексах для областей, которые можно пройти, и значениями 0 для областей, которые нельзя пройти. Этот параметр является необязательным и по умолчанию равен NavMesh.AllAreas, если он не указан. См. также:.</param>
+      <param name="start">Начальное местоположение в NavMesh для пути.</param>
+      <param name="end">Место в NavMesh, где заканчивается путь.</param>
+      <returns>
+        <para>InProgress, если операция прошла успешно и запрос готов к поиску пути.
+
+Сбой, если NavMeshWorld запроса или любой из полученных параметров больше недействителен.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.CreateLocation(UnityEngine.Vector3,UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает допустимое значение NavMeshLocation для позиции и полигона, предоставленных пользователем.</para>
+      </summary>
+      <param name="position">Мировая позиция создаваемого NavMeshLocation.</param>
+      <param name="polygon">Действительный идентификатор узла NavMesh.</param>
+      <returns>
+        <para>Объект, содержащий желаемую позицию и узел NavMesh.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.#ctor(UnityEngine.Experimental.AI.NavMeshWorld,Unity.Collections.Allocator,System.Int32)">
+      <summary>
+        <para>Создает объект NavMeshQuery и при необходимости выделяет память для хранения информации об узле NavMesh.</para>
+      </summary>
+      <param name="world">Объект NavMeshWorld, используемый в качестве точки входа в коллекцию объектов NavMesh. Этот объект может использоваться операциями запросов.</param>
+      <param name="allocator">Этикетка с указанием желаемого срока службы объекта. (Известная проблема: текущий распределитель не действует).</param>
+      <param name="pathNodePoolSize">Количество узлов, временно сохраненных в запросе во время операций поиска. Максимальное количество узлов — 65 535. По умолчанию, если не указано, количество узлов равно 0.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.Dispose">
+      <summary>
+        <para>Уничтожает NavMeshQuery и освобождает всю используемую им память.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.EndFindPath(System.Int32&amp;)">
+      <summary>
+        <para>Получает количество узлов в пути, которое было вычислено во время успешной операции NavMeshQuery.UpdateFindPath.</para>
+      </summary>
+      <param name="pathSize">Ссылка на int, в котором будет указано количество узлов NavMesh в найденном пути.</param>
+      <returns>
+        <para>Успешно, если количество узлов в пути было получено правильно.
+
+PartialPath, когда путь найден, но не соответствует желаемому конечному местоположению.
+
+Сбой, когда невозможно оценить размер пути, так как предыдущий вызов UpdateFindPath не был успешным.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.GetAgentTypeIdForPolygon(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает идентификатор типа агента, для которого была запечена NavMesh или для которого была настроена ссылка.</para>
+      </summary>
+      <param name="polygon">Идентификатор узла из поверхности или ссылки NavMesh.</param>
+      <returns>
+        <para>Идентификатор типа агента.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.GetEdgesAndNeighbors(UnityEngine.Experimental.AI.PolygonId,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Experimental.AI.PolygonId&gt;,Unity.Collections.NativeSlice`1&lt;System.Byte&gt;,System.Int32&amp;,System.Int32&amp;)">
+      <summary>
+        <para>Извлекает вершины заданного узла и PolygonId|идентификаторы всех узлов навигации, к которым он подключен.</para>
+      </summary>
+      <param name="node">Идентификатор узла из поверхности NavMesh, для которого необходимо получить вершины и соседей.</param>
+      <param name="edgeVertices">Буфер результатов, содержащий мировые позиции, описывающие геометрию входного навигационного узла. Он может иметь нулевую емкость.
+
+NavMeshPolyTypes.Ground|Многоугольные узлы NavMesh имеют минимум 3 и максимум 6 вершин.
+
+Узлы NavMeshPolyTypes.OffMeshConnection|OffMeshConnection всегда представлены 4 вершинами, независимо от их ширины.</param>
+      <param name="neighbors">Буфер результатов, который содержит идентификаторы всех навигационных узлов, непосредственно доступных из данного узла. Он может иметь нулевую емкость.</param>
+      <param name="edgeIndices">Вспомогательный буфер результатов, который сопоставляет каждый соседний узел с краем данного узла. Он может иметь нулевую мощность.
+
+Индекс элемента в edgeIndices также является индексом в массиве Neighbours, а значение этого элемента edgeIndices является индексом в массиве edgeVertices.</param>
+      <param name="verticesCount">Общее количество вершин, описывающих геометрию входного узла. Это не зависит от емкости буфера результатов вершин.</param>
+      <param name="neighborsCount">Общее количество узлов навигации, к которым подключается входной узел. Это не зависит от емкости буферов результатов (соседей и edgeIndices).</param>
+      <returns>
+        <para>Успех, если Unity может оценить соседей и вершины указанного узла независимо от результата. В этом случае значения verticesCount и NeighboursCount всегда действительны.
+
+Сбой, если Unity не может использовать идентификатор узла для получения сведений о соседях или геометрии. В этом случае Unity не изменяет ни один из пяти параметров результата (edgeVertices, Neighbours, EdgeIndices, verticesCount или NeighboursCount).
+
+InvalidParam является частью возвращаемых флагов, если указанный навигационный узел не является NavMeshQuery.IsValid|действительным в NavMeshWorld запроса.
+
+BufferTooSmall является частью флагов PathQueryStatus, которые Unity возвращает из этой функции, когда какой-либо из буферов результатов, которые вы предоставляете, недостаточно велик для хранения всех соседних узлов, к которым подключается входной узел, или всех его краевых вершин.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.GetPathResult(Unity.Collections.NativeSlice`1&lt;UnityEngine.Experimental.AI.PolygonId&gt;)">
+      <summary>
+        <para>Копирует в предоставленный массив список узлов NavMesh, образующих путь, найденный операцией NavMeshQuery.</para>
+      </summary>
+      <param name="path">Массив данных, который необходимо заполнить последовательностью узлов NavMesh, составляющих найденный путь.</param>
+      <returns>
+        <para>Количество узлов пути, успешно скопированных в предоставленный массив.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.GetPolygonType(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает, является ли узел NavMesh полигоном или связью.</para>
+      </summary>
+      <param name="polygon">Идентификатор узла из поверхности или ссылки NavMesh.</param>
+      <returns>
+        <para>Заземление, когда узел представляет собой полигон на поверхности NavMesh.
+
+OffMeshConnection, когда узел является a.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.GetPortalPoints(UnityEngine.Experimental.AI.PolygonId,UnityEngine.Experimental.AI.PolygonId,UnityEngine.Vector3&amp;,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Получает конечные точки сегмента линии, общие для двух соседних узлов NavMesh.</para>
+      </summary>
+      <param name="polygon">Первый узел NavMesh.</param>
+      <param name="neighbourPolygon">Второй узел NavMesh.</param>
+      <param name="left">Одна из мировых точек для результирующего ребра разделения, через которое необходимо пройти при переходе между двумя указанными узлами. Эта точка является левой стороной ребра при переходе от первого узла ко второму.</param>
+      <param name="right">Одна из мировых точек для результирующего ребра разделения, через которое необходимо пройти при переходе между двумя указанными узлами. Эта точка является правой стороной ребра при переходе от первого узла ко второму.</param>
+      <returns>
+        <para>Истина, если существует соединение между двумя узлами NavMesh.
+False, если между двумя узлами NavMesh нет связи.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.IsValid(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает true, если узел, на который ссылается указанный PolygonId, активен в NavMesh.</para>
+      </summary>
+      <param name="polygon">Идентификатор проверяемого узла NavMesh.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.IsValid(UnityEngine.Experimental.AI.NavMeshLocation)">
+      <summary>
+        <para>Возвращает true, если узел, на который ссылается PolygonId, содержащийся в NavMeshLocation, активен в NavMesh.</para>
+      </summary>
+      <param name="location">Местоположение в NavMesh для проверки. То же, что и проверка location.polygon напрямую.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.MapLocation(UnityEngine.Vector3,UnityEngine.Vector3,System.Int32,System.Int32)">
+      <summary>
+        <para>Находит ближайшую точку и PolygonId в NavMesh для заданной позиции в мире.</para>
+      </summary>
+      <param name="position">Мировая позиция, для которой необходимо найти ближайшую точку в NavMesh.</param>
+      <param name="extents">Максимальное расстояние от указанной позиции, расширяющееся по всем трем осям, в пределах которого выполняется поиск поверхностей NavMesh.</param>
+      <param name="agentTypeID">Идентификатор типа агента, чьи поверхности NavMesh должны быть выбраны для этой операции. Тип агента Humanoid существует для всех NavMeshes и имеет идентификатор 0. Другие типы агентов можно определить вручную через редактор. Для каждого типа агента необходимо запечь отдельную поверхность NavMesh.</param>
+      <param name="areaMask">Битовая маска, используемая для представления областей NavMesh, которые должны (значение 1) или не должны (значения 0) подвергаться выборке. Этот параметр является необязательным и по умолчанию равен NavMesh.AllAreas, если он не указан. См. также:.</param>
+      <returns>
+        <para>Объект с позицией и допустимым PolygonId — когда точка в NavMesh найдена.
+
+Недопустимый объект - когда в области поиска не найдена поверхность NavMesh с нужными характеристиками. См. также: NavMeshQuery.IsValid.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.MoveLocation(UnityEngine.Experimental.AI.NavMeshLocation,UnityEngine.Vector3,System.Int32)">
+      <summary>
+        <para>Переводит местоположение NavMesh в другое положение без потери контакта с поверхностью.</para>
+      </summary>
+      <param name="location">Позиция для перемещения по поверхности NavMesh.</param>
+      <param name="target">Мировая позиция, на которую должен переместиться агент.</param>
+      <param name="areaMask">Битовая маска со значениями 1 устанавливается для индексов, соответствующих областям, через которые можно пройти, и со значениями 0 для областей, которые нельзя проходить. Этот параметр можно опустить, и в этом случае по умолчанию он равен NavMesh.AllAreas. См. также:.</param>
+      <returns>
+        <para>Новое местоположение в NavMesh, размещенное как можно ближе к указанной целевой позиции.
+
+Начальное местоположение возвращается, когда это начало находится внутри области, которая не разрешена areaMask.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.MoveLocations(Unity.Collections.NativeSlice`1&lt;UnityEngine.Experimental.AI.NavMeshLocation&gt;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;,Unity.Collections.NativeSlice`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>Переводит ряд местоположений NavMesh в другие положения без потери контакта с поверхностью.</para>
+      </summary>
+      <param name="locations">Массив позиций для перемещения по поверхности NavMesh. В конце вызова метода этот массив содержит результирующие местоположения.</param>
+      <param name="targets">Мировые позиции, используемые агентом в качестве целей движения.</param>
+      <param name="areaMasks">Фильтры по областям, которые можно пройти при движении к каждой из локаций.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.MoveLocationsInSameAreas(Unity.Collections.NativeSlice`1&lt;UnityEngine.Experimental.AI.NavMeshLocation&gt;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Vector3&gt;,System.Int32)">
+      <summary>
+        <para>Переводит ряд местоположений NavMesh в другие положения, не теряя связи с поверхностью, используя один фильтр общей области для всех них.</para>
+      </summary>
+      <param name="locations">Массив позиций для перемещения по поверхности NavMesh. В конце вызова метода этот массив содержит результирующие местоположения.</param>
+      <param name="targets">Позиции в мире, которых должен достичь агент при перемещении в каждую из локаций.</param>
+      <param name="areaMask">Фильтры по областям, которые можно пройти при движении к каждой из локаций.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.PolygonLocalToWorldMatrix(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает матрицу преобразования поверхности NavMesh, содержащей указанный узел NavMesh (только для чтения).</para>
+      </summary>
+      <param name="polygon">Узел NavMesh, для которого необходимо определить преобразование его владельца.</param>
+      <returns>
+        <para>Матрица преобразования для поверхности, владеющей указанным полигоном.
+
+Matrix4x4.identity, когда узлом NavMesh является a.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.PolygonWorldToLocalMatrix(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает матрицу обратного преобразования поверхности NavMesh, содержащей указанный узел NavMesh (только для чтения).</para>
+      </summary>
+      <param name="polygon">Узел NavMesh, для которого необходимо определить обратное преобразование его владельца.</param>
+      <returns>
+        <para>Матрица обратного преобразования поверхности, которой принадлежит указанный полигон.
+
+Matrix4x4.identity, когда узлом NavMesh является a.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.Raycast(UnityEngine.AI.NavMeshHit&amp;,UnityEngine.Experimental.AI.NavMeshLocation,UnityEngine.Vector3,System.Int32,Unity.Collections.NativeArray`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Проведите линию между двумя точками в NavMesh.</para>
+      </summary>
+      <param name="hit">Содержит свойства результирующего местоположения raycast.</param>
+      <param name="start">Начальное местоположение луча в NavMesh. start.polygon должен иметь тип NavMeshPolyTypes.Ground.</param>
+      <param name="targetPosition">Желаемый конец луча в мировых координатах.</param>
+      <param name="areaMask">Битовая маска, которая сопоставляет позиции индекса с типами областей. Индекс изменяется от 0 до 31. В каждой соответствующей позиции индекса вы должны установить значение либо 1, либо 0. 1 указывает типы областей, через которые может проходить луч. 0 указывает типы областей, которые блокируют луч. Этот параметр является необязательным. Если вы пропустите этот параметр, по умолчанию он будет равен NavMesh.AllAreas. Чтобы узнать больше, см.:.</param>
+      <param name="costs">Массив пользовательских значений стоимости для всех 32 возможных типов площадей. Они действуют как множители расстояния, сообщаемого лучом при пересечении различных областей. Этот параметр является необязательным. Если вы опустите его, по умолчанию будет использоваться стоимость площади, которую вы настроили в настройках проекта. Чтобы узнать больше, см. NavMesh.GetAreaCost.</param>
+      <returns>
+        <para>Успешно, если луч можно правильно отследить с использованием предоставленных аргументов.
+
+Сбой, если начальное местоположение недопустимо в NavMeshWorld запроса, или если оно находится внутри области, не разрешенной аргументом areaMask, или когда оно находится на.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.Raycast(UnityEngine.AI.NavMeshHit&amp;,Unity.Collections.NativeSlice`1&lt;UnityEngine.Experimental.AI.PolygonId&gt;,System.Int32&amp;,UnityEngine.Experimental.AI.NavMeshLocation,UnityEngine.Vector3,System.Int32,Unity.Collections.NativeArray`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Проследите линию между двумя точками в NavMesh и верните список полигонов, через которые она прошла.</para>
+      </summary>
+      <param name="hit">Содержит свойства результирующего местоположения raycast.</param>
+      <param name="path">Буфер, который будет заполнен последовательностью полигонов, через которые проходит луч.</param>
+      <param name="pathCount">Сообщаемое количество полигонов, через которые прошел луч, все хранится в буфере пути. Оно не должно превышать path.Length.</param>
+      <param name="start">Начальное местоположение луча в NavMesh. start.polygon должен иметь тип NavMeshPolyTypes.Ground.</param>
+      <param name="targetPosition">Желаемый конец луча в мировых координатах.</param>
+      <param name="areaMask">Битовое поле, указывающее, какие области NavMesh можно пройти при трассировке луча. Этот параметр является необязательным. Если вы не заполните этот параметр, по умолчанию будет использоваться NavMesh.AllAreas.</param>
+      <param name="costs">Множители стоимости, влияющие на расстояние, сообщаемое лучом по различным типам областей. Этот параметр является необязательным. Если вы его не укажете, по умолчанию будет использоваться стоимость площади, указанная вами в настройках проекта.</param>
+      <returns>
+        <para>Успешно, если луч можно правильно отследить с использованием предоставленных аргументов.
+
+Сбой, если начальное местоположение недопустимо в NavMeshWorld запроса, или если оно находится внутри области, не разрешенной аргументом areaMask, или если оно находится в a.
+
+BufferTooSmall является частью возвращаемых флагов, когда предоставленный буфер пути недостаточно велик для хранения всех полигонов, через которые проходит луч.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshQuery.UpdateFindPath(System.Int32,System.Int32&amp;)">
+      <summary>
+        <para>Продолжает текущий поиск пути.</para>
+      </summary>
+      <param name="iterations">Максимальное количество узлов, которые должен пройти алгоритм поиска во время этого вызова.</param>
+      <param name="iterationsPerformed">Выводит фактическое количество узлов, которые были пройдены во время этого вызова.</param>
+      <returns>
+        <para>InProgress, если поиск необходимо продолжить, снова вызвав UpdateFindPath.
+
+Успех, если поиск завершен и путь найден или нет.
+
+Сбой, если поиск нужной позиции не может быть завершен из-за значительного изменения NavMesh с момента начала поиска.
+
+Кроме того, возвращаемое значение может содержать флаг OutOfNodes, если параметр pathNodePoolSize для инициализации NavMeshQuery недостаточно велик для размещения пространства поиска.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.NavMeshWorld">
+      <summary>
+        <para>Собирает вместе набор поверхностей и ссылок NavMesh, которые в целом используются для выполнения операций навигации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshWorld.AddDependency(Unity.Jobs.JobHandle)">
+      <summary>
+        <para>Приказывает миру NavMesh приостановить любые изменения, пока указанное задание не будет завершено.</para>
+      </summary>
+      <param name="job">Задание, которое необходимо выполнить, прежде чем мир NavMesh можно будет каким-либо образом изменить.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshWorld.GetDefaultWorld">
+      <summary>
+        <para>Возвращает ссылку на единственный NavMeshWorld, который в настоящее время может существовать и использоваться в Unity.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.NavMeshWorld.IsValid">
+      <summary>
+        <para>Возвращает true, если NavMeshWorld был правильно инициализирован.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.PathQueryStatus">
+      <summary>
+        <para>Битовые флаги, представляющие результирующее состояние операций NavMeshQuery.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.BufferTooSmall">
+      <summary>
+        <para>Буфер узла запроса был слишком мал для сохранения всех результатов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.Failure">
+      <summary>
+        <para>Операция не удалась.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.InProgress">
+      <summary>
+        <para>Операция выполняется.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.InvalidParam">
+      <summary>
+        <para>Параметр не содержит достоверной информации, полезной для выполнения запроса NavMesh.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.OutOfMemory">
+      <summary>
+        <para>Операции не хватило памяти.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.OutOfNodes">
+      <summary>
+        <para>Запросу не хватило места в стеке узлов во время поиска.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.PartialResult">
+      <summary>
+        <para>Запрос не достиг конечного местоположения, возвращается наилучшее предположение.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.StatusDetailMask">
+      <summary>
+        <para>Битовая маска, в которой для битов Success, Failure и InProgress установлено значение 0, а для всех остальных флагов установлено значение 1. </para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.Success">
+      <summary>
+        <para>Операция прошла успешно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.WrongMagic">
+      <summary>
+        <para>Данные в NavMesh не могут быть распознаны и использованы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.AI.PathQueryStatus.WrongVersion">
+      <summary>
+        <para>Данные в мире NavMesh имеют неправильную версию.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.AI.PolygonId">
+      <summary>
+        <para>Представляет компактный идентификатор данных узла NavMesh.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.PolygonId.Equals(UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает true, если два объекта PolygonId ссылаются на один и тот же узел NavMesh.</para>
+      </summary>
+      <param name="rhs">
+      </param>
+      <param name="obj">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.PolygonId.Equals(System.Object)">
+      <summary>
+        <para>Возвращает true, если два объекта PolygonId ссылаются на один и тот же узел NavMesh.</para>
+      </summary>
+      <param name="rhs">
+      </param>
+      <param name="obj">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.PolygonId.GetHashCode">
+      <summary>
+        <para>Возвращает хэш-код для использования в коллекциях.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.AI.PolygonId.IsNull">
+      <summary>
+        <para>Возвращает true, если PolygonId был создан пустым и никогда не указывал ни на один узел в NavMesh.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Experimental.AI.PolygonId.op_Equal(UnityEngine.Experimental.AI.PolygonId,UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает значение true, если два объекта PolygonId ссылаются на один и тот же узел NavMesh или если они оба имеют значение null.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="?:UnityEngine.Experimental.AI.PolygonId.op_NotEqual(UnityEngine.Experimental.AI.PolygonId,UnityEngine.Experimental.AI.PolygonId)">
+      <summary>
+        <para>Возвращает true, если два объекта PolygonId ссылаются на разные узлы NavMesh или если только один из них имеет значение null.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="A:UnityEngine.AIModule">
+      <summary>
+        <para>Модуль AI реализует функции поиска пути в Unity.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

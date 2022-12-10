@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.TerrainPhysicsModule</name>
+    </assembly>
+    <member name="T:UnityEngine.TerrainCollider">
+      <summary>
+        <para>Коллайдер на основе карты высот.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainCollider.terrainData">
+      <summary>
+        <para>Ландшафт, в котором хранится карта высот.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.TerrainPhysicsModule">
+      <summary>
+        <para>Модуль TerrainPhysics соединяет модули Terrain и Physics, реализуя компонент TerrainCollider.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

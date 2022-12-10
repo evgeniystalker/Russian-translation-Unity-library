@@ -1,0 +1,3869 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.GraphViewModule</name>
+    </assembly>
+    <member name="T:UnityEditor.Experimental.GraphView.Attacher">
+      <summary>
+        <para>Вспомогательный объект, который прикрепляет визуальный элемент рядом с его целью, независимо от их соответствующего положения в иерархии визуального дерева.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Attacher.alignment">
+      <summary>
+        <para>Относительное выравнивание между прикрепленным элементом и целью.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Attacher.distance">
+      <summary>
+        <para>Расстояние между прикрепленным элементом и целью.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Attacher.element">
+      <summary>
+        <para>Элемент, прикрепленный к целевому элементу.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Attacher.offset">
+      <summary>
+        <para>Абсолютное смещение, добавляемое к позиции элемента после размещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Attacher.target">
+      <summary>
+        <para>Целевой элемент.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Attacher.#ctor(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.VisualElement,UnityEngine.SpriteAlignment)">
+      <summary>
+        <para>Прикрепляет визуальный элемент рядом с его целью, независимо от их соответствующего положения в иерархии визуального дерева.</para>
+      </summary>
+      <param name="anchored">Элемент, который будет расположен рядом с целью.</param>
+      <param name="target">Целевой элемент.</param>
+      <param name="alignment">Относительное выравнивание между прикрепленным элементом и целью.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Attacher.Detach">
+      <summary>
+        <para>Прекратить мониторинг целевого элемента и размещение прикрепленного элемента.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Attacher.Reattach">
+      <summary>
+        <para>Начинает отслеживать изменения положения целевого элемента и соответствующим образом размещает прикрепленный элемент.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Blackboard">
+      <summary>
+        <para>GraphElement, который позволяет пользователю динамически определять элементы Graph (например, поля/свойства), сгруппированные по разделам (BlackboardSection).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.addItemRequested">
+      <summary>
+        <para>Вызывается, когда пользователь нажимает кнопку «Добавить» на этой доске.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.contentContainer">
+      <summary>
+        <para>Контейнер содержимого этой Blackboard.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.editTextRequested">
+      <summary>
+        <para>Вызывается, когда пользователь редактировал текст этого BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.graphView">
+      <summary>
+        <para>GraphView, к которому подключена Blackboard.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.moveItemRequested">
+      <summary>
+        <para>Вызывается, когда пользователь перетаскивает BlackboardField в новое место внутри его BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.scrollable">
+      <summary>
+        <para>Указывает, может ли пользователь прокручивать содержимое этой доски по вертикали. По умолчанию это ложь.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.selection">
+      <summary>
+        <para>Все выбранные элементы в GraphView, к которым подключена Blackboard.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.subTitle">
+      <summary>
+        <para>Подзаголовок этой доски.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.title">
+      <summary>
+        <para>Название этой доски.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Blackboard.windowed">
+      <summary>
+        <para>Установите значение true, если Blackboard отображается в отдельном окне. Установите значение false, если Blackboard отображается в GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Blackboard.AddToSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Добавляет элемент в выделение в GraphView, к которому прикреплена Blackboard.</para>
+      </summary>
+      <param name="selectable">Элемент для добавления к выбору.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Blackboard.ClearSelection">
+      <summary>
+        <para>Очищает выделение в GraphView, к которому прикреплена Blackboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Blackboard.#ctor()">
+      <summary>
+        <para>Создает доску.</para>
+      </summary>
+      <param name="associatedGraphView"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Blackboard.RemoveFromSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Удаляет элемент из выделения в GraphView, к которому присоединена Blackboard.</para>
+      </summary>
+      <param name="selectable">Элемент, который необходимо удалить из выделения.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.BlackboardField">
+      <summary>
+        <para>GraphElement, представляющий поле графика.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardField.blackboard">
+      <summary>
+        <para>Доска, которой принадлежит поле.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardField.highlighted">
+      <summary>
+        <para>Выделенное состояние этого BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardField.icon">
+      <summary>
+        <para>Значок этого BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardField.text">
+      <summary>
+        <para>Текст этого BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardField.typeText">
+      <summary>
+        <para>Текст, отображающий тип данных этого BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardField.BuildFieldContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Вызывается, когда BlackboardField запрашивается для отображения контекстного меню.</para>
+      </summary>
+      <param name="evt"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardField.#ctor">
+      <summary>
+        <para>Создает BlackboardField.</para>
+      </summary>
+      <param name="icon">Значок этого BlackboardField.</param>
+      <param name="text">Текст этого BlackboardField.</param>
+      <param name="typeText">Текст, отображающий тип данных этого BlackboardField.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardField.#ctor(UnityEngine.Texture,System.String,System.String)">
+      <summary>
+        <para>Создает BlackboardField.</para>
+      </summary>
+      <param name="icon">Значок этого BlackboardField.</param>
+      <param name="text">Текст этого BlackboardField.</param>
+      <param name="typeText">Текст, отображающий тип данных этого BlackboardField.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardField.OpenTextEditor">
+      <summary>
+        <para>Открывает TextField для редактирования текста в BlackboardField.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.BlackboardRow">
+      <summary>
+        <para>Сворачиваемый элемент GraphElement, представляющий строку в BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardRow.expanded">
+      <summary>
+        <para>Указывает, расширен ли BlackboardRow.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardRow.#ctor(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Создает BlackboardRow из VisualElement и связанного с ним представления свойств. VisualElement обычно представляет собой BlackboardField.</para>
+      </summary>
+      <param name="item">Элемент, который заполняет содержимое этого BlackboardRow.</param>
+      <param name="propertyView">Представление свойств, связанное с содержимым этого BlackboardRow.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.BlackboardSection">
+      <summary>
+        <para>GraphElement, представляющий раздел членов на доске.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardSection.canAcceptDrop">
+      <summary>
+        <para>Обратный вызов для указания, принимает ли этот BlackboardSection выбранный объект.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardSection.contentContainer">
+      <summary>
+        <para>Контейнер содержимого этого BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardSection.headerVisible">
+      <summary>
+        <para>Указывает, виден ли заголовок BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.BlackboardSection.title">
+      <summary>
+        <para>Название этого раздела BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardSection.CanAcceptDrop(System.Collections.Generic.List`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;)">
+      <summary>
+        <para>Указывает, принимает ли данный BlackboardSection выбранный объект.</para>
+      </summary>
+      <param name="selected">Выбранный объект.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>Возвращает значение true, когда BlackboardSection принимает выбранный объект.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.BlackboardSection.CanAcceptDropDelegate">
+      <summary>
+        <para>Делегат для указания, принимает ли этот BlackboardSection выбранный объект.</para>
+      </summary>
+      <param name="selected">Выбранный объект.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.BlackboardSection.#ctor">
+      <summary>
+        <para>Создает BlackboardSection.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Capabilities">
+      <summary>
+        <para>Возможности, используемые манипуляторами для простого определения допустимых действий над элементом GraphElement.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Ascendable">
+      <summary>
+        <para>Когда GraphElement будет выбран, он будет помещен на передний план своего слоя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Collapsible">
+      <summary>
+        <para>GraphElement можно свернуть.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Copiable">
+      <summary>
+        <para>GraphElement можно скопировать.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Deletable">
+      <summary>
+        <para>Элемент GraphElement можно удалить.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Droppable">
+      <summary>
+        <para>GraphElement можно перетаскивать (используя события Drag&amp;Drop).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Groupable">
+      <summary>
+        <para>Элемент GraphElement можно сгруппировать.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Movable">
+      <summary>
+        <para>Элемент GraphElement можно перемещать.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Renamable">
+      <summary>
+        <para>GraphElement можно переименовывать.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Resizable">
+      <summary>
+        <para>Размер GraphElement можно изменять.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Selectable">
+      <summary>
+        <para>Элемент GraphElement доступен для выбора.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Snappable">
+      <summary>
+        <para>Когда в настройках включена привязка к графику, другие элементы GraphElements выравниваются с этим элементом GraphElement, когда пользователь перетаскивает их.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Capabilities.Stackable">
+      <summary>
+        <para>GraphElement можно поместить в контейнеры StackNode.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ClickSelector">
+      <summary>
+        <para>Выбирает элемент одним кликом.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ClickSelector.#ctor">
+      <summary>
+        <para>Конструктор для ClickSelector.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ClickSelector.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ClickSelector.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ClickSelector.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ContentDragger">
+      <summary>
+        <para>Манипулятор, позволяющий перетаскивать мышью один или несколько элементов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentDragger.clampToParentEdges">
+      <summary>
+        <para>Если задано значение true, перетаскиваемый элемент не может выйти за границы родителя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentDragger.panSpeed">
+      <summary>
+        <para>Когда элементы перетаскиваются к краям графика, происходит панорамирование. Это контролирует скорость указанного панорамирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.CalculatePosition(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Вычислить новую позицию перетаскиваемого элемента.</para>
+      </summary>
+      <param name="x">Новая позиция x.</param>
+      <param name="y">Новая позиция Y.</param>
+      <param name="width">Ширина элемента.</param>
+      <param name="height">Высота элемента.</param>
+      <returns>
+        <para>Рассчитанная и проверенная позиция.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.#ctor">
+      <summary>
+        <para>Конструктор ContentDragger.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Вызывается по событию перемещения мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Вызывается при наведении курсора мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentDragger.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ContentZoomer">
+      <summary>
+        <para>Манипулятор, позволяющий масштабировать GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentZoomer.keepPixelCacheOnZoom">
+      <summary>
+        <para>Опция оптимизации для сохранения старого кэша пикселей при масштабировании и его обновления только после завершения масштабирования (на основе таймера).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentZoomer.maxScale">
+      <summary>
+        <para>Максимальный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentZoomer.minScale">
+      <summary>
+        <para>Минимальный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentZoomer.referenceScale">
+      <summary>
+        <para>Эталонный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ContentZoomer.scaleStep">
+      <summary>
+        <para>Шаг масштабирования: процент изменения между уровнем масштабирования и следующим. Например, при значении 0,15, которое соответствует 15 %, уровень масштабирования 200 % при увеличении станет равным 230 %.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentZoomer.#ctor">
+      <summary>
+        <para>Конструктор ContentZoomer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ContentZoomer.DefaultMaxScale">
+      <summary>
+        <para>Максимальный уровень масштабирования по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ContentZoomer.DefaultMinScale">
+      <summary>
+        <para>Минимальный уровень масштабирования по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ContentZoomer.DefaultReferenceScale">
+      <summary>
+        <para>Эталонный уровень масштабирования по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ContentZoomer.DefaultScaleStep">
+      <summary>
+        <para>Шаг масштабирования по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentZoomer.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ContentZoomer.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Direction">
+      <summary>
+        <para>Направление порта (вход или выход).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Direction.Input">
+      <summary>
+        <para>Порт — входной порт.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Direction.Output">
+      <summary>
+        <para>Порт является выходным портом.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Dragger">
+      <summary>
+        <para>Базовый манипулятор для элементов, перетаскиваемых мышью.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Dragger.clampToParentEdges">
+      <summary>
+        <para>Если задано значение true, перетаскиваемый элемент не может выйти за границы родителя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Dragger.panSpeed">
+      <summary>
+        <para>Когда элементы перетаскиваются к краям графика, происходит панорамирование. Это контролирует скорость указанного панорамирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.CalculatePosition(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Вычислить новую позицию перетаскиваемого элемента.</para>
+      </summary>
+      <param name="x">Новая позиция x.</param>
+      <param name="y">Новая позиция Y.</param>
+      <param name="width">Ширина элемента.</param>
+      <param name="height">Высота элемента.</param>
+      <returns>
+        <para>Рассчитанная и проверенная позиция.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.#ctor">
+      <summary>
+        <para>Конструктор перетаскивания.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Вызывается по событию перемещения мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Вызывается при наведении курсора мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Dragger.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Edge">
+      <summary>
+        <para>Краевой элемент GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.candidatePosition">
+      <summary>
+        <para>Конечная позиция ребра во время его создания.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.defaultColor">
+      <summary>
+        <para>Цвет края по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.edgeControl">
+      <summary>
+        <para>Дочерний элемент VisualElement элемента Edge, который рисует линии и выполняет обнаружение попаданий.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.edgeWidth">
+      <summary>
+        <para>Ширина края.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.ghostColor">
+      <summary>
+        <para>Цвет фантомного края, то есть края, который кажется привязанным к соседнему порту во время создания края.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.input">
+      <summary>
+        <para>Подключенный входной порт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.isGhostEdge">
+      <summary>
+        <para>Является ли это ребро призрачным краем, то есть краем, который кажется привязанным к соседнему порту во время создания ребра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.output">
+      <summary>
+        <para>Подключенный выходной порт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.selectedColor">
+      <summary>
+        <para>Цвет края при выборе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.showInMiniMap">
+      <summary>
+        <para>Отображается ли GraphElement на миникарте. Для Edge это свойство всегда имеет значение false.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.ContainsPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Проверяет, находится ли точка поверх ребра.</para>
+      </summary>
+      <param name="localPoint">Позиция точки.</param>
+      <returns>
+        <para>Истинно, если точка находится поверх ребра. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.CreateEdgeControl">
+      <summary>
+        <para>Создайте EdgeControl.</para>
+      </summary>
+      <returns>
+        <para>Созданный EdgeControl.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.#ctor">
+      <summary>
+        <para>Конструктор Edge.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.DrawEdge">
+      <summary>
+        <para>Нарисуйте линии края.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.OnCustomStyleResolved(UnityEngine.UIElements.ICustomStyle)">
+      <summary>
+        <para>Вызывается при разрешении свойств пользовательского стиля.</para>
+      </summary>
+      <param name="styles"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.OnPortChanged(System.Boolean)">
+      <summary>
+        <para>Вызывается при изменении порта на границе.</para>
+      </summary>
+      <param name="isInput">Истинно, если входной порт был изменен. False, если порт вывода был изменен.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.Overlaps(UnityEngine.Rect)">
+      <summary>
+        <para>Проверить, перекрывает ли край прямоугольник.</para>
+      </summary>
+      <param name="rectangle">Прямоугольник.</param>
+      <returns>
+        <para>Истинно, если край перекрывает прямоугольник.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Edge.PointsAndTangents">
+      <summary>
+        <para>Точки ребра и касательные.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Edge.UpdateEdgeControl">
+      <summary>
+        <para>Обновите EdgeControl края.</para>
+      </summary>
+      <returns>
+        <para>False, если не удалось обновить элемент управления. Истинно, если это удалось.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeConnector">
+      <summary>
+        <para>Манипулятор для создания новых ребер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeConnector.edgeDragHelper">
+      <summary>
+        <para>Ссылка на помощник перетаскивания краев.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeConnector`1">
+      <summary>
+        <para>Манипулятор для создания новых ребер.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeConnector_1.edgeDragHelper">
+      <summary>
+        <para>Ссылка на помощник перетаскивания краев.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.#ctor(UnityEditor.Experimental.GraphView.IEdgeConnectorListener)">
+      <summary>
+        <para>Конструктор EdgeConnector.</para>
+      </summary>
+      <param name="listener">IEdgeConnectorListener, который будет завершать ребра.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Вызывается по событию перемещения мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Вызывается при наведении курсора мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeConnector_1.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeControl">
+      <summary>
+        <para>VisualElement, который рисует линии края и определяет, находится ли мышь над краем.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.capRadius">
+      <summary>
+        <para>Радиус заглушек ребра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.controlPoints">
+      <summary>
+        <para>Контрольные точки Edge.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.drawFromCap">
+      <summary>
+        <para>Нужно ли рисовать From Cap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.drawToCap">
+      <summary>
+        <para>Нужно ли рисовать To Cap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.edgeColor">
+      <summary>
+        <para>Цвет края.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.edgeWidth">
+      <summary>
+        <para>Видимая ширина края.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.from">
+      <summary>
+        <para>Позиция Edge отправителя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.fromCapColor">
+      <summary>
+        <para>Цвет шапки на конце ребра "от".</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.inputColor">
+      <summary>
+        <para>Цвет на входе ребра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.inputOrientation">
+      <summary>
+        <para>Ориентация краевого входного порта (вертикальная/горизонтальная).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.interceptWidth">
+      <summary>
+        <para>Ширина, которая будет использоваться для обнаружения нажатия мыши.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.EdgeControl.k_MinEdgeWidth">
+      <summary>
+        <para>Минимальная ширина края.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.outputColor">
+      <summary>
+        <para>Цвет на выходе ребра.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.outputOrientation">
+      <summary>
+        <para>Ориентация краевого выходного порта (вертикальная/горизонтальная).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.to">
+      <summary>
+        <para>Позиция Edge Кому.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeControl.toCapColor">
+      <summary>
+        <para>Цвет шапки на конце ребра "до".</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.ComputeControlPoints">
+      <summary>
+        <para>Вычислите контрольные точки ребра.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.ContainsPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Проверить, находится ли точка поверх ребра.</para>
+      </summary>
+      <param name="localPoint">Положение точки.</param>
+      <returns>
+        <para>Истинно, если точка находится поверх ребра.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.#ctor">
+      <summary>
+        <para>Конструктор EdgeControl.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.Overlaps(UnityEngine.Rect)">
+      <summary>
+        <para>Проверить, перекрывает ли край прямоугольник.</para>
+      </summary>
+      <param name="rect">Прямоугольник.</param>
+      <returns>
+        <para>Истинно, если край перекрывает прямоугольник.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.PointsChanged">
+      <summary>
+        <para>Проверьте, не изменились ли точки ребер.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.UpdateLayout">
+      <summary>
+        <para>Обновите макет края.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeControl.UpdateRenderPoints">
+      <summary>
+        <para>Обновите точки визуализации ребра.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeDragHelper">
+      <summary>
+        <para>Конструктор EdgeDragHelper.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeDragHelper.draggedPort">
+      <summary>
+        <para>Порт, из которого перетаскивается край.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeDragHelper.edgeCandidate">
+      <summary>
+        <para>Перетаскиваемый край.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper.HandleMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Обрабатывать событие нажатия кнопки мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <returns>
+        <para>Истинно, если перетаскивание было начато. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper.HandleMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Обработка события перемещения мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper.HandleMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Обрабатывать событие поднятия мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper.Reset(System.Boolean)">
+      <summary>
+        <para>Сбросить состояние помощника перетаскивания.</para>
+      </summary>
+      <param name="didConnect">Было ли соединение успешным или нет. В этом случае просмотр не будет сброшен.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeDragHelper`1">
+      <summary>
+        <para>Вспомогательный класс перетаскивания краев.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.draggedPort">
+      <summary>
+        <para>Порт, из которого перетаскивается край.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.edgeCandidate">
+      <summary>
+        <para>Перетаскиваемый край.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.resetPositionOnPan">
+      <summary>
+        <para>Истинно, если он должен сбросить положение на сковороде, если ничего не подключено.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.#ctor(UnityEditor.Experimental.GraphView.IEdgeConnectorListener)">
+      <summary>
+        <para>Конструктор EdgeDragHelper.</para>
+      </summary>
+      <param name="listener">Прослушиватель пограничного соединителя.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.HandleMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Обрабатывать событие нажатия кнопки мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <returns>
+        <para>Истинно, если перетаскивание было начато. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.HandleMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Обработка события перемещения мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.HandleMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Обрабатывать событие поднятия мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeDragHelper_1.Reset(System.Boolean)">
+      <summary>
+        <para>Сбросить состояние помощника перетаскивания.</para>
+      </summary>
+      <param name="didConnect">Было ли соединение успешным или нет. В этом случае просмотр не будет сброшен.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EdgeManipulator">
+      <summary>
+        <para>Граничный манипулятор, используемый для перетаскивания краев портов и их повторного подключения в другом месте.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.#ctor">
+      <summary>
+        <para>Конструктор EdgeManipulator.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.OnKeyDown(UnityEngine.UIElements.KeyDownEvent)">
+      <summary>
+        <para>Обработка события нажатия клавиши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Обрабатывать событие нажатия кнопки мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Обработка события перемещения мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Обрабатывать событие поднятия мыши.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.EdgeManipulator.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.EventPropagation">
+      <summary>
+        <para>Значение, определяющее, останавливает ли обработчик событий распространение событий или разрешает его продолжить.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.EventPropagation.Continue">
+      <summary>
+        <para>Продолжить распространение события после этого обработчика.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.EventPropagation.Stop">
+      <summary>
+        <para>Остановить распространение события после этого обработчика.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.FreehandSelector">
+      <summary>
+        <para>Инструмент выделения от руки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.FreehandSelector.#ctor">
+      <summary>
+        <para>Конструктор FreehandSelector.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.FreehandSelector.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Зарегистрируйте обратные вызовы в целевом VisualElement.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.FreehandSelector.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Отмените регистрацию обратных вызовов в целевом VisualElement.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphElement">
+      <summary>
+        <para>Базовый класс для основных визуальных элементов GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.capabilities">
+      <summary>
+        <para>Возможности GraphElement.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.elementTypeColor">
+      <summary>
+        <para>Цвет, используемый для просмотра мини-карты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.layer">
+      <summary>
+        <para>Слой GraphElement на графике.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.selected">
+      <summary>
+        <para>Истинно, если в данный момент выбран элемент GraphElement.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.showInMiniMap">
+      <summary>
+        <para>Отображается ли элемент на миникарте.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphElement.title">
+      <summary>
+        <para>Заголовок GraphElement.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.GetGlobalCenter">
+      <summary>
+        <para>Получите центральную точку GraphElement.</para>
+      </summary>
+      <returns>
+        <para>Возвращает центральную точку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.GetPosition">
+      <summary>
+        <para>Получите позицию GraphElement.</para>
+      </summary>
+      <returns>
+        <para>Возвращает положение и размер прямоугольника.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.HitTest(UnityEngine.Vector2)">
+      <summary>
+        <para>Посмотрите, находится ли точка над элементом GraphElement.</para>
+      </summary>
+      <param name="localPoint">Суть.</param>
+      <returns>
+        <para>Возвращает true, если точка находится над элементом GraphElement. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsAscendable">
+      <summary>
+        <para>Проверяет, выводится ли GraphElement автоматически на передний план при выборе.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement автоматически выводится на передний план при выборе. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsCopiable">
+      <summary>
+        <para>Проверяет, можно ли скопировать GraphElement.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement можно копировать. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsDroppable">
+      <summary>
+        <para>Элемент GraphElement можно перетаскивать.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement можно удалить. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsGroupable">
+      <summary>
+        <para>Проверяет, является ли GraphElement группируемым.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement можно сгруппировать. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsMovable">
+      <summary>
+        <para>Элемент GraphElement можно перемещать.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement подвижен. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsRenamable">
+      <summary>
+        <para>GraphElement можно переименовывать.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement можно переименовывать. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsResizable">
+      <summary>
+        <para>Размер GraphElement можно изменять.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если размер GraphElement можно изменить. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsSelectable">
+      <summary>
+        <para>Элемент GraphElement доступен для выбора.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement доступен для выбора. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsSelected(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>В настоящее время GraphElement выбран в определенном контейнере.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер.</param>
+      <returns>
+        <para>Возвращает true, если выбран элемент GraphElement. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsSnappable">
+      <summary>
+        <para>Проверяет, можно ли привязать элемент GraphElement.</para>
+      </summary>
+      <returns>
+        <para>Возвращает true, если GraphElement можно привязать. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.IsStackable">
+      <summary>
+        <para>Проверяет, является ли GraphElement стекируемым.</para>
+      </summary>
+      <returns>
+        <para>Возвращает значение true, если GraphElement является стекируемым. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.OnCustomStyleResolved(UnityEngine.UIElements.ICustomStyle)">
+      <summary>
+        <para>Вызывается при разрешении свойств пользовательского стиля.</para>
+      </summary>
+      <param name="style"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.OnSelected">
+      <summary>
+        <para>Вызывается при выборе GraphElement.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.OnUnselected">
+      <summary>
+        <para>Вызывается, когда элемент GraphElement не выбран.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.ResetLayer">
+      <summary>
+        <para>Сбросьте GraphElement на исходный слой.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.Select(UnityEngine.UIElements.VisualElement,System.Boolean)">
+      <summary>
+        <para>Выберите элемент GraphElement.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер, в котором выбирается GraphElement.</param>
+      <param name="additive">Истина, если выборка аддитивная, в противном случае — ложь.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.SetPosition(UnityEngine.Rect)">
+      <summary>
+        <para>Установите позицию GraphElement.</para>
+      </summary>
+      <param name="newPos">Новая позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElement.Unselect(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Отмените выбор элемента GraphElement.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер, в котором был выбран элемент GraphElement.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphElementScopeExtensions">
+      <summary>
+        <para>Набор методов расширения, полезных для Scope.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphElementScopeExtensions.GetContainingScope(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Возвращает область, содержащую указанный элемент GraphElement.</para>
+      </summary>
+      <param name="element"></param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView">
+      <summary>
+        <para>Основной класс GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.canPasteSerializedData">
+      <summary>
+        <para>Спросите, можно ли вставить сериализованные данные.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.contentViewContainer">
+      <summary>
+        <para>Контейнер основного содержимого.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.deleteSelection">
+      <summary>
+        <para>Удалить обратный вызов выбора.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.edges">
+      <summary>
+        <para>Все ребра в графе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.elementResized">
+      <summary>
+        <para>Обратный вызов изменения размера элемента.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.elementsAddedToGroup">
+      <summary>
+        <para>Обратный вызов при добавлении GraphElements в группу.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.elementsInsertedToStackNode">
+      <summary>
+        <para>Обратный вызов, когда GraphElements вставляются в StackNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.elementsRemovedFromGroup">
+      <summary>
+        <para>Обратный вызов при удалении GraphElements из группы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.elementsRemovedFromStackNode">
+      <summary>
+        <para>Обратный вызов, когда GraphElements удаляются из StackNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.graphElements">
+      <summary>
+        <para>Все элементы GraphElements в графе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.graphViewChanged">
+      <summary>
+        <para>Обратный вызов, когда в графе произошли определенные изменения. См. раздел GraphViewChange.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.groupTitleChanged">
+      <summary>
+        <para>Обратный вызов при изменении названия группы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.isReframable">
+      <summary>
+        <para>Является ли выбор переформулируемым.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.maxScale">
+      <summary>
+        <para>Максимальный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.minScale">
+      <summary>
+        <para>Минимальный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.nodeCreationRequest">
+      <summary>
+        <para>Обратный вызов, когда пользователь запрашивает отображение окна создания узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.nodes">
+      <summary>
+        <para>Все узлы в данный момент в графе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.placematContainer">
+      <summary>
+        <para>PlacematContainer, используемый GraphView.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.ports">
+      <summary>
+        <para>Все порты в данный момент в графе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.referenceScale">
+      <summary>
+        <para>Эталонный уровень масштабирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.scale">
+      <summary>
+        <para>Текущий уровень масштабирования графика.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.scaleStep">
+      <summary>
+        <para>Шаг масштабирования. Дополнительные сведения см. в разделе Experimental.GraphView.ContentZoomer._scaleStep.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.selection">
+      <summary>
+        <para>Все выбранные в данный момент элементы на графике.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.serializeGraphElements">
+      <summary>
+        <para>Обратный вызов для сериализации элементов графа для копирования/вставки и других действий.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.supportsWindowedBlackboard">
+      <summary>
+        <para>Установите значение true, если этот GraphView поддерживает оконные доски. В противном случае установите значение false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.unserializeAndPaste">
+      <summary>
+        <para>Обратный вызов для десериализации элементов графа и добавления их в граф.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.viewport">
+      <summary>
+        <para>Окно просмотра графика. В настоящее время это просто само.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.viewTransform">
+      <summary>
+        <para>Преобразование представления графика.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.viewTransformChanged">
+      <summary>
+        <para>Просмотр измененного обратного вызова преобразования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphView.zoomerMaxElementCountWithPixelCacheRegen">
+      <summary>
+        <para>Количество элементов на графике, над которыми манипулятор масштабирования будет отключать регенерацию кэша пикселей на каждом такте, чтобы избежать падения производительности.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.AddElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Добавьте новый элемент GraphElement. Следует использовать это вместо Add() для добавления GraphElements.</para>
+      </summary>
+      <param name="graphElement">Добавляемый элемент.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.AddLayer(System.Int32)">
+      <summary>
+        <para>Добавляет новый слой в GraphView.</para>
+      </summary>
+      <param name="index">индекс нового слоя.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.AddToSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Добавить элемент в выделение.</para>
+      </summary>
+      <param name="selectable">Элемент для добавления к выбору.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.AskUser">
+      <summary>
+        <para>Следует ли запрашивать у пользователя определенные действия, такие как удаление выделения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.AskUser.AskUser">
+      <summary>
+        <para>Спрашивайте пользователя перед выполнением определенных действий, таких как удаление выделения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.AskUser.DontAskUser">
+      <summary>
+        <para>Не спрашивайте пользователя перед выполнением определенных действий, таких как удаление выделения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Добавить пункты меню в контекстное меню.</para>
+      </summary>
+      <param name="evt">Событие, удерживающее меню для заполнения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.CalculateFrameTransform(UnityEngine.Rect,UnityEngine.Rect,System.Int32,UnityEngine.Vector3&amp;,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Вычислить преобразование вида на основе уровня масштабирования и размера окна или родителя.</para>
+      </summary>
+      <param name="rectToFit">Прямоугольник по размеру.</param>
+      <param name="clientRect">Родительский прямоугольник.</param>
+      <param name="border">Размер границы.</param>
+      <param name="frameTranslation">Расчетный перевод.</param>
+      <param name="frameScaling">Расчетное масштабирование.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.CalculateRectToFitAll(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Вычислите размер и положение прямоугольника, чтобы он соответствовал всем элементам на графике.</para>
+      </summary>
+      <param name="container">Это должен быть контейнер представления.</param>
+      <returns>
+        <para>Вычисленный прямоугольник.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.CanPasteSerializedData(System.String)">
+      <summary>
+        <para>Метод по умолчанию для проверки возможности вставки сериализованных данных.</para>
+      </summary>
+      <param name="data">Элемент сериализованного графа.</param>
+      <returns>
+        <para>Истинно, если его можно вставить.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.CanPasteSerializedDataDelegate">
+      <summary>
+        <para>Делегат для проверки возможности вставки сериализованных данных.</para>
+      </summary>
+      <param name="data">Элемент сериализованного графа.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.ClearSelection">
+      <summary>
+        <para>Очистить выбор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.CollectElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Collections.Generic.HashSet`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Извлекает набор элементов, соответствующих заданному условию. Соответствующие элементы выбираются из множества элементов графа.</para>
+      </summary>
+      <param name="elements">Перечислимое количество элементов графика для выбора.</param>
+      <param name="collectedElementSet">Набор совпадающих элементов графа.</param>
+      <param name="conditionFunc">Функция, которая определяет, добавляется ли элемент графика в набор соответствующих элементов графика.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.CreatePlacematContainer">
+      <summary>
+        <para>Переопределите этот метод в производном классе, чтобы создать собственный PlacematContainer.</para>
+      </summary>
+      <returns>
+        <para>Возвращает созданный PlacematContainer.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.DeleteElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Удалить элементы из графического представления.</para>
+      </summary>
+      <param name="elementsToRemove">Элементы для удаления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.DeleteSelection">
+      <summary>
+        <para>Удалить выбранные элементы.</para>
+      </summary>
+      <returns>
+        <para>Остановиться, если элементы не были выбраны. В противном случае продолжить.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.DeleteSelectionDelegate">
+      <summary>
+        <para>Делегат для удаления выделения.</para>
+      </summary>
+      <param name="operationName">Имя операции для меток отмены/возврата.</param>
+      <param name="askUser">Спрашивать пользователя или нет.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.DeleteSelectionOperation(System.String,UnityEditor.Experimental.GraphView.GraphView/AskUser)">
+      <summary>
+        <para>Метод по умолчанию для удаления выделения.</para>
+      </summary>
+      <param name="operationName">Имя операции для меток отмены/возврата.</param>
+      <param name="askUser">Спрашивать пользователя или нет.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.ElementResized">
+      <summary>
+        <para>Делегат изменения размера элемента.</para>
+      </summary>
+      <param name="visualElement">Размер элемента изменен.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FrameAll">
+      <summary>
+        <para>Фокус просмотреть все элементы на графике.</para>
+      </summary>
+      <returns>
+        <para>Всегда должен быть Стоп.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FrameNext">
+      <summary>
+        <para>Сфокусировать представление на следующем элементе после выбранного в данный момент.</para>
+      </summary>
+      <param name="predicate">Предикат, используемый для сортировки списка всех существующих элементов графа.</param>
+      <returns>
+        <para>Продолжить, если на графике нет элементов, в противном случае остановить.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FrameNext(System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Сфокусировать представление на следующем элементе после выбранного в данный момент.</para>
+      </summary>
+      <param name="predicate">Предикат, используемый для сортировки списка всех существующих элементов графа.</param>
+      <returns>
+        <para>Продолжить, если на графике нет элементов, в противном случае остановить.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FrameOrigin">
+      <summary>
+        <para>Сосредоточьтесь на исходной точке графика.</para>
+      </summary>
+      <returns>
+        <para>Всегда возвращает Стоп.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FramePrev">
+      <summary>
+        <para>Сфокусировать представление на предыдущем элементе перед выбранным в данный момент.</para>
+      </summary>
+      <param name="predicate">Предикат, используемый для сортировки списка всех существующих элементов графа.</param>
+      <returns>
+        <para>Продолжить, если на графике нет элементов, в противном случае остановить.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FramePrev(System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Сфокусировать представление на предыдущем элементе перед выбранным в данный момент.</para>
+      </summary>
+      <param name="predicate">Предикат, используемый для сортировки списка всех существующих элементов графа.</param>
+      <returns>
+        <para>Продолжить, если на графике нет элементов, в противном случае остановить.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.FrameSelection">
+      <summary>
+        <para>Сфокусировать представление на выбранных в данный момент элементах.</para>
+      </summary>
+      <returns>
+        <para>Продолжить, если элементы не выбраны, в противном случае остановить.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.FrameType">
+      <summary>
+        <para>Тип кадрирования.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.FrameType.All">
+      <summary>
+        <para>Сфокусировать представление на всех элементах.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.FrameType.Origin">
+      <summary>
+        <para>Сфокусировать представление на источнике.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphView.FrameType.Selection">
+      <summary>
+        <para>Сосредоточиться на выделении.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetBlackboard">
+      <summary>
+        <para>Получает доску, связанную с этим GraphView.</para>
+      </summary>
+      <returns>
+        <para>Возвращает связанную доску. Возвращает null, если GraphView не связан с доской.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetCompatiblePorts(UnityEditor.Experimental.GraphView.Port,UnityEditor.Experimental.GraphView.NodeAdapter)">
+      <summary>
+        <para>Получить все порты, совместимые с данным портом.</para>
+      </summary>
+      <param name="startPort">Запустить порт для проверки.</param>
+      <param name="nodeAdapter">Адаптер узла.</param>
+      <returns>
+        <para>Список совместимых портов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetEdgeByGuid(System.String)">
+      <summary>
+        <para>Получите преимущество по его GUID.</para>
+      </summary>
+      <param name="guid">GUID.</param>
+      <returns>
+        <para>Первое ребро с заданным GUID. Нуль, если ничего не найдено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetElementByGuid(System.String)">
+      <summary>
+        <para>Получить любой элемент с заданным GUID.</para>
+      </summary>
+      <param name="guid">GUID.</param>
+      <returns>
+        <para>Первый элемент с данным GUID во всем GraphView, а не только в элементах, содержащихся в слоях. Нуль, если ничего не найдено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetNodeByGuid(System.String)">
+      <summary>
+        <para>Получить узел с заданным GUID.</para>
+      </summary>
+      <param name="guid">GUID.</param>
+      <returns>
+        <para>Первый узел с заданным GUID. Нуль, если ничего не найдено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetPortByGuid(System.String)">
+      <summary>
+        <para>Получить порт по его GUID.</para>
+      </summary>
+      <param name="guid">GUID.</param>
+      <returns>
+        <para>Первый найденный порт с заданным GUID. Нуль, если ничего не найдено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.GetPortCenterOverride(UnityEditor.Experimental.GraphView.Port,UnityEngine.Vector2&amp;)">
+      <summary>
+        <para>Получает другое местоположение для определенного порта и проверяет, есть ли у порта переопределенная позиция.</para>
+      </summary>
+      <param name="port">Конкретный порт.</param>
+      <param name="overriddenPosition">Позиция переопределения, если порт переопределен. В противном случае установите значение Vector2.zero.</param>
+      <returns>
+        <para>Возвращает true, если центр порта переопределен, иначе false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.GraphViewChanged">
+      <summary>
+        <para>Делегат используется для обозначения изменения в GraphView, обычно выполняемого манипулятором.</para>
+      </summary>
+      <param name="graphViewChange">Структура изменения.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.Layer">
+      <summary>
+        <para>Класс слоя для размещения и взаимодействия с элементами графика в GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.Layer.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.ReleaseBlackboard(UnityEditor.Experimental.GraphView.Blackboard)">
+      <summary>
+        <para>Освобождает связанную доску из этого GraphView.</para>
+      </summary>
+      <param name="toRelease">Доска для выпуска.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.RemoveElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Удалить элемент из графика.</para>
+      </summary>
+      <param name="graphElement">Элемент для удаления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.RemoveFromSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Удалить элемент из выделения.</para>
+      </summary>
+      <param name="selectable">Элемент, который необходимо удалить из выделения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.SerializeGraphElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Метод по умолчанию для сериализации элементов графа.</para>
+      </summary>
+      <param name="elements">Элементы для сериализации.</param>
+      <returns>
+        <para>Сериализованные данные.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.SerializeGraphElementsDelegate">
+      <summary>
+        <para>Делегат для сериализации элементов графа.</para>
+      </summary>
+      <param name="elements">Элементы для сериализации.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.SetupZoom(System.Single,System.Single)">
+      <summary>
+        <para>Настройте свойства масштабирования.</para>
+      </summary>
+      <param name="minScaleSetup">Минимальный уровень масштабирования.</param>
+      <param name="maxScaleSetup">Максимальный уровень масштабирования.</param>
+      <param name="scaleStepSetup">Шаг масштабирования.</param>
+      <param name="referenceScaleSetup">Эталонный уровень масштабирования.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.SetupZoom(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Настройте свойства масштабирования.</para>
+      </summary>
+      <param name="minScaleSetup">Минимальный уровень масштабирования.</param>
+      <param name="maxScaleSetup">Максимальный уровень масштабирования.</param>
+      <param name="scaleStepSetup">Шаг масштабирования.</param>
+      <param name="referenceScaleSetup">Эталонный уровень масштабирования.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.UnserializeAndPasteDelegate">
+      <summary>
+        <para>Делегат для десериализации и вставки элементов.</para>
+      </summary>
+      <param name="operationName">Имя операции для меток отмены/возврата.</param>
+      <param name="data">Сериализованные данные.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.UnserializeAndPasteOperation(System.String,System.String)">
+      <summary>
+        <para>Метод по умолчанию для десериализации элементов и вставки.</para>
+      </summary>
+      <param name="operationName">Имя операции для меток отмены/возврата.</param>
+      <param name="data">Сериализованные данные.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.UpdateViewTransform(UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Обновите преобразование области просмотра.</para>
+      </summary>
+      <param name="newPosition">Новая позиция.</param>
+      <param name="newScale">Новый масштаб.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphView.ValidateTransform">
+      <summary>
+        <para>Проверьте преобразование представления.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphView.ViewTransformChanged">
+      <summary>
+        <para>Просмотр измененного делегата преобразования (масштабирования).</para>
+      </summary>
+      <param name="graphView">Ссылка на GraphView.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow">
+      <summary>
+        <para>Базовый класс для плавающего окна, содержащего Blackboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow.IsGraphViewSupported(UnityEditor.Experimental.GraphView.GraphView)">
+      <summary>
+        <para>Проверяет, поддерживает ли окно инструментов GraphView определенный GraphView.</para>
+      </summary>
+      <param name="gv">Графическое представление.</param>
+      <returns>
+        <para>Возвращает true, если окно инструментов GraphView поддерживает указанный GraphView. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow.OnGraphViewChanged">
+      <summary>
+        <para>Обратный вызов, вызываемый при изменении GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow.OnGraphViewChanging">
+      <summary>
+        <para>Обратный вызов вызывается, когда GraphView собирается измениться.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphViewBlackboardWindow.ToolName">
+      <summary>
+        <para>Имя окна инструмента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphViewChange">
+      <summary>
+        <para>Набор изменений в графе, которые можно перехватить.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphViewChange.edgesToCreate">
+      <summary>
+        <para>Ребра будут созданы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphViewChange.elementsToRemove">
+      <summary>
+        <para>Элементы, которые будут удалены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphViewChange.movedElements">
+      <summary>
+        <para>Элементы уже перемещены.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.GraphViewChange.moveDelta">
+      <summary>
+        <para>Дельта последнего хода.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphViewEditorWindow">
+      <summary>
+        <para>Абстрактный базовый класс для окна редактора, содержащего GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphViewEditorWindow.graphViews">
+      <summary>
+        <para>Перечисление объектов GraphView, принадлежащих окну редактора. В большинстве случаев существует только одно представление GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewEditorWindow.GetExtraPaneTypes">
+      <summary>
+        <para>Получает дополнительные панели, связанные с окном редактора.</para>
+      </summary>
+      <returns>
+        <para>Дополнительные панели, относящиеся к окну.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewEditorWindow.ShowGraphViewWindowWithTools">
+      <summary>
+        <para>Вспомогательный метод, который создает экземпляр GraphViewWindow указанного типа, прикрепленной доски Blackboard и прикрепленной MiniMap.</para>
+      </summary>
+      <returns>
+        <para>Список вновь созданных окон.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow">
+      <summary>
+        <para>Плавающее окно с мини-картой.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow.IsGraphViewSupported(UnityEditor.Experimental.GraphView.GraphView)">
+      <summary>
+        <para>Проверяет, поддерживает ли окно инструментов GraphView определенный GraphView.</para>
+      </summary>
+      <param name="gv">Графическое представление.</param>
+      <returns>
+        <para>Возвращает true, если окно инструментов GraphView поддерживает указанный GraphView. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow.OnGraphViewChanged">
+      <summary>
+        <para>Обратный вызов, вызываемый при изменении GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow.OnGraphViewChanging">
+      <summary>
+        <para>Обратный вызов вызывается, когда GraphView собирается измениться.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphViewMinimapWindow.ToolName">
+      <summary>
+        <para>Имя окна инструмента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GraphViewToolWindow">
+      <summary>
+        <para>Абстрактный базовый класс для окна инструментов GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.GetExtraPaneTypes">
+      <summary>
+        <para>Получает дополнительные панели, связанные с окном.</para>
+      </summary>
+      <returns>
+        <para>Дополнительные панели, относящиеся к окну.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.IsGraphViewSupported(UnityEditor.Experimental.GraphView.GraphView)">
+      <summary>
+        <para>Проверяет, поддерживает ли окно инструментов GraphView определенный GraphView.</para>
+      </summary>
+      <param name="gv">Графическое представление.</param>
+      <returns>
+        <para>Возвращает true, если окно инструментов GraphView поддерживает указанный GraphView. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.OnEnable">
+      <summary>
+        <para>Базовая реализация события Unity OnEnable.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.OnGraphViewChanged">
+      <summary>
+        <para>Обратный вызов, вызываемый при изменении GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.OnGraphViewChanging">
+      <summary>
+        <para>Обратный вызов вызывается, когда GraphView собирается измениться.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GraphViewToolWindow.SelectGraphViewFromWindow(UnityEditor.Experimental.GraphView.GraphViewEditorWindow,UnityEditor.Experimental.GraphView.GraphView,System.Int32)">
+      <summary>
+        <para>Свяжите GraphView из GraphViewEditorWindow с этим окном инструментов.</para>
+      </summary>
+      <param name="window">Окно, содержащее GraphView.</param>
+      <param name="graphView">Графическое представление.</param>
+      <param name="graphViewIndexInWindow">Индекс GraphView в окне (по умолчанию 0).</param>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.GraphViewToolWindow.ToolName">
+      <summary>
+        <para>Имя окна инструмента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.GridBackground">
+      <summary>
+        <para>Фон GraphView по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.GridBackground.#ctor">
+      <summary>
+        <para>Конструктор GridBackground.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Group">
+      <summary>
+        <para>Позволяет интерактивную вставку элементов в именованную область.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Group.title">
+      <summary>
+        <para>Название группы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.AcceptsElement(UnityEditor.Experimental.GraphView.GraphElement,System.String&amp;)">
+      <summary>
+        <para>Можно ли добавить элемент в эту группу.</para>
+      </summary>
+      <param name="element">Добавляемый элемент.</param>
+      <param name="reasonWhyNotAccepted">Причина, указывающая, почему элемент не принят.</param>
+      <returns>
+        <para>Возвращает false, если указанный элемент является областью или группой. В противном случае возвращает true.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.CollectElements(System.Collections.Generic.HashSet`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Извлекает набор элементов графика, соответствующих заданному условию. Соответствующие элементы графика выбираются из этой группы.</para>
+      </summary>
+      <param name="collectedElementSet">Набор совпадающих элементов графа.</param>
+      <param name="conditionFunc">Функция, которая определяет, добавляется ли элемент графика в набор соответствующих элементов графика.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.#ctor">
+      <summary>
+        <para>Конструктор группы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.FocusTitleTextField">
+      <summary>
+        <para>Фокусирует текстовое поле заголовка этой группы, чтобы его можно было редактировать из пользовательского интерфейса.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.OnElementsAdded(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Вызывается при добавлении элементов в эту группу.</para>
+      </summary>
+      <param name="elements">Добавленные элементы.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.OnElementsRemoved(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Вызывается при удалении элементов из этой группы.</para>
+      </summary>
+      <param name="elements">Удаленные элементы.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Group.OnGroupRenamed(System.String,System.String)">
+      <summary>
+        <para>Вызывается при переименовании этой группы.</para>
+      </summary>
+      <param name="oldName">Старое название группы.</param>
+      <param name="newName">Новое имя группы.</param>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.ICollectibleElement">
+      <summary>
+        <para>Интерфейс CollectibleElement.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ICollectibleElement.CollectElements(System.Collections.Generic.HashSet`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Извлекает набор элементов графика, соответствующих заданному условию. Элементы графа собираются из элементов, связанных с реализатором этого интерфейса.</para>
+      </summary>
+      <param name="collectedElementSet">Набор совпадающих элементов графа.</param>
+      <param name="conditionFunc">Функция, которая определяет, добавляется ли элемент графика в набор соответствующих элементов графика.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.IconBadge">
+      <summary>
+        <para>Прямоугольный значок, обычно прикрепленный к другому визуальному элементу.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.IconBadge.alignment">
+      <summary>
+        <para>Относительное выравнивание между значком и его целью. Выравнивание повлияет на положение значка и подсказки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.IconBadge.badgeText">
+      <summary>
+        <para>Текст, отображаемый рядом со значком при наведении указателя мыши.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.IconBadge.distance">
+      <summary>
+        <para>Расстояние между значком и его целевым элементом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.IconBadge.target">
+      <summary>
+        <para>Целевой элемент, к которому прикреплен этот значок.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.IconBadge.visualStyle">
+      <summary>
+        <para>Визуальный стиль для значка. Встроенные значения: "ошибка" и "комментарий".</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.AttachTo(UnityEngine.UIElements.VisualElement,UnityEngine.SpriteAlignment)">
+      <summary>
+        <para>Прикрепляет этот значок к другому элементу.</para>
+      </summary>
+      <param name="target">Целевой элемент, к которому нужно прикрепить значок.</param>
+      <param name="align">Относительное выравнивание значка.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.CreateComment(System.String)">
+      <summary>
+        <para>Создает значок IconBadge с визуальным стилем «комментарий».</para>
+      </summary>
+      <param name="message">Отображаемое сообщение комментария.</param>
+      <returns>
+        <para>Созданный значок.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.CreateError(System.String)">
+      <summary>
+        <para>Создает значок IconBadge с визуальным стилем «ошибка».</para>
+      </summary>
+      <param name="message">Отображается сообщение об ошибке.</param>
+      <returns>
+        <para>Созданный значок.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.#ctor">
+      <summary>
+        <para>Создает базовый значок комментария.</para>
+      </summary>
+      <param name="template"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.#ctor(UnityEngine.UIElements.VisualTreeAsset)">
+      <summary>
+        <para>Создает базовый значок комментария.</para>
+      </summary>
+      <param name="template"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IconBadge.Detach">
+      <summary>
+        <para>Отсоединяет значок от цели.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.IDroppable">
+      <summary>
+        <para>Сбрасываемый интерфейс.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDroppable.IsDroppable">
+      <summary>
+        <para>Проверить, можно ли удалить элемент.</para>
+      </summary>
+      <returns>
+        <para>Правда, если можно сбросить. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.IDropTarget">
+      <summary>
+        <para>Отбросить целевой интерфейс.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.CanAcceptDrop(System.Collections.Generic.List`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;)">
+      <summary>
+        <para>Указывает, можно ли перетащить перетаскиваемый источник на целевой интерфейс.</para>
+      </summary>
+      <param name="selection">Выбранные элементы.</param>
+      <returns>
+        <para>Возвращает true, если перетащенный источник можно перетащить на целевой интерфейс. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.DragEnter(UnityEngine.UIElements.DragEnterEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда перетаскиваемый источник пересекает цель перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="enteredTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.DragExited">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда перетаскивание заканчивается, а источник перетаскивания не находится над допустимой целью перетаскивания.</para>
+      </summary>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.DragLeave(UnityEngine.UIElements.DragLeaveEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда перетаскиваемый источник больше не пересекает цель перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="leftTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.DragPerform(UnityEngine.UIElements.DragPerformEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>"Этот метод вызывается автоматически при выполнении перетаскивания."</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="dropTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IDropTarget.DragUpdated(UnityEngine.UIElements.DragUpdatedEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически при обновлении источника перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="dropTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.IEdgeConnectorListener">
+      <summary>
+        <para>Используется манипулятором EdgeConnector для завершения фактического создания края. Это интерфейс, который пользователь может переопределить и создать ребра другим способом.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IEdgeConnectorListener.OnDrop(UnityEditor.Experimental.GraphView.GraphView,UnityEditor.Experimental.GraphView.Edge)">
+      <summary>
+        <para>Вызывается, когда на порт отбрасывается новое ребро.</para>
+      </summary>
+      <param name="graphView">Ссылка на GraphView.</param>
+      <param name="edge">Создаваемое ребро.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IEdgeConnectorListener.OnDropOutsidePort(UnityEditor.Experimental.GraphView.Edge,UnityEngine.Vector2)">
+      <summary>
+        <para>Вызывается, когда ребро отбрасывается в пустое место.</para>
+      </summary>
+      <param name="edge">Край отбрасывается.</param>
+      <param name="position">Позиция в пустом пространстве, на которую перебрасывается ребро.</param>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.IResizable">
+      <summary>
+        <para>Изменяемый размер интерфейса.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IResizable.OnResized">
+      <summary>
+        <para>Вызывается после завершения изменения размера.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.IResizable.OnStartResize">
+      <summary>
+        <para>Вызывается при запуске изменения размера.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.ISearchWindowProvider">
+      <summary>
+        <para>Этот интерфейс описывает методы управления сеансом поиска узлов графа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISearchWindowProvider.CreateSearchTree(UnityEditor.Experimental.GraphView.SearchWindowContext)">
+      <summary>
+        <para>Создает данные для заполнения окна поиска.</para>
+      </summary>
+      <param name="context">Контекстные данные изначально передавались окну при первом создании.</param>
+      <returns>
+        <para>Возвращает список объектов SearchTreeEntry, отображаемых в окне поиска.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISearchWindowProvider.OnSelectEntry(UnityEditor.Experimental.GraphView.SearchTreeEntry,UnityEditor.Experimental.GraphView.SearchWindowContext)">
+      <summary>
+        <para>Выбирает запись в списке дерева поиска.</para>
+      </summary>
+      <param name="SearchTreeEntry">Выбранная запись.</param>
+      <param name="context">Контекстные данные для передачи в окно поиска при его первом создании.</param>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.ISelectable">
+      <summary>
+        <para>Выбираемый интерфейс.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.HitTest(UnityEngine.Vector2)">
+      <summary>
+        <para>Посмотрите, находится ли точка на цели.</para>
+      </summary>
+      <param name="localPoint">Суть.</param>
+      <returns>
+        <para>Истинно, если на цели.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.IsSelectable">
+      <summary>
+        <para>Проверить, доступен ли элемент для выбора.</para>
+      </summary>
+      <returns>
+        <para>Истинно, если можно выбрать. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.IsSelected(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Проверить, выбран ли элемент.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер, в котором отслеживается выбор.</param>
+      <returns>
+        <para>Верно, если выбрано. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.Overlaps(UnityEngine.Rect)">
+      <summary>
+        <para>Проверить, не перекрывает ли выделение прямоугольник.</para>
+      </summary>
+      <param name="rectangle">Прямоугольник для проверки.</param>
+      <returns>
+        <para>Верно, если он пересекается. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.Select(UnityEngine.UIElements.VisualElement,System.Boolean)">
+      <summary>
+        <para>Выберите элемент.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер, в котором отслеживается выбор.</param>
+      <param name="additive">Истинно, если выбор аддитивен. False в противном случае.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelectable.Unselect(UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Отменить выбор элемента.</para>
+      </summary>
+      <param name="selectionContainer">Контейнер, в котором отслеживается выбор.</param>
+    </member>
+    <member name="?:UnityEditor.Experimental.GraphView.ISelection">
+      <summary>
+        <para>Интерфейс выбора.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.ISelection.selection">
+      <summary>
+        <para>Получить выбор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelection.AddToSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Добавить элемент в выделение.</para>
+      </summary>
+      <param name="selectable">Выбираемый элемент для добавления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelection.ClearSelection">
+      <summary>
+        <para>Очистить выбор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ISelection.RemoveFromSelection(UnityEditor.Experimental.GraphView.ISelectable)">
+      <summary>
+        <para>Удалить элемент из выделения.</para>
+      </summary>
+      <param name="selectable">Выбираемый элемент для удаления.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.MiniMap">
+      <summary>
+        <para>Миникарта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.MiniMap.anchored">
+      <summary>
+        <para>Истинно, если мини-карта закреплена или закреплена (неподвижна). False, если вы можете перетаскивать и перемещать его.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.MiniMap.graphView">
+      <summary>
+        <para>Представление GraphView, к которому прикреплена мини-карта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.MiniMap.maxHeight">
+      <summary>
+        <para>Максимальная высота.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.MiniMap.maxWidth">
+      <summary>
+        <para>Максимальная ширина.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.MiniMap.windowed">
+      <summary>
+        <para>Установите значение true, если мини-карта отображается в отдельном окне. Установите значение false, когда мини-карта отображается в GraphView.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.MiniMap.zoomFactorTextChanged">
+      <summary>
+        <para>Обратный вызов при изменении текста коэффициента масштабирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.MiniMap.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Добавьте пункты меню в контекстное меню MiniMap.</para>
+      </summary>
+      <param name="evt">Событие, удерживающее меню для заполнения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.MiniMap.#ctor">
+      <summary>
+        <para>Конструктор MiniMap.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.MiniMap.OnResized">
+      <summary>
+        <para>Вызовите этот метод после того, как пользователь изменит размер MiniMap, чтобы сообщить MiniMap о необходимости обновления.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Node">
+      <summary>
+        <para>Основной класс узла GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.expanded">
+      <summary>
+        <para>Узел расширен.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.extensionContainer">
+      <summary>
+        <para>Пустой контейнер, используемый для отображения пользовательских элементов. После добавления элементов вызовите RefreshExpandedState, чтобы переключить видимость этого контейнера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.inputContainer">
+      <summary>
+        <para>Входной контейнер, используемый для входных портов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.mainContainer">
+      <summary>
+        <para>Основной контейнер, включающий все остальные контейнеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.outputContainer">
+      <summary>
+        <para>Контейнер выходов, используемый для выходных портов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.title">
+      <summary>
+        <para>Заголовок узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.titleButtonContainer">
+      <summary>
+        <para>Контейнер кнопок строки заголовка. Содержит верхние правые кнопки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.titleContainer">
+      <summary>
+        <para>Контейнер строки заголовка.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Node.topContainer">
+      <summary>
+        <para>Вся верхняя область, содержащая контейнеры ввода и вывода.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Добавьте пункты меню в контекстное меню узла.</para>
+      </summary>
+      <param name="evt">Событие, удерживающее меню для заполнения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.CollectElements(System.Collections.Generic.HashSet`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Извлекает набор ребер, соответствующих заданному условию. К этому узлу подключены проверенные ребра.</para>
+      </summary>
+      <param name="collectedElementSet">Набор совпадающих ребер.</param>
+      <param name="conditionFunc">Функция, которая определяет, добавляется ли ребро к набору совпадающих ребер.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.#ctor">
+      <summary>
+        <para>Конструктор узла.</para>
+      </summary>
+      <param name="nodeOrientation">Ориентация.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.#ctor">
+      <summary>
+        <para>Конструктор узла.</para>
+      </summary>
+      <param name="nodeOrientation">Ориентация.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.InstantiatePort">
+      <summary>
+        <para>Создайте новый порт для этого узла.</para>
+      </summary>
+      <param name="orientation">Ориентация порта.</param>
+      <param name="direction">Направление порта.</param>
+      <param name="type">Тип порта.</param>
+      <param name="newPres">(устарело).</param>
+      <returns>
+        <para>Новый порт.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.InstantiatePort">
+      <summary>
+        <para>Создайте новый порт для этого узла.</para>
+      </summary>
+      <param name="orientation">Ориентация порта.</param>
+      <param name="direction">Направление порта.</param>
+      <param name="type">Тип порта.</param>
+      <param name="newPres">(устарело).</param>
+      <returns>
+        <para>Новый порт.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.OnPortRemoved(UnityEditor.Experimental.GraphView.Port)">
+      <summary>
+        <para>Вызывается при удалении порта.</para>
+      </summary>
+      <param name="port">Удаленный порт.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.RefreshExpandedState">
+      <summary>
+        <para>После добавления пользовательских элементов в extensionContainer вызовите этот метод, чтобы они стали видимыми.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.RefreshPorts">
+      <summary>
+        <para>Обновите расположение портов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.SetPosition(UnityEngine.Rect)">
+      <summary>
+        <para>Установить позицию узла.</para>
+      </summary>
+      <param name="newPos">Новая позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.ToggleCollapse">
+      <summary>
+        <para>Переключить состояние свертывания узла.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Node.UseDefaultStyling">
+      <summary>
+        <para>Применяет стиль Node по умолчанию. Это должно быть явно вызвано подклассами Node, которые используют свои собственные файлы uxml.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.NodeCreationContext">
+      <summary>
+        <para>Эта структура представляет контекст, когда пользователь инициирует создание узла графа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.NodeCreationContext.index">
+      <summary>
+        <para>Индекс, в который будет вставлен созданный узел.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.NodeCreationContext.screenMousePosition">
+      <summary>
+        <para>Позиция клика, инициировавшего запрос на создание узла, в координатном пространстве экрана.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.NodeCreationContext.target">
+      <summary>
+        <para>VisualElement, в который будет добавлен созданный узел.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Orientation">
+      <summary>
+        <para>Ориентация элемента графика.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Orientation.Horizontal">
+      <summary>
+        <para>Горизонтальная ориентация используется для узлов и соединений, проходящих слева или справа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Orientation.Vertical">
+      <summary>
+        <para>Вертикальная ориентация используется для узлов и соединений, идущих вверх или вниз.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Pill">
+      <summary>
+        <para>Класс Pill включает методы для создания и управления VisualElement, напоминающего капсулу. Класс Pill включает текст, значок и два необязательных дочерних элемента VisualElements: один слева от таблетки и один справа от таблетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.highlighted">
+      <summary>
+        <para>Возвращает, выделена ли таблетка.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.icon">
+      <summary>
+        <para>Значок таблетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.left">
+      <summary>
+        <para>VisualElement слева от таблетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.right">
+      <summary>
+        <para>VisualElement справа от таблетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.text">
+      <summary>
+        <para>Текст таблетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Pill.#ctor">
+      <summary>
+        <para>Создает таблетку с необязательными левым и правым дочерними элементами VisualElements.</para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Pill.#ctor(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.VisualElement)">
+      <summary>
+        <para>Создает таблетку с необязательными левым и правым дочерними элементами VisualElements.</para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Pill.UxmlFactory">
+      <summary>
+        <para>Создает экземпляр Pill, используя данные, считанные из файла UXML.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Pill.UxmlFactory.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Pill.UxmlTraits">
+      <summary>
+        <para>Определяет UxmlTraits для Pill.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Pill.UxmlTraits.uxmlChildElementsDescription">
+      <summary>
+        <para>Возвращает пустое перечисляемое, так как элементы-таблетки не имеют дочерних элементов.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Pill.UxmlTraits.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Pill.UxmlTraits.Init(UnityEngine.UIElements.VisualElement,UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>Инициализируйте свойства Pill, используя значения из набора атрибутов.</para>
+      </summary>
+      <param name="ve">Объект для инициализации.</param>
+      <param name="bag">Пакет атрибутов.</param>
+      <param name="cc">Контекст создания; не используется.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Placemat">
+      <summary>
+        <para>Позволяет интерактивно манипулировать элементами (перетаскивать, скрывать) над виртуальной салфеткой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.title">
+      <summary>
+        <para>Название салфетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Добавляет пункты меню в контекстное меню салфетки.</para>
+      </summary>
+      <param name="evt">Событие для заполнения контекстного меню.</param>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.Collapsed">
+      <summary>
+        <para>Свернута ли салфетка (true) или развернута (false).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.CollapsedElements">
+      <summary>
+        <para>Список элементов, скрытых салфеткой в ​​свернутом состоянии. Список пуст, когда салфетка развернута.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.CollapsedSize">
+      <summary>
+        <para>Размер салфетки в сложенном виде.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.Color">
+      <summary>
+        <para>Цвет салфетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.ComputeElementBounds(UnityEngine.Rect&amp;,System.Collections.Generic.List`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,UnityEditor.Experimental.GraphView.Placemat/MinSizePolicy)">
+      <summary>
+        <para>Вычисляет границы списка элементов графа.</para>
+      </summary>
+      <param name="pos">Позиция, если она вычислена.</param>
+      <param name="elements">Список элементов.</param>
+      <param name="ensureMinSize">Следует ли учитывать минимальный размер салфетки при вычислении границ.</param>
+      <returns>
+        <para>Возвращает true, если границы были вычислены, или false в противном случае.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.ExpandedPosition">
+      <summary>
+        <para>Прямоугольник, представляющий развернутую салфетку, независимо от текущего свернутого состояния.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Placemat.MinSizePolicy">
+      <summary>
+        <para>Определяет поведение метода CalculateSelectedNodeBounds.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Placemat.MinSizePolicy.DoNotEnsureMinSize">
+      <summary>
+        <para>Игнорировать минимальный размер салфетки при расчете границ.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Placemat.MinSizePolicy.EnsureMinSize">
+      <summary>
+        <para>Применять минимальный размер салфетки при расчете границ.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.SetCollapsedElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Задает список свернутых элементов. Этот метод не предназначен для вызова.</para>
+      </summary>
+      <param name="collapsedElements">Список элементов, которые необходимо пометить как свернутые.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.SetPosition(UnityEngine.Rect)">
+      <summary>
+        <para>Устанавливает положение салфетки</para>
+      </summary>
+      <param name="newPos">Новая позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Placemat.StartEditTitle">
+      <summary>
+        <para>Устанавливает фокус на заголовок салфетки и устанавливает заголовок для редактирования.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.UncollapsedSize">
+      <summary>
+        <para>Размер салфетки в развернутом виде.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Placemat.ZOrder">
+      <summary>
+        <para>Порядок Z салфетки в PlacematContainer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.PlacematContainer">
+      <summary>
+        <para>Слой GraphView для салфеток.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.CreatePlacemat">
+      <summary>
+        <para>Создает и инициализирует новую салфетку в этом PlacematContainer.</para>
+      </summary>
+      <param name="placematPosition">Положение новой салфетки.</param>
+      <param name="placematTitle">Название новой салфетки.</param>
+      <param name="creator">Функция, создающая новую салфетку типа T.</param>
+      <returns>
+        <para>Возвращает созданную салфетку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.CreatePlacemat">
+      <summary>
+        <para>Создает и инициализирует новую салфетку в этом PlacematContainer.</para>
+      </summary>
+      <param name="placematPosition">Положение новой салфетки.</param>
+      <param name="placematTitle">Название новой салфетки.</param>
+      <param name="creator">Функция, создающая новую салфетку типа T.</param>
+      <returns>
+        <para>Возвращает созданную салфетку.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.#ctor(UnityEditor.Experimental.GraphView.GraphView)">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+      <param name="graphView">GraphView, который использует этот PlacematContainer.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.PlacematContainer.CycleDirection">
+      <summary>
+        <para>Используйте для установки направления вращения салфетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.PlacematContainer.CycleDirection.Down">
+      <summary>
+        <para>Установите направление цикла салфетки вниз. Используйте при опускании салфетки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.PlacematContainer.CycleDirection.Up">
+      <summary>
+        <para>Установите направление цикла салфетки вверх. Используйте при переворачивании салфетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.GetPortCenterOverride(UnityEditor.Experimental.GraphView.Port,UnityEngine.Vector2&amp;)">
+      <summary>
+        <para>Получает другое местоположение для определенного порта и проверяет, есть ли у порта переопределенная позиция.</para>
+      </summary>
+      <param name="port">Конкретный порт.</param>
+      <param name="overriddenPosition">Позиция переопределения, если порт переопределен. В противном случае установите значение Vector2.zero.</param>
+      <returns>
+        <para>Возвращает true, если центр порта переопределен. В противном случае возвращает false</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.GetTopZOrder">
+      <summary>
+        <para>Извлекает значение ZOrder больше, чем самая верхняя салфетка. Например, если ZOrder самой верхней салфетки имеет значение 10, этот метод возвращает 11.</para>
+      </summary>
+      <returns>
+        <para>Возвращает значение ZOrder.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.HideCollapsedEdges">
+      <summary>
+        <para>Скрывает края, которые скрыты из-за свернутых салфеток.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.PlacematContainer.Placemats">
+      <summary>
+        <para>Перечисление салфеток в этом PlacematContainer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.PlacematContainer.PlacematsLayer">
+      <summary>
+        <para>Индекс слоя для размещения PlacematContainer в GraphView.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.RemoveAllPlacemats">
+      <summary>
+        <para>Удаляет салфетки из этого PlacematContainer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PlacematContainer.UpdateElementsOrder">
+      <summary>
+        <para>Обновляет список свернутых элементов. Этот метод не предназначен для вызова.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Port">
+      <summary>
+        <para>Класс порта GraphView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.allowMultiDrag">
+      <summary>
+        <para>Если для этого свойства установлено значение true, вы можете выбрать несколько ребер, подключенных к этому порту, и перетащить их все одновременно (например, чтобы отключить их и снова подключить к другому порту). Если для этого свойства задано значение false, вы можете перетаскивать только одно соединенное ребро за раз.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.capacity">
+      <summary>
+        <para>Укажите, сколько ребер может быть подключено к порту.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.collapsed">
+      <summary>
+        <para>Свернутое состояние порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.connected">
+      <summary>
+        <para>Состояние подключения порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.connections">
+      <summary>
+        <para>Все текущие соединения порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.direction">
+      <summary>
+        <para>Направление порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.disabledPortColor">
+      <summary>
+        <para>Цвет порта при отключении.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.edgeConnector">
+      <summary>
+        <para>Ссылка на граничный соединитель.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.highlight">
+      <summary>
+        <para>Выделен ли порт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.node">
+      <summary>
+        <para>Узел порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.orientation">
+      <summary>
+        <para>Ориентация порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.portCapLit">
+      <summary>
+        <para>Горит ли крышка порта?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.portColor">
+      <summary>
+        <para>Цвет порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.portName">
+      <summary>
+        <para>Имя порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.portType">
+      <summary>
+        <para>Тип порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.showInMiniMap">
+      <summary>
+        <para>Отображается ли элемент на миникарте. Для порта это свойство всегда имеет значение false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.source">
+      <summary>
+        <para>Источник порта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Port.visualClass">
+      <summary>
+        <para>Имя класса uss, используемого для стилизации порта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Port.Capacity">
+      <summary>
+        <para>Укажите, сколько ребер может быть подключено к порту.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Port.Capacity.Multi">
+      <summary>
+        <para>Порт может иметь несколько подключений.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.Port.Capacity.Single">
+      <summary>
+        <para>Порт может иметь только одно соединение.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.Connect(UnityEditor.Experimental.GraphView.Edge)">
+      <summary>
+        <para>Подключитесь и подключитесь к порту.</para>
+      </summary>
+      <param name="edge">Край.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.ConnectTo(UnityEditor.Experimental.GraphView.Port)">
+      <summary>
+        <para>Создает границу между этим портом и «другим» портом.</para>
+      </summary>
+      <param name="other">Другой порт для подключения.</param>
+      <returns>
+        <para>Недавно созданное ребро.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.ConnectTo(UnityEditor.Experimental.GraphView.Port)">
+      <summary>
+        <para>Создает границу между этим портом и «другим» портом.</para>
+      </summary>
+      <param name="other">Другой порт для подключения.</param>
+      <returns>
+        <para>Недавно созданное ребро.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.ContainsPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Проверьте, находится ли точка над портом. Используется для выбора и наведения.</para>
+      </summary>
+      <param name="localPoint">Суть.</param>
+      <returns>
+        <para>Истинно, если точка находится над портом.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.Create(UnityEditor.Experimental.GraphView.Orientation,UnityEditor.Experimental.GraphView.Direction,UnityEditor.Experimental.GraphView.Port/Capacity,System.Type)">
+      <summary>
+        <para>Заводской метод создания порта.</para>
+      </summary>
+      <param name="presenter">(устарело).</param>
+      <param name="orientation">Ориентация.</param>
+      <param name="direction">Направление.</param>
+      <param name="capacity">Мульти против одиночного.</param>
+      <param name="type">Тип данных порта.</param>
+      <returns>
+        <para>Новый порт.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.Create">
+      <summary>
+        <para>Заводской метод создания порта.</para>
+      </summary>
+      <param name="presenter">(устарело).</param>
+      <param name="orientation">Ориентация.</param>
+      <param name="direction">Направление.</param>
+      <param name="capacity">Мульти против одиночного.</param>
+      <param name="type">Тип данных порта.</param>
+      <returns>
+        <para>Новый порт.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.Disconnect(UnityEditor.Experimental.GraphView.Edge)">
+      <summary>
+        <para>Отключить край от порта.</para>
+      </summary>
+      <param name="edge">Край для отключения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.DisconnectAll">
+      <summary>
+        <para>Отключите все ребра от порта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.GetGlobalCenter">
+      <summary>
+        <para>Получить центр порта.</para>
+      </summary>
+      <returns>
+        <para>Центральная точка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.OnCustomStyleResolved(UnityEngine.UIElements.ICustomStyle)">
+      <summary>
+        <para>Вызывается при разрешении свойств пользовательского стиля.</para>
+      </summary>
+      <param name="styles"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.OnStartEdgeDragging">
+      <summary>
+        <para>Вызывается при перетаскивании края.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Port.OnStopEdgeDragging">
+      <summary>
+        <para>Вызывается, когда заканчивается перетаскивание края.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.PortSource`1">
+      <summary>
+        <para>Источник порта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.PortSource_1.#ctor">
+      <summary>
+        <para>Конструктор источника порта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.RectangleSelector">
+      <summary>
+        <para>Манипулятор прямоугольника выбора.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectangleSelector.ComputeAxisAlignedBound(UnityEngine.Rect,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Вычислите связанный прямоугольник, выровненный по осям.</para>
+      </summary>
+      <param name="position">Прямоугольник для привязки.</param>
+      <param name="transform">Преобразование.</param>
+      <returns>
+        <para>Выровненная по оси граница.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectangleSelector.#ctor">
+      <summary>
+        <para>Конструктор RectangleSelector.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectangleSelector.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectangleSelector.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.RectUtils">
+      <summary>
+        <para>Утилиты для выделения прямоугольников.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectUtils.#ctor">
+      <summary>
+        <para>Конструктор RectUtils.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectUtils.Encompass(UnityEngine.Rect,UnityEngine.Rect)">
+      <summary>
+        <para>Создайте прямоугольник, включающий два прямоугольника.</para>
+      </summary>
+      <param name="a">Прямоугольник а.</param>
+      <param name="b">Прямоугольник б.</param>
+      <returns>
+        <para>Новый прямоугольник.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectUtils.Inflate(UnityEngine.Rect,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Создает и возвращает увеличенную копию указанного прямоугольника. Копия увеличивается на указанную величину.</para>
+      </summary>
+      <param name="a">Исходный прямоугольник.</param>
+      <param name="left">Величина расширения прямоугольника влево.</param>
+      <param name="top">Величина надувания прямоугольника вверх.</param>
+      <param name="right">Величина расширения прямоугольника вправо.</param>
+      <param name="bottom">Величина надувания прямоугольника к низу.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.RectUtils.IntersectsSegment(UnityEngine.Rect,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary>
+        <para>Проверить, не перекрывает ли сегмент линии прямоугольник.</para>
+      </summary>
+      <param name="rect">Прямоугольник для проверки.</param>
+      <param name="p1">Точка сегмента линии 1.</param>
+      <param name="p2">Точка сегмента линии 2.</param>
+      <returns>
+        <para>Истинно, если сегмент линии перекрывает прямоугольник. False в противном случае.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ResizableElement">
+      <summary>
+        <para>Создает экземпляр [ResizableElement], который вы добавляете в качестве дочернего элемента [VisualElement], размер которого вы хотите изменить.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ResizableElement.#ctor">
+      <summary>
+        <para>Конструктор для ResizableElement.</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ResizableElement.#ctor(System.String)">
+      <summary>
+        <para>Конструктор для ResizableElement.</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ResizableElement.UxmlFactory">
+      <summary>
+        <para>Создает экземпляр ResizableElement с данными, считанными из файла UXML.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ResizableElement.UxmlFactory.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Resizer">
+      <summary>
+        <para>Элемент манипулятора изменения размера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Resizer.activateButton">
+      <summary>
+        <para>Кнопка мыши для активации изменения размера.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Resizer.#ctor">
+      <summary>
+        <para>Конструктор Resizer.</para>
+      </summary>
+      <param name="minimumSize">Минимальный размер элемента.</param>
+      <param name="onResizedCallback"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Resizer.#ctor(UnityEngine.Vector2)">
+      <summary>
+        <para>Конструктор Resizer.</para>
+      </summary>
+      <param name="minimumSize">Минимальный размер элемента.</param>
+      <param name="onResizedCallback"></param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ResizerDirection">
+      <summary>
+        <para>Перечисление, указывающее, в каком направлении следует изменять размер элемента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ResizerDirection.Bottom">
+      <summary>
+        <para>Измените размер элемента снизу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ResizerDirection.Left">
+      <summary>
+        <para>Измените размер элемента влево.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ResizerDirection.Right">
+      <summary>
+        <para>Измените размер элемента вправо.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.ResizerDirection.Top">
+      <summary>
+        <para>Измените размер элемента сверху.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.Scope">
+      <summary>
+        <para>Этот класс позволяет сгруппировать узлы в общую область или область действия. Этот класс включает методы, которые автоматически изменяют размер и позиционируют Scope, чтобы охватить группу узлов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Scope.autoUpdateGeometry">
+      <summary>
+        <para>Включает или отключает автоматическое изменение размера и положения области действия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Scope.containedElements">
+      <summary>
+        <para>Список элементов GraphElements, содержащихся в Scope.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Scope.containedElementsRect">
+      <summary>
+        <para>Прямоугольник, содержащий GraphElements, охватываемый Scope. Прямоугольник выражается в локальных координатах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.Scope.headerContainer">
+      <summary>
+        <para>Возвращает контейнер заголовка для Scope. Используйте этот контейнер заголовков для настройки заголовка Scope.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.AcceptsElement(UnityEditor.Experimental.GraphView.GraphElement,System.String&amp;)">
+      <summary>
+        <para>Можно ли добавить GraphElement в эту область.</para>
+      </summary>
+      <param name="element">Добавляемый элемент.</param>
+      <param name="reasonWhyNotAccepted">Причина, по которой указанный элемент не может быть добавлен в Scope.</param>
+      <returns>
+        <para>Возвращает true, если указанный элемент принимается Scope. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.AddElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Добавляет GraphElement в область видимости.</para>
+      </summary>
+      <param name="element">Добавляемый элемент.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.AddElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Добавляет GraphElements в область видимости.</para>
+      </summary>
+      <param name="element">Добавляемые элементы.</param>
+      <param name="elements"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.ContainsElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Определяет, содержит ли Scope указанный элемент GraphElement.</para>
+      </summary>
+      <param name="element">Элемент.</param>
+      <returns>
+        <para>Возвращает true, если Scope содержит указанный элемент. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.#ctor">
+      <summary>
+        <para>Конструктор области.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.GetPosition">
+      <summary>
+        <para>Возвращает геометрию Scope.</para>
+      </summary>
+      <returns>
+        <para>Геометрия.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.HitTest(UnityEngine.Vector2)">
+      <summary>
+        <para>Определяет, находится ли указанная точка в пределах доступной для выбора области Scope.</para>
+      </summary>
+      <param name="localPoint">Точка в местных координатах.</param>
+      <returns>
+        <para>Возвращает true, если точка находится в пределах выбираемой области Scope. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.OnElementsAdded(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Вызывается, когда GraphElements добавляются в Scope.</para>
+      </summary>
+      <param name="elements">Добавленные элементы.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.OnElementsRemoved(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Вызывается при удалении GraphElements из Scope.</para>
+      </summary>
+      <param name="elements">Удаленные элементы.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.Overlaps(UnityEngine.Rect)">
+      <summary>
+        <para>Определяет, перекрывает ли указанный прямоугольник Scope.</para>
+      </summary>
+      <param name="rectangle">Прямоугольник </param>
+      <returns>
+        <para>Возвращает true, когда указанный прямоугольник перекрывает область видимости.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.RemoveElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Удаляет элемент из области видимости.</para>
+      </summary>
+      <param name="element">Элемент для удаления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.RemoveElements(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Удаляет элементы из области видимости.</para>
+      </summary>
+      <param name="elements">Элементы для удаления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.RemoveElementsWithoutNotification(System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;)">
+      <summary>
+        <para>Удаляет элементы из Scope, но не отправляет уведомление.</para>
+      </summary>
+      <param name="elements">Элементы для удаления.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.ScheduleUpdateGeometryFromContent">
+      <summary>
+        <para>Планирует обновление размера и положения Scope на основе его содержимого.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.SetPosition(UnityEngine.Rect)">
+      <summary>
+        <para>Задает геометрию Scope.</para>
+      </summary>
+      <param name="newPos">Новая геометрия.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.SetScopePositionOnly(UnityEngine.Rect)">
+      <summary>
+        <para>Изменяет положение области, но не перемещает ее элементы.</para>
+      </summary>
+      <param name="newPos"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.Scope.UpdateGeometryFromContent">
+      <summary>
+        <para>Обновляет размер и положение Scope на основе его содержимого.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SearchTreeEntry">
+      <summary>
+        <para>Этот класс описывает элемент дерева поиска. В окне поиска отображаются записи дерева поиска в GraphView.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.SearchTreeEntry.content">
+      <summary>
+        <para>Текст и значок записи поиска.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.SearchTreeEntry.level">
+      <summary>
+        <para>Уровень записи в дереве поиска.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SearchTreeEntry.name">
+      <summary>
+        <para>Строка, используемая для сравнения строк с пользовательским фильтром.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.SearchTreeEntry.userData">
+      <summary>
+        <para>Указанный пользователем объект для прикрепления данных приложения к записи дерева поиска.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SearchTreeEntry.#ctor(UnityEngine.GUIContent)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="content">Текст и значок элемента.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SearchTreeGroupEntry">
+      <summary>
+        <para>Этот класс описывает групповые записи в дереве поиска. Дерево поиска отображается в окне поиска.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SearchTreeGroupEntry.#ctor(UnityEngine.GUIContent,System.Int32)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="content">Текст и значок записи группы.</param>
+      <param name="level">Уровень записи группы.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SearchWindow">
+      <summary>
+        <para>Этот подкласс отображает доступное для поиска меню доступных узлов графа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SearchWindow.Open(UnityEditor.Experimental.GraphView.SearchWindowContext,T)">
+      <summary>
+        <para>Открывает окно поиска над графиком.</para>
+      </summary>
+      <param name="context">Структура параметров, настраивающих окно поиска.</param>
+      <param name="provider">Ссылка на объект, предоставляющий результаты поиска.</param>
+      <returns>
+        <para>Возвращает true, если окно успешно открывается. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SearchWindowContext">
+      <summary>
+        <para>Эта структура включает параметры для настройки окна поиска.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SearchWindowContext.requestedHeight">
+      <summary>
+        <para>Запрашиваемая высота окна. Установите значение 0,0f, чтобы использовать высоту по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SearchWindowContext.requestedWidth">
+      <summary>
+        <para>Запрошенная ширина окна. Установите значение 0,0f, чтобы использовать ширину по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SearchWindowContext.screenMousePosition">
+      <summary>
+        <para>Исходное положение события мыши, которое вызвало открытие окна, в пространстве координат экрана.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SearchWindowContext.#ctor(UnityEngine.Vector2,System.Single,System.Single)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="requestedHeight">Запрашиваемая высота окна. Установите значение 0,0f, чтобы использовать высоту по умолчанию.</param>
+      <param name="requestedWidth">Запрошенная ширина окна. Установите значение 0,0f, чтобы использовать ширину по умолчанию.</param>
+      <param name="screenMousePosition">Исходное положение события мыши, которое вызвало открытие окна, в пространстве координат экрана.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SelectionDragger">
+      <summary>
+        <para>Манипулятор перетаскивания выделения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.#ctor">
+      <summary>
+        <para>Конструктор SelectionDragger.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Вызывается по событию перемещения мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Вызывается при наведении курсора мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+      <param name="evt"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDragger.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.SelectionDropper">
+      <summary>
+        <para>Манипулятор перетаскивания выделения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SelectionDropper.activateButton">
+      <summary>
+        <para>Кнопка мыши, используемая для активации манипулятора.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SelectionDropper.clampToParentEdges">
+      <summary>
+        <para>Зажимной элемент перетаскивается к краям родителя (обычно графа).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.SelectionDropper.panSpeed">
+      <summary>
+        <para>Когда элементы перетаскиваются к краям графика, происходит панорамирование. Это контролирует скорость указанного панорамирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.#ctor">
+      <summary>
+        <para>Конструктор SelectionDropper.</para>
+      </summary>
+      <param name="handler">Событие падения.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.OnMouseDown(UnityEngine.UIElements.MouseDownEvent)">
+      <summary>
+        <para>Вызывается при нажатии кнопки мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.OnMouseMove(UnityEngine.UIElements.MouseMoveEvent)">
+      <summary>
+        <para>Вызывается по событию перемещения мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.OnMouseUp(UnityEngine.UIElements.MouseUpEvent)">
+      <summary>
+        <para>Вызывается при наведении курсора мыши.</para>
+      </summary>
+      <param name="e">Событие.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.SelectionDropper.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ShortcutDelegate">
+      <summary>
+        <para>Делегат события быстрого доступа.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.ShortcutHandler">
+      <summary>
+        <para>Обработчик ярлыков.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ShortcutHandler.#ctor(System.Collections.Generic.Dictionary`2&lt;UnityEngine.Event,UnityEditor.Experimental.GraphView.ShortcutDelegate&gt;)">
+      <summary>
+        <para>Конструктор ShortcutHandler.</para>
+      </summary>
+      <param name="dictionary">Словарь сочетаний клавиш и их действий.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ShortcutHandler.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Вызывается для регистрации обратных вызовов события клика на целевом элементе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.ShortcutHandler.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Вызывается для отмены регистрации обратных вызовов событий из целевого элемента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StackNode">
+      <summary>
+        <para>Используйте этот класс для настройки узлов стека и управления перетаскиванием элементов GraphElements по узлам стека.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StackNode.contentContainer">
+      <summary>
+        <para>Контейнер содержимого этого StackNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StackNode.dragEntered">
+      <summary>
+        <para>Указывает, перетаскиваются ли в данный момент элементы из этого стека.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StackNode.dropPreviewTemplate">
+      <summary>
+        <para>Используйте это свойство, чтобы настроить предварительный просмотр, который появляется при перетаскивании GraphElements на StackNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StackNode.hasMultipleSelectionSupport">
+      <summary>
+        <para>Возвращает true, если StackNode поддерживает множественный выбор.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StackNode.headerContainer">
+      <summary>
+        <para>Используйте это свойство, чтобы настроить заголовок для этого StackNode.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.AcceptsElement(UnityEditor.Experimental.GraphView.GraphElement,System.Int32&amp;,System.Int32)">
+      <summary>
+        <para>Проверяет, можно ли добавить указанный элемент GraphElement в этот StackNode.</para>
+      </summary>
+      <param name="element">Добавляемый элемент.</param>
+      <param name="proposedIndex">Индекс, по которому будет добавлен элемент. Этот индекс можно перезаписать.</param>
+      <param name="maxIndex">Максимальное значение индекса.</param>
+      <returns>
+        <para>Возвращает true, если указанный элемент GraphElement можно добавить. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.AddElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Добавляет указанный GraphElement в StackNode.</para>
+      </summary>
+      <param name="element">Добавляемый GraphElement.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.CanAcceptDrop(System.Collections.Generic.List`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;)">
+      <summary>
+        <para>Указывает, принимает ли этот StackNode текущее событие перетаскивания.</para>
+      </summary>
+      <param name="selection">"Выбранные GraphElements для проверки.</param>
+      <returns>
+        <para>Возвращает true, если этот StackNode принимает текущее событие отбрасывания. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.CollectElements(System.Collections.Generic.HashSet`1&lt;UnityEditor.Experimental.GraphView.GraphElement&gt;,System.Func`2&lt;UnityEditor.Experimental.GraphView.GraphElement,System.Boolean&gt;)">
+      <summary>
+        <para>Извлекает набор узлов, содержащихся в этом стеке и его ребрах. Полученные элементы графика соответствуют определенному условию.</para>
+      </summary>
+      <param name="collectedElementSet">Набор совпадающих элементов графа.</param>
+      <param name="conditionFunc">Функция, которая определяет, добавляется ли элемент графика в набор соответствующих элементов графика.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.#ctor">
+      <summary>
+        <para>Конструктор StackNode.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.DragEnter(UnityEngine.UIElements.DragEnterEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда происходит событие перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="enteredTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.DragExited">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда происходит событие выхода из перетаскивания.</para>
+      </summary>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.DragLeave(UnityEngine.UIElements.DragLeaveEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда происходит событие перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="leftTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.DragPerform(UnityEngine.UIElements.DragPerformEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически при возникновении события перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="dropTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.DragUpdated(UnityEngine.UIElements.DragUpdatedEvent,System.Collections.Generic.IEnumerable`1&lt;UnityEditor.Experimental.GraphView.ISelectable&gt;,UnityEditor.Experimental.GraphView.IDropTarget,UnityEditor.Experimental.GraphView.ISelection)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда происходит событие обновления перетаскивания.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="selection">Выбранные элементы.</param>
+      <param name="dropTarget">Цель перетаскивания.</param>
+      <param name="dragSource">Источник перетаскивания.</param>
+      <returns>
+        <para>Возвращает распространение события.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.GetInsertionIndex(UnityEngine.Vector2)">
+      <summary>
+        <para>Извлекает индекс вставки в StackNode, если элемент отбрасывается в указанной мировой позиции.</para>
+      </summary>
+      <param name="worldPosition">Мировая позиция для получения индекса.</param>
+      <returns>
+        <para>Возвращает индекс вставки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.InsertElement(System.Int32,UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Вставляет указанный элемент GraphElement по указанному индексу в этот StackNode.</para>
+      </summary>
+      <param name="index">Индекс, в который будет вставлен указанный элемент GraphElement.</param>
+      <param name="element">Элемент GraphElement для вставки.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.OnCustomStyleResolved(UnityEngine.UIElements.ICustomStyle)">
+      <summary>
+        <para>Вызывается при разрешении свойств пользовательского стиля.</para>
+      </summary>
+      <param name="styles"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.OnSeparatorContextualMenuEvent(UnityEngine.UIElements.ContextualMenuPopulateEvent,System.Int32)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда контекстное меню должно появиться в разделителе StackNode.</para>
+      </summary>
+      <param name="evt">Событие.</param>
+      <param name="separatorIndex">Индекс разделителя, по которому было вызвано меню.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.OnStartDragging(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Этот метод вызывается автоматически, когда элемент стека должен быть перетащен из него.</para>
+      </summary>
+      <param name="ge">Элемент GraphElement, который вытаскивается из стека.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StackNode.RemoveElement(UnityEditor.Experimental.GraphView.GraphElement)">
+      <summary>
+        <para>Удаляет указанный элемент GraphElement из этого StackNode.</para>
+      </summary>
+      <param name="element">GraphElement для удаления.</param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNote">
+      <summary>
+        <para>Создает экземпляр [GraphElement], используемый для текста комментария.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StickyNote.contents">
+      <summary>
+        <para>Текстовое содержимое [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNote.defaultSize">
+      <summary>
+        <para>Размер по умолчанию [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StickyNote.fontSize">
+      <summary>
+        <para>Размер шрифта [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StickyNote.theme">
+      <summary>
+        <para>Визуальная тема [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StickyNote.title">
+      <summary>
+        <para>Название [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.BuildContextualMenu(UnityEngine.UIElements.ContextualMenuPopulateEvent)">
+      <summary>
+        <para>Создает контекстное меню [StickyNote].</para>
+      </summary>
+      <param name="evt"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.#ctor">
+      <summary>
+        <para>Конструктор для [StickyNote].</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+      <param name="position">Начальная позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.#ctor(UnityEngine.Vector2)">
+      <summary>
+        <para>Конструктор для [StickyNote].</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+      <param name="position">Начальная позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.#ctor">
+      <summary>
+        <para>Конструктор для [StickyNote].</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+      <param name="position">Начальная позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.#ctor(System.String,UnityEngine.Vector2)">
+      <summary>
+        <para>Конструктор для [StickyNote].</para>
+      </summary>
+      <param name="uiFile">Необязательный путь к файлу UXML.</param>
+      <param name="position">Начальная позиция.</param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.FitText(System.Boolean)">
+      <summary>
+        <para>Изменяет размер [StickyNote] так, чтобы было видно его текстовое содержимое.</para>
+      </summary>
+      <param name="onlyIfSmaller"></param>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.GetPosition">
+      <summary>
+        <para>Получает позицию [StickyNote].</para>
+      </summary>
+      <returns>
+        <para>Возвращает позицию [StickyNote] как xy позицию относительно [GraphView].</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.OnResized">
+      <summary>
+        <para>Вызывается перед изменением размера [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.OnStartResize">
+      <summary>
+        <para>Вызывается при изменении размера [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.SetPosition(UnityEngine.Rect)">
+      <summary>
+        <para>Устанавливает положение [StickyNote].</para>
+      </summary>
+      <param name="rect"></param>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNote.UxmlFactory">
+      <summary>
+        <para>Создает экземпляр StickyNote с данными, считанными из файла UXML.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNote.UxmlFactory.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNoteChange">
+      <summary>
+        <para>Перечисление, указывающее тип изменения [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteChange.Contents">
+      <summary>
+        <para>Укажите, что содержимое [StickyNote] изменилось.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteChange.FontSize">
+      <summary>
+        <para>Укажите, что размер шрифта, используемого [StickyNote], изменился.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteChange.Position">
+      <summary>
+        <para>Укажите, что положение [StickyNote] изменилось.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteChange.Theme">
+      <summary>
+        <para>Указывает, что визуальная тема [StickyNote] изменилась.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteChange.Title">
+      <summary>
+        <para>Указывает, что заголовок [StickyNote] изменился.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNoteChangeEvent">
+      <summary>
+        <para>Событие, отправленное при изменении [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.StickyNoteChangeEvent.change">
+      <summary>
+        <para>Тип произошедшего изменения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNoteChangeEvent.#ctor">
+      <summary>
+        <para>Конструктор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.StickyNoteChangeEvent.GetPooled">
+      <summary>
+        <para>Получает событие из пула событий и инициализирует его заданными значениями. Используйте эту функцию вместо создания новых событий. События, полученные с помощью этого метода, необходимо отправить обратно в пул. Вы можете использовать `Dispose()`, чтобы освободить их.</para>
+      </summary>
+      <param name="target">Цель [StickyNote].</param>
+      <param name="change">Тип изменения.</param>
+      <returns>
+        <para>Возвращает инициализированное событие.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNoteFontSize">
+      <summary>
+        <para>Перечисление, используемое для описания размера шрифта, используемого [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteFontSize.Huge">
+      <summary>
+        <para>Огромный размер шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteFontSize.Large">
+      <summary>
+        <para>Большой размер шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteFontSize.Medium">
+      <summary>
+        <para>Средний размер шрифта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteFontSize.Small">
+      <summary>
+        <para>Мелкий размер шрифта.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.StickyNoteTheme">
+      <summary>
+        <para>Перечисление, используемое для описания визуальной темы, используемой [StickyNote].</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteTheme.Black">
+      <summary>
+        <para>Темная тема.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Experimental.GraphView.StickyNoteTheme.Classic">
+      <summary>
+        <para>Легкая классическая тема.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Experimental.GraphView.TokenNode">
+      <summary>
+        <para>Класс TokenNode включает методы для создания и управления узлом, напоминающим капсулу. Класс TokenNode включает заголовок, значок, один входной порт и один выходной порт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.TokenNode.highlighted">
+      <summary>
+        <para>Возвращает, выделен ли TokenNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.TokenNode.icon">
+      <summary>
+        <para>Значок TokenNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.TokenNode.input">
+      <summary>
+        <para>Входной порт TokenNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Experimental.GraphView.TokenNode.output">
+      <summary>
+        <para>Выходной порт TokenNode.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Experimental.GraphView.TokenNode.#ctor(UnityEditor.Experimental.GraphView.Port,UnityEditor.Experimental.GraphView.Port)">
+      <summary>
+        <para>Создает TokenNode с входными и выходными портами.</para>
+      </summary>
+      <param name="input"></param>
+      <param name="output"></param>
+    </member>
+  </members>
+</doc>

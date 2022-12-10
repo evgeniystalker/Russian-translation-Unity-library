@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.GameCenterModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Social">
+      <summary>
+        <para>Общий доступ к Social API.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Social.localUser">
+      <summary>
+        <para>Локальный пользователь (возможно, не вошедший в систему).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Social.Active">
+      <summary>
+        <para>Это действующая в настоящее время социальная платформа. </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Social.CreateAchievement">
+      <summary>
+        <para>Создайте экземпляр IAchievement.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Social.CreateLeaderboard">
+      <summary>
+        <para>Создайте экземпляр ILeaderboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Social.LoadAchievementDescriptions(System.Action`1&lt;UnityEngine.SocialPlatforms.IAchievementDescription[]&gt;)">
+      <summary>
+        <para>Загружает описания достижений, связанных с этим приложением.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.LoadAchievements(System.Action`1&lt;UnityEngine.SocialPlatforms.IAchievement[]&gt;)">
+      <summary>
+        <para>Загрузить достижения, которые пользователь, вошедший в систему, уже достиг или сообщил о прогрессе.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.LoadScores(System.String,System.Action`1&lt;UnityEngine.SocialPlatforms.IScore[]&gt;)">
+      <summary>
+        <para>Загрузить набор очков по умолчанию из данной таблицы лидеров.</para>
+      </summary>
+      <param name="leaderboardID">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.LoadUsers(System.String[],System.Action`1&lt;UnityEngine.SocialPlatforms.IUserProfile[]&gt;)">
+      <summary>
+        <para>Загрузить профили пользователей, связанные с заданным массивом идентификаторов пользователей.</para>
+      </summary>
+      <param name="userIDs">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.ReportProgress(System.String,System.Double,System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Сообщает о прогрессе достижения.</para>
+      </summary>
+      <param name="achievementID">
+      </param>
+      <param name="progress">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.ReportScore(System.Int64,System.String,System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Сообщите о результатах в определенную таблицу лидеров.</para>
+      </summary>
+      <param name="score">
+      </param>
+      <param name="board">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Social.ShowAchievementsUI">
+      <summary>
+        <para>Показать стандартное/системное представление игровых достижений.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Social.ShowLeaderboardUI">
+      <summary>
+        <para>Показать стандартное/системное представление списков лидеров игр.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform">
+      <summary>
+        <para>Реализация iOS GameCenter для сетевых служб.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.ResetAllAchievements(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Сбросить все достижения для локального пользователя.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.ShowDefaultAchievementCompletionBanner(System.Boolean)">
+      <summary>
+        <para>Показывать баннер iOS по умолчанию при выполнении достижений.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.ShowLeaderboardUI(System.String,UnityEngine.SocialPlatforms.TimeScope)">
+      <summary>
+        <para>Показать пользовательский интерфейс таблицы лидеров с определенной таблицей лидеров, отображаемой изначально с выбранным определенным временным диапазоном.</para>
+      </summary>
+      <param name="leaderboardID">
+      </param>
+      <param name="timeScope">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.IAchievement">
+      <summary>
+        <para>Информация о достижениях пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievement.completed">
+      <summary>
+        <para>Установите значение true, если процент выполнения равен 100,0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievement.hidden">
+      <summary>
+        <para>Это достижение в настоящее время скрыто от пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievement.id">
+      <summary>
+        <para>Уникальный идентификатор этого достижения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievement.lastReportedDate">
+      <summary>
+        <para>Устанавливается сервером при обновлении PercentCompleted.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievement.percentCompleted">
+      <summary>
+        <para>Прогресс для этого достижения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.IAchievement.ReportProgress(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Отправить уведомление о прогрессе в этом достижении.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.IAchievementDescription">
+      <summary>
+        <para>Статические данные, описывающие достижение.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.achievedDescription">
+      <summary>
+        <para>Описание, когда достижение будет выполнено.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.hidden">
+      <summary>
+        <para>Скрытые достижения не отображаются в списке до тех пор, пока не будет затронут процент выполнения (даже если он равен 0,0).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.id">
+      <summary>
+        <para>Уникальный идентификатор описания этого достижения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.image">
+      <summary>
+        <para>Изображение достижения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.points">
+      <summary>
+        <para>Стоимость этого достижения в очках.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.title">
+      <summary>
+        <para>Удобочитаемый заголовок.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IAchievementDescription.unachievedDescription">
+      <summary>
+        <para>Описание, когда достижение не выполнено.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.ILeaderboard">
+      <summary>
+        <para>Таблица лидеров содержит очки всех игроков в конкретной игре.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.id">
+      <summary>
+        <para>Уникальный идентификатор для этой таблицы лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.loading">
+      <summary>
+        <para>Таблица лидеров находится в процессе загрузки результатов.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.localUserScore">
+      <summary>
+        <para>Рейтинг вошедшего в систему пользователя в таблице лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.maxRange">
+      <summary>
+        <para>Общее количество очков, которое содержит таблица лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.range">
+      <summary>
+        <para>Диапазон рангов, возвращаемый этой таблицей лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.scores">
+      <summary>
+        <para>Очки таблицы лидеров, возвращенные запросом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.timeScope">
+      <summary>
+        <para>Период времени/область поиска в этой таблице лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.title">
+      <summary>
+        <para>Удобочитаемый заголовок этой таблицы лидеров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILeaderboard.userScope">
+      <summary>
+        <para>Область пользователей, найденная в этой таблице лидеров.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ILeaderboard.LoadScores(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Загрузить очки в соответствии с фильтрами, установленными в этой таблице лидеров.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ILeaderboard.SetUserFilter(System.String[])">
+      <summary>
+        <para>Искать только эти идентификаторы пользователей.</para>
+      </summary>
+      <param name="userIDs">Список идентификаторов пользователей.</param>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.ILocalUser">
+      <summary>
+        <para>Представляет локального или вошедшего в систему пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILocalUser.authenticated">
+      <summary>
+        <para>Проверяет, прошел ли текущий пользователь аутентификацию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILocalUser.friends">
+      <summary>
+        <para>Список друзей пользователей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ILocalUser.underage">
+      <summary>
+        <para>Пользователь несовершеннолетний?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ILocalUser.Authenticate(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Аутентифицировать локального пользователя в текущей активной реализации Social API и получить данные его профиля.</para>
+      </summary>
+      <param name="callback">Обратный вызов, который вызывается всякий раз, когда операция аутентификации завершена. Первый параметр — это логическое значение, указывающее, была ли операция аутентификации успешной. Необязательный второй аргумент содержит строку, идентифицирующую любые ошибки (если они есть), если операция не удалась.</param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ILocalUser.Authenticate(System.Action`2&lt;System.Boolean,System.String&gt;)">
+      <summary>
+        <para>Аутентифицировать локального пользователя в текущей активной реализации Social API и получить данные его профиля.</para>
+      </summary>
+      <param name="callback">Обратный вызов, который вызывается всякий раз, когда операция аутентификации завершена. Первый параметр — это логическое значение, указывающее, была ли операция аутентификации успешной. Необязательный второй аргумент содержит строку, идентифицирующую любые ошибки (если они есть), если операция не удалась.</param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ILocalUser.LoadFriends(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Получает список друзей вошедшего в систему пользователя. Список друзей в экземпляре ISocialPlatform.localUser|Social.localUser заполняется, если этот вызов завершается успешно.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.Impl.UserProfile.legacyId">
+      <summary>
+        <para>Возвращает идентификатор, предоставленный в Apple GameKit с помощью GKPlayer.playerID (устарел и помечен как устаревший в iOS 12.4).</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.IScore">
+      <summary>
+        <para>Счет игры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.date">
+      <summary>
+        <para>Дата получения оценки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.formattedValue">
+      <summary>
+        <para>Правильно отформатированное значение счета, например X очков или X убийств.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.leaderboardID">
+      <summary>
+        <para>Идентификатор таблицы лидеров, к которой относится этот результат.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.rank">
+      <summary>
+        <para>Ранг или позиция очков в таблице лидеров. </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.userID">
+      <summary>
+        <para>Пользователь, которому принадлежит эта оценка.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IScore.value">
+      <summary>
+        <para>Достигнутое значение балла.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.IScore.ReportScore(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Сообщить об этом экземпляре оценки.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.ISocialPlatform">
+      <summary>
+        <para>Общий интерфейс Social API, который должны наследовать реализации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.ISocialPlatform.localUser">
+      <summary>
+        <para>См. Social.localUser.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.CreateAchievement">
+      <summary>
+        <para>См. Social.CreateAchievement..</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.CreateLeaderboard">
+      <summary>
+        <para>См. Social.CreateLeaderboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.LoadAchievementDescriptions(System.Action`1&lt;UnityEngine.SocialPlatforms.IAchievementDescription[]&gt;)">
+      <summary>
+        <para>См. Social.LoadAchievementDescriptions.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.LoadAchievements(System.Action`1&lt;UnityEngine.SocialPlatforms.IAchievement[]&gt;)">
+      <summary>
+        <para>См. Social.LoadAchievements.</para>
+      </summary>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.LoadScores(System.String,System.Action`1&lt;UnityEngine.SocialPlatforms.IScore[]&gt;)">
+      <summary>
+        <para>См. Social.LoadScores.</para>
+      </summary>
+      <param name="leaderboardID">
+      </param>
+      <param name="callback">
+      </param>
+      <param name="board">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.LoadScores(UnityEngine.SocialPlatforms.ILeaderboard,System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>См. Social.LoadScores.</para>
+      </summary>
+      <param name="leaderboardID">
+      </param>
+      <param name="callback">
+      </param>
+      <param name="board">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.LoadUsers(System.String[],System.Action`1&lt;UnityEngine.SocialPlatforms.IUserProfile[]&gt;)">
+      <summary>
+        <para>См. Social.LoadUsers.</para>
+      </summary>
+      <param name="userIDs">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.ReportProgress(System.String,System.Double,System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>См. Social.ReportProgress.</para>
+      </summary>
+      <param name="achievementID">
+      </param>
+      <param name="progress">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.ReportScore(System.Int64,System.String,System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>См. Social.ReportScore.</para>
+      </summary>
+      <param name="score">
+      </param>
+      <param name="board">
+      </param>
+      <param name="callback">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.ShowAchievementsUI">
+      <summary>
+        <para>См. Social.ShowAchievementsUI.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.ISocialPlatform.ShowLeaderboardUI">
+      <summary>
+        <para>См. Social.ShowLeaderboardUI.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SocialPlatforms.IUserProfile">
+      <summary>
+        <para>Представляет общие экземпляры пользователей, например друзей локального пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IUserProfile.id">
+      <summary>
+        <para>Глобальный уникальный идентификатор этого пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IUserProfile.image">
+      <summary>
+        <para>Изображение аватара пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IUserProfile.isFriend">
+      <summary>
+        <para>Является ли этот пользователь другом текущего пользователя, вошедшего в систему?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IUserProfile.state">
+      <summary>
+        <para>Состояние присутствия пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SocialPlatforms.IUserProfile.userName">
+      <summary>
+        <para>Имя пользователя или псевдоним этого пользователя.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SocialPlatforms.Range">
+      <summary>
+        <para>Диапазон очков, который должен включать запрос таблицы лидеров.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.Range.count">
+      <summary>
+        <para>Общее количество полученных баллов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.Range.from">
+      <summary>
+        <para>Ранг первой возвращаемой оценки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SocialPlatforms.Range.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <para>Конструктор для диапазона баллов, диапазон начинается с определенного значения и содержит максимальное количество баллов.</para>
+      </summary>
+      <param name="fromValue">Минимально допустимое значение.</param>
+      <param name="valueCount">Количество возможных значений.</param>
+    </member>
+    <member name="T:UnityEngine.SocialPlatforms.TimeScope">
+      <summary>
+        <para>Период времени, в течение которого выполняется поиск при запросе таблицы лидеров.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SocialPlatforms.UserScope">
+      <summary>
+        <para>Объем пользователей, по которым выполнялся поиск при запросе таблицы лидеров.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SocialPlatforms.UserState">
+      <summary>
+        <para>Состояние присутствия пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.UserState.Offline">
+      <summary>
+        <para>Пользователь не в сети.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.UserState.Online">
+      <summary>
+        <para>Пользователь в сети.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.UserState.OnlineAndAway">
+      <summary>
+        <para>Пользователь находится в сети, но не на своем компьютере.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.UserState.OnlineAndBusy">
+      <summary>
+        <para>Пользователь находится в сети, но имеет статус «занят».</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SocialPlatforms.UserState.Playing">
+      <summary>
+        <para>Пользователь играет в игру.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.GameCenterModule">
+      <summary>
+        <para>Модуль GameCenter предоставляет API для использования службы Apple GameCenter.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

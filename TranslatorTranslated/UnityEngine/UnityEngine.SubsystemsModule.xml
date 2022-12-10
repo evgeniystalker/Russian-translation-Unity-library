@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.SubsystemsModule</name>
+    </assembly>
+    <member name="T:UnityEngine.IntegratedSubsystem">
+      <summary>
+        <para>IntegratedSubsystem инициализируется из IntegratedSubsystemDescriptor для данной подсистемы (пример, ввод, среда, дисплей и т. д.) и предоставляет интерфейс для взаимодействия с данной IntegratedSubsystem до тех пор, пока она не будет уничтожена. После создания IntegratedSubsystem ее можно запустить или остановить, чтобы включить или выключить функциональность (и сохранить производительность). Базовый тип для IntegratedSubsystem предоставляет только эту функциональность; этот класс предназначен для использования в качестве базового класса для производных классов, предоставляющих дополнительные функциональные возможности, специфичные для данной IntegratedSubsystem.
+
+Примечание: инициализация второй IntegratedSubsystem из того же IntegratedSubsystemDescriptor вернет ссылку на существующую IntegratedSubsystem, поскольку в настоящее время для одного поставщика IntegratedSubsystem разрешена только одна IntegratedSubsystem.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.IntegratedSubsystem.running">
+      <summary>
+        <para>Независимо от того, работает ли подсистема.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.IntegratedSubsystem.Destroy">
+      <summary>
+        <para>Уничтожает этот экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.IntegratedSubsystem.Start">
+      <summary>
+        <para>Запускает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.IntegratedSubsystem.Stop">
+      <summary>
+        <para>Останавливает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.IntegratedSubsystemDescriptor">
+      <summary>
+        <para>Информация о подсистеме, которую можно запросить перед созданием экземпляра подсистемы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.IntegratedSubsystemDescriptor.id">
+      <summary>
+        <para>Уникальная строка, идентифицирующая подсистему, которую может создать этот дескриптор.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.ISubsystem">
+      <summary>
+        <para>Интерфейс, реализованный как Subsystem, так и IntegratedSubsystem, который обеспечивает контроль над состоянием каждого из них.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ISubsystem.running">
+      <summary>
+        <para>Будет true, если запрос на запуск подсистемы прошел успешно. False в случае, если подсистема остановлена, получила запрос на остановку или еще не запущена.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ISubsystem.Destroy">
+      <summary>
+        <para>Уничтожает этот экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ISubsystem.Start">
+      <summary>
+        <para>Запускает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ISubsystem.Stop">
+      <summary>
+        <para>Останавливает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.ISubsystemDescriptor">
+      <summary>
+        <para>Дескриптор подсистемы — это метаданные о подсистеме, которые можно проверить перед загрузкой/инициализацией подсистемы.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ISubsystemDescriptor.id">
+      <summary>
+        <para>Уникальная строка, идентифицирующая подсистему, которую может создать этот дескриптор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ISubsystemDescriptor.Create">
+      <summary>
+        <para>Создает ISubsystem из этого дескриптора.</para>
+      </summary>
+      <returns>
+        <para>Экземпляр ISubsystem.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Subsystem">
+      <summary>
+        <para>Подсистема инициализируется из SubsystemDescriptorWithProvider для данной подсистемы (пример, ввод, отображение и т. д.) и предоставляет интерфейс для взаимодействия с данной подсистемой, пока она не будет уничтожена. После создания подсистемы ее можно запустить или остановить для включения и выключения функций (и повышения производительности). Базовый тип для подсистем предоставляет только эту функциональность; этот класс предназначен для использования в качестве базового класса для производных классов, предоставляющих дополнительные функциональные возможности, специфичные для данной подсистемы.
+
+Примечание. Инициализация второй подсистемы из того же SubsystemDescriptor вернет ссылку на существующую подсистему, поскольку в настоящее время для одного поставщика подсистем разрешена только одна подсистема.
+
+Этот базовый класс подсистемы устарел. Если вы создаете новый тип подсистемы, вместо этого наследуйте от SubsystemWithProvider.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Subsystem.running">
+      <summary>
+        <para>Независимо от того, работает ли подсистема.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Subsystem.Destroy">
+      <summary>
+        <para>Уничтожает этот экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Subsystem.Start">
+      <summary>
+        <para>Запускает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Subsystem.Stop">
+      <summary>
+        <para>Останавливает экземпляр подсистемы.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SubsystemDescriptor">
+      <summary>
+        <para>Информация о подсистеме, которую можно запросить перед созданием экземпляра подсистемы.
+
+Этот базовый класс дескриптора подсистемы устарел. Если вы создаете новый тип подсистемы, вместо этого наследуйте от SubsystemDecriptorWithProvider.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SubsystemDescriptor.id">
+      <summary>
+        <para>Уникальная строка, идентифицирующая подсистему, которую может создать этот дескриптор.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SubsystemDescriptor.subsystemImplementationType">
+      <summary>
+        <para>System.Type реализации подсистемы, связанной с этим дескриптором.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SubsystemManager">
+      <summary>
+        <para>Предоставляет доступ к подсистемам, которые обеспечивают дополнительную функциональность через плагины.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SubsystemManager.afterReloadSubsystems(System.Action)">
+      <summary>
+        <para>Вызывается из SubsystemManager после завершения перезагрузки всех упакованных подсистем XR SDK Provider.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SubsystemManager.beforeReloadSubsystems(System.Action)">
+      <summary>
+        <para>Вызывается из SubsystemManager перед повторной загрузкой всех упакованных подсистем XR SDK Provider.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SubsystemManager.reloadSubsytemsCompleted(System.Action)">
+      <summary>
+        <para>Вызывается из SubsystemManager после завершения перезагрузки всех упакованных подсистем XR SDK Provider.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.SubsystemManager.reloadSubsytemsStarted(System.Action)">
+      <summary>
+        <para>Вызывается из SubsystemManager перед повторной загрузкой всех упакованных подсистем XR SDK Provider.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SubsystemManager.GetAllSubsystemDescriptors(System.Collections.Generic.List`1&lt;UnityEngine.ISubsystemDescriptor&gt;)">
+      <summary>
+        <para>Получает все известные на данный момент дескрипторы подсистемы независимо от конкретного типа подсистемы.</para>
+      </summary>
+      <param name="descriptors">Дескрипторы подсистемы.</param>
+    </member>
+    <member name="M:UnityEngine.SubsystemManager.GetInstances(System.Collections.Generic.List`1&lt;T&gt;)">
+      <summary>
+        <para>Возвращает активные подсистемы определенного типа экземпляра.
+
+*Примечание:* Этот метод устарел, вместо него используйте GetSubsystems.</para>
+      </summary>
+      <param name="instances">Активные экземпляры.</param>
+      <param name="subsystems">
+      </param>
+    </member>
+    <member name="M:UnityEngine.SubsystemManager.GetSubsystemDescriptors(System.Collections.Generic.List`1&lt;T&gt;)">
+      <summary>
+        <para>Возвращает список SubsystemDescriptors, описывающих дополнительные функции, которые можно включить.</para>
+      </summary>
+      <param name="descriptors">Дескрипторы подсистемы.</param>
+    </member>
+    <member name="M:UnityEngine.SubsystemManager.GetSubsystems(System.Collections.Generic.List`1&lt;T&gt;)">
+      <summary>
+        <para>Возвращает активные подсистемы определенного типа экземпляра.</para>
+      </summary>
+      <param name="subsystems">Активные подсистемы.</param>
+    </member>
+    <member name="T:UnityEngine.SubsystemsImplementation.SubsystemDescriptorStore">
+      <summary>
+        <para>Точка входа регистрации для подсистем для регистрации их дескриптора.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SubsystemsImplementation.SubsystemDescriptorWithProvider">
+      <summary>
+        <para>Информация о SubsystemWithProvider, которую можно запросить перед созданием экземпляра подсистемы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SubsystemsImplementation.SubsystemDescriptorWithProvider.id">
+      <summary>
+        <para>Уникальная строка, идентифицирующая SubsystemWithProvider, которую может создать этот дескриптор.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SubsystemsImplementation.SubsystemProvider">
+      <summary>
+        <para>Поставщик, который предоставляет данные подсистеме, как правило, для реализации на конкретной платформе.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SubsystemsImplementation.SubsystemWithProvider">
+      <summary>
+        <para>Подсистема инициализируется из SubsystemDescriptorWithProvider для данной подсистемы (Session, Plane, Face и т. д.) и предоставляет интерфейс для взаимодействия с данной подсистемой, пока она не будет уничтожена. После создания подсистемы ее можно запустить или остановить для включения и выключения функций и сохранения производительности. Базовый тип подсистемы предоставляет только эту функциональность; этот класс предназначен для использования в качестве базового класса для производных классов, предоставляющих дополнительные функциональные возможности, специфичные для данной подсистемы.
+
+*Примечание:* Инициализация второй подсистемы из того же дескриптора подсистемы вернет ссылку на существующую подсистему, поскольку в настоящее время для одного поставщика подсистем разрешена только одна подсистема.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SubsystemsImplementation.SubsystemWithProvider.running">
+      <summary>
+        <para>Независимо от того, работает ли подсистема.
+
+Это возвращает true после вызова Start в подсистеме и false после вызова Stop.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SubsystemsImplementation.SubsystemWithProvider.Destroy">
+      <summary>
+        <para>Уничтожает этот экземпляр подсистемы.
+
+Также выгружает все ресурсы, полученные на этапе инициализации. Вызовите это, когда вам больше не нужен этот экземпляр подсистемы.
+
+Примечание. После уничтожения подсистемы сценарий все еще может содержать ссылку, но вызов метода для нее приведет к исключению NullArgumentException.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SubsystemsImplementation.SubsystemWithProvider.Start">
+      <summary>
+        <para>Запускает экземпляр подсистемы.
+
+После запуска экземпляра подсистема, представляющая этот экземпляр, становится активной, и с ней можно взаимодействовать.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SubsystemsImplementation.SubsystemWithProvider.Stop">
+      <summary>
+        <para>Останавливает экземпляр подсистемы.
+
+После остановки экземпляра подсистема, представляющая этот экземпляр, перестает быть активной и не должна потреблять ресурсы ЦП.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.SubsystemsModule">
+      <summary>
+        <para>Модуль Subsystem содержит определения и поддержку во время выполнения для общих подсистем в Unity.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

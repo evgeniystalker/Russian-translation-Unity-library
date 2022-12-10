@@ -1,0 +1,2294 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.XRModule</name>
+    </assembly>
+    <member name="A:UnityEngine.XRModule">
+      <summary>
+        <para>Модуль XR содержит функции поддержки платформ, связанных с VR и AR.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.Bone">
+      <summary>
+        <para>Отслеживаемая кость на устройстве в XR.XRNode в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.Bone.TryGetChildBones(System.Collections.Generic.List`1&lt;UnityEngine.XR.Bone&gt;)">
+      <summary>
+        <para>Получить дочерние кости этой кости.</para>
+      </summary>
+      <param name="childBones">Список костей, которые будут заполнены дочерними костями этой кости.</param>
+      <returns>
+        <para>true, если кость может быть запрошена для дочерних костей; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Bone.TryGetParentBone(UnityEngine.XR.Bone&amp;)">
+      <summary>
+        <para>Получает родителя этой кости.</para>
+      </summary>
+      <param name="parentBone">Структура кости, которая получает родительскую кость этой кости.</param>
+      <returns>
+        <para>true, если вращение было получено, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Bone.TryGetPosition(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Получает позицию кости в мире</para>
+      </summary>
+      <param name="position">Vector3 для получения положения кости в мировом пространстве Unity.</param>
+      <returns>
+        <para>true, если вращение было получено, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Bone.TryGetRotation(UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Получает мировое вращение кости.</para>
+      </summary>
+      <param name="rotation">Кватернион, чтобы получить вращение кости в мировом пространстве Unity.</param>
+      <returns>
+        <para>true, если вращение было получено, иначе false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.CommonUsages">
+      <summary>
+        <para>Определяет статические переменные, которые используются для получения входных объектов из XR.InputDevice.TryGetFeatureValue.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.batteryLevel">
+      <summary>
+        <para>Значение, представляющее текущий срок службы батареи этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyeAcceleration">
+      <summary>
+        <para>Ускорение центрального глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyeAngularAcceleration">
+      <summary>
+        <para>Угловое ускорение центрального глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyeAngularVelocity">
+      <summary>
+        <para>Угловая скорость центрального глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyePosition">
+      <summary>
+        <para>Положение центрального глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyeRotation">
+      <summary>
+        <para>Поворот центрального глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.centerEyeVelocity">
+      <summary>
+        <para>Скорость центрального глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraAcceleration">
+      <summary>
+        <para>Ускорение цветной камеры на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraAngularAcceleration">
+      <summary>
+        <para>Угловое ускорение цветной камеры на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraAngularVelocity">
+      <summary>
+        <para>Угловая скорость цветной камеры на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraPosition">
+      <summary>
+        <para>Положение цветной камеры на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraRotation">
+      <summary>
+        <para>Вращение цветной камеры на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.colorCameraVelocity">
+      <summary>
+        <para>Скорость цветной камеры на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.deviceAcceleration">
+      <summary>
+        <para>Ускорение устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.deviceAngularAcceleration">
+      <summary>
+        <para>Угловое ускорение этого устройства в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.deviceAngularVelocity">
+      <summary>
+        <para>Угловая скорость этого устройства в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.devicePosition">
+      <summary>
+        <para>Положение устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.deviceRotation">
+      <summary>
+        <para>Вращение этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.deviceVelocity">
+      <summary>
+        <para>Скорость устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.dPad">
+      <summary>
+        <para>Двухмерная ось без руки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.eyesData">
+      <summary>
+        <para>Структура Eyes, содержащая данные отслеживания глаз, собранные с устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.grip">
+      <summary>
+        <para>Представляет пользовательский захват контроллера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.gripButton">
+      <summary>
+        <para>Двоичная мера того, захватывается ли устройство.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.handData">
+      <summary>
+        <para>Значение, представляющее данные руки для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.indexFinger">
+      <summary>
+        <para>Представляет силу захвата или угол наклона указательного пальца.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.indexTouch">
+      <summary>
+        <para>Представляет прикосновение к триггеру или указательному пальцу.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.isTracked">
+      <summary>
+        <para>Сообщает разработчику, отслеживается ли в данный момент устройство.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyeAcceleration">
+      <summary>
+        <para>Ускорение левого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyeAngularAcceleration">
+      <summary>
+        <para>Угловое ускорение левого глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyeAngularVelocity">
+      <summary>
+        <para>Угловая скорость левого глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyePosition">
+      <summary>
+        <para>Положение левого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyeRotation">
+      <summary>
+        <para>Вращение левого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.leftEyeVelocity">
+      <summary>
+        <para>Скорость левого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.menuButton">
+      <summary>
+        <para>Представляет кнопку меню, используемую для паузы, возврата или иного выхода из игрового процесса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.middleFinger">
+      <summary>
+        <para>Представляет силу захвата или угол среднего пальца.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.pinkyFinger">
+      <summary>
+        <para>Представляет силу захвата или угол наклона мизинца.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.primary2DAxis">
+      <summary>
+        <para>Основная сенсорная панель или джойстик на устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.primary2DAxisClick">
+      <summary>
+        <para>Представляет щелчок или иное нажатие на основную 2D-ось.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.primary2DAxisTouch">
+      <summary>
+        <para>Представляет затронутую основную 2D-ось.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.primaryButton">
+      <summary>
+        <para>Основная лицевая кнопка, нажимаемая на устройстве, или единственная кнопка, если доступна только одна.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.primaryTouch">
+      <summary>
+        <para>Прикосновение к основной лицевой кнопке на устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyeAcceleration">
+      <summary>
+        <para>Ускорение правого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyeAngularAcceleration">
+      <summary>
+        <para>Угловое ускорение правого глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyeAngularVelocity">
+      <summary>
+        <para>Угловая скорость правого глаза на этом устройстве в формате углов Эйлера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyePosition">
+      <summary>
+        <para>Положение правого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyeRotation">
+      <summary>
+        <para>Вращение правого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.rightEyeVelocity">
+      <summary>
+        <para>Скорость правого глаза на этом устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.ringFinger">
+      <summary>
+        <para>Представляет силу захвата или угол безымянного пальца.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.secondary2DAxis">
+      <summary>
+        <para>Дополнительная сенсорная панель или джойстик на устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.secondary2DAxisClick">
+      <summary>
+        <para>Представляет вторичную 2D-ось, которую щелкнули или нажали иным образом.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.secondary2DAxisTouch">
+      <summary>
+        <para>Представляет касание вторичной 2D-оси.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.secondaryButton">
+      <summary>
+        <para>Кнопка второго лица нажата на устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.secondaryTouch">
+      <summary>
+        <para>Прикосновение к дополнительной лицевой кнопке на устройстве.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.thumbrest">
+      <summary>
+        <para>Представляет упор для большого пальца или легкое касание большим пальцем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.thumbTouch">
+      <summary>
+        <para>Представляет большой палец, нажимающий любой ввод или функцию.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.trackingState">
+      <summary>
+        <para>Представляет отслеживаемые значения для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.trigger">
+      <summary>
+        <para>Элемент управления, похожий на триггер, нажимаемый указательным пальцем.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.triggerButton">
+      <summary>
+        <para>Двоичная мера того, активирует ли указательный палец триггер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.CommonUsages.userPresence">
+      <summary>
+        <para>Используйте это свойство, чтобы проверить, носит ли пользователь в настоящее время устройство XR и/или взаимодействует с ним. Точное поведение этого свойства зависит от каждого типа устройства: некоторые устройства имеют датчик, специально определяющий близость пользователя, однако вы можете обоснованно сделать вывод, что пользователь находится рядом с устройством, когда свойство имеет значение UserPresenceState.Present.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.Eyes">
+      <summary>
+        <para>Содержит данные отслеживания взгляда с устройства в XR.XRNode в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetFixationPoint(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Получает точку, представляющую схождение линии взгляда для обоих глаз.</para>
+      </summary>
+      <param name="fixationPoint">Структура Vector3, заполненная позицией фиксации.</param>
+      <returns>
+        <para>true, если глаза можно запросить для точки фиксации; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetLeftEyeOpenAmount(System.Single&amp;)">
+      <summary>
+        <para>Получает значение, представляющее, насколько широко открыт левый глаз.</para>
+      </summary>
+      <param name="OpenAmount">Плавающее значение в диапазоне от 0,0 до 1,0, указывающее, насколько открыт левый глаз. Значение 0,0 указывает, что глаз полностью закрыт, а значение 1,0 указывает, что глаз полностью открыт.</param>
+      <param name="openAmount">
+      </param>
+      <returns>
+        <para>Значение true, если можно запросить количество открытых глаз для левого глаза; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetLeftEyePosition(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Получает Vector3, описывающий положение левого глаза.</para>
+      </summary>
+      <param name="positionOut">Структура Vector3 для получения положения левого глаза.</param>
+      <param name="position">
+      </param>
+      <returns>
+        <para>Значение true, если можно запросить положение левого глаза; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetLeftEyeRotation(UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Получает кватернион, описывающий вращение левого глаза.</para>
+      </summary>
+      <param name="rotationOut">Структура Quaternion для получения поворота левого глаза.</param>
+      <param name="rotation">
+      </param>
+      <returns>
+        <para>Значение true, если глаза можно запросить для поворота левого глаза; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetRightEyeOpenAmount(System.Single&amp;)">
+      <summary>
+        <para>Получает значение, представляющее, насколько широко открыт правый глаз.</para>
+      </summary>
+      <param name="OpenAmount">Плавающее значение в диапазоне от 0,0 до 1,0, указывающее, насколько открыт правый глаз. Значение 0,0 указывает, что глаз полностью закрыт, а значение 1,0 указывает, что глаз полностью открыт.</param>
+      <param name="openAmount">
+      </param>
+      <returns>
+        <para>Значение true, если глаза могут быть запрошены относительно степени, на которую открыт правый глаз; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetRightEyePosition(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Получает Vector3, описывающий положение правого глаза.</para>
+      </summary>
+      <param name="positionOut">Структура Vector3 для получения положения правого глаза.</param>
+      <param name="position">
+      </param>
+      <returns>
+        <para>Значение true, если глаза могут быть запрошены для правильного положения глаза; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Eyes.TryGetRightEyeRotation(UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Получает кватернион, описывающий вращение правого глаза.</para>
+      </summary>
+      <param name="rotationOut">Структура Quaternion для получения правого поворота глаза.</param>
+      <param name="rotation">
+      </param>
+      <returns>
+        <para>Значение true, если глаза могут быть запрошены для вращения вправо; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.Hand">
+      <summary>
+        <para>Отслеживаемая рука на устройстве в узле XR.XRNode в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.Hand.TryGetFingerBones(UnityEngine.XR.HandFinger,System.Collections.Generic.List`1&lt;UnityEngine.XR.Bone&gt;)">
+      <summary>
+        <para>Получает список костей пальцев на этой руке.</para>
+      </summary>
+      <param name="finger">Значение перечисления HandFinger для этого пальца.</param>
+      <param name="bonesOut">Список костей, которые будут заполнены для этого пальца.</param>
+      <returns>
+        <para>Истинно, если можно запросить руку для этого пальца; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.Hand.TryGetRootBone(UnityEngine.XR.Bone&amp;)">
+      <summary>
+        <para>Получает корневую кость для этой руки.</para>
+      </summary>
+      <param name="boneOut">Структура Bone для получения корневой кости.</param>
+      <returns>
+        <para>true, если можно запросить у руки корневую кость; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.HandFinger">
+      <summary>
+        <para>Перечисление, описывающее режим рендеринга дополненной реальности, используемый с XR.Hand.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.HandFinger.Index">
+      <summary>
+        <para>Указательный палец на руке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.HandFinger.Middle">
+      <summary>
+        <para>Средний палец на руке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.HandFinger.Pinky">
+      <summary>
+        <para>Мизинец на руке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.HandFinger.Ring">
+      <summary>
+        <para>Безымянный палец на руке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.HandFinger.Thumb">
+      <summary>
+        <para>Большой палец на руке.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.HapticCapabilities">
+      <summary>
+        <para>Описывает тактильные возможности устройства на узле XR.XRNode в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.bufferFrequencyHz">
+      <summary>
+        <para>Частота (в Гц), с которой это устройство воспроизводит буферизованные тактильные данные.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.bufferMaxSize">
+      <summary>
+        <para>Максимальный объем данных, которые можно отправить на InputDevice через InputDevice.SendHapticBuffer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.bufferOptimalSize">
+      <summary>
+        <para>Оптимальный размер буфера, который InputDevice ожидает отправить через InputDevice.SendHapticBuffer, чтобы обеспечить непрерывный гул между отдельными кадрами.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.numChannels">
+      <summary>
+        <para>Количество каналов, по которым это устройство воспроизводит тактильные данные.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.supportsBuffer">
+      <summary>
+        <para>True, если это устройство поддерживает отправку тактильного буфера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.HapticCapabilities.supportsImpulse">
+      <summary>
+        <para>True, если это устройство поддерживает отправку тактильных импульсов.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.InputDevice">
+      <summary>
+        <para>Определяет устройство ввода в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.characteristics">
+      <summary>
+        <para>Только чтение. Битовая маска перечисляемых флагов, описывающих характеристики этого InputDevice.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.isValid">
+      <summary>
+        <para>Только чтение. Истинно, если устройство в настоящее время является допустимым устройством ввода; в противном случае ложь.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.manufacturer">
+      <summary>
+        <para>Производитель подключенного устройства ввода.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.name">
+      <summary>
+        <para>Только чтение. Имя устройства в системе XR. Это уникальный идентификатор устройства, предоставленный платформой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.role">
+      <summary>
+        <para>Только чтение. InputDeviceRole устройства в системе XR. Это предоставленное платформой описание того, как используется устройство.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.serialNumber">
+      <summary>
+        <para>Серийный номер подключенного устройства ввода. Пусто, если серийный номер недоступен.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputDevice.subsystem">
+      <summary>
+        <para>Получает XRInputSubsystem, которая сообщила об этом InputDevice.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.SendHapticBuffer(System.UInt32,System.Byte[])">
+      <summary>
+        <para>Отправляет необработанный буфер тактильных данных на устройство.</para>
+      </summary>
+      <param name="channel">Канал для получения данных.</param>
+      <param name="buffer">Буфер необработанных байтов, содержащий тактильные данные для отправки на устройство.</param>
+      <returns>
+        <para>Возвращает true в случае успеха. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.SendHapticImpulse(System.UInt32,System.Single,System.Single)">
+      <summary>
+        <para>Отправляет тактильный импульс на устройство.</para>
+      </summary>
+      <param name="channel">Канал для получения импульса.</param>
+      <param name="amplitude">Нормализованное (от 0,0 до 1,0) значение амплитуды тактильного импульса для воспроизведения на устройстве.</param>
+      <param name="duration">Продолжительность воспроизведения тактильного импульса в секундах. Поддерживается только на Oculus.</param>
+      <returns>
+        <para>Возвращает true в случае успеха. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.StopHaptics">
+      <summary>
+        <para>Остановить тактильное воспроизведение для устройства.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureUsages(System.Collections.Generic.List`1&lt;UnityEngine.XR.InputFeatureUsage&gt;)">
+      <summary>
+        <para>Получает список всех использований функций ввода, доступных на этом устройстве. Например, «Триггер» или «Положение устройства».</para>
+      </summary>
+      <param name="featureUsages">Список структур InputFeatureUsage для получения доступных функций на этом устройстве.</param>
+      <returns>
+        <para>true, если устройство может быть запрошено; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.Boolean&gt;,System.Boolean&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.UInt32&gt;,System.UInt32&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.Single&gt;,System.Single&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Vector2&gt;,UnityEngine.Vector2&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Vector3&gt;,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Quaternion&gt;,UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.XR.Bone&gt;,UnityEngine.XR.Bone&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.XR.Hand&gt;,UnityEngine.XR.Hand&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.XR.Eyes&gt;,UnityEngine.XR.Eyes&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.XR.InputTrackingState&gt;,UnityEngine.XR.InputTrackingState&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.Boolean&gt;,System.DateTime,System.Boolean&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.UInt32&gt;,System.DateTime,System.UInt32&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;System.Single&gt;,System.DateTime,System.Single&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Vector2&gt;,System.DateTime,UnityEngine.Vector2&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Vector3&gt;,System.DateTime,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.Quaternion&gt;,System.DateTime,UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetFeatureValue(UnityEngine.XR.InputFeatureUsage`1&lt;UnityEngine.XR.InputTrackingState&gt;,System.DateTime,UnityEngine.XR.InputTrackingState&amp;)">
+      <summary>
+        <para>Извлекает информацию о входном объекте, указанном параметром Usage. Те функции, которые принимают параметр времени, позволяют запрашивать эту функцию в определенный момент времени</para>
+      </summary>
+      <param name="usage">Использование, описывающее извлекаемую функцию.</param>
+      <param name="time">Структура DateTime с локальным временем для запроса данных.</param>
+      <param name="value">Переменная соответствующего типа для получения информации о функции.</param>
+      <returns>
+        <para>Истинно, если информация об объекте извлекается; в противном случае ложь.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevice.TryGetHapticCapabilities(UnityEngine.XR.HapticCapabilities&amp;)">
+      <summary>
+        <para>Получает тактильные возможности устройства.</para>
+      </summary>
+      <param name="capabilities">Структура HapticCapabilities для получения возможностей этого устройства.</param>
+      <returns>
+        <para>Возвращает true, если устройство поддерживает любую форму тактильных ощущений. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.InputDeviceCharacteristics">
+      <summary>
+        <para>Набор битовых флагов, описывающих характеристики XR.InputDevice.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.Camera">
+      <summary>
+        <para>InputDevice имеет камеру и связанную с ней информацию об отслеживании камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.Controller">
+      <summary>
+        <para>InputDevice — это игровой контроллер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.EyeTracking">
+      <summary>
+        <para>InputDevice предоставляет информацию об отслеживании взгляда с помощью функции ввода Eyes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.HandTracking">
+      <summary>
+        <para>InputDevice предоставляет информацию об отслеживании рук с помощью функции ввода вручную.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.HeadMounted">
+      <summary>
+        <para>InputDevice подключен к голове.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.HeldInHand">
+      <summary>
+        <para>InputDevice находится в руке пользователя. Как правило, отслеживаемый контроллер.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.Left">
+      <summary>
+        <para>InputDevice связан с левой стороной пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.None">
+      <summary>
+        <para>Значение по умолчанию без флагов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.Right">
+      <summary>
+        <para>InputDevice связан с правой стороной пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.Simulated6DOF">
+      <summary>
+        <para>InputDevice сообщает приблизительные программные данные о местоположении.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.TrackedDevice">
+      <summary>
+        <para>InputDevice предоставляет данные отслеживания 3DOF или 6DOF.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceCharacteristics.TrackingReference">
+      <summary>
+        <para>InputDevice — это неподвижный эталонный объект, используемый для обнаружения и отслеживания других объектов в мире.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.InputDeviceRole">
+      <summary>
+        <para>Перечисление, описывающее роль XR.InputDevice в обеспечении ввода.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.GameController">
+      <summary>
+        <para>Это устройство является игровым контроллером.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.Generic">
+      <summary>
+        <para>Обычно это HMD или камера.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.HardwareTracker">
+      <summary>
+        <para>Это устройство является аппаратным трекером.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.LeftHanded">
+      <summary>
+        <para>Это устройство представляет собой контроллер, представляющий левую руку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.LegacyController">
+      <summary>
+        <para>Это устройство является устаревшим контроллером.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.RightHanded">
+      <summary>
+        <para>Это устройство представляет собой контроллер, представляющий правую руку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.TrackingReference">
+      <summary>
+        <para>Это устройство является эталоном отслеживания, используемым для отслеживания других устройств в 3D.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputDeviceRole.Unknown">
+      <summary>
+        <para>Это устройство не имеет известной роли.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.InputDevices">
+      <summary>
+        <para>Интерфейс для доступа к устройствам в подсистеме ввода XR.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.XR.InputDevices.deviceConfigChanged(System.Action`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Определяет делегата, используемого для регистрации событий при изменении конфигурации InputDevice.</para>
+      </summary>
+      <param name="value">InputDevice, конфигурация которого изменилась.</param>
+    </member>
+    <member name="?:UnityEngine.XR.InputDevices.deviceConnected(System.Action`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Определяет делегата, используемого для регистрации событий при подключении устройства InputDevice.</para>
+      </summary>
+      <param name="value">Только что подключенное устройство InputDevice.</param>
+    </member>
+    <member name="?:UnityEngine.XR.InputDevices.deviceDisconnected(System.Action`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Определяет делегата, используемого для регистрации событий при отключении InputDevice.</para>
+      </summary>
+      <param name="value">InputDevice, который только что отключился.</param>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode)">
+      <summary>
+        <para>Получает устройство ввода в заданной конечной точке XR.XRNode.</para>
+      </summary>
+      <param name="node">XRNode, которому принадлежит запрошенное устройство.</param>
+      <returns>
+        <para>XR.InputDevice в этом [[XR.XRNode].</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevices.GetDevices(System.Collections.Generic.List`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Получает список активных устройств ввода, доступных для подсистемы ввода XR.</para>
+      </summary>
+      <param name="inputDevices">Список типа InputDevices для получения доступных устройств ввода.</param>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode,System.Collections.Generic.List`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Получает список активных устройств ввода, доступных для подсистемы ввода XR в заданной конечной точке XR.XRNode.</para>
+      </summary>
+      <param name="node">XRNode, которому принадлежит запрошенное устройство.</param>
+      <param name="inputDevices">Список типа InputDevices для получения доступных устройств ввода.</param>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(UnityEngine.XR.InputDeviceCharacteristics,System.Collections.Generic.List`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Получает список активных устройств ввода XR, которые соответствуют заданным характеристикам InputDeviceCharacteristics.</para>
+      </summary>
+      <param name="desiredCharacteristics">Побитовая комбинация характеристик, которые вы ищете.</param>
+      <param name="inputDevices">Объект List&lt;InputDevice&gt; для получения доступных устройств ввода.</param>
+    </member>
+    <member name="M:UnityEngine.XR.InputDevices.GetDevicesWithRole(UnityEngine.XR.InputDeviceRole,System.Collections.Generic.List`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Получает список активных устройств ввода, доступных для подсистемы ввода XR, которые соответствуют указанной роли.</para>
+      </summary>
+      <param name="role">XR.InputDeviceRole, определенная для возвращенных устройств.</param>
+      <param name="inputDevices">Список типа InputDevices для получения доступных устройств ввода.</param>
+    </member>
+    <member name="T:UnityEngine.XR.InputFeatureUsage">
+      <summary>
+        <para>Определяет общее использование, которое сопоставляется с функцией ввода на устройстве. Используйте метод As, чтобы превратить его в универсальное использование.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputFeatureUsage.name">
+      <summary>
+        <para>Строковое имя этой функции использования; используется внутренне для сопоставления с функцией ввода на устройстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputFeatureUsage.type">
+      <summary>
+        <para>Тип этой функции использования; используется внутренне для сопоставления с функцией ввода на устройстве.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.InputFeatureUsage.As">
+      <summary>
+        <para>Возвращает общую версию этого типа для получения значения функции с устройства.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.InputFeatureUsage`1">
+      <summary>
+        <para>Определяет общее использование, которое сопоставляется с функцией ввода на устройстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputFeatureUsage_1.name">
+      <summary>
+        <para>Строковое имя этой функции использования; используется внутренне для сопоставления с функцией ввода на устройстве.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.InputFeatureUsage_1.#ctor(System.String)">
+      <summary>
+        <para>Создайте использование из имени использования.</para>
+      </summary>
+      <param name="usageName">Имя использования функции для запроса.</param>
+    </member>
+    <member name="?:UnityEngine.XR.InputFeatureUsage_1.op_Explicit(UnityEngine.XR.InputFeatureUsage`1&lt;T&gt;)">
+      <summary>
+        <para>Преобразует универсальное InputFeatureUsage&lt;T&gt; в InputFeatureUsage.</para>
+      </summary>
+      <param name="self">
+      </param>
+    </member>
+    <member name="T:UnityEngine.XR.InputTracking">
+      <summary>
+        <para>Набор методов и свойств для доступа к устройствам ввода XR по их представлению узла XR.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.InputTracking.disablePositionalTracking">
+      <summary>
+        <para>Отключает позиционное отслеживание в XR. Это вступит в силу при следующем сэмплировании позы головы. Если установлено значение true, камера отслеживает только поворот гарнитуры.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.XR.InputTracking.nodeAdded(System.Action`1&lt;UnityEngine.XR.XRNodeState&gt;)">
+      <summary>
+        <para>Вызывается при добавлении отслеживаемого узла в базовую систему XR.</para>
+      </summary>
+      <param name="nodeState">Описывает добавленный узел.</param>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.XR.InputTracking.nodeRemoved(System.Action`1&lt;UnityEngine.XR.XRNodeState&gt;)">
+      <summary>
+        <para>Вызывается при удалении отслеживаемого узла из базовой системы XR.</para>
+      </summary>
+      <param name="nodeState">Описывает удаленный узел.</param>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.XR.InputTracking.trackingAcquired(System.Action`1&lt;UnityEngine.XR.XRNodeState&gt;)">
+      <summary>
+        <para>Вызывается, когда отслеживаемый узел начинает сообщать информацию об отслеживании.</para>
+      </summary>
+      <param name="nodeState">Описывает узел, который начал отслеживаться.</param>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.XR.InputTracking.trackingLost(System.Action`1&lt;UnityEngine.XR.XRNodeState&gt;)">
+      <summary>
+        <para>Вызывается, когда отслеживаемый узел перестает сообщать информацию об отслеживании.</para>
+      </summary>
+      <param name="nodeState">Описывает узел, который потерял отслеживание.</param>
+      <param name="value">
+      </param>
+    </member>
+    <member name="M:UnityEngine.XR.InputTracking.GetLocalPosition(UnityEngine.XR.XRNode)">
+      <summary>
+        <para>Примечание. Этот API был помечен как устаревший в коде и больше не используется. Используйте InputTracking.GetNodeStates и найдите XRNodeState с соответствующим типом XRNode.
+Получает позицию определенного узла.</para>
+      </summary>
+      <param name="node">Указывает, позицию какого узла следует вернуть.</param>
+      <returns>
+        <para>Положение узла в его локальном пространстве отслеживания.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputTracking.GetLocalRotation(UnityEngine.XR.XRNode)">
+      <summary>
+        <para>Примечание. Этот API был помечен как устаревший в коде и больше не используется. Используйте InputTracking.GetNodeStates и найдите XRNodeState с соответствующим типом XRNode.
+Получает поворот определенного узла.</para>
+      </summary>
+      <param name="node">Указывает вращение узла, которое должно быть возвращено.</param>
+      <returns>
+        <para>Вращение узла в его локальном пространстве отслеживания.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputTracking.GetNodeName(System.UInt64)">
+      <summary>
+        <para>Принимает уникальный идентификатор отслеживаемого узла и возвращает для него понятное имя.</para>
+      </summary>
+      <param name="uniqueID">Уникальный идентификатор для индекса узла.</param>
+      <param name="uniqueId">
+      </param>
+      <returns>
+        <para>Имя отслеживаемого узла, если данный 64-битный идентификатор сопоставляется с отслеживаемым в данный момент узлом. В противном случае пустая строка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.InputTracking.GetNodeStates(System.Collections.Generic.List`1&lt;UnityEngine.XR.XRNodeState&gt;)">
+      <summary>
+        <para>Описывает все подключенные в настоящее время XRNodes и предоставляет доступные состояния отслеживания для каждого.</para>
+      </summary>
+      <param name="nodeStates">Список, заполненный объектами XR.XRNodeState.</param>
+    </member>
+    <member name="M:UnityEngine.XR.InputTracking.Recenter">
+      <summary>
+        <para>Отслеживание центра до текущего положения и ориентации HMD.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.InputTrackingState">
+      <summary>
+        <para>Представляет отслеживаемые значения для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.Acceleration">
+      <summary>
+        <para>Представляет отслеживаемое ускорение для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.All">
+      <summary>
+        <para>Представляет все значения InputTrackingState, отслеживаемые для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.AngularAcceleration">
+      <summary>
+        <para>Представляет угловое ускорение, отслеживаемое для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.AngularVelocity">
+      <summary>
+        <para>Указывает, что для этого устройства не отслеживается угловая скорость.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.None">
+      <summary>
+        <para>Представляет, что для этого устройства не отслеживаются значения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.Position">
+      <summary>
+        <para>Представляет позицию, отслеживаемую для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.Rotation">
+      <summary>
+        <para>Представляет ротацию, отслеживаемую для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.InputTrackingState.Velocity">
+      <summary>
+        <para>Представляет отслеживаемую скорость для этого устройства.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshChangeState">
+      <summary>
+        <para>Состояние отслеживаемой сетки с момента последнего запроса.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshChangeState.Added">
+      <summary>
+        <para>Сетка была добавлена ​​с момента последнего вызова XRMeshSubsystem.TryGetMeshInfos.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshChangeState.Removed">
+      <summary>
+        <para>Сетка была удалена с момента последнего вызова XRMeshSubsystem.TryGetMeshInfos.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshChangeState.Unchanged">
+      <summary>
+        <para>Сетка не изменилась с момента последнего вызова XRMeshSubsystem.TryGetMeshInfos.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshChangeState.Updated">
+      <summary>
+        <para>Сетка была обновлена ​​с момента последнего вызова XRMeshSubsystem.TryGetMeshInfos.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshGenerationOptions">
+      <summary>
+        <para>Опции для создания сеток.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationOptions.ConsumeTransform">
+      <summary>
+        <para>Указывает, что вы планируете использовать преобразование полученного меша.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationOptions.None">
+      <summary>
+        <para>Опции не указаны.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshGenerationResult">
+      <summary>
+        <para>Содержит информацию о событиях, связанных с созданной сеткой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Attributes">
+      <summary>
+        <para>MeshVertexAttributes, записанные в MeshGenerationResult.Mesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Mesh">
+      <summary>
+        <para>Если генерация прошла успешно, данные были записаны в эту сетку.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.MeshCollider">
+      <summary>
+        <para>Если генерация прошла успешно, физические данные были записаны в этот MeshCollider.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.MeshId">
+      <summary>
+        <para>MeshId созданной отслеживаемой сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Position">
+      <summary>
+        <para>Позиция, связанная с созданной сеткой, относительно источника сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Rotation">
+      <summary>
+        <para>Поворот, связанный с сгенерированной сеткой, относительно начала сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Scale">
+      <summary>
+        <para>Масштаб, связанный с созданной сеткой относительно начала сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Status">
+      <summary>
+        <para>MeshGenerationStatus задачи создания сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshGenerationResult.Timestamp">
+      <summary>
+        <para>Отметка времени, связанная с созданной сеткой.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshGenerationStatus">
+      <summary>
+        <para>Статус XRMeshSubsystem.GenerateMeshAsync.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationStatus.Canceled">
+      <summary>
+        <para>Генерация сетки отменена.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationStatus.GenerationAlreadyInProgress">
+      <summary>
+        <para>Подсистема XRMeshSubsystem уже создавала запрошенную сетку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationStatus.InvalidMeshId">
+      <summary>
+        <para>Не удалось создать сетку, поскольку сетка не существует.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationStatus.Success">
+      <summary>
+        <para>Генерация сетки прошла успешно.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshGenerationStatus.UnknownError">
+      <summary>
+        <para>Не удалось создать сетку по неизвестным причинам.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshId">
+      <summary>
+        <para>Уникальный для сеанса идентификатор для объектов отслеживания в среде, например плоскостей и характерных точек.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshId.InvalidId">
+      <summary>
+        <para>Представляет недопустимый идентификатор.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.MeshId.ToString">
+      <summary>
+        <para>Создает хорошо отформатированную версию идентификатора.</para>
+      </summary>
+      <returns>
+        <para>Строка, уникальная для этого идентификатора</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.MeshInfo">
+      <summary>
+        <para>Содержит информацию о состоянии, связанную с отслеживаемой сеткой.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshInfo.ChangeState">
+      <summary>
+        <para>Состояние изменения (например, добавлено, удалено) отслеживаемой сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshInfo.MeshId">
+      <summary>
+        <para>MeshId отслеживаемой сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshInfo.PriorityHint">
+      <summary>
+        <para>Подсказка, с помощью которой можно определить, когда следует обрабатывать эту сетку.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshTransform">
+      <summary>
+        <para>Содержит информацию о преобразовании, связанную с отслеживаемой сеткой.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.MeshTransform.#ctor(UnityEngine.XR.MeshId&amp;,System.UInt64,UnityEngine.Vector3&amp;,UnityEngine.Quaternion&amp;,UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Создает новый MeshTransform.</para>
+      </summary>
+      <param name="meshId">Идентификатор сетки.</param>
+      <param name="timestamp">Временная метка преобразования меша. Большие значения указывают на более новые преобразования.</param>
+      <param name="position">Положение сетки относительно источника сеанса.</param>
+      <param name="rotation">Поворот сетки относительно начала сеанса.</param>
+      <param name="scale">Масштаб сетки относительно начала сеанса.</param>
+    </member>
+    <member name="P:UnityEngine.XR.MeshTransform.MeshId">
+      <summary>
+        <para>Уникальный для сеанса идентификатор отслеживаемой сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshTransform.Position">
+      <summary>
+        <para>Положение сетки относительно начала сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshTransform.Rotation">
+      <summary>
+        <para>Поворот сетки относительно начала сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshTransform.Scale">
+      <summary>
+        <para>Масштаб сетки относительно начала сеанса.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.MeshTransform.Timestamp">
+      <summary>
+        <para>Отметка времени, связанная с этим преобразованием.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.MeshVertexAttributes">
+      <summary>
+        <para>Набор атрибутов вершины.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshVertexAttributes.Colors">
+      <summary>
+        <para>Нормали вершин</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshVertexAttributes.None">
+      <summary>
+        <para>Нет атрибутов вершины</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshVertexAttributes.Normals">
+      <summary>
+        <para>Нормали вершин</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshVertexAttributes.Tangents">
+      <summary>
+        <para>Касательные вершины</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.MeshVertexAttributes.UVs">
+      <summary>
+        <para>Вершинные UVs</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.Provider.XRStats">
+      <summary>
+        <para>Предоставляет синхронизацию и другую статистику из подсистем XR.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.Provider.XRStats.TryGetStat(UnityEngine.IntegratedSubsystem,System.String,System.Single&amp;)">
+      <summary>
+        <para>Получить статистику для подсистемы XR.</para>
+      </summary>
+      <param name="xrSubsystem">Подсистема, в которой зарегистрирована статистика.</param>
+      <param name="tag">Тег, используемый для запроса статистики.</param>
+      <param name="value">Получает текущее значение запрошенной статистики. Содержит допустимое значение, если этот метод возвращает значение true.</param>
+      <returns>
+        <para>True, если запрошенная статистика доступна, иначе false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.TrackingOriginModeFlags">
+      <summary>
+        <para>Это перечисление предоставляет контекст, где находится точка отслеживания 0,0,0 для InputDevices.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.TrackingOriginModeFlags.Device">
+      <summary>
+        <para>XRInputSubsystem отслеживает все устройства InputDevice по отношению к первому известному местоположению конкретного устройства ввода, если установлено значение TrackingOriginModeFlags.Device.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.TrackingOriginModeFlags.Floor">
+      <summary>
+        <para>XRInputSubsystem отслеживает все устройства InputDevice относительно точки на этаже, если установлено значение TrackingOriginModeFlags.Floor.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.TrackingOriginModeFlags.TrackingReference">
+      <summary>
+        <para>XRInputSubsystem отслеживает все InputDevice в отношении InputDevice с установленным флагом InputDeviceCharacteristics.TrackingReference, если установлено значение TrackingOriginModeFlags.TrackingReference.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.TrackingOriginModeFlags.Unbounded">
+      <summary>
+        <para>XRInputSubsystem отслеживает все InputDevices по отношению к мировой привязке. Эта мировая привязка может измениться в любое время и выбирается средой выполнения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.TrackingOriginModeFlags.Unknown">
+      <summary>
+        <para>TrackingOriginModeFlags.Unknown перечисляет, когда XRInputSubsystem не смогла установить источник отслеживания или не имеет отслеживания.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem">
+      <summary>
+        <para>XRDisplaySubsystem управляет рендерингом на дисплее с отслеживанием головы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.contentProtectionEnabled">
+      <summary>
+        <para>Задает или получает состояние защиты контента для текущего активного провайдера.
+
+Для большинства провайдеров защита контента позволяет использовать текстуры только для записи для рендеринга. Это лишает приложения возможности считывать текстуры с видеокарты и просматривать/записывать изображения, которые могут быть каким-то образом защищены.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.disableLegacyRenderer">
+      <summary>
+        <para>Отключает устаревшее средство визуализации, пока эта подсистема XRDisplaySubsystem активна.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.XR.XRDisplaySubsystem.displayFocusChanged(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>Событие отправляется при изменении фокуса дисплея XR.</para>
+      </summary>
+      <param name="value">Метод делегата для вызова при отправке события.</param>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.displayOpaque">
+      <summary>
+        <para>Определяет, имеет ли текущее подключенное устройство непрозрачный дисплей.
+
+Большинство устройств VR непрозрачны, чтобы увеличить эффект погружения, устройства AR прозрачны, чтобы обеспечить взаимодействие с дополнением текущей среды.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.occlusionMaskScale">
+      <summary>
+        <para>Масштаб, применяемый к стандартной маске окклюзии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.reprojectionMode">
+      <summary>
+        <para>Тип перепроекции, которую запрашивает приложение, чтобы стабилизировать голографическую визуализацию относительно движения головы пользователя.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.scaleOfAllRenderTargets">
+      <summary>
+        <para>Управляет размером текстур, отправляемых на дисплей, как множитель разрешения дисплея по умолчанию.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.scaleOfAllViewports">
+      <summary>
+        <para>Определяет, какая часть выделенной текстуры дисплея должна использоваться для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.singlePassRenderingDisabled">
+      <summary>
+        <para>Возвращает true, если однопроходный стереорендеринг отключен, и false в противном случае.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.supportedTextureLayouts">
+      <summary>
+        <para>Задает все макеты текстур, поддерживаемые этой подсистемой отображения. Эта переменная представляет собой битовое поле, которое может быть комбинацией XRDisplaySubsystem.TextureLayout.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.textureLayout">
+      <summary>
+        <para>Установите DisplaySubsystem для использования определенного макета текстуры. Следует запрашивать поддерживаемый макет текстуры через XRDisplaySubsystem.supportedTextureLayouts.
+сначала для возможностей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.zFar">
+      <summary>
+        <para>Настройте DisplaySubsystem на использование zFar для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.zNear">
+      <summary>
+        <para>Настройте DisplaySubsystem на использование zNear для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.AddGraphicsThreadMirrorViewBlit(UnityEngine.Rendering.CommandBuffer,System.Boolean)">
+      <summary>
+        <para>Эта функция записывает собственное blit-событие подсистемы дисплея в целевой буфер команд. Эта функция обычно вызывается конвейером рендеринга с поддержкой сценариев.</para>
+      </summary>
+      <param name="cmd">Целевой CommandBuffer, который записывает собственное событие blit.</param>
+      <param name="allowGraphicsStateInvalidate">True заставляет графическое устройство аннулировать внутренние состояния до и после вызова собственного блита провайдера. Это обеспечивает согласованность внутренних состояний GFX с ценой некоторой производительности во время выполнения.</param>
+      <param name="mode">Дисплей XRMirrorViewBlitMode XR должен работать.</param>
+      <returns>
+        <para>Возвращает true, если собственное событие blit успешно записано. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.AddGraphicsThreadMirrorViewBlit(UnityEngine.Rendering.CommandBuffer,System.Boolean,System.Int32)">
+      <summary>
+        <para>Эта функция записывает собственное blit-событие подсистемы дисплея в целевой буфер команд. Эта функция обычно вызывается конвейером рендеринга с поддержкой сценариев.</para>
+      </summary>
+      <param name="cmd">Целевой CommandBuffer, который записывает собственное событие blit.</param>
+      <param name="allowGraphicsStateInvalidate">True заставляет графическое устройство аннулировать внутренние состояния до и после вызова собственного блита провайдера. Это обеспечивает согласованность внутренних состояний GFX с ценой некоторой производительности во время выполнения.</param>
+      <param name="mode">Дисплей XRMirrorViewBlitMode XR должен работать.</param>
+      <returns>
+        <para>Возвращает true, если собственное событие blit успешно записано. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.BeginRecordingIfLateLatched(UnityEngine.Camera)">
+      <summary>
+        <para>Эта функция позволяет осуществлять запись с поздней фиксацией ячеек памяти постоянного буфера, которые позже исправляются последними данными позы.</para>
+      </summary>
+      <param name="camera">Камера, для которой должна быть включена запись с поздней фиксацией.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.EndRecordingIfLateLatched(UnityEngine.Camera)">
+      <summary>
+        <para>Эта функция отключает запись с поздней фиксацией постоянных ячеек буфера.</para>
+      </summary>
+      <param name="camera">Камера, в которой должна выполняться запись с поздней фиксацией.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetCullingParameters(UnityEngine.Camera,System.Int32,UnityEngine.Rendering.ScriptableCullingParameters&amp;)">
+      <summary>
+        <para>Получает параметры отбраковки для определенного индекса прохода отбраковки.</para>
+      </summary>
+      <param name="camera">Камера для основы выбраковки и усеченной пирамиды.</param>
+      <param name="cullingPassIndex">Индекс прохода отбраковки, полученный из XR.XRDisplaySubsystem.XRRenderPass.cullingPassIndex|XRRenderPass.cullingPassIndex.</param>
+      <param name="scriptableCullingParameters">Параметры отбраковки, которые можно заполнить с помощью сценариев.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetMirrorViewBlitDesc(UnityEngine.RenderTexture,UnityEngine.XR.XRDisplaySubsystem/XRMirrorViewBlitDesc&amp;)">
+      <summary>
+        <para>Получить дескриптор операции копирования зеркального отображения из текущей подсистемы отображения.</para>
+      </summary>
+      <param name="mirrorRt">Текстура рендеринга, представляющая цель рендеринга зеркального вида.</param>
+      <param name="outDesc">Информация, описывающая желаемую операцию копирования зеркального отображения.</param>
+      <param name="mode">Дисплей XRMirrorViewBlitMode XR должен работать.</param>
+      <returns>
+        <para>Возвращает true, если информация получена успешно, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetMirrorViewBlitDesc(UnityEngine.RenderTexture,UnityEngine.XR.XRDisplaySubsystem/XRMirrorViewBlitDesc&amp;,System.Int32)">
+      <summary>
+        <para>Получить дескриптор операции копирования зеркального отображения из текущей подсистемы отображения.</para>
+      </summary>
+      <param name="mirrorRt">Текстура рендеринга, представляющая цель рендеринга зеркального вида.</param>
+      <param name="outDesc">Информация, описывающая желаемую операцию копирования зеркального отображения.</param>
+      <param name="mode">Дисплей XRMirrorViewBlitMode XR должен работать.</param>
+      <returns>
+        <para>Возвращает true, если информация получена успешно, иначе false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetPreferredMirrorBlitMode">
+      <summary>
+        <para>Возвращает предпочтительный режим зеркального отображения дисплея XR.</para>
+      </summary>
+      <returns>
+        <para>Показать предпочитаемый режим blit подсистемы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetRenderPass(System.Int32,UnityEngine.XR.XRDisplaySubsystem/XRRenderPass&amp;)">
+      <summary>
+        <para>Получает XRRenderPass определенного индекса.</para>
+      </summary>
+      <param name="renderPassIndex">Индекс прохода рендеринга, который нужно получить. Должно быть меньше, чем GetRenderPassCount.</param>
+      <param name="renderPass">Передайте проход для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetRenderPassCount">
+      <summary>
+        <para>Количество записей XRRenderPass для этого дисплея XR.</para>
+      </summary>
+      <returns>
+        <para>Количество проходов рендеринга.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetRenderTextureForRenderPass(System.Int32)">
+      <summary>
+        <para>Получив проход рендеринга, верните экземпляр RenderTexture, поддерживающий этот проход рендеринга. Если проход рендеринга недействителен или текстура рендеринга не существует, вернуть значение null.</para>
+      </summary>
+      <param name="renderPass">Индекс прохода рендеринга, для которого нужно получить текстуру рендеринга.</param>
+      <returns>
+        <para>Текстура рендеринга, связанная с этим проходом рендеринга, или null, если не найдена.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.GetSharedDepthTextureForRenderPass(System.Int32)">
+      <summary>
+        <para>Учитывая проход рендеринга, вернуть экземпляр RenderTexture общего буфера глубины, поддерживающий этот проход рендеринга. Если проход рендеринга недействителен или текстура рендеринга не существует, вернуть значение null.</para>
+      </summary>
+      <param name="renderPass">Индекс прохода рендеринга для получения общей текстуры рендеринга буфера глубины.</param>
+      <returns>
+        <para>Общая текстура рендеринга буфера глубины, связанная с этим проходом рендеринга, или значение null, если оно не найдено.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode">
+      <summary>
+        <para>Тип узла для поздней фиксации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.Head">
+      <summary>
+        <para>Тип головного узла для поздней фиксации. Представляет собой узел камеры в иерархии поз.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.LeftHand">
+      <summary>
+        <para>Левосторонний тип узла для поздней фиксации. Представляет левый узел привязки в иерархии поз.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.RightHand">
+      <summary>
+        <para>Правосторонний тип узла для поздней фиксации. Представляет правый узел привязки в иерархии поз.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.MarkTransformLateLatched(UnityEngine.Transform,UnityEngine.XR.XRDisplaySubsystem/LateLatchNode)">
+      <summary>
+        <para>Это помечает преобразование данного игрового объекта как заблокированное с опозданием в следующем кадре. После пометки для поздней фиксации преобразование GameObject и его потомки будут обновляться с учетом последних обновлений позы виртуальной реальности до того, как рендеринг будет отправлен на графический процессор.</para>
+      </summary>
+      <param name="transform">Преобразование GameObject для поздней фиксации.</param>
+      <param name="nodeType">Тип узла поздней фиксации, связанный с преобразованием.</param>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode">
+      <summary>
+        <para>Тип перепроекции, которую запрашивает приложение, чтобы стабилизировать голографическую визуализацию относительно движения головы пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode.None">
+      <summary>
+        <para>Не стабилизирует изображение при движении головы пользователя, а фиксирует его на дисплее. Обратите внимание, что это удобно для пользователей только в том случае, если вы используете его экономно, например, когда единственным видимым содержимым является маленький курсор.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode.OrientationOnly">
+      <summary>
+        <para>Стабилизирует изображение только при изменении ориентации головы пользователя, игнорируя изменения положения. Это лучше всего подходит для контента, привязанного к телу, который вы хотите перемещать вместе с пользователем, когда он ходит, например видео с обзором в 360 градусов.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode.PositionAndOrientation">
+      <summary>
+        <para>Стабилизирует изображение при изменении положения и ориентации головы пользователя. Это лучше всего подходит для закрытого контента, который вы хотите оставить неподвижным, когда пользователь ходит.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode.Unspecified">
+      <summary>
+        <para>Не указывает тип используемого режима перепроецирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.SetFocusPlane(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Устанавливает точку в 3D-пространстве, которая действует как фокус сцены для этого кадра. Это помогает улучшить визуальную точность контента вокруг этой точки. Вы должны устанавливать это значение для каждого кадра.
+
+Обратите внимание, что выделение содержимого, заблокированного в теле, улучшает точность содержимого, заблокированного в теле, за счет содержимого, не привязанного к телу. Это особенно заметно, когда пользователь двигается.
+</para>
+      </summary>
+      <param name="point">Положение фокуса в Сцене относительно Камеры.</param>
+      <param name="normal">Нормаль поверхности плоскости, просматриваемой в фокусной точке.</param>
+      <param name="velocity">Вектор, описывающий, как точка фокусировки перемещается в Сцене в данный момент времени. Это позволяет устройству компенсировать как движение вашей головы, так и движение объекта в сцене.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.SetMSAALevel(System.Int32)">
+      <summary>
+        <para>Установите уровень MSAA для текстуры рендеринга DisplaySubsystem.</para>
+      </summary>
+      <param name="level">Уровень MSAA.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.SetPreferredMirrorBlitMode(System.Int32)">
+      <summary>
+        <para>Переопределите предпочтительный режим зеркального отображения дисплея XR из сценария.</para>
+      </summary>
+      <param name="blitMode">XRMirrorViewBlitMode для установки.</param>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.TextureLayout">
+      <summary>
+        <para>Флаги, представляющие поддерживаемый макет текстуры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.TextureLayout.SeparateTexture2Ds">
+      <summary>
+        <para>Текстуры могут быть настроены на несколько типов texture2D.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.TextureLayout.SingleTexture2D">
+      <summary>
+        <para>Текстуры могут быть настроены на текстуру2D, представляющую несколько представлений.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.TextureLayout.Texture2DArray">
+      <summary>
+        <para>Текстуры могут быть настроены на тип texture2DArray.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetAppGPUTimeLastFrame(System.Single&amp;)">
+      <summary>
+        <para>Получает время, затраченное графическим процессором на выполнение команд из последнего кадра приложения, согласно отчету подключаемого модуля XR. Измеряется в секундах.</para>
+      </summary>
+      <param name="gpuTimeLastFrame">Выводит время, затраченное графическим процессором на последний кадр.</param>
+      <returns>
+        <para>Возвращает true, если доступно время GPU, затраченное на последний кадр. Возвращает false, если это время недоступно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetCompositorGPUTimeLastFrame">
+      <summary>
+        <para>Получает количество времени, затраченное графическим процессором на выполнение средства визуализации компоновщика во время последнего кадра, согласно отчету подключаемого модуля XR. Измеряется в секундах.</para>
+      </summary>
+      <param name="gpuTimeLastFrameCompositor">Выводит время, затраченное графическим процессором на компоновщик во время последнего кадра.</param>
+      <returns>
+        <para>Возвращает true, если доступно время GPU, затраченное на последний кадр. Возвращает false, если это время недоступно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetCompositorGPUTimeLastFrame(System.Single&amp;)">
+      <summary>
+        <para>Получает количество времени, затраченное графическим процессором на выполнение средства визуализации компоновщика во время последнего кадра, согласно отчету подключаемого модуля XR. Измеряется в секундах.</para>
+      </summary>
+      <param name="gpuTimeLastFrameCompositor">Выводит время, затраченное графическим процессором на компоновщик во время последнего кадра.</param>
+      <returns>
+        <para>Возвращает true, если доступно время GPU, затраченное на последний кадр. Возвращает false, если это время недоступно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetDisplayRefreshRate(System.Single&amp;)">
+      <summary>
+        <para>Получает частоту обновления экрана, сообщаемую подключаемым модулем XR.</para>
+      </summary>
+      <param name="hmdRefreshRate">Выводит частоту обновления экрана в Гц.</param>
+      <param name="displayRefreshRate">
+      </param>
+      <returns>
+        <para>Возвращает true, если доступна частота обновления экрана. Возвращает false, если эта скорость недоступна.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetDroppedFrameCount(System.Int32&amp;)">
+      <summary>
+        <para>Получает количество потерянных кадров, о которых сообщает подключаемый модуль XR.</para>
+      </summary>
+      <param name="droppedFrameCount">Выводит количество кадров, потерянных с момента последнего обновления.</param>
+      <returns>
+        <para>Возвращает true, если количество пропущенных кадров доступно. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetFramePresentCount(System.Int32&amp;)">
+      <summary>
+        <para>Получает количество раз, когда текущий кадр был отрисован на устройстве, согласно отчету подключаемого модуля XR.</para>
+      </summary>
+      <param name="framePresentCount">Выводит количество представлений текущего кадра.</param>
+      <returns>
+        <para>Возвращает true, если доступно текущее количество кадров. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.TryGetMotionToPhoton(System.Single&amp;)">
+      <summary>
+        <para>Получает значение преобразования движения в фотон, сообщаемое подключаемым модулем XR.</para>
+      </summary>
+      <param name="motionToPhoton">Выводит значение преобразования движения в фотон.</param>
+      <returns>
+        <para>Возвращает true, если доступно значение движения в фотон. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.XRBlitParams">
+      <summary>
+        <para>Эта структура содержит данные для одной блит-операции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRBlitParams.destRect">
+      <summary>
+        <para>Целевая область Rect, в которую операция копирования хочет выполнить преобразование.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRBlitParams.srcRect">
+      <summary>
+        <para>Исходная область Rect, из которой операция копирования хочет выполнить копирование.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRBlitParams.srcTex">
+      <summary>
+        <para>Исходная текстура рендеринга, из которой операция переноса хочет выполнить перенос.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRBlitParams.srcTexArraySlice">
+      <summary>
+        <para>Описывает желаемый фрагмент массива исходной текстуры. Texture2D будет иметь фрагмент массива 1.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.XRMirrorViewBlitDesc">
+      <summary>
+        <para>Вся информация в этой структуре описывает желаемую операцию копирования зеркального отображения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRMirrorViewBlitDesc.blitParamsCount">
+      <summary>
+        <para>Количество записей XRBlitParams для этого XRMirrorViewBlitDesc.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRMirrorViewBlitDesc.nativeBlitAvailable">
+      <summary>
+        <para>Если это так, текущая подсистема отображения поддерживает собственное копирование, и для выполнения собственного преобразования необходимо вызвать AddGraphicsThreadMirrorViewBlit.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRMirrorViewBlitDesc.nativeBlitInvalidStates">
+      <summary>
+        <para>Когда это верно, подсистема отображения изменит состояние графики.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.XRMirrorViewBlitDesc.GetBlitParameter(System.Int32,UnityEngine.XR.XRDisplaySubsystem/XRBlitParams&amp;)">
+      <summary>
+        <para>Получает XRBlitParams для определенного XRMirrorViewBlitDesc.</para>
+      </summary>
+      <param name="blitParameterIndex">Индекс параметра blit, который необходимо получить.</param>
+      <param name="blitParameter">XRBlitParams для заполнения.</param>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter">
+      <summary>
+        <para>Одна точка обзора, которая должна отображаться конвейером рендеринга. Содержит срез целевого окна просмотра и массива текстур в соответствующем XR.XRDisplaySubsystem.XRRenderPass.renderTarget|renderTarget.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.isPreviousViewValid">
+      <summary>
+        <para>Определяет, допустимо ли XR.XRDisplaySubsystem.XRRenderParameter.previousView для использования во фрейме.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.occlusionMesh">
+      <summary>
+        <para>Представляет область в пространстве экрана, которая не видна на дисплее XR.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.previousView">
+      <summary>
+        <para>Матрица просмотра предыдущего кадра для использования при расчете вектора движения. Используйте XR.XRDisplaySubsystem.XRRenderParameter.isPreviousViewValid, чтобы определить, можно ли использовать предыдущее представление. Когда поздняя фиксация включена, предыдущий вид также корректируется для поздней фиксации. </para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.projection">
+      <summary>
+        <para>Матрица проекции, которую конвейер рендеринга должен использовать для рендеринга в XR.XRDisplaySubsystem.XRRenderPass.renderTarget|renderTarget.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.textureArraySlice">
+      <summary>
+        <para>Фрагмент выходного массива текстур, в который должен обрабатываться конвейер рендеринга.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.view">
+      <summary>
+        <para>Мировое преобразование, которое конвейер рендеринга должен использовать для рендеринга в XR.XRDisplaySubsystem.XRRenderPass.renderTarget|renderTarget.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderParameter.viewport">
+      <summary>
+        <para>Выбирает область просмотра выходной текстуры XR.XRDisplaySubsystem.XRRenderPass.renderTarget|renderTarget.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass">
+      <summary>
+        <para>Содержит параметры конфигурации, определяющие, какой вид сцены должен растеризовать средство визуализации, и цель рендеринга (которая может быть массивом текстур) для результата растеризации.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.cullingPassIndex">
+      <summary>
+        <para>Индекс, который конвейер рендеринга может передать в XR.XRDisplaySubsystem.GetCullingParameters для получения информации об отбраковке.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.hasMotionVectorPass">
+      <summary>
+        <para>Логическое значение, указывающее, содержит ли этот этап рендеринга этап генерации вектора движения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.motionVectorRenderTarget">
+      <summary>
+        <para>Выходная целевая текстура рендеринга для прохода рендеринга генерации вектора движения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.motionVectorRenderTargetDesc">
+      <summary>
+        <para>Описание текстуры рендеринга для целевой текстуры для прохода рендеринга вектора движения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.renderPassIndex">
+      <summary>
+        <para>Индекс прохода рендеринга (изначально переданный в XRDisplaySubsystem.GetRenderPass).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.renderTarget">
+      <summary>
+        <para>Выходная цель для прохода рендеринга.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.renderTargetDesc">
+      <summary>
+        <para>Дескриптор, который можно передать в RenderTexture.GetTemporary для создания временных текстур, соответствующих цели визуализации XR Display.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.shouldFillOutDepth">
+      <summary>
+        <para>Когда это ложно, оптимальный рендерер может избежать разрешения буфера глубины.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.GetRenderParameter(UnityEngine.Camera,System.Int32,UnityEngine.XR.XRDisplaySubsystem/XRRenderParameter&amp;)">
+      <summary>
+        <para>Получает XRRenderParameter для определенного XRRenderPass.</para>
+      </summary>
+      <param name="camera">Камера для основы вида и проекции.</param>
+      <param name="renderParameterIndex">Индекс параметра рендеринга, который необходимо получить. Должно быть меньше, чем GetRenderParameterCount.</param>
+      <param name="renderParameter">XRRenderParameter для заполнения.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.XRRenderPass.GetRenderParameterCount">
+      <summary>
+        <para>Количество записей XRRenderParameter для этого XRRenderPass.</para>
+      </summary>
+      <returns>
+        <para>Количество параметров рендеринга.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystemDescriptor">
+      <summary>
+        <para>Класс, предоставляющий информацию о регистрации XRDisplaySubsystem.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystemDescriptor.disablesLegacyVr">
+      <summary>
+        <para>Указывает, должны ли устаревшие настройки VR быть отключены для подсистемы. Установите значение true, если редактор должен отключить устаревшие настройки VR. в противном случае ложь.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystemDescriptor.enableBackBufferMSAA">
+      <summary>
+        <para>Указывает, должен ли MSAA разрешаться в заднем буфере. Установите значение true, если MSAA необходимо разрешить в заднем буфере; в противном случае ложь.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystemDescriptor.GetAvailableMirrorBlitModeCount">
+      <summary>
+        <para>Получить общее количество поддерживаемых режимов зеркального отображения текущей подсистемы отображения.</para>
+      </summary>
+      <returns>
+        <para>Количество поддерживаемых режимов зеркального копирования.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystemDescriptor.GetMirrorBlitModeByIndex(System.Int32,UnityEngine.XR.XRMirrorViewBlitModeDesc&amp;)">
+      <summary>
+        <para>Получить поддерживаемый режим зеркального отображения из текущего дескриптора подсистемы отображения.</para>
+      </summary>
+      <param name="mode">XRMirrorViewBlitMode для заполнения.</param>
+      <param name="index">Индекс зеркального режима копирования, который необходимо получить.</param>
+    </member>
+    <member name="T:UnityEngine.XR.XRInputSubsystem">
+      <summary>
+        <para>XRInputSubsystem
+Экземпляр используется для включения и отключения входных данных, поступающих от определенного плагина.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.XR.XRInputSubsystem.boundaryChanged(System.Action`1&lt;UnityEngine.XR.XRInputSubsystem&gt;)">
+      <summary>
+        <para>Событие, которое принимает экземпляр делегата, который XRInputSubsystem вызывает при изменении границы отслеживания.</para>
+      </summary>
+      <param name="value">Unity вызывает этот делегат при изменении границы отслеживания.</param>
+    </member>
+    <member name="?:UnityEngine.XR.XRInputSubsystem.trackingOriginUpdated(System.Action`1&lt;UnityEngine.XR.XRInputSubsystem&gt;)">
+      <summary>
+        <para>Событие, которое принимает экземпляр делегата, который XRInputSubsystem вызывает при изменении источника, на который он сообщает об устройствах.</para>
+      </summary>
+      <param name="value">Unity вызывает этот делегат при изменении TrackingOriginFlags.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.GetSupportedTrackingOriginModes">
+      <summary>
+        <para>Получает все TrackingOriginModeFlags, поддерживаемые этой подсистемой.</para>
+      </summary>
+      <returns>
+        <para>Единая серия флагов, содержащая все поддерживаемые флаги TrackingOriginModeFlags.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.GetTrackingOriginMode">
+      <summary>
+        <para>Получает режим отслеживания источника.</para>
+      </summary>
+      <returns>
+        <para>Режим отслеживания источника, в котором находится эта подсистема.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.TryGetBoundaryPoints">
+      <summary>
+        <para>Получает список значений 3D-позиций, представляющих границу набора SDK.</para>
+      </summary>
+      <param name="boundary">Список граничных точек.</param>
+      <returns>
+        <para>Истинно, если эта XRInputSubsystem поддерживает граничные точки и они доступны. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.TryGetInputDevices(System.Collections.Generic.List`1&lt;UnityEngine.XR.InputDevice&gt;)">
+      <summary>
+        <para>Получает список всех подключенных устройств InputDevice, о которых сообщила эта подсистема XRInputSubsystem.</para>
+      </summary>
+      <param name="devices">Список устройств, о которых сообщила эта подсистема.</param>
+      <returns>
+        <para>Истинно, если XRInputSubsystem получает какие-либо устройства. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.TryRecenter">
+      <summary>
+        <para>Центрирует функции отслеживания на всех InputDevices по текущему положению и ориентации головного устройства.</para>
+      </summary>
+      <returns>
+        <para>True, если метод центрирует XRInputSubsystem. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRInputSubsystem.TrySetTrackingOriginMode">
+      <summary>
+        <para>Пытается установить TrackingOriginModeFlags подсистемы.</para>
+      </summary>
+      <param name="origin">Новые флаги TrackingOriginModeFlags, которые вы хотите изменить.</param>
+      <returns>
+        <para>Истинно, если метод изменяет источник. В противном случае возвращает false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRInputSubsystemDescriptor">
+      <summary>
+        <para>Информация о подсистеме ввода.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRInputSubsystemDescriptor.disablesLegacyInput">
+      <summary>
+        <para>Если задано значение true, устаревшая поддержка Daydream, Oculus, OpenVR и Windows MR, встроенная непосредственно в среду выполнения Unity, будет отключена от генерации входных данных. Это полезно при добавлении XRInputSubsystem, которая поддерживает эти устройства.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRMeshSubsystem">
+      <summary>
+        <para>Позволяет внешним системам предоставлять динамические сетки для Unity.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRMeshSubsystem.meshDensity">
+      <summary>
+        <para>Вызовите эту функцию, чтобы запросить изменение плотности сгенерированных сеток. Unity предоставляет уровень плотности в виде значения в диапазоне от 0,0 до 1,0, и поставщик определяет, как сопоставить это значение со своей реализацией.
+Установка этого значения не гарантирует немедленного изменения плотности любой созданной в данный момент сетки и может изменить плотность только для новых или обновленных сеток.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRMeshSubsystem.GenerateMeshAsync(UnityEngine.XR.MeshId,UnityEngine.Mesh,UnityEngine.MeshCollider,UnityEngine.XR.MeshVertexAttributes,System.Action`1&lt;UnityEngine.XR.MeshGenerationResult&gt;)">
+      <summary>
+        <para>Запрашивает генерацию Mesh с MeshId. Unity вызывает метод MeshGenerationComplete после завершения генерации.</para>
+      </summary>
+      <param name="meshId">MeshId меша, который вы хотите сгенерировать.</param>
+      <param name="mesh">Сетка для записи результатов.</param>
+      <param name="meshCollider">(Необязательно) MeshCollider для заполнения физическими данными. Это может быть значение null.</param>
+      <param name="attributes">Атрибуты вершин, которые вы хотели бы использовать.</param>
+      <param name="onMeshGenerationComplete">Делегат для вызова после завершения генерации.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRMeshSubsystem.GenerateMeshAsync(UnityEngine.XR.MeshId,UnityEngine.Mesh,UnityEngine.MeshCollider,UnityEngine.XR.MeshVertexAttributes,System.Action`1&lt;UnityEngine.XR.MeshGenerationResult&gt;,UnityEngine.XR.MeshGenerationOptions)">
+      <summary>
+        <para>Запрашивает генерацию Mesh с MeshId. Unity вызывает метод MeshGenerationComplete после завершения генерации.</para>
+      </summary>
+      <param name="meshId">MeshId меша, который вы хотите сгенерировать.</param>
+      <param name="mesh">Сетка для записи результатов.</param>
+      <param name="meshCollider">(Необязательно) MeshCollider для заполнения физическими данными. Это может быть значение null.</param>
+      <param name="attributes">Атрибуты вершин, которые вы хотели бы использовать.</param>
+      <param name="onMeshGenerationComplete">Делегат для вызова после завершения генерации.</param>
+      <param name="options">Параметры создания сетки.</param>
+    </member>
+    <member name="M:UnityEngine.XR.XRMeshSubsystem.GetUpdatedMeshTransforms(Unity.Collections.Allocator)">
+      <summary>
+        <para>Получает обновленные преобразования сетки.</para>
+      </summary>
+      <param name="allocator">Распределитель для возвращаемого массива NativeArray.</param>
+      <returns>
+        <para>Новый NativeArray MeshTransforms.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRMeshSubsystem.SetBoundingVolume(UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Установите ограничивающий объем, чтобы ограничить пространство, в котором Unity создает и отслеживает сетки.
+
+Ограничивающий объем представляет собой выровненную по осям ограничивающую рамку (AABB), центрированную в начале координат и простирающуюся в каждом измерении, как определено в экстентах.
+
+Единицы измерения зависят от поставщика.</para>
+      </summary>
+      <param name="origin">
+      </param>
+      <param name="extents">
+      </param>
+    </member>
+    <member name="M:UnityEngine.XR.XRMeshSubsystem.TryGetMeshInfos(System.Collections.Generic.List`1&lt;UnityEngine.XR.MeshInfo&gt;)">
+      <summary>
+        <para>Получает информацию о каждой сетке, которую система в настоящее время отслеживает.</para>
+      </summary>
+      <param name="meshInfosOut">Список MeshInfos для заполнения. Передача нулевого значения вызовет исключение ArgumentNullException.</param>
+      <returns>
+        <para>Истинно, если список был заполнен.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRMeshSubsystemDescriptor">
+      <summary>
+        <para>Информация о XRMeshSubsystem.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRMirrorViewBlitMode">
+      <summary>
+        <para>Движок зарезервировал блит-режимы. Возможности Blit-режима следует запрашивать из XRDisplaySubsystemDescriptor.GetAvailableMirrorBlitModeCount и XRDisplaySubsystemDescriptor.GetMirrorBlitModeByIndex.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.Default">
+      <summary>
+        <para>Зеркальный проход должен переносить образ платформы по умолчанию на зеркальный объект.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.Distort">
+      <summary>
+        <para>Проход зеркального отображения должен передаваться после прохода искажения к зеркальной цели.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.LeftEye">
+      <summary>
+        <para>Зеркальный проход должен переносить изображение левого глаза на зеркальное отображение.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.None">
+      <summary>
+        <para>Зеркальный проход не должен выполняться.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.RightEye">
+      <summary>
+        <para>Зеркальный проход должен совмещать изображение правого глаза с зеркальной целью.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.SideBySide">
+      <summary>
+        <para>Проход зеркального отображения должен совмещать изображения левого и правого глаз с зеркальной целью.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitMode.SideBySideOcclusionMesh">
+      <summary>
+        <para>Проход зеркального отображения должен выполняться так же, как и в режиме бок о бок, но также показывать неотрендеренные пиксели, сохраненные сеткой окклюзии.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRMirrorViewBlitModeDesc">
+      <summary>
+        <para>Структура, описывающая режим копирования зеркального отображения.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitModeDesc.blitMode">
+      <summary>
+        <para>Идентификатор режима отражения зеркального отображения. Дополнительные сведения см. в разделе XRMirrorViewBlitMode. В случае пользовательского blit-режима поставщика значение не будет зарезервированным XRMirrorViewBlitMode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRMirrorViewBlitModeDesc.blitModeDesc">
+      <summary>
+        <para>Строка, описывающая режим копирования зеркального отображения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.XR.XRNode">
+      <summary>
+        <para>Перечень узлов XR, которые могут быть обновлены вводом XR или отправленными тактильными данными.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.CenterEye">
+      <summary>
+        <para>Узел, представляющий точку между левым и правым глазами.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.GameController">
+      <summary>
+        <para>Представляет отслеживаемый игровой контроллер, не связанный с конкретной раздачей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.HardwareTracker">
+      <summary>
+        <para>Представляет физическое устройство, предоставляющее данные отслеживания для объектов, к которым оно подключено.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.Head">
+      <summary>
+        <para>Узел, представляющий голову пользователя.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.LeftEye">
+      <summary>
+        <para>Узел, представляющий левый глаз.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.LeftHand">
+      <summary>
+        <para>Узел, представляющий левую руку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.RightEye">
+      <summary>
+        <para>Узел, представляющий правый глаз.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.RightHand">
+      <summary>
+        <para>Узел, представляющий правую руку.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRNode.TrackingReference">
+      <summary>
+        <para>Представляет стационарное физическое устройство, которое можно использовать в качестве точки отсчета в отслеживаемой области.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.acceleration">
+      <summary>
+        <para>Задает вектор, представляющий текущее ускорение отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.angularAcceleration">
+      <summary>
+        <para>Задает вектор, представляющий текущее угловое ускорение отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.angularVelocity">
+      <summary>
+        <para>Задает вектор, представляющий текущую угловую скорость отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.nodeType">
+      <summary>
+        <para>Тип отслеживаемого узла, указанный в XR.XRNode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.position">
+      <summary>
+        <para>Задает вектор, представляющий текущую позицию отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.rotation">
+      <summary>
+        <para>Задает кватернион, представляющий текущее вращение отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.tracked">
+      <summary>
+        <para>
+Установите значение true, если узел в настоящее время отслеживается базовой системой XR,
+и false, если узел в настоящее время не отслеживается базовой системой XR.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.uniqueID">
+      <summary>
+        <para>Уникальный идентификатор отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRNodeState.velocity">
+      <summary>
+        <para>Задает вектор, представляющий текущую скорость отслеживаемого узла.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetAcceleration(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Попытка получить вектор, представляющий текущее ускорение отслеживаемого узла.</para>
+      </summary>
+      <param name="acceleration">
+      </param>
+      <returns>
+        <para>Истинно, если в выходном параметре задано ускорение. False, если ускорение недоступно из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetAngularAcceleration(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Попытаться получить Vector3, представляющий текущее угловое ускорение отслеживаемого узла.</para>
+      </summary>
+      <param name="angularAcceleration">
+      </param>
+      <returns>
+        <para>Истинно, если в выходном параметре задано угловое ускорение. False, если угловое ускорение недоступно из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetAngularVelocity(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Попытаться получить Vector3, представляющий текущую угловую скорость отслеживаемого узла.</para>
+      </summary>
+      <param name="angularVelocity">
+      </param>
+      <returns>
+        <para>Истинно, если в выходном параметре была задана угловая скорость. False, если угловая скорость недоступна из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetPosition(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Попытаться получить вектор, представляющий текущую позицию отслеживаемого узла.</para>
+      </summary>
+      <param name="position">
+      </param>
+      <returns>
+        <para>Истинно, если позиция была задана в выходном параметре. False, если позиция недоступна из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetRotation(UnityEngine.Quaternion&amp;)">
+      <summary>
+        <para>Попытка получить кватернион, представляющий текущее вращение отслеживаемого узла.</para>
+      </summary>
+      <param name="rotation">
+      </param>
+      <returns>
+        <para>Истинно, если поворот был установлен в выходном параметре. False, если ротация недоступна из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.XR.XRNodeState.TryGetVelocity(UnityEngine.Vector3&amp;)">
+      <summary>
+        <para>Попытка получить вектор, представляющий текущую скорость отслеживаемого узла.</para>
+      </summary>
+      <param name="velocity">
+      </param>
+      <returns>
+        <para>Истинно, если скорость была установлена ​​в выходном параметре. False, если скорость недоступна из-за ограничений базовой платформы или если узел в настоящее время не отслеживается.</para>
+      </returns>
+    </member>
+  </members>
+</doc>

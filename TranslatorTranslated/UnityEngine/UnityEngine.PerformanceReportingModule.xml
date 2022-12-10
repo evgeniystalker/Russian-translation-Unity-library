@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.PerformanceReportingModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Analytics.PerformanceReporting">
+      <summary>
+        <para>Unity Performace предоставляет информацию о производительности вашей игры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.PerformanceReporting.enabled">
+      <summary>
+        <para>Определяет, включена ли служба отчетов о производительности во время выполнения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.PerformanceReporting.graphicsInitializationFinishTime">
+      <summary>
+        <para>Время, необходимое для инициализации графики в микросекундах, измеренное с момента запуска приложения.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

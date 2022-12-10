@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ClusterInputModule</name>
+    </assembly>
+    <member name="T:UnityEngine.ClusterInput">
+      <summary>
+        <para>Интерфейс для чтения и записи входных данных в кластере Unity.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.AddInput(System.String,System.String,System.String,System.Int32,UnityEngine.ClusterInputType)">
+      <summary>
+        <para>Добавьте новую входную запись VRPN.</para>
+      </summary>
+      <param name="name">Имя входной записи. Это должно быть уникальным.</param>
+      <param name="deviceName">Имя устройства, зарегистрированного на сервере VRPN.</param>
+      <param name="serverUrl">URL-адрес сервера vrpn.</param>
+      <param name="index">Индекс входной записи, обратитесь к vrpn.cfg, если вы не уверены.</param>
+      <param name="type">Тип ввода.</param>
+      <returns>
+        <para>Истинно, если операция прошла успешно.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.CheckConnectionToServer(System.String)">
+      <summary>
+        <para>Проверьте состояние подключения устройства к серверу VRPN, к которому оно подключено.</para>
+      </summary>
+      <param name="name">Имя входной записи.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.EditInput(System.String,System.String,System.String,System.Int32,UnityEngine.ClusterInputType)">
+      <summary>
+        <para>Отредактируйте входную запись, добавленную через ClusterInput.AddInput.</para>
+      </summary>
+      <param name="name">Имя входной записи. Это должно быть уникальным.</param>
+      <param name="deviceName">Имя устройства, зарегистрированного на сервере VRPN.</param>
+      <param name="serverUrl">URL-адрес сервера vrpn.</param>
+      <param name="index">Индекс входной записи, обратитесь к vrpn.cfg, если вы не уверены.</param>
+      <param name="type">Тип ClusterInputType следующим образом.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.GetAxis(System.String)">
+      <summary>
+        <para>Возвращает значение оси как непрерывное число с плавающей запятой.</para>
+      </summary>
+      <param name="name">Имя входа в poll.c.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.GetButton(System.String)">
+      <summary>
+        <para>Возвращает двоичное значение кнопки.</para>
+      </summary>
+      <param name="name">Имя входа для опроса.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.GetTrackerPosition(System.String)">
+      <summary>
+        <para>Возвращает позицию трекера как Vector3.</para>
+      </summary>
+      <param name="name">Имя входа для опроса.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.GetTrackerRotation(System.String)">
+      <summary>
+        <para>Возвращает вращение трекера в виде кватерниона.</para>
+      </summary>
+      <param name="name">Имя входа для опроса.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.SetAxis(System.String,System.Single)">
+      <summary>
+        <para>Устанавливает значение оси для этого входа. Работает только для введенных данных Custom.</para>
+      </summary>
+      <param name="name">Имя ввода для изменения.</param>
+      <param name="value">Значение для установки.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.SetButton(System.String,System.Boolean)">
+      <summary>
+        <para>Устанавливает значение кнопки для этого входа. Работает только для введенных данных Custom.</para>
+      </summary>
+      <param name="name">Имя ввода для изменения.</param>
+      <param name="value">Значение для установки.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.SetTrackerPosition(System.String,UnityEngine.Vector3)">
+      <summary>
+        <para>Устанавливает позицию трекера для этого входа. Работает только для введенных данных Custom.</para>
+      </summary>
+      <param name="name">Имя ввода для изменения.</param>
+      <param name="value">Значение для установки.</param>
+    </member>
+    <member name="M:UnityEngine.ClusterInput.SetTrackerRotation(System.String,UnityEngine.Quaternion)">
+      <summary>
+        <para>Устанавливает вращение трекера для этого входа. Работает только для введенных данных Custom.</para>
+      </summary>
+      <param name="name">Имя ввода для изменения.</param>
+      <param name="value">Значение для установки.</param>
+    </member>
+    <member name="T:UnityEngine.ClusterInputType">
+      <summary>
+        <para>Значения для определения типа входного значения, ожидаемого от одной записи ClusterInput.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClusterInputType.Axis">
+      <summary>
+        <para>Устройство представляет собой аналоговую ось, которая обеспечивает непрерывное значение, представленное числом с плавающей запятой.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClusterInputType.Button">
+      <summary>
+        <para>Устройство, которое возвращает двоичный результат нажатия или отсутствия нажатия.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClusterInputType.CustomProvidedInput">
+      <summary>
+        <para>Пользовательский ввод.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ClusterInputType.Tracker">
+      <summary>
+        <para>Устройство, предоставляющее значения положения и ориентации.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

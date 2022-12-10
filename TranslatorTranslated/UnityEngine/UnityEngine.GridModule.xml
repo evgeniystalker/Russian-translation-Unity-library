@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.GridModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Grid">
+      <summary>
+        <para>Grid — это базовый класс для построения макета из равномерно расположенных точек и линий.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Grid.cellGap">
+      <summary>
+        <para>Размер промежутка между каждой ячейкой в ​​сетке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Grid.cellLayout">
+      <summary>
+        <para>Расположение ячеек в сетке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Grid.cellSize">
+      <summary>
+        <para>Размер каждой ячейки в сетке.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Grid.cellSwizzle">
+      <summary>
+        <para>Прокрутка ячейки для сетки.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Grid.GetCellCenterLocal(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получить координату логического центра ячейки сетки в локальном пространстве.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Центр ячейки преобразован в локальные пространственные координаты.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Grid.GetCellCenterWorld(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Получить координату логического центра ячейки сетки в мировом пространстве.</para>
+      </summary>
+      <param name="position">Позиция ячейки сетки.</param>
+      <returns>
+        <para>Центр ячейки преобразован в координаты мирового пространства.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Grid.InverseSwizzle(UnityEngine.GridLayout/CellSwizzle,UnityEngine.Vector3)">
+      <summary>
+        <para>Делает обратный swizzle данной позиции для данного порядка swizzle.</para>
+      </summary>
+      <param name="swizzle">Определяет порядок перестановки для обратного свизла.</param>
+      <param name="position">Позиция для обратного взмаха.</param>
+      <returns>
+        <para>Перевернутое положение swizzled.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Grid.Swizzle(UnityEngine.GridLayout/CellSwizzle,UnityEngine.Vector3)">
+      <summary>
+        <para>Прокручивает заданную позицию с заданным порядком прокрутки.</para>
+      </summary>
+      <param name="swizzle">Определяет порядок перестановки для swizzle.</param>
+      <param name="position">Позиция для свизла.</param>
+      <returns>
+        <para>Прокаченная позиция.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GridLayout">
+      <summary>
+        <para>Абстрактный класс, определяющий макет сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GridLayout.cellGap">
+      <summary>
+        <para>Размер промежутка между каждой ячейкой макета.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GridLayout.cellLayout">
+      <summary>
+        <para>Расположение ячеек.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GridLayout.cellSize">
+      <summary>
+        <para>Размер каждой ячейки в макете.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GridLayout.cellSwizzle">
+      <summary>
+        <para>Прокрутка ячейки для макета.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GridLayout.CellLayout">
+      <summary>
+        <para>Макет GridLayout.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellLayout.Hexagon">
+      <summary>
+        <para>Шестиугольное расположение ячеек в GridLayout.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellLayout.Isometric">
+      <summary>
+        <para>Изометрический макет для ячеек в GridLayout.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellLayout.IsometricZAsY">
+      <summary>
+        <para>Изометрический макет для ячеек в GridLayout, где любой набор значений ячеек Z будет добавлен как значение Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellLayout.Rectangle">
+      <summary>
+        <para>Прямоугольный макет для ячеек в GridLayout.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GridLayout.CellSwizzle">
+      <summary>
+        <para>Перемещает позиции ячеек в другие позиции.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.XYZ">
+      <summary>
+        <para>Сохраняет позиции ячеек по XYZ.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.XZY">
+      <summary>
+        <para>Меняет позиции ячеек с XYZ на XZY.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.YXZ">
+      <summary>
+        <para>Меняет позиции ячеек с XYZ на YXZ.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.YZX">
+      <summary>
+        <para>Меняет позиции ячеек с XYZ на YZX.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.ZXY">
+      <summary>
+        <para>Меняет позиции ячеек с XYZ на ZXY.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GridLayout.CellSwizzle.ZYX">
+      <summary>
+        <para>Меняет позиции ячеек с XYZ на ZYX.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GridLayout.CellToLocal(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Преобразует позицию ячейки в локальное пространство позиций.</para>
+      </summary>
+      <param name="cellPosition">Позиция ячейки для преобразования.</param>
+      <returns>
+        <para>Локальное положение ячейки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.CellToLocalInterpolated(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует интерполированную позицию ячейки в числах с плавающей запятой в локальное пространство позиций.</para>
+      </summary>
+      <param name="cellPosition">Интерполированная позиция ячейки для преобразования.</param>
+      <returns>
+        <para>Локальное положение ячейки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.CellToWorld(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Преобразует позицию ячейки в мировую позицию.</para>
+      </summary>
+      <param name="cellPosition">Позиция ячейки для преобразования.</param>
+      <returns>
+        <para>Мировая позиция позиции ячейки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.GetBoundsLocal(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Возвращает локальные границы ячейки в указанном местоположении.</para>
+      </summary>
+      <param name="cellPosition">Расположение ячейки.</param>
+      <returns>
+        <para>Локальные границы ячейки в местоположении.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.GetBoundsLocal(UnityEngine.Vector3,UnityEngine.Vector3)">
+      <summary>
+        <para>Возвращает локальные границы для групп ячеек в расположении.</para>
+      </summary>
+      <param name="origin">Происхождение группы ячеек.</param>
+      <param name="size">Размер группы ячеек.</param>
+      <returns>
+        <para>Локальные границы группы ячеек в расположении.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.GetLayoutCellCenter">
+      <summary>
+        <para>Получить координату центра ячейки по умолчанию для заданного макета сетки.</para>
+      </summary>
+      <returns>
+        <para>Координата центра ячейки.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.LocalToCell(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует локальную позицию в позицию ячейки.</para>
+      </summary>
+      <param name="localPosition">Локальная позиция для преобразования.</param>
+      <returns>
+        <para>Позиция ячейки локальной позиции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.LocalToCellInterpolated(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует локальную позицию в позицию ячейки.</para>
+      </summary>
+      <param name="localPosition">Локальная позиция для преобразования.</param>
+      <returns>
+        <para>Интерполированная позиция ячейки локальной позиции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.LocalToWorld(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует локальную позицию в мировую.</para>
+      </summary>
+      <param name="localPosition">Локальная позиция для преобразования.</param>
+      <returns>
+        <para>Мировая позиция локальной позиции.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.WorldToCell(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует позицию в мире в позицию ячейки.</para>
+      </summary>
+      <param name="worldPosition">Мировая позиция для преобразования.</param>
+      <returns>
+        <para>Позиция ячейки мировых координатах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GridLayout.WorldToLocal(UnityEngine.Vector3)">
+      <summary>
+        <para>Преобразует позицию в мире в локальную позицию.</para>
+      </summary>
+      <param name="worldPosition">Мировая позиция для преобразования.</param>
+      <returns>
+        <para>Локальное положение мировой позиции.</para>
+      </returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.VideoModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Experimental.Video.VideoClipPlayable">
+      <summary>
+        <para>Реализация IPlayable, управляющая воспроизведением видеоклипа.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.Video.VideoClipPlayable.Create(UnityEngine.Playables.PlayableGraph,UnityEngine.Video.VideoClip,System.Boolean)">
+      <summary>
+        <para>Создает VideoClipPlayable в PlayableGraph.</para>
+      </summary>
+      <param name="graph">Объект PlayableGraph, которому будет принадлежать VideoClipPlayable.</param>
+      <param name="looping">Указывает, зацикливается ли видеоклип, когда достигает конца.</param>
+      <param name="clip">Видеоклип, используемый для создания текстур в PlayableGraph.</param>
+      <returns>
+        <para>VideoClipPlayable, связанный с PlayableGraph.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Experimental.Video.VideoPlayerExtensions">
+      <summary>
+        <para>Методы расширения для класса Video.VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.Video.VideoPlayerExtensions.GetAudioSampleProvider(UnityEngine.Video.VideoPlayer,System.UInt16)">
+      <summary>
+        <para>Возвращает Experimental.Audio.AudioSampleProvider для указанной дорожки, используемой для получения аудиосэмплов во время воспроизведения.</para>
+      </summary>
+      <param name="vp">Указатель this для метода расширения.</param>
+      <param name="trackIndex">Индекс звуковой дорожки, для которого запрашивается образец поставщика.</param>
+      <returns>
+        <para>Образец поставщика для указанной дорожки.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.VideoModule">
+      <summary>
+        <para>Модуль «Видео» позволяет воспроизводить видеофайлы в вашем контенте.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.Video3DLayout">
+      <summary>
+        <para>Типы размещения 3D-контента в видео.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.Video3DLayout.No3D">
+      <summary>
+        <para>В видео нет 3D-контента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.Video3DLayout.OverUnder3D">
+      <summary>
+        <para>Видео содержит 3D-контент, где левый глаз занимает верхнюю половину, а правый глаз — нижнюю половину видеокадра.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.Video3DLayout.SideBySide3D">
+      <summary>
+        <para>Видео содержит 3D-контент, в котором левый глаз занимает левую половину, а правый глаз — правую половину видеокадра.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoAspectRatio">
+      <summary>
+        <para>Методы, используемые для размещения видео в целевой области.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.FitHorizontally">
+      <summary>
+        <para>Измените размер пропорционально, чтобы ширина соответствовала целевой области, обрезая или добавляя черные полосы сверху и снизу, если это необходимо.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.FitInside">
+      <summary>
+        <para>Пропорционально измените размер, чтобы содержимое соответствовало целевой области, добавляя при необходимости черные полосы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.FitOutside">
+      <summary>
+        <para>Измените размер пропорционально, чтобы содержимое соответствовало целевой области, обрезая при необходимости.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.FitVertically">
+      <summary>
+        <para>Измените размер пропорционально, чтобы высота соответствовала целевой области, обрезая или добавляя черные полосы с каждой стороны, если это необходимо.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.NoScaling">
+      <summary>
+        <para>Сохранить размер пикселя без настройки целевой области.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAspectRatio.Stretch">
+      <summary>
+        <para>Измените размер непропорционально, чтобы он соответствовал целевой области.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoAudioOutputMode">
+      <summary>
+        <para>Места, куда можно отправить звук, встроенный в видео.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAudioOutputMode.APIOnly">
+      <summary>
+        <para>Отправьте встроенный звук в связанный AudioSampleProvider.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAudioOutputMode.AudioSource">
+      <summary>
+        <para>Отправить встроенный звук в указанный AudioSource.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAudioOutputMode.Direct">
+      <summary>
+        <para>Отправьте встроенный звук прямо на звуковое оборудование платформы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoAudioOutputMode.None">
+      <summary>
+        <para>Отключите встроенный звук.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoClip">
+      <summary>
+        <para>Контейнер для видеоданных.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.audioTrackCount">
+      <summary>
+        <para>Количество звуковых дорожек в клипе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.frameCount">
+      <summary>
+        <para>Длина видеоклипа в кадрах. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.frameRate">
+      <summary>
+        <para>Частота кадров клипа в кадрах в секунду. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.height">
+      <summary>
+        <para>Высота изображений в видеоклипе в пикселях. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.length">
+      <summary>
+        <para>Продолжительность видеоклипа в секундах. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.originalPath">
+      <summary>
+        <para>Путь к видеоклипу в ресурсах проекта. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.pixelAspectRatioDenominator">
+      <summary>
+        <para>Знаменатель соотношения сторон пикселя (число:день). (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.pixelAspectRatioNumerator">
+      <summary>
+        <para>Числитель соотношения сторон пикселя (число:день). (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.sRGB">
+      <summary>
+        <para>Содержит ли импортированный клип данные о цвете sRGB (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoClip.width">
+      <summary>
+        <para>Ширина изображений в видеоклипе в пикселях. (Только чтение).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoClip.GetAudioChannelCount(System.UInt16)">
+      <summary>
+        <para>Количество каналов в звуковой дорожке. Например, 2 для стереодорожки.</para>
+      </summary>
+      <param name="audioTrackIdx">Индекс запрошенной звуковой дорожки.</param>
+      <returns>
+        <para>Количество каналов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoClip.GetAudioLanguage(System.UInt16)">
+      <summary>
+        <para>Получить язык звуковой дорожки. Может быть неизвестно.</para>
+      </summary>
+      <param name="audioTrackIdx">Индекс запрошенной звуковой дорожки.</param>
+      <returns>
+        <para>Сокращенное название языка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoClip.GetAudioSampleRate(System.UInt16)">
+      <summary>
+        <para>Получите частоту дискретизации звуковой дорожки в герцах.</para>
+      </summary>
+      <param name="audioTrackIdx">Индекс запрошенной звуковой дорожки.</param>
+      <returns>
+        <para>Частота дискретизации в герцах.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Video.VideoPlayer">
+      <summary>
+        <para>Воспроизводит видеоконтент на целевом объекте.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.aspectRatio">
+      <summary>
+        <para>Определяет, как видеоконтент будет растягиваться, чтобы заполнить целевую область.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.audioOutputMode">
+      <summary>
+        <para>Место назначения для аудио, встроенного в видео.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.audioTrackCount">
+      <summary>
+        <para>Количество звуковых дорожек, найденных в текущем сконфигурированном источнике данных. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canSetDirectAudioVolume">
+      <summary>
+        <para>Поддерживаются ли регуляторы громкости прямого вывода для текущей платформы и формата видео. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canSetPlaybackSpeed">
+      <summary>
+        <para>Можно ли изменить скорость воспроизведения. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canSetSkipOnDrop">
+      <summary>
+        <para>Можно ли контролировать пропуск кадров для поддержания синхронизации. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canSetTime">
+      <summary>
+        <para>Можно ли изменить текущее время с помощью свойства time или timeFrames. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canSetTimeSource">
+      <summary>
+        <para>Можно ли изменить источник времени, за которым следует VideoPlayer. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.canStep">
+      <summary>
+        <para>Возвращает true, если VideoPlayer может переходить вперед по видеоконтенту. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.clip">
+      <summary>
+        <para>Клип, воспроизводимый VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.clockResyncOccurred(UnityEngine.Video.VideoPlayer/TimeEventHandler)">
+      <summary>
+        <para>Вызывается, когда часы VideoPlayer синхронизируются с его Video.VideoTimeReference.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.clockTime">
+      <summary>
+        <para>Время по часам, которому VideoPlayer следует для планирования своих семплов. Время часов выражается в секундах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.controlledAudioTrackCount">
+      <summary>
+        <para>Количество звуковых дорожек, которыми будет управлять этот видеопроигрыватель.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.controlledAudioTrackMaxCount">
+      <summary>
+        <para>Максимальное количество аудиодорожек, которыми можно управлять. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.errorReceived(UnityEngine.Video.VideoPlayer/ErrorEventHandler)">
+      <summary>
+        <para>Через этот обратный вызов сообщается об ошибках, таких как проблемы с HTTP-соединением.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.externalReferenceTime">
+      <summary>
+        <para>Эталонное время внешних часов, которое Video.VideoPlayer использует для коррекции дрейфа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.frame">
+      <summary>
+        <para>Индекс кадра текущего доступного кадра в VideoPlayer.texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.frameCount">
+      <summary>
+        <para>Количество кадров в текущем видеоконтенте. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.frameDropped(UnityEngine.Video.VideoPlayer/EventHandler)">
+      <summary>
+        <para>[ЕЩЕ НЕ РЕАЛИЗОВАНО] Вызывается, когда видеодекодер не создает кадр в соответствии с источником времени во время воспроизведения.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.frameRate">
+      <summary>
+        <para>Частота кадров клипа или URL-адреса в кадрах в секунду. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.frameReady(UnityEngine.Video.VideoPlayer/FrameReadyEventHandler)">
+      <summary>
+        <para>Вызывается, когда новый кадр готов.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.height">
+      <summary>
+        <para>Высота изображений в видеоклипе или URL-адресе в пикселях. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.isLooping">
+      <summary>
+        <para>Определяет, будет ли VideoPlayer перезапускаться с начала при достижении конца клипа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.isPaused">
+      <summary>
+        <para>Приостановлено ли воспроизведение. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.isPlaying">
+      <summary>
+        <para>Воспроизводится ли контент. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.isPrepared">
+      <summary>
+        <para>Успешно ли VideoPlayer подготовил содержимое для воспроизведения. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.length">
+      <summary>
+        <para>Длина видеоклипа или URL-адрес в секундах. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.loopPointReached(UnityEngine.Video.VideoPlayer/EventHandler)">
+      <summary>
+        <para>Вызывается, когда VideoPlayer достигает конца содержимого для воспроизведения.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.pixelAspectRatioDenominator">
+      <summary>
+        <para>Знаменатель соотношения сторон пикселя (число:день) для видеоклипа или URL-адреса. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.pixelAspectRatioNumerator">
+      <summary>
+        <para>Числитель соотношения сторон пикселя (число:день) для видеоклипа или URL-адреса. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.playbackSpeed">
+      <summary>
+        <para>Коэффициент, на который будет умножаться базовая скорость воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.playOnAwake">
+      <summary>
+        <para>Будет ли воспроизводиться содержимое, как только компонент проснется.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.prepareCompleted(UnityEngine.Video.VideoPlayer/EventHandler)">
+      <summary>
+        <para>Вызывается, когда подготовка VideoPlayer завершена.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.renderMode">
+      <summary>
+        <para>Где будет отображаться видеоконтент.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.seekCompleted(UnityEngine.Video.VideoPlayer/EventHandler)">
+      <summary>
+        <para>Вызывать после завершения операции поиска.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.sendFrameReadyEvents">
+      <summary>
+        <para>Включает события frameReady.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.skipOnDrop">
+      <summary>
+        <para>Разрешено ли VideoPlayer пропускать кадры, чтобы не отставать от текущего времени.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.source">
+      <summary>
+        <para>Источник, который VideoPlayer использует для воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Video.VideoPlayer.started(UnityEngine.Video.VideoPlayer/EventHandler)">
+      <summary>
+        <para>Вызывается сразу после вызова Play.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetCamera">
+      <summary>
+        <para>Компонент камеры для отрисовки, когда для параметра Video.VideoPlayer.renderMode задано значение Video.VideoRenderMode.CameraFarPlane или Video.VideoRenderMode.CameraNearPlane.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetCamera3DLayout">
+      <summary>
+        <para>Тип 3D-контента, содержащегося в исходном видеоматериале.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetCameraAlpha">
+      <summary>
+        <para>Общий уровень прозрачности видео плоскости целевой камеры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetMaterialProperty">
+      <summary>
+        <para>Свойство текстуры материала, которое используется, когда для параметра Video.VideoPlayer.renderMode установлено значение Video.VideoTarget.MaterialOverride.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetMaterialRenderer">
+      <summary>
+        <para>Рендерер, который является целевым, когда для Video.VideoPlayer.renderMode установлено значение Video.VideoTarget.MaterialOverride</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.targetTexture">
+      <summary>
+        <para>RenderTexture для рисования, когда для параметра Video.VideoPlayer.renderMode установлено значение Video.VideoTarget.RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.texture">
+      <summary>
+        <para>Внутренняя текстура, в которой размещается видеоконтент. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.time">
+      <summary>
+        <para>Время представления текущего доступного кадра в VideoPlayer.texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.timeReference">
+      <summary>
+        <para>Часы, которые Video.VideoPlayer отслеживает для обнаружения и исправления дрейфа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.timeSource">
+      <summary>
+        <para>[ЕЩЕ НЕ РЕАЛИЗОВАНО] Источник, используемый VideoPlayer для получения текущего времени.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.url">
+      <summary>
+        <para>Файл или URL-адрес HTTP, из которого VideoPlayer считывает содержимое.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.waitForFirstFrame">
+      <summary>
+        <para>Определяет, будет ли VideoPlayer ожидать загрузки первого кадра в текстуру перед началом воспроизведения, если включен параметр Video.VideoPlayer.playOnAwake.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Video.VideoPlayer.width">
+      <summary>
+        <para>Ширина изображений в видеоклипе или URL-адресе в пикселях. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.EnableAudioTrack(System.UInt16,System.Boolean)">
+      <summary>
+        <para>Включить/выключить декодирование звуковой дорожки. Действует только тогда, когда VideoPlayer в данный момент не воспроизводится.</para>
+      </summary>
+      <param name="trackIndex">Индекс звуковой дорожки для включения/выключения.</param>
+      <param name="enabled">True для включения трека. False для отключения дорожки.</param>
+    </member>
+    <member name="T:UnityEngine.Video.VideoPlayer.ErrorEventHandler">
+      <summary>
+        <para>Тип делегата для событий VideoPlayer, содержащих сообщение об ошибке.</para>
+      </summary>
+      <param name="source">VideoPlayer, создающий событие.</param>
+      <param name="message">Сообщение с описанием только что возникшей ошибки.</param>
+    </member>
+    <member name="T:UnityEngine.Video.VideoPlayer.EventHandler">
+      <summary>
+        <para>Тип делегата для всех событий без параметров, создаваемых VideoPlayers.</para>
+      </summary>
+      <param name="source">VideoPlayer, создающий событие.</param>
+    </member>
+    <member name="T:UnityEngine.Video.VideoPlayer.FrameReadyEventHandler">
+      <summary>
+        <para>Тип делегата для событий VideoPlayer, которые содержат номер кадра.</para>
+      </summary>
+      <param name="source">VideoPlayer, создающий событие.</param>
+      <param name="frameNum">Текущий кадр VideoPlayer.</param>
+      <param name="frameIdx">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetAudioChannelCount(System.UInt16)">
+      <summary>
+        <para>Количество аудиоканалов в указанной звуковой дорожке.</para>
+      </summary>
+      <param name="trackIndex">Индекс запрашиваемой звуковой дорожки.</param>
+      <returns>
+        <para>Количество аудиоканалов.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetAudioLanguageCode(System.UInt16)">
+      <summary>
+        <para>Возвращает код языка, если он есть, для указанной дорожки.</para>
+      </summary>
+      <param name="trackIndex">Индекс звуковой дорожки для запроса.</param>
+      <returns>
+        <para>Код языка.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetAudioSampleRate(System.UInt16)">
+      <summary>
+        <para>Получает частоту дискретизации звуковой дорожки в герцах.</para>
+      </summary>
+      <param name="trackIndex">Индекс звуковой дорожки для запроса.</param>
+      <returns>
+        <para>Частота дискретизации в герцах.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetDirectAudioMute(System.UInt16)">
+      <summary>
+        <para>Получает состояние отключения звука прямого вывода для указанной дорожки.</para>
+      </summary>
+      <param name="trackIndex">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetDirectAudioVolume(System.UInt16)">
+      <summary>
+        <para>Возвращает громкость прямого вывода для указанной дорожки.</para>
+      </summary>
+      <param name="trackIndex">Индекс дорожки, для которого запрашивается том.</param>
+      <returns>
+        <para>Громкость, от 0 до 1.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.GetTargetAudioSource(System.UInt16)">
+      <summary>
+        <para>Получает AudioSource, который будет получать образцы аудио для указанной дорожки, если для параметра Video.VideoPlayer.audioOutputMode установлено значение Video.VideoAudioOutputMode.AudioSource.</para>
+      </summary>
+      <param name="trackIndex">Индекс звуковой дорожки, для которой требуется AudioSource.</param>
+      <returns>
+        <para>Источник, связанный со звуковой дорожкой.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.IsAudioTrackEnabled(System.UInt16)">
+      <summary>
+        <para>Включено ли декодирование для указанной звуковой дорожки. См. раздел Video.VideoPlayer.EnableAudioTrack, чтобы узнать о различиях с отключением звука.</para>
+      </summary>
+      <param name="trackIndex">Индекс запрашиваемой звуковой дорожки.</param>
+      <returns>
+        <para>Возвращает true, если декодирование для указанной звуковой дорожки включено.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.Pause">
+      <summary>
+        <para>Приостанавливает воспроизведение и оставляет текущее время без изменений.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.Play">
+      <summary>
+        <para>Начинает воспроизведение.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.Prepare">
+      <summary>
+        <para>Инициирует подготовку механизма воспроизведения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.SetDirectAudioMute(System.UInt16,System.Boolean)">
+      <summary>
+        <para>Установите статус отключения звука прямого вывода для указанной дорожки.</para>
+      </summary>
+      <param name="trackIndex">Индекс дорожки, для которой установлено отключение звука.</param>
+      <param name="mute">Включить/выключить звук.</param>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.SetDirectAudioVolume(System.UInt16,System.Single)">
+      <summary>
+        <para>Установите громкость звука прямого вывода для указанной дорожки.</para>
+      </summary>
+      <param name="trackIndex">Индекс трека, для которого установлена ​​громкость.</param>
+      <param name="volume">Новый том, от 0 до 1.</param>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.SetTargetAudioSource(System.UInt16,UnityEngine.AudioSource)">
+      <summary>
+        <para>Устанавливает AudioSource, который будет получать образцы звука для указанной дорожки, если эта цель звука выбрана с помощью Video.VideoPlayer.audioOutputMode.</para>
+      </summary>
+      <param name="trackIndex">Индекс звуковой дорожки для связи с указанным AudioSource.</param>
+      <param name="source">AudioSource для связи с аудиодорожкой.</param>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.StepForward">
+      <summary>
+        <para>Немедленно переводит текущее время на один кадр вперед.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Video.VideoPlayer.Stop">
+      <summary>
+        <para>Останавливает воспроизведение и устанавливает текущее время на 0.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoPlayer.TimeEventHandler">
+      <summary>
+        <para>Тип делегата для событий VideoPlayer, которые содержат временную позицию.</para>
+      </summary>
+      <param name="source">VideoPlayer, создающий событие.</param>
+      <param name="seconds">Позиция времени.</param>
+    </member>
+    <member name="T:UnityEngine.Video.VideoRenderMode">
+      <summary>
+        <para>Тип назначения для изображений, прочитанных VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoRenderMode.APIOnly">
+      <summary>
+        <para>Не рисуйте видеоконтент нигде, но по-прежнему делайте его доступным через свойство текстуры VideoPlayer в API.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoRenderMode.CameraFarPlane">
+      <summary>
+        <para>Нарисуйте видеоконтент за сценой камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoRenderMode.CameraNearPlane">
+      <summary>
+        <para>Нарисуйте видеоконтент перед сценой камеры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoRenderMode.MaterialOverride">
+      <summary>
+        <para>Нарисуйте видеоконтент в указанном пользователем свойстве материала текущего GameObject.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoRenderMode.RenderTexture">
+      <summary>
+        <para>Нарисуйте видеоконтент в RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoSource">
+      <summary>
+        <para>Источник видеоконтента для VideoPlayer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoSource.Url">
+      <summary>
+        <para>Использовать текущий URL-адрес в качестве источника видеоконтента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoSource.VideoClip">
+      <summary>
+        <para>Использовать текущий клип в качестве источника видеоконтента.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoTimeReference">
+      <summary>
+        <para>Часы, которые Video.VideoPlayer отслеживает для обнаружения и исправления дрейфа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoTimeReference.ExternalTime">
+      <summary>
+        <para>Внешние эталонные часы, которые Video.VideoPlayer наблюдает, чтобы обнаружить и исправить дрейф.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoTimeReference.Freerun">
+      <summary>
+        <para>Отключает обнаружение дрейфа.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoTimeReference.InternalTime">
+      <summary>
+        <para>Внутренние эталонные часы, которые Video.VideoPlayer наблюдает, чтобы обнаружить и исправить дрейф.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Video.VideoTimeSource">
+      <summary>
+        <para>Источник времени, за которым следует Video.VideoPlayer при чтении содержимого.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoTimeSource.AudioDSPTimeSource">
+      <summary>
+        <para>Звуковые аппаратные часы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Video.VideoTimeSource.GameTimeSource">
+      <summary>
+        <para>Немасштабированное игровое время, определенное в Time.realtimeSinceStartup.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

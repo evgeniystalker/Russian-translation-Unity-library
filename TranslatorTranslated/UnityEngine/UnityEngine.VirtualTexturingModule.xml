@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.VirtualTexturingModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.FilterMode">
+      <summary>
+        <para>Режимы фильтрации, доступные в системе виртуального текстурирования.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.VirtualTexturing.FilterMode.Bilinear">
+      <summary>
+        <para>Билинейная фильтрация.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.VirtualTexturing.FilterMode.Trilinear">
+      <summary>
+        <para>Трилинейная фильтрация.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.GPUCacheSetting">
+      <summary>
+        <para>Настройки виртуального кеша графического процессора для текстурирования.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.VirtualTexturing.GPUCacheSetting.format">
+      <summary>
+        <para>Формат кэша, к которому применяются эти настройки.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.VirtualTexturing.GPUCacheSetting.sizeInMegaBytes">
+      <summary>
+        <para>Размер в мегабайтах кэша, созданного с этими настройками.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.Procedural">
+      <summary>
+        <para>Статический класс, представляющий систему процедурного виртуального текстурирования. В настоящее время Unity не поддерживает эту систему.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.Resolver">
+      <summary>
+        <para>Класс, отвечающий за анализ отзывов о виртуальном текстурировании.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Resolver.#ctor">
+      <summary>
+        <para>Создайте новый объект VirtualTextureResolver.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.VirtualTexturing.Resolver.CurrentHeight">
+      <summary>
+        <para>&gt;Высота текстуры, которую могут удерживать внутренние буферы.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.VirtualTexturing.Resolver.CurrentWidth">
+      <summary>
+        <para>Ширина текстуры, которую могут хранить внутренние буферы.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Resolver.Dispose">
+      <summary>
+        <para>Удаляет этот объект.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Resolver.Process(UnityEngine.Rendering.CommandBuffer,UnityEngine.Rendering.RenderTargetIdentifier,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Обработать переданную текстуру обратной связи.</para>
+      </summary>
+      <param name="cmd">Командный буфер, используемый для планирования обработки.</param>
+      <param name="rt">Текстура, содержащая данные обратной связи.</param>
+      <param name="x">Позиция X обрабатываемого подчиненного.</param>
+      <param name="width">Ширина обрабатываемого подтекста.</param>
+      <param name="y">Позиция Y обрабатываемого подчиненного.</param>
+      <param name="height">Высота обрабатываемого подтекста.</param>
+      <param name="mip">Miplevel обрабатываемой текстуры.</param>
+      <param name="slice">Массивтекстуры для обработки.</param>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Resolver.Process(UnityEngine.Rendering.CommandBuffer,UnityEngine.Rendering.RenderTargetIdentifier)">
+      <summary>
+        <para>Обработать переданную текстуру обратной связи.</para>
+      </summary>
+      <param name="cmd">Командный буфер, используемый для планирования обработки.</param>
+      <param name="rt">Текстура, содержащая данные обратной связи.</param>
+      <param name="x">Позиция X обрабатываемого подчиненного.</param>
+      <param name="width">Ширина обрабатываемого подтекста.</param>
+      <param name="y">Позиция Y обрабатываемого подчиненного.</param>
+      <param name="height">Высота обрабатываемого подтекста.</param>
+      <param name="mip">Miplevel обрабатываемой текстуры.</param>
+      <param name="slice">Массивтекстуры для обработки.</param>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Resolver.UpdateSize(System.Int32,System.Int32)">
+      <summary>
+        <para>Обновите внутренние буферы.</para>
+      </summary>
+      <param name="width">Ширина текстуры, переданной во время процесса.</param>
+      <param name="height">Высота текстуры, переданной во время процесса.</param>
+    </member>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.Streaming">
+      <summary>
+        <para>Статический класс, представляющий систему потокового виртуального текстурирования.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetCPUCacheSize">
+      <summary>
+        <para>Получает размер кэша ЦП (в мегабайтах), используемый потоковым виртуальным текстурированием.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetGPUCacheSettings">
+      <summary>
+        <para>Получает параметры кэша графического процессора, используемые потоковым виртуальным текстурированием.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetTextureStackSize(UnityEngine.Material,System.Int32,System.Int32&amp;,System.Int32&amp;)">
+      <summary>
+        <para>Получает ширину и высоту стека виртуальных текстур в пикселях.</para>
+      </summary>
+      <param name="mat">Материал, содержащий виртуальный стек текстур. Стеки виртуальных текстур, содержащиеся в материале, объявляются в шейдере материала.</param>
+      <param name="stackNameId">Уникальный идентификатор имени виртуального стека текстур, объявленный в шейдере. Чтобы найти идентификатор для заданного имени свойства шейдера, используйте Shader.PropertyToID.</param>
+      <param name="width">Unity заполняет ширину шириной стека виртуальных текстур в пикселях.</param>
+      <param name="height">Unity заполняет высоту высотой стека виртуальных текстур в пикселях.</param>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.RequestRegion(UnityEngine.Material,System.Int32,UnityEngine.Rect,System.Int32,System.Int32)">
+      <summary>
+        <para>Сделать прямоугольник в UV-пространстве резидентным для данного стека виртуальных текстур.</para>
+      </summary>
+      <param name="mat">Материал, содержащий виртуальный стек текстур. Стеки виртуальных текстур, содержащиеся в материале, объявляются в шейдере материала.</param>
+      <param name="stackNameId">Уникальный идентификатор имени виртуального стека текстур, объявленный в шейдере. Чтобы найти идентификатор для заданного имени свойства шейдера, используйте Shader.PropertyToID.</param>
+      <param name="r">Прямоугольник в пространстве 0-1 UV, чтобы сделать резидентным. Все, что находится за пределами прямоугольника [ 0...1 [ x [ 0...1 [ ], будет просто игнорироваться.</param>
+      <param name="mipMap">MIP-уровень, который нужно сделать резидентным. Мипы нумеруются от 0 (= полное разрешение) до n (= самое низкое разрешение), где n — это уровень мипмапа, который соответствует размеру одного тайла. Запрос недействительных мипов молча игнорируется.</param>
+      <param name="numMips">Количество мип-уровней, начиная с 'mipMap', которые нужно сделать резидентными. Запрос недействительных мипов молча игнорируется.</param>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.SetCPUCacheSize(System.Int32)">
+      <summary>
+        <para>Устанавливает размер кэша ЦП (в мегабайтах), используемый потоковым виртуальным текстурированием.</para>
+      </summary>
+      <param name="sizeInMegabytes">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.SetGPUCacheSettings(UnityEngine.Rendering.VirtualTexturing.GPUCacheSetting[])">
+      <summary>
+        <para>Задает параметры кэша графического процессора, используемые потоковым виртуальным текстурированием.</para>
+      </summary>
+      <param name="cacheSettings">
+      </param>
+    </member>
+    <member name="T:UnityEngine.Rendering.VirtualTexturing.System">
+      <summary>
+        <para>Система виртуального текстурирования.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.VirtualTexturing.System.AllMips">
+      <summary>
+        <para>Запросить все доступные MIP.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.System.Update">
+      <summary>
+        <para>Обновите систему виртуального текстурирования.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.VirtualTexturingModule">
+      <summary>
+        <para>Модуль, реализующий виртуальное текстурирование.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

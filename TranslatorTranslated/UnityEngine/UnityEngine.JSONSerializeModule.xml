@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.JSONSerializeModule</name>
+    </assembly>
+    <member name="T:UnityEngine.JsonUtility">
+      <summary>
+        <para>Вспомогательные функции для работы с данными JSON.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.JsonUtility.FromJson(System.String)">
+      <summary>
+        <para>Создайте объект из его представления JSON.</para>
+      </summary>
+      <param name="json">Представление объекта в формате JSON.</param>
+      <returns>
+        <para>Экземпляр объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.JsonUtility.FromJson(System.String,System.Type)">
+      <summary>
+        <para>Создайте объект из его представления JSON.</para>
+      </summary>
+      <param name="json">Представление объекта в формате JSON.</param>
+      <param name="type">Тип объекта, представленный Json.</param>
+      <returns>
+        <para>Экземпляр объекта.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.JsonUtility.FromJsonOverwrite(System.String,System.Object)">
+      <summary>
+        <para>Перезаписать данные в объекте, прочитав его представление JSON.</para>
+      </summary>
+      <param name="json">Представление объекта в формате JSON.</param>
+      <param name="objectToOverwrite">Объект, который следует перезаписать.</param>
+    </member>
+    <member name="M:UnityEngine.JsonUtility.ToJson(System.Object)">
+      <summary>
+        <para>Создайте JSON-представление общедоступных полей объекта.</para>
+      </summary>
+      <param name="obj">Объект для преобразования в форму JSON.</param>
+      <param name="prettyPrint">Если это правда, отформатируйте вывод для удобочитаемости. Если false, отформатируйте вывод для минимального размера. Значение по умолчанию — ложь.</param>
+      <returns>
+        <para>Данные объекта в формате JSON.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.JsonUtility.ToJson(System.Object,System.Boolean)">
+      <summary>
+        <para>Создайте JSON-представление общедоступных полей объекта.</para>
+      </summary>
+      <param name="obj">Объект для преобразования в форму JSON.</param>
+      <param name="prettyPrint">Если это правда, отформатируйте вывод для удобочитаемости. Если false, отформатируйте вывод для минимального размера. Значение по умолчанию — ложь.</param>
+      <returns>
+        <para>Данные объекта в формате JSON.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.JSONSerializeModule">
+      <summary>
+        <para>Модуль JSONSerialize предоставляет класс JsonUtility, который позволяет сериализовать объекты Unity в формат JSON.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.LocalizationModule</name>
+    </assembly>
+    <member name="T:UnityEngine.LocalizationAsset">
+      <summary>
+        <para>Ресурс для представления таблицы локализованных строк для одной конкретной локали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocalizationAsset.isEditorAsset">
+      <summary>
+        <para>Используется ли этот ресурс для локализации компонентов пользовательского интерфейса редактора Unity?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.LocalizationAsset.localeIsoCode">
+      <summary>
+        <para>Код ISO, используемый для идентификации региона. пример: en-uk, zh-hans, ja</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.LocalizationAsset.#ctor">
+      <summary>
+        <para>Создает новый пустой объект LocalizationAsset.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.LocalizationAsset.GetLocalizedString(System.String)">
+      <summary>
+        <para>Получить локализованную строку для указанного ключа.</para>
+      </summary>
+      <param name="original">Исходная строка, действующая как ключ.</param>
+      <returns>
+        <para>Локализованная строка, соответствующая оригиналу в локали LocalizationAsset</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.LocalizationAsset.SetLocalizedString(System.String,System.String)">
+      <summary>
+        <para>Установить локализованную строку для указанного ключа</para>
+      </summary>
+      <param name="original">Исходная строка, действующая как ключ.</param>
+      <param name="localized">Локализованная строка, соответствующая оригиналу в локали LocalizationAsset</param>
+    </member>
+  </members>
+</doc>

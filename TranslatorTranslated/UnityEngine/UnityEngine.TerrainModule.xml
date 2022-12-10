@@ -1,0 +1,2018 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.TerrainModule</name>
+    </assembly>
+    <member name="T:UnityEngine.DetailInstanceTransform">
+      <summary>
+        <para>Описывает преобразование объекта Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.posX">
+      <summary>
+        <para>Координата X объекта детали в локальном пространстве Terrain. Чтобы получить X в мировом пространстве, добавьте это значение к позиции X Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.posY">
+      <summary>
+        <para>Координата Y объекта детали в локальном пространстве Terrain. Чтобы получить Y в мировом пространстве, прибавьте это значение к позиции Y ландшафта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.posZ">
+      <summary>
+        <para>Координата Z объекта детали в локальном пространстве Terrain. Чтобы получить Z в мировом пространстве, добавьте это значение к позиции Z в Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.rotationY">
+      <summary>
+        <para>Угол в радианах, на который объект детали поворачивается вокруг оси Y.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.scaleXZ">
+      <summary>
+        <para>Значения масштаба X и Z объекта детали. Эти два значения всегда одинаковы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailInstanceTransform.scaleY">
+      <summary>
+        <para>Значение шкалы Y объекта сведений.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.DetailPrototype">
+      <summary>
+        <para>Подробный прототип, используемый игровым объектом Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.bendFactor">
+      <summary>
+        <para>Коэффициент изгиба прототипа детали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.dryColor">
+      <summary>
+        <para>Цвет, когда DetailPrototypes "сухой".</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.healthyColor">
+      <summary>
+        <para>Цвет, когда DetailPrototypes "исправен".</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.holeEdgePadding">
+      <summary>
+        <para>Определяет, насколько далеко объекты детализации находятся от края области отверстия.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.maxHeight">
+      <summary>
+        <para>Максимальная высота рекламных щитов с травой (если режим рендеринга — GrassBillboard).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.maxWidth">
+      <summary>
+        <para>Максимальная ширина рекламных щитов с травой (если режим рендеринга — GrassBillboard).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.minHeight">
+      <summary>
+        <para>Минимальная высота рекламных щитов с травой (если режим рендеринга — GrassBillboard).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.minWidth">
+      <summary>
+        <para>Минимальная ширина травяных рекламных щитов (если режим рендеринга — GrassBillboard).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.noiseSeed">
+      <summary>
+        <para>Задает случайное начальное значение для размещения объекта подробностей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.noiseSpread">
+      <summary>
+        <para>Управляет пространственной частотой шаблона шума, используемого для изменения масштаба и цвета объектов деталей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.prototype">
+      <summary>
+        <para>GameObject, используемый DetailPrototype.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.prototypeTexture">
+      <summary>
+        <para>Текстура, используемая DetailPrototype.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.renderMode">
+      <summary>
+        <para>Режим рендеринга для DetailPrototype.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.useInstancing">
+      <summary>
+        <para>Указывает, используется ли этот прототип детали для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.DetailPrototype.usePrototypeMesh">
+      <summary>
+        <para>Указывает, использует ли этот подробный прототип объект Mesh из GameObject, указанного в прототипе.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.DetailPrototype.Validate">
+      <summary>
+        <para>Возвращает true, если прототип детали действителен и Terrain может его принять.</para>
+      </summary>
+      <param name="errorMessage">Возвращает сообщение, указывающее причину неудачной проверки.</param>
+    </member>
+    <member name="M:UnityEngine.DetailPrototype.Validate(System.String&amp;)">
+      <summary>
+        <para>Возвращает true, если прототип детали действителен и Terrain может его принять.</para>
+      </summary>
+      <param name="errorMessage">Возвращает сообщение, указывающее причину неудачной проверки.</param>
+    </member>
+    <member name="T:UnityEngine.DetailRenderMode">
+      <summary>
+        <para>Режим рендеринга для прототипов деталей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailRenderMode.Grass">
+      <summary>
+        <para>Детальный прототип будет использовать шейдер травы.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailRenderMode.GrassBillboard">
+      <summary>
+        <para>Детальный прототип будет отображаться в виде рекламных щитов, которые всегда обращены к камере.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.DetailRenderMode.VertexLit">
+      <summary>
+        <para>Прототип будет показан с использованием диффузного затенения.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.PatchExtents">
+      <summary>
+        <para>Структура, содержащая минимальные и максимальные значения высоты участка ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PatchExtents.max">
+      <summary>
+        <para>Максимальная высота участка местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.PatchExtents.min">
+      <summary>
+        <para>Минимальная высота участка местности.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SplatPrototype">
+      <summary>
+        <para>Прототип Splat — это просто текстура, используемая TerrainData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.metallic">
+      <summary>
+        <para>Металлический показатель слоя splat.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.normalMap">
+      <summary>
+        <para>Карта нормалей, примененная к ландшафту.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.smoothness">
+      <summary>
+        <para>Значение сглаживания слоя пятна, когда основная текстура не имеет альфа-канала.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.texture">
+      <summary>
+        <para>Текстура знака, нанесенного на ландшафт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.tileOffset">
+      <summary>
+        <para>Смещение текстуры плитки SplatPrototype.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SplatPrototype.tileSize">
+      <summary>
+        <para>Размер тайла, используемого в текстуре SplatPrototype.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Terrain">
+      <summary>
+        <para>Компонент Terrain визуализирует ландшафт.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.activeTerrain">
+      <summary>
+        <para>Активный ландшафт. Это удобная функция для перехода к основному ландшафту в сцене.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.activeTerrains">
+      <summary>
+        <para>Активные ландшафты в сцене.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.allowAutoConnect">
+      <summary>
+        <para>Указывает, будет ли плитка ландшафта автоматически соединяться с соседними плитками.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.bakeLightProbesForTrees">
+      <summary>
+        <para>Указывает, следует ли запекать массив внутренних световых зондов для деревьев ландшафта. Доступно только в редакторе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.basemapDistance">
+      <summary>
+        <para>Патчи карты высот за пределами расстояния базовой карты будут использовать предварительно вычисленную базовую карту низкого разрешения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.bottomNeighbor">
+      <summary>
+        <para>Нижний сосед местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.castShadows">
+      <summary>
+        <para>Должна ли местность отбрасывать тени?.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.collectDetailPatches">
+      <summary>
+        <para>Соберите патчи деталей из памяти.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.compressedHolesFormat">
+      <summary>
+        <para>Графический формат Текстуры дыр Terrain при сжатии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.compressedHolesTextureFormat">
+      <summary>
+        <para>Формат текстуры дыр Terrain Texture при сжатии.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.deringLightProbesForTrees">
+      <summary>
+        <para>Удаляет звон зондов на деревьях, если включено.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.detailObjectDensity">
+      <summary>
+        <para>Плотность объектов детализации.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.detailObjectDistance">
+      <summary>
+        <para>Детальные объекты будут отображаться до этого расстояния.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.drawHeightmap">
+      <summary>
+        <para>Указывает, рисует ли Unity геометрию Terrain самостоятельно.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.drawInstanced">
+      <summary>
+        <para>Установите значение true, чтобы включить визуализацию экземпляра ландшафта. Значение по умолчанию — false.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.drawTreesAndFoliage">
+      <summary>
+        <para>Укажите, следует ли рисовать деревья местности и детали.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.editorRenderFlags">
+      <summary>
+        <para>Определяет, какая часть ландшафта должна быть визуализирована.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.groupingID">
+      <summary>
+        <para>Идентификатор группы для автоматического подключения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.heightmapFormat">
+      <summary>
+        <para>Графический формат карты высот Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.heightmapMaximumLOD">
+      <summary>
+        <para>Позволяет существенно снизить разрешение карты высот, используемое для рендеринга.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.heightmapPixelError">
+      <summary>
+        <para>Приблизительное количество пикселей, на которое вылезет ландшафт в худшем случае при переключении лода.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.heightmapRenderTextureFormat">
+      <summary>
+        <para>RenderTextureFormat карты высот местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.holesFormat">
+      <summary>
+        <para>Графический формат текстуры дыр Terrain, когда она не сжата.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.holesRenderTextureFormat">
+      <summary>
+        <para>Формат текстуры рендеринга текстуры отверстий Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.keepUnusedRenderingResources">
+      <summary>
+        <para>Определяет, освобождает ли Unity ресурсы рендеринга для каждой камеры для ландшафта, когда эти ресурсы не используются после определенного количества кадров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.leftNeighbor">
+      <summary>
+        <para>Плитка Terrain слева, которая находится в отрицательном направлении X.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.legacyShininess">
+      <summary>
+        <para>Значение блеска местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.legacySpecular">
+      <summary>
+        <para>Зеркальный цвет местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.lightmapIndex">
+      <summary>
+        <para>Индекс запеченной карты освещения, примененной к этой местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.lightmapScaleOffset">
+      <summary>
+        <para>Масштаб и смещение UV, используемые для запеченной карты освещения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.materialTemplate">
+      <summary>
+        <para>Пользовательский материал, который Unity использует для рендеринга Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.materialType">
+      <summary>
+        <para>Тип материала, используемого для рендеринга ландшафта. Может быть одним из встроенных типов или пользовательским. См. Terrain.MaterialType.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.normalmapFormat">
+      <summary>
+        <para>Графический формат текстуры карты нормалей Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.normalmapRenderTextureFormat">
+      <summary>
+        <para>Формат текстуры рендеринга текстуры карты нормалей Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.normalmapTexture">
+      <summary>
+        <para>Возвращает текстуру карты нормалей, вычисленную на основе выборки карты высот. Он используется только при рендеринге ландшафта с использованием создания экземпляров.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.normalmapTextureFormat">
+      <summary>
+        <para>Формат текстуры карты нормалей Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.patchBoundsMultiplier">
+      <summary>
+        <para>Задайте масштаб ограничивающей рамки ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.preserveTreePrototypeLayers">
+      <summary>
+        <para>Позволяет указать, как Unity выбирает экземпляры дерева for.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.realtimeLightmapIndex">
+      <summary>
+        <para>Индекс карты освещения в реальном времени, примененной к этой местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.realtimeLightmapScaleOffset">
+      <summary>
+        <para>Масштаб и смещение UV, используемые для карты освещения в реальном времени.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.reflectionProbeUsage">
+      <summary>
+        <para>Как датчики отражения используются для определения рельефа. См. Rendering.ReflectionProbeUsage.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.renderingLayerMask">
+      <summary>
+        <para>Определяет, на каких слоях рендеринга находится средство рендеринга Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.rightNeighbor">
+      <summary>
+        <para>Плитка Terrain слева, в положительном направлении X.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.shadowCastingMode">
+      <summary>
+        <para>Позволяет установить режим отбрасывания теней для местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.terrainData">
+      <summary>
+        <para>Данные о местности, в которых хранятся карты высот, текстуры местности, детализированные сетки и деревья.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.topNeighbor">
+      <summary>
+        <para>Сосед сверху по местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.treeBillboardDistance">
+      <summary>
+        <para>Расстояние от камеры, на котором деревья будут отображаться только как рекламные щиты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.treeCrossFadeLength">
+      <summary>
+        <para>Суммарная разница расстояний, которую деревья будут использовать для перехода от ориентации рекламного щита к ориентации сетки.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.treeDistance">
+      <summary>
+        <para>Максимальное расстояние, на котором рендерятся деревья.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.treeLODBiasMultiplier">
+      <summary>
+        <para>Множитель к текущему смещению LOD, используемому для рендеринга деревьев LOD (например, деревьев SpeedTree).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Terrain.treeMaximumFullLODCount">
+      <summary>
+        <para>Максимальное количество деревьев, отображаемых при полном уровне детализации.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.AddTreeInstance(UnityEngine.TreeInstance)">
+      <summary>
+        <para>Добавляет экземпляр дерева на ландшафт.</para>
+      </summary>
+      <param name="instance">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Terrain.ApplyDelayedHeightmapModification">
+      <summary>
+        <para>Обновите уровень детализации ландшафта и информацию о растительности после внесения изменений с помощью TerrainData.SetHeightsDelayLOD.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.CreateTerrainGameObject(UnityEngine.TerrainData)">
+      <summary>
+        <para>Создает Terrain, включая коллайдер, из TerrainData.</para>
+      </summary>
+      <param name="assignTerrain">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Terrain.Flush">
+      <summary>
+        <para>Стирает любые изменения, внесенные в ландшафт, чтобы они вступили в силу.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.GetActiveTerrains(System.Collections.Generic.List`1&lt;UnityEngine.Terrain&gt;)">
+      <summary>
+        <para>Заполняет список Terrains активными Terrains в сцене.</para>
+      </summary>
+      <param name="activeTerrainsList">Список Terrains, который эта функция заполняет активными Terrains в сцене.</param>
+      <param name="terrainList">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Terrain.GetClosestReflectionProbes(System.Collections.Generic.List`1&lt;UnityEngine.Rendering.ReflectionProbeBlendInfo&gt;)">
+      <summary>
+        <para>Заполняет список датчиками отражения, AABB которых пересекается с AABB местности. Также указан их вес. Вес показывает, какое влияние датчик оказывает на местность, и используется, когда происходит смешивание между несколькими датчиками отражения.</para>
+      </summary>
+      <param name="result">[in/out] Список для хранения возвращенных зондов отражения и их веса. См. ReflectionProbeBlendInfo.</param>
+    </member>
+    <member name="M:UnityEngine.Terrain.GetKeepUnusedCameraRenderingResources(System.Int32)">
+      <summary>
+        <para>
+        </para>
+      </summary>
+      <param name="cameraInstanceID">InstanceID запрашиваемой камеры. См. Object.GetInstanceID.</param>
+      <returns>
+        <para>Возвращает true, если все ресурсы рендеринга для данной камеры сохраняются независимо от использования. Возвращает false, если сборщику мусора разрешено освобождать неиспользуемые ресурсы.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Terrain.GetPosition">
+      <summary>
+        <para>Получить положение местности.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.GetSplatMaterialPropertyBlock(UnityEngine.MaterialPropertyBlock)">
+      <summary>
+        <para>Получите ранее установленные свойства материала splat, скопировав их в целевой объект MaterialPropertyBlock.</para>
+      </summary>
+      <param name="dest">
+      </param>
+    </member>
+    <member name="T:UnityEngine.Terrain.MaterialType">
+      <summary>
+        <para>Тип материала, используемого для визуализации объекта ландшафта. Может быть одним из встроенных типов или пользовательским.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Terrain.MaterialType.BuiltInLegacyDiffuse">
+      <summary>
+        <para>Встроенный материал, который использует устаревшую модель освещения Ламберта (рассеянное) и имеет дополнительную поддержку карты нормалей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Terrain.MaterialType.BuiltInLegacySpecular">
+      <summary>
+        <para>Встроенный материал, который использует устаревшую модель освещения BlinnPhong (specular) и имеет дополнительную поддержку карты нормалей.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Terrain.MaterialType.BuiltInStandard">
+      <summary>
+        <para>Встроенный материал, использующий стандартную физически обоснованную модель освещения. Поддерживаемые входные данные: гладкость, металлик/зеркальность, нормальный.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Terrain.MaterialType.Custom">
+      <summary>
+        <para>Используйте пользовательский материал, предоставленный Terrain.materialTemplate.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.SampleHeight(UnityEngine.Vector3)">
+      <summary>
+        <para>Выбирает высоту в заданной позиции, определенной в мировом пространстве, относительно пространства Terrain.</para>
+      </summary>
+      <param name="worldPosition">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Terrain.SetConnectivityDirty">
+      <summary>
+        <para>Отмечает текущий статус подключения как недействительный.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Terrain.SetKeepUnusedCameraRenderingResources(System.Int32,System.Boolean)">
+      <summary>
+        <para>Определяет, очищает ли Unity ресурсы рендеринга для данной камеры во время сборки мусора.</para>
+      </summary>
+      <param name="cameraInstanceID">InstanceID камеры, для которой устанавливается freeUnusedRenderingResources. См. Object.GetInstanceID.</param>
+      <param name="freeUnusedRenderingResources">Значение для установки флага freeUnusedRenderingResources этой камеры.</param>
+      <param name="keepUnused">
+      </param>
+    </member>
+    <member name="M:UnityEngine.Terrain.SetNeighbors(UnityEngine.Terrain,UnityEngine.Terrain,UnityEngine.Terrain,UnityEngine.Terrain)">
+      <summary>
+        <para>Позволяет настроить соединение между соседними тайлами Terrain. Это гарантирует, что уровень детализации на соседних тайлах Terrain совпадает.</para>
+      </summary>
+      <param name="left">Плитка Terrain слева находится в отрицательном направлении X.</param>
+      <param name="top">Тайл Terrain вверху находится в положительном направлении Z.</param>
+      <param name="right">Плитка Terrain справа находится в положительном направлении X.</param>
+      <param name="bottom">Тайл Terrain внизу находится в отрицательном направлении Z.</param>
+    </member>
+    <member name="M:UnityEngine.Terrain.SetSplatMaterialPropertyBlock(UnityEngine.MaterialPropertyBlock)">
+      <summary>
+        <para>Задайте дополнительные свойства материала при рендеринге карты высот местности с использованием материала пятна.</para>
+      </summary>
+      <param name="properties">
+      </param>
+    </member>
+    <member name="T:UnityEngine.TerrainCallbacks">
+      <summary>
+        <para>Этот статический класс предоставляет события, которые Unity инициирует при изменении данных Terrain.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.TerrainCallbacks.heightmapChanged(UnityEngine.TerrainCallbacks/HeightmapChangedCallback)">
+      <summary>
+        <para>Это событие запускается после изменения данных о высоте местности.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="?:UnityEngine.TerrainCallbacks.textureChanged(UnityEngine.TerrainCallbacks/TextureChangedCallback)">
+      <summary>
+        <para>Это событие срабатывает после изменения текстур Terrain.</para>
+      </summary>
+      <param name="value">
+      </param>
+    </member>
+    <member name="T:UnityEngine.TerrainCallbacks.HeightmapChangedCallback">
+      <summary>
+        <para>Используйте этот тип делегата с heightmapChanged для отслеживания всех изменений карты высот Terrain.</para>
+      </summary>
+      <param name="terrain">Объект Terrain, который ссылается на измененный ресурс TerrainData.</param>
+      <param name="heightRegion">Измененная область карты высот в сэмплах.</param>
+      <param name="synched">Указывает, были ли изменения полностью синхронизированы обратно в память ЦП.</param>
+    </member>
+    <member name="T:UnityEngine.TerrainCallbacks.TextureChangedCallback">
+      <summary>
+        <para>Используйте этот тип делегата с textureChanged для отслеживания всех изменений в текстурах Terrain.</para>
+      </summary>
+      <param name="terrain">Объект Terrain, который ссылается на измененный ресурс TerrainData.</param>
+      <param name="textureName">Имя измененной текстуры.</param>
+      <param name="texelRegion">Измененная область текстуры Terrain в координатах текселей.</param>
+      <param name="synched">Указывает, были ли изменения полностью синхронизированы обратно в память ЦП.</param>
+    </member>
+    <member name="T:UnityEngine.TerrainChangedFlags">
+      <summary>
+        <para>Укажите типы изменений рельефа в обратном вызове OnTerrainChanged.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.DelayedHeightmapUpdate">
+      <summary>
+        <para>Указывает на изменение данных карты высот без вычисления LOD.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.DelayedHolesUpdate">
+      <summary>
+        <para>Указывает на изменение данных лунок Terrain, которые не включают расчеты уровня детализации и обновления деревьев/растительности.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.FlushEverythingImmediately">
+      <summary>
+        <para>Указывает, что изменение ландшафта было настолько значительным, что внутренние данные рендеринга необходимо сбросить и создать заново.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.Heightmap">
+      <summary>
+        <para>Указывает на изменение данных карты высот.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.HeightmapResolution">
+      <summary>
+        <para>Указывает на изменение разрешения карты высот.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.Holes">
+      <summary>
+        <para>Указывает на изменение данных лунок Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.RemoveDirtyDetailsImmediately">
+      <summary>
+        <para>Указывает на изменение подробных данных.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.TreeInstances">
+      <summary>
+        <para>Указывает на изменение данных дерева.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainChangedFlags.WillBeDestroyed">
+      <summary>
+        <para>Указывает, что объект TerrainData будет уничтожен.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainData">
+      <summary>
+        <para>Класс TerrainData хранит карты высот, положения детализированной сетки, экземпляры деревьев и альфа-карты текстур местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapHeight">
+      <summary>
+        <para>Высота альфа-карты. (Только чтение.)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapLayers">
+      <summary>
+        <para>Количество слоев альфа-карты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapResolution">
+      <summary>
+        <para>Размер альфа-карты в текселях по ширине или по высоте.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapTextureCount">
+      <summary>
+        <para>Возвращает количество текстур alphamap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapTextures">
+      <summary>
+        <para>Текстуры альфа-карты, используемые Terrain. Используется Terrain Inspector для отмены.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.alphamapWidth">
+      <summary>
+        <para>Ширина альфа-карты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.baseMapResolution">
+      <summary>
+        <para>Разрешение базовой карты, используемой для рендеринга дальних участков местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.bounds">
+      <summary>
+        <para>Локальная ограничивающая рамка объекта TerrainData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailHeight">
+      <summary>
+        <para>Разрешение подробных данных, хранящихся в TerrainData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailPatchCount">
+      <summary>
+        <para>Количество участков вдоль края тайла ландшафта. Это квадрат, чтобы сделать сетку патчей.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailPrototypes">
+      <summary>
+        <para>Содержит детализированную текстуру/сетки, которые есть у Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailResolution">
+      <summary>
+        <para>Подробное разрешение TerrainData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailResolutionPerPatch">
+      <summary>
+        <para>Подробное разрешение каждого патча. Чем больше значение, тем меньше количество пакетов, используемых объектами сведений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.detailWidth">
+      <summary>
+        <para>Разрешение подробных данных, хранящихся в TerrainData.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.enableHolesTextureCompression">
+      <summary>
+        <para>Включите сжатие текстуры дыр Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.heightmapHeight">
+      <summary>
+        <para>Высота местности в образцах (только чтение).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.heightmapResolution">
+      <summary>
+        <para>Размер карты высот в текселях для ширины или высоты.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.heightmapScale">
+      <summary>
+        <para>Возвращает Vector3, где компоненты x и z — это размер каждого образца карты высот (т. е. пространство между двумя соседними образцами карты высот), а компонент y — это весь диапазон высот Terrain в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.heightmapTexture">
+      <summary>
+        <para>Возвращает текстуру карты высот.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.heightmapWidth">
+      <summary>
+        <para>Ширина местности в образцах (только для чтения).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.holesResolution">
+      <summary>
+        <para>Возвращает разрешение отверстий Terrain как для данных, так и для текстуры.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.holesTexture">
+      <summary>
+        <para>Возвращает текстуру отверстий Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.size">
+      <summary>
+        <para>Общий размер местности в мировых единицах.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.splatPrototypes">
+      <summary>
+        <para>Текстура пятен, используемая ландшафтом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.terrainLayers">
+      <summary>
+        <para>Извлекает слои ландшафта, используемые текущим ландшафтом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.thickness">
+      <summary>
+        <para>Толщина местности, используемая для обнаружения столкновений.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.treeInstanceCount">
+      <summary>
+        <para>Возвращает количество экземпляров дерева.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.treeInstances">
+      <summary>
+        <para>Содержит текущие деревья, размещенные на местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.treePrototypes">
+      <summary>
+        <para>Список прототипов деревьев, доступных в инспекторе.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.wavingGrassAmount">
+      <summary>
+        <para>Количество колышущейся травы на местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.wavingGrassSpeed">
+      <summary>
+        <para>Скорость колышущихся трав.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.wavingGrassStrength">
+      <summary>
+        <para>Сила колышущейся травы на местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.wavingGrassTint">
+      <summary>
+        <para>Цвет колышущейся травы на местности.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainData.AlphamapTextureName">
+      <summary>
+        <para>Название текстур альфа-карты Terrain.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainData.ComputeDetailInstanceTransforms(System.Int32,System.Int32,System.Int32,System.Single,UnityEngine.Bounds&amp;)">
+      <summary>
+        <para>Эта функция вычисляет и возвращает массив преобразований объектов деталей для указанного патча и указанного прототипа. Вы можете использовать эту функцию для получения точно таких же данных преобразования, которые движок Unity использует для детального рендеринга.</para>
+      </summary>
+      <param name="patchX">Индекс x исправления.</param>
+      <param name="patchY">Y-индекс исправления.</param>
+      <param name="layer">Индекс прототипа.</param>
+      <param name="density">Настройка плотности детали.</param>
+      <param name="bounds">Возвращает границы объектов сведений.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.CopyActiveRenderTextureToHeightmap(UnityEngine.RectInt,UnityEngine.Vector2Int,UnityEngine.TerrainHeightmapSyncControl)">
+      <summary>
+        <para>Копирует указанную часть активной RenderTexture в текстуру карты высот Terrain.</para>
+      </summary>
+      <param name="sourceRect">Копируемая часть активной Render Texture.</param>
+      <param name="dest">Координаты X и Y текстуры карты высот для копирования.</param>
+      <param name="syncControl">Управляет выполнением синхронизации ЦП.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.CopyActiveRenderTextureToTexture(System.String,System.Int32,UnityEngine.RectInt,UnityEngine.Vector2Int,System.Boolean)">
+      <summary>
+        <para>Копирует указанную часть активной RenderTexture в текстуру Terrain.</para>
+      </summary>
+      <param name="textureName">Имя текстуры Terrain для копирования.</param>
+      <param name="textureIndex">Индекс текстуры Terrain для копирования.</param>
+      <param name="sourceRect">Копируемая часть активной Render Texture.</param>
+      <param name="dest">Координаты X и Y текстуры Terrain для копирования.</param>
+      <param name="allowDelayedCPUSync">Указывает, разрешать ли отложенную синхронизацию ЦП текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.DirtyHeightmapRegion(UnityEngine.RectInt,UnityEngine.TerrainHeightmapSyncControl)">
+      <summary>
+        <para>Помечает указанную часть карты высот как грязную.</para>
+      </summary>
+      <param name="region">Прямоугольная область, которую следует пометить как грязную.</param>
+      <param name="syncControl">Управляет выполнением синхронизации ЦП.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.DirtyTextureRegion(System.String,UnityEngine.RectInt,System.Boolean)">
+      <summary>
+        <para>Помечает указанную часть текстуры Terrain как грязную.</para>
+      </summary>
+      <param name="textureName">Название текстуры Terrain.</param>
+      <param name="region">Прямоугольная область, которую следует пометить как грязную.</param>
+      <param name="allowDelayedCPUSync">Указывает, разрешать ли отложенную синхронизацию ЦП текстуры.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetAlphamaps(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Возвращает альфа-карту в позиции x, y с учетом ширины и высоты.</para>
+      </summary>
+      <param name="x">Смещение x для чтения.</param>
+      <param name="y">Смещение по оси Y для чтения.</param>
+      <param name="width">Ширина области альфа-карты для чтения.</param>
+      <param name="height">Высота области альфа-карты для чтения.</param>
+      <returns>
+        <para>Трехмерный массив чисел с плавающей запятой, где третье измерение представляет вес смешивания каждого знака в каждой координате x, y.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetAlphamapTexture(System.Int32)">
+      <summary>
+        <para>Возвращает текстуру альфа-карты по указанному индексу.</para>
+      </summary>
+      <param name="index">Индекс альфа-карты.</param>
+      <returns>
+        <para>Текстура Alphamap по указанному индексу.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetClampedDetailPatches(System.Single)">
+      <summary>
+        <para>Возвращает массив фрагментов деталей, каждый из которых идентифицируется координатами XZ. Детальные объекты в патчах ограничены до максимального количества.</para>
+      </summary>
+      <param name="density">Значение плотности деталей. См. Terrain.detailObjectDensity.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetDetailLayer(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Возвращает 2D-массив плотности объектов деталей (т. е. количество объектов деталей для этого слоя) в определенном месте.</para>
+      </summary>
+      <param name="xBase">Первый x-индекс данных плотности объектов детализации для извлечения.</param>
+      <param name="yBase">Первый y-индекс данных плотности объектов детализации для извлечения.</param>
+      <param name="width">Количество данных плотности объектов детализации для извлечения по оси X Terrain.</param>
+      <param name="height">Количество данных плотности объектов детализации для извлечения по оси z Terrain.</param>
+      <param name="layer">Индекс детали в массиве TerrainData.detailPrototypes.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetHeight(System.Int32,System.Int32)">
+      <summary>
+        <para>Получает высоту Terrain в мировом пространстве в определенной точке x,y без добавления положения Terrain в мире y.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetHeights(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Получает массив образцов карты высот.</para>
+      </summary>
+      <param name="xBase">Первый индекс выборки карты высот для извлечения по оси X Terrain.</param>
+      <param name="yBase">Первый индекс выборки карты высот для извлечения по оси Z Terrain.</param>
+      <param name="width">Количество выборок для извлечения по оси X Terrain.</param>
+      <param name="height">Количество выборок для извлечения по оси Z Terrain.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetHoles(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Получает массив образцов отверстий Terrain.</para>
+      </summary>
+      <param name="xBase">Первый x индекс образцов ям Terrain для извлечения.</param>
+      <param name="yBase">Первый y-индекс выборок дыр Terrain для извлечения.</param>
+      <param name="width">Количество выборок для извлечения по оси x отверстий Terrain.</param>
+      <param name="height">Количество выборок для извлечения вдоль оси y отверстий Terrain.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetInterpolatedHeight(System.Single,System.Single)">
+      <summary>
+        <para>Получает интерполированную высоту в точке x,y. Координаты x и y фиксируются на [0, 1].</para>
+      </summary>
+      <param name="x">Координата X точки в диапазоне [0, 1].</param>
+      <param name="y">Координата Y точки в диапазоне [0, 1].</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetInterpolatedHeights(System.Single,System.Single,System.Int32,System.Int32,System.Single,System.Single)">
+      <summary>
+        <para>Получает массив значений высоты местности, используя нормализованные координаты x,y.</para>
+      </summary>
+      <param name="xBase">Базовая координата x.</param>
+      <param name="yBase">Базовая координата y.</param>
+      <param name="xCount">Количество запросов по оси X.</param>
+      <param name="yCount">Количество запросов по оси Y.</param>
+      <param name="xInterval">Интервал между каждым запросом по оси X.</param>
+      <param name="yInterval">Интервал между каждым запросом по оси Y.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetInterpolatedHeights(System.Single[,],System.Int32,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Single,System.Single)">
+      <summary>
+        <para>Заполняет массив значениями высоты Terrain с использованием нормализованных координат x,y.</para>
+      </summary>
+      <param name="results">Массив для заполнения значениями высоты.</param>
+      <param name="resultXOffset">Смещение от начала массива по оси X, с которого следует начинать заполнение значений высоты.</param>
+      <param name="resultYOffset">Смещение от начала массива по оси Y, с которого следует начинать заполнение значений высоты.</param>
+      <param name="xBase">Базовая координата x.</param>
+      <param name="yBase">Базовая координата y.</param>
+      <param name="xCount">Количество запросов по оси X.</param>
+      <param name="yCount">Количество запросов по оси Y.</param>
+      <param name="xInterval">Интервал между каждым запросом по оси X.</param>
+      <param name="yInterval">Интервал между каждым запросом по оси Y.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetInterpolatedNormal(System.Single,System.Single)">
+      <summary>
+        <para>Получить интерполированную нормаль в заданном месте.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetMaximumHeightError">
+      <summary>
+        <para>Возвращает массив значений ошибки максимальной высоты тесселяции для каждого обрабатываемого фрагмента ландшафта. Возвращенный массив можно изменить и передать в OverrideMaximumHeightError.</para>
+      </summary>
+      <returns>
+        <para>Массив значений ошибки максимальной высоты с плавающей запятой.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetPatchMinMaxHeights">
+      <summary>
+        <para>Возвращает массив минимальных и максимальных значений высоты для всех отображаемых патчей в ландшафте. Возвращенный массив можно изменить, а затем передать в OverrideMinMaxPatchHeights.</para>
+      </summary>
+      <returns>
+        <para>Минимальное и максимальное значения высоты для каждого патча.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetSteepness(System.Single,System.Single)">
+      <summary>
+        <para>Получает уклон местности в точке (x,y).</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetSupportedLayers(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Возвращает массив всех поддерживаемых индексов слоя детализации в области.</para>
+      </summary>
+      <param name="xBase">
+      </param>
+      <param name="yBase">
+      </param>
+      <param name="totalWidth">
+      </param>
+      <param name="totalHeight">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.GetTreeInstance(System.Int32)">
+      <summary>
+        <para>Получает экземпляр дерева по указанному индексу. Она используется как более быстрая версия treeInstances[index], так как эта функция не создает весь массив экземпляров дерева.</para>
+      </summary>
+      <param name="index">Индекс экземпляра дерева.</param>
+    </member>
+    <member name="P:UnityEngine.TerrainData.HolesTextureName">
+      <summary>
+        <para>Название текстуры дыр Terrain.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainData.IsHole(System.Int32,System.Int32)">
+      <summary>
+        <para>Получает, является ли определенная точка в точках x,y дырой.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.OverrideMaximumHeightError(System.Single[])">
+      <summary>
+        <para>Переопределите ошибку максимальной высоты тесселяции с помощью значений, предоставленных пользователем. Обратите внимание, что переопределенные значения сбрасываются при изменении разрешения ландшафта и остаются неизменными, когда карта высот ландшафта рисуется или изменяется с помощью скрипта.</para>
+      </summary>
+      <param name="maxError">Предоставлены максимальные значения ошибки высоты.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.OverrideMinMaxPatchHeights(UnityEngine.PatchExtents[])">
+      <summary>
+        <para>Переопределите минимальную и максимальную высоту патча для каждого визуализируемого патча ландшафта. Обратите внимание, что переопределенные значения сбрасываются при изменении разрешения ландшафта и остаются неизменными, когда карта высот ландшафта рисуется или изменяется с помощью скрипта.</para>
+      </summary>
+      <param name="minMaxHeights">Массив минимальных и максимальных значений высоты участка ландшафта.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.RefreshPrototypes">
+      <summary>
+        <para>Перезагружает все значения доступных прототипов (т. е. ресурсов детализированной сетки) в объекте TerrainData.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetAlphamaps(System.Int32,System.Int32,System.Single[,,])">
+      <summary>
+        <para>Назначить все значения знаков в данной области карты.</para>
+      </summary>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+      <param name="map">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetBaseMapDirty">
+      <summary>
+        <para>Помечает данные ландшафта как грязные, чтобы инициировать обновление текстуры базовой карты ландшафта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetDetailLayer(System.Int32,System.Int32,System.Int32,System.Int32[,])">
+      <summary>
+        <para>Задает карту плотности слоя детализации.</para>
+      </summary>
+      <param name="xBase">
+      </param>
+      <param name="yBase">
+      </param>
+      <param name="layer">
+      </param>
+      <param name="details">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetDetailResolution(System.Int32,System.Int32)">
+      <summary>
+        <para>Задает разрешение подробной карты.</para>
+      </summary>
+      <param name="detailResolution">Определяет количество пикселей в карте разрешения деталей. Большее разрешение DetailResolution приводит к более точной прорисовке деталей объекта.</param>
+      <param name="resolutionPerPatch">Определяет размер в пикселях каждого отдельно визуализируемого фрагмента детализации. Большее число уменьшает количество вызовов отрисовки, но может увеличить количество треугольников, поскольку патчи деталей отбираются для каждого пакета. Рекомендуемое значение — 16. Если вы используете очень большое расстояние до объекта детализации и ваша трава очень редкая, имеет смысл увеличить значение.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetHeights(System.Int32,System.Int32,System.Single[,])">
+      <summary>
+        <para>Задает массив образцов карты высот.</para>
+      </summary>
+      <param name="xBase">Первый x-индекс выборки карты высот для установки.</param>
+      <param name="yBase">Первый индекс y выборок карты высот для установки.</param>
+      <param name="heights">Массив образцов карты высот для установки (значения в диапазоне от 0 до 1, массив с индексом [y,x]).</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetHeightsDelayLOD(System.Int32,System.Int32,System.Single[,])">
+      <summary>
+        <para>Задает массив образцов карты высот.</para>
+      </summary>
+      <param name="xBase">Первый x-индекс выборки карты высот для установки.</param>
+      <param name="yBase">Первый индекс y выборок карты высот для установки.</param>
+      <param name="heights">Массив образцов карты высот для установки (значения в диапазоне от 0 до 1, массив с индексом [y,x]).</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetHoles(System.Int32,System.Int32,System.Boolean[,])">
+      <summary>
+        <para>Устанавливает массив сэмплов отверстий Terrain.</para>
+      </summary>
+      <param name="xBase">Первый x индекс сэмплов отверстий Terrain для установки.</param>
+      <param name="yBase">Первый y-индекс образцов отверстий Terrain для установки.</param>
+      <param name="holes">Массив сэмплов отверстий Terrain для установки (массив с индексом [y,x]).</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetHolesDelayLOD(System.Int32,System.Int32,System.Boolean[,])">
+      <summary>
+        <para>Устанавливает массив сэмплов отверстий Terrain.</para>
+      </summary>
+      <param name="xBase">Первый x индекс сэмплов отверстий Terrain для установки.</param>
+      <param name="yBase">Первый y-индекс образцов отверстий Terrain для установки.</param>
+      <param name="holes">Массив сэмплов отверстий Terrain для установки (массив с индексом [y,x]).</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetTerrainLayersRegisterUndo(UnityEngine.TerrainLayer[],System.String)">
+      <summary>
+        <para>Эта функция устанавливает свойство terrainLayers и, кроме того, регистрирует действие в стеке отмен в редакторе.</para>
+      </summary>
+      <param name="terrainLayers">Ресурсы слоя Terrain для установки.</param>
+      <param name="undoName">Имя действия отмены редактора.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetTreeInstance(System.Int32,UnityEngine.TreeInstance)">
+      <summary>
+        <para>Устанавливает экземпляр дерева с новыми параметрами по указанному индексу. Однако вы не можете изменить TreeInstance.prototypeIndex и TreeInstance.position. Если вы измените их, метод вызовет исключение ArgumentException.</para>
+      </summary>
+      <param name="index">Индекс экземпляра дерева.</param>
+      <param name="instance">Новое значение TreeInstance.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SetTreeInstances(UnityEngine.TreeInstance[],System.Boolean)">
+      <summary>
+        <para>Задает массив Tree Instance и дополнительно привязывает деревья к поверхности карты высот Terrain.</para>
+      </summary>
+      <param name="instances">Массив объектов TreeInstance.</param>
+      <param name="snapToHeightmap">Указывает, следует ли привязывать деревья к карте высот Terrain.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SyncHeightmap">
+      <summary>
+        <para>Выполняет синхронизацию, поставленную в очередь предыдущими вызовами CopyActiveRenderTextureToHeightmap и DirtyHeightmapRegion, что делает данные высоты и данные LOD, используемые для тесселяции, актуальными.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainData.SyncTexture(System.String)">
+      <summary>
+        <para>Выполняет синхронизацию, поставленную в очередь предыдущими вызовами CopyActiveRenderTextureToTexture и DirtyTextureRegion, что обновляет данные ЦП текстур Terrain.</para>
+      </summary>
+      <param name="textureName">Имя текстуры Terrain для синхронизации.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainData.UpdateDirtyRegion(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+      <summary>
+        <para>Запускает обновление для интеграции изменений, внесенных в карту высот за пределами единства.</para>
+      </summary>
+      <param name="x">Начальная позиция X грязной области карты высот.</param>
+      <param name="y">Начальная позиция Y грязной области карты высот.</param>
+      <param name="width">Ширина грязной области карты высот.</param>
+      <param name="height">Ширина грязной области карты высот.</param>
+      <param name="syncHeightmapTextureImmediately">Обновите немедленно, вместо того, чтобы откладывать обновление.</param>
+    </member>
+    <member name="T:UnityEngine.TerrainExtensions">
+      <summary>
+        <para>Методы расширения класса Terrain, используемые только для метода UpdateGIMaterials, используемого глобальной системой освещения.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainExtensions.UpdateGIMaterials(UnityEngine.Terrain)">
+      <summary>
+        <para>Планирует обновление альбедо и эмиссионных текстур системы, содержащей Terrain.</para>
+      </summary>
+      <param name="terrain">
+      </param>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+      <param name="width">
+      </param>
+      <param name="height">
+      </param>
+    </member>
+    <member name="M:UnityEngine.TerrainExtensions.UpdateGIMaterials(UnityEngine.Terrain,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Планирует обновление альбедо и эмиссионных текстур системы, содержащей Terrain.</para>
+      </summary>
+      <param name="terrain">
+      </param>
+      <param name="x">
+      </param>
+      <param name="y">
+      </param>
+      <param name="width">
+      </param>
+      <param name="height">
+      </param>
+    </member>
+    <member name="T:UnityEngine.TerrainHeightmapSyncControl">
+      <summary>
+        <para>Определяет, какие данные карты высот Terrain следует синхронизировать при изменении текстуры карты высот.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainHeightmapSyncControl.HeightAndLod">
+      <summary>
+        <para>Синхронизирует данные о высоте текстуры карты высот из графического процессора обратно в память процессора. Затем вычисляет данные LOD, используемые для определения уровня тесселяции, на основе данных о высоте.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainHeightmapSyncControl.HeightOnly">
+      <summary>
+        <para>Синхронизирует только данные о высоте текстуры карты высот из графического процессора обратно в память процессора.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainHeightmapSyncControl.None">
+      <summary>
+        <para>Не синхронизирует данные высоты и данные LOD.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainLayer">
+      <summary>
+        <para>Описание слоя рельефа.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.diffuseRemapMax">
+      <summary>
+        <para>Значение Vector4, указывающее максимальное значение RGBA, на которое сопоставляется диффузная текстура, когда значение канала равно 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.diffuseRemapMin">
+      <summary>
+        <para>Значение Vector4, указывающее минимальное значение RGBA, на которое сопоставляется диффузная текстура, когда значение канала равно 0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.diffuseTexture">
+      <summary>
+        <para>Диффузная текстура, используемая слоем ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.maskMapRemapMax">
+      <summary>
+        <para>Значение Vector4, указывающее максимальное значение RGBA, на которое сопоставляется текстура карты маски, когда значение канала равно 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.maskMapRemapMin">
+      <summary>
+        <para>Значение Vector4, указывающее минимальное значение RGBA, на которое сопоставляется текстура карты маски, когда значение канала равно 0.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.maskMapTexture">
+      <summary>
+        <para>Текстура карты маски, используемая слоем ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.metallic">
+      <summary>
+        <para>Металлический фактор, используемый слоем ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.normalMapTexture">
+      <summary>
+        <para>Текстура карты нормалей, используемая слоем ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.normalScale">
+      <summary>
+        <para>Значение с плавающей запятой, которое масштабирует вектор нормали. Минимальное значение 0, максимальное значение 1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.smoothness">
+      <summary>
+        <para>Гладкость зеркального отражения.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.specular">
+      <summary>
+        <para>Зеркальный цвет.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.tileOffset">
+      <summary>
+        <para>Смещение тайлинга UV.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainLayer.tileSize">
+      <summary>
+        <para>Размер развертки UV.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainRenderFlags">
+      <summary>
+        <para>Перечисление, обеспечивающее параметры рендеринга ландшафта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainRenderFlags.All">
+      <summary>
+        <para>Визуализировать все параметры.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainRenderFlags.Details">
+      <summary>
+        <para>Рендеринг деталей ландшафта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainRenderFlags.Heightmap">
+      <summary>
+        <para>Рендеринг карты высот.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainRenderFlags.Trees">
+      <summary>
+        <para>Визуализировать деревья.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainTools.BrushTransform">
+      <summary>
+        <para>Представляет линейное 2D-преобразование между UV-пространством кисти и целевым пространством XY (обычно это локальное пространство объекта Terrain).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.brushOrigin">
+      <summary>
+        <para>(Только чтение) Исходная точка UV кисти в пространстве XY.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.brushU">
+      <summary>
+        <para>(Только чтение) Закрасить вектор U в пространстве XY.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.brushV">
+      <summary>
+        <para>(Только чтение) Закрасьте вектор V в пространстве XY.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.targetOrigin">
+      <summary>
+        <para>(Только чтение) Целевое начало XY в пространстве Brush UV.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.targetX">
+      <summary>
+        <para>(Только чтение) Целевой вектор X в пространстве Brush UV.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.BrushTransform.targetY">
+      <summary>
+        <para>(Только чтение) Целевой вектор Y в пространстве Brush UV.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.BrushTransform.#ctor(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary>
+        <para>Создает BrushTransform.</para>
+      </summary>
+      <param name="brushOrigin">Происхождение кисти в целевом пространстве XY.</param>
+      <param name="brushU">Вектор кисти U в целевом пространстве XY.</param>
+      <param name="brushV">Вектор кисти V в целевом пространстве XY.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.BrushTransform.FromBrushUV(UnityEngine.Vector2)">
+      <summary>
+        <para>Применяет преобразование для преобразования UV-координаты кисти в целевое пространство XY.</para>
+      </summary>
+      <param name="brushUV">Кисть UV-координата для преобразования.</param>
+      <returns>
+        <para>Целевая координата XY.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.BrushTransform.FromRect(UnityEngine.Rect)">
+      <summary>
+        <para>Создает выровненный по оси объект BrushTransform из прямоугольника.</para>
+      </summary>
+      <param name="brushRect">Прямоугольник кисти в целевых координатах XY.</param>
+      <returns>
+        <para>BrushTransform, описывающий кисть.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.BrushTransform.GetBrushXYBounds">
+      <summary>
+        <para>Получите выровненный по оси ограничивающий прямоугольник кисти в целевом пространстве XY.</para>
+      </summary>
+      <returns>
+        <para>Ограничивающий прямоугольник в целевом пространстве XY.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.BrushTransform.ToBrushUV(UnityEngine.Vector2)">
+      <summary>
+        <para>Применяет преобразование для преобразования целевой координаты XY в пространство кисти UV.</para>
+      </summary>
+      <param name="targetXY">Точка в целевом пространстве XY.</param>
+      <returns>
+        <para>Точка преобразована в пространство Brush UV.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.TerrainTools.PaintContext">
+      <summary>
+        <para>Контекст для операции рисования, который может охватывать несколько соединенных плиток Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.destinationRenderTexture">
+      <summary>
+        <para>(Только чтение) RenderTexture, которую записывает операция редактирования для изменения данных.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.heightWorldSpaceMin">
+      <summary>
+        <para>Минимальная высота всех тайлов Terrain, которых этот PaintContext касается в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.heightWorldSpaceSize">
+      <summary>
+        <para>Диапазон высот (от минимального до максимального) всех тайлов Terrain, которых этот PaintContext касается в мировом пространстве.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.kNormalizedHeightScale">
+      <summary>
+        <para>Unity использует это значение внутри для преобразования значения высоты [0, 1] в значение текселя, которое хранится в TerrainData.heightmapTexture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.oldRenderTexture">
+      <summary>
+        <para>(Только чтение) Значение RenderTexture.active во время вызова CreateRenderTargets.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.originTerrain">
+      <summary>
+        <para>(Только чтение) Terrain, используемый для построения PaintContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.pixelRect">
+      <summary>
+        <para>(Только чтение) Прямоугольник пикселей, который представляет этот PaintContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.pixelSize">
+      <summary>
+        <para>(Только чтение) Размер пикселя PaintContext в единицах рельефа (как определено originTerrain.)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.sourceRenderTexture">
+      <summary>
+        <para>(Только чтение) Цель рендеринга, в которой хранятся исходные данные тайлов Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.targetTextureHeight">
+      <summary>
+        <para>(Только чтение) Высота целевой текстуры ландшафта. Это разрешение для одного ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.targetTextureWidth">
+      <summary>
+        <para>(Только чтение) Ширина целевой текстуры ландшафта. Это разрешение для одного ландшафта.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.terrainCount">
+      <summary>
+        <para>(Только чтение) Количество тайлов Terrain в этом PaintContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.ApplyDelayedActions">
+      <summary>
+        <para>Сбрасывает отложенные действия, созданные изменениями карты высот и альфа-карты PaintContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.Cleanup(System.Boolean)">
+      <summary>
+        <para>Освобождает выделенные ресурсы этого PaintContext.</para>
+      </summary>
+      <param name="restoreRenderTexture">Значение true указывает, что эта функция восстанавливает RenderTexture.active</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.CreateFromBounds(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Создает PaintContext, который можно использовать для редактирования текстуры Terrain в области, заданной параметрами boundsInTerrainSpace и extraBorderPixels.</para>
+      </summary>
+      <param name="terrain">Ландшафт, который определяет пространство ландшафта для этого PaintContext.</param>
+      <param name="boundsInTerrainSpace">Границы пространства ландшафта для редактирования в целевой текстуре ландшафта.</param>
+      <param name="inputTextureWidth">Ширина входной текстуры Terrain для всех подключенных Terrain.</param>
+      <param name="inputTextureHeight">Высота входной текстуры Terrain для всех подключенных Terrain.</param>
+      <param name="extraBorderPixels">Требуемое количество дополнительных граничных пикселей. Значение по умолчанию — 0.</param>
+      <param name="sharedBoundaryTexel">Следует ли растягивать текстуры так, чтобы краевые тексели лежали на границе террейна и использовались совместно с подключенными террейнами.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.CreateRenderTargets(UnityEngine.RenderTextureFormat)">
+      <summary>
+        <para>Создает исходную текстуру RenderTexture и конечную текстуру RenderTexture.</para>
+      </summary>
+      <param name="colorFormat">Формат текстуры рендеринга.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.#ctor(UnityEngine.Terrain,UnityEngine.RectInt,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Создает новый PaintContext для редактирования целевой текстуры на Terrain в области, определенной pixelRect.</para>
+      </summary>
+      <param name="terrain">Ландшафт, который определяет пространство ландшафта для этого PaintContext.</param>
+      <param name="pixelRect">Пиксельный прямоугольник для редактирования в целевой текстуре ландшафта.</param>
+      <param name="targetTextureWidth">Ширина целевой текстуры ландшафта (на каждый ландшафт).</param>
+      <param name="targetTextureHeight">Высота целевой текстуры ландшафта (на каждый ландшафт).</param>
+      <param name="sharedBoundaryTexel">Следует ли растягивать текстуры так, чтобы краевые тексели лежали на границе террейна и использовались совместно с подключенными террейнами.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.Gather(System.Func`2&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo,UnityEngine.Texture&gt;,UnityEngine.Color,UnityEngine.Material,System.Int32,System.Action`1&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo&gt;,System.Action`1&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo&gt;)">
+      <summary>
+        <para>Собирает указанные пользователем данные текстуры в sourceRenderTexture.</para>
+      </summary>
+      <param name="terrainSource">Функция, которая возвращает данные текстуры для сбора с каждого ландшафта.</param>
+      <param name="defaultColor">Цвет по умолчанию для sourceRenderTexture.</param>
+      <param name="blitMaterial">Материал, используемый для копирования данных. Если значение null, используется материал для блитирования по умолчанию.</param>
+      <param name="blitPass">Проход материала, используемый для копирования данных.</param>
+      <param name="beforeBlit">Необязательное действие для вызова перед копированием с каждого Terrain. Значение по умолчанию — null.</param>
+      <param name="afterBlit">Необязательное действие для вызова после копирования с каждого Terrain. Значение по умолчанию — null.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GatherAlphamap(UnityEngine.TerrainLayer,System.Boolean)">
+      <summary>
+        <para>Собирает информацию об альфа-карте в sourceRenderTexture.</para>
+      </summary>
+      <param name="inputLayer">TerrainLayer используется для рисования.</param>
+      <param name="addLayerIfDoesntExist">Установите значение true, чтобы указать, что inputLayer добавляется к ландшафту, если он еще не существует. Установите значение false, чтобы указать, что слои ландшафта не добавляются к ландшафту.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GatherHeightmap">
+      <summary>
+        <para>Собирает информацию о карте высот в sourceRenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GatherHoles">
+      <summary>
+        <para>Собирает информацию об отверстиях Terrain в sourceRenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GatherNormals">
+      <summary>
+        <para>Собирает информацию о нормалях в sourceRenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GetClippedPixelRectInRenderTexturePixels(System.Int32)">
+      <summary>
+        <para>Извлекает прямоугольник обрезанных пикселей для Terrain относительно текстур рендеринга PaintContext.</para>
+      </summary>
+      <param name="terrainIndex">Индекс местности.</param>
+      <returns>
+        <para>Возвращает обрезанный прямоугольник пикселей.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GetClippedPixelRectInTerrainPixels(System.Int32)">
+      <summary>
+        <para>Извлекает прямоугольник обрезанных пикселей для Terrain.</para>
+      </summary>
+      <param name="terrainIndex">Индекс местности.</param>
+      <returns>
+        <para>Возвращает обрезанный прямоугольник пикселей.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.GetTerrain(System.Int32)">
+      <summary>
+        <para>Извлекает Terrain из PaintContext.</para>
+      </summary>
+      <param name="terrainIndex">Индекс местности.</param>
+      <returns>
+        <para>Возвращает объект Terrain.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEngine.TerrainTools.PaintContext.ITerrainInfo">
+      <summary>
+        <para>Интерфейс, передающий информацию о Terrain в области PaintContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.clippedPCPixels">
+      <summary>
+        <para>PaintContext.pixelRect, обрезанный по этому ландшафту, в пиксельных координатах PaintContext. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.clippedTerrainPixels">
+      <summary>
+        <para>PaintContext.pixelRect, обрезанный по этому Terrain, в координатах Terrain в пикселях. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.gatherEnable">
+      <summary>
+        <para>Управляет сбором с этого ландшафта в PaintContext. Значение по умолчанию — true.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.paddedPCPixels">
+      <summary>
+        <para>Используйте это свойство, чтобы заполнить пустые области в PaintContext. Это то же самое, что и clippedPCPixels с отступами вокруг несвязанных ребер Terrain. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.paddedTerrainPixels">
+      <summary>
+        <para>Используйте это свойство, чтобы заполнить пустые области в PaintContext. Это то же самое, что и clippedTerrainPixels с отступами вокруг несвязанных краев Terrain. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.scatterEnable">
+      <summary>
+        <para>Контролирует рассеяние на этот Terrain в пределах PaintContext. Значение по умолчанию — true.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.terrain">
+      <summary>
+        <para>Ландшафт, представленный этим контекстом. (Только чтение)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainTools.PaintContext.ITerrainInfo.userData">
+      <summary>
+        <para>При необходимости измените это значение, чтобы сохранять и извлекать значения, относящиеся к операции PaintContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.Scatter(System.Func`2&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo,UnityEngine.RenderTexture&gt;,UnityEngine.Material,System.Int32,System.Action`1&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo&gt;,System.Action`1&lt;UnityEngine.TerrainTools.PaintContext/ITerrainInfo&gt;)">
+      <summary>
+        <para>Применяет отредактированный PaintContext путем копирования изменений обратно в указанные пользователем RenderTextures для исходных тайлов Terrain.</para>
+      </summary>
+      <param name="terrainDest">Функция, возвращающая RenderTexture, которая будет записана для каждого Terrain.</param>
+      <param name="blitMaterial">Материал, используемый для копирования данных. Если значение null, используется материал для блитирования по умолчанию.</param>
+      <param name="blitPass">Проход материала, используемый для копирования данных. Его значение по умолчанию равно 0.</param>
+      <param name="beforeBlit">Необязательное действие для вызова перед копированием в каждый Terrain.</param>
+      <param name="afterBlit">Необязательное действие для вызова после копирования в каждый Terrain.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.ScatterAlphamap(System.String)">
+      <summary>
+        <para>Применяет отредактированную альфа-карту PaintContext путем копирования изменений обратно в исходные тайлы Terrain.</para>
+      </summary>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.ScatterHeightmap(System.String)">
+      <summary>
+        <para>Применяет отредактированную карту высот PaintContext путем копирования изменений обратно в исходные тайлы Terrain.</para>
+      </summary>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.PaintContext.ScatterHoles(System.String)">
+      <summary>
+        <para>Применяет PaintContext отредактированных отверстий Terrain путем копирования изменений обратно в исходные тайлы Terrain.</para>
+      </summary>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="T:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses">
+      <summary>
+        <para>Встроенные проходы рендеринга для материала краски.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.PaintHoles">
+      <summary>
+        <para>Встроенный проход рендеринга для рисования отверстий Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.PaintTexture">
+      <summary>
+        <para>Встроенный проход рендеринга для рисования текстуры splatmap.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.RaiseLowerHeight">
+      <summary>
+        <para>Встроенный проход рендеринга для повышения и понижения высоты Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.SetHeights">
+      <summary>
+        <para>Встроенный проход рендеринга для настройки высоты ландшафта.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.SmoothHeights">
+      <summary>
+        <para>Встроенный проход рендеринга для сглаживания высоты Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainTools.TerrainBuiltinPaintMaterialPasses.StampHeight">
+      <summary>
+        <para>Встроенный проход рендеринга для штамповки высоты на ландшафте.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainTools.TerrainPaintUtility">
+      <summary>
+        <para>Набор вспомогательных функций для пользовательских инструментов рисования ландшафта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.BeginPaintHeightmap(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Boolean)">
+      <summary>
+        <para>Вспомогательная функция для настройки PaintContext для изменения карты высот одного или нескольких тайлов Terrain.</para>
+      </summary>
+      <param name="terrain">Эталонная плитка Terrain.</param>
+      <param name="boundsInTerrainSpace">Редактируемая область в пространстве ландшафта.</param>
+      <param name="extraBorderPixels">Требуемое количество дополнительных граничных пикселей.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+      <returns>
+        <para>PaintContext, содержащий комбинированные данные карты высот для указанной области.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.BeginPaintHoles(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Boolean)">
+      <summary>
+        <para>Вспомогательная функция для настройки PaintContext для изменения отверстий Terrain одного или нескольких тайлов Terrain.</para>
+      </summary>
+      <param name="terrain">Эталонная плитка Terrain.</param>
+      <param name="boundsInTerrainSpace">Редактируемая область в пространстве Terrain.</param>
+      <param name="extraBorderPixels">Требуемое количество дополнительных граничных пикселей.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+      <returns>
+        <para>PaintContext, который содержит комбинированные данные отверстий Terrain для указанного региона.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.BeginPaintTexture(UnityEngine.Terrain,UnityEngine.Rect,UnityEngine.TerrainLayer,System.Int32,System.Boolean)">
+      <summary>
+        <para>Вспомогательная функция для настройки PaintContext для изменения альфа-карты одного или нескольких тайлов Terrain.</para>
+      </summary>
+      <param name="terrain">Эталонная плитка Terrain.</param>
+      <param name="inputLayer">Выбирает альфа-карту для рисования.</param>
+      <param name="boundsInTerrainSpace">Редактируемая область в пространстве ландшафта.</param>
+      <param name="extraBorderPixels">Требуемое количество дополнительных граничных пикселей.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+      <returns>
+        <para>PaintContext, содержащий комбинированные данные альфа-карты для указанной области.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.BuildTransformPaintContextUVToPaintContextUV(UnityEngine.TerrainTools.PaintContext,UnityEngine.TerrainTools.PaintContext,UnityEngine.Vector4&amp;)">
+      <summary>
+        <para>Создает преобразование «Масштаб и смещение» для преобразования между UV-пространством одного PaintContext и другим UV-пространством PaintContext.</para>
+      </summary>
+      <param name="src">Исходный контекст Paint.</param>
+      <param name="dst">Целевой PaintContext.</param>
+      <param name="scaleOffset">Преобразование ScaleOffset.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.CalculateBrushTransform(UnityEngine.Terrain,UnityEngine.Vector2,System.Single,System.Single)">
+      <summary>
+        <para>Создает BrushTransform из входных параметров.</para>
+      </summary>
+      <param name="terrain">Ссылка на ландшафт, определяет UV ландшафта и пространство объекта.</param>
+      <param name="brushCenterTerrainUV">Центральная точка кисти в UV-пространстве ландшафта (0–1 по тайлу ландшафта).</param>
+      <param name="brushSize">Размер кисти в пространстве ландшафта.</param>
+      <param name="brushRotationDegrees">Вращение кисти в градусах (по часовой стрелке).</param>
+      <returns>
+        <para>Преобразование пространства ландшафта в UV-развертку Brush.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.CollectNormals(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Boolean)">
+      <summary>
+        <para>Вспомогательная функция для настройки PaintContext, которая собирает данные нормалей сетки из одного или нескольких тайлов Terrain.</para>
+      </summary>
+      <param name="terrain">Эталонная плитка Terrain.</param>
+      <param name="boundsInTerrainSpace">Область в пространстве ландшафта, из которой собираются нормали.</param>
+      <param name="extraBorderPixels">Требуемое количество дополнительных граничных пикселей.</param>
+      <param name="fillOutsideTerrain">Следует ли заполнять пустое пространство за пределами плиток Terrain данными из ближайшей плитки.</param>
+      <returns>
+        <para>PaintContext, содержащий комбинированные данные карты нормалей для указанной области.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.EndPaintHeightmap(UnityEngine.TerrainTools.PaintContext,System.String)">
+      <summary>
+        <para>Вспомогательная функция для завершения модификации карты высот.</para>
+      </summary>
+      <param name="ctx">Контекст отрисовки карты высот для завершения.</param>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.EndPaintHoles(UnityEngine.TerrainTools.PaintContext,System.String)">
+      <summary>
+        <para>Вспомогательная функция для завершения модификации отверстий в ландшафте.</para>
+      </summary>
+      <param name="ctx">Ландшафтные отверстия PaintContext для завершения.</param>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.EndPaintTexture(UnityEngine.TerrainTools.PaintContext,System.String)">
+      <summary>
+        <para>Вспомогательная функция для завершения модификации альфа-карты текстуры.</para>
+      </summary>
+      <param name="ctx">Контекст рисования текстуры для завершения.</param>
+      <param name="editorUndoName">Уникальное имя, используемое для стека отмены.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.FindTerrainLayerIndex(UnityEngine.Terrain,UnityEngine.TerrainLayer)">
+      <summary>
+        <para>Находит индекс TerrainLayer в тайле Terrain.</para>
+      </summary>
+      <param name="terrain">Плитка местности.</param>
+      <param name="inputLayer">Слой рельефа для поиска.</param>
+      <returns>
+        <para>Возвращает индекс слоя ландшафта, если он существует, или -1, если он не существует.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetBlitMaterial">
+      <summary>
+        <para>Возвращает материал по умолчанию для операций копирования.</para>
+      </summary>
+      <returns>
+        <para>Встроенный материал «Скрытый/BlitCopy».</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetBrushWorldSizeLimits(System.Single&amp;,System.Single&amp;,System.Single,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Вычисляет минимальный и максимальный размер кисти в мировом пространстве.</para>
+      </summary>
+      <param name="minBrushWorldSize">Возвращает минимальный размер кисти в мировых единицах измерения.</param>
+      <param name="maxBrushWorldSize">Возвращает максимальный размер кисти в мировых единицах измерения.</param>
+      <param name="terrainTileWorldSize">Размер плитки Terrain в мировых единицах измерения.</param>
+      <param name="terrainTileTextureResolutionPixels">Разрешение текстуры плитки Terrain, редактируемой кистью, в пикселях.</param>
+      <param name="minBrushResolutionPixels">Минимальное разрешение кисти в пикселях. По умолчанию — 1 пиксель.</param>
+      <param name="maxBrushResolutionPixels">Максимальное разрешение кисти в пикселях. По умолчанию 8192 пикселя.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetBuiltinPaintMaterial">
+      <summary>
+        <para>Возвращает встроенный материал краски, используемый встроенными инструментами.</para>
+      </summary>
+      <returns>
+        <para>Встроенный материал для окраски местности.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetCopyTerrainLayerMaterial">
+      <summary>
+        <para>Возвращает материал копируемого слоя ландшафта по умолчанию.</para>
+      </summary>
+      <returns>
+        <para>Встроен в материал HiddenTerrainTerrainLayerUtils.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetHeightBlitMaterial">
+      <summary>
+        <para>Возвращает Материал для использования при копировании карты высот Terrain.</para>
+      </summary>
+      <returns>
+        <para>Встроен в материал HiddenTerrainEngineHeightBlitCopy.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.GetTerrainAlphaMapChecked(UnityEngine.Terrain,System.Int32)">
+      <summary>
+        <para>Возвращает текстуру альфа-карты по адресу mapIndex.</para>
+      </summary>
+      <param name="terrain">Плитка местности.</param>
+      <param name="mapIndex">Индекс для извлечения.</param>
+      <returns>
+        <para>Текстура Alphamap в mapIndex.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.ReleaseContextResources(UnityEngine.TerrainTools.PaintContext)">
+      <summary>
+        <para>Освобождает выделенные ресурсы указанного PaintContext.</para>
+      </summary>
+      <param name="ctx">PaintContext, содержащий ресурсы для освобождения.</param>
+    </member>
+    <member name="M:UnityEngine.TerrainTools.TerrainPaintUtility.SetupTerrainToolMaterialProperties(UnityEngine.TerrainTools.PaintContext,UnityEngine.TerrainTools.BrushTransform&amp;,UnityEngine.Material)">
+      <summary>
+        <para>Настраивает все свойства материала, используемые функциями в TerrainTool.cginc.</para>
+      </summary>
+      <param name="paintContext">PaintContext, описывающий редактируемую область и пространство ландшафта.</param>
+      <param name="brushXform">BrushTransform из пространства ландшафта в кисти UVs.</param>
+      <param name="material">Материал для заполнения свойствами преобразования.</param>
+    </member>
+    <member name="T:UnityEngine.TerrainUtils.TerrainMap">
+      <summary>
+        <para>Тип для сопоставления 2D-координат (X, Z) плитки с объектом Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TerrainUtils.TerrainMap.terrainTiles">
+      <summary>
+        <para>Сопоставление TileCoord с Terrain.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainUtils.TerrainMap.CreateFromConnectedNeighbors">
+      <summary>
+        <para>Создает TerrainMap из соседей, подключенных к исходному Terrain.</para>
+      </summary>
+      <param name="originTerrain">Рельеф, которому задана координата тайла (0,0).</param>
+      <param name="filter">Фильтр для применения при заполнении карты. Если значение null, фильтр не применяется.</param>
+      <param name="fullValidation">Подтвердите карту местности. Значение по умолчанию — true.</param>
+      <returns>
+        <para>Полученная карта Terrain. Может возвращать значение null, если никакие объекты Terrain не проходят фильтр.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainUtils.TerrainMap.CreateFromPlacement">
+      <summary>
+        <para>Создает TerrainMap из позиций всех активных Terrain.</para>
+      </summary>
+      <param name="originTerrain">Определяет исходную точку и размер сетки, а также идентификатор группы, если фильтр не указан.</param>
+      <param name="gridOrigin">Происхождение сетки.</param>
+      <param name="gridSize">Размер сетки. Обычно принимает размер местности size.x и size.z.</param>
+      <param name="filter">Фильтр, который будет применяться при заполнении карты. Если значение равно нулю, фильтр вернется к совпадающим ландшафтам в той же группе, что и исходная точка.</param>
+      <param name="fullValidation">Подтвердите карту местности. Значение по умолчанию — true.</param>
+      <returns>
+        <para>Полученная карта Terrain. Может возвращать значение null, если никакие объекты Terrain не проходят фильтр.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainUtils.TerrainMap.CreateFromPlacement">
+      <summary>
+        <para>Создает TerrainMap из позиций всех активных Terrain.</para>
+      </summary>
+      <param name="originTerrain">Определяет исходную точку и размер сетки, а также идентификатор группы, если фильтр не указан.</param>
+      <param name="gridOrigin">Происхождение сетки.</param>
+      <param name="gridSize">Размер сетки. Обычно принимает размер местности size.x и size.z.</param>
+      <param name="filter">Фильтр, который будет применяться при заполнении карты. Если значение равно нулю, фильтр вернется к совпадающим ландшафтам в той же группе, что и исходная точка.</param>
+      <param name="fullValidation">Подтвердите карту местности. Значение по умолчанию — true.</param>
+      <returns>
+        <para>Полученная карта Terrain. Может возвращать значение null, если никакие объекты Terrain не проходят фильтр.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TerrainUtils.TerrainMap.GetTerrain(System.Int32,System.Int32)">
+      <summary>
+        <para>Извлекает объект Terrain, соответствующий координатам плитки (tileX,tileZ).</para>
+      </summary>
+      <param name="tileX">Координата X тайла.</param>
+      <param name="tileZ">Координата Z тайла.</param>
+      <returns>
+        <para>В случае успеха возвращает действительный объект Terrain, в противном случае — null.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.TerrainUtils.TerrainTileCoord">
+      <summary>
+        <para>Указывает набор координат 2D-фрагмента.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainUtils.TerrainTileCoord.tileX">
+      <summary>
+        <para>Координата X тайла.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TerrainUtils.TerrainTileCoord.tileZ">
+      <summary>
+        <para>Координата Z тайла.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TerrainUtils.TerrainUtility">
+      <summary>
+        <para>Предоставляет набор служебных функций, используемых инструментами ландшафта.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.TerrainUtils.TerrainUtility.AutoConnect">
+      <summary>
+        <para>Автоматически соединяет соседние ландшафты.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Tree">
+      <summary>
+        <para>Компонент дерева для создателя дерева.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tree.data">
+      <summary>
+        <para>Данные, связанные с деревом.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tree.hasSpeedTreeWind">
+      <summary>
+        <para>Сообщает, сохраняются ли в этом компоненте данные о ветре, экспортированные из SpeedTree.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TreeInstance">
+      <summary>
+        <para>Содержит информацию о дереве, размещенном в игровом объекте Terrain.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.color">
+      <summary>
+        <para>Цвет этого экземпляра.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.heightScale">
+      <summary>
+        <para>Масштаб высоты этого экземпляра (по сравнению с размером прототипа).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.lightmapColor">
+      <summary>
+        <para>Цвет карты освещения, рассчитанный для этого экземпляра.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.position">
+      <summary>
+        <para>Позиция дерева.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.prototypeIndex">
+      <summary>
+        <para>Индекс этого экземпляра в массиве TerrainData.treePrototypes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.rotation">
+      <summary>
+        <para>Только для чтения.
+
+Поворот дерева в плоскости XZ (в радианах).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TreeInstance.widthScale">
+      <summary>
+        <para>Масштаб ширины этого экземпляра (по сравнению с размером прототипа).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TreePrototype">
+      <summary>
+        <para>Простой класс, содержащий указатель на прототип дерева.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TreePrototype.bendFactor">
+      <summary>
+        <para>Коэффициент изгиба прототипа дерева.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TreePrototype.navMeshLod">
+      <summary>
+        <para>Индекс LOD группы LODGroup дерева, которую Unity использует для создания NavMesh. Это значение используется только для деревьев с LODGroup и игнорируется для обычных деревьев.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.TreePrototype.prefab">
+      <summary>
+        <para>Извлекает фактический GameObject, используемый деревом.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.TerrainModule">
+      <summary>
+        <para>Модуль Terrain реализует механизм рендеринга Terrain Unity, доступный через компонент Terrain.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

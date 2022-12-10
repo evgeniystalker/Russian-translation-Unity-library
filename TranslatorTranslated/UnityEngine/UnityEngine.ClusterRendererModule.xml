@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ClusterRendererModule</name>
+    </assembly>
+    <member name="T:UnityEngine.ClusterNetwork">
+      <summary>
+        <para>Вспомогательный класс, содержащий статический метод для запроса состояния кластера Unity.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ClusterNetwork.isDisconnected">
+      <summary>
+        <para>Проверьте, отключен ли текущий экземпляр от сети кластера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ClusterNetwork.isMasterOfCluster">
+      <summary>
+        <para>Проверьте, является ли текущий экземпляр главным узлом в сети кластера.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ClusterNetwork.nodeIndex">
+      <summary>
+        <para>Чтобы получить или установить индекс узла текущей машины из сети кластера.</para>
+      </summary>
+    </member>
+  </members>
+</doc>
